@@ -64,6 +64,10 @@ jobs:
       run: |
         rm -f stats.json telegram_stats.json github_stats.json
 
+    - name: Prepare health state
+      run: |
+        mkdir -p health
+
     - name: Run Telegram Config Extractor
       run: python Arista/telegram.py
       timeout-minutes: 20
