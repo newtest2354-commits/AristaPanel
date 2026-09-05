@@ -3,9 +3,6 @@ name: Update Arista Configs
 on:
   schedule:
     - cron: '0 */3 * * *'
-  workflow_dispatch:
-  push:
-    branches: [ main ]
 
 permissions:
   contents: write
@@ -120,25 +117,25 @@ jobs:
         import json
         import os
         from datetime import datetime
-        
+
         telegram_stats = {}
         github_stats = {}
-        
+
         if os.path.exists('telegram_stats.json'):
             with open('telegram_stats.json', 'r') as f:
                 telegram_stats = json.load(f)
-        
+
         if os.path.exists('github_stats.json'):
             with open('github_stats.json', 'r') as f:
                 github_stats = json.load(f)
-        
+
         telegram_added = telegram_stats.get('added', 0)
         github_added = github_stats.get('added', 0)
         total_added = telegram_added + github_added
-        
+
         telegram_protocols = telegram_stats.get('protocols', {})
         github_protocols = github_stats.get('protocols', {})
-        
+
         payload = {
             'added': total_added,
             'telegram': {
@@ -165,7 +162,7 @@ jobs:
             },
             'updated_at': datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC')
         }
-        
+
         with open('stats_payload.json', 'w') as f:
             json.dump(payload, f, indent=2)
         "
@@ -198,9 +195,7 @@ jobs:
       run: |
         git commit -m "🔄 Configs update $(date -u '+%Y-%m-%d %H:%M UTC')"
 
-    - name: Push changes (safe mode)
+    - name: Push changes
       if: steps.check_changes.outputs.changes == 'true'
       run: |
-        git fetch origin main
-        git rebase origin/main || true
         git push origin HEAD:main
