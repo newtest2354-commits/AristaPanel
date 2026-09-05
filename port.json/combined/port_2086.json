@@ -1,0 +1,173 @@
+// COMBINED - Port 2086
+// Updated: 2026-09-05 16:10:18
+// Count: 17
+
+{
+  "log": {
+    "level": "info",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "type": "udp",
+        "tag": "google",
+        "server": "8.8.8.8"
+      },
+      {
+        "type": "udp",
+        "tag": "cloudflare",
+        "server": "1.1.1.1"
+      }
+    ],
+    "rules": [],
+    "final": "google"
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "interface_name": "singbox-tun",
+      "address": [
+        "172.19.0.1/30"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "stack": "system",
+      "sniff": false
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "vless",
+      "tag": "ARISTA #1",
+      "server": "138.124.123.127",
+      "server_port": 2086,
+      "uuid": "cb7567ab-b193-40d1-9f2a-e97e0122d5fd",
+      "domain_resolver": "google"
+    },
+    {
+      "type": "vless",
+      "tag": "ARISTA #2",
+      "server": "chatgpt.com",
+      "server_port": 2086,
+      "uuid": "43df5d7f-2104-4e1f-9dc0-d488520c2e4c",
+      "domain_resolver": "google"
+    },
+    {
+      "type": "vless",
+      "tag": "ARISTA #3",
+      "server": "tp.paydar.site",
+      "server_port": 2086,
+      "uuid": "82f2a802-19cd-4b64-ac06-61cef36c4a65",
+      "domain_resolver": "google"
+    },
+    {
+      "type": "vless",
+      "tag": "ARISTA #4",
+      "server": "pro11.awexio.ir",
+      "server_port": 2086,
+      "uuid": "19c21f30-3590-4b97-a65a-39b50b810edf",
+      "domain_resolver": "google"
+    },
+    {
+      "type": "vless",
+      "tag": "ARISTA #5",
+      "server": "www.speedtest.net",
+      "server_port": 2086,
+      "uuid": "8137e9a6-22e6-4707-a120-a6dea17c7e00",
+      "domain_resolver": "google",
+      "transport": {
+        "type": "ws",
+        "path": "/eyJqdW5rIjoic1VBWDhGMXJsREg5WUoiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByb3h5aXAiLCJwYW5lbElQcyI6WyI4My4xNDcuMjU0LjI0NSJdfQ==?ed=2560",
+        "headers": {
+          "Host": "dry-snow-2e6f.fastip25478.workers.dev"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "ARISTA #6",
+      "server": "104.18.46.234",
+      "server_port": 2086,
+      "uuid": "47fcef29-ab4e-4aa6-932b-d95a18f28a4e",
+      "domain_resolver": "google",
+      "transport": {
+        "type": "ws",
+        "path": "/?ed=2560security=tls",
+        "headers": {
+          "Host": "8nj2r.2k8t.f88.hh.vavava.kdns.fr"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "ARISTA #7",
+      "server": "188.114.97.6",
+      "server_port": 2086,
+      "uuid": "98b6cb05-b5ab-4c82-8683-07de28f796a9",
+      "domain_resolver": "google",
+      "transport": {
+        "type": "ws",
+        "path": "/eyJqdW5rIjoiRHF6VWU4SmYiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByZWZpeCIsInBhbmVsSVBzIjpbIlsyNjAyOmZjNTk6YjA6NjQ6Ol0iXX0",
+        "headers": {
+          "Host": "holy-glitter-39f9.wwewee2dasdds.workers.dev"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "ARISTA #8",
+      "server": "104.18.46.234",
+      "server_port": 2086,
+      "uuid": "47fcef29-ab4e-4aa6-932b-d95a18f28a4e",
+      "domain_resolver": "google",
+      "packet_encoding": "xudp",
+      "transport": {
+        "type": "ws",
+        "path": "/?ed=2560security=tls",
+        "headers": {
+          "Host": "8nj2r.2k8t.f88.hh.vavava.kdns.fr"
+        }
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    },
+    {
+      "type": "urltest",
+      "tag": "🚀 ARISTA AUTO BEST",
+      "outbounds": [
+        "ARISTA #1",
+        "ARISTA #2",
+        "ARISTA #3",
+        "ARISTA #4",
+        "ARISTA #5",
+        "ARISTA #6",
+        "ARISTA #7",
+        "ARISTA #8"
+      ],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "2m",
+      "tolerance": 30,
+      "idle_timeout": "20m",
+      "interrupt_exist_connections": true
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true,
+    "default_domain_resolver": "google",
+    "final": "🚀 ARISTA AUTO BEST",
+    "rules": [
+      {
+        "protocol": "dns",
+        "outbound": "direct"
+      }
+    ]
+  }
+}
