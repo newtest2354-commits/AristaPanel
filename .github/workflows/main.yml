@@ -64,10 +64,6 @@ jobs:
       run: |
         rm -f stats.json telegram_stats.json github_stats.json
 
-    - name: Prepare health state
-      run: |
-        mkdir -p health
-
     - name: Run Telegram Config Extractor
       run: python Arista/telegram.py
       timeout-minutes: 20
@@ -114,6 +110,68 @@ jobs:
         date > last_update.txt
         echo "Updated: $(date -u '+%Y-%m-%d %H:%M UTC')" > update_info.txt
 
+    - name: Build and send stats payload
+      run: |
+        python -c "
+        import json
+        import os
+        from datetime import datetime
+        
+        telegram_stats = {}
+        github_stats = {}
+        
+        if os.path.exists('telegram_stats.json'):
+            with open('telegram_stats.json', 'r') as f:
+                telegram_stats = json.load(f)
+        
+        if os.path.exists('github_stats.json'):
+            with open('github_stats.json', 'r') as f:
+                github_stats = json.load(f)
+        
+        telegram_added = telegram_stats.get('added', 0)
+        github_added = github_stats.get('added', 0)
+        total_added = telegram_added + github_added
+        
+        telegram_protocols = telegram_stats.get('protocols', {})
+        github_protocols = github_stats.get('protocols', {})
+        
+        payload = {
+            'added': total_added,
+            'telegram': {
+                'added': telegram_added,
+                'vless': telegram_protocols.get('vless', 0),
+                'vmess': telegram_protocols.get('vmess', 0),
+                'trojan': telegram_protocols.get('trojan', 0),
+                'shadowsocks': telegram_protocols.get('shadowsocks', 0),
+                'hysteria2': telegram_protocols.get('hysteria2', 0),
+                'hysteria': telegram_protocols.get('hysteria', 0),
+                'tuic': telegram_protocols.get('tuic', 0),
+                'other': telegram_protocols.get('other', 0)
+            },
+            'github': {
+                'added': github_added,
+                'vless': github_protocols.get('vless', 0),
+                'vmess': github_protocols.get('vmess', 0),
+                'trojan': github_protocols.get('trojan', 0),
+                'shadowsocks': github_protocols.get('shadowsocks', 0),
+                'hysteria2': github_protocols.get('hysteria2', 0),
+                'hysteria': github_protocols.get('hysteria', 0),
+                'tuic': github_protocols.get('tuic', 0),
+                'other': github_protocols.get('other', 0)
+            },
+            'updated_at': datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC')
+        }
+        
+        with open('stats_payload.json', 'w') as f:
+            json.dump(payload, f, indent=2)
+        "
+
+    - name: Send stats to notification worker
+      run: |
+        curl -X POST ${{ secrets.WORKER_URL }} \
+          -H "Content-Type: application/json" \
+          -d @stats_payload.json
+
     - name: Configure Git
       run: |
         git config --global user.name "github-actions[bot]"
@@ -141,4 +199,4 @@ jobs:
       run: |
         git fetch origin main
         git rebase origin/main || true
-        git push origin HEAD:mai
+        git push origin HEAD:main
