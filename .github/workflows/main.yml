@@ -1,0 +1,206 @@
+name: Update Arista Configs
+
+on:
+  schedule:
+    - cron: '0 */3 * * *'
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write
+
+jobs:
+  update-all-configs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    environment: production
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v6
+      with:
+        fetch-depth: 0
+
+    - name: Random delay
+      run: sleep $((RANDOM % 300 + 60))
+
+    - name: Set up Python
+      uses: actions/setup-python@v6
+      with:
+        python-version: '3.14'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests beautifulsoup4 pyyaml aiohttp
+
+    - name: Clean old config files
+      run: |
+        rm -rf configs.txt/
+        mkdir -p configs.txt/telegram configs.txt/github configs.txt/combined
+
+    - name: Clean old yaml files
+      run: |
+        rm -rf config.yaml/
+        mkdir -p config.yaml
+
+    - name: Clean old json files
+      run: |
+        rm -rf config.json/
+        mkdir -p config.json
+
+    - name: Clean old best_ip files
+      run: |
+        rm -rf best_ip/
+        mkdir -p best_ip
+
+    - name: Clean old port files
+      run: |
+        rm -rf port.txt/
+        mkdir -p port.txt
+
+    - name: Clean old stats files
+      run: |
+        rm -f stats.json telegram_stats.json github_stats.json
+
+    - name: Prepare health state
+      run: |
+        mkdir -p health
+
+    - name: Run Telegram Config Extractor
+      run: python Arista/telegram.py
+      timeout-minutes: 20
+      env:
+        CHANNELS_JSON: ${{ secrets.CHANNELS_JSON }}
+
+    - name: Rename telegram stats
+      run: |
+        if [ -f stats.json ]; then
+          mv stats.json telegram_stats.json
+        fi
+
+    - name: Run GitHub Config Extractor
+      run: python Arista/github.py
+      timeout-minutes: 15
+      env:
+        REPO_JSON: ${{ secrets.REPO_JSON }}
+
+    - name: Rename github stats
+      run: |
+        if [ -f stats.json ]; then
+          mv stats.json github_stats.json
+        fi
+
+    - name: Combine Configs
+      run: python Arista/combine.py
+
+    - name: Convert to YAML (Clash Meta)
+      run: python Arista/to_yaml.py
+
+    - name: Convert to JSON (Sing-Box)
+      run: python Arista/to_json.py
+
+    - name: Process Best IPs
+      run: python Arista/best_ip.py
+      timeout-minutes: 10
+
+    - name: Process Port Filters
+      run: python Arista/port_filter.py
+      timeout-minutes: 5
+
+    - name: Create summary
+      run: |
+        date > last_update.txt
+        echo "Updated: $(date -u '+%Y-%m-%d %H:%M UTC')" > update_info.txt
+
+    - name: Build and send stats payload
+      run: |
+        python -c "
+        import json
+        import os
+        from datetime import datetime
+        
+        telegram_stats = {}
+        github_stats = {}
+        
+        if os.path.exists('telegram_stats.json'):
+            with open('telegram_stats.json', 'r') as f:
+                telegram_stats = json.load(f)
+        
+        if os.path.exists('github_stats.json'):
+            with open('github_stats.json', 'r') as f:
+                github_stats = json.load(f)
+        
+        telegram_added = telegram_stats.get('added', 0)
+        github_added = github_stats.get('added', 0)
+        total_added = telegram_added + github_added
+        
+        telegram_protocols = telegram_stats.get('protocols', {})
+        github_protocols = github_stats.get('protocols', {})
+        
+        payload = {
+            'added': total_added,
+            'telegram': {
+                'added': telegram_added,
+                'vless': telegram_protocols.get('vless', 0),
+                'vmess': telegram_protocols.get('vmess', 0),
+                'trojan': telegram_protocols.get('trojan', 0),
+                'shadowsocks': telegram_protocols.get('shadowsocks', 0),
+                'hysteria2': telegram_protocols.get('hysteria2', 0),
+                'hysteria': telegram_protocols.get('hysteria', 0),
+                'tuic': telegram_protocols.get('tuic', 0),
+                'other': telegram_protocols.get('other', 0)
+            },
+            'github': {
+                'added': github_added,
+                'vless': github_protocols.get('vless', 0),
+                'vmess': github_protocols.get('vmess', 0),
+                'trojan': github_protocols.get('trojan', 0),
+                'shadowsocks': github_protocols.get('shadowsocks', 0),
+                'hysteria2': github_protocols.get('hysteria2', 0),
+                'hysteria': github_protocols.get('hysteria', 0),
+                'tuic': github_protocols.get('tuic', 0),
+                'other': github_protocols.get('other', 0)
+            },
+            'updated_at': datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC')
+        }
+        
+        with open('stats_payload.json', 'w') as f:
+            json.dump(payload, f, indent=2)
+        "
+
+    - name: Send stats to notification worker
+      run: |
+        curl -X POST ${{ secrets.WORKER_URL }} \
+          -H "Content-Type: application/json" \
+          -d @stats_payload.json
+
+    - name: Configure Git
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+    - name: Stage all changes
+      run: git add .
+
+    - name: Check for changes
+      id: check_changes
+      run: |
+        if git diff --cached --quiet; then
+          echo "changes=false" >> $GITHUB_OUTPUT
+        else
+          echo "changes=true" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Commit changes
+      if: steps.check_changes.outputs.changes == 'true'
+      run: |
+        git commit -m "🔄 Configs update $(date -u '+%Y-%m-%d %H:%M UTC')"
+
+    - name: Push changes (safe mode)
+      if: steps.check_changes.outputs.changes == 'true'
+      run: |
+        git fetch origin main
+        git rebase origin/main || true
+        git push origin HEAD:main
