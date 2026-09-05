@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2095
-# Updated: 2026-09-05 16:10:07
-# Count: 3
+# Updated: 2026-09-05 20:06:47
+# Count: 5
 
 mixed-port: 7890
 allow-lan: false
@@ -50,13 +50,17 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: cdn-cloudflare455.korvexe.ir
+  server: 185.146.173.9
   port: 2095
-  uuid: 74a025dd-c287-4acf-a5fb-e573e10feef9
-  network: httpupgrade
+  uuid: feb7b2e8-7abc-4ada-96fc-d2fdcc369bbb
+  network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: V2ray-_-_-_-_-_-_-_-_-ShhProxy.TelegramChannelJoinBede.com.
 - name: 'ARISTA #2'
   type: vless
   server: 5.75.196.249
@@ -67,6 +71,24 @@ proxies:
   udp: true
   skip-cert-verify: true
 - name: 'ARISTA #3'
+  type: vless
+  server: 5.75.196.249
+  port: 2095
+  uuid: 01e5bbe0-03b1-4e03-bd10-9760a8401fdf
+  network: tcp🇩🇪@FreakConfig
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #4'
+  type: vless
+  server: cdn-cloudflare455.korvexe.ir
+  port: 2095
+  uuid: 74a025dd-c287-4acf-a5fb-e573e10feef9
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #5'
   type: vless
   server: 194.60.133.108
   port: 2095
@@ -89,6 +111,8 @@ proxy-groups:
   - 'ARISTA #1'
   - 'ARISTA #2'
   - 'ARISTA #3'
+  - 'ARISTA #4'
+  - 'ARISTA #5'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

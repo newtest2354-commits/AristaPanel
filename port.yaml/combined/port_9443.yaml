@@ -1,6 +1,6 @@
 # COMBINED - Port 9443
-# Updated: 2026-09-05 16:09:59
-# Count: 5
+# Updated: 2026-09-05 20:06:37
+# Count: 6
 
 mixed-port: 7890
 allow-lan: false
@@ -50,21 +50,6 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 185.103.100.209
-  port: 9443
-  uuid: 20c72888-b83e-4309-82a4-aab4a2dda778
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: api.vkimages.io
-  reality-opts:
-    public-key: 8h8t5eBWL9oERK7xWHQLFJE5j6sZdgNDQAs3EGnNbho
-    short-id: "2f49bccf11150ef2"
-- name: 'ARISTA #2'
-  type: vless
   server: 51.250.35.229
   port: 9443
   uuid: a704443d-655e-4d9f-8ce6-12eeb17a9a08
@@ -79,7 +64,7 @@ proxies:
   reality-opts:
     public-key: yiAI7CwcT7kwvDnzYFIeJBrj9fs3_7_7UYtzelu8Fwo
     short-id: "26b5f38e"
-- name: 'ARISTA #3'
+- name: 'ARISTA #2'
   type: vless
   server: wl7.alertyagency.com
   port: 9443
@@ -95,7 +80,7 @@ proxies:
   reality-opts:
     public-key: yiAI7CwcT7kwvDnzYFIeJBrj9fs3_7_7UYtzelu8Fwo
     short-id: "26b5f38e"
-- name: 'ARISTA #4'
+- name: 'ARISTA #3'
   type: vless
   server: 185.233.184.7
   port: 9443
@@ -109,11 +94,26 @@ proxies:
   - http/1.1
   client-fingerprint: firefox
   servername: nl.node.sillyvpn.cc
+- name: 'ARISTA #4'
+  type: vless
+  server: 185.103.100.209
+  port: 9443
+  uuid: 20c72888-b83e-4309-82a4-aab4a2dda778
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: api.vkimages.io
+  reality-opts:
+    public-key: 8h8t5eBWL9oERK7xWHQLFJE5j6sZdgNDQAs3EGnNbho
+    short-id: "2f49bccf11150ef2"
 - name: 'T.ME: @aristapanel #5'
   type: vless
   server: 46.243.142.89
   port: 9443
-  uuid: 3ebeed45-6987-4c38-9f8a-5cb406c9a125
+  uuid: b2633784-ed21-4e4c-999e-ad764d4256f6
   network: xhttp
   tls: true
   udp: true
@@ -123,6 +123,21 @@ proxies:
   reality-opts:
     public-key: 5hhzoP441DrGa2l5YlwizPSA5chdY2VjRP7CiEfLLA0
     short-id: "eea4ab7bddaeea39"
+- name: 'T.ME: @aristapanel #6'
+  type: vless
+  server: 31.59.150.174
+  port: 9443
+  uuid: 92089155-6602-4122-86d4-fe6de20e8c4d
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: hotcoals.aeternavpn.space
+  reality-opts:
+    public-key: RWu6ktBE4DFbUz_prmz-5KuolLhO53ehh19mNxhP-wI
+    short-id: "a1b2c3d4"
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -137,6 +152,7 @@ proxy-groups:
   - 'ARISTA #3'
   - 'ARISTA #4'
   - 'T.ME: @aristapanel #5'
+  - 'T.ME: @aristapanel #6'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
