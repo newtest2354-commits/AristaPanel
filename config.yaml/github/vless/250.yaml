@@ -1,0 +1,3954 @@
+# GITHUB - VLESS - Tier 250
+# Updated: 2026-09-05 15:36:40
+# Count: 250
+
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+ipv6: false
+dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  default-nameserver:
+  - 178.22.122.100
+  - 185.51.200.2
+  - 10.202.10.202
+  nameserver:
+  - https://dns.shecan.ir/dns-query
+  - https://dns.403.online/dns-query
+  - https://dns.begzar.ir/dns-query
+  - tls://dns.shecan.ir
+  - tls://dns.403.online
+  - https://1.1.1.1/dns-query
+  - https://8.8.8.8/dns-query
+  - tls://1.1.1.1
+  - tls://8.8.8.8
+sniffer:
+  enable: true
+  parse-pure-ip: true
+  override-destination: true
+  sniff:
+    TLS:
+      ports:
+      - 443
+      - 8443
+    HTTP:
+      ports:
+      - 80
+      - 8080
+      - 8880
+    QUIC:
+      ports:
+      - 443
+      - 8443
+rules:
+- MATCH,🎯 ARISTA CORE
+proxies:
+- name: 'T.ME: @aristapanel #1'
+  type: vless
+  server: feed.onetimeok.com
+  port: 443
+  uuid: 86208db7-8bbc-42c2-9eb2-ffe5675502c3
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: feed.onetimeok.com
+  grpc-opts:
+    grpc-service-name: app.v1.StreamService
+  reality-opts:
+    public-key: nhw3l7ERW8NoAh5lBv3dxkF-mkNYifxsSxX_HNiOhAU
+    short-id: "82674cbe556a1209"
+- name: 'T.ME: @aristapanel #2'
+  type: vless
+  server: api.oneokgames.com
+  port: 443
+  uuid: 86208db7-8bbc-42c2-9eb2-ffe5675502c3
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: api.oneokgames.com
+  grpc-opts:
+    grpc-service-name: push.v2.FeedService
+  reality-opts:
+    public-key: VTO26jBMVVnEnnHQON7k8lB3ED46_JHshPorJHHXSRU
+    short-id: "a30b344b5214d62f"
+- name: 'T.ME: @aristapanel #3'
+  type: vless
+  server: dl.onetimeok.com
+  port: 443
+  uuid: 86208db7-8bbc-42c2-9eb2-ffe5675502c3
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: dl.onetimeok.com
+  grpc-opts:
+    grpc-service-name: api.v2.PushService
+  reality-opts:
+    public-key: 4o20JlNKKsAzSGEvEMw6g1A8Ij37tiSU1CFwTZI4b3o
+    short-id: "8ba32e7cefbf524a"
+- name: 'T.ME: @aristapanel #4'
+  type: vless
+  server: grid.onetimeok.com
+  port: 443
+  uuid: 86208db7-8bbc-42c2-9eb2-ffe5675502c3
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: grid.onetimeok.com
+  grpc-opts:
+    grpc-service-name: gw.v1.MetricsService
+  reality-opts:
+    public-key: 28oR3ji9c2CneMNkbvcDL8WfvNWHS3GfA3RdtaF-pSg
+    short-id: "89e97b6542785ca6"
+- name: 'T.ME: @aristapanel #5'
+  type: vless
+  server: link.oneokgames.com
+  port: 443
+  uuid: 86208db7-8bbc-42c2-9eb2-ffe5675502c3
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: link.oneokgames.com
+  grpc-opts:
+    grpc-service-name: media.v1.SyncService
+  reality-opts:
+    public-key: x9m8Vxk2YlwXy8CLrHeEMDzLJWuRQ3mh6CPWA34u2yY
+    short-id: "ad613873130544ab"
+- name: 'T.ME: @aristapanel #6'
+  type: vless
+  server: tracker.oneokgames.com
+  port: 443
+  uuid: 86208db7-8bbc-42c2-9eb2-ffe5675502c3
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: tracker.oneokgames.com
+  grpc-opts:
+    grpc-service-name: push.v2.FeedService
+  reality-opts:
+    public-key: VTO26jBMVVnEnnHQON7k8lB3ED46_JHshPorJHHXSRU
+    short-id: "a30b344b5214d62f"
+- name: 'T.ME: @aristapanel #7'
+  type: vless
+  server: media.oneokgames.com
+  port: 443
+  uuid: 86208db7-8bbc-42c2-9eb2-ffe5675502c3
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: media.oneokgames.com
+  grpc-opts:
+    grpc-service-name: api.v2.ObjectService
+  reality-opts:
+    public-key: aDNsk312UNfOEh0RiyGZdK6opt__mMyKBSglqFKFP38
+    short-id: "dbdbeaf4aa6e1a5c"
+- name: 'T.ME: @aristapanel #8'
+  type: vless
+  server: api.onetimeok.com
+  port: 443
+  uuid: 86208db7-8bbc-42c2-9eb2-ffe5675502c3
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: api.onetimeok.com
+  grpc-opts:
+    grpc-service-name: api.v2.ApiService
+  reality-opts:
+    public-key: CQhnOxCj9UuA67kiDGGOcXB1G_XayWfHyhmlWGeG4Uw
+    short-id: "cfb882e7dcf03ef2"
+- name: 'T.ME: @aristapanel #9'
+  type: vless
+  server: static.oneoneok.com
+  port: 443
+  uuid: 86208db7-8bbc-42c2-9eb2-ffe5675502c3
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: static.oneoneok.com
+  grpc-opts:
+    grpc-service-name: api.v1.StreamService
+  reality-opts:
+    public-key: oVbonPGBPZ_qGyhHPe-LwsyPc0oobby2YknsPE90iRo
+    short-id: "0b46e0908285b078"
+- name: 'T.ME: @aristapanel #10'
+  type: vless
+  server: eu.oneokgames.com
+  port: 443
+  uuid: 86208db7-8bbc-42c2-9eb2-ffe5675502c3
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: eu.oneokgames.com
+  grpc-opts:
+    grpc-service-name: home.v1.ApiService
+  reality-opts:
+    public-key: 0ffnN7CdnOgEEFJ3AY1lnuTtsOPDL059UaTTxGxDjTA
+    short-id: "66ffd800ba2ec7c3"
+- name: 'T.ME: @aristapanel #11'
+  type: vless
+  server: 85.192.48.81
+  port: 443
+  uuid: 8f0560ec-ba22-4431-a6a7-318dc59d5233
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: joings-file-import.ru
+  reality-opts:
+    public-key: CxMPFpwhcR9Ocp-Xy_1J08mo-atdHKUf58WLOy_XlgM
+    short-id: "d9662905"
+- name: 'T.ME: @aristapanel #12'
+  type: vless
+  server: gateway.onetimeok.com
+  port: 443
+  uuid: 86208db7-8bbc-42c2-9eb2-ffe5675502c3
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: gateway.onetimeok.com
+  grpc-opts:
+    grpc-service-name: edge.v2.RelayService
+  reality-opts:
+    public-key: TLAYLGGk8xnADNCg4_7-E3YqlC8L4lVo4m7aauBL7kU
+    short-id: "ce7d5b58da528cf1"
+- name: 'T.ME: @aristapanel #13'
+  type: vless
+  server: hudrososov.blog
+  port: 443
+  uuid: dbb84eca-ee83-4ea7-9db0-064803d4b469
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: qq
+  servername: hudrososov.blog
+  reality-opts:
+    public-key: yuKSmrb2MumCllTTmBJiuNTQcGxEaNhqmZVR8dVjLwI
+    short-id: "d1c2b3a4"
+- name: 'T.ME: @aristapanel #14'
+  type: vless
+  server: 104.21.33.59
+  port: 443
+  uuid: 0f0b7f69-78e1-4e9e-8b35-0986444613e4
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: unsafe
+  servername: xwrivr.pages.dev
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      Host: xwrivr.pages.dev
+- name: 'T.ME: @aristapanel #15'
+  type: vless
+  server: 104.21.33.59
+  port: 443
+  uuid: 0f0b7f69-78e1-4e9e-8b35-0986444613e4
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: unsafe
+  servername: xwrivr.pages.dev
+  ws-opts:
+    path: /?ed=2048-MTMVPN
+    headers:
+      Host: xwrivr.pages.dev
+- name: 'T.ME: @aristapanel #16'
+  type: vless
+  server: 104.21.33.59
+  port: 443
+  uuid: 0f0b7f69-78e1-4e9e-8b35-0986444613e4
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: unsafe
+  servername: xwrivr.pages.dev
+  ws-opts:
+    path: /?TELEGRAM-TOOTFFARANGI?ed=512
+    headers:
+      Host: xwrivr.pages.dev
+- name: 'T.ME: @aristapanel #17'
+  type: vless
+  server: 104.21.33.59
+  port: 443
+  uuid: 0f0b7f69-78e1-4e9e-8b35-0986444613e4
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: unsafe
+  servername: xwrivr.pages.dev
+  ws-opts:
+    path: /?TELEGRAM--TOOTFFARANGI?ed=512
+    headers:
+      Host: xwrivr.pages.dev
+- name: 'T.ME: @aristapanel #18'
+  type: vless
+  server: 104.21.33.59
+  port: 443
+  uuid: 9b18ccef-b9e0-41d1-8990-9d970569e142
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: unsafe
+  servername: web-socket.tgdaosheng.ggff.net
+  ws-opts:
+    path: /proxyip=bpb.yousef.isegaro.com
+    headers:
+      Host: web-socket.tgdaosheng.ggff.net
+- name: 'T.ME: @aristapanel #19'
+  type: vless
+  server: 104.21.33.59
+  port: 443
+  uuid: 0f0b7f69-78e1-4e9e-8b35-0986444613e4
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: unsafe
+  servername: xwrivr.pages.dev
+  ws-opts:
+    path: /?TELEGRAM-V2ray_confiig?ed=512
+    headers:
+      Host: xwrivr.pages.dev
+- name: 'T.ME: @aristapanel #20'
+  type: vless
+  server: 104.21.33.59
+  port: 443
+  uuid: 0f0b7f69-78e1-4e9e-8b35-0986444613e4
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: unsafe
+  servername: xwrivr.pages.dev
+  ws-opts:
+    path: /?TELEGRAM--madshopx?ed=512
+    headers:
+      Host: xwrivr.pages.dev
+- name: 'T.ME: @aristapanel #21'
+  type: vless
+  server: 104.21.33.59
+  port: 443
+  uuid: 0f0b7f69-78e1-4e9e-8b35-0986444613e4
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: unsafe
+  servername: xwrivr.pages.dev
+  ws-opts:
+    path: /
+    headers:
+      Host: xwrivr.pages.dev
+- name: 'T.ME: @aristapanel #22'
+  type: vless
+  server: 104.21.33.59
+  port: 443
+  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: unsafe
+  servername: fx3h2kf8xn.fx6hsv0.ccwu.cc
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: fx3h2kf8xn.fx6hsv0.ccwu.cc
+- name: 'T.ME: @aristapanel #23'
+  type: vless
+  server: 104.21.33.59
+  port: 443
+  uuid: 0f0b7f69-78e1-4e9e-8b35-0986444613e4
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: unsafe
+  servername: xwrivr.pages.dev
+  ws-opts:
+    path: /?TELEGRAM-MARAMBASHI_MARAMBASHI?ed=512
+    headers:
+      Host: xwrivr.pages.dev
+- name: 'T.ME: @aristapanel #24'
+  type: vless
+  server: 104.21.33.59
+  port: 443
+  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: unsafe
+  servername: fx3l5i2wdfxln0.fx6hsv0.ccwu.cc
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: fx3l5i2wdfxln0.fx6hsv0.ccwu.cc
+- name: 'T.ME: @aristapanel #25'
+  type: vless
+  server: 104.21.33.59
+  port: 443
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: unsafe
+  servername: jp3.yohototo.top
+  ws-opts:
+    path: /tyxyws
+    headers:
+      Host: jp3.yohototo.top
+- name: 'T.ME: @aristapanel #26'
+  type: vless
+  server: 104.21.33.59
+  port: 443
+  uuid: 9b18ccef-b9e0-41d1-8990-9d970569e142
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: unsafe
+  servername: web-socket.tgdaosheng.ggff.net
+  ws-opts:
+    path: MTMVPN-MTMVPN-MTMVPN-MTMVPN-MTMVPN-MTMVPN-MTMVPN-MTMVPN-MTMVPN-MTMVPN-MTMVPN-MTMVPN-MTMVPN-MTMVPN-MTMVPN-MTMVPN-MTMVPN-MTMVPN-MTMVPN-MTMVPN-MTMVPN-MTMVPN-MTMVPN-MTMVPN
+    headers:
+      Host: web-socket.tgdaosheng.ggff.net
+- name: 'T.ME: @aristapanel #27'
+  type: vless
+  server: 104.21.33.59
+  port: 443
+  uuid: 25f3beef-a4b6-40bc-aa74-17a0f89f683c
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: unsafe
+  servername: finite-node.rtxconfigz.com
+  ws-opts:
+    path: /
+    headers:
+      Host: finite-node.rtxconfigz.com
+- name: 'T.ME: @aristapanel #28'
+  type: vless
+  server: adf.ly
+  port: 443
+  uuid: 1679af35-6dd6-4c09-ae3b-18f239217f3e
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: rAyAn-007.pArViN.DpDnS.OrG
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: rayan-007.parvin.dpdns.org
+- name: 'T.ME: @aristapanel #29'
+  type: vless
+  server: cis.visa.com
+  port: 443
+  uuid: 2196f28b-8217-4631-a28e-1d34112aa947
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: RAyaN107-gXrV00-2.raYan-107.WORKERs.dEv
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: RAyaN107-gXrV00-2.raYan-107.WORKERs.dEv
+- name: 'T.ME: @aristapanel #30'
+  type: vless
+  server: myanmar.visa.com
+  port: 443
+  uuid: 226c8b99-407a-4215-b00c-ff44b02b8b63
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: RAYaN106-9uIaCO-1.rayan-106.wOrKErs.DeV
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: RAYaN106-9uIaCO-1.rayan-106.wOrKErs.DeV
+- name: 'T.ME: @aristapanel #31'
+  type: vless
+  server: africa.visa.com
+  port: 443
+  uuid: 22c71398-f576-4608-8b1f-b65badde088b
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: rAYAN108-WzqDnd-3.RAyan-108.workERs.DEV
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: rAYAN108-WzqDnd-3.RAyan-108.workERs.DEV
+- name: 'T.ME: @aristapanel #32'
+  type: vless
+  server: 104.18.32.47
+  port: 443
+  uuid: 2f466a3b-5093-4556-8759-c87c8511c753
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: rAyAn-cOnFiG-it-1.pArSa.dPdNs.oRg
+  ws-opts:
+    path: /ws
+    headers:
+      Host: rAyAn-cOnFiG-it-1.pArSa.dPdNs.oRg
+- name: 'T.ME: @aristapanel #33'
+  type: vless
+  server: 104.18.32.47
+  port: 443
+  uuid: 2f466a3b-5093-4556-8759-c87c8511c753
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: rAyAn-cOnFiG-it-1.pAriSa.dPdNs.oRg
+  ws-opts:
+    path: /ws
+    headers:
+      Host: rAyAn-cOnFiG-it-1.pAriSa.dPdNs.oRg
+- name: 'T.ME: @aristapanel #34'
+  type: vless
+  server: 69.84.182.152
+  port: 443
+  uuid: 2f466a3b-5093-4556-8759-c87c8511c753
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: rAyAn-cOnFiG-it-1.pAriSa.dPdNs.oRg
+  ws-opts:
+    path: /ws
+    headers:
+      Host: rAyAn-cOnFiG-it-1.pAriSa.dPdNs.oRg
+- name: 'T.ME: @aristapanel #35'
+  type: vless
+  server: 69.84.182.20
+  port: 443
+  uuid: 2f466a3b-5093-4556-8759-c87c8511c753
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: rAyAn-cOnFiG-it-1.pArSa.dPdNs.oRg
+  ws-opts:
+    path: /ws
+    headers:
+      Host: rAyAn-cOnFiG-it-1.pArSa.dPdNs.oRg
+- name: 'T.ME: @aristapanel #36'
+  type: vless
+  server: 104.18.32.47
+  port: 443
+  uuid: 55b0463c-e27f-455b-a25a-70123297b9f4
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: rAyAn-cOnFiG-sg-1.pAriSa.dPdNs.oRg
+  ws-opts:
+    path: /ws
+    headers:
+      Host: rAyAn-cOnFiG-sg-1.pAriSa.dPdNs.oRg
+- name: 'T.ME: @aristapanel #37'
+  type: vless
+  server: 45.67.215.233
+  port: 443
+  uuid: 55b0463c-e27f-455b-a25a-70123297b9f4
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: rAyAn-cOnFiG-sg-1.pAriSa.dPdNs.oRg
+  ws-opts:
+    path: /ws
+    headers:
+      Host: rAyAn-cOnFiG-sg-1.pAriSa.dPdNs.oRg
+- name: 'T.ME: @aristapanel #38'
+  type: vless
+  server: 69.84.182.152
+  port: 443
+  uuid: 55b0463c-e27f-455b-a25a-70123297b9f4
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: rAyAn-cOnFiG-sg-1.pArSa.dPdNs.oRg
+  ws-opts:
+    path: /ws
+    headers:
+      Host: rAyAn-cOnFiG-sg-1.pArSa.dPdNs.oRg
+- name: 'T.ME: @aristapanel #39'
+  type: vless
+  server: 69.84.182.20
+  port: 443
+  uuid: 55b0463c-e27f-455b-a25a-70123297b9f4
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: rAyAn-cOnFiG-sg-1.pArSa.dPdNs.oRg
+  ws-opts:
+    path: /ws
+    headers:
+      Host: rAyAn-cOnFiG-sg-1.pArSa.dPdNs.oRg
+- name: 'T.ME: @aristapanel #40'
+  type: vless
+  server: bitpay.com
+  port: 443
+  uuid: 568db765-6970-40c8-8087-83ea9ba2429e
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: rAyAn-007.pArAsToO.DpDnS.OrG
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: rAyAn-007.pArAsToO.DpDnS.OrG
+- name: 'T.ME: @aristapanel #41'
+  type: vless
+  server: digitalocean.com
+  port: 443
+  uuid: 7e346122-2ee0-406e-b964-a8ee665f1814
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: paRMis-1Tk63J.PArMiS.WoRkeRs.DeV
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: paRMis-1Tk63J.PArMiS.WoRkeRs.DeV
+- name: 'T.ME: @aristapanel #42'
+  type: vless
+  server: change.org
+  port: 443
+  uuid: 82ebd58c-156a-4c2b-9cf9-1762f0a1e04f
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: rAyAn-007.lEiLa.dPdNs.oRg
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: rAyAn-007.lEiLa.dPdNs.oRg
+- name: 'T.ME: @aristapanel #43'
+  type: vless
+  server: 104.18.32.47
+  port: 443
+  uuid: 8899d15d-a022-4b61-b848-87d4de0a034a
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: rAyAn-cOnFiG-uk-1.pAriSa.dPdNs.oRg
+  ws-opts:
+    path: /ws
+    headers:
+      Host: rAyAn-cOnFiG-uk-1.pAriSa.dPdNs.oRg
+- name: 'T.ME: @aristapanel #44'
+  type: vless
+  server: 69.84.182.20
+  port: 443
+  uuid: 8899d15d-a022-4b61-b848-87d4de0a034a
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: rAyAn-cOnFiG-uk-1.pAriSa.dPdNs.oRg
+  ws-opts:
+    path: /ws
+    headers:
+      Host: rAyAn-cOnFiG-uk-1.pAriSa.dPdNs.oRg
+- name: 'T.ME: @aristapanel #45'
+  type: vless
+  server: transferwise.com
+  port: 443
+  uuid: 8899d15d-a022-4b61-b848-87d4de0a034a
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: rAyAn-cOnFiG-uk-1.pArSa.dPdNs.oRg
+  ws-opts:
+    path: /ws
+    headers:
+      Host: rAyAn-cOnFiG-uk-1.pArSa.dPdNs.oRg
+- name: 'T.ME: @aristapanel #46'
+  type: vless
+  server: www.speedtest.net
+  port: 443
+  uuid: 98dc8a17-0e58-4270-8407-95869d24bb5c
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: Parsa-0ShPE1.pARsa-E06.wOrkERs.Dev
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: Parsa-0ShPE1.pARsa-E06.wOrkERs.Dev
+- name: 'T.ME: @aristapanel #47'
+  type: vless
+  server: 104.18.32.47
+  port: 443
+  uuid: 9ccd06a2-5616-47e3-9763-f9696959d7ad
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: rAyAn-cOnFiG-de-1.pAriSa.dPdNs.oRg
+  ws-opts:
+    path: /ws
+    headers:
+      Host: rAyAn-cOnFiG-de-1.pAriSa.dPdNs.oRg
+- name: 'T.ME: @aristapanel #48'
+  type: vless
+  server: 208.103.161.110
+  port: 443
+  uuid: 9ccd06a2-5616-47e3-9763-f9696959d7ad
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: rAyAn-cOnFiG-de-1.pArSa.dPdNs.oRg
+  ws-opts:
+    path: /ws
+    headers:
+      Host: rAyAn-cOnFiG-de-1.pArSa.dPdNs.oRg
+- name: 'T.ME: @aristapanel #49'
+  type: vless
+  server: 208.103.161.110
+  port: 443
+  uuid: 9ccd06a2-5616-47e3-9763-f9696959d7ad
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: rAyAn-cOnFiG-de-1.pAriSa.dPdNs.oRg
+  ws-opts:
+    path: /ws
+    headers:
+      Host: rAyAn-cOnFiG-de-1.pAriSa.dPdNs.oRg
+- name: 'T.ME: @aristapanel #50'
+  type: vless
+  server: 69.84.182.20
+  port: 443
+  uuid: 9ccd06a2-5616-47e3-9763-f9696959d7ad
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: rAyAn-cOnFiG-de-1.pArSa.dPdNs.oRg
+  ws-opts:
+    path: /ws
+    headers:
+      Host: rAyAn-cOnFiG-de-1.pArSa.dPdNs.oRg
+- name: 'T.ME: @aristapanel #51'
+  type: vless
+  server: usa.visa.com
+  port: 443
+  uuid: a114d067-b900-4f60-87a5-50d4d63972b8
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: PaRiSA-CC5Zk0.paRISa-44c.woRKeRs.dev
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: PaRiSA-CC5Zk0.paRISa-44c.woRKeRs.dev
+- name: 'T.ME: @aristapanel #52'
+  type: vless
+  server: mybb.com
+  port: 443
+  uuid: aebe5a70-0ca3-46ce-8208-8b5bab1346ce
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: rAyAn-007.nAsTaRaN.DpDnS.OrG
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: rayan-007.nastaran.dpdns.org
+- name: 'T.ME: @aristapanel #53'
+  type: vless
+  server: 1password.com
+  port: 443
+  uuid: d2d0f796-edb0-427a-af32-ae360679f9e7
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: rAyAn-007.fOtOn.dPdNs.oRg
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: rayan-007.foton.dpdns.org
+- name: 'T.ME: @aristapanel #54'
+  type: vless
+  server: 104.18.32.47
+  port: 443
+  uuid: e65a5cbc-5663-4f7d-ad7d-800e86ba487d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: rAyAn-cOnFiG-fr-1.pAriSa.dPdNs.oRg
+  ws-opts:
+    path: /ws
+    headers:
+      Host: rAyAn-cOnFiG-fr-1.pAriSa.dPdNs.oRg
+- name: 'T.ME: @aristapanel #55'
+  type: vless
+  server: 194.76.18.25
+  port: 443
+  uuid: e65a5cbc-5663-4f7d-ad7d-800e86ba487d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: rAyAn-cOnFiG-fr-1.pArSa.dPdNs.oRg
+  ws-opts:
+    path: /ws
+    headers:
+      Host: rAyAn-cOnFiG-fr-1.pArSa.dPdNs.oRg
+- name: 'T.ME: @aristapanel #56'
+  type: vless
+  server: 194.76.18.25
+  port: 443
+  uuid: e65a5cbc-5663-4f7d-ad7d-800e86ba487d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: rAyAn-cOnFiG-fr-1.pAriSa.dPdNs.oRg
+  ws-opts:
+    path: /ws
+    headers:
+      Host: rAyAn-cOnFiG-fr-1.pAriSa.dPdNs.oRg
+- name: 'T.ME: @aristapanel #57'
+  type: vless
+  server: 69.84.182.20
+  port: 443
+  uuid: e65a5cbc-5663-4f7d-ad7d-800e86ba487d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: rAyAn-cOnFiG-fr-1.pArSa.dPdNs.oRg
+  ws-opts:
+    path: /ws
+    headers:
+      Host: rAyAn-cOnFiG-fr-1.pArSa.dPdNs.oRg
+- name: 'T.ME: @aristapanel #58'
+  type: vless
+  server: medium.com
+  port: 443
+  uuid: f2a73750-3087-48ff-a763-1348c15dce68
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: rAyAn-007.mAxImA.DpDnS.OrG
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: rAyAn-007.mAxImA.DpDnS.OrG
+- name: 'T.ME: @aristapanel #59'
+  type: vless
+  server: 162.159.137.54
+  port: 443
+  uuid: 4d10c997-4781-4cd9-82c3-15453523e12c
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: support.zoom.us.yxls.eu.cc
+  ws-opts:
+    path: /sg-melbi
+    headers:
+      Host: support.zoom.us.yxls.eu.cc
+- name: 'T.ME: @aristapanel #60'
+  type: vless
+  server: 172.64.154.5
+  port: 8443
+  uuid: 29ca503d-e6b8-4509-b666-48133f450857
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: random
+  servername: learn00.evany.de5.net
+  ws-opts:
+    path: /fdip
+    headers:
+      Host: learn00.evany.de5.net
+- name: 'T.ME: @aristapanel #61'
+  type: vless
+  server: 172.64.35.32
+  port: 8443
+  uuid: 29ca503d-e6b8-4509-b666-48133f450857
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: learn00.evany.de5.net
+  ws-opts:
+    path: /fdip
+    headers:
+      Host: learn00.evany.de5.net
+- name: 'T.ME: @aristapanel #62'
+  type: vless
+  server: 172.64.33.117
+  port: 8443
+  uuid: 29ca503d-e6b8-4509-b666-48133f450857
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: random
+  servername: learn00.evany.de5.net
+  ws-opts:
+    path: /fdip
+    headers:
+      Host: learn00.evany.de5.net
+- name: 'T.ME: @aristapanel #63'
+  type: vless
+  server: cf.090227.xyz
+  port: 443
+  uuid: 29ca503d-e6b8-4509-b666-48133f450857
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: random
+  servername: learn00.evany.de5.net
+  ws-opts:
+    path: /fdip
+    headers:
+      Host: learn00.evany.de5.net
+- name: 'T.ME: @aristapanel #64'
+  type: vless
+  server: 193.227.99.54
+  port: 2052
+  uuid: 3d164933-17d7-4ee1-8a99-9be47536d132
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'T.ME: @aristapanel #65'
+  type: vless
+  server: 104.17.147.118
+  port: 443
+  uuid: 4d10c997-4781-4cd9-82c3-15453523e12c
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: support.zoom.us.yxls.eu.cc
+  ws-opts:
+    path: /sg-melbi
+    headers:
+      Host: support.zoom.us.yxls.eu.cc
+- name: 'T.ME: @aristapanel #66'
+  type: vless
+  server: 104.17.121.110
+  port: 2052
+  uuid: 3d164933-17d7-4ee1-8a99-9be47536d132
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'T.ME: @aristapanel #67'
+  type: vless
+  server: ip.sb
+  port: 443
+  uuid: 29ca503d-e6b8-4509-b666-48133f450857
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: learn00.evany.de5.net
+  ws-opts:
+    path: /fdip
+    headers:
+      Host: learn00.evany.de5.net
+- name: 'T.ME: @aristapanel #68'
+  type: vless
+  server: 162.159.24.111
+  port: 443
+  uuid: 29ca503d-e6b8-4509-b666-48133f450857
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: random
+  servername: learn00.evany.de5.net
+  ws-opts:
+    path: /fdip
+    headers:
+      Host: learn00.evany.de5.net
+- name: 'T.ME: @aristapanel #69'
+  type: vless
+  server: 172.67.75.172
+  port: 443
+  uuid: 29ca503d-e6b8-4509-b666-48133f450857
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: learn00.evany.de5.net
+  ws-opts:
+    path: /fdip
+    headers:
+      Host: learn00.evany.de5.net
+- name: 'T.ME: @aristapanel #70'
+  type: vless
+  server: 104.18.38.78
+  port: 2087
+  uuid: 29ca503d-e6b8-4509-b666-48133f450857
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: learn00.evany.de5.net
+  ws-opts:
+    path: /fdip
+    headers:
+      Host: learn00.evany.de5.net
+- name: 'T.ME: @aristapanel #71'
+  type: vless
+  server: 104.20.39.109
+  port: 443
+  uuid: 4d10c997-4781-4cd9-82c3-15453523e12c
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: support.zoom.us.yxls.eu.cc
+  ws-opts:
+    path: /sg-melbi
+    headers:
+      Host: support.zoom.us.yxls.eu.cc
+- name: 'T.ME: @aristapanel #72'
+  type: vless
+  server: 162.159.45.24
+  port: 8443
+  uuid: 29ca503d-e6b8-4509-b666-48133f450857
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: random
+  servername: learn00.evany.de5.net
+  ws-opts:
+    path: /fdip
+    headers:
+      Host: learn00.evany.de5.net
+- name: 'T.ME: @aristapanel #73'
+  type: vless
+  server: 87.120.92.181
+  port: 443
+  uuid: 94d2d711-76e5-4d82-a3c9-4f06fd5558c8
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: e-spectacular.ru
+  reality-opts:
+    public-key: oEZR7FpSd4ZrBKHrBLJqfGq_23-xf7DQy0bkqkiq0mw
+    short-id: "825d392c67e4"
+- name: 'T.ME: @aristapanel #74'
+  type: vless
+  server: 162.159.38.105
+  port: 443
+  uuid: 4d10c997-4781-4cd9-82c3-15453523e12c
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: support.zoom.us.yxls.eu.cc
+  ws-opts:
+    path: /sg-melbi
+    headers:
+      Host: support.zoom.us.yxls.eu.cc
+- name: 'T.ME: @aristapanel #75'
+  type: vless
+  server: 104.26.9.48
+  port: 443
+  uuid: 4d10c997-4781-4cd9-82c3-15453523e12c
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: support.zoom.us.yxls.eu.cc
+  ws-opts:
+    path: /sg-melbi
+    headers:
+      Host: support.zoom.us.yxls.eu.cc
+- name: 'T.ME: @aristapanel #76'
+  type: vless
+  server: 162.159.141.83
+  port: 443
+  uuid: 4d10c997-4781-4cd9-82c3-15453523e12c
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: support.zoom.us.yxls.eu.cc
+  ws-opts:
+    path: /sg-melbi
+    headers:
+      Host: support.zoom.us.yxls.eu.cc
+- name: 'T.ME: @aristapanel #77'
+  type: vless
+  server: 88.218.44.4
+  port: 443
+  uuid: 7c74b0e4-f132-5583-4692-622a7d6b71a4
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: dl.google.com
+  reality-opts:
+    public-key: Rt2wltCWOxIroFggNWMudZDBJXls8DsF4icaWqxKDk8
+- name: 'T.ME: @aristapanel #78'
+  type: vless
+  server: us.differentok.com
+  port: 443
+  uuid: eb1c3a3c-c828-404d-bf98-b878c5435600
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: us.differentok.com
+  grpc-opts:
+    grpc-service-name: media.v2.RelayService
+  reality-opts:
+    public-key: Jxwj8rNcJnXop1Xk9Ydst_wFPJsQOtZ74g50saIgokU
+    short-id: "a5668d2759baa4ac"
+- name: 'T.ME: @aristapanel #79'
+  type: vless
+  server: 162.159.38.119
+  port: 443
+  uuid: 49e76398-5127-4005-90cb-c2a971f745f1
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: loctc.goldcitynode-tobi.sbs
+  ws-opts:
+    path: /carbon
+    headers:
+      Host: loctc.goldcitynode-tobi.sbs
+- name: 'T.ME: @aristapanel #80'
+  type: vless
+  server: line-vpn-production-7798.up.railway.app
+  port: 443
+  uuid: 41e08548-679b-56ba-42d2-48523a168cff
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: line-vpn-production-7798.up.railway.app
+  ws-opts:
+    path: /ws/41e08548-679b-56ba-42d2-48523a168cff
+    headers:
+      Host: line-vpn-production-7798.up.railway.app
+- name: 'T.ME: @aristapanel #81'
+  type: vless
+  server: 194.76.154.31
+  port: 40443
+  uuid: 9f0baff8-bdee-4de9-9515-bcc4932b41fa
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: deepl.com
+  reality-opts:
+    public-key: MN6QjUHDUXyteMdR-cDna89fq4X3qgQhLnNqTtRUbBQ
+    short-id: "a8ae"
+- name: 'T.ME: @aristapanel #82'
+  type: vless
+  server: forallpanel.srtongston.ir
+  port: 8880
+  uuid: f8050d06-6657-44bc-9910-84a865a677c9
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'T.ME: @aristapanel #83'
+  type: vless
+  server: cf-mci.coixconqwe1.ir
+  port: 8880
+  uuid: f8050d06-6657-44bc-9910-84a865a677c9
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'T.ME: @aristapanel #84'
+  type: vless
+  server: 192.142.12.198
+  port: 443
+  uuid: f0dc4d4f-c956-0004-bc3a-021424b8e879
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: qq
+  servername: jsonstudio.site
+  reality-opts:
+    public-key: 6VMgXXhZdJCiOG05EyK_zTHh00kpFGrZJeZIEPgqhjY
+    short-id: "1c3e8241a8743df9"
+- name: 'T.ME: @aristapanel #85'
+  type: vless
+  server: 192.142.12.231
+  port: 443
+  uuid: bd92eda1-8b37-0004-91fb-dafe419590ea
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: qq
+  servername: regexbuilder.online
+  reality-opts:
+    public-key: 6VMgXXhZdJCiOG05EyK_zTHh00kpFGrZJeZIEPgqhjY
+    short-id: "1c3e8241a8743df9"
+- name: 'T.ME: @aristapanel #86'
+  type: vless
+  server: 192.142.12.175
+  port: 443
+  uuid: f0dc4d4f-c956-0004-bc3a-021424b8e879
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: qq
+  servername: jsonstudio.site
+  reality-opts:
+    public-key: 6VMgXXhZdJCiOG05EyK_zTHh00kpFGrZJeZIEPgqhjY
+    short-id: "1c3e8241a8743df9"
+- name: 'T.ME: @aristapanel #87'
+  type: vless
+  server: 104.21.26.97
+  port: 8443
+  uuid: 29ca503d-e6b8-4509-b666-48133f450857
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: learn00.evany.de5.net
+  ws-opts:
+    path: /fdip
+    headers:
+      Host: learn00.evany.de5.net
+- name: 'T.ME: @aristapanel #88'
+  type: vless
+  server: 108.162.195.58
+  port: 443
+  uuid: 29ca503d-e6b8-4509-b666-48133f450857
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: learn00.evany.de5.net
+  ws-opts:
+    path: /fdip=tw.william.us.ci!txt
+    headers:
+      Host: learn00.evany.de5.net
+- name: 'T.ME: @aristapanel #89'
+  type: vless
+  server: 185.136.12.190
+  port: 443
+  uuid: 2cca8201-c93e-40eb-bd8a-fea4170c169e
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: firefox
+  servername: deu683.lackerdeu.org
+- name: 'T.ME: @aristapanel #90'
+  type: vless
+  server: 45.196.201.5
+  port: 443
+  uuid: f75814f6-8f81-4847-b792-168c41f2dc85
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: storage.yandex.net
+  reality-opts:
+    public-key: zii4nGNapnFKL6SN8GzWNqFlElBvUCUFUThEP0kFH04
+    short-id: "c6ef72e4635d15a5"
+- name: 'T.ME: @aristapanel #91'
+  type: vless
+  server: 45.196.201.4
+  port: 443
+  uuid: f75814f6-8f81-4847-b792-168c41f2dc85
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: storage.yandex.net
+  reality-opts:
+    public-key: zii4nGNapnFKL6SN8GzWNqFlElBvUCUFUThEP0kFH04
+    short-id: "c6ef72e4635d15a5"
+- name: 'T.ME: @aristapanel #92'
+  type: vless
+  server: 45.80.108.236
+  port: 443
+  uuid: ef9d2063-0140-472b-8b17-ba02ba4b4435
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: lively-resonance-4e12.electrocellco-cf-059.workers.dev
+  ws-opts:
+    path: /proxyip
+    headers:
+      Host: lively-resonance-4e12.electrocellco-cf-059.workers.dev
+- name: 'T.ME: @aristapanel #93'
+  type: vless
+  server: www.visa.com.sg
+  port: 8880
+  uuid: 4af06e6a-63ae-43c1-83c0-f8f613aef263
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /pyip=ProxyIP.JP.CMLiussss.net
+    headers:
+      Host: withered-sea-c187.445-608.workers.dev
+- name: 'T.ME: @aristapanel #94'
+  type: vless
+  server: www.visa.com.sg
+  port: 8880
+  uuid: 380de97f-1d87-4394-acb8-f9ad7a422ac1
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /pyip=ProxyIP.SG.CMLiussss.net
+    headers:
+      Host: proud-recipe-239d.305-0da.workers.dev
+- name: 'T.ME: @aristapanel #95'
+  type: vless
+  server: www.ipget.net
+  port: 8880
+  uuid: f3a30870-eb2e-4ad7-85cb-c0e65d061d5b
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /pyip=ProxyIP.US.CMLiussss.net
+    headers:
+      Host: shrill-mouse-dacd.391.workers.dev
+- name: 'T.ME: @aristapanel #96'
+  type: vless
+  server: www.ipget.net
+  port: 8880
+  uuid: e06b6255-1c90-4db0-bd8c-7704df82b27c
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /pyip=ProxyIP.SG.CMLiussss.net
+    headers:
+      Host: silent-cherry-7112.257.workers.dev
+- name: 'T.ME: @aristapanel #97'
+  type: vless
+  server: www.ipget.net
+  port: 8880
+  uuid: b7300b59-7598-4997-9714-27efd75065d0
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /pyip=proxyip.kr.cmliussss.net
+    headers:
+      Host: mute-lab-4c55.389.workers.dev
+- name: 'T.ME: @aristapanel #98'
+  type: vless
+  server: www.ipget.net
+  port: 8880
+  uuid: fc46b03d-e185-48e7-8c18-dea03b4a0c25
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /pyip=ProxyIP.SG.CMLiussss.net
+    headers:
+      Host: flat-union-b292.17-4e0.workers.dev
+- name: 'T.ME: @aristapanel #99'
+  type: vless
+  server: www.gov.ua
+  port: 8880
+  uuid: e974d4c7-2376-4b65-aa40-0680961ff5e4
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /pyip=ProxyIP.KR.CMLiussss.net
+    headers:
+      Host: icy-unit-58dc.157-59c.workers.dev
+- name: 'T.ME: @aristapanel #100'
+  type: vless
+  server: www.gov.ua
+  port: 8880
+  uuid: 767c5a66-bd28-440a-90c8-7ae1101a0172
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /pyip=ProxyIP.US.CMLiussss.net
+    headers:
+      Host: still-voice-1adc.135-275.workers.dev
+- name: 'T.ME: @aristapanel #101'
+  type: vless
+  server: www.gov.ua
+  port: 8880
+  uuid: 580af126-448f-407b-a4c2-785e702cd8ea
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /pyip=proxyip.jp.cmliussss.net
+    headers:
+      Host: misty-wood-62b4.263-93e.workers.dev
+- name: 'T.ME: @aristapanel #102'
+  type: vless
+  server: themeforest.net
+  port: 8880
+  uuid: 80f083d3-8348-4514-b075-62f303b7fd86
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /pyip=ProxyIP.KR.CMLiussss.net
+    headers:
+      Host: young-term-5783.284.workers.dev
+- name: 'T.ME: @aristapanel #103'
+  type: vless
+  server: shrill-cell-cca7.158-6fa.workers.dev
+  port: 8880
+  uuid: 3e7bb66e-d7c6-4711-aa05-e4ab0ec58c6d
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /pyip=ProxyIP.SG.CMLiussss.net
+- name: 'T.ME: @aristapanel #104'
+  type: vless
+  server: netraidly.ru
+  port: 40443
+  uuid: 4480161e-2c59-4d37-8736-675c9af32bf1
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: qq
+  servername: deepl.com
+  reality-opts:
+    public-key: fWzCKXwvMXaacsl1DdFb1vKQ9l9cTK1G7udqmaYHL0Y
+    short-id: "01d1bf2d4755d40c"
+- name: 'T.ME: @aristapanel #105'
+  type: vless
+  server: nameless-moon-7c4d.shafmrhjlos23.workers.dev
+  port: 443
+  uuid: 9e65fe63-b771-c63d-5272-fdd700000000
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: nameless-moon-7c4d.shafmrhjlos23.workers.dev
+  ws-opts:
+    path: /
+- name: 'T.ME: @aristapanel #106'
+  type: vless
+  server: log.bpminecraft.com
+  port: 8880
+  uuid: 6b89f475-913c-4381-a102-f5e06a129685
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /pyip=ProxyIP.KR.CMLiussss.net
+    headers:
+      Host: proud-dawn-56f1.125-85b.workers.dev
+- name: 'T.ME: @aristapanel #107'
+  type: vless
+  server: lists.soloramtin.cyou
+  port: 443
+  uuid: 67eb6b17-7797-4ded-bf52-423c4c5f6cbd
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.foxsports.com
+  reality-opts:
+    public-key: G7bpUPFSW28-oE6ff8qZac1_apU6PiJ-GHmi7tAPDSY
+    short-id: "91af08b1ce1f"
+- name: 'T.ME: @aristapanel #108'
+  type: vless
+  server: de2.cnyvpn.com
+  port: 2096
+  uuid: 60e2a548-96aa-4850-a279-1edab743c39b
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: conrad.de
+  reality-opts:
+    public-key: pVUUDlLKPprJgV_ZcehzuhOFmw44Gk1DlRsny1zyxCI
+    short-id: "e3e76808b9fcd591"
+- name: 'T.ME: @aristapanel #109'
+  type: vless
+  server: de2.cnyvpn.com
+  port: 2096
+  uuid: 60e2a548-96aa-4850-a279-1edab743c39b
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: conrad.de
+  reality-opts:
+    public-key: pVUUDlLKPprJgV_ZcehzuhOFmw44Gk1DlRsny1zyxCI
+    short-id: "e3e76808b9fcd591"
+- name: 'T.ME: @aristapanel #110'
+  type: vless
+  server: chatgpt.com
+  port: 2053
+  uuid: d361072e-9e0e-4e2d-8ec7-2a4189b5b23a
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: ov.iran-servers.shop
+  ws-opts:
+    path: /J5aLQOY1R9ONWYCM
+    headers:
+      Host: ov.iran-servers.shop
+- name: 'T.ME: @aristapanel #111'
+  type: vless
+  server: cdn.netraidly.ru
+  port: 40443
+  uuid: 4bf5a71c-d726-4585-b095-7396675706d5
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: deepl.com
+  reality-opts:
+    public-key: D_ks4Yyk4-osnWBxCFvd0_UEgohUXvR2zJoWQg1CACU
+    short-id: "c84f"
+- name: 'T.ME: @aristapanel #112'
+  type: vless
+  server: 95.216.27.15
+  port: 2053
+  uuid: ea48c5b6-7a19-4fea-9902-17004a424452
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: www.apple.com
+  reality-opts:
+    public-key: JmAuytyIXW4klA7zqeSYi3EtWR0d4fNJCq4nR0LMQE8
+    short-id: "07316dd7d0e11c90"
+- name: 'T.ME: @aristapanel #113'
+  type: vless
+  server: 84.32.61.79
+  port: 443
+  uuid: 5bfc6650-8b56-416a-b0e9-b98fc6367c0d
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: us.api-yandex.net
+  reality-opts:
+    public-key: jA_Xd8qfMloJg0lbdxPnEcDJc3MltgueXpxYQAWnlD0
+    short-id: "0f4dacf66101e05f"
+- name: 'T.ME: @aristapanel #114'
+  type: vless
+  server: 72.56.92.177
+  port: 40443
+  uuid: 4480161e-2c59-4d37-8736-675c9af32bf1
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: deepl.com
+  reality-opts:
+    public-key: fWzCKXwvMXaacsl1DdFb1vKQ9l9cTK1G7udqmaYHL0Y
+    short-id: "01d1bf2d4755d40c"
+- name: 'T.ME: @aristapanel #115'
+  type: vless
+  server: 72.56.40.152
+  port: 443
+  uuid: 3f054fce-df15-4f7c-8616-56a8b17e84b4
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: usa.korgivps.ru
+  ws-opts:
+    path: /api/user
+- name: 'T.ME: @aristapanel #116'
+  type: vless
+  server: 54.37.136.194
+  port: 2053
+  uuid: 7061b26c-0f6c-49b5-be42-af2c011c04bc
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: www.apple.com
+  reality-opts:
+    public-key: TtGgrgk1OLMjWBaomJ1JkUOvmtMx7sLJdvvN0bxmZF8
+    short-id: "bdc1efeb01044e93"
+- name: 'T.ME: @aristapanel #117'
+  type: vless
+  server: 51.77.217.70
+  port: 2053
+  uuid: fae272a6-a184-4c91-83ed-771abdcff404
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: www.google.com
+  reality-opts:
+    public-key: 5Me9XEMwr9siyrnV5zPHYfxB3QLqw-OzNAOuzkFu1kw
+    short-id: "7af95330630a7327"
+- name: 'T.ME: @aristapanel #118'
+  type: vless
+  server: 47.89.186.170
+  port: 55861
+  uuid: d51ed55c-d6dd-400b-aaf6-017c33969bfe
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: www.intel.com
+  reality-opts:
+    public-key: t2ndf6SeVxinFCo5bcemnW_ZZhAtmHWiAkllks5qPWs
+    short-id: "7551ed1b"
+- name: 'T.ME: @aristapanel #119'
+  type: vless
+  server: 31.56.189.27
+  port: 8765
+  uuid: df9f5aca-eda0-428f-a752-e53866153d12
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: srv-21bac9.vless.monster
+  reality-opts:
+    public-key: M08l5tDmJUYELykZCNYQyFgtR9Zc-A4ZGlUSLcUeS2c
+    short-id: "1bcc9177f3124b25"
+- name: 'T.ME: @aristapanel #120'
+  type: vless
+  server: 3.114.220.22
+  port: 10583
+  uuid: 814bd064-544d-4255-a070-5705c03f6da9
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0
+    short-id: "48050fab"
+- name: 'T.ME: @aristapanel #121'
+  type: vless
+  server: 3.114.220.22
+  port: 19645
+  uuid: 814bd064-544d-4255-a070-5705c03f6da9
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0
+    short-id: "48050fab"
+- name: 'T.ME: @aristapanel #122'
+  type: vless
+  server: 3.114.220.22
+  port: 18007
+  uuid: 814bd064-544d-4255-a070-5705c03f6da9
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0
+    short-id: "48050fab"
+- name: 'T.ME: @aristapanel #123'
+  type: vless
+  server: 203.23.179.222
+  port: 8443
+  uuid: d53f098c-c146-4c16-b8fc-263743fdb6b3
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: minecraft.mega-play.app
+  reality-opts:
+    public-key: y9dQYV_XNHvZeVhXfUVjTDATXpqPSw9HHOtqiobp0io
+    short-id: "038d56046630fc9a"
+- name: 'T.ME: @aristapanel #124'
+  type: vless
+  server: 203.23.179.147
+  port: 8443
+  uuid: d53f098c-c146-4c16-b8fc-263743fdb6b3
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: palworld.mega-play.app
+  reality-opts:
+    public-key: ADsgS2NlS_Mi16n8h1beCVgWL4KvNj5tnRg9qYzFG14
+    short-id: "ae47480fa46b76b0"
+- name: 'T.ME: @aristapanel #125'
+  type: vless
+  server: 194.55.189.249
+  port: 40443
+  uuid: 8212a50b-25bf-4739-bba1-aaffb5ffc84c
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: deepl.com
+  reality-opts:
+    public-key: KCbW84C8h2Ja01LS0Ro8EpLLfzMTjs11t1ldDWLd5zo
+    short-id: "aae8"
+- name: 'T.ME: @aristapanel #126'
+  type: vless
+  server: 188.114.97.4
+  port: 443
+  uuid: cf39fab0-bb85-42cb-9945-2ad69d78e575
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: rubifen.adaspoloandco.com
+  ws-opts:
+    path: /GOrbEh#TELEGRAM-MARAMBASHI_MARAMBASHI_MARAMBASHI_MARAMBASHI_MARAMBASHI?ed=512
+    headers:
+      Host: rubifen.adaspoloandco.com
+- name: 'T.ME: @aristapanel #127'
+  type: vless
+  server: 172.67.74.10
+  port: 2087
+  uuid: 97ea73b6-2043-4238-903c-a1e3d4a43c96
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: amphetamine.adaspoloandco.com
+  ws-opts:
+    path: /download.php
+    headers:
+      Host: amphetamine.adaspoloandco.com
+- name: 'T.ME: @aristapanel #128'
+  type: vless
+  server: 172.235.43.210
+  port: 53957
+  uuid: 7ab29f89-6eef-4171-b232-fc4f580ad31b
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.nvidia.com
+  reality-opts:
+    public-key: XUHlbk5VH5z4E2wxZBhlpLZ33qevyQgqU7dheRDgoGQ
+    short-id: "44e82fd7b97b14"
+- name: 'T.ME: @aristapanel #129'
+  type: vless
+  server: 168.222.194.138
+  port: 9880
+  uuid: 76186f1e-3062-4a2b-98c2-fab3c61a9511
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: dl.google.com
+  grpc-opts:
+    grpc-service-name: grpc-tunnel
+  reality-opts:
+    public-key: bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU
+    short-id: "aabbccdd"
+- name: 'T.ME: @aristapanel #130'
+  type: vless
+  server: 158.69.112.254
+  port: 443
+  uuid: 661f395d-b153-4199-a04b-693f5fe7f261
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.speedtest.net
+  reality-opts:
+    public-key: wo417FrFdjy7ZhccQ-VWGZEKcoCHSEfyWcJT1pIVc1Y
+    short-id: "3d3c1e645f763ee3"
+- name: 'T.ME: @aristapanel #131'
+  type: vless
+  server: 151.101.129.242
+  port: 443
+  uuid: cd9e00aa-3581-42e4-a35c-56ae3a521159
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: minimize-evenness.cdn-content.com
+  ws-opts:
+    path: /ws
+    headers:
+      Host: minimize-evenness.cdn-content.com
+- name: 'T.ME: @aristapanel #132'
+  type: vless
+  server: 15.204.97.219
+  port: 23576
+  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: fuck.rkn
+  reality-opts:
+    public-key: 1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s
+    short-id: "01"
+- name: 'T.ME: @aristapanel #133'
+  type: vless
+  server: 147.45.145.127
+  port: 443
+  uuid: 534cbbe2-cc36-4f2d-8fb0-90410e7148c9
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: yahoo.com
+  reality-opts:
+    public-key: tWRR3W8jBAQKBUujLzL7Xri3WXy3F08OxHYrkSOnlAc
+    short-id: "52a6"
+- name: 'T.ME: @aristapanel #134'
+  type: vless
+  server: 144.31.224.72
+  port: 443
+  uuid: d53f098c-c146-4c16-b8fc-263743fdb6b3
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: nlplay.tgflow.me
+  reality-opts:
+    public-key: 4mlryhYiCf6KtnCEU55-CSuVZ4dlRhSv9MpNDBqeSAs
+    short-id: "1bc96deb0a9e3f6a"
+- name: 'T.ME: @aristapanel #135'
+  type: vless
+  server: 104.18.37.228
+  port: 443
+  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: hhlfy.twiladaphne.ndjp.net
+  ws-opts:
+    path: /fp
+    headers:
+      Host: hhlfy.twiladaphne.ndjp.net
+- name: 'T.ME: @aristapanel #136'
+  type: vless
+  server: 104.18.34.21
+  port: 8443
+  uuid: 656bb400-3b7a-47e3-94b0-0362f3865072
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: socks5.revil-time3.workers.dev
+  ws-opts:
+    path: /socks5://128.140.46.169:13482
+    headers:
+      Host: socks5.revil-time3.workers.dev
+- name: 'T.ME: @aristapanel #137'
+  type: vless
+  server: 104.18.1.1
+  port: 2087
+  uuid: 97ea73b6-2043-4238-903c-a1e3d4a43c96
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: Amphetamine.aDaspoloandco.com
+  ws-opts:
+    path: /download.php
+    headers:
+      Host: Amphetamine.aDaspoloandco.com
+- name: 'T.ME: @aristapanel #138'
+  type: vless
+  server: 45.136.126.70
+  port: 8443
+  uuid: 0a2dde28-70da-4863-a06f-35d007d94d35
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: www.google.com
+  reality-opts:
+    public-key: 6f8KzwYy7MVdBKzDM_Wt_SiKEjZyg1dl1zdR_MoUM3M
+    short-id: "67933d8be5b42f78"
+- name: 'T.ME: @aristapanel #139'
+  type: vless
+  server: 193.238.154.18
+  port: 443
+  uuid: 2297ea1f-2415-4a2c-be20-4a3a978283a2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: es1.hat.onl
+  reality-opts:
+    public-key: V3uMWEfDQAPFP6o5ED8Jtk0rJBPs7IlOLf_Wh8w_jXc
+    short-id: "76132b3b39704c44"
+- name: 'T.ME: @aristapanel #140'
+  type: vless
+  server: 161.97.160.224
+  port: 443
+  uuid: b81b4d1b-7f20-48f1-82dc-d24bef898cab
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: passport.yandex.ru
+  reality-opts:
+    public-key: 33zaT3jHXjtynSQ0Ucw9bK92-XH2zolJmuIeZ1XyZB0
+    short-id: "e6"
+- name: 'T.ME: @aristapanel #141'
+  type: vless
+  server: 45.138.100.226
+  port: 2083
+  uuid: 0c6b632a-cd96-4b74-9b51-151e3b5697db
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: using.neobo-tooth.ru
+  grpc-opts:
+    grpc-service-name: grpc
+- name: 'T.ME: @aristapanel #142'
+  type: vless
+  server: 80.96.109.223
+  port: 5000
+  uuid: 1206bad5-dcc9-410e-9595-d9fe9ee54085
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: special.aeternavpn.space
+  reality-opts:
+    public-key: -6SjfnZXAYm69euKQ3XNhq0nC7No7YE4qfdc2qx0Xwo
+    short-id: "a1b2c3d4"
+- name: 'T.ME: @aristapanel #143'
+  type: vless
+  server: 159.89.87.21
+  port: 28190
+  uuid: 14c80e0e-f7ce-4991-94fc-99a1db4a9b1e
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: aws.amazon.com
+  reality-opts:
+    public-key: ZJRnFU-1s1JOnO8E9uZ7b00l1fPEh63fGRbdBANFRno
+- name: 'T.ME: @aristapanel #144'
+  type: vless
+  server: 169.58.143.21
+  port: 443
+  uuid: 25f3beef-a4b6-40bc-aa74-17a0f89f683c
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: finite-node.rtxconfigz.com
+  ws-opts:
+    path: /
+    headers:
+      Host: telegram.us
+- name: 'T.ME: @aristapanel #145'
+  type: vless
+  server: 192.166.82.74
+  port: 8443
+  uuid: 414b2c7f-26e8-4c08-a357-a4f00043804e
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.google.com
+  reality-opts:
+    public-key: vmfswX2VwSAGOSd9gleiWLfZK8BVyMI7D6oMDPUjpCk
+    short-id: "f15240e5244c7ba8"
+- name: 'T.ME: @aristapanel #146'
+  type: vless
+  server: 162.19.228.119
+  port: 80
+  uuid: dc8eccdb-ecfa-435f-9ac1-5dc4882e7b51
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /http
+    headers:
+      Host: /?v2rayNplus--v2rayNplus--v2rayNplus--
+- name: 'T.ME: @aristapanel #147'
+  type: vless
+  server: 54.38.138.175
+  port: 443
+  uuid: b2e8f455-3bd9-477c-b8f0-a3198f601565
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: play.google.com
+  reality-opts:
+    public-key: LrDYMSt1pt2h6n-7YnHpcUAb_IG7QsQ0rfXz8RqkfCY
+    short-id: "9e0fac51cc19d2"
+- name: 'T.ME: @aristapanel #148'
+  type: vless
+  server: 89.35.14.30
+  port: 443
+  uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: md1.univesalsrv.com
+  grpc-opts:
+    grpc-service-name: hub.v1.RelayService
+  reality-opts:
+    public-key: xWejOQUn2koOUorUPSrHMLM-lyHlZ441KzxKc9bLmkY
+    short-id: "221ba6174224ca5b"
+- name: 'T.ME: @aristapanel #149'
+  type: vless
+  server: 162.19.228.119
+  port: 80
+  uuid: dc8eccdb-ecfa-435f-9ac1-5dc4882e7b51
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /http
+    headers:
+      Host: de.vpnbase.net
+- name: 'T.ME: @aristapanel #150'
+  type: vless
+  server: 18.239.134.69
+  port: 80
+  uuid: de27291c-15a9-4256-9ba7-ad517569877e
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: d2e1v87ko56lyw.cloudfront.net:assets.opensignal.com
+- name: 'T.ME: @aristapanel #151'
+  type: vless
+  server: 89.35.14.33
+  port: 443
+  uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: md4.univesalsrv.com
+  grpc-opts:
+    grpc-service-name: hub.v1.ApiService
+  reality-opts:
+    public-key: TZVMqglhHzteJ6t34mtku75LKzXNq0CB6glKYMAH6zg
+    short-id: "8e07337954f9823f"
+- name: 'T.ME: @aristapanel #152'
+  type: vless
+  server: 185.194.177.120
+  port: 2096
+  uuid: 60e2a548-96aa-4850-a279-1edab743c39b
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: conrad.de
+  reality-opts:
+    public-key: pVUUDlLKPprJgV_ZcehzuhOFmw44Gk1DlRsny1zyxCI
+    short-id: "e3e76808b9fcd591"
+- name: 'T.ME: @aristapanel #153'
+  type: vless
+  server: api-de.data-media-social.org
+  port: 443
+  uuid: ef4f4c3d-0b16-48ad-a8d8-2d22512b3b36
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: api-de.data-media-social.org
+  reality-opts:
+    public-key: 7X8ifHa-K72alW7ly5SRYwotXdjA-gEQoEGUK1EagVM
+    short-id: "f3c4d918e7c4f744"
+- name: 'T.ME: @aristapanel #154'
+  type: vless
+  server: 89.35.14.31
+  port: 443
+  uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: md2.univesalsrv.com
+  grpc-opts:
+    grpc-service-name: hub.v1.SyncService
+  reality-opts:
+    public-key: JXFsWHYjhAcR-7yz9tuCTMdcfuiyC9a-C9ewA55Z63o
+    short-id: "d36a38659ce106cb"
+- name: 'T.ME: @aristapanel #155'
+  type: vless
+  server: 185.143.233.5
+  port: 80
+  uuid: 38dd06a1-e1cb-492b-bb87-218ce05d0d67
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: fox-a9e04bb07a-test.apps.ir-central1.arvancaas.ir
+- name: 'T.ME: @aristapanel #156'
+  type: vless
+  server: o.server3peekconfig.workers.dev
+  port: 443
+  uuid: 78abbe41-95dd-4f6f-a500-1450913fb933
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: o.SERVeR3PeEkConFIG.WOrKerS.dEv
+  ws-opts:
+    path: /eyJqdW5rIjoiZ3VVMHdacGtDIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMmEwMjo4OTg6MTQ2OjY0OjpdIl19?ed
+    headers:
+      Host: o.server3peekconfig.workers.dev
+- name: 'T.ME: @aristapanel #157'
+  type: vless
+  server: cctvhikvision.center
+  port: 2053
+  uuid: 08125d23-5500-41ae-97ef-8398eaf70562
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: uwu.blueknightnet.qzz.io
+  ws-opts:
+    path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
+    headers:
+      Host: uwu.blueknightnet.qzz.io
+- name: 'T.ME: @aristapanel #158'
+  type: vless
+  server: freesocks.work
+  port: 2053
+  uuid: 08125d23-5500-41ae-97ef-8398eaf70562
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: uwu.blueknightnet.qzz.io
+  ws-opts:
+    path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
+    headers:
+      Host: uwu.blueknightnet.qzz.io
+- name: 'T.ME: @aristapanel #159'
+  type: vless
+  server: undef.network
+  port: 2053
+  uuid: 08125d23-5500-41ae-97ef-8398eaf70562
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: uwu.blueknightnet.qzz.io
+  ws-opts:
+    path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
+    headers:
+      Host: uwu.blueknightnet.qzz.io
+- name: 'T.ME: @aristapanel #160'
+  type: vless
+  server: hikvision-plus.com
+  port: 2053
+  uuid: 08125d23-5500-41ae-97ef-8398eaf70562
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: uwu.blueknightnet.qzz.io
+  ws-opts:
+    path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
+    headers:
+      Host: uwu.blueknightnet.qzz.io
+- name: 'T.ME: @aristapanel #161'
+  type: vless
+  server: cctvhikvision.center
+  port: 2052
+  uuid: 08125d23-5500-41ae-97ef-8398eaf70562
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /@BlueKnight_net--@BlueKnight_net
+    headers:
+      Host: uwu.blueknightnet.qzz.io
+- name: 'T.ME: @aristapanel #162'
+  type: vless
+  server: freesocks.work
+  port: 2052
+  uuid: 08125d23-5500-41ae-97ef-8398eaf70562
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /@BlueKnight_net--@BlueKnight_net
+    headers:
+      Host: uwu.blueknightnet.qzz.io
+- name: 'T.ME: @aristapanel #163'
+  type: vless
+  server: undef.network
+  port: 2052
+  uuid: 08125d23-5500-41ae-97ef-8398eaf70562
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /@BlueKnight_net--@BlueKnight_net
+    headers:
+      Host: uwu.blueknightnet.qzz.io
+- name: 'T.ME: @aristapanel #164'
+  type: vless
+  server: hikvision-plus.com
+  port: 2052
+  uuid: 08125d23-5500-41ae-97ef-8398eaf70562
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /@BlueKnight_net--@BlueKnight_net
+    headers:
+      Host: uwu.blueknightnet.qzz.io
+- name: 'T.ME: @aristapanel #165'
+  type: vless
+  server: v.dianawmoon.dpdns.org
+  port: 8443
+  uuid: 08125d23-5500-41ae-97ef-8398eaf70562
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: random
+  servername: translate.google.com
+  reality-opts:
+    public-key: hVzLxVkm1rEjj2mYfOcHAva8S6MQACbfQKxY9aIJIh0
+    short-id: "1253afdb49c5cc"
+- name: 'T.ME: @aristapanel #166'
+  type: vless
+  server: pew.dianawmoon.dpdns.org
+  port: 443
+  uuid: 08125d23-5500-41ae-97ef-8398eaf70562
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  client-fingerprint: random
+  servername: pew.dianawmoon.dpdns.org
+- name: 'T.ME: @aristapanel #167'
+  type: vless
+  server: pew.dianawmoon.dpdns.org
+  port: 443
+  uuid: 08125d23-5500-41ae-97ef-8398eaf70562
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  client-fingerprint: random
+  servername: pew.dianawmoon.dpdns.org
+- name: 'T.ME: @aristapanel #168'
+  type: vless
+  server: pew.dianawmoon.dpdns.org
+  port: 443
+  uuid: 08125d23-5500-41ae-97ef-8398eaf70562
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: random
+  servername: pew.dianawmoon.dpdns.org
+  grpc-opts:
+    grpc-service-name: /grpc
+- name: 'T.ME: @aristapanel #169'
+  type: vless
+  server: pew.dianawmoon.dpdns.org
+  port: 443
+  uuid: 08125d23-5500-41ae-97ef-8398eaf70562
+  network: httpupgrade
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: random
+  servername: pew.dianawmoon.dpdns.org
+- name: 'T.ME: @aristapanel #170'
+  type: vless
+  server: cctvhikvision.center
+  port: 2053
+  uuid: a3dc82ea-67df-423d-b322-8bc0b0790f41
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: uwu.blueknightnet.qzz.io
+  ws-opts:
+    path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
+    headers:
+      Host: uwu.blueknightnet.qzz.io
+- name: 'T.ME: @aristapanel #171'
+  type: vless
+  server: freesocks.work
+  port: 2053
+  uuid: a3dc82ea-67df-423d-b322-8bc0b0790f41
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: uwu.blueknightnet.qzz.io
+  ws-opts:
+    path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
+    headers:
+      Host: uwu.blueknightnet.qzz.io
+- name: 'T.ME: @aristapanel #172'
+  type: vless
+  server: undef.network
+  port: 2053
+  uuid: a3dc82ea-67df-423d-b322-8bc0b0790f41
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: uwu.blueknightnet.qzz.io
+  ws-opts:
+    path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
+    headers:
+      Host: uwu.blueknightnet.qzz.io
+- name: 'T.ME: @aristapanel #173'
+  type: vless
+  server: hikvision-plus.com
+  port: 2053
+  uuid: a3dc82ea-67df-423d-b322-8bc0b0790f41
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: uwu.blueknightnet.qzz.io
+  ws-opts:
+    path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
+    headers:
+      Host: uwu.blueknightnet.qzz.io
+- name: 'T.ME: @aristapanel #174'
+  type: vless
+  server: cctvhikvision.center
+  port: 2052
+  uuid: a3dc82ea-67df-423d-b322-8bc0b0790f41
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /@BlueKnight_net--@BlueKnight_net
+    headers:
+      Host: uwu.blueknightnet.qzz.io
+- name: 'T.ME: @aristapanel #175'
+  type: vless
+  server: freesocks.work
+  port: 2052
+  uuid: a3dc82ea-67df-423d-b322-8bc0b0790f41
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /@BlueKnight_net--@BlueKnight_net
+    headers:
+      Host: uwu.blueknightnet.qzz.io
+- name: 'T.ME: @aristapanel #176'
+  type: vless
+  server: undef.network
+  port: 2052
+  uuid: a3dc82ea-67df-423d-b322-8bc0b0790f41
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /@BlueKnight_net--@BlueKnight_net
+    headers:
+      Host: uwu.blueknightnet.qzz.io
+- name: 'T.ME: @aristapanel #177'
+  type: vless
+  server: hikvision-plus.com
+  port: 2052
+  uuid: a3dc82ea-67df-423d-b322-8bc0b0790f41
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /@BlueKnight_net--@BlueKnight_net
+    headers:
+      Host: uwu.blueknightnet.qzz.io
+- name: 'T.ME: @aristapanel #178'
+  type: vless
+  server: v.dianawmoon.dpdns.org
+  port: 8443
+  uuid: a3dc82ea-67df-423d-b322-8bc0b0790f41
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: random
+  servername: www.google.com
+  reality-opts:
+    public-key: hVzLxVkm1rEjj2mYfOcHAva8S6MQACbfQKxY9aIJIh0
+    short-id: "489cc5f511146d6c"
+- name: 'T.ME: @aristapanel #179'
+  type: vless
+  server: pew.dianawmoon.dpdns.org
+  port: 443
+  uuid: a3dc82ea-67df-423d-b322-8bc0b0790f41
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  client-fingerprint: random
+  servername: pew.dianawmoon.dpdns.org
+- name: 'T.ME: @aristapanel #180'
+  type: vless
+  server: pew.dianawmoon.dpdns.org
+  port: 443
+  uuid: a3dc82ea-67df-423d-b322-8bc0b0790f41
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  client-fingerprint: random
+  servername: pew.dianawmoon.dpdns.org
+- name: 'T.ME: @aristapanel #181'
+  type: vless
+  server: pew.dianawmoon.dpdns.org
+  port: 443
+  uuid: a3dc82ea-67df-423d-b322-8bc0b0790f41
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: random
+  servername: pew.dianawmoon.dpdns.org
+  grpc-opts:
+    grpc-service-name: /grpc
+- name: 'T.ME: @aristapanel #182'
+  type: vless
+  server: pew.dianawmoon.dpdns.org
+  port: 443
+  uuid: a3dc82ea-67df-423d-b322-8bc0b0790f41
+  network: httpupgrade
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: random
+  servername: pew.dianawmoon.dpdns.org
+- name: 'T.ME: @aristapanel #183'
+  type: vless
+  server: 104.17.189.108
+  port: 8443
+  uuid: 26851ca3-0718-4970-a440-5295bd17c1d3
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: MosQuITo.paGes.DEV.
+  ws-opts:
+    path: /
+    headers:
+      Host: MosQuITo.paGes.DEV.
+- name: 'T.ME: @aristapanel #184'
+  type: vless
+  server: 84.32.176.6
+  port: 443
+  uuid: c6037cf7-d931-4027-af06-6bfb0f10684c
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: apiv13.betust.net
+  reality-opts:
+    public-key: xNzdfy4hPv-IgM_MSn64FNQdb-UPu78pmM-GBE1HhSo
+    short-id: "ef5d4ad5"
+- name: 'T.ME: @aristapanel #185'
+  type: vless
+  server: www.speedtest.net
+  port: 2086
+  uuid: 8137e9a6-22e6-4707-a120-a6dea17c7e00
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /eyJqdW5rIjoic1VBWDhGMXJsREg5WUoiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByb3h5aXAiLCJwYW5lbElQcyI6WyI4My4xNDcuMjU0LjI0NSJdfQ==?ed=2560
+    headers:
+      Host: dry-snow-2e6f.fastip25478.workers.dev
+- name: 'T.ME: @aristapanel #186'
+  type: vless
+  server: 50.7.95.242
+  port: 443
+  uuid: c6037cf7-d931-4027-af06-6bfb0f10684c
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: apiv6.jarvesitw.ru
+  reality-opts:
+    public-key: 2e9dGid5D-e4demAVGqU71uEeusuBhviikchaJ96E3o
+    short-id: "8ece2039"
+- name: 'T.ME: @aristapanel #187'
+  type: vless
+  server: 172.64.32.108
+  port: 2082
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /?ed=2560security=tls
+    headers:
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
+- name: 'T.ME: @aristapanel #188'
+  type: vless
+  server: 140.248.180.30
+  port: 443
+  uuid: 86fdb625-1a7f-4784-99a6-a96b3a80fc6d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: speedtest.net
+  ws-opts:
+    path: /vip1
+    headers:
+      Host: hamshahriesfahan.com
+- name: 'T.ME: @aristapanel #189'
+  type: vless
+  server: 144.31.93.231
+  port: 443
+  uuid: 3710fc0f-5f0c-4b9c-a5d4-40cb419e943a
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: yandex.ru
+  reality-opts:
+    public-key: WKN5yaRN05O2WdCURXRmS-yBVYaabaFWOvGudX6ohWc
+    short-id: "b97e7d4582b6fa6e"
+- name: 'T.ME: @aristapanel #190'
+  type: vless
+  server: www.e.mobilesari.ir
+  port: 7333
+  uuid: e7856a09-3641-4ba9-8254-d02e30c6d1bb
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: amp-api-edge.apps.apple.com
+  reality-opts:
+    public-key: isO0qF2Xg6UI1GKARgfg9UHZSrrUBcOazkz04mTl-kE
+    short-id: "0f62cf6250eb31c0"
+- name: 'T.ME: @aristapanel #191'
+  type: vless
+  server: 104.17.189.125
+  port: 8443
+  uuid: 83f03646-fb28-44cc-9d2c-8853f6c09285
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: r4fnviw9jl4i4rx.zjde5.de5.net
+  ws-opts:
+    path: /?ed=#TELEGRAM-MARAMBASHI_MARAMBASHI_MARAMBASHI_MARAMBASHI_MARAMBASHI?ed=512
+    headers:
+      Host: r4fnviw9jl4i4rx.zjde5.de5.net
+- name: 'T.ME: @aristapanel #192'
+  type: vless
+  server: 104.18.46.234
+  port: 2086
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  packet-encoding: xudp
+  client-fingerprint: chrome
+  ws-opts:
+    path: /?ed=2560security=tls
+    headers:
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
+- name: 'T.ME: @aristapanel #193'
+  type: vless
+  server: 188.114.97.6
+  port: 8080
+  uuid: f15a5586-23f6-453f-97f5-c301b949e699
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: mute-sunset-0849.40-aeb.workers.dev
+- name: 'T.ME: @aristapanel #194'
+  type: vless
+  server: 104.18.46.234
+  port: 80
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /?ed=2560security=tls
+    headers:
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
+- name: 'T.ME: @aristapanel #195'
+  type: vless
+  server: s1b.syslogd.ir
+  port: 443
+  uuid: c422f575-a7ea-4bac-897a-e29021ec8cab
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  client-fingerprint: chrome
+  servername: 9542eb1310dc8be5.zirabserver.ir
+  ws-opts:
+    path: /pa-m-v2
+    headers:
+      Host: prx.zirabserver.ir
+- name: 'T.ME: @aristapanel #196'
+  type: vless
+  server: 89.36.161.222
+  port: 2096
+  uuid: 70e20b2e-3b1f-4c25-9a3d-9240570391bb
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+- name: 'T.ME: @aristapanel #197'
+  type: vless
+  server: 172.67.209.127
+  port: 8880
+  uuid: 1b3ad465-d37e-48a2-bb53-d7fddfc97b11
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: calm-silence-d4a1.217.workers.dev
+- name: 'T.ME: @aristapanel #198'
+  type: vless
+  server: 78.159.240.41
+  port: 443
+  uuid: 39d927a4-b8c7-4dc7-91f1-8b2e05d8b6b6
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: qq
+  servername: id.vk.com
+  grpc-opts:
+    grpc-service-name: vless-grpc-reality
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+- name: 'T.ME: @aristapanel #199'
+  type: vless
+  server: 152.53.1.40
+  port: 443
+  uuid: edde565e-41f5-400e-84ea-7b87a3e84488
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: qq
+  servername: at.quattro-tech.ru
+  reality-opts:
+    public-key: 10rVZPoOUP1TlQviIAsQ_jAROX0fRQxH0C92nq_zGQc
+    short-id: "43dcff53849b81e6"
+- name: 'T.ME: @aristapanel #200'
+  type: vless
+  server: 172.64.52.6
+  port: 2052
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /?ed=2560security=tls
+    headers:
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
+- name: 'T.ME: @aristapanel #201'
+  type: vless
+  server: 162.141.131.102
+  port: 50159
+  uuid: 063e01c2-4c0f-418e-9375-3cc1312f635b
+  network: raw
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: fLtEa_5BiN89xQDypfFMOu5o6DoUf6ch42jGdkXy6zE
+    short-id: "7f24526f7307c07a"
+- name: 'T.ME: @aristapanel #202'
+  type: vless
+  server: 50.7.95.198
+  port: 443
+  uuid: c6037cf7-d931-4027-af06-6bfb0f10684c
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: www.samsung.com
+  reality-opts:
+    public-key: 8HYqDHdQ1IuLPhAOENT70_j0prAi1PNkwlT6venYAEM
+    short-id: "a78da1f7"
+- name: 'T.ME: @aristapanel #203'
+  type: vless
+  server: 188.114.97.6
+  port: 2086
+  uuid: 98b6cb05-b5ab-4c82-8683-07de28f796a9
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /eyJqdW5rIjoiRHF6VWU4SmYiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByZWZpeCIsInBhbmVsSVBzIjpbIlsyNjAyOmZjNTk6YjA6NjQ6Ol0iXX0
+    headers:
+      Host: holy-glitter-39f9.wwewee2dasdds.workers.dev
+- name: 'T.ME: @aristapanel #204'
+  type: vless
+  server: dey.lnmarketplace.net
+  port: 443
+  uuid: 3536e1fa-0850-44d1-b123-925ce12476cf
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: firefox
+  servername: dey.lnmarketplace.net
+- name: 'T.ME: @aristapanel #205'
+  type: vless
+  server: 45.9.156.24
+  port: 443
+  uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: bg2.univesalsrv.com
+  grpc-opts:
+    grpc-service-name: api.v2.PushService
+  reality-opts:
+    public-key: 0f0dh_FUju5cHgQcIwUjHvxQb9aIZ00p0kZRHeE7Ey4
+    short-id: "501ab3325b77e1ca"
+- name: 'T.ME: @aristapanel #206'
+  type: vless
+  server: 78.159.247.123
+  port: 7444
+  uuid: 0764541b-3e57-4b47-954b-51e996fae5fc
+  network: raw
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: akamai.com
+  reality-opts:
+    public-key: -P8DgKISSG4jnLuj6ihZDqZs1_zt-juBrhVhTylHiAo
+- name: 'T.ME: @aristapanel #207'
+  type: vless
+  server: 104.31.16.36
+  port: 443
+  uuid: 376b9861-2fc6-4647-959c-18185cd9c95a
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: lmn39.sbs
+  ws-opts:
+    path: /fflsws
+    headers:
+      Host: lmn39.sbs
+- name: 'T.ME: @aristapanel #208'
+  type: vless
+  server: www.e.mobilesari.ir
+  port: 7333
+  uuid: 2ae5a5a5-49ba-448c-b8a5-551ed547ff65
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: amp-api-edge.apps.apple.com
+  reality-opts:
+    public-key: isO0qF2Xg6UI1GKARgfg9UHZSrrUBcOazkz04mTl-kE
+    short-id: "0f62cf6250eb31c0"
+- name: 'T.ME: @aristapanel #209'
+  type: vless
+  server: 162.141.131.102
+  port: 50159
+  uuid: 063e01c2-4c0f-418e-9375-3cc1312f635b
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: fLtEa_5BiN89xQDypfFMOu5o6DoUf6ch42jGdkXy6zE
+    short-id: "7f24526f7307c07a"
+- name: 'T.ME: @aristapanel #210'
+  type: vless
+  server: 45.9.156.27
+  port: 443
+  uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: bg3.univesalsrv.com
+  grpc-opts:
+    grpc-service-name: home.v1.ApiService
+  reality-opts:
+    public-key: XBfCioniAKXgKYBUVnvBXu80AIaIa4SpAB3w8qeF7Gk
+    short-id: "1be1bd931c98c84a"
+- name: 'T.ME: @aristapanel #211'
+  type: vless
+  server: 45.195.2.133
+  port: 8443
+  uuid: 19b64e79-73b4-4478-bbfc-fb57737b94f8
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: storage.yandex.net
+  reality-opts:
+    public-key: 8qHRGcCezzSu4S-Cz9l19BNRLWm4MkaSwZV3dNrLEwc
+    short-id: "445ab326fc7c90ac"
+- name: 'T.ME: @aristapanel #212'
+  type: vless
+  server: rrr.windconnect.pro
+  port: 443
+  uuid: af00e0c4-decf-48f2-9013-56abe9c9efcd
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: rrr.windconnect.pro
+  reality-opts:
+    public-key: BsFRd4pZgH2hK2AmVf6Mv7z2QGmV2LPYbqkT1UqZX30
+    short-id: "4da5d1853f04af6d"
+- name: 'T.ME: @aristapanel #213'
+  type: vless
+  server: 185.189.47.107
+  port: 443
+  uuid: 252f7811-d86f-4dc2-97e0-83d3172ef4b8
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: edge-se.mystatic-cdn.ru
+  reality-opts:
+    public-key: 4HizFUAIvYp3wzM4p1_VcbhLWsRVHzG53XZG4f7oWiY
+    short-id: "b21f41e79ecbac55"
+- name: 'T.ME: @aristapanel #214'
+  type: vless
+  server: 91.107.152.149
+  port: 2087
+  uuid: 70d0af29-a027-4d45-ad8d-e0ee1b4232b8
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: shield.nvidia.hk
+  reality-opts:
+    public-key: -zXkpxfsN4tyaVW5Hn1TSeAXOiEJDx-G7Fo_F2hl_SM
+    short-id: "b736a61dc7a5ee"
+- name: 'T.ME: @aristapanel #215'
+  type: vless
+  server: 104.16.7.198
+  port: 443
+  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: hhlfy.twiladaphne.ndjp.net
+  ws-opts:
+    path: /
+    headers:
+      Host: hhlfy.twiladaphne.ndjp.net
+- name: 'T.ME: @aristapanel #216'
+  type: vless
+  server: 104.17.159.89
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: ''
+    headers:
+      Host: us3.rtacg.com
+- name: 'T.ME: @aristapanel #217'
+  type: vless
+  server: 151.242.2.81
+  port: 443
+  uuid: 0a2dde28-70da-4863-a06f-35d007d94d35
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: cf9.rumedia-cdn.com
+  ws-opts:
+    path: /cdn/v3/live
+    headers:
+      Host: cf9.rumedia-cdn.com
+- name: 'T.ME: @aristapanel #218'
+  type: vless
+  server: 57.131.32.191
+  port: 80
+  uuid: 049e56d8-0ba0-49e3-b764-ee04122b9f00
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /vless/
+- name: 'T.ME: @aristapanel #219'
+  type: vless
+  server: 45.196.201.67
+  port: 443
+  uuid: f75814f6-8f81-4847-b792-168c41f2dc85
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: storage.yandex.net
+  reality-opts:
+    public-key: zii4nGNapnFKL6SN8GzWNqFlElBvUCUFUThEP0kFH04
+    short-id: "c6ef72e4635d15a5"
+- name: 'T.ME: @aristapanel #220'
+  type: vless
+  server: 94.183.170.135
+  port: 8443
+  uuid: 06c4e938-2954-478f-a870-ca1b163e30e9
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: estproxy4.lockdwn.com
+- name: 'T.ME: @aristapanel #221'
+  type: vless
+  server: 188.114.97.6
+  port: 443
+  uuid: b4a16091-a25d-4d33-aee3-f5ae04f34b14
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: unsafe
+  servername: blue-brook-cc73.karren391.workers.dev
+  ws-opts:
+    path: /eyJqdW5rIjoiRjJEdlF3U251aCIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbIjE0Ni4xMDMuMTEzLjE1OCIsIjEwMy45Ny44OC4xMzMiLCIxOTQuMTgwLjE4OC4yNDEiLCIxMTYuMjAyLjEzMi4yMDUiXX0=?ed=2560
+    headers:
+      Host: blue-brook-cc73.karren391.workers.dev
+- name: 'T.ME: @aristapanel #222'
+  type: vless
+  server: 185.229.9.137
+  port: 443
+  uuid: 1e8a04c0-77fb-45de-9c56-8c84dc194a03
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: max.ru
+  reality-opts:
+    public-key: 8lw0A9bkJwt3sX_Jgb5RzieKlqojPg-6RV9Wj1ewtg4
+    short-id: "27e53bbcab7593d7"
+- name: 'T.ME: @aristapanel #223'
+  type: vless
+  server: 77.91.68.70
+  port: 55983
+  uuid: f667a096-5231-4cfb-8759-92bb32473139
+  network: raw
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: yahoo.com
+  reality-opts:
+    public-key: nWQ7b9l9X6N3PrXLgIzOvMM8iSYrqjVHEb9ikWxqYSg
+    short-id: "0e"
+- name: 'T.ME: @aristapanel #224'
+  type: vless
+  server: 91.107.190.63
+  port: 8080
+  uuid: 11af1c47-865a-47c6-92ff-118013655d78
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /?ed=2048
+- name: 'T.ME: @aristapanel #225'
+  type: vless
+  server: 18.136.125.3
+  port: 54618
+  uuid: 5b314c69-b427-4648-a8aa-6c38bc87fdc7
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: www.amd.com
+  reality-opts:
+    public-key: BugMYB6c9k66FOr1dTMnkojMXH5OCYP2wDH2nntWGgk
+    short-id: "93ed34c8eea01f"
+- name: 'T.ME: @aristapanel #226'
+  type: vless
+  server: 95.129.236.76
+  port: 443
+  uuid: 1ca45723-c184-4513-a4bc-0951121967eb
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: firefox
+  servername: metrics.gitpacket.pro
+  ws-opts:
+    path: /v1/data/sync/
+- name: 'T.ME: @aristapanel #227'
+  type: vless
+  server: 104.17.166.123
+  port: 8443
+  uuid: 829658bf-03c4-4c28-81e9-dd6ea141b2d0
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: 5jq7fvwpqt5owo2fi198sa6qoxznkzfea7en4m3xroeqrt3u3q.zjde5.de5.net
+  ws-opts:
+    path: /?ed=#Join--V2rayTun0--Join--V2rayTun0--Join--V2rayTun0--Join--V2rayTun0--Join--V2rayTun0--Join--V2rayTun0--Join--V2rayTun0--Join--V2rayTun0--?ed=512
+    headers:
+      Host: 5jq7fvwpqt5owo2fi198sa6qoxznkzfea7en4m3xroeqrt3u3q.zjde5.de5.net
+- name: 'T.ME: @aristapanel #228'
+  type: vless
+  server: 45.196.201.64
+  port: 443
+  uuid: f75814f6-8f81-4847-b792-168c41f2dc85
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: storage.yandex.net
+  reality-opts:
+    public-key: zii4nGNapnFKL6SN8GzWNqFlElBvUCUFUThEP0kFH04
+    short-id: "c6ef72e4635d15a5"
+- name: 'T.ME: @aristapanel #229'
+  type: vless
+  server: 104.18.37.228
+  port: 443
+  uuid: 83afd88f-200f-4d89-bfc7-66eff160c1d8
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: josni.hoyes.cloudns.ch
+  ws-opts:
+    path: /sg-melbi#TELEGRAM-TOOTFFARANGI?ed=512
+    headers:
+      Host: josni.hoyes.cloudns.ch
+- name: 'T.ME: @aristapanel #230'
+  type: vless
+  server: 172.66.140.62
+  port: 8880
+  uuid: 160ca353-676d-4b7f-a041-0289e388b865
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: proud-cloud-7bdd.208-a52.workers.dev
+- name: 'T.ME: @aristapanel #231'
+  type: vless
+  server: 172.64.158.146
+  port: 2095
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /?ed=2560security=tls
+    headers:
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
+- name: 'T.ME: @aristapanel #232'
+  type: vless
+  server: 162.159.48.32
+  port: 80
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /?ed=2560security=tls
+    headers:
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
+- name: 'T.ME: @aristapanel #233'
+  type: vless
+  server: 172.64.53.42
+  port: 2087
+  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+  ws-opts:
+    path: /
+    headers:
+      Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+- name: 'T.ME: @aristapanel #234'
+  type: vless
+  server: 188.114.97.7
+  port: 443
+  uuid: ba49d874-fe02-465d-82d3-ed981dc7694f
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: o94Yv7LIF0-aNXISd9eFehvvS7mxn6bH.Z-ULe-iKa-d-e-ne-K-e.wORkeRs.Dev
+  ws-opts:
+    path: /7J5lLqtBnJg9WjVT?ed=2560
+    headers:
+      Host: o94yv7lif0-anxisd9efehvvs7mxn6bh.z-ule-ika-d-e-ne-k-e.workers.dev
+- name: 'T.ME: @aristapanel #235'
+  type: vless
+  server: 94.156.232.254
+  port: 443
+  uuid: 03c48eca-e0aa-4e18-998c-1f53f1de293c
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: cf6.rumedia-cdn.com
+  ws-opts:
+    path: /cdn/v3/live
+    headers:
+      Host: cf6.rumedia-cdn.com
+- name: 'T.ME: @aristapanel #236'
+  type: vless
+  server: at-2.kihsuyhf8jkiugsxb.cfd
+  port: 443
+  uuid: 0dc1fc26-b8e9-4296-9870-0996de3c2333
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus
+  client-fingerprint: firefox
+  servername: at-2.kihsuyhf8jkiugsxb.cfd
+  reality-opts:
+    public-key: ydinsEfGRz7XRuIo8SYSUecAUtQFY8lw4_5wqT1z2wo
+- name: 'T.ME: @aristapanel #237'
+  type: vless
+  server: 149.33.19.143
+  port: 443
+  uuid: 5567bf8c-e870-469d-b117-770c644c2682
+  network: raw
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: zvukipro.com
+  reality-opts:
+    public-key: SiSky02wHz-S0TDHKFTdYhnrlT8Y3CfRsekZlcdLXDY
+    short-id: "fd55b698ee8c3629"
+- name: 'T.ME: @aristapanel #238'
+  type: vless
+  server: 144.31.167.221
+  port: 443
+  uuid: 0dc1fc26-b8e9-4296-9870-0996de3c2333
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: de-4.kihsuyhf8jkiugsxb.cfd
+  reality-opts:
+    public-key: 9nuE6LPy6S5XHkVsVuuRCwocmStQC8JY6AINrSN2tyA
+- name: 'T.ME: @aristapanel #239'
+  type: vless
+  server: 89.105.208.123
+  port: 443
+  uuid: 91d0fa43-e557-43e7-a731-f0c3d1fb306a
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: n1.cloudgaming.one
+  reality-opts:
+    public-key: ivgTfLR13A6xBsicIA28OPoav2tXlsstTTmGuETfnSk
+    short-id: "6d6f13013d3e1d0c"
+- name: 'T.ME: @aristapanel #240'
+  type: vless
+  server: 172.64.149.99
+  port: 8443
+  uuid: 2ddeb056-17d4-421e-a318-39428733d4a2
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: 8p3cfl0ripm.zjde5.de5.net
+  ws-opts:
+    path: /?ed=#Join--V2rayTun0--Join--V2rayTun0--Join--V2rayTun0--Join--V2rayTun0--Join--V2rayTun0--Join--V2rayTun0--Join--V2rayTun0--Join--V2rayTun0--?ed=512
+    headers:
+      Host: 8p3cfl0ripm.zjde5.de5.net
+- name: 'T.ME: @aristapanel #241'
+  type: vless
+  server: 104.16.107.139
+  port: 8880
+  uuid: 24c2a873-4584-4c53-8679-61029682d0bb
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /pyip
+    headers:
+      Host: soft-thunder-bc22.111-f59.workers.dev
+- name: 'T.ME: @aristapanel #242'
+  type: vless
+  server: k2.cloud--vpn.site
+  port: 443
+  uuid: 08ffff12-93bb-42eb-8c83-6489644a1d04
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: firefox
+  servername: ssl.fastly.com
+  ws-opts:
+    path: /
+    headers:
+      Host: c12.com
+- name: 'T.ME: @aristapanel #243'
+  type: vless
+  server: 38.180.186.202
+  port: 443
+  uuid: 18b476f8-d1ca-4bf5-a397-c6fbf8ef4d41
+  network: raw
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: zvukipro.com
+  reality-opts:
+    public-key: SiSky02wHz-S0TDHKFTdYhnrlT8Y3CfRsekZlcdLXDY
+    short-id: "fd55b698ee8c3629"
+- name: 'T.ME: @aristapanel #244'
+  type: vless
+  server: 192.200.160.132
+  port: 8443
+  uuid: 4525c260-df3c-4f62-b8f1-f4f5f305694b
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: yyzsuabw9e3qd5ud7ihi5dxm96oglnsvr83cjojnm1efncfhr9ucordq.zjde5.de5.net
+  ws-opts:
+    path: /?ed=#Join--V2rayTun0--Join--V2rayTun0--Join--V2rayTun0--Join--V2rayTun0--Join--V2rayTun0--Join--V2rayTun0--Join--V2rayTun0--Join--V2rayTun0--?ed=512
+    headers:
+      Host: yyzsuabw9e3qd5ud7ihi5dxm96oglnsvr83cjojnm1efncfhr9ucordq.zjde5.de5.net
+- name: 'T.ME: @aristapanel #245'
+  type: vless
+  server: 172.67.209.127
+  port: 8880
+  uuid: a62a4c64-2270-4d41-828b-2591906c48ba
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  ws-opts:
+    path: /pyip=ProxyIP.SG.CMLiussss.net
+    headers:
+      Host: sweet-disk-a026.253-54b.workers.dev
+- name: 'T.ME: @aristapanel #246'
+  type: vless
+  server: 219.77.167.19
+  port: 443
+  uuid: 3be8cba8-b721-11ec-8b04-f23c91cfbbc9
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: updates.cdn-apple.com
+  reality-opts:
+    public-key: bE6ws6dFPflj8WVJMGwtso0WOaiSmBOHM2muQO2Uul4
+- name: 'T.ME: @aristapanel #247'
+  type: vless
+  server: 31.58.50.200
+  port: 8443
+  uuid: d5f1aa27-43d0-4f2e-bca2-140f3ec2aa62
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: tradingview.com
+  reality-opts:
+    public-key: mr5AF0LFyDzYDRoYAwH6QNcHXL77-LoiwRx50ZzU8QU
+- name: 'T.ME: @aristapanel #248'
+  type: vless
+  server: 69.46.46.36
+  port: 443
+  uuid: 14dc1390-2efc-724d-9dfa-1bc02bc644bc
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: ios
+  servername: x4g-production-06e2.up.railway.app
+  ws-opts:
+    path: /ws/14dc1390-2efc-724d-9dfa-1bc02bc644bc
+    headers:
+      Host: x4g-production-06e2.up.railway.app
+- name: 'T.ME: @aristapanel #249'
+  type: vless
+  server: 193.123.59.111
+  port: 62145
+  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'T.ME: @aristapanel #250'
+  type: vless
+  server: 5.83.129.124
+  port: 443
+  uuid: a9aceeb9-17cc-470e-a03b-b7c3ee0f9f14
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision-udp443
+  alpn:
+  - http/1.1
+  client-fingerprint: firefox
+  servername: 50gport3.potatosubge20.org
+proxy-groups:
+- name: 🚀 ARISTA LOW LATENCY
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  lazy: true
+  timeout: 3000
+  proxies: &id001
+  - 'T.ME: @aristapanel #1'
+  - 'T.ME: @aristapanel #2'
+  - 'T.ME: @aristapanel #3'
+  - 'T.ME: @aristapanel #4'
+  - 'T.ME: @aristapanel #5'
+  - 'T.ME: @aristapanel #6'
+  - 'T.ME: @aristapanel #7'
+  - 'T.ME: @aristapanel #8'
+  - 'T.ME: @aristapanel #9'
+  - 'T.ME: @aristapanel #10'
+  - 'T.ME: @aristapanel #11'
+  - 'T.ME: @aristapanel #12'
+  - 'T.ME: @aristapanel #13'
+  - 'T.ME: @aristapanel #14'
+  - 'T.ME: @aristapanel #15'
+  - 'T.ME: @aristapanel #16'
+  - 'T.ME: @aristapanel #17'
+  - 'T.ME: @aristapanel #18'
+  - 'T.ME: @aristapanel #19'
+  - 'T.ME: @aristapanel #20'
+  - 'T.ME: @aristapanel #21'
+  - 'T.ME: @aristapanel #22'
+  - 'T.ME: @aristapanel #23'
+  - 'T.ME: @aristapanel #24'
+  - 'T.ME: @aristapanel #25'
+  - 'T.ME: @aristapanel #26'
+  - 'T.ME: @aristapanel #27'
+  - 'T.ME: @aristapanel #28'
+  - 'T.ME: @aristapanel #29'
+  - 'T.ME: @aristapanel #30'
+  - 'T.ME: @aristapanel #31'
+  - 'T.ME: @aristapanel #32'
+  - 'T.ME: @aristapanel #33'
+  - 'T.ME: @aristapanel #34'
+  - 'T.ME: @aristapanel #35'
+  - 'T.ME: @aristapanel #36'
+  - 'T.ME: @aristapanel #37'
+  - 'T.ME: @aristapanel #38'
+  - 'T.ME: @aristapanel #39'
+  - 'T.ME: @aristapanel #40'
+  - 'T.ME: @aristapanel #41'
+  - 'T.ME: @aristapanel #42'
+  - 'T.ME: @aristapanel #43'
+  - 'T.ME: @aristapanel #44'
+  - 'T.ME: @aristapanel #45'
+  - 'T.ME: @aristapanel #46'
+  - 'T.ME: @aristapanel #47'
+  - 'T.ME: @aristapanel #48'
+  - 'T.ME: @aristapanel #49'
+  - 'T.ME: @aristapanel #50'
+  - 'T.ME: @aristapanel #51'
+  - 'T.ME: @aristapanel #52'
+  - 'T.ME: @aristapanel #53'
+  - 'T.ME: @aristapanel #54'
+  - 'T.ME: @aristapanel #55'
+  - 'T.ME: @aristapanel #56'
+  - 'T.ME: @aristapanel #57'
+  - 'T.ME: @aristapanel #58'
+  - 'T.ME: @aristapanel #59'
+  - 'T.ME: @aristapanel #60'
+  - 'T.ME: @aristapanel #61'
+  - 'T.ME: @aristapanel #62'
+  - 'T.ME: @aristapanel #63'
+  - 'T.ME: @aristapanel #64'
+  - 'T.ME: @aristapanel #65'
+  - 'T.ME: @aristapanel #66'
+  - 'T.ME: @aristapanel #67'
+  - 'T.ME: @aristapanel #68'
+  - 'T.ME: @aristapanel #69'
+  - 'T.ME: @aristapanel #70'
+  - 'T.ME: @aristapanel #71'
+  - 'T.ME: @aristapanel #72'
+  - 'T.ME: @aristapanel #73'
+  - 'T.ME: @aristapanel #74'
+  - 'T.ME: @aristapanel #75'
+  - 'T.ME: @aristapanel #76'
+  - 'T.ME: @aristapanel #77'
+  - 'T.ME: @aristapanel #78'
+  - 'T.ME: @aristapanel #79'
+  - 'T.ME: @aristapanel #80'
+  - 'T.ME: @aristapanel #81'
+  - 'T.ME: @aristapanel #82'
+  - 'T.ME: @aristapanel #83'
+  - 'T.ME: @aristapanel #84'
+  - 'T.ME: @aristapanel #85'
+  - 'T.ME: @aristapanel #86'
+  - 'T.ME: @aristapanel #87'
+  - 'T.ME: @aristapanel #88'
+  - 'T.ME: @aristapanel #89'
+  - 'T.ME: @aristapanel #90'
+  - 'T.ME: @aristapanel #91'
+  - 'T.ME: @aristapanel #92'
+  - 'T.ME: @aristapanel #93'
+  - 'T.ME: @aristapanel #94'
+  - 'T.ME: @aristapanel #95'
+  - 'T.ME: @aristapanel #96'
+  - 'T.ME: @aristapanel #97'
+  - 'T.ME: @aristapanel #98'
+  - 'T.ME: @aristapanel #99'
+  - 'T.ME: @aristapanel #100'
+  - 'T.ME: @aristapanel #101'
+  - 'T.ME: @aristapanel #102'
+  - 'T.ME: @aristapanel #103'
+  - 'T.ME: @aristapanel #104'
+  - 'T.ME: @aristapanel #105'
+  - 'T.ME: @aristapanel #106'
+  - 'T.ME: @aristapanel #107'
+  - 'T.ME: @aristapanel #108'
+  - 'T.ME: @aristapanel #109'
+  - 'T.ME: @aristapanel #110'
+  - 'T.ME: @aristapanel #111'
+  - 'T.ME: @aristapanel #112'
+  - 'T.ME: @aristapanel #113'
+  - 'T.ME: @aristapanel #114'
+  - 'T.ME: @aristapanel #115'
+  - 'T.ME: @aristapanel #116'
+  - 'T.ME: @aristapanel #117'
+  - 'T.ME: @aristapanel #118'
+  - 'T.ME: @aristapanel #119'
+  - 'T.ME: @aristapanel #120'
+  - 'T.ME: @aristapanel #121'
+  - 'T.ME: @aristapanel #122'
+  - 'T.ME: @aristapanel #123'
+  - 'T.ME: @aristapanel #124'
+  - 'T.ME: @aristapanel #125'
+  - 'T.ME: @aristapanel #126'
+  - 'T.ME: @aristapanel #127'
+  - 'T.ME: @aristapanel #128'
+  - 'T.ME: @aristapanel #129'
+  - 'T.ME: @aristapanel #130'
+  - 'T.ME: @aristapanel #131'
+  - 'T.ME: @aristapanel #132'
+  - 'T.ME: @aristapanel #133'
+  - 'T.ME: @aristapanel #134'
+  - 'T.ME: @aristapanel #135'
+  - 'T.ME: @aristapanel #136'
+  - 'T.ME: @aristapanel #137'
+  - 'T.ME: @aristapanel #138'
+  - 'T.ME: @aristapanel #139'
+  - 'T.ME: @aristapanel #140'
+  - 'T.ME: @aristapanel #141'
+  - 'T.ME: @aristapanel #142'
+  - 'T.ME: @aristapanel #143'
+  - 'T.ME: @aristapanel #144'
+  - 'T.ME: @aristapanel #145'
+  - 'T.ME: @aristapanel #146'
+  - 'T.ME: @aristapanel #147'
+  - 'T.ME: @aristapanel #148'
+  - 'T.ME: @aristapanel #149'
+  - 'T.ME: @aristapanel #150'
+  - 'T.ME: @aristapanel #151'
+  - 'T.ME: @aristapanel #152'
+  - 'T.ME: @aristapanel #153'
+  - 'T.ME: @aristapanel #154'
+  - 'T.ME: @aristapanel #155'
+  - 'T.ME: @aristapanel #156'
+  - 'T.ME: @aristapanel #157'
+  - 'T.ME: @aristapanel #158'
+  - 'T.ME: @aristapanel #159'
+  - 'T.ME: @aristapanel #160'
+  - 'T.ME: @aristapanel #161'
+  - 'T.ME: @aristapanel #162'
+  - 'T.ME: @aristapanel #163'
+  - 'T.ME: @aristapanel #164'
+  - 'T.ME: @aristapanel #165'
+  - 'T.ME: @aristapanel #166'
+  - 'T.ME: @aristapanel #167'
+  - 'T.ME: @aristapanel #168'
+  - 'T.ME: @aristapanel #169'
+  - 'T.ME: @aristapanel #170'
+  - 'T.ME: @aristapanel #171'
+  - 'T.ME: @aristapanel #172'
+  - 'T.ME: @aristapanel #173'
+  - 'T.ME: @aristapanel #174'
+  - 'T.ME: @aristapanel #175'
+  - 'T.ME: @aristapanel #176'
+  - 'T.ME: @aristapanel #177'
+  - 'T.ME: @aristapanel #178'
+  - 'T.ME: @aristapanel #179'
+  - 'T.ME: @aristapanel #180'
+  - 'T.ME: @aristapanel #181'
+  - 'T.ME: @aristapanel #182'
+  - 'T.ME: @aristapanel #183'
+  - 'T.ME: @aristapanel #184'
+  - 'T.ME: @aristapanel #185'
+  - 'T.ME: @aristapanel #186'
+  - 'T.ME: @aristapanel #187'
+  - 'T.ME: @aristapanel #188'
+  - 'T.ME: @aristapanel #189'
+  - 'T.ME: @aristapanel #190'
+  - 'T.ME: @aristapanel #191'
+  - 'T.ME: @aristapanel #192'
+  - 'T.ME: @aristapanel #193'
+  - 'T.ME: @aristapanel #194'
+  - 'T.ME: @aristapanel #195'
+  - 'T.ME: @aristapanel #196'
+  - 'T.ME: @aristapanel #197'
+  - 'T.ME: @aristapanel #198'
+  - 'T.ME: @aristapanel #199'
+  - 'T.ME: @aristapanel #200'
+  - 'T.ME: @aristapanel #201'
+  - 'T.ME: @aristapanel #202'
+  - 'T.ME: @aristapanel #203'
+  - 'T.ME: @aristapanel #204'
+  - 'T.ME: @aristapanel #205'
+  - 'T.ME: @aristapanel #206'
+  - 'T.ME: @aristapanel #207'
+  - 'T.ME: @aristapanel #208'
+  - 'T.ME: @aristapanel #209'
+  - 'T.ME: @aristapanel #210'
+  - 'T.ME: @aristapanel #211'
+  - 'T.ME: @aristapanel #212'
+  - 'T.ME: @aristapanel #213'
+  - 'T.ME: @aristapanel #214'
+  - 'T.ME: @aristapanel #215'
+  - 'T.ME: @aristapanel #216'
+  - 'T.ME: @aristapanel #217'
+  - 'T.ME: @aristapanel #218'
+  - 'T.ME: @aristapanel #219'
+  - 'T.ME: @aristapanel #220'
+  - 'T.ME: @aristapanel #221'
+  - 'T.ME: @aristapanel #222'
+  - 'T.ME: @aristapanel #223'
+  - 'T.ME: @aristapanel #224'
+  - 'T.ME: @aristapanel #225'
+  - 'T.ME: @aristapanel #226'
+  - 'T.ME: @aristapanel #227'
+  - 'T.ME: @aristapanel #228'
+  - 'T.ME: @aristapanel #229'
+  - 'T.ME: @aristapanel #230'
+  - 'T.ME: @aristapanel #231'
+  - 'T.ME: @aristapanel #232'
+  - 'T.ME: @aristapanel #233'
+  - 'T.ME: @aristapanel #234'
+  - 'T.ME: @aristapanel #235'
+  - 'T.ME: @aristapanel #236'
+  - 'T.ME: @aristapanel #237'
+  - 'T.ME: @aristapanel #238'
+  - 'T.ME: @aristapanel #239'
+  - 'T.ME: @aristapanel #240'
+  - 'T.ME: @aristapanel #241'
+  - 'T.ME: @aristapanel #242'
+  - 'T.ME: @aristapanel #243'
+  - 'T.ME: @aristapanel #244'
+  - 'T.ME: @aristapanel #245'
+  - 'T.ME: @aristapanel #246'
+  - 'T.ME: @aristapanel #247'
+  - 'T.ME: @aristapanel #248'
+  - 'T.ME: @aristapanel #249'
+  - 'T.ME: @aristapanel #250'
+- name: 🎬 ARISTA STREAM
+  type: fallback
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  lazy: true
+  proxies: *id001
+- name: ⚖️ ARISTA BALANCE
+  type: load-balance
+  strategy: consistent-hashing
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  lazy: true
+  proxies: *id001
+- name: 🎯 ARISTA CORE
+  type: select
+  proxies:
+  - 🚀 ARISTA LOW LATENCY
+  - 🎬 ARISTA STREAM
+  - ⚖️ ARISTA BALANCE
+  - DIRECT
+  - REJECT
