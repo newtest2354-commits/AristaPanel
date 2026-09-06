@@ -1,6 +1,6 @@
 # TELEGRAM - Port 9443
-# Updated: 2026-09-06 04:13:02
-# Count: 1
+# Updated: 2026-09-06 08:41:06
+# Count: 4
 
 mixed-port: 7890
 allow-lan: false
@@ -60,6 +60,42 @@ proxies:
   flow: xtls-rprx-vision
   client-fingerprint: firefox
   servername: beast.locallynet.org
+- name: 'ARISTA #2'
+  type: vless
+  server: 178.214.100.10
+  port: 9443
+  uuid: e6b5e08a-83fa-48d2-8a94-c6cc01fc35fd
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: beast.locallynet.org
+- name: 'ARISTA #3'
+  type: vless
+  server: 178.214.100.10
+  port: 9443
+  uuid: e6b5e08a-83fa-48d2-8a94-c6cc01fc35fd
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: beast.locallynet.org
+- name: 'ARISTA #4'
+  type: vless
+  server: 178.214.100.10
+  port: 9443
+  uuid: e6b5e08a-83fa-48d2-8a94-c6cc01fc35fd
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: beast.locallynet.org
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -70,6 +106,9 @@ proxy-groups:
   timeout: 3000
   proxies: &id001
   - 'ARISTA #1'
+  - 'ARISTA #2'
+  - 'ARISTA #3'
+  - 'ARISTA #4'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
