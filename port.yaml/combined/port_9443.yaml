@@ -1,6 +1,6 @@
 # COMBINED - Port 9443
-# Updated: 2026-09-06 15:23:55
-# Count: 1
+# Updated: 2026-09-06 20:21:43
+# Count: 3
 
 mixed-port: 7890
 allow-lan: false
@@ -48,11 +48,38 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'T.ME: @aristapanel #1'
+- name: 'ARISTA #1'
+  type: vless
+  server: 178.214.100.10
+  port: 9443
+  uuid: e6b5e08a-83fa-48d2-8a94-c6cc01fc35fd
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: beast.locallynet.org
+- name: 'ARISTA #2'
+  type: vless
+  server: 194.55.239.155
+  port: 9443
+  uuid: 18167dd6-2c24-4f6b-a416-64bac693127a
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: max.ru
+  reality-opts:
+    public-key: JlV0EIbJqWvCUEgDPULH3VZZ9zzBTufAfXErlddMG2s
+    short-id: "e75f556eef8f096f"
+- name: 'T.ME: @aristapanel #3'
   type: vless
   server: 46.243.142.89
   port: 9443
-  uuid: 77f93379-af7c-4431-ab90-c4fb0d3d6c49
+  uuid: a98aae47-80fc-49ff-a306-687599c22079
   network: xhttp
   tls: true
   udp: true
@@ -71,7 +98,9 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'T.ME: @aristapanel #1'
+  - 'ARISTA #1'
+  - 'ARISTA #2'
+  - 'T.ME: @aristapanel #3'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

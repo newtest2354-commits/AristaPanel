@@ -1,6 +1,6 @@
 // COMBINED - Port 9443
-// Updated: 2026-09-06 15:24:08
-// Count: 1
+// Updated: 2026-09-06 20:22:05
+// Count: 3
 
 {
   "log": {
@@ -41,9 +41,50 @@
     {
       "type": "vless",
       "tag": "ARISTA #1",
+      "server": "178.214.100.10",
+      "server_port": 9443,
+      "uuid": "e6b5e08a-83fa-48d2-8a94-c6cc01fc35fd",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "beast.locallynet.org",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "flow": "xtls-rprx-vision"
+    },
+    {
+      "type": "vless",
+      "tag": "ARISTA #2",
+      "server": "194.55.239.155",
+      "server_port": 9443,
+      "uuid": "18167dd6-2c24-4f6b-a416-64bac693127a",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "max.ru",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "JlV0EIbJqWvCUEgDPULH3VZZ9zzBTufAfXErlddMG2s",
+          "short_id": "e75f556eef8f096f"
+        }
+      },
+      "flow": "xtls-rprx-vision"
+    },
+    {
+      "type": "vless",
+      "tag": "ARISTA #3",
       "server": "46.243.142.89",
       "server_port": 9443,
-      "uuid": "77f93379-af7c-4431-ab90-c4fb0d3d6c49",
+      "uuid": "a98aae47-80fc-49ff-a306-687599c22079",
       "domain_resolver": "google",
       "tls": {
         "enabled": true,
@@ -72,7 +113,9 @@
       "type": "urltest",
       "tag": "🚀 ARISTA AUTO BEST",
       "outbounds": [
-        "ARISTA #1"
+        "ARISTA #1",
+        "ARISTA #2",
+        "ARISTA #3"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "2m",
