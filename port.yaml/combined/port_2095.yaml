@@ -1,6 +1,6 @@
 # COMBINED - Port 2095
-# Updated: 2026-09-06 10:04:08
-# Count: 2
+# Updated: 2026-09-06 10:50:07
+# Count: 1
 
 mixed-port: 7890
 allow-lan: false
@@ -48,16 +48,7 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'ARISTA #1'
-  type: vless
-  server: 5.75.196.249
-  port: 2095
-  uuid: 01e5bbe0-03b1-4e03-bd10-9760a8401fdf
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'T.ME: @aristapanel #2'
+- name: 'T.ME: @aristapanel #1'
   type: vless
   server: 188.114.96.3
   port: 2095
@@ -80,8 +71,7 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'ARISTA #1'
-  - 'T.ME: @aristapanel #2'
+  - 'T.ME: @aristapanel #1'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
