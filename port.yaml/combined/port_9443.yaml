@@ -1,6 +1,6 @@
 # COMBINED - Port 9443
-# Updated: 2026-09-05 22:50:23
-# Count: 6
+# Updated: 2026-09-06 04:12:54
+# Count: 3
 
 mixed-port: 7890
 allow-lan: false
@@ -60,35 +60,11 @@ proxies:
   flow: xtls-rprx-vision
   client-fingerprint: firefox
   servername: beast.locallynet.org
-- name: 'ARISTA #2'
-  type: vless
-  server: 178.214.100.10
-  port: 9443
-  uuid: e6b5e08a-83fa-48d2-8a94-c6cc01fc35fd
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: beast.locallynet.org
-- name: 'ARISTA #3'
-  type: vless
-  server: 178.214.100.10
-  port: 9443
-  uuid: e6b5e08a-83fa-48d2-8a94-c6cc01fc35fd
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: beast.locallynet.org
-- name: 'T.ME: @aristapanel #4'
+- name: 'T.ME: @aristapanel #2'
   type: vless
   server: 46.243.142.89
   port: 9443
-  uuid: b2633784-ed21-4e4c-999e-ad764d4256f6
+  uuid: 5e0b9bc4-27d6-448b-a9d0-65b948810e1b
   network: xhttp
   tls: true
   udp: true
@@ -98,7 +74,7 @@ proxies:
   reality-opts:
     public-key: 5hhzoP441DrGa2l5YlwizPSA5chdY2VjRP7CiEfLLA0
     short-id: "eea4ab7bddaeea39"
-- name: 'T.ME: @aristapanel #5'
+- name: 'T.ME: @aristapanel #3'
   type: vless
   server: 31.59.150.174
   port: 9443
@@ -113,18 +89,6 @@ proxies:
   reality-opts:
     public-key: RWu6ktBE4DFbUz_prmz-5KuolLhO53ehh19mNxhP-wI
     short-id: "a1b2c3d4"
-- name: 'ARISTA #6'
-  type: vless
-  server: 178.214.100.10
-  port: 9443
-  uuid: e6b5e08a-83fa-48d2-8a94-c6cc01fc35fd
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: beast.locallynet.org
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -135,11 +99,8 @@ proxy-groups:
   timeout: 3000
   proxies: &id001
   - 'ARISTA #1'
-  - 'ARISTA #2'
-  - 'ARISTA #3'
-  - 'T.ME: @aristapanel #4'
-  - 'T.ME: @aristapanel #5'
-  - 'ARISTA #6'
+  - 'T.ME: @aristapanel #2'
+  - 'T.ME: @aristapanel #3'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
