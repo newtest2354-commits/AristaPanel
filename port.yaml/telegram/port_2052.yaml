@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2052
-# Updated: 2026-09-06 20:21:52
-# Count: 7
+# Updated: 2026-09-06 22:53:50
+# Count: 9
 
 mixed-port: 7890
 allow-lan: false
@@ -67,6 +67,21 @@ proxies:
       Host: cdn3.freegradely.xyz
 - name: 'ARISTA #2'
   type: vmess
+  server: 104.19.21.240
+  port: 2052
+  uuid: d6b6d982-d52f-465a-b988-85670b23f64a
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 104.19.21.240
+  ws-opts:
+    path: /
+- name: 'ARISTA #3'
+  type: vmess
   server: 104.20.17.196
   port: 2052
   uuid: d6b6d982-d52f-465a-b988-85670b23f64a
@@ -82,43 +97,22 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: cdn3.freegradely.xyz
-- name: 'ARISTA #3'
-  type: vless
-  server: 188.114.97.3
-  port: 2052
-  uuid: 035c8a3d-1cec-43e2-369d-f98593af1d9a
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
 - name: 'ARISTA #4'
-  type: vless
-  server: 188.114.97.3
+  type: vmess
+  server: 104.19.21.240
   port: 2052
-  uuid: 035c8a3d-1cec-43e2-369d-f98593af1d9a
-  network: httpupgrade
+  uuid: d6b6d982-d52f-465a-b988-85670b23f64a
+  alterId: 0
+  cipher: auto
+  network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 104.19.21.240
+  ws-opts:
+    path: /
 - name: 'ARISTA #5'
-  type: vless
-  server: 188.114.97.3
-  port: 2052
-  uuid: 035c8a3d-1cec-43e2-369d-f98593af1d9a
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #6'
-  type: vless
-  server: 188.114.97.3
-  port: 2052
-  uuid: af7acf3e-c4b7-dde5-ead4-e6399c5abbd6
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #7'
   type: vless
   server: 162.159.48.32
   port: 2052
@@ -131,6 +125,51 @@ proxies:
     path: /
     headers:
       Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
+- name: 'ARISTA #6'
+  type: vless
+  server: 162.159.48.32
+  port: 2052
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
+- name: 'ARISTA #7'
+  type: vless
+  server: 188.114.97.3
+  port: 2052
+  uuid: af7acf3e-c4b7-dde5-ead4-e6399c5abbd6
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #8'
+  type: vless
+  server: 188.114.97.3
+  port: 2052
+  uuid: 035c8a3d-1cec-43e2-369d-f98593af1d9a
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #9'
+  type: vless
+  server: de.hardvezoo.ir
+  port: 2052
+  uuid: 94dc2042-ee0c-10fe-64e6-2c387a35c962
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: varzesh3.com
+  reality-opts:
+    public-key: i2Qqn23hl3H8elJBvr3SobqsKp-I2NnuNlk02YNMFEc
+    short-id: "8507e2d4"
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -147,6 +186,8 @@ proxy-groups:
   - 'ARISTA #5'
   - 'ARISTA #6'
   - 'ARISTA #7'
+  - 'ARISTA #8'
+  - 'ARISTA #9'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

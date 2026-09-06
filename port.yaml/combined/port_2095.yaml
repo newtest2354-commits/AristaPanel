@@ -1,6 +1,6 @@
 # COMBINED - Port 2095
-# Updated: 2026-09-06 20:21:43
-# Count: 3
+# Updated: 2026-09-06 22:53:41
+# Count: 5
 
 mixed-port: 7890
 allow-lan: false
@@ -57,7 +57,29 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #2'
+- name: 'ARISTA #2'
+  type: vless
+  server: 185.146.173.58
+  port: 2095
+  uuid: 777d6d57-dab1-442e-89da-63213108a097
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /servernet
+    headers:
+      Host: dcc10.servernet.fun.
+- name: 'ARISTA #3'
+  type: vless
+  server: refiqq.dextter.ir
+  port: 2095
+  uuid: e835fdc7-c453-4e4e-9d9d-b3c5adb90082
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'T.ME: @aristapanel #4'
   type: vless
   server: 5.75.196.249
   port: 2095
@@ -66,7 +88,7 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #3'
+- name: 'T.ME: @aristapanel #5'
   type: vless
   server: 104.16.164.102
   port: 2095
@@ -92,8 +114,10 @@ proxy-groups:
   timeout: 3000
   proxies: &id001
   - 'ARISTA #1'
-  - 'T.ME: @aristapanel #2'
-  - 'T.ME: @aristapanel #3'
+  - 'ARISTA #2'
+  - 'ARISTA #3'
+  - 'T.ME: @aristapanel #4'
+  - 'T.ME: @aristapanel #5'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
