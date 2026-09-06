@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2095
-# Updated: 2026-09-06 10:04:15
-# Count: 1
+# Updated: 2026-09-06 15:24:01
+# Count: 3
 
 mixed-port: 7890
 allow-lan: false
@@ -57,6 +57,24 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
+- name: 'ARISTA #2'
+  type: vless
+  server: 104.17.122.116
+  port: 2095
+  uuid: a5bb1af5-5e92-2403-9024-f49335990970
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #3'
+  type: vless
+  server: 5.75.196.249
+  port: 2095
+  uuid: d87b4264-a9ff-4e01-8300-9b48f0f7ecc4
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -67,6 +85,8 @@ proxy-groups:
   timeout: 3000
   proxies: &id001
   - 'ARISTA #1'
+  - 'ARISTA #2'
+  - 'ARISTA #3'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

@@ -1,6 +1,6 @@
 # COMBINED - Port 9443
-# Updated: 2026-09-06 10:50:07
-# Count: 2
+# Updated: 2026-09-06 15:23:55
+# Count: 1
 
 mixed-port: 7890
 allow-lan: false
@@ -48,23 +48,11 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'ARISTA #1'
-  type: vless
-  server: 178.214.100.10
-  port: 9443
-  uuid: e6b5e08a-83fa-48d2-8a94-c6cc01fc35fd
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: beast.locallynet.org
-- name: 'T.ME: @aristapanel #2'
+- name: 'T.ME: @aristapanel #1'
   type: vless
   server: 46.243.142.89
   port: 9443
-  uuid: 3a43c0e8-5190-4b5a-a721-727d0d4dcc85
+  uuid: 77f93379-af7c-4431-ab90-c4fb0d3d6c49
   network: xhttp
   tls: true
   udp: true
@@ -83,8 +71,7 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'ARISTA #1'
-  - 'T.ME: @aristapanel #2'
+  - 'T.ME: @aristapanel #1'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
