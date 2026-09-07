@@ -1,6 +1,6 @@
 # COMBINED - Port 9443
-# Updated: 2026-09-07 12:18:30
-# Count: 4
+# Updated: 2026-09-07 19:11:37
+# Count: 6
 
 mixed-port: 7890
 allow-lan: false
@@ -50,19 +50,16 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 132.243.228.209
+  server: 178.214.100.10
   port: 9443
-  uuid: 70d482eb-7584-4841-a02a-c668f1ee33e7
+  uuid: e6b5e08a-83fa-48d2-8a94-c6cc01fc35fd
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
   flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: de3.routeliora.ru
-  reality-opts:
-    public-key: bDDR3ubmqiA8nv8uD72QLIKgpcWaENtY0Vumrce6jgg
-    short-id: "7a8b9c0d"
+  client-fingerprint: firefox
+  servername: beast.locallynet.org
 - name: 'ARISTA #2'
   type: vless
   server: 178.214.100.10
@@ -77,6 +74,18 @@ proxies:
   servername: beast.locallynet.org
 - name: 'ARISTA #3'
   type: vless
+  server: 178.214.100.10
+  port: 9443
+  uuid: e6b5e08a-83fa-48d2-8a94-c6cc01fc35fd
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: beast.locallynet.org
+- name: 'ARISTA #4'
+  type: vless
   server: 166.88.186.151
   port: 9443
   uuid: 20c72888-b83e-4309-82a4-aab4a2dda778
@@ -90,7 +99,7 @@ proxies:
   reality-opts:
     public-key: 8h8t5eBWL9oERK7xWHQLFJE5j6sZdgNDQAs3EGnNbho
     short-id: "2f49bccf11150ef2"
-- name: 'T.ME: @aristapanel #4'
+- name: 'T.ME: @aristapanel #5'
   type: vless
   server: 31.59.150.174
   port: 9443
@@ -100,11 +109,23 @@ proxies:
   udp: true
   skip-cert-verify: true
   flow: xtls-rprx-vision
-  client-fingerprint: chrome
+  client-fingerprint: firefox
   servername: hotcoals.aeternavpn.space
   reality-opts:
     public-key: RWu6ktBE4DFbUz_prmz-5KuolLhO53ehh19mNxhP-wI
     short-id: "a1b2c3d4"
+- name: 'ARISTA #6'
+  type: vless
+  server: 178.214.100.10
+  port: 9443
+  uuid: e6b5e08a-83fa-48d2-8a94-c6cc01fc35fd
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: beast.locallynet.org
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -117,7 +138,9 @@ proxy-groups:
   - 'ARISTA #1'
   - 'ARISTA #2'
   - 'ARISTA #3'
-  - 'T.ME: @aristapanel #4'
+  - 'ARISTA #4'
+  - 'T.ME: @aristapanel #5'
+  - 'ARISTA #6'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

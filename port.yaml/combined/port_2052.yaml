@@ -1,6 +1,6 @@
 # COMBINED - Port 2052
-# Updated: 2026-09-07 12:18:30
-# Count: 23
+# Updated: 2026-09-07 19:11:37
+# Count: 22
 
 mixed-port: 7890
 allow-lan: false
@@ -49,19 +49,32 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'ARISTA #1'
-  type: vless
-  server: cctvhikvision.center
+  type: vmess
+  server: cd2.videobazi.com
   port: 2052
-  uuid: 1f61ccc1-cd38-49cd-97aa-a71771433976
-  network: ws
+  uuid: a1f82d66-b769-4f54-8b63-cb4b5332e1e2
+  alterId: 0
+  cipher: auto
+  network: httpupgrade
   tls: false
   udp: true
   skip-cert-verify: true
-  ws-opts:
-    path: api-v1
-    headers:
-      Host: uwu.blueknightnet.qzz.io
+  tcp-fast-open: true
+  servername: cd2.videobazi.com
 - name: 'ARISTA #2'
+  type: vmess
+  server: cd2.videobazi.com
+  port: 2052
+  uuid: a1f82d66-b769-4f54-8b63-cb4b5332e1e2
+  alterId: 0
+  cipher: auto
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: cd2.videobazi.com
+- name: 'ARISTA #3'
   type: vless
   server: 162.159.48.32
   port: 2052
@@ -74,45 +87,32 @@ proxies:
     path: /
     headers:
       Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
-- name: 'ARISTA #3'
-  type: vless
-  server: cctvhikvision.center
-  port: 2052
-  uuid: 1f61ccc1-cd38-49cd-97aa-a71771433976
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: api-v1
-    headers:
-      Host: uwu.blueknightnet.qzz.io
 - name: 'ARISTA #4'
   type: vless
-  server: cctvhikvision.center
+  server: 162.159.48.32
   port: 2052
-  uuid: 1f61ccc1-cd38-49cd-97aa-a71771433976
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
   ws-opts:
-    path: api-v1
+    path: /
     headers:
-      Host: uwu.blueknightnet.qzz.io
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
 - name: 'ARISTA #5'
   type: vless
-  server: cctvhikvision.center
+  server: 162.159.48.32
   port: 2052
-  uuid: 1f61ccc1-cd38-49cd-97aa-a71771433976
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
   ws-opts:
-    path: api-v1
+    path: /
     headers:
-      Host: uwu.blueknightnet.qzz.io
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
 - name: 'ARISTA #6'
   type: vless
   server: 162.159.48.32
@@ -141,19 +141,6 @@ proxies:
       Host: uwu.blueknightnet.qzz.io
 - name: 'ARISTA #8'
   type: vless
-  server: 162.159.48.32
-  port: 2052
-  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
-- name: 'ARISTA #9'
-  type: vless
   server: 188.114.97.3
   port: 2052
   uuid: 035c8a3d-1cec-43e2-369d-f98593af1d9a
@@ -161,16 +148,20 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'ARISTA #10'
+- name: 'ARISTA #9'
   type: vless
-  server: tr.s.hardvezoo.ir
+  server: 185.126.236.181
   port: 2052
-  uuid: 01e4f6b0-acfa-4cac-a39d-6779d85eba65
-  network: httpupgrade
+  uuid: daa34529-5219-4323-d26a-2c395b25a56d
+  network: ws
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #11'
+  ws-opts:
+    path: /
+    headers:
+      Host: www.icloud.com
+- name: 'T.ME: @aristapanel #10'
   type: vless
   server: 193.227.99.54
   port: 2052
@@ -179,7 +170,7 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #12'
+- name: 'T.ME: @aristapanel #11'
   type: vless
   server: 104.17.121.110
   port: 2052
@@ -188,9 +179,22 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #13'
+- name: 'T.ME: @aristapanel #12'
   type: vless
   server: cctvhikvision.center
+  port: 2052
+  uuid: 08125d23-5500-41ae-97ef-8398eaf70562
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /@BlueKnight_net--@BlueKnight_net
+    headers:
+      Host: uwu.blueknightnet.qzz.io
+- name: 'T.ME: @aristapanel #13'
+  type: vless
+  server: freesocks.work
   port: 2052
   uuid: 08125d23-5500-41ae-97ef-8398eaf70562
   network: ws
@@ -203,7 +207,7 @@ proxies:
       Host: uwu.blueknightnet.qzz.io
 - name: 'T.ME: @aristapanel #14'
   type: vless
-  server: freesocks.work
+  server: undef.network
   port: 2052
   uuid: 08125d23-5500-41ae-97ef-8398eaf70562
   network: ws
@@ -216,7 +220,7 @@ proxies:
       Host: uwu.blueknightnet.qzz.io
 - name: 'T.ME: @aristapanel #15'
   type: vless
-  server: undef.network
+  server: hikvision-plus.com
   port: 2052
   uuid: 08125d23-5500-41ae-97ef-8398eaf70562
   network: ws
@@ -229,19 +233,6 @@ proxies:
       Host: uwu.blueknightnet.qzz.io
 - name: 'T.ME: @aristapanel #16'
   type: vless
-  server: hikvision-plus.com
-  port: 2052
-  uuid: 08125d23-5500-41ae-97ef-8398eaf70562
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /@BlueKnight_net--@BlueKnight_net
-    headers:
-      Host: uwu.blueknightnet.qzz.io
-- name: 'T.ME: @aristapanel #17'
-  type: vless
   server: cctvhikvision.center
   port: 2052
   uuid: a3dc82ea-67df-423d-b322-8bc0b0790f41
@@ -253,7 +244,7 @@ proxies:
     path: /@BlueKnight_net--@BlueKnight_net
     headers:
       Host: uwu.blueknightnet.qzz.io
-- name: 'T.ME: @aristapanel #18'
+- name: 'T.ME: @aristapanel #17'
   type: vless
   server: freesocks.work
   port: 2052
@@ -266,7 +257,7 @@ proxies:
     path: /@BlueKnight_net--@BlueKnight_net
     headers:
       Host: uwu.blueknightnet.qzz.io
-- name: 'T.ME: @aristapanel #19'
+- name: 'T.ME: @aristapanel #18'
   type: vless
   server: undef.network
   port: 2052
@@ -279,11 +270,24 @@ proxies:
     path: /@BlueKnight_net--@BlueKnight_net
     headers:
       Host: uwu.blueknightnet.qzz.io
-- name: 'T.ME: @aristapanel #20'
+- name: 'T.ME: @aristapanel #19'
   type: vless
   server: hikvision-plus.com
   port: 2052
   uuid: a3dc82ea-67df-423d-b322-8bc0b0790f41
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /@BlueKnight_net--@BlueKnight_net
+    headers:
+      Host: uwu.blueknightnet.qzz.io
+- name: 'T.ME: @aristapanel #20'
+  type: vless
+  server: 104.21.5.128
+  port: 2052
+  uuid: 08125d23-5500-41ae-97ef-8398eaf70562
   network: ws
   tls: false
   udp: true
@@ -305,32 +309,19 @@ proxies:
     path: /@BlueKnight_net--@BlueKnight_net
     headers:
       Host: uwu.blueknightnet.qzz.io
-- name: 'T.ME: @aristapanel #22'
+- name: 'ARISTA #22'
   type: vless
-  server: 104.21.5.128
+  server: 162.159.48.32
   port: 2052
-  uuid: 08125d23-5500-41ae-97ef-8398eaf70562
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
   ws-opts:
-    path: /@BlueKnight_net--@BlueKnight_net
+    path: /
     headers:
-      Host: uwu.blueknightnet.qzz.io
-- name: 'ARISTA #23'
-  type: vless
-  server: cctvhikvision.center
-  port: 2052
-  uuid: 1f61ccc1-cd38-49cd-97aa-a71771433976
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: api-v1
-    headers:
-      Host: uwu.blueknightnet.qzz.io
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -349,7 +340,7 @@ proxy-groups:
   - 'ARISTA #7'
   - 'ARISTA #8'
   - 'ARISTA #9'
-  - 'ARISTA #10'
+  - 'T.ME: @aristapanel #10'
   - 'T.ME: @aristapanel #11'
   - 'T.ME: @aristapanel #12'
   - 'T.ME: @aristapanel #13'
@@ -361,8 +352,7 @@ proxy-groups:
   - 'T.ME: @aristapanel #19'
   - 'T.ME: @aristapanel #20'
   - 'T.ME: @aristapanel #21'
-  - 'T.ME: @aristapanel #22'
-  - 'ARISTA #23'
+  - 'ARISTA #22'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

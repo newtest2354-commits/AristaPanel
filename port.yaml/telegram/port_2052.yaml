@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2052
-# Updated: 2026-09-07 12:18:39
-# Count: 11
+# Updated: 2026-09-07 19:11:44
+# Count: 10
 
 mixed-port: 7890
 allow-lan: false
@@ -49,19 +49,32 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'ARISTA #1'
-  type: vless
-  server: cctvhikvision.center
+  type: vmess
+  server: cd2.videobazi.com
   port: 2052
-  uuid: 1f61ccc1-cd38-49cd-97aa-a71771433976
-  network: ws
+  uuid: a1f82d66-b769-4f54-8b63-cb4b5332e1e2
+  alterId: 0
+  cipher: auto
+  network: httpupgrade
   tls: false
   udp: true
   skip-cert-verify: true
-  ws-opts:
-    path: api-v1
-    headers:
-      Host: uwu.blueknightnet.qzz.io
+  tcp-fast-open: true
+  servername: cd2.videobazi.com
 - name: 'ARISTA #2'
+  type: vmess
+  server: cd2.videobazi.com
+  port: 2052
+  uuid: a1f82d66-b769-4f54-8b63-cb4b5332e1e2
+  alterId: 0
+  cipher: auto
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: cd2.videobazi.com
+- name: 'ARISTA #3'
   type: vless
   server: 162.159.48.32
   port: 2052
@@ -74,45 +87,32 @@ proxies:
     path: /
     headers:
       Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
-- name: 'ARISTA #3'
-  type: vless
-  server: cctvhikvision.center
-  port: 2052
-  uuid: 1f61ccc1-cd38-49cd-97aa-a71771433976
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: api-v1
-    headers:
-      Host: uwu.blueknightnet.qzz.io
 - name: 'ARISTA #4'
   type: vless
-  server: cctvhikvision.center
+  server: 162.159.48.32
   port: 2052
-  uuid: 1f61ccc1-cd38-49cd-97aa-a71771433976
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
   ws-opts:
-    path: api-v1
+    path: /
     headers:
-      Host: uwu.blueknightnet.qzz.io
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
 - name: 'ARISTA #5'
   type: vless
-  server: cctvhikvision.center
+  server: 162.159.48.32
   port: 2052
-  uuid: 1f61ccc1-cd38-49cd-97aa-a71771433976
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
   ws-opts:
-    path: api-v1
+    path: /
     headers:
-      Host: uwu.blueknightnet.qzz.io
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
 - name: 'ARISTA #6'
   type: vless
   server: 162.159.48.32
@@ -141,6 +141,28 @@ proxies:
       Host: uwu.blueknightnet.qzz.io
 - name: 'ARISTA #8'
   type: vless
+  server: 188.114.97.3
+  port: 2052
+  uuid: 035c8a3d-1cec-43e2-369d-f98593af1d9a
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #9'
+  type: vless
+  server: 185.126.236.181
+  port: 2052
+  uuid: daa34529-5219-4323-d26a-2c395b25a56d
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: www.icloud.com
+- name: 'ARISTA #10'
+  type: vless
   server: 162.159.48.32
   port: 2052
   uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
@@ -152,37 +174,6 @@ proxies:
     path: /
     headers:
       Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
-- name: 'ARISTA #9'
-  type: vless
-  server: 188.114.97.3
-  port: 2052
-  uuid: 035c8a3d-1cec-43e2-369d-f98593af1d9a
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #10'
-  type: vless
-  server: tr.s.hardvezoo.ir
-  port: 2052
-  uuid: 01e4f6b0-acfa-4cac-a39d-6779d85eba65
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #11'
-  type: vless
-  server: cctvhikvision.center
-  port: 2052
-  uuid: 1f61ccc1-cd38-49cd-97aa-a71771433976
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: api-v1
-    headers:
-      Host: uwu.blueknightnet.qzz.io
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -202,7 +193,6 @@ proxy-groups:
   - 'ARISTA #8'
   - 'ARISTA #9'
   - 'ARISTA #10'
-  - 'ARISTA #11'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
