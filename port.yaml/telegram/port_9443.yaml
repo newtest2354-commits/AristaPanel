@@ -1,6 +1,6 @@
 # TELEGRAM - Port 9443
-# Updated: 2026-09-08 06:33:59
-# Count: 2
+# Updated: 2026-09-08 11:07:11
+# Count: 3
 
 mixed-port: 7890
 allow-lan: false
@@ -72,6 +72,21 @@ proxies:
   flow: xtls-rprx-vision
   client-fingerprint: firefox
   servername: beast.locallynet.org
+- name: 'ARISTA #3'
+  type: vless
+  server: 132.243.228.209
+  port: 9443
+  uuid: 70d482eb-7584-4841-a02a-c668f1ee33e7
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: de3.routeliora.ru
+  reality-opts:
+    public-key: bDDR3ubmqiA8nv8uD72QLIKgpcWaENtY0Vumrce6jgg
+    short-id: "7a8b9c0d"
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -83,6 +98,7 @@ proxy-groups:
   proxies: &id001
   - 'ARISTA #1'
   - 'ARISTA #2'
+  - 'ARISTA #3'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
