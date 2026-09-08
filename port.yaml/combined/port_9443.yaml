@@ -1,6 +1,6 @@
 # COMBINED - Port 9443
-# Updated: 2026-09-08 04:17:30
-# Count: 7
+# Updated: 2026-09-08 06:33:51
+# Count: 6
 
 mixed-port: 7890
 allow-lan: false
@@ -72,31 +72,7 @@ proxies:
   flow: xtls-rprx-vision
   client-fingerprint: firefox
   servername: beast.locallynet.org
-- name: 'ARISTA #3'
-  type: vless
-  server: 178.214.100.10
-  port: 9443
-  uuid: e6b5e08a-83fa-48d2-8a94-c6cc01fc35fd
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: beast.locallynet.org
-- name: 'ARISTA #4'
-  type: vless
-  server: 178.214.100.10
-  port: 9443
-  uuid: e6b5e08a-83fa-48d2-8a94-c6cc01fc35fd
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: beast.locallynet.org
-- name: 'T.ME: @aristapanel #5'
+- name: 'T.ME: @aristapanel #3'
   type: vless
   server: 31.59.150.174
   port: 9443
@@ -111,11 +87,41 @@ proxies:
   reality-opts:
     public-key: RWu6ktBE4DFbUz_prmz-5KuolLhO53ehh19mNxhP-wI
     short-id: "a1b2c3d4"
+- name: 'T.ME: @aristapanel #4'
+  type: vless
+  server: 132.243.228.209
+  port: 9443
+  uuid: 70d482eb-7584-4841-a02a-c668f1ee33e7
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: de3.routeliora.ru
+  reality-opts:
+    public-key: bDDR3ubmqiA8nv8uD72QLIKgpcWaENtY0Vumrce6jgg
+    short-id: "7a8b9c0d"
+- name: 'T.ME: @aristapanel #5'
+  type: vless
+  server: 31.59.150.174
+  port: 9443
+  uuid: 92089155-6602-4122-86d4-fe6de20e8c4d
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: hotcoals.aeternavpn.space
+  reality-opts:
+    public-key: RWu6ktBE4DFbUz_prmz-5KuolLhO53ehh19mNxhP-wI
+    short-id: "a1b2c3d4"
 - name: 'T.ME: @aristapanel #6'
   type: vless
   server: 46.243.142.89
   port: 9443
-  uuid: 5af541b5-5c01-472e-ad68-61baf15ebc33
+  uuid: f47d5058-b373-4d54-af8e-72ae42421bce
   network: xhttp
   tls: true
   udp: true
@@ -125,18 +131,6 @@ proxies:
   reality-opts:
     public-key: 5hhzoP441DrGa2l5YlwizPSA5chdY2VjRP7CiEfLLA0
     short-id: "eea4ab7bddaeea39"
-- name: 'ARISTA #7'
-  type: vless
-  server: 178.214.100.10
-  port: 9443
-  uuid: e6b5e08a-83fa-48d2-8a94-c6cc01fc35fd
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: beast.locallynet.org
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -148,11 +142,10 @@ proxy-groups:
   proxies: &id001
   - 'ARISTA #1'
   - 'ARISTA #2'
-  - 'ARISTA #3'
-  - 'ARISTA #4'
+  - 'T.ME: @aristapanel #3'
+  - 'T.ME: @aristapanel #4'
   - 'T.ME: @aristapanel #5'
   - 'T.ME: @aristapanel #6'
-  - 'ARISTA #7'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
