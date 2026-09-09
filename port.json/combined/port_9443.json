@@ -1,6 +1,6 @@
 // COMBINED - Port 9443
-// Updated: 2026-09-09 16:28:27
-// Count: 1
+// Updated: 2026-09-09 20:55:28
+// Count: 3
 
 {
   "log": {
@@ -43,7 +43,7 @@
       "tag": "ARISTA #1",
       "server": "46.243.142.89",
       "server_port": 9443,
-      "uuid": "5e6a9212-f660-4dbe-bc3f-9a9916811a8b",
+      "uuid": "5aefd00d-8de6-47f8-b168-b46212417734",
       "domain_resolver": "google",
       "tls": {
         "enabled": true,
@@ -61,6 +61,51 @@
       }
     },
     {
+      "type": "vless",
+      "tag": "ARISTA #2",
+      "server": "46.243.142.89",
+      "server_port": 9443,
+      "uuid": "5aefd00d-8de6-47f8-b168-b46212417734",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "h5wnt.nodes.ac",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "5hhzoP441DrGa2l5YlwizPSA5chdY2VjRP7CiEfLLA0",
+          "short_id": "eea4ab7bddaeea39"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "ARISTA #3",
+      "server": "31.59.150.174",
+      "server_port": 9443,
+      "uuid": "92089155-6602-4122-86d4-fe6de20e8c4d",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "hotcoals.aeternavpn.space",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "RWu6ktBE4DFbUz_prmz-5KuolLhO53ehh19mNxhP-wI",
+          "short_id": "a1b2c3d4"
+        }
+      },
+      "flow": "xtls-rprx-vision"
+    },
+    {
       "type": "direct",
       "tag": "direct"
     },
@@ -72,7 +117,9 @@
       "type": "urltest",
       "tag": "🚀 ARISTA AUTO BEST",
       "outbounds": [
-        "ARISTA #1"
+        "ARISTA #1",
+        "ARISTA #2",
+        "ARISTA #3"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "2m",
