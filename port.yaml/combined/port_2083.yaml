@@ -1,6 +1,6 @@
 # COMBINED - Port 2083
-# Updated: 2026-09-09 11:09:45
-# Count: 65
+# Updated: 2026-09-09 16:28:07
+# Count: 40
 
 mixed-port: 7890
 allow-lan: false
@@ -48,7 +48,7 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'ARISTA #1'
+- name: 'T.ME: @aristapanel #1'
   type: vmess
   server: xgr.goldnshop.com
   port: 2083
@@ -62,148 +62,154 @@ proxies:
   tcp-fast-open: true
   servername: xgr.goldnshop.com
 - name: 'ARISTA #2'
-  type: vmess
-  server: xgr.goldnshop.com
+  type: vless
+  server: 31.76.80.69
   port: 2083
-  uuid: beadd688-6285-4f0e-bb5e-d984570567a4
-  alterId: 0
-  cipher: auto
-  network: tcp
-  tls: false
+  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
+  network: xhttp
+  tls: true
   udp: true
   skip-cert-verify: true
-  tcp-fast-open: true
-  servername: xgr.goldnshop.com
+  client-fingerprint: chrome
+  servername: www.amd.com
+  reality-opts:
+    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
+    short-id: "29b21343ab4d"
 - name: 'ARISTA #3'
   type: vless
-  server: 8.6.112.6
+  server: 31.76.80.69
   port: 2083
-  uuid: eb211fb7-40c8-4314-8b67-7b5f025e0f62
-  network: ws
+  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: kamalnet.pages.dev
-  ws-opts:
-    path: /
-    headers:
-      Host: kamalnet.pages.dev
+  servername: www.amd.com
+  reality-opts:
+    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
+    short-id: "29b21343ab4d"
 - name: 'ARISTA #4'
   type: vless
-  server: 31.76.80.69
+  server: 45.80.110.161
   port: 2083
-  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: www.amd.com
-  reality-opts:
-    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
-    short-id: "29b21343ab4d"
-- name: 'ARISTA #5'
-  type: vless
-  server: 89.36.161.222
-  port: 2083
-  uuid: 70e20b2e-3b1f-4c25-9a3d-9240570391bb
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: laoye.in-gect.fun
-  grpc-opts:
-    grpc-service-name: grpc
-- name: 'ARISTA #6'
-  type: vless
-  server: 31.76.80.69
-  port: 2083
-  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.amd.com
-  reality-opts:
-    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
-    short-id: "29b21343ab4d"
-- name: 'ARISTA #7'
-  type: vless
-  server: 104.21.20.148
-  port: 2083
-  uuid: ff771898-3e59-4d0a-91b1-c4d5260c8f9a
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  servername: abcdefghigklmnopqrstuvwxyz.likeboukan1.top
-- name: 'ARISTA #8'
-  type: vless
-  server: 185.140.12.160
-  port: 2083
-  uuid: 70e20b2e-3b1f-4c25-9a3d-9240570391bb
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: ios
-  servername: derman.neobo-tooth.ru
-  grpc-opts:
-    grpc-service-name: grpc
-- name: 'ARISTA #9'
-  type: vless
-  server: d.rodia.ir
-  port: 2083
-  uuid: 11bbd73e-14e3-42df-b46b-2ae28c741123
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.sony.com
-  reality-opts:
-    public-key: DQlucQqsoIyjXz6rqLu4-iFIgexG2f7Prh9uv01UghM
-    short-id: "b7042e7e"
-- name: 'ARISTA #10'
-  type: vless
-  server: d.rodia.ir
-  port: 2083
-  uuid: 11bbd73e-14e3-42df-b46b-2ae28c741123
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #11'
-  type: vless
-  server: 185.126.238.87
-  port: 2083
-  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
-  network: grpc
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: security.debian.org
-- name: 'ARISTA #12'
-  type: vless
-  server: 8.6.112.6
-  port: 2083
-  uuid: eb211fb7-40c8-4314-8b67-7b5f025e0f62
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
+  servername: a.ssll.gay
+  ws-opts:
+    path: twitterfreecodes
+- name: 'ARISTA #5'
+  type: vless
+  server: 31.76.80.69
+  port: 2083
+  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
   client-fingerprint: chrome
-  servername: kamalnet.pages.dev
+  servername: www.amd.com
+  reality-opts:
+    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
+    short-id: "29b21343ab4d"
+- name: 'ARISTA #6'
+  type: vless
+  server: alman.asasin6.ir
+  port: 2083
+  uuid: 4fcdbb54-17bf-41e2-8879-1d708a02cfdd
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
   ws-opts:
     path: /
     headers:
-      Host: kamalnet.pages.dev
+      Host: play.google.com
+- name: 'ARISTA #7'
+  type: vless
+  server: 31.76.80.69
+  port: 2083
+  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.amd.com
+  reality-opts:
+    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
+    short-id: "29b21343ab4d"
+- name: 'ARISTA #8'
+  type: vless
+  server: 31.76.80.69
+  port: 2083
+  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.amd.com
+  reality-opts:
+    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
+    short-id: "29b21343ab4d"
+- name: 'ARISTA #9'
+  type: vless
+  server: 45.80.110.161
+  port: 2083
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: a.ssll.gay
+  ws-opts:
+    path: twitterfreecodes
+- name: 'ARISTA #10'
+  type: vless
+  server: 31.76.80.69
+  port: 2083
+  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.amd.com
+  reality-opts:
+    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
+    short-id: "29b21343ab4d"
+- name: 'ARISTA #11'
+  type: vless
+  server: 31.76.80.69
+  port: 2083
+  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.amd.com
+  reality-opts:
+    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
+    short-id: "29b21343ab4d"
+- name: 'ARISTA #12'
+  type: vless
+  server: 31.76.80.69
+  port: 2083
+  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.amd.com
+  reality-opts:
+    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
+    short-id: "29b21343ab4d"
 - name: 'ARISTA #13'
   type: vless
   server: 31.76.80.69
@@ -213,461 +219,170 @@ proxies:
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: firefox
+  client-fingerprint: chrome
   servername: www.amd.com
   reality-opts:
     public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
     short-id: "29b21343ab4d"
 - name: 'ARISTA #14'
   type: vless
-  server: 89.36.161.222
+  server: 31.76.80.69
   port: 2083
-  uuid: 70e20b2e-3b1f-4c25-9a3d-9240570391bb
-  network: grpc
+  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: laoye.in-gect.fun
-  grpc-opts:
-    grpc-service-name: grpc
+  client-fingerprint: chrome
+  servername: www.amd.com
+  reality-opts:
+    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
+    short-id: "29b21343ab4d"
 - name: 'ARISTA #15'
   type: vless
-  server: 31.76.80.69
+  server: 45.80.110.161
   port: 2083
-  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
-  network: xhttp
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.amd.com
-  reality-opts:
-    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
-    short-id: "29b21343ab4d"
+  servername: a.ssll.gay
+  ws-opts:
+    path: twitterfreecodes
 - name: 'ARISTA #16'
   type: vless
-  server: 104.21.20.148
+  server: 31.76.80.69
   port: 2083
-  uuid: ff771898-3e59-4d0a-91b1-c4d5260c8f9a
-  network: grpc
+  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  servername: abcdefghigklmnopqrstuvwxyz.likeboukan1.top
+  client-fingerprint: chrome
+  servername: www.amd.com
+  reality-opts:
+    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
+    short-id: "29b21343ab4d"
 - name: 'ARISTA #17'
   type: vless
-  server: 8.6.112.6
+  server: alman.asasin6.ir
   port: 2083
-  uuid: eb211fb7-40c8-4314-8b67-7b5f025e0f62
+  uuid: 4fcdbb54-17bf-41e2-8879-1d708a02cfdd
   network: ws
-  tls: true
+  tls: false
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: kamalnet.pages.dev
   ws-opts:
     path: /
     headers:
-      Host: kamalnet.pages.dev
+      Host: play.google.com
 - name: 'ARISTA #18'
   type: vless
-  server: 31.76.80.69
+  server: 89.36.161.222
   port: 2083
-  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
-  network: xhttp
+  uuid: 70e20b2e-3b1f-4c25-9a3d-9240570391bb
+  network: grpc
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: www.amd.com
-  reality-opts:
-    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
-    short-id: "29b21343ab4d"
+  servername: laoye.in-gect.fun
+  grpc-opts:
+    grpc-service-name: grpc
 - name: 'ARISTA #19'
   type: vless
-  server: 89.36.161.222
+  server: 31.76.80.69
   port: 2083
-  uuid: 70e20b2e-3b1f-4c25-9a3d-9240570391bb
-  network: grpc
+  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: laoye.in-gect.fun
-  grpc-opts:
-    grpc-service-name: grpc
+  client-fingerprint: chrome
+  servername: www.amd.com
+  reality-opts:
+    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
+    short-id: "29b21343ab4d"
 - name: 'ARISTA #20'
   type: vless
-  server: 8.6.112.6
+  server: 31.76.80.69
   port: 2083
-  uuid: eb211fb7-40c8-4314-8b67-7b5f025e0f62
-  network: ws
+  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: kamalnet.pages.dev
-  ws-opts:
-    path: /
-    headers:
-      Host: kamalnet.pages.dev
+  servername: www.amd.com
+  reality-opts:
+    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
+    short-id: "29b21343ab4d"
 - name: 'ARISTA #21'
   type: vless
-  server: 31.76.80.69
+  server: 45.80.110.161
   port: 2083
-  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
-  network: xhttp
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: www.amd.com
-  reality-opts:
-    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
-    short-id: "29b21343ab4d"
+  servername: a.ssll.gay
+  ws-opts:
+    path: twitterfreecodes
 - name: 'ARISTA #22'
   type: vless
-  server: 89.36.161.222
+  server: 31.76.80.69
   port: 2083
-  uuid: 70e20b2e-3b1f-4c25-9a3d-9240570391bb
-  network: grpc
+  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: laoye.in-gect.fun
-  grpc-opts:
-    grpc-service-name: grpc
+  client-fingerprint: chrome
+  servername: www.amd.com
+  reality-opts:
+    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
+    short-id: "29b21343ab4d"
 - name: 'ARISTA #23'
   type: vless
-  server: 31.76.80.69
+  server: alman.asasin6.ir
   port: 2083
-  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
-  network: xhttp
-  tls: true
+  uuid: 4fcdbb54-17bf-41e2-8879-1d708a02cfdd
+  network: ws
+  tls: false
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.amd.com
-  reality-opts:
-    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
-    short-id: "29b21343ab4d"
+  ws-opts:
+    path: /
+    headers:
+      Host: play.google.com
 - name: 'ARISTA #24'
   type: vless
-  server: 8.6.112.6
+  server: 89.36.161.222
   port: 2083
-  uuid: eb211fb7-40c8-4314-8b67-7b5f025e0f62
-  network: ws
+  uuid: 70e20b2e-3b1f-4c25-9a3d-9240570391bb
+  network: grpc
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: kamalnet.pages.dev
-  ws-opts:
-    path: /
-    headers:
-      Host: kamalnet.pages.dev
+  servername: laoye.in-gect.fun
+  grpc-opts:
+    grpc-service-name: grpc
 - name: 'ARISTA #25'
   type: vless
-  server: 31.76.80.69
+  server: 104.17.89.154
   port: 2083
-  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
+  uuid: 417a471c-6183-495d-87ef-331e7e8842fe
   network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: www.amd.com
-  reality-opts:
-    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
-    short-id: "29b21343ab4d"
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: rana.bardo-chronos.online
 - name: 'ARISTA #26'
-  type: vless
-  server: 89.36.161.222
-  port: 2083
-  uuid: 70e20b2e-3b1f-4c25-9a3d-9240570391bb
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: laoye.in-gect.fun
-  grpc-opts:
-    grpc-service-name: grpc
-- name: 'ARISTA #27'
-  type: vless
-  server: 31.76.80.69
-  port: 2083
-  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.amd.com
-  reality-opts:
-    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
-    short-id: "29b21343ab4d"
-- name: 'ARISTA #28'
-  type: vless
-  server: 104.21.20.148
-  port: 2083
-  uuid: ff771898-3e59-4d0a-91b1-c4d5260c8f9a
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  servername: abcdefghigklmnopqrstuvwxyz.likeboukan1.top
-- name: 'ARISTA #29'
-  type: vless
-  server: 185.140.12.160
-  port: 2083
-  uuid: 70e20b2e-3b1f-4c25-9a3d-9240570391bb
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: ios
-  servername: derman.neobo-tooth.ru
-  grpc-opts:
-    grpc-service-name: grpc
-- name: 'ARISTA #30'
-  type: vless
-  server: d.rodia.ir
-  port: 2083
-  uuid: 11bbd73e-14e3-42df-b46b-2ae28c741123
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.sony.com
-  reality-opts:
-    public-key: DQlucQqsoIyjXz6rqLu4-iFIgexG2f7Prh9uv01UghM
-    short-id: "b7042e7e"
-- name: 'ARISTA #31'
-  type: vless
-  server: d.rodia.ir
-  port: 2083
-  uuid: 11bbd73e-14e3-42df-b46b-2ae28c741123
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #32'
-  type: vless
-  server: 185.126.238.87
-  port: 2083
-  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
-  network: grpc
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: security.debian.org
-- name: 'ARISTA #33'
-  type: vless
-  server: 104.17.89.154
-  port: 2083
-  uuid: 417a471c-6183-495d-87ef-331e7e8842fe
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: rana.bardo-chronos.online
-- name: 'ARISTA #34'
-  type: vless
-  server: 8.6.112.6
-  port: 2083
-  uuid: eb211fb7-40c8-4314-8b67-7b5f025e0f62
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: kamalnet.pages.dev
-  ws-opts:
-    path: /
-    headers:
-      Host: kamalnet.pages.dev
-- name: 'ARISTA #35'
-  type: vless
-  server: 8.6.112.6
-  port: 2083
-  uuid: eb211fb7-40c8-4314-8b67-7b5f025e0f62
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: kamalnet.pages.dev
-  ws-opts:
-    path: /
-    headers:
-      Host: kamalnet.pages.dev
-- name: 'ARISTA #36'
-  type: vless
-  server: 31.76.80.69
-  port: 2083
-  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: www.amd.com
-  reality-opts:
-    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
-    short-id: "29b21343ab4d"
-- name: 'ARISTA #37'
-  type: vless
-  server: 89.36.161.222
-  port: 2083
-  uuid: 70e20b2e-3b1f-4c25-9a3d-9240570391bb
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: laoye.in-gect.fun
-  grpc-opts:
-    grpc-service-name: grpc
-- name: 'ARISTA #38'
-  type: vless
-  server: 31.76.80.69
-  port: 2083
-  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.amd.com
-  reality-opts:
-    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
-    short-id: "29b21343ab4d"
-- name: 'ARISTA #39'
-  type: vless
-  server: 104.21.20.148
-  port: 2083
-  uuid: ff771898-3e59-4d0a-91b1-c4d5260c8f9a
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  servername: abcdefghigklmnopqrstuvwxyz.likeboukan1.top
-- name: 'ARISTA #40'
-  type: vless
-  server: 185.140.12.160
-  port: 2083
-  uuid: 70e20b2e-3b1f-4c25-9a3d-9240570391bb
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: ios
-  servername: derman.neobo-tooth.ru
-  grpc-opts:
-    grpc-service-name: grpc
-- name: 'ARISTA #41'
-  type: vless
-  server: d.rodia.ir
-  port: 2083
-  uuid: 11bbd73e-14e3-42df-b46b-2ae28c741123
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.sony.com
-  reality-opts:
-    public-key: DQlucQqsoIyjXz6rqLu4-iFIgexG2f7Prh9uv01UghM
-    short-id: "b7042e7e"
-- name: 'ARISTA #42'
-  type: vless
-  server: d.rodia.ir
-  port: 2083
-  uuid: 11bbd73e-14e3-42df-b46b-2ae28c741123
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #43'
-  type: vless
-  server: 185.126.238.87
-  port: 2083
-  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
-  network: grpc
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: security.debian.org
-- name: 'ARISTA #44'
-  type: vless
-  server: 104.17.89.154
-  port: 2083
-  uuid: 417a471c-6183-495d-87ef-331e7e8842fe
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: rana.bardo-chronos.online
-- name: 'ARISTA #45'
-  type: vless
-  server: 172.64.53.215
-  port: 2083
-  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  ws-opts:
-    path: /
-- name: 'ARISTA #46'
-  type: vless
-  server: 172.64.145.93
-  port: 2083
-  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: fx3h2kf8xn.fx6hsv0.ccwu.cc
-  ws-opts:
-    path: /
-    headers:
-      Host: fx3h2kf8xn.fx6hsv0.ccwu.cc
-- name: 'ARISTA #47'
-  type: vless
-  server: 31.76.80.69
-  port: 2083
-  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.amd.com
-  reality-opts:
-    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
-    short-id: "29b21343ab4d"
-- name: 'ARISTA #48'
   type: vless
   server: 172.66.0.236
   port: 2083
@@ -682,65 +397,7 @@ proxies:
     path: /
     headers:
       Host: cfvvv-ev1.pages.dev
-- name: 'ARISTA #49'
-  type: vless
-  server: fans.liverpool.qzz.io
-  port: 2083
-  uuid: 2b8738de-1af5-4267-b101-c05707769ed4
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: fans.liverpool.qzz.io
-  ws-opts:
-    path: /eyJqdW5rIjoiY0Y0cENQUmxsNyIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=
-    headers:
-      Host: fans.liverpool.qzz.io
-- name: 'ARISTA #50'
-  type: vless
-  server: 179.61.227.145
-  port: 2083
-  uuid: e0b9fb0f-1bbd-478b-9580-c2294778338b
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: assets.pleiades.codes
-  reality-opts:
-    public-key: jowOwf_cxg_FNpG36QJcyqBWtDItBBYjqj7VGhD2lnw
-    short-id: "d3124debabf1456c"
-- name: 'ARISTA #51'
-  type: vless
-  server: xn-ip.dbsll.ir
-  port: 2083
-  uuid: 199436d3-2fa2-4e34-a1de-844419de5a4f
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: firefox
-  servername: xn-de.shakhle.ir
-  ws-opts:
-    path: /?ed=2048
-    headers:
-      Host: xn-de.shakhle.ir.
-- name: 'T.ME: @aristapanel #52'
-  type: vless
-  server: 193.227.99.253
-  port: 2083
-  uuid: 68172289-a964-4431-a944-0acd47152878
-  network: httpupgrade
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: cdn.cjdpars-m.ir
-- name: 'T.ME: @aristapanel #53'
+- name: 'ARISTA #27'
   type: vless
   server: 178.105.61.61
   port: 2083
@@ -755,104 +412,119 @@ proxies:
   reality-opts:
     public-key: H0nCazQFHVhSObfqSUhGLhK7KRwKzTMggIBPjnMMqhk
     short-id: "af04ff8094115e93"
-- name: 'ARISTA #54'
+- name: 'ARISTA #28'
   type: vless
-  server: 8.6.112.6
+  server: fans.liverpool.qzz.io
   port: 2083
-  uuid: eb211fb7-40c8-4314-8b67-7b5f025e0f62
+  uuid: 2b8738de-1af5-4267-b101-c05707769ed4
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: kamalnet.pages.dev
+  servername: fans.liverpool.qzz.io
   ws-opts:
-    path: /
+    path: /eyJqdW5rIjoiY0Y0cENQUmxsNyIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=
     headers:
-      Host: kamalnet.pages.dev
-- name: 'ARISTA #55'
+      Host: fans.liverpool.qzz.io
+- name: 'ARISTA #29'
   type: vless
-  server: 31.76.80.69
+  server: 185.126.238.87
   port: 2083
-  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: www.amd.com
-  reality-opts:
-    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
-    short-id: "29b21343ab4d"
-- name: 'ARISTA #56'
-  type: vless
-  server: 8.6.112.6
-  port: 2083
-  uuid: eb211fb7-40c8-4314-8b67-7b5f025e0f62
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: kamalnet.pages.dev
-  ws-opts:
-    path: /
-    headers:
-      Host: kamalnet.pages.dev
-- name: 'ARISTA #57'
-  type: vless
-  server: 31.76.80.69
-  port: 2083
-  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: www.amd.com
-  reality-opts:
-    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
-    short-id: "29b21343ab4d"
-- name: 'ARISTA #58'
-  type: vless
-  server: 89.36.161.222
-  port: 2083
-  uuid: 70e20b2e-3b1f-4c25-9a3d-9240570391bb
+  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
   network: grpc
-  tls: true
+  tls: false
   udp: true
   skip-cert-verify: true
-  servername: laoye.in-gect.fun
   grpc-opts:
-    grpc-service-name: grpc
-- name: 'ARISTA #59'
+    grpc-service-name: security.debian.org
+- name: 'ARISTA #30'
   type: vless
-  server: 31.76.80.69
+  server: proxyforopeta.liongame1.ir
   port: 2083
-  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.amd.com
-  reality-opts:
-    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
-    short-id: "29b21343ab4d"
-- name: 'ARISTA #60'
-  type: vless
-  server: 104.21.20.148
-  port: 2083
-  uuid: ff771898-3e59-4d0a-91b1-c4d5260c8f9a
-  network: grpc
+  uuid: 229f58f4-b75d-44d6-9d79-997115ece4da
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   alpn:
   - h2
   - http/1.1
-  servername: abcdefghigklmnopqrstuvwxyz.likeboukan1.top
-- name: 'ARISTA #61'
+  client-fingerprint: chrome
+  servername: proxyforopeta.liongame1.ir
+  ws-opts:
+    path: /JoinChanel-proxyforopeta-telegram:@proxyforopeta-telegram-proxyforopeta-joinchanel@proxyforopeta.proxyforopeta.join-@proxyforopeta.telegram:@proxyforopeta-V2rayngmmd-telegram-free-v2ray?ed
+- name: 'T.ME: @aristapanel #31'
+  type: vless
+  server: 104.17.159.237
+  port: 2083
+  uuid: 8666ab45-8e3d-4988-841b-2561d91e32d5
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: mianfei-73q.pages.dev
+  ws-opts:
+    path: /proxyip=154.3.33.43
+    headers:
+      Host: mianfei-73q.pages.dev
+- name: 'T.ME: @aristapanel #32'
+  type: vless
+  server: 104.16.155.170
+  port: 2083
+  uuid: 50414e45-4c5f-5a45-5553-bb2d0bc74f3c
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: ez-e46ef3.ezaccess16b9d1f.workers.dev
+  ws-opts:
+    path: /stream/PANEL_ZEUS/bb2d0bc74f3c
+    headers:
+      Host: ez-e46ef3.ezaccess16b9d1f.workers.dev
+- name: 'ARISTA #33'
+  type: vless
+  server: 31.76.80.69
+  port: 2083
+  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.amd.com
+  reality-opts:
+    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
+    short-id: "29b21343ab4d"
+- name: 'ARISTA #34'
+  type: vless
+  server: 31.76.80.69
+  port: 2083
+  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.amd.com
+  reality-opts:
+    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
+    short-id: "29b21343ab4d"
+- name: 'ARISTA #35'
+  type: vless
+  server: 45.80.110.161
+  port: 2083
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: a.ssll.gay
+  ws-opts:
+    path: twitterfreecodes
+- name: 'ARISTA #36'
   type: ss
   server: 51.222.107.43
   port: 2083
@@ -860,7 +532,7 @@ proxies:
   password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:HWFFJN19JkvbTKo/79AfnbRBK9uHUUaFNZJyLjEoJGs=
   udp: true
   tcp-fast-open: true
-- name: 'ARISTA #62'
+- name: 'ARISTA #37'
   type: ss
   server: 51.222.107.43
   port: 2083
@@ -868,7 +540,7 @@ proxies:
   password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:HWFFJN19JkvbTKo/79AfnbRBK9uHUUaFNZJyLjEoJGs=
   udp: true
   tcp-fast-open: true
-- name: 'ARISTA #63'
+- name: 'ARISTA #38'
   type: ss
   server: 51.222.107.43
   port: 2083
@@ -876,7 +548,7 @@ proxies:
   password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:HWFFJN19JkvbTKo/79AfnbRBK9uHUUaFNZJyLjEoJGs=
   udp: true
   tcp-fast-open: true
-- name: 'ARISTA #64'
+- name: 'ARISTA #39'
   type: ss
   server: 51.222.107.43
   port: 2083
@@ -884,7 +556,7 @@ proxies:
   password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:HWFFJN19JkvbTKo/79AfnbRBK9uHUUaFNZJyLjEoJGs=
   udp: true
   tcp-fast-open: true
-- name: 'ARISTA #65'
+- name: 'ARISTA #40'
   type: ss
   server: 51.222.107.43
   port: 2083
@@ -901,7 +573,7 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'ARISTA #1'
+  - 'T.ME: @aristapanel #1'
   - 'ARISTA #2'
   - 'ARISTA #3'
   - 'ARISTA #4'
@@ -931,8 +603,8 @@ proxy-groups:
   - 'ARISTA #28'
   - 'ARISTA #29'
   - 'ARISTA #30'
-  - 'ARISTA #31'
-  - 'ARISTA #32'
+  - 'T.ME: @aristapanel #31'
+  - 'T.ME: @aristapanel #32'
   - 'ARISTA #33'
   - 'ARISTA #34'
   - 'ARISTA #35'
@@ -941,31 +613,6 @@ proxy-groups:
   - 'ARISTA #38'
   - 'ARISTA #39'
   - 'ARISTA #40'
-  - 'ARISTA #41'
-  - 'ARISTA #42'
-  - 'ARISTA #43'
-  - 'ARISTA #44'
-  - 'ARISTA #45'
-  - 'ARISTA #46'
-  - 'ARISTA #47'
-  - 'ARISTA #48'
-  - 'ARISTA #49'
-  - 'ARISTA #50'
-  - 'ARISTA #51'
-  - 'T.ME: @aristapanel #52'
-  - 'T.ME: @aristapanel #53'
-  - 'ARISTA #54'
-  - 'ARISTA #55'
-  - 'ARISTA #56'
-  - 'ARISTA #57'
-  - 'ARISTA #58'
-  - 'ARISTA #59'
-  - 'ARISTA #60'
-  - 'ARISTA #61'
-  - 'ARISTA #62'
-  - 'ARISTA #63'
-  - 'ARISTA #64'
-  - 'ARISTA #65'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

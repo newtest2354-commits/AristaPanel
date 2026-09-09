@@ -1,6 +1,6 @@
 # COMBINED - Port 9443
-# Updated: 2026-09-09 04:22:01
-# Count: 3
+# Updated: 2026-09-09 16:28:07
+# Count: 1
 
 mixed-port: 7890
 allow-lan: false
@@ -48,48 +48,20 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'ARISTA #1'
+- name: 'T.ME: @aristapanel #1'
   type: vless
-  server: 178.214.100.10
+  server: 46.243.142.89
   port: 9443
-  uuid: e6b5e08a-83fa-48d2-8a94-c6cc01fc35fd
-  network: tcp
+  uuid: 5e6a9212-f660-4dbe-bc3f-9a9916811a8b
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
   client-fingerprint: firefox
-  servername: beast.locallynet.org
-- name: 'T.ME: @aristapanel #2'
-  type: vless
-  server: 31.59.150.174
-  port: 9443
-  uuid: 92089155-6602-4122-86d4-fe6de20e8c4d
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: hotcoals.aeternavpn.space
+  servername: pl-1.nodes.ac
   reality-opts:
-    public-key: RWu6ktBE4DFbUz_prmz-5KuolLhO53ehh19mNxhP-wI
-    short-id: "a1b2c3d4"
-- name: 'T.ME: @aristapanel #3'
-  type: vless
-  server: 31.59.150.174
-  port: 9443
-  uuid: 92089155-6602-4122-86d4-fe6de20e8c4d
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: hotcoals.aeternavpn.space
-  reality-opts:
-    public-key: RWu6ktBE4DFbUz_prmz-5KuolLhO53ehh19mNxhP-wI
-    short-id: "a1b2c3d4"
+    public-key: 5hhzoP441DrGa2l5YlwizPSA5chdY2VjRP7CiEfLLA0
+    short-id: "eea4ab7bddaeea39"
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -99,9 +71,7 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'ARISTA #1'
-  - 'T.ME: @aristapanel #2'
-  - 'T.ME: @aristapanel #3'
+  - 'T.ME: @aristapanel #1'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
