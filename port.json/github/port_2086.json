@@ -1,6 +1,6 @@
 // GITHUB - Port 2086
-// Updated: 2026-09-08 21:04:43
-// Count: 6
+// Updated: 2026-09-09 04:22:23
+// Count: 13
 
 {
   "log": {
@@ -39,16 +39,40 @@
   ],
   "outbounds": [
     {
-      "type": "vless",
+      "type": "vmess",
       "tag": "ARISTA #1",
-      "server": "cdn.devmixa.ir",
+      "server": "104.26.0.56",
       "server_port": 2086,
-      "uuid": "69b8f2e5-b6f8-48cb-ab49-a4394cfa95dd",
-      "domain_resolver": "google"
+      "uuid": "e9e3cc13-db48-4cc1-8c24-7626439a5339",
+      "security": "auto",
+      "domain_resolver": "google",
+      "transport": {
+        "type": "ws",
+        "path": "/github.com/Alvin9999",
+        "headers": {
+          "Host": "ip14.freegradely.xyz"
+        }
+      }
     },
     {
       "type": "vless",
       "tag": "ARISTA #2",
+      "server": "104.18.34.14",
+      "server_port": 2086,
+      "uuid": "47fcef29-ab4e-4aa6-932b-d95a18f28a4e",
+      "domain_resolver": "google",
+      "packet_encoding": "none",
+      "transport": {
+        "type": "ws",
+        "path": "/?ed=2560security=tls",
+        "headers": {
+          "Host": "8nj2r.2k8t.f88.hh.vavava.kdns.fr"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "ARISTA #3",
       "server": "cdn.devmixa.ir",
       "server_port": 2086,
       "uuid": "f373e5d8-8dff-44e6-a4d8-41abeb038b8a",
@@ -56,18 +80,11 @@
     },
     {
       "type": "vless",
-      "tag": "ARISTA #3",
-      "server": "108.162.198.178",
+      "tag": "ARISTA #4",
+      "server": "cdn.devmixa.ir",
       "server_port": 2086,
-      "uuid": "47fcef29-ab4e-4aa6-932b-d95a18f28a4e",
-      "domain_resolver": "google",
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "8nj2r.2k8t.f88.hh.vavava.kdns.fr"
-        }
-      }
+      "uuid": "69b8f2e5-b6f8-48cb-ab49-a4394cfa95dd",
+      "domain_resolver": "google"
     },
     {
       "type": "direct",
@@ -83,7 +100,8 @@
       "outbounds": [
         "ARISTA #1",
         "ARISTA #2",
-        "ARISTA #3"
+        "ARISTA #3",
+        "ARISTA #4"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "2m",
