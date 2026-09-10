@@ -1,6 +1,6 @@
 # COMBINED - Port 9443
-# Updated: 2026-09-10 16:19:02
-# Count: 3
+# Updated: 2026-09-10 20:48:47
+# Count: 2
 
 mixed-port: 7890
 allow-lan: false
@@ -48,45 +48,31 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'ARISTA #1'
-  type: vless
-  server: ee-node.usel.pro
-  port: 9443
-  uuid: 6fb79584-30b8-4888-b358-98f7ef6b8697
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: mail.protech-plus.ee
-  reality-opts:
-    public-key: IZu_A_RMsFnL51UhWwZxB4jQJZI4GYhrlvXf_w1cPTI
-    short-id: "e36102d239fb42de"
-- name: 'T.ME: @aristapanel #2'
+- name: 'T.ME: @aristapanel #1'
   type: vless
   server: 46.243.142.89
   port: 9443
-  uuid: ac187af7-25ab-4b8e-ba9a-76d027f0746c
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: pl-1.nodes.ac
-  reality-opts:
-    public-key: 5hhzoP441DrGa2l5YlwizPSA5chdY2VjRP7CiEfLLA0
-    short-id: "eea4ab7bddaeea39"
-- name: 'T.ME: @aristapanel #3'
-  type: vless
-  server: 46.243.142.89
-  port: 9443
-  uuid: ac187af7-25ab-4b8e-ba9a-76d027f0746c
+  uuid: 40f7adf8-0390-461a-9d9c-2bda1be769af
   network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: firefox
   servername: h5wnt.nodes.ac
+  reality-opts:
+    public-key: 5hhzoP441DrGa2l5YlwizPSA5chdY2VjRP7CiEfLLA0
+    short-id: "eea4ab7bddaeea39"
+- name: 'T.ME: @aristapanel #2'
+  type: vless
+  server: 46.243.142.89
+  port: 9443
+  uuid: 40f7adf8-0390-461a-9d9c-2bda1be769af
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: pl-1.nodes.ac
   reality-opts:
     public-key: 5hhzoP441DrGa2l5YlwizPSA5chdY2VjRP7CiEfLLA0
     short-id: "eea4ab7bddaeea39"
@@ -99,9 +85,8 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'ARISTA #1'
+  - 'T.ME: @aristapanel #1'
   - 'T.ME: @aristapanel #2'
-  - 'T.ME: @aristapanel #3'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
