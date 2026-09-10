@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2052
-# Updated: 2026-09-10 11:07:13
-# Count: 4
+# Updated: 2026-09-10 16:19:09
+# Count: 7
 
 mixed-port: 7890
 allow-lan: false
@@ -49,18 +49,22 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'ARISTA #1'
-  type: vless
-  server: 104.21.5.128
+  type: vmess
+  server: 104.19.59.99
   port: 2052
-  uuid: 08125d23-5500-41ae-97ef-8398eaf70562
+  uuid: d6b6d982-d52f-465a-b988-85670b23f64a
+  alterId: 0
+  cipher: auto
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 104.19.59.99
   ws-opts:
-    path: /@BlueKnight_net--@BlueKnight_net
+    path: /
     headers:
-      Host: uwu.blueknightnet.qzz.io
+      Host: cdn2.freegradely.xyz
 - name: 'ARISTA #2'
   type: vless
   server: 104.21.5.128
@@ -89,17 +93,56 @@ proxies:
       Host: uwu.blueknightnet.qzz.io
 - name: 'ARISTA #4'
   type: vless
-  server: 188.114.97.1
+  server: 104.21.5.128
   port: 2052
-  uuid: 0fbe0c5e-b479-4d91-8b42-f194f781b6bb
+  uuid: 08125d23-5500-41ae-97ef-8398eaf70562
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
   ws-opts:
-    path: /vl/ujKKGE3Opd2787ja1VfP3T2IuqjNe?ed=2560
+    path: /@BlueKnight_net--@BlueKnight_net
     headers:
-      Host: z0ndd1onnp04unxjemim9lf8.abaravi51.workers.dev
+      Host: uwu.blueknightnet.qzz.io
+- name: 'ARISTA #5'
+  type: vless
+  server: 104.21.5.128
+  port: 2052
+  uuid: 08125d23-5500-41ae-97ef-8398eaf70562
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /@BlueKnight_net--@BlueKnight_net
+    headers:
+      Host: uwu.blueknightnet.qzz.io
+- name: 'ARISTA #6'
+  type: vless
+  server: 104.21.5.128
+  port: 2052
+  uuid: 08125d23-5500-41ae-97ef-8398eaf70562
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /@BlueKnight_net--@BlueKnight_net
+    headers:
+      Host: uwu.blueknightnet.qzz.io
+- name: 'ARISTA #7'
+  type: vless
+  server: 104.21.5.128
+  port: 2052
+  uuid: 08125d23-5500-41ae-97ef-8398eaf70562
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /@BlueKnight_net--@BlueKnight_net
+    headers:
+      Host: uwu.blueknightnet.qzz.io
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -113,6 +156,9 @@ proxy-groups:
   - 'ARISTA #2'
   - 'ARISTA #3'
   - 'ARISTA #4'
+  - 'ARISTA #5'
+  - 'ARISTA #6'
+  - 'ARISTA #7'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
