@@ -1,6 +1,6 @@
 # COMBINED - Port 80
-# Updated: 2026-09-11 20:56:04
-# Count: 163
+# Updated: 2026-09-11 23:14:33
+# Count: 208
 
 mixed-port: 7890
 allow-lan: false
@@ -50,23 +50,36 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vmess
-  server: 57.129.132.223
+  server: 217.142.138.61
   port: 80
-  uuid: a25cbf11-2908-4a1b-a3a8-9a571777dca3
+  uuid: ac1b933d-afff-4487-93ef-f57130a55dff
   alterId: 0
   cipher: auto
-  network: ws
+  network: tcp
   tls: false
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: 57.129.132.223
-  ws-opts:
-    path: /vmess/
-    headers:
-      Host: google.com
+  servername: 217.142.138.61
 - name: 'ARISTA #2'
   type: vmess
+  server: 57.129.132.223
+  port: 80
+  uuid: a25cbf11-2908-4a1b-a3a8-9a571777dca3
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 57.129.132.223
+  ws-opts:
+    path: /vmess/
+    headers:
+      Host: google.com
+- name: 'ARISTA #3'
+  type: vmess
   server: 217.142.138.61
   port: 80
   uuid: ac1b933d-afff-4487-93ef-f57130a55dff
@@ -78,7 +91,7 @@ proxies:
   skip-cert-verify: true
   tcp-fast-open: true
   servername: 217.142.138.61
-- name: 'ARISTA #3'
+- name: 'ARISTA #4'
   type: vmess
   server: 57.129.132.223
   port: 80
@@ -95,19 +108,6 @@ proxies:
     path: /vmess/
     headers:
       Host: google.com
-- name: 'ARISTA #4'
-  type: vmess
-  server: 217.142.138.61
-  port: 80
-  uuid: ac1b933d-afff-4487-93ef-f57130a55dff
-  alterId: 0
-  cipher: auto
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: 217.142.138.61
 - name: 'T.ME: @aristapanel #5'
   type: vmess
   server: www.wn03.cc
@@ -125,46 +125,56 @@ proxies:
     path: /rongseven?ed=2048
     headers:
       Host: us.freeyyds.dpdns.org
-- name: 'ARISTA #6'
-  type: vless
-  server: 185.207.197.12
+- name: 'T.ME: @aristapanel #6'
+  type: vmess
+  server: 168.138.43.75
   port: 80
-  uuid: 080fad7c-ff4b-499f-ab5d-52d69ea5745a
+  uuid: 11c3627f-31e8-4695-dfbd-34076e2f1f5d
+  alterId: 0
+  cipher: auto
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  tcp-fast-open: true
+  servername: None
   ws-opts:
-    path: /pyip
+    path: /cctv13.m3u8
     headers:
-      Host: calm-tree-22b0.215-d2a.workers.dev
-- name: 'ARISTA #7'
-  type: vless
-  server: 104.18.39.218
+      Host: None
+- name: 'T.ME: @aristapanel #7'
+  type: vmess
+  server: 168.138.43.75
   port: 80
-  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  uuid: 11c3627f-31e8-4695-dfbd-34076e2f1f5d
+  alterId: 0
+  cipher: auto
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 168.138.43.75
   ws-opts:
-    path: /?ed=2560security=tls
+    path: /cctv13.m3u8
     headers:
-      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
+      Host: None
 - name: 'ARISTA #8'
   type: vless
-  server: 57.131.32.191
+  server: 104.17.64.242
   port: 80
-  uuid: 049e56d8-0ba0-49e3-b764-ee04122b9f00
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
   ws-opts:
-    path: /vless/
+    path: /
+    headers:
+      Host: us3.rtacg.com
 - name: 'ARISTA #9'
   type: vless
-  server: 104.16.255.236
+  server: 104.17.120.228
   port: 80
   uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
   network: ws
@@ -177,22 +187,22 @@ proxies:
       Host: us3.rtacg.com
 - name: 'ARISTA #10'
   type: vless
-  server: www.speedtest.net
+  server: 104.16.147.178
   port: 80
-  uuid: 63f1ef69-92fd-427a-b3e4-98ffddf81ac6
+  uuid: 7d96f544-c496-41cf-dd61-337f0aff062a
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
   ws-opts:
-    path: /nPKoVRUdyuRZ6jpY/YnBiLnlvdXNlZi5pc2VnYXJvLmNvbSxwcm94eWlwLmNtbGl1c3Nzcy5uZXQsbmltYS5uc2NsLmlyLHR1cmsucmFkaWNhbGl6YXRpb24uaXI=
+    path: /abcde
     headers:
-      Host: young-rice-749e.heliy78750.workers.dev
+      Host: kr1.175852.xyz
 - name: 'ARISTA #11'
   type: vless
-  server: 185.143.233.5
+  server: 104.21.14.24
   port: 80
-  uuid: 38dd06a1-e1cb-492b-bb87-218ce05d0d67
+  uuid: 949a0655-357a-47c8-9ba1-6dd6940614a3
   network: ws
   tls: false
   udp: true
@@ -200,25 +210,25 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: fox-a9e04bb07a-test.apps.ir-central1.arvancaas.ir
+      Host: fn.webodeww.ir
 - name: 'ARISTA #12'
   type: vless
-  server: 57.131.32.191
+  server: 104.18.81.11
   port: 80
-  uuid: 1e280316-0408-47c4-b058-05b8f1f17f02
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
   ws-opts:
-    path: /vless/
+    path: /
     headers:
-      Host: ov-italy1.09vpn.com
+      Host: us3.rtacg.com
 - name: 'ARISTA #13'
   type: vless
-  server: 151.101.56.7
+  server: 104.18.93.33
   port: 80
-  uuid: cfde0aba-0985-4034-ab92-50b1534b126c
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
   network: ws
   tls: false
   udp: true
@@ -226,25 +236,12 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: BankMelat.glObal.ssl.faStly.nEt.
+      Host: us3.rtacg.com
 - name: 'ARISTA #14'
   type: vless
-  server: varzesh3.com
+  server: 104.17.148.3
   port: 80
-  uuid: 7d741f08-d3ce-4ff1-bfe5-7dd3da062aee
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /ws
-    headers:
-      Host: new7.safari-df.ir
-- name: 'ARISTA #15'
-  type: vless
-  server: love-iran.akbar1999.ir
-  port: 80
-  uuid: 713b6b35-3aa9-488b-afbd-ab4a72ae1a64
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
   network: ws
   tls: false
   udp: true
@@ -252,21 +249,36 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: love-iran.akbar1999.ir
-- name: 'ARISTA #16'
+      Host: us3.rtacg.com
+- name: 'ARISTA #15'
   type: vless
-  server: 57.129.41.216
+  server: 104.16.247.17
   port: 80
-  uuid: 18535741-e8b3-4b43-9348-785b55936751
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
   ws-opts:
-    path: /vless/
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #16'
+  type: vless
+  server: 104.17.50.80
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
 - name: 'ARISTA #17'
   type: vless
-  server: 104.16.247.17
+  server: 104.17.164.204
   port: 80
   uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
   network: ws
@@ -279,1322 +291,6 @@ proxies:
       Host: us3.rtacg.com
 - name: 'ARISTA #18'
   type: vless
-  server: 104.17.148.3
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #19'
-  type: vless
-  server: 104.17.164.204
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #20'
-  type: vless
-  server: 104.17.50.80
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #21'
-  type: vless
-  server: 104.18.81.11
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #22'
-  type: vless
-  server: 104.18.93.33
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #23'
-  type: vless
-  server: 185.207.197.12
-  port: 80
-  uuid: 080fad7c-ff4b-499f-ab5d-52d69ea5745a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /pyip
-    headers:
-      Host: calm-tree-22b0.215-d2a.workers.dev
-- name: 'ARISTA #24'
-  type: vless
-  server: 104.18.39.218
-  port: 80
-  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /?ed=2560security=tls
-    headers:
-      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
-- name: 'ARISTA #25'
-  type: vless
-  server: 57.131.32.191
-  port: 80
-  uuid: 049e56d8-0ba0-49e3-b764-ee04122b9f00
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /vless/
-- name: 'ARISTA #26'
-  type: vless
-  server: 104.16.255.236
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #27'
-  type: vless
-  server: www.speedtest.net
-  port: 80
-  uuid: 63f1ef69-92fd-427a-b3e4-98ffddf81ac6
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /nPKoVRUdyuRZ6jpY/YnBiLnlvdXNlZi5pc2VnYXJvLmNvbSxwcm94eWlwLmNtbGl1c3Nzcy5uZXQsbmltYS5uc2NsLmlyLHR1cmsucmFkaWNhbGl6YXRpb24uaXI=
-    headers:
-      Host: young-rice-749e.heliy78750.workers.dev
-- name: 'ARISTA #28'
-  type: vless
-  server: 185.143.233.5
-  port: 80
-  uuid: 38dd06a1-e1cb-492b-bb87-218ce05d0d67
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: fox-a9e04bb07a-test.apps.ir-central1.arvancaas.ir
-- name: 'ARISTA #29'
-  type: vless
-  server: 57.131.32.191
-  port: 80
-  uuid: 1e280316-0408-47c4-b058-05b8f1f17f02
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /vless/
-    headers:
-      Host: ov-italy1.09vpn.com
-- name: 'ARISTA #30'
-  type: vless
-  server: 185.207.197.12
-  port: 80
-  uuid: 080fad7c-ff4b-499f-ab5d-52d69ea5745a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /pyip
-    headers:
-      Host: calm-tree-22b0.215-d2a.workers.dev
-- name: 'ARISTA #31'
-  type: vless
-  server: 104.18.39.218
-  port: 80
-  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /?ed=2560security=tls
-    headers:
-      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
-- name: 'ARISTA #32'
-  type: vless
-  server: 57.131.32.191
-  port: 80
-  uuid: 049e56d8-0ba0-49e3-b764-ee04122b9f00
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /vless/
-- name: 'ARISTA #33'
-  type: vless
-  server: 104.16.255.236
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #34'
-  type: vless
-  server: 185.207.197.12
-  port: 80
-  uuid: 080fad7c-ff4b-499f-ab5d-52d69ea5745a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /pyip
-    headers:
-      Host: calm-tree-22b0.215-d2a.workers.dev
-- name: 'ARISTA #35'
-  type: vless
-  server: 104.18.39.218
-  port: 80
-  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /?ed=2560security=tls
-    headers:
-      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
-- name: 'ARISTA #36'
-  type: vless
-  server: 57.131.32.191
-  port: 80
-  uuid: 049e56d8-0ba0-49e3-b764-ee04122b9f00
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /vless/
-- name: 'ARISTA #37'
-  type: vless
-  server: 104.16.255.236
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #38'
-  type: vless
-  server: www.speedtest.net
-  port: 80
-  uuid: 63f1ef69-92fd-427a-b3e4-98ffddf81ac6
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /nPKoVRUdyuRZ6jpY/YnBiLnlvdXNlZi5pc2VnYXJvLmNvbSxwcm94eWlwLmNtbGl1c3Nzcy5uZXQsbmltYS5uc2NsLmlyLHR1cmsucmFkaWNhbGl6YXRpb24uaXI=
-    headers:
-      Host: young-rice-749e.heliy78750.workers.dev
-- name: 'ARISTA #39'
-  type: vless
-  server: 185.143.233.5
-  port: 80
-  uuid: 38dd06a1-e1cb-492b-bb87-218ce05d0d67
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: fox-a9e04bb07a-test.apps.ir-central1.arvancaas.ir
-- name: 'ARISTA #40'
-  type: vless
-  server: 57.131.32.191
-  port: 80
-  uuid: 1e280316-0408-47c4-b058-05b8f1f17f02
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /vless/
-    headers:
-      Host: ov-italy1.09vpn.com
-- name: 'ARISTA #41'
-  type: vless
-  server: 185.207.197.12
-  port: 80
-  uuid: 080fad7c-ff4b-499f-ab5d-52d69ea5745a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /pyip
-    headers:
-      Host: calm-tree-22b0.215-d2a.workers.dev
-- name: 'ARISTA #42'
-  type: vless
-  server: 104.18.39.218
-  port: 80
-  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /?ed=2560security=tls
-    headers:
-      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
-- name: 'ARISTA #43'
-  type: vless
-  server: 57.131.32.191
-  port: 80
-  uuid: 049e56d8-0ba0-49e3-b764-ee04122b9f00
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /vless/
-- name: 'ARISTA #44'
-  type: vless
-  server: 104.16.255.236
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #45'
-  type: vless
-  server: www.speedtest.net
-  port: 80
-  uuid: 63f1ef69-92fd-427a-b3e4-98ffddf81ac6
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /nPKoVRUdyuRZ6jpY/YnBiLnlvdXNlZi5pc2VnYXJvLmNvbSxwcm94eWlwLmNtbGl1c3Nzcy5uZXQsbmltYS5uc2NsLmlyLHR1cmsucmFkaWNhbGl6YXRpb24uaXI=
-    headers:
-      Host: young-rice-749e.heliy78750.workers.dev
-- name: 'ARISTA #46'
-  type: vless
-  server: 185.143.233.5
-  port: 80
-  uuid: 38dd06a1-e1cb-492b-bb87-218ce05d0d67
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: fox-a9e04bb07a-test.apps.ir-central1.arvancaas.ir
-- name: 'ARISTA #47'
-  type: vless
-  server: 57.131.32.191
-  port: 80
-  uuid: 1e280316-0408-47c4-b058-05b8f1f17f02
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /vless/
-    headers:
-      Host: ov-italy1.09vpn.com
-- name: 'ARISTA #48'
-  type: vless
-  server: 151.101.56.7
-  port: 80
-  uuid: cfde0aba-0985-4034-ab92-50b1534b126c
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: BankMelat.glObal.ssl.faStly.nEt.
-- name: 'ARISTA #49'
-  type: vless
-  server: varzesh3.com
-  port: 80
-  uuid: 7d741f08-d3ce-4ff1-bfe5-7dd3da062aee
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /ws
-    headers:
-      Host: new7.safari-df.ir
-- name: 'ARISTA #50'
-  type: vless
-  server: love-iran.akbar1999.ir
-  port: 80
-  uuid: 713b6b35-3aa9-488b-afbd-ab4a72ae1a64
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: love-iran.akbar1999.ir
-- name: 'ARISTA #51'
-  type: vless
-  server: 57.129.41.216
-  port: 80
-  uuid: 18535741-e8b3-4b43-9348-785b55936751
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /vless/
-- name: 'ARISTA #52'
-  type: vless
-  server: 104.16.247.17
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #53'
-  type: vless
-  server: 104.17.148.3
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #54'
-  type: vless
-  server: 104.17.164.204
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #55'
-  type: vless
-  server: 104.17.50.80
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #56'
-  type: vless
-  server: 104.18.81.11
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #57'
-  type: vless
-  server: 104.18.93.33
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #58'
-  type: vless
-  server: 104.17.75.139
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #59'
-  type: vless
-  server: 104.18.45.26
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #60'
-  type: vless
-  server: 104.18.85.126
-  port: 80
-  uuid: 7d96f544-c496-41cf-dd61-337f0aff062a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /abcde
-    headers:
-      Host: kr1.175852.xyz
-- name: 'ARISTA #61'
-  type: vless
-  server: 104.17.215.139
-  port: 80
-  uuid: 7d96f544-c496-41cf-dd61-337f0aff062a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /abcde
-    headers:
-      Host: kr1.175852.xyz
-- name: 'ARISTA #62'
-  type: vless
-  server: 198.41.209.101
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #63'
-  type: vless
-  server: 104.26.5.92
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #64'
-  type: vless
-  server: 104.17.54.173
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #65'
-  type: vless
-  server: 104.16.241.219
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #66'
-  type: vless
-  server: 103.86.49.57
-  port: 80
-  uuid: 3c52e091-6714-4915-949f-2149fe69951b
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /ws
-    headers:
-      Host: aIs.SpEeDtEsT.nEt
-- name: 'ARISTA #67'
-  type: vless
-  server: 104.16.16.135
-  port: 80
-  uuid: b28eb861-1748-4200-ba72-278669edc33b
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: coco.mahmoodchitooz.dpdns.org
-- name: 'ARISTA #68'
-  type: vless
-  server: 46.31.76.3
-  port: 80
-  uuid: e05482d4-ba12-41ac-af45-2bf2afc56b4a
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: journalofbigdata.springeropen.com
-  reality-opts:
-    public-key: oTX6mQJYxkmmdF7Rq_stAKX_hYoOMXGaWmoblFl2zgo
-    short-id: "5942e2"
-- name: 'ARISTA #69'
-  type: vless
-  server: 45.142.120.134
-  port: 80
-  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: Telegram:@ShadowProxy66/?ed=2560
-    headers:
-      Host: uuhUHYygEsdFGH.UYHJHGvgFcjGUJhbUIlbVFDxDxM.xyz
-- name: 'ARISTA #70'
-  type: vless
-  server: 151.101.192.223
-  port: 80
-  uuid: abe29339-9ac1-48be-bc47-00d81c0a3019
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /ws
-    headers:
-      Host: freekabotar2.global.ssl.fastly.net
-- name: 'ARISTA #71'
-  type: vless
-  server: 146.75.119.82
-  port: 80
-  uuid: 09b1fc1a-1be4-491e-9130-6467b756de36
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: ws/?ed=2048/@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr/?2048
-    headers:
-      Host: rb24.ir
-- name: 'ARISTA #72'
-  type: vless
-  server: 146.75.119.82
-  port: 80
-  uuid: 24aa2b95-11fb-4eb7-9dc0-251c304b6d68
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: ws/?ed=2048/@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr/?2048
-    headers:
-      Host: rb24.ir
-- name: 'ARISTA #73'
-  type: vless
-  server: 146.75.119.82
-  port: 80
-  uuid: a4ed7829-80f3-4574-bd99-1bc4296da334
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: ws/?ed=2048/@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr/?2048
-    headers:
-      Host: rb24.ir
-- name: 'ARISTA #74'
-  type: vless
-  server: 146.75.119.82
-  port: 80
-  uuid: a08d3418-9706-4e88-a069-4446be59e951
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: ws/?ed=2048/@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr/?2048
-    headers:
-      Host: rb24.ir
-- name: 'ARISTA #75'
-  type: vless
-  server: 185.207.197.12
-  port: 80
-  uuid: 080fad7c-ff4b-499f-ab5d-52d69ea5745a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /pyip
-    headers:
-      Host: calm-tree-22b0.215-d2a.workers.dev
-- name: 'ARISTA #76'
-  type: vless
-  server: 104.18.39.218
-  port: 80
-  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /?ed=2560security=tls
-    headers:
-      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
-- name: 'ARISTA #77'
-  type: vless
-  server: 185.207.197.12
-  port: 80
-  uuid: 080fad7c-ff4b-499f-ab5d-52d69ea5745a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /pyip
-    headers:
-      Host: calm-tree-22b0.215-d2a.workers.dev
-- name: 'ARISTA #78'
-  type: vless
-  server: 104.18.39.218
-  port: 80
-  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /?ed=2560security=tls
-    headers:
-      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
-- name: 'ARISTA #79'
-  type: vless
-  server: 57.131.32.191
-  port: 80
-  uuid: 049e56d8-0ba0-49e3-b764-ee04122b9f00
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /vless/
-- name: 'ARISTA #80'
-  type: vless
-  server: 104.16.255.236
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #81'
-  type: vless
-  server: www.speedtest.net
-  port: 80
-  uuid: 63f1ef69-92fd-427a-b3e4-98ffddf81ac6
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /nPKoVRUdyuRZ6jpY/YnBiLnlvdXNlZi5pc2VnYXJvLmNvbSxwcm94eWlwLmNtbGl1c3Nzcy5uZXQsbmltYS5uc2NsLmlyLHR1cmsucmFkaWNhbGl6YXRpb24uaXI=
-    headers:
-      Host: young-rice-749e.heliy78750.workers.dev
-- name: 'ARISTA #82'
-  type: vless
-  server: 185.143.233.5
-  port: 80
-  uuid: 38dd06a1-e1cb-492b-bb87-218ce05d0d67
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: fox-a9e04bb07a-test.apps.ir-central1.arvancaas.ir
-- name: 'ARISTA #83'
-  type: vless
-  server: 57.131.32.191
-  port: 80
-  uuid: 1e280316-0408-47c4-b058-05b8f1f17f02
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /vless/
-    headers:
-      Host: ov-italy1.09vpn.com
-- name: 'ARISTA #84'
-  type: vless
-  server: 151.101.56.7
-  port: 80
-  uuid: cfde0aba-0985-4034-ab92-50b1534b126c
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: BankMelat.glObal.ssl.faStly.nEt.
-- name: 'ARISTA #85'
-  type: vless
-  server: varzesh3.com
-  port: 80
-  uuid: 7d741f08-d3ce-4ff1-bfe5-7dd3da062aee
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /ws
-    headers:
-      Host: new7.safari-df.ir
-- name: 'ARISTA #86'
-  type: vless
-  server: love-iran.akbar1999.ir
-  port: 80
-  uuid: 713b6b35-3aa9-488b-afbd-ab4a72ae1a64
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: love-iran.akbar1999.ir
-- name: 'ARISTA #87'
-  type: vless
-  server: 57.129.41.216
-  port: 80
-  uuid: 18535741-e8b3-4b43-9348-785b55936751
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /vless/
-- name: 'ARISTA #88'
-  type: vless
-  server: 104.16.247.17
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #89'
-  type: vless
-  server: 104.17.148.3
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #90'
-  type: vless
-  server: 104.17.164.204
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #91'
-  type: vless
-  server: 104.17.50.80
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #92'
-  type: vless
-  server: 104.18.81.11
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #93'
-  type: vless
-  server: 104.18.93.33
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #94'
-  type: vless
-  server: 104.17.75.139
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #95'
-  type: vless
-  server: 104.18.45.26
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #96'
-  type: vless
-  server: 104.18.85.126
-  port: 80
-  uuid: 7d96f544-c496-41cf-dd61-337f0aff062a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /abcde
-    headers:
-      Host: kr1.175852.xyz
-- name: 'ARISTA #97'
-  type: vless
-  server: 104.17.215.139
-  port: 80
-  uuid: 7d96f544-c496-41cf-dd61-337f0aff062a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /abcde
-    headers:
-      Host: kr1.175852.xyz
-- name: 'ARISTA #98'
-  type: vless
-  server: 198.41.209.101
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #99'
-  type: vless
-  server: 104.26.5.92
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #100'
-  type: vless
-  server: 104.17.54.173
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #101'
-  type: vless
-  server: 104.16.241.219
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #102'
-  type: vless
-  server: 103.86.49.57
-  port: 80
-  uuid: 3c52e091-6714-4915-949f-2149fe69951b
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /ws
-    headers:
-      Host: aIs.SpEeDtEsT.nEt
-- name: 'ARISTA #103'
-  type: vless
-  server: 104.16.16.135
-  port: 80
-  uuid: b28eb861-1748-4200-ba72-278669edc33b
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: coco.mahmoodchitooz.dpdns.org
-- name: 'ARISTA #104'
-  type: vless
-  server: 46.31.76.3
-  port: 80
-  uuid: e05482d4-ba12-41ac-af45-2bf2afc56b4a
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: journalofbigdata.springeropen.com
-  reality-opts:
-    public-key: oTX6mQJYxkmmdF7Rq_stAKX_hYoOMXGaWmoblFl2zgo
-    short-id: "5942e2"
-- name: 'ARISTA #105'
-  type: vless
-  server: 45.142.120.134
-  port: 80
-  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: Telegram:@ShadowProxy66/?ed=2560
-    headers:
-      Host: uuhUHYygEsdFGH.UYHJHGvgFcjGUJhbUIlbVFDxDxM.xyz
-- name: 'ARISTA #106'
-  type: vless
-  server: 151.101.192.223
-  port: 80
-  uuid: abe29339-9ac1-48be-bc47-00d81c0a3019
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /ws
-    headers:
-      Host: freekabotar2.global.ssl.fastly.net
-- name: 'ARISTA #107'
-  type: vless
-  server: 146.75.119.82
-  port: 80
-  uuid: 09b1fc1a-1be4-491e-9130-6467b756de36
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: ws/?ed=2048/@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr/?2048
-    headers:
-      Host: rb24.ir
-- name: 'ARISTA #108'
-  type: vless
-  server: 146.75.119.82
-  port: 80
-  uuid: 24aa2b95-11fb-4eb7-9dc0-251c304b6d68
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: ws/?ed=2048/@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr/?2048
-    headers:
-      Host: rb24.ir
-- name: 'ARISTA #109'
-  type: vless
-  server: 146.75.119.82
-  port: 80
-  uuid: a4ed7829-80f3-4574-bd99-1bc4296da334
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: ws/?ed=2048/@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr/?2048
-    headers:
-      Host: rb24.ir
-- name: 'ARISTA #110'
-  type: vless
-  server: 146.75.119.82
-  port: 80
-  uuid: a08d3418-9706-4e88-a069-4446be59e951
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: ws/?ed=2048/@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr/?2048
-    headers:
-      Host: rb24.ir
-- name: 'ARISTA #111'
-  type: vless
-  server: 185.143.233.5
-  port: 80
-  uuid: 38dd06a1-e1cb-492b-bb87-218ce05d0d67
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: fox-a9e04bb07a-test.apps.ir-central1.arvancaas.ir
-- name: 'ARISTA #112'
-  type: vless
-  server: 151.101.3.8
-  port: 80
-  uuid: 846ed531-360b-4872-98ee-696d3a9b87c8
-  network: xhttp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #113'
-  type: vless
-  server: 151.101.3.8
-  port: 80
-  uuid: effe77be-8068-4808-9bcb-3f3c1c455456
-  network: xhttp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #114'
-  type: vless
-  server: 151.101.3.8
-  port: 80
-  uuid: 2dbc400a-2c9b-4032-90c4-cc20d1bba93b
-  network: xhttp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #115'
-  type: vless
-  server: 151.101.205.194
-  port: 80
-  uuid: e2303d65-1a5d-40de-b7c2-96c7c11222a1
-  network: xhttp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #116'
-  type: vless
-  server: 151.101.3.8
-  port: 80
-  uuid: e84865be-4b55-44e6-a5fb-d5a16c52c96f
-  network: xhttp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #117'
-  type: vless
-  server: 172.66.156.81
-  port: 80
-  uuid: 5ce02e0e-c3a3-489e-89a9-0cd996548ad3
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: websocket.network.www.speedtest.net.flutter.dev.russia.pyt.digitalcity5.xyz.skylinkserver.site.vegaskala.com.
-- name: 'ARISTA #118'
-  type: vless
-  server: 151.101.205.194
-  port: 80
-  uuid: fc5a65f4-5602-4b76-a1e4-e00ca437671c
-  network: xhttp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #119'
-  type: vless
-  server: 172.66.156.81
-  port: 80
-  uuid: cda9ae20-f69f-4112-be95-90cdfc7a21ae
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: websocket.network.www.speedtest.net.flutter.dev.russia.pyt.digitalcity5.xyz.skylinkserver.site.vegaskala.com.
-- name: 'ARISTA #120'
-  type: vless
-  server: 172.66.156.81
-  port: 80
-  uuid: 57f56a3c-0e10-4fb2-ad70-3db23a572b0f
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: websocket.network.www.speedtest.net.flutter.dev.russia.python.vegaskala.com.Shahin.vegaskala.com.fdf.vegaskala.com.vegafod.com.
-- name: 'ARISTA #121'
-  type: vless
-  server: 94.237.81.88
-  port: 80
-  uuid: a0f14fe6-4e69-463d-b96e-c29a63e68b4f
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /pgcfws-r4
-    headers:
-      Host: fr.netnoor.ir
-- name: 'ARISTA #122'
-  type: vless
   server: 199.232.78.159
   port: 80
   uuid: 5021eedd-289c-454f-8075-9688c3114f34
@@ -1606,55 +302,7 @@ proxies:
     path: /
     headers:
       Host: 7wwwspeedtestnet.global.ssl.fastly.net
-- name: 'ARISTA #123'
-  type: vless
-  server: 57.131.32.191
-  port: 80
-  uuid: 1e280316-0408-47c4-b058-05b8f1f17f02
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /vless/
-    headers:
-      Host: ov-italy1.09vpn.com
-- name: 'ARISTA #124'
-  type: vless
-  server: 146.75.119.82
-  port: 80
-  uuid: 4107cc9b-1eec-4006-87fb-da1b48690da2
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: ws/?ed=2048/@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz/?2048
-    headers:
-      Host: rb24.ir
-- name: 'ARISTA #125'
-  type: vless
-  server: 104.17.157.150
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'ARISTA #126'
-  type: vless
-  server: zmaoz.faculty.ucdavis.edu
-  port: 80
-  uuid: caf0d393-101a-4ac6-81e4-172fd8f87f5b
-  network: xhttp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #127'
+- name: 'ARISTA #19'
   type: vless
   server: 199.232.78.159
   port: 80
@@ -1667,7 +315,7 @@ proxies:
     path: /
     headers:
       Host: yaSharClass.global.ssl.fastly.net
-- name: 'ARISTA #128'
+- name: 'ARISTA #20'
   type: vless
   server: 199.232.78.159
   port: 80
@@ -1680,7 +328,7 @@ proxies:
     path: /
     headers:
       Host: FastSvn.global.ssl.fastly.net
-- name: 'ARISTA #129'
+- name: 'ARISTA #21'
   type: vless
   server: 199.232.78.159
   port: 80
@@ -1693,11 +341,11 @@ proxies:
     path: /
     headers:
       Host: 7wwwspeedtestnet.global.ssl.fastly.net
-- name: 'T.ME: @aristapanel #130'
+- name: 'ARISTA #22'
   type: vless
-  server: 18.239.134.69
+  server: 185.143.233.5
   port: 80
-  uuid: de27291c-15a9-4256-9ba7-ad517569877e
+  uuid: 38dd06a1-e1cb-492b-bb87-218ce05d0d67
   network: ws
   tls: false
   udp: true
@@ -1705,229 +353,12 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: d2e1v87ko56lyw.cloudfront.net:assets.opensignal.com
-- name: 'T.ME: @aristapanel #131'
+      Host: fox-a9e04bb07a-test.apps.ir-central1.arvancaas.ir
+- name: 'ARISTA #23'
   type: vless
-  server: 104.18.47.113
+  server: 57.131.32.191
   port: 80
-  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /?ed=2560security=tls
-    headers:
-      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
-- name: 'T.ME: @aristapanel #132'
-  type: vless
-  server: 208.103.161.249
-  port: 80
-  uuid: a3c51f71-ffb5-4c80-a136-cee4b36d6e85
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: kAmRaN01-aFgmDQ-1.KaMRan-01.wOrkeRs.DEv
-- name: 'T.ME: @aristapanel #133'
-  type: vless
-  server: 104.17.156.13
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: ''
-    headers:
-      Host: us3.rtacg.com
-- name: 'T.ME: @aristapanel #134'
-  type: vless
-  server: snapp.ir
-  port: 80
-  uuid: ffa37367-6313-4cc5-86bd-3d8dc879c24e
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: ar.liarashop.ir
-- name: 'T.ME: @aristapanel #135'
-  type: vless
-  server: v2ray.simspeedup.com
-  port: 80
-  uuid: 3c52e091-6714-4915-949f-2149fe69951b
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /ws
-    headers:
-      Host: v2ray.simspeedup.com
-- name: 'T.ME: @aristapanel #136'
-  type: vless
-  server: 50.62.195.4
-  port: 80
-  uuid: e382b6dd-2dac-49c5-b16f-1cd0a6b73bf2
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: raspy-feather-12ec.137-257.workers.dev
-- name: 'T.ME: @aristapanel #137'
-  type: vless
-  server: 91.206.71.8
-  port: 80
-  uuid: c20a0bcf-aa6f-4c35-9e62-a39b47b04e73
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /pyip=Telegram🇨🇳+@WangCai2
-    headers:
-      Host: round-haze-8783.294.workers.dev
-- name: 'T.ME: @aristapanel #138'
-  type: vless
-  server: 78.109.198.25
-  port: 80
-  uuid: 23198a1f-fb44-4364-bf3a-e0209295b04a
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'T.ME: @aristapanel #139'
-  type: vless
-  server: ru2.oshost.network
-  port: 80
-  uuid: 419f25c1-bc35-412e-93fb-258efee859b5
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus
-  ws-opts:
-    path: /api/v2/stream
-- name: 'T.ME: @aristapanel #140'
-  type: vless
-  server: 104.16.253.105
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'T.ME: @aristapanel #141'
-  type: vless
-  server: 104.17.159.236
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'T.ME: @aristapanel #142'
-  type: vless
-  server: 104.18.219.149
-  port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: us3.rtacg.com
-- name: 'T.ME: @aristapanel #143'
-  type: vless
-  server: 104.16.201.28
-  port: 80
-  uuid: 7d96f544-c496-41cf-dd61-337f0aff062a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /abcde
-    headers:
-      Host: kr1.175852.xyz
-- name: 'T.ME: @aristapanel #144'
-  type: vless
-  server: 104.17.49.44
-  port: 80
-  uuid: 7d96f544-c496-41cf-dd61-337f0aff062a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /abcde
-    headers:
-      Host: kr1.175852.xyz
-- name: 'T.ME: @aristapanel #145'
-  type: vless
-  server: 104.17.98.133
-  port: 80
-  uuid: 7d96f544-c496-41cf-dd61-337f0aff062a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /abcde
-    headers:
-      Host: kr1.175852.xyz
-- name: 'T.ME: @aristapanel #146'
-  type: vless
-  server: 104.18.81.171
-  port: 80
-  uuid: 7d96f544-c496-41cf-dd61-337f0aff062a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /abcde
-    headers:
-      Host: kr1.175852.xyz
-- name: 'T.ME: @aristapanel #147'
-  type: vless
-  server: cdn.snobvpn.online
-  port: 80
-  uuid: c037d90b-83ec-422f-b547-c77575392f6f
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus
-  ws-opts:
-    path: /snob-ws
-- name: 'T.ME: @aristapanel #148'
-  type: vless
-  server: 57.129.132.223
-  port: 80
-  uuid: 9e20b04d-5a81-4e16-b421-01e502f0aac6
+  uuid: 1e280316-0408-47c4-b058-05b8f1f17f02
   network: ws
   tls: false
   udp: true
@@ -1935,47 +366,8 @@ proxies:
   ws-opts:
     path: /vless/
     headers:
-      Host: google.com
-- name: 'T.ME: @aristapanel #149'
-  type: vless
-  server: 199.232.78.159
-  port: 80
-  uuid: 87a4b6b9-d269-4959-bb80-1234b46c8d06
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: 7wwwspeedtestnet.global.ssl.fastly.net
-- name: 'ARISTA #150'
-  type: vless
-  server: 185.207.197.12
-  port: 80
-  uuid: 080fad7c-ff4b-499f-ab5d-52d69ea5745a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /pyip
-    headers:
-      Host: calm-tree-22b0.215-d2a.workers.dev
-- name: 'ARISTA #151'
-  type: vless
-  server: 104.18.39.218
-  port: 80
-  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /?ed=2560security=tls
-    headers:
-      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
-- name: 'ARISTA #152'
+      Host: ov-italy1.09vpn.com
+- name: 'ARISTA #24'
   type: vless
   server: 57.131.32.191
   port: 80
@@ -1986,7 +378,1494 @@ proxies:
   skip-cert-verify: true
   ws-opts:
     path: /vless/
-- name: 'ARISTA #153'
+- name: 'ARISTA #25'
+  type: vless
+  server: 57.131.32.191
+  port: 80
+  uuid: 1e280316-0408-47c4-b058-05b8f1f17f02
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /vless/
+    headers:
+      Host: ov-italy1.09vpn.com
+- name: 'ARISTA #26'
+  type: vless
+  server: 146.75.119.82
+  port: 80
+  uuid: 09b1fc1a-1be4-491e-9130-6467b756de36
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: ws/?ed=2048/@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr/?2048
+    headers:
+      Host: rb24.ir
+- name: 'ARISTA #27'
+  type: vless
+  server: 146.75.119.82
+  port: 80
+  uuid: 24aa2b95-11fb-4eb7-9dc0-251c304b6d68
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: ws/?ed=2048/@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr/?2048
+    headers:
+      Host: rb24.ir
+- name: 'ARISTA #28'
+  type: vless
+  server: 146.75.119.82
+  port: 80
+  uuid: a4ed7829-80f3-4574-bd99-1bc4296da334
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: ws/?ed=2048/@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr/?2048
+    headers:
+      Host: rb24.ir
+- name: 'ARISTA #29'
+  type: vless
+  server: 146.75.119.82
+  port: 80
+  uuid: a08d3418-9706-4e88-a069-4446be59e951
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: ws/?ed=2048/@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr/?2048
+    headers:
+      Host: rb24.ir
+- name: 'ARISTA #30'
+  type: vless
+  server: 104.17.64.242
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #31'
+  type: vless
+  server: 104.17.120.228
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #32'
+  type: vless
+  server: 104.16.147.178
+  port: 80
+  uuid: 7d96f544-c496-41cf-dd61-337f0aff062a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /abcde
+    headers:
+      Host: kr1.175852.xyz
+- name: 'ARISTA #33'
+  type: vless
+  server: 104.21.14.24
+  port: 80
+  uuid: 949a0655-357a-47c8-9ba1-6dd6940614a3
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: fn.webodeww.ir
+- name: 'ARISTA #34'
+  type: vless
+  server: 104.18.81.11
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #35'
+  type: vless
+  server: 104.18.93.33
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #36'
+  type: vless
+  server: 104.17.148.3
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #37'
+  type: vless
+  server: 104.16.247.17
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #38'
+  type: vless
+  server: 104.17.50.80
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #39'
+  type: vless
+  server: 104.17.164.204
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #40'
+  type: vless
+  server: 199.232.78.159
+  port: 80
+  uuid: 5021eedd-289c-454f-8075-9688c3114f34
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: 7wwwspeedtestnet.global.ssl.fastly.net
+- name: 'ARISTA #41'
+  type: vless
+  server: 199.232.78.159
+  port: 80
+  uuid: a3558ef4-b843-4b05-8456-495815234c95
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: yaSharClass.global.ssl.fastly.net
+- name: 'ARISTA #42'
+  type: vless
+  server: 199.232.78.159
+  port: 80
+  uuid: a3558ef4-b843-4b05-8456-495815234c95
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: FastSvn.global.ssl.fastly.net
+- name: 'ARISTA #43'
+  type: vless
+  server: 199.232.78.159
+  port: 80
+  uuid: a3558ef4-b843-4b05-8456-495815234c95
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: 7wwwspeedtestnet.global.ssl.fastly.net
+- name: 'ARISTA #44'
+  type: vless
+  server: 104.17.64.242
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #45'
+  type: vless
+  server: 104.17.120.228
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #46'
+  type: vless
+  server: 104.16.147.178
+  port: 80
+  uuid: 7d96f544-c496-41cf-dd61-337f0aff062a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /abcde
+    headers:
+      Host: kr1.175852.xyz
+- name: 'ARISTA #47'
+  type: vless
+  server: 104.21.14.24
+  port: 80
+  uuid: 949a0655-357a-47c8-9ba1-6dd6940614a3
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: fn.webodeww.ir
+- name: 'ARISTA #48'
+  type: vless
+  server: 104.18.81.11
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #49'
+  type: vless
+  server: 104.18.93.33
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #50'
+  type: vless
+  server: 104.17.148.3
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #51'
+  type: vless
+  server: 104.16.247.17
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #52'
+  type: vless
+  server: 104.17.50.80
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #53'
+  type: vless
+  server: 104.17.164.204
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #54'
+  type: vless
+  server: 199.232.78.159
+  port: 80
+  uuid: 5021eedd-289c-454f-8075-9688c3114f34
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: 7wwwspeedtestnet.global.ssl.fastly.net
+- name: 'ARISTA #55'
+  type: vless
+  server: 104.17.64.242
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #56'
+  type: vless
+  server: 104.17.120.228
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #57'
+  type: vless
+  server: 104.16.147.178
+  port: 80
+  uuid: 7d96f544-c496-41cf-dd61-337f0aff062a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /abcde
+    headers:
+      Host: kr1.175852.xyz
+- name: 'ARISTA #58'
+  type: vless
+  server: 104.21.14.24
+  port: 80
+  uuid: 949a0655-357a-47c8-9ba1-6dd6940614a3
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: fn.webodeww.ir
+- name: 'ARISTA #59'
+  type: vless
+  server: 104.18.81.11
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #60'
+  type: vless
+  server: 104.18.93.33
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #61'
+  type: vless
+  server: 104.17.148.3
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #62'
+  type: vless
+  server: 104.16.247.17
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #63'
+  type: vless
+  server: 104.17.50.80
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #64'
+  type: vless
+  server: 104.17.164.204
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #65'
+  type: vless
+  server: 199.232.78.159
+  port: 80
+  uuid: 5021eedd-289c-454f-8075-9688c3114f34
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: 7wwwspeedtestnet.global.ssl.fastly.net
+- name: 'ARISTA #66'
+  type: vless
+  server: 199.232.78.159
+  port: 80
+  uuid: a3558ef4-b843-4b05-8456-495815234c95
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: yaSharClass.global.ssl.fastly.net
+- name: 'ARISTA #67'
+  type: vless
+  server: 199.232.78.159
+  port: 80
+  uuid: a3558ef4-b843-4b05-8456-495815234c95
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: FastSvn.global.ssl.fastly.net
+- name: 'ARISTA #68'
+  type: vless
+  server: 199.232.78.159
+  port: 80
+  uuid: a3558ef4-b843-4b05-8456-495815234c95
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: 7wwwspeedtestnet.global.ssl.fastly.net
+- name: 'ARISTA #69'
+  type: vless
+  server: 104.17.64.242
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #70'
+  type: vless
+  server: 104.17.120.228
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #71'
+  type: vless
+  server: 104.16.147.178
+  port: 80
+  uuid: 7d96f544-c496-41cf-dd61-337f0aff062a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /abcde
+    headers:
+      Host: kr1.175852.xyz
+- name: 'ARISTA #72'
+  type: vless
+  server: 104.21.14.24
+  port: 80
+  uuid: 949a0655-357a-47c8-9ba1-6dd6940614a3
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: fn.webodeww.ir
+- name: 'ARISTA #73'
+  type: vless
+  server: 104.18.81.11
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #74'
+  type: vless
+  server: 104.18.93.33
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #75'
+  type: vless
+  server: 104.17.148.3
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #76'
+  type: vless
+  server: 104.16.247.17
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #77'
+  type: vless
+  server: 104.17.50.80
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #78'
+  type: vless
+  server: 104.17.164.204
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #79'
+  type: vless
+  server: 199.232.78.159
+  port: 80
+  uuid: 5021eedd-289c-454f-8075-9688c3114f34
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: 7wwwspeedtestnet.global.ssl.fastly.net
+- name: 'ARISTA #80'
+  type: vless
+  server: 199.232.78.159
+  port: 80
+  uuid: a3558ef4-b843-4b05-8456-495815234c95
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: yaSharClass.global.ssl.fastly.net
+- name: 'ARISTA #81'
+  type: vless
+  server: 199.232.78.159
+  port: 80
+  uuid: a3558ef4-b843-4b05-8456-495815234c95
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: FastSvn.global.ssl.fastly.net
+- name: 'ARISTA #82'
+  type: vless
+  server: 199.232.78.159
+  port: 80
+  uuid: a3558ef4-b843-4b05-8456-495815234c95
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: 7wwwspeedtestnet.global.ssl.fastly.net
+- name: 'ARISTA #83'
+  type: vless
+  server: 185.143.233.5
+  port: 80
+  uuid: 38dd06a1-e1cb-492b-bb87-218ce05d0d67
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: fox-a9e04bb07a-test.apps.ir-central1.arvancaas.ir
+- name: 'ARISTA #84'
+  type: vless
+  server: 57.131.32.191
+  port: 80
+  uuid: 1e280316-0408-47c4-b058-05b8f1f17f02
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /vless/
+    headers:
+      Host: ov-italy1.09vpn.com
+- name: 'ARISTA #85'
+  type: vless
+  server: 57.131.32.191
+  port: 80
+  uuid: 049e56d8-0ba0-49e3-b764-ee04122b9f00
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /vless/
+- name: 'ARISTA #86'
+  type: vless
+  server: 57.131.32.191
+  port: 80
+  uuid: 1e280316-0408-47c4-b058-05b8f1f17f02
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /vless/
+    headers:
+      Host: ov-italy1.09vpn.com
+- name: 'ARISTA #87'
+  type: vless
+  server: 146.75.119.82
+  port: 80
+  uuid: 09b1fc1a-1be4-491e-9130-6467b756de36
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: ws/?ed=2048/@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr/?2048
+    headers:
+      Host: rb24.ir
+- name: 'ARISTA #88'
+  type: vless
+  server: 146.75.119.82
+  port: 80
+  uuid: 24aa2b95-11fb-4eb7-9dc0-251c304b6d68
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: ws/?ed=2048/@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr/?2048
+    headers:
+      Host: rb24.ir
+- name: 'ARISTA #89'
+  type: vless
+  server: 146.75.119.82
+  port: 80
+  uuid: a4ed7829-80f3-4574-bd99-1bc4296da334
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: ws/?ed=2048/@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr/?2048
+    headers:
+      Host: rb24.ir
+- name: 'ARISTA #90'
+  type: vless
+  server: 146.75.119.82
+  port: 80
+  uuid: a08d3418-9706-4e88-a069-4446be59e951
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: ws/?ed=2048/@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr/?2048
+    headers:
+      Host: rb24.ir
+- name: 'ARISTA #91'
+  type: vless
+  server: 151.101.3.8
+  port: 80
+  uuid: 846ed531-360b-4872-98ee-696d3a9b87c8
+  network: xhttp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #92'
+  type: vless
+  server: 151.101.3.8
+  port: 80
+  uuid: effe77be-8068-4808-9bcb-3f3c1c455456
+  network: xhttp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #93'
+  type: vless
+  server: 151.101.3.8
+  port: 80
+  uuid: 2dbc400a-2c9b-4032-90c4-cc20d1bba93b
+  network: xhttp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #94'
+  type: vless
+  server: 151.101.205.194
+  port: 80
+  uuid: e2303d65-1a5d-40de-b7c2-96c7c11222a1
+  network: xhttp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #95'
+  type: vless
+  server: 151.101.3.8
+  port: 80
+  uuid: e84865be-4b55-44e6-a5fb-d5a16c52c96f
+  network: xhttp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #96'
+  type: vless
+  server: 172.66.156.81
+  port: 80
+  uuid: 5ce02e0e-c3a3-489e-89a9-0cd996548ad3
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: websocket.network.www.speedtest.net.flutter.dev.russia.pyt.digitalcity5.xyz.skylinkserver.site.vegaskala.com.
+- name: 'ARISTA #97'
+  type: vless
+  server: 151.101.205.194
+  port: 80
+  uuid: fc5a65f4-5602-4b76-a1e4-e00ca437671c
+  network: xhttp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #98'
+  type: vless
+  server: 172.66.156.81
+  port: 80
+  uuid: cda9ae20-f69f-4112-be95-90cdfc7a21ae
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: websocket.network.www.speedtest.net.flutter.dev.russia.pyt.digitalcity5.xyz.skylinkserver.site.vegaskala.com.
+- name: 'ARISTA #99'
+  type: vless
+  server: 172.66.156.81
+  port: 80
+  uuid: 57f56a3c-0e10-4fb2-ad70-3db23a572b0f
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: websocket.network.www.speedtest.net.flutter.dev.russia.python.vegaskala.com.Shahin.vegaskala.com.fdf.vegaskala.com.vegafod.com.
+- name: 'ARISTA #100'
+  type: vless
+  server: 185.143.233.5
+  port: 80
+  uuid: 38dd06a1-e1cb-492b-bb87-218ce05d0d67
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: fox-a9e04bb07a-test.apps.ir-central1.arvancaas.ir
+- name: 'ARISTA #101'
+  type: vless
+  server: 104.17.19.117
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #102'
+  type: vless
+  server: zmaoz.faculty.ucdavis.edu
+  port: 80
+  uuid: caf0d393-101a-4ac6-81e4-172fd8f87f5b
+  network: xhttp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #103'
+  type: vless
+  server: 104.17.64.242
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #104'
+  type: vless
+  server: 104.17.120.228
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #105'
+  type: vless
+  server: 104.17.64.242
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #106'
+  type: vless
+  server: 104.17.120.228
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #107'
+  type: vless
+  server: 104.16.147.178
+  port: 80
+  uuid: 7d96f544-c496-41cf-dd61-337f0aff062a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /abcde
+    headers:
+      Host: kr1.175852.xyz
+- name: 'ARISTA #108'
+  type: vless
+  server: 104.21.14.24
+  port: 80
+  uuid: 949a0655-357a-47c8-9ba1-6dd6940614a3
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: fn.webodeww.ir
+- name: 'ARISTA #109'
+  type: vless
+  server: 104.18.81.11
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #110'
+  type: vless
+  server: 104.18.93.33
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #111'
+  type: vless
+  server: 104.17.148.3
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #112'
+  type: vless
+  server: 104.16.247.17
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #113'
+  type: vless
+  server: 104.17.50.80
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #114'
+  type: vless
+  server: 104.17.164.204
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #115'
+  type: vless
+  server: 199.232.78.159
+  port: 80
+  uuid: 5021eedd-289c-454f-8075-9688c3114f34
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: 7wwwspeedtestnet.global.ssl.fastly.net
+- name: 'ARISTA #116'
+  type: vless
+  server: 199.232.78.159
+  port: 80
+  uuid: a3558ef4-b843-4b05-8456-495815234c95
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: yaSharClass.global.ssl.fastly.net
+- name: 'ARISTA #117'
+  type: vless
+  server: 199.232.78.159
+  port: 80
+  uuid: a3558ef4-b843-4b05-8456-495815234c95
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: FastSvn.global.ssl.fastly.net
+- name: 'ARISTA #118'
+  type: vless
+  server: 199.232.78.159
+  port: 80
+  uuid: a3558ef4-b843-4b05-8456-495815234c95
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: 7wwwspeedtestnet.global.ssl.fastly.net
+- name: 'ARISTA #119'
+  type: vless
+  server: 185.143.233.5
+  port: 80
+  uuid: 38dd06a1-e1cb-492b-bb87-218ce05d0d67
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: fox-a9e04bb07a-test.apps.ir-central1.arvancaas.ir
+- name: 'ARISTA #120'
+  type: vless
+  server: 57.131.32.191
+  port: 80
+  uuid: 1e280316-0408-47c4-b058-05b8f1f17f02
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /vless/
+    headers:
+      Host: ov-italy1.09vpn.com
+- name: 'ARISTA #121'
+  type: vless
+  server: 57.131.32.191
+  port: 80
+  uuid: 049e56d8-0ba0-49e3-b764-ee04122b9f00
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /vless/
+- name: 'ARISTA #122'
+  type: vless
+  server: 57.131.32.191
+  port: 80
+  uuid: 1e280316-0408-47c4-b058-05b8f1f17f02
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /vless/
+    headers:
+      Host: ov-italy1.09vpn.com
+- name: 'ARISTA #123'
+  type: vless
+  server: 146.75.119.82
+  port: 80
+  uuid: 09b1fc1a-1be4-491e-9130-6467b756de36
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: ws/?ed=2048/@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr/?2048
+    headers:
+      Host: rb24.ir
+- name: 'ARISTA #124'
+  type: vless
+  server: 146.75.119.82
+  port: 80
+  uuid: 24aa2b95-11fb-4eb7-9dc0-251c304b6d68
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: ws/?ed=2048/@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr/?2048
+    headers:
+      Host: rb24.ir
+- name: 'ARISTA #125'
+  type: vless
+  server: 146.75.119.82
+  port: 80
+  uuid: a4ed7829-80f3-4574-bd99-1bc4296da334
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: ws/?ed=2048/@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr/?2048
+    headers:
+      Host: rb24.ir
+- name: 'ARISTA #126'
+  type: vless
+  server: 146.75.119.82
+  port: 80
+  uuid: a08d3418-9706-4e88-a069-4446be59e951
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: ws/?ed=2048/@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr@vpnserverrr/?2048
+    headers:
+      Host: rb24.ir
+- name: 'ARISTA #127'
+  type: vless
+  server: 151.101.3.8
+  port: 80
+  uuid: 846ed531-360b-4872-98ee-696d3a9b87c8
+  network: xhttp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #128'
+  type: vless
+  server: 151.101.3.8
+  port: 80
+  uuid: effe77be-8068-4808-9bcb-3f3c1c455456
+  network: xhttp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #129'
+  type: vless
+  server: 151.101.3.8
+  port: 80
+  uuid: 2dbc400a-2c9b-4032-90c4-cc20d1bba93b
+  network: xhttp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #130'
+  type: vless
+  server: 151.101.205.194
+  port: 80
+  uuid: e2303d65-1a5d-40de-b7c2-96c7c11222a1
+  network: xhttp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #131'
+  type: vless
+  server: 151.101.3.8
+  port: 80
+  uuid: e84865be-4b55-44e6-a5fb-d5a16c52c96f
+  network: xhttp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #132'
+  type: vless
+  server: 172.66.156.81
+  port: 80
+  uuid: 5ce02e0e-c3a3-489e-89a9-0cd996548ad3
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: websocket.network.www.speedtest.net.flutter.dev.russia.pyt.digitalcity5.xyz.skylinkserver.site.vegaskala.com.
+- name: 'ARISTA #133'
+  type: vless
+  server: 151.101.205.194
+  port: 80
+  uuid: fc5a65f4-5602-4b76-a1e4-e00ca437671c
+  network: xhttp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #134'
+  type: vless
+  server: 172.66.156.81
+  port: 80
+  uuid: cda9ae20-f69f-4112-be95-90cdfc7a21ae
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: websocket.network.www.speedtest.net.flutter.dev.russia.pyt.digitalcity5.xyz.skylinkserver.site.vegaskala.com.
+- name: 'ARISTA #135'
+  type: vless
+  server: 172.66.156.81
+  port: 80
+  uuid: 57f56a3c-0e10-4fb2-ad70-3db23a572b0f
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: websocket.network.www.speedtest.net.flutter.dev.russia.python.vegaskala.com.Shahin.vegaskala.com.fdf.vegaskala.com.vegafod.com.
+- name: 'ARISTA #136'
+  type: vless
+  server: 185.143.233.5
+  port: 80
+  uuid: 38dd06a1-e1cb-492b-bb87-218ce05d0d67
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: fox-a9e04bb07a-test.apps.ir-central1.arvancaas.ir
+- name: 'ARISTA #137'
+  type: vless
+  server: 104.17.19.117
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #138'
+  type: vless
+  server: zmaoz.faculty.ucdavis.edu
+  port: 80
+  uuid: caf0d393-101a-4ac6-81e4-172fd8f87f5b
+  network: xhttp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #139'
+  type: vless
+  server: 146.75.119.82
+  port: 80
+  uuid: 4107cc9b-1eec-4006-87fb-da1b48690da2
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: ws/?ed=2048/@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz@AzadMarz/?2048
+    headers:
+      Host: rb24.ir
+- name: 'ARISTA #140'
+  type: vless
+  server: varzesh3.com
+  port: 80
+  uuid: 7d741f08-d3ce-4ff1-bfe5-7dd3da062aee
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /ws
+    headers:
+      Host: new7.safari-df.ir
+- name: 'ARISTA #141'
+  type: vless
+  server: love-iran.akbar1999.ir
+  port: 80
+  uuid: 713b6b35-3aa9-488b-afbd-ab4a72ae1a64
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: love-iran.akbar1999.ir
+- name: 'ARISTA #142'
+  type: vless
+  server: 104.17.157.150
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #143'
+  type: vless
+  server: 151.101.192.223
+  port: 80
+  uuid: abe29339-9ac1-48be-bc47-00d81c0a3019
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /ws
+    headers:
+      Host: freekabotar2.global.ssl.fastly.net
+- name: 'ARISTA #144'
   type: vless
   server: 185.207.197.12
   port: 80
@@ -1999,6 +1878,123 @@ proxies:
     path: /pyip
     headers:
       Host: calm-tree-22b0.215-d2a.workers.dev
+- name: 'ARISTA #145'
+  type: vless
+  server: 198.41.208.219
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #146'
+  type: vless
+  server: 104.17.118.30
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #147'
+  type: vless
+  server: 104.16.205.64
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #148'
+  type: vless
+  server: 172.64.157.28
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #149'
+  type: vless
+  server: 104.18.35.16
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #150'
+  type: vless
+  server: 103.86.49.57
+  port: 80
+  uuid: 3c52e091-6714-4915-949f-2149fe69951b
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /ws
+    headers:
+      Host: aIs.SpEeDtEsT.nEt
+- name: 'ARISTA #151'
+  type: vless
+  server: 104.16.255.236
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #152'
+  type: vless
+  server: 104.17.170.217
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #153'
+  type: vless
+  server: 185.143.233.5
+  port: 80
+  uuid: fa254fcb-6425-45a5-b352-35584b29cfc0
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: fox-a9e04bb07a-test.apps.ir-central1.arvancaas.ir
 - name: 'ARISTA #154'
   type: vless
   server: 104.18.39.218
@@ -2014,18 +2010,173 @@ proxies:
       Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
 - name: 'ARISTA #155'
   type: vless
-  server: 57.131.32.191
+  server: 151.101.56.7
   port: 80
-  uuid: 049e56d8-0ba0-49e3-b764-ee04122b9f00
+  uuid: cfde0aba-0985-4034-ab92-50b1534b126c
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
   ws-opts:
-    path: /vless/
+    path: /
+    headers:
+      Host: BankMelat.glObal.ssl.faStly.nEt.
 - name: 'ARISTA #156'
   type: vless
-  server: 104.16.255.236
+  server: 104.16.16.135
+  port: 80
+  uuid: b28eb861-1748-4200-ba72-278669edc33b
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: coco.mahmoodchitooz.dpdns.org
+- name: 'ARISTA #157'
+  type: vless
+  server: 46.31.76.3
+  port: 80
+  uuid: e05482d4-ba12-41ac-af45-2bf2afc56b4a
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: journalofbigdata.springeropen.com
+  reality-opts:
+    public-key: oTX6mQJYxkmmdF7Rq_stAKX_hYoOMXGaWmoblFl2zgo
+    short-id: "5942e2"
+- name: 'ARISTA #158'
+  type: vless
+  server: 45.142.120.134
+  port: 80
+  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: Telegram:@ShadowProxy66/?ed=2560
+    headers:
+      Host: uuhUHYygEsdFGH.UYHJHGvgFcjGUJhbUIlbVFDxDxM.xyz
+- name: 'T.ME: @aristapanel #159'
+  type: vless
+  server: 18.239.134.69
+  port: 80
+  uuid: de27291c-15a9-4256-9ba7-ad517569877e
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: d2e1v87ko56lyw.cloudfront.net:assets.opensignal.com
+- name: 'T.ME: @aristapanel #160'
+  type: vless
+  server: 104.18.47.113
+  port: 80
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /?ed=2560security=tls
+    headers:
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
+- name: 'T.ME: @aristapanel #161'
+  type: vless
+  server: 208.103.161.249
+  port: 80
+  uuid: a3c51f71-ffb5-4c80-a136-cee4b36d6e85
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: kAmRaN01-aFgmDQ-1.KaMRan-01.wOrkeRs.DEv
+- name: 'T.ME: @aristapanel #162'
+  type: vless
+  server: 104.17.156.13
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: ''
+    headers:
+      Host: us3.rtacg.com
+- name: 'T.ME: @aristapanel #163'
+  type: vless
+  server: snapp.ir
+  port: 80
+  uuid: ffa37367-6313-4cc5-86bd-3d8dc879c24e
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: ar.liarashop.ir
+- name: 'T.ME: @aristapanel #164'
+  type: vless
+  server: v2ray.simspeedup.com
+  port: 80
+  uuid: 3c52e091-6714-4915-949f-2149fe69951b
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /ws
+    headers:
+      Host: v2ray.simspeedup.com
+- name: 'T.ME: @aristapanel #165'
+  type: vless
+  server: 50.62.195.4
+  port: 80
+  uuid: e382b6dd-2dac-49c5-b16f-1cd0a6b73bf2
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: raspy-feather-12ec.137-257.workers.dev
+- name: 'T.ME: @aristapanel #166'
+  type: vless
+  server: 91.206.71.8
+  port: 80
+  uuid: c20a0bcf-aa6f-4c35-9e62-a39b47b04e73
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /pyip=Telegram🇨🇳+@WangCai2
+    headers:
+      Host: round-haze-8783.294.workers.dev
+- name: 'T.ME: @aristapanel #167'
+  type: vless
+  server: 78.109.198.25
+  port: 80
+  uuid: 23198a1f-fb44-4364-bf3a-e0209295b04a
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'T.ME: @aristapanel #168'
+  type: vless
+  server: 104.16.253.105
   port: 80
   uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
   network: ws
@@ -2036,20 +2187,423 @@ proxies:
     path: /
     headers:
       Host: us3.rtacg.com
-- name: 'ARISTA #157'
+- name: 'T.ME: @aristapanel #169'
   type: vless
-  server: www.speedtest.net
+  server: 104.17.159.236
   port: 80
-  uuid: 63f1ef69-92fd-427a-b3e4-98ffddf81ac6
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
   ws-opts:
-    path: /nPKoVRUdyuRZ6jpY/YnBiLnlvdXNlZi5pc2VnYXJvLmNvbSxwcm94eWlwLmNtbGl1c3Nzcy5uZXQsbmltYS5uc2NsLmlyLHR1cmsucmFkaWNhbGl6YXRpb24uaXI=
+    path: /
     headers:
-      Host: young-rice-749e.heliy78750.workers.dev
-- name: 'ARISTA #158'
+      Host: us3.rtacg.com
+- name: 'T.ME: @aristapanel #170'
+  type: vless
+  server: 104.18.219.149
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'T.ME: @aristapanel #171'
+  type: vless
+  server: 104.16.201.28
+  port: 80
+  uuid: 7d96f544-c496-41cf-dd61-337f0aff062a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /abcde
+    headers:
+      Host: kr1.175852.xyz
+- name: 'T.ME: @aristapanel #172'
+  type: vless
+  server: 104.17.49.44
+  port: 80
+  uuid: 7d96f544-c496-41cf-dd61-337f0aff062a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /abcde
+    headers:
+      Host: kr1.175852.xyz
+- name: 'T.ME: @aristapanel #173'
+  type: vless
+  server: 104.17.98.133
+  port: 80
+  uuid: 7d96f544-c496-41cf-dd61-337f0aff062a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /abcde
+    headers:
+      Host: kr1.175852.xyz
+- name: 'T.ME: @aristapanel #174'
+  type: vless
+  server: 104.18.81.171
+  port: 80
+  uuid: 7d96f544-c496-41cf-dd61-337f0aff062a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /abcde
+    headers:
+      Host: kr1.175852.xyz
+- name: 'T.ME: @aristapanel #175'
+  type: vless
+  server: cdn.snobvpn.online
+  port: 80
+  uuid: c037d90b-83ec-422f-b547-c77575392f6f
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus
+  ws-opts:
+    path: /snob-ws
+- name: 'T.ME: @aristapanel #176'
+  type: vless
+  server: 57.129.132.223
+  port: 80
+  uuid: 9e20b04d-5a81-4e16-b421-01e502f0aac6
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /vless/
+    headers:
+      Host: google.com
+- name: 'ARISTA #177'
+  type: vless
+  server: 104.17.64.242
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #178'
+  type: vless
+  server: 104.17.120.228
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #179'
+  type: vless
+  server: 104.16.147.178
+  port: 80
+  uuid: 7d96f544-c496-41cf-dd61-337f0aff062a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /abcde
+    headers:
+      Host: kr1.175852.xyz
+- name: 'ARISTA #180'
+  type: vless
+  server: 104.21.14.24
+  port: 80
+  uuid: 949a0655-357a-47c8-9ba1-6dd6940614a3
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: fn.webodeww.ir
+- name: 'ARISTA #181'
+  type: vless
+  server: 104.18.81.11
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #182'
+  type: vless
+  server: 104.18.93.33
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #183'
+  type: vless
+  server: 104.17.148.3
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #184'
+  type: vless
+  server: 104.16.247.17
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #185'
+  type: vless
+  server: 104.17.50.80
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #186'
+  type: vless
+  server: 104.17.164.204
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #187'
+  type: vless
+  server: 104.17.64.242
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #188'
+  type: vless
+  server: 104.17.120.228
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #189'
+  type: vless
+  server: 104.16.147.178
+  port: 80
+  uuid: 7d96f544-c496-41cf-dd61-337f0aff062a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /abcde
+    headers:
+      Host: kr1.175852.xyz
+- name: 'ARISTA #190'
+  type: vless
+  server: 104.21.14.24
+  port: 80
+  uuid: 949a0655-357a-47c8-9ba1-6dd6940614a3
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: fn.webodeww.ir
+- name: 'ARISTA #191'
+  type: vless
+  server: 104.18.81.11
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #192'
+  type: vless
+  server: 104.18.93.33
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #193'
+  type: vless
+  server: 104.17.148.3
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #194'
+  type: vless
+  server: 104.16.247.17
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #195'
+  type: vless
+  server: 104.17.50.80
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #196'
+  type: vless
+  server: 104.17.164.204
+  port: 80
+  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: us3.rtacg.com
+- name: 'ARISTA #197'
+  type: vless
+  server: 199.232.78.159
+  port: 80
+  uuid: 5021eedd-289c-454f-8075-9688c3114f34
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: 7wwwspeedtestnet.global.ssl.fastly.net
+- name: 'ARISTA #198'
+  type: vless
+  server: 199.232.78.159
+  port: 80
+  uuid: a3558ef4-b843-4b05-8456-495815234c95
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: yaSharClass.global.ssl.fastly.net
+- name: 'ARISTA #199'
+  type: vless
+  server: 199.232.78.159
+  port: 80
+  uuid: a3558ef4-b843-4b05-8456-495815234c95
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: FastSvn.global.ssl.fastly.net
+- name: 'ARISTA #200'
+  type: vless
+  server: 199.232.78.159
+  port: 80
+  uuid: a3558ef4-b843-4b05-8456-495815234c95
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: 7wwwspeedtestnet.global.ssl.fastly.net
+- name: 'ARISTA #201'
   type: vless
   server: 185.143.233.5
   port: 80
@@ -2062,7 +2616,7 @@ proxies:
     path: /
     headers:
       Host: fox-a9e04bb07a-test.apps.ir-central1.arvancaas.ir
-- name: 'ARISTA #159'
+- name: 'ARISTA #202'
   type: vless
   server: 57.131.32.191
   port: 80
@@ -2075,7 +2629,31 @@ proxies:
     path: /vless/
     headers:
       Host: ov-italy1.09vpn.com
-- name: 'T.ME: @aristapanel #160'
+- name: 'ARISTA #203'
+  type: vless
+  server: 57.131.32.191
+  port: 80
+  uuid: 049e56d8-0ba0-49e3-b764-ee04122b9f00
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /vless/
+- name: 'ARISTA #204'
+  type: vless
+  server: 57.131.32.191
+  port: 80
+  uuid: 1e280316-0408-47c4-b058-05b8f1f17f02
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /vless/
+    headers:
+      Host: ov-italy1.09vpn.com
+- name: 'T.ME: @aristapanel #205'
   type: trojan
   server: 199.232.0.0
   port: 80
@@ -2090,7 +2668,7 @@ proxies:
     path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/NL---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
     headers:
       Host: s4-mitivpn--mitivpn------mitivpn.global.ssl.fastly.net
-- name: 'T.ME: @aristapanel #161'
+- name: 'T.ME: @aristapanel #206'
   type: ss
   server: 84.247.155.196
   port: 80
@@ -2098,7 +2676,7 @@ proxies:
   password: 3eOFeNssde7PYYMv
   udp: true
   tcp-fast-open: true
-- name: 'T.ME: @aristapanel #162'
+- name: 'T.ME: @aristapanel #207'
   type: ss
   server: 84.247.155.196
   port: 80
@@ -2106,7 +2684,7 @@ proxies:
   password: 3eOFeNssde7PYYMv
   udp: true
   tcp-fast-open: true
-- name: 'T.ME: @aristapanel #163'
+- name: 'T.ME: @aristapanel #208'
   type: ss
   server: 84.247.155.196
   port: 80
@@ -2128,8 +2706,8 @@ proxy-groups:
   - 'ARISTA #3'
   - 'ARISTA #4'
   - 'T.ME: @aristapanel #5'
-  - 'ARISTA #6'
-  - 'ARISTA #7'
+  - 'T.ME: @aristapanel #6'
+  - 'T.ME: @aristapanel #7'
   - 'ARISTA #8'
   - 'ARISTA #9'
   - 'ARISTA #10'
@@ -2252,26 +2830,26 @@ proxy-groups:
   - 'ARISTA #127'
   - 'ARISTA #128'
   - 'ARISTA #129'
-  - 'T.ME: @aristapanel #130'
-  - 'T.ME: @aristapanel #131'
-  - 'T.ME: @aristapanel #132'
-  - 'T.ME: @aristapanel #133'
-  - 'T.ME: @aristapanel #134'
-  - 'T.ME: @aristapanel #135'
-  - 'T.ME: @aristapanel #136'
-  - 'T.ME: @aristapanel #137'
-  - 'T.ME: @aristapanel #138'
-  - 'T.ME: @aristapanel #139'
-  - 'T.ME: @aristapanel #140'
-  - 'T.ME: @aristapanel #141'
-  - 'T.ME: @aristapanel #142'
-  - 'T.ME: @aristapanel #143'
-  - 'T.ME: @aristapanel #144'
-  - 'T.ME: @aristapanel #145'
-  - 'T.ME: @aristapanel #146'
-  - 'T.ME: @aristapanel #147'
-  - 'T.ME: @aristapanel #148'
-  - 'T.ME: @aristapanel #149'
+  - 'ARISTA #130'
+  - 'ARISTA #131'
+  - 'ARISTA #132'
+  - 'ARISTA #133'
+  - 'ARISTA #134'
+  - 'ARISTA #135'
+  - 'ARISTA #136'
+  - 'ARISTA #137'
+  - 'ARISTA #138'
+  - 'ARISTA #139'
+  - 'ARISTA #140'
+  - 'ARISTA #141'
+  - 'ARISTA #142'
+  - 'ARISTA #143'
+  - 'ARISTA #144'
+  - 'ARISTA #145'
+  - 'ARISTA #146'
+  - 'ARISTA #147'
+  - 'ARISTA #148'
+  - 'ARISTA #149'
   - 'ARISTA #150'
   - 'ARISTA #151'
   - 'ARISTA #152'
@@ -2281,11 +2859,56 @@ proxy-groups:
   - 'ARISTA #156'
   - 'ARISTA #157'
   - 'ARISTA #158'
-  - 'ARISTA #159'
+  - 'T.ME: @aristapanel #159'
   - 'T.ME: @aristapanel #160'
   - 'T.ME: @aristapanel #161'
   - 'T.ME: @aristapanel #162'
   - 'T.ME: @aristapanel #163'
+  - 'T.ME: @aristapanel #164'
+  - 'T.ME: @aristapanel #165'
+  - 'T.ME: @aristapanel #166'
+  - 'T.ME: @aristapanel #167'
+  - 'T.ME: @aristapanel #168'
+  - 'T.ME: @aristapanel #169'
+  - 'T.ME: @aristapanel #170'
+  - 'T.ME: @aristapanel #171'
+  - 'T.ME: @aristapanel #172'
+  - 'T.ME: @aristapanel #173'
+  - 'T.ME: @aristapanel #174'
+  - 'T.ME: @aristapanel #175'
+  - 'T.ME: @aristapanel #176'
+  - 'ARISTA #177'
+  - 'ARISTA #178'
+  - 'ARISTA #179'
+  - 'ARISTA #180'
+  - 'ARISTA #181'
+  - 'ARISTA #182'
+  - 'ARISTA #183'
+  - 'ARISTA #184'
+  - 'ARISTA #185'
+  - 'ARISTA #186'
+  - 'ARISTA #187'
+  - 'ARISTA #188'
+  - 'ARISTA #189'
+  - 'ARISTA #190'
+  - 'ARISTA #191'
+  - 'ARISTA #192'
+  - 'ARISTA #193'
+  - 'ARISTA #194'
+  - 'ARISTA #195'
+  - 'ARISTA #196'
+  - 'ARISTA #197'
+  - 'ARISTA #198'
+  - 'ARISTA #199'
+  - 'ARISTA #200'
+  - 'ARISTA #201'
+  - 'ARISTA #202'
+  - 'ARISTA #203'
+  - 'ARISTA #204'
+  - 'T.ME: @aristapanel #205'
+  - 'T.ME: @aristapanel #206'
+  - 'T.ME: @aristapanel #207'
+  - 'T.ME: @aristapanel #208'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
