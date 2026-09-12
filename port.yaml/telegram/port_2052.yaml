@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2052
-# Updated: 2026-09-12 15:26:05
-# Count: 5
+# Updated: 2026-09-12 18:01:20
+# Count: 6
 
 mixed-port: 7890
 allow-lan: false
@@ -113,6 +113,17 @@ proxies:
     path: /
     headers:
       Host: fin.v2shop.xyz
+- name: 'ARISTA #6'
+  type: vless
+  server: 46.246.97.218
+  port: 2052
+  uuid: 037b730a-ea28-5191-ad7c-3424be5efe2e
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /vless
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -127,6 +138,7 @@ proxy-groups:
   - 'ARISTA #3'
   - 'ARISTA #4'
   - 'ARISTA #5'
+  - 'ARISTA #6'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
