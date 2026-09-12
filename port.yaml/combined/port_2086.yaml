@@ -1,6 +1,6 @@
 # COMBINED - Port 2086
-# Updated: 2026-09-12 19:20:11
-# Count: 11
+# Updated: 2026-09-12 19:30:38
+# Count: 13
 
 mixed-port: 7890
 allow-lan: false
@@ -48,7 +48,7 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'T.ME: @aristapanel #1'
+- name: 'ARISTA #1'
   type: vmess
   server: 65.109.189.128
   port: 2086
@@ -62,33 +62,20 @@ proxies:
   tcp-fast-open: true
   servername: 65.109.189.128
 - name: 'ARISTA #2'
-  type: vless
-  server: 104.16.67.38
+  type: vmess
+  server: 65.109.189.128
   port: 2086
-  uuid: 43e00e4c-2316-4dc9-8262-cef31886dc56
-  network: ws
+  uuid: f6361af8-bb8f-4609-bf5d-3fc0f688f47b
+  alterId: 0
+  cipher: auto
+  network: tcp
   tls: false
   udp: true
   skip-cert-verify: true
-  ws-opts:
-    path: /marly.toptechnonews.com/nimws
-    headers:
-      Host: vless-sub.n7p8ri7j.workers.dev
+  tcp-fast-open: true
+  servername: 65.109.189.128
 - name: 'ARISTA #3'
   type: vless
-  server: www.speedtest.net
-  port: 2086
-  uuid: 8137e9a6-22e6-4707-a120-a6dea17c7e00
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /eyJqdW5rIjoic1VBWDhGMXJsREg5WUoiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByb3h5aXAiLCJwYW5lbElQcyI6WyI4My4xNDcuMjU0LjI0NSJdfQ==?ed=2560
-    headers:
-      Host: dry-snow-2e6f.fastip25478.workers.dev
-- name: 'ARISTA #4'
-  type: vless
   server: 104.16.67.38
   port: 2086
   uuid: 43e00e4c-2316-4dc9-8262-cef31886dc56
@@ -100,7 +87,7 @@ proxies:
     path: /marly.toptechnonews.com/nimws
     headers:
       Host: vless-sub.n7p8ri7j.workers.dev
-- name: 'ARISTA #5'
+- name: 'ARISTA #4'
   type: vless
   server: www.speedtest.net
   port: 2086
@@ -113,6 +100,19 @@ proxies:
     path: /eyJqdW5rIjoic1VBWDhGMXJsREg5WUoiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByb3h5aXAiLCJwYW5lbElQcyI6WyI4My4xNDcuMjU0LjI0NSJdfQ==?ed=2560
     headers:
       Host: dry-snow-2e6f.fastip25478.workers.dev
+- name: 'ARISTA #5'
+  type: vless
+  server: 188.114.96.0
+  port: 2086
+  uuid: 81d0dbc8-e69e-4cb1-b1a0-7d86af7f0db4
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /eyJqdW5rIjoiTGNlS21Bb0pMQUZaNEtUNiIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJlZml4IiwicGFuZWxJUHMiOlsiWzJhMDI6ODk4OjE0Njo2NDo6XSJdfQ
+    headers:
+      Host: solitary-rain-0c9b.freecreat2.workers.dev
 - name: 'ARISTA #6'
   type: vless
   server: 104.16.67.38
@@ -154,6 +154,45 @@ proxies:
       Host: solitary-rain-0c9b.freecreat2.workers.dev
 - name: 'ARISTA #9'
   type: vless
+  server: 104.16.67.38
+  port: 2086
+  uuid: 43e00e4c-2316-4dc9-8262-cef31886dc56
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /marly.toptechnonews.com/nimws
+    headers:
+      Host: vless-sub.n7p8ri7j.workers.dev
+- name: 'ARISTA #10'
+  type: vless
+  server: www.speedtest.net
+  port: 2086
+  uuid: 8137e9a6-22e6-4707-a120-a6dea17c7e00
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /eyJqdW5rIjoic1VBWDhGMXJsREg5WUoiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByb3h5aXAiLCJwYW5lbElQcyI6WyI4My4xNDcuMjU0LjI0NSJdfQ==?ed=2560
+    headers:
+      Host: dry-snow-2e6f.fastip25478.workers.dev
+- name: 'ARISTA #11'
+  type: vless
+  server: 188.114.96.0
+  port: 2086
+  uuid: 81d0dbc8-e69e-4cb1-b1a0-7d86af7f0db4
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /eyJqdW5rIjoiTGNlS21Bb0pMQUZaNEtUNiIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJlZml4IiwicGFuZWxJUHMiOlsiWzJhMDI6ODk4OjE0Njo2NDo6XSJdfQ
+    headers:
+      Host: solitary-rain-0c9b.freecreat2.workers.dev
+- name: 'ARISTA #12'
+  type: vless
   server: 138.124.123.127
   port: 2086
   uuid: b6606cb0-e15d-4813-94af-985028c4b9f3
@@ -161,7 +200,7 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #10'
+- name: 'T.ME: @aristapanel #13'
   type: vless
   server: 188.114.97.6
   port: 2086
@@ -174,19 +213,6 @@ proxies:
     path: /eyJqdW5rIjoieVMzbmVFWlBsd3prIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMjYwMjpmYzU5OmIwOjY0OjpdIl19?ed
     headers:
       Host: jimifree.jimshofree1.workers.dev
-- name: 'ARISTA #11'
-  type: vless
-  server: 104.16.67.38
-  port: 2086
-  uuid: 43e00e4c-2316-4dc9-8262-cef31886dc56
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /marly.toptechnonews.com/nimws
-    headers:
-      Host: vless-sub.n7p8ri7j.workers.dev
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -196,7 +222,7 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'T.ME: @aristapanel #1'
+  - 'ARISTA #1'
   - 'ARISTA #2'
   - 'ARISTA #3'
   - 'ARISTA #4'
@@ -205,8 +231,10 @@ proxy-groups:
   - 'ARISTA #7'
   - 'ARISTA #8'
   - 'ARISTA #9'
-  - 'T.ME: @aristapanel #10'
+  - 'ARISTA #10'
   - 'ARISTA #11'
+  - 'ARISTA #12'
+  - 'T.ME: @aristapanel #13'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
