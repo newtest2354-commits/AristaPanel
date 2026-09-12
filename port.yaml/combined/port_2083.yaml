@@ -1,5 +1,5 @@
 # COMBINED - Port 2083
-# Updated: 2026-09-12 18:01:12
+# Updated: 2026-09-12 18:07:37
 # Count: 62
 
 mixed-port: 7890
@@ -50,15 +50,15 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 66.90.104.42
+  server: 185.126.238.87
   port: 2083
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
   network: grpc
   tls: false
   udp: true
   skip-cert-verify: true
   grpc-opts:
-    grpc-service-name: vless
+    grpc-service-name: security.debian.org
 - name: 'ARISTA #2'
   type: vless
   server: 66.90.104.42
@@ -72,19 +72,18 @@ proxies:
     grpc-service-name: vless
 - name: 'ARISTA #3'
   type: vless
-  server: 178.105.61.61
+  server: 91.193.58.215
   port: 2083
-  uuid: cb077bf2-70b7-457b-af42-27cdc3e0e544
-  network: tcp
+  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: 178.105.61.61
-  reality-opts:
-    public-key: H0nCazQFHVhSObfqSUhGLhK7KRwKzTMggIBPjnMMqhk
-    short-id: "af04ff8094115e93"
+  servername: vlso300.1d.mom
+  ws-opts:
+    path: /socks5
+    headers:
+      Host: vlso300.1d.mom
 - name: 'ARISTA #4'
   type: vless
   server: 31.76.80.69
@@ -101,42 +100,6 @@ proxies:
     short-id: "29b21343ab4d"
 - name: 'ARISTA #5'
   type: vless
-  server: 31.76.80.69
-  port: 2083
-  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.amd.com
-  reality-opts:
-    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
-    short-id: "29b21343ab4d"
-- name: 'ARISTA #6'
-  type: vless
-  server: 66.90.104.42
-  port: 2083
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  network: grpc
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: vless
-- name: 'ARISTA #7'
-  type: vless
-  server: 66.90.104.42
-  port: 2083
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  network: grpc
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: vless
-- name: 'ARISTA #8'
-  type: vless
   server: 178.105.61.61
   port: 2083
   uuid: cb077bf2-70b7-457b-af42-27cdc3e0e544
@@ -150,7 +113,21 @@ proxies:
   reality-opts:
     public-key: H0nCazQFHVhSObfqSUhGLhK7KRwKzTMggIBPjnMMqhk
     short-id: "af04ff8094115e93"
-- name: 'ARISTA #9'
+- name: 'ARISTA #6'
+  type: vless
+  server: 104.21.43.125
+  port: 2083
+  uuid: d8374536-dd5f-4400-a8f1-8c203a7e5db8
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: us.mhrnet.com
+  ws-opts:
+    path: /speedtest
+    headers:
+      Host: us.mhrnet.com
+- name: 'ARISTA #7'
   type: vless
   server: 31.76.80.69
   port: 2083
@@ -164,6 +141,33 @@ proxies:
   reality-opts:
     public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
     short-id: "29b21343ab4d"
+- name: 'ARISTA #8'
+  type: vless
+  server: 172.66.0.236
+  port: 2083
+  uuid: 44eae030-290b-4083-8102-6f8bab05701b
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-
+  servername: cfvvv-ev1.pages.dev
+  ws-opts:
+    path: /
+    headers:
+      Host: cfvvv-ev1.pages.dev
+- name: 'ARISTA #9'
+  type: vless
+  server: 185.126.238.87
+  port: 2083
+  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: security.debian.org
 - name: 'ARISTA #10'
   type: vless
   server: 66.90.104.42
@@ -177,41 +181,43 @@ proxies:
     grpc-service-name: vless
 - name: 'ARISTA #11'
   type: vless
-  server: 66.90.104.42
+  server: 91.193.58.215
   port: 2083
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  network: grpc
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: vless
-- name: 'ARISTA #12'
-  type: vless
-  server: 178.105.61.61
-  port: 2083
-  uuid: cb077bf2-70b7-457b-af42-27cdc3e0e544
-  network: tcp
+  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
+  servername: vlso300.1d.mom
+  ws-opts:
+    path: /socks5
+    headers:
+      Host: vlso300.1d.mom
+- name: 'ARISTA #12'
+  type: vless
+  server: 31.76.80.69
+  port: 2083
+  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
   client-fingerprint: chrome
-  servername: 178.105.61.61
+  servername: www.amd.com
   reality-opts:
-    public-key: H0nCazQFHVhSObfqSUhGLhK7KRwKzTMggIBPjnMMqhk
-    short-id: "af04ff8094115e93"
+    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
+    short-id: "29b21343ab4d"
 - name: 'ARISTA #13'
   type: vless
-  server: 66.90.104.42
+  server: 185.126.238.87
   port: 2083
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
   network: grpc
   tls: false
   udp: true
   skip-cert-verify: true
   grpc-opts:
-    grpc-service-name: vless
+    grpc-service-name: security.debian.org
 - name: 'ARISTA #14'
   type: vless
   server: 66.90.104.42
@@ -225,33 +231,29 @@ proxies:
     grpc-service-name: vless
 - name: 'ARISTA #15'
   type: vless
-  server: 178.105.61.61
+  server: 91.193.58.215
   port: 2083
-  uuid: cb077bf2-70b7-457b-af42-27cdc3e0e544
-  network: tcp
+  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: 178.105.61.61
-  reality-opts:
-    public-key: H0nCazQFHVhSObfqSUhGLhK7KRwKzTMggIBPjnMMqhk
-    short-id: "af04ff8094115e93"
+  servername: vlso300.1d.mom
+  ws-opts:
+    path: /socks5
+    headers:
+      Host: vlso300.1d.mom
 - name: 'ARISTA #16'
   type: vless
-  server: 31.76.80.69
+  server: 185.126.238.87
   port: 2083
-  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
-  network: xhttp
-  tls: true
+  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
+  network: grpc
+  tls: false
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.amd.com
-  reality-opts:
-    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
-    short-id: "29b21343ab4d"
+  grpc-opts:
+    grpc-service-name: security.debian.org
 - name: 'ARISTA #17'
   type: vless
   server: 66.90.104.42
@@ -265,6 +267,45 @@ proxies:
     grpc-service-name: vless
 - name: 'ARISTA #18'
   type: vless
+  server: 91.193.58.215
+  port: 2083
+  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: vlso300.1d.mom
+  ws-opts:
+    path: /socks5
+    headers:
+      Host: vlso300.1d.mom
+- name: 'ARISTA #19'
+  type: vless
+  server: 31.76.80.69
+  port: 2083
+  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.amd.com
+  reality-opts:
+    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
+    short-id: "29b21343ab4d"
+- name: 'ARISTA #20'
+  type: vless
+  server: 185.126.238.87
+  port: 2083
+  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: security.debian.org
+- name: 'ARISTA #21'
+  type: vless
   server: 66.90.104.42
   port: 2083
   uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
@@ -274,49 +315,6 @@ proxies:
   skip-cert-verify: true
   grpc-opts:
     grpc-service-name: vless
-- name: 'ARISTA #19'
-  type: vless
-  server: 178.105.61.61
-  port: 2083
-  uuid: cb077bf2-70b7-457b-af42-27cdc3e0e544
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: 178.105.61.61
-  reality-opts:
-    public-key: H0nCazQFHVhSObfqSUhGLhK7KRwKzTMggIBPjnMMqhk
-    short-id: "af04ff8094115e93"
-- name: 'ARISTA #20'
-  type: vless
-  server: 31.76.80.69
-  port: 2083
-  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.amd.com
-  reality-opts:
-    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
-    short-id: "29b21343ab4d"
-- name: 'ARISTA #21'
-  type: vless
-  server: 31.76.80.69
-  port: 2083
-  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.amd.com
-  reality-opts:
-    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
-    short-id: "29b21343ab4d"
 - name: 'ARISTA #22'
   type: vless
   server: 91.193.58.215
@@ -333,27 +331,33 @@ proxies:
       Host: vlso300.1d.mom
 - name: 'ARISTA #23'
   type: vless
-  server: d.rodia.ir
+  server: 31.76.80.69
   port: 2083
-  uuid: 11bbd73e-14e3-42df-b46b-2ae28c741123
-  network: tcp
+  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: www.sony.com
+  servername: www.amd.com
   reality-opts:
-    public-key: DQlucQqsoIyjXz6rqLu4-iFIgexG2f7Prh9uv01UghM
-    short-id: "b7042e7e"
+    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
+    short-id: "29b21343ab4d"
 - name: 'ARISTA #24'
   type: vless
-  server: d.rodia.ir
+  server: 178.105.61.61
   port: 2083
-  uuid: 11bbd73e-14e3-42df-b46b-2ae28c741123
+  uuid: cb077bf2-70b7-457b-af42-27cdc3e0e544
   network: tcp
-  tls: false
+  tls: true
   udp: true
   skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: 178.105.61.61
+  reality-opts:
+    public-key: H0nCazQFHVhSObfqSUhGLhK7KRwKzTMggIBPjnMMqhk
+    short-id: "af04ff8094115e93"
 - name: 'ARISTA #25'
   type: vless
   server: 104.21.43.125
@@ -370,154 +374,19 @@ proxies:
       Host: us.mhrnet.com
 - name: 'ARISTA #26'
   type: vless
-  server: 66.90.104.42
+  server: 31.76.80.69
   port: 2083
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  network: grpc
-  tls: false
+  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
+  network: xhttp
+  tls: true
   udp: true
   skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: vless
+  client-fingerprint: chrome
+  servername: www.amd.com
+  reality-opts:
+    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
+    short-id: "29b21343ab4d"
 - name: 'ARISTA #27'
-  type: vless
-  server: 66.90.104.42
-  port: 2083
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  network: grpc
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: vless
-- name: 'ARISTA #28'
-  type: vless
-  server: 66.90.104.42
-  port: 2083
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  network: grpc
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: vless
-- name: 'ARISTA #29'
-  type: vless
-  server: 178.105.61.61
-  port: 2083
-  uuid: cb077bf2-70b7-457b-af42-27cdc3e0e544
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: 178.105.61.61
-  reality-opts:
-    public-key: H0nCazQFHVhSObfqSUhGLhK7KRwKzTMggIBPjnMMqhk
-    short-id: "af04ff8094115e93"
-- name: 'ARISTA #30'
-  type: vless
-  server: 31.76.80.69
-  port: 2083
-  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.amd.com
-  reality-opts:
-    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
-    short-id: "29b21343ab4d"
-- name: 'ARISTA #31'
-  type: vless
-  server: 31.76.80.69
-  port: 2083
-  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.amd.com
-  reality-opts:
-    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
-    short-id: "29b21343ab4d"
-- name: 'ARISTA #32'
-  type: vless
-  server: 91.193.58.215
-  port: 2083
-  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: vlso300.1d.mom
-  ws-opts:
-    path: /socks5
-    headers:
-      Host: vlso300.1d.mom
-- name: 'ARISTA #33'
-  type: vless
-  server: d.rodia.ir
-  port: 2083
-  uuid: 11bbd73e-14e3-42df-b46b-2ae28c741123
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.sony.com
-  reality-opts:
-    public-key: DQlucQqsoIyjXz6rqLu4-iFIgexG2f7Prh9uv01UghM
-    short-id: "b7042e7e"
-- name: 'ARISTA #34'
-  type: vless
-  server: d.rodia.ir
-  port: 2083
-  uuid: 11bbd73e-14e3-42df-b46b-2ae28c741123
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #35'
-  type: vless
-  server: 104.21.43.125
-  port: 2083
-  uuid: d8374536-dd5f-4400-a8f1-8c203a7e5db8
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: us.mhrnet.com
-  ws-opts:
-    path: /speedtest
-    headers:
-      Host: us.mhrnet.com
-- name: 'ARISTA #36'
-  type: vless
-  server: 185.126.238.87
-  port: 2083
-  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
-  network: grpc
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: security.debian.org
-- name: 'ARISTA #37'
-  type: vless
-  server: 66.90.105.210
-  port: 2083
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  network: grpc
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: vless
-- name: 'ARISTA #38'
   type: vless
   server: 172.66.0.236
   port: 2083
@@ -533,36 +402,171 @@ proxies:
     path: /
     headers:
       Host: cfvvv-ev1.pages.dev
-- name: 'T.ME: @aristapanel #39'
+- name: 'ARISTA #28'
   type: vless
-  server: 188.114.97.7
+  server: 185.126.238.87
   port: 2083
-  uuid: 8525fe74-67e6-4a55-8a26-95f227bd1384
+  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: security.debian.org
+- name: 'ARISTA #29'
+  type: vless
+  server: 185.126.238.87
+  port: 2083
+  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: security.debian.org
+- name: 'ARISTA #30'
+  type: vless
+  server: 66.90.104.42
+  port: 2083
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: vless
+- name: 'ARISTA #31'
+  type: vless
+  server: 91.193.58.215
+  port: 2083
+  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: shy-fog-af06.alvlirm333.workers.dev
+  servername: vlso300.1d.mom
   ws-opts:
-    path: /proxyip=104.223.62.204,99.254.66.219,45.133.17.106,40.233.87.120,40.233.110.251,40.233.68.138,68.233.122.42,144.217.76.62
+    path: /socks5
     headers:
-      Host: shy-fog-af06.alvlirm333.workers.dev
-- name: 'T.ME: @aristapanel #40'
+      Host: vlso300.1d.mom
+- name: 'ARISTA #32'
   type: vless
-  server: 104.17.210.74
+  server: 31.76.80.69
   port: 2083
-  uuid: 8666ab45-8e3d-4988-841b-2561d91e32d5
-  network: ws
+  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: mianfei-73q.pages.dev
+  servername: www.amd.com
+  reality-opts:
+    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
+    short-id: "29b21343ab4d"
+- name: 'ARISTA #33'
+  type: vless
+  server: 178.105.61.61
+  port: 2083
+  uuid: cb077bf2-70b7-457b-af42-27cdc3e0e544
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: 178.105.61.61
+  reality-opts:
+    public-key: H0nCazQFHVhSObfqSUhGLhK7KRwKzTMggIBPjnMMqhk
+    short-id: "af04ff8094115e93"
+- name: 'ARISTA #34'
+  type: vless
+  server: 104.21.43.125
+  port: 2083
+  uuid: d8374536-dd5f-4400-a8f1-8c203a7e5db8
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: us.mhrnet.com
   ws-opts:
-    path: /proxyip=154.3.33.43
+    path: /speedtest
     headers:
-      Host: mianfei-73q.pages.dev
+      Host: us.mhrnet.com
+- name: 'ARISTA #35'
+  type: vless
+  server: 31.76.80.69
+  port: 2083
+  uuid: 8975546a-375c-4966-8064-19fc0f66f30a
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.amd.com
+  reality-opts:
+    public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
+    short-id: "29b21343ab4d"
+- name: 'ARISTA #36'
+  type: vless
+  server: 172.66.0.236
+  port: 2083
+  uuid: 44eae030-290b-4083-8102-6f8bab05701b
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-
+  servername: cfvvv-ev1.pages.dev
+  ws-opts:
+    path: /
+    headers:
+      Host: cfvvv-ev1.pages.dev
+- name: 'ARISTA #37'
+  type: vless
+  server: 66.90.104.42
+  port: 2083
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: vless
+- name: 'ARISTA #38'
+  type: vless
+  server: 66.90.105.210
+  port: 2083
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: vless
+- name: 'ARISTA #39'
+  type: vless
+  server: d.rodia.ir
+  port: 2083
+  uuid: 11bbd73e-14e3-42df-b46b-2ae28c741123
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.sony.com
+  reality-opts:
+    public-key: DQlucQqsoIyjXz6rqLu4-iFIgexG2f7Prh9uv01UghM
+    short-id: "b7042e7e"
+- name: 'ARISTA #40'
+  type: vless
+  server: d.rodia.ir
+  port: 2083
+  uuid: 11bbd73e-14e3-42df-b46b-2ae28c741123
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
 - name: 'T.ME: @aristapanel #41'
   type: vless
   server: 104.19.135.85
@@ -595,15 +599,15 @@ proxies:
     path: /
 - name: 'ARISTA #43'
   type: vless
-  server: 66.90.104.42
+  server: 185.126.238.87
   port: 2083
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
   network: grpc
   tls: false
   udp: true
   skip-cert-verify: true
   grpc-opts:
-    grpc-service-name: vless
+    grpc-service-name: security.debian.org
 - name: 'ARISTA #44'
   type: vless
   server: 66.90.104.42
@@ -617,15 +621,15 @@ proxies:
     grpc-service-name: vless
 - name: 'ARISTA #45'
   type: vless
-  server: 66.90.104.42
+  server: 185.126.238.87
   port: 2083
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
   network: grpc
   tls: false
   udp: true
   skip-cert-verify: true
   grpc-opts:
-    grpc-service-name: vless
+    grpc-service-name: security.debian.org
 - name: 'ARISTA #46'
   type: vless
   server: 66.90.104.42
@@ -639,19 +643,18 @@ proxies:
     grpc-service-name: vless
 - name: 'ARISTA #47'
   type: vless
-  server: 178.105.61.61
+  server: 91.193.58.215
   port: 2083
-  uuid: cb077bf2-70b7-457b-af42-27cdc3e0e544
-  network: tcp
+  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: 178.105.61.61
-  reality-opts:
-    public-key: H0nCazQFHVhSObfqSUhGLhK7KRwKzTMggIBPjnMMqhk
-    short-id: "af04ff8094115e93"
+  servername: vlso300.1d.mom
+  ws-opts:
+    path: /socks5
+    headers:
+      Host: vlso300.1d.mom
 - name: 'ARISTA #48'
   type: vless
   server: 31.76.80.69
@@ -667,6 +670,21 @@ proxies:
     public-key: zq3gOJkXi6laNuxMohL3lr-wFOKi4Z9oG7QuMMiTDAk
     short-id: "29b21343ab4d"
 - name: 'ARISTA #49'
+  type: vless
+  server: 178.105.61.61
+  port: 2083
+  uuid: cb077bf2-70b7-457b-af42-27cdc3e0e544
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: 178.105.61.61
+  reality-opts:
+    public-key: H0nCazQFHVhSObfqSUhGLhK7KRwKzTMggIBPjnMMqhk
+    short-id: "af04ff8094115e93"
+- name: 'ARISTA #50'
   type: ss
   server: 141.95.29.163
   port: 2083
@@ -674,7 +692,7 @@ proxies:
   password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:JTou+JSmZOAyrMLdvNBcXFm0Y9luZ/8u17ie48jQfVc=
   udp: true
   tcp-fast-open: true
-- name: 'ARISTA #50'
+- name: 'ARISTA #51'
   type: ss
   server: 51.222.107.43
   port: 2083
@@ -682,20 +700,12 @@ proxies:
   password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:HWFFJN19JkvbTKo/79AfnbRBK9uHUUaFNZJyLjEoJGs=
   udp: true
   tcp-fast-open: true
-- name: 'ARISTA #51'
+- name: 'ARISTA #52'
   type: ss
   server: uk1.connectsuite.org
   port: 2083
   cipher: aes-256-gcm
   password: f4e7cc3b-1fde-4861-9a7e-294728d8a16a
-  udp: true
-  tcp-fast-open: true
-- name: 'T.ME: @aristapanel #52'
-  type: ss
-  server: 51.38.71.51
-  port: 2083
-  cipher: 2022-blake3-aes-256-gcm
-  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
   udp: true
   tcp-fast-open: true
 - name: 'ARISTA #53'
@@ -825,8 +835,8 @@ proxy-groups:
   - 'ARISTA #36'
   - 'ARISTA #37'
   - 'ARISTA #38'
-  - 'T.ME: @aristapanel #39'
-  - 'T.ME: @aristapanel #40'
+  - 'ARISTA #39'
+  - 'ARISTA #40'
   - 'T.ME: @aristapanel #41'
   - 'T.ME: @aristapanel #42'
   - 'ARISTA #43'
@@ -838,7 +848,7 @@ proxy-groups:
   - 'ARISTA #49'
   - 'ARISTA #50'
   - 'ARISTA #51'
-  - 'T.ME: @aristapanel #52'
+  - 'ARISTA #52'
   - 'ARISTA #53'
   - 'ARISTA #54'
   - 'ARISTA #55'
