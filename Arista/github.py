@@ -717,7 +717,11 @@ class GitHubConfigExtractor:
             "vmess",
             "vless",
             "trojan",
-            "ss"
+            "ss",
+            "hysteria2",
+            "hy2",
+            "hysteria",
+            "tuic"
         ):
             return proto
 
