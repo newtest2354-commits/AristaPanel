@@ -1527,44 +1527,44 @@ class TelegramConfigExtractor:
         ).hexdigest()
 
     def get_health_protocol(self, config):
-        obj = self.normalize_config(
-            config
-        )
+    obj = self.normalize_config(
+        config
+    )
 
-        if not obj:
-            return None
-
-        protocol = (
-            obj.get("scheme")
-            or "vmess"
-        ).lower()
-
-        if protocol == "vmess":
-            return "vmess"
-
-        if protocol == "vless":
-            return "vless"
-
-        if protocol == "trojan":
-            return "trojan"
-
-        if protocol == "ss":
-            return "ss"
-
-        if protocol in (
-            "hysteria",
-            "hysteria2",
-            "hy2"
-        ):
-            return None
-
-        if protocol == "tuic":
-            return None
-
-        if protocol == "wireguard":
-            return None
-
+    if not obj:
         return None
+
+    protocol = (
+        obj.get("scheme")
+        or "vmess"
+    ).lower()
+
+    if protocol == "vmess":
+        return "vmess"
+
+    if protocol == "vless":
+        return "vless"
+
+    if protocol == "trojan":
+        return "trojan"
+
+    if protocol == "ss":
+        return "ss"
+
+    if protocol in (
+        "hysteria",
+        "hysteria2",
+        "hy2"
+    ):
+        return protocol
+
+    if protocol == "tuic":
+        return "tuic"
+
+    if protocol == "wireguard":
+        return None
+
+    return None
 
     def get_config_endpoint(self, config):
         obj = self.normalize_config(
