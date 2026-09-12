@@ -1,0 +1,954 @@
+# COMBINED - TROJAN - Tier 50
+# Updated: 2026-09-12 10:37:21
+# Count: 50
+
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+ipv6: false
+dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  default-nameserver:
+  - 178.22.122.100
+  - 185.51.200.2
+  - 10.202.10.202
+  nameserver:
+  - https://dns.shecan.ir/dns-query
+  - https://dns.403.online/dns-query
+  - https://dns.begzar.ir/dns-query
+  - tls://dns.shecan.ir
+  - tls://dns.403.online
+  - https://1.1.1.1/dns-query
+  - https://8.8.8.8/dns-query
+  - tls://1.1.1.1
+  - tls://8.8.8.8
+sniffer:
+  enable: true
+  parse-pure-ip: true
+  override-destination: true
+  sniff:
+    TLS:
+      ports:
+      - 443
+      - 8443
+    HTTP:
+      ports:
+      - 80
+      - 8080
+      - 8880
+    QUIC:
+      ports:
+      - 443
+      - 8443
+rules:
+- MATCH,🎯 ARISTA CORE
+proxies:
+- name: 'ARISTA #1'
+  type: trojan
+  server: 188.42.145.180
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.volumeroot.com
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.volumeroot.com
+- name: 'ARISTA #2'
+  type: trojan
+  server: 199.232.78.160
+  port: 443
+  password: MiTiVPN
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: ssl.fastly.com
+  client-fingerprint: firefox
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/D-e1i@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
+    headers:
+      Host: mitivpn---ss--s---mitivpn-4.global.ssl.fastly.net
+- name: 'ARISTA #3'
+  type: trojan
+  server: 151.101.56.7
+  port: 443
+  password: MiTiVPN
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: ssl.fastly.com
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/D-e2@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
+    headers:
+      Host: mitivpn---ss--s---mitivpn-2.global.ssl.fastly.net
+- name: 'ARISTA #4'
+  type: trojan
+  server: 199.232.78.101
+  port: 443
+  password: MiTiVPN
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: ssl.fastly.com
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: '---@mehrosaboran'
+    headers:
+      Host: mitivpn---ss--s---mitivpn-11.global.ssl.fastly.net
+- name: 'ARISTA #5'
+  type: trojan
+  server: 151.101.56.7
+  port: 443
+  password: MiTiVPN
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: ssl.fastly.com
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: '---@mehrosaboran'
+    headers:
+      Host: mitivpn---ss--s---mitivpn-22.global.ssl.fastly.net
+- name: 'ARISTA #6'
+  type: trojan
+  server: 167.82.76.7
+  port: 443
+  password: MiTiVPN
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: ssl.fastly.com
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: '@mehrosaboran'
+    headers:
+      Host: mitivpn---ss--s---mitivpn-33.global.ssl.fastly.net
+- name: 'ARISTA #7'
+  type: trojan
+  server: 212.183.88.136
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.calmlunch.com
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: 'ARISTA #8'
+  type: trojan
+  server: 172.67.149.60
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.ignitelimit.com
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+- name: 'ARISTA #9'
+  type: trojan
+  server: 151.101.56.7
+  port: 443
+  password: M%69T%69VPN
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: ssl.fastly.com
+  client-fingerprint: firefox
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: '@bored_vpn'
+    headers:
+      Host: mitivpn-mitivpn-mitivpn--mitivpn-mitivpn--mitivpn.global.ssl.fastly.net
+- name: 'ARISTA #10'
+  type: trojan
+  server: 130.250.137.171
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.ignitelimit.com
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+- name: 'ARISTA #11'
+  type: trojan
+  server: 199.232.78.101
+  port: 443
+  password: M%69TiVPN
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: ssl.fastly.com
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: '---@bored_vpn'
+    headers:
+      Host: mitivpn---ss--s---mitivpn-11.global.ssl.fastly.net
+- name: 'ARISTA #12'
+  type: trojan
+  server: 151.101.56.7
+  port: 443
+  password: M%69TiVPN
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: ssl.fastly.com
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: '---@bored_vpn'
+    headers:
+      Host: mitivpn---ss--s---mitivpn-22.global.ssl.fastly.net
+- name: 'ARISTA #13'
+  type: trojan
+  server: 167.82.76.7
+  port: 443
+  password: M%69TiVPN
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: ssl.fastly.com
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: '@bored_vpn'
+    headers:
+      Host: mitivpn---ss--s---mitivpn-33.global.ssl.fastly.net
+- name: 'ARISTA #14'
+  type: trojan
+  server: 199.232.78.160
+  port: 443
+  password: M%69TiVPN
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: ssl.fastly.com
+  client-fingerprint: firefox
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: '@bored_vpn'
+    headers:
+      Host: mitivpn---ss--s---mitivpn-44.global.ssl.fastly.net
+- name: 'ARISTA #15'
+  type: trojan
+  server: 151.101.56.101
+  port: 443
+  password: M%69TiVPN
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: ssl.fastly.com
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: '@bored_vpn'
+    headers:
+      Host: mitivpn---ss--s---mitivpn-5.global.ssl.fastly.net
+- name: 'ARISTA #16'
+  type: trojan
+  server: 213.182.199.137
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.pleadcourt.org
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.pleadcourt.org
+- name: 'ARISTA #17'
+  type: trojan
+  server: 199.232.78.160
+  port: 443
+  password: MiTiVPN
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: ssl.fastly.com
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/NLSs---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
+    headers:
+      Host: mitivpn-ss-mitivpn-----mitivpn.global.ssl.fastly.net
+- name: 'ARISTA #18'
+  type: trojan
+  server: 151.101.56.7
+  port: 443
+  password: MiTiVPN
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: ssl.fastly.com
+  client-fingerprint: firefox
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/D-e2@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
+    headers:
+      Host: mitivpn-mitivpn-mitivpn--mitivpn-mitivpn--mitivpn.global.ssl.fastly.net
+- name: 'ARISTA #19'
+  type: trojan
+  server: 188.114.97.7
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.ignitelimit.com
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+- name: 'ARISTA #20'
+  type: trojan
+  server: 8.47.69.0
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.pleadcourt.org
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.pleadcourt.org
+- name: 'ARISTA #21'
+  type: trojan
+  server: 199.232.78.160
+  port: 443
+  password: M%69TiVPN
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: ssl.fastly.com
+  client-fingerprint: firefox
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: '@mehrosaboran'
+    headers:
+      Host: mitivpn---ss--s---mitivpn-44.global.ssl.fastly.net
+- name: 'ARISTA #22'
+  type: trojan
+  server: 151.101.56.101
+  port: 443
+  password: M%69TiVPN
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: ssl.fastly.com
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: '@mehrosaboran'
+    headers:
+      Host: mitivpn---ss--s---mitivpn-5.global.ssl.fastly.net
+- name: 'ARISTA #23'
+  type: trojan
+  server: 140.248.185.253
+  port: 443
+  password: M%69TiVPN
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: ssl.fastly.com
+  ws-opts:
+    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/s-w@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
+    headers:
+      Host: 4x-mitivpn--mitivpn------mitivpn.global.ssl.fastly.net
+- name: 'ARISTA #24'
+  type: trojan
+  server: render.com
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.ignitelimit.com
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+- name: 'ARISTA #25'
+  type: trojan
+  server: 199.232.78.160
+  port: 443
+  password: mitivpn
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: ssl.fastly.com
+  client-fingerprint: firefox
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/D-e1i@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
+    headers:
+      Host: mitivpn---ss--s---mitivpn-4.global.ssl.fastly.net
+- name: 'ARISTA #26'
+  type: trojan
+  server: 5.75.171.12
+  port: 1080
+  password: BbNnpOgc1j9WOaWoslbSyeob1r47IRHV
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: maps.google.com
+  client-fingerprint: chrome
+- name: 'ARISTA #27'
+  type: trojan
+  server: 179.237.75.190
+  port: 16350
+  password: l6R5znJSPJ
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: rd.autos.yahoo.com:40069
+  client-fingerprint: firefox
+- name: 'T.ME: @aristapanel #28'
+  type: trojan
+  server: 188.114.97.6
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.pleadcourt.org
+  client-fingerprint: unsafe
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.pleadcourt.org
+- name: 'T.ME: @aristapanel #29'
+  type: trojan
+  server: 188.114.97.6
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.calmlunch.com
+  client-fingerprint: unsafe
+  ws-opts:
+    path: //assignment
+    headers:
+      Host: www.calmlunch.com
+- name: 'T.ME: @aristapanel #30'
+  type: trojan
+  server: 188.114.97.6
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.volumeroot.com
+  client-fingerprint: unsafe
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.volumeroot.com
+- name: 'T.ME: @aristapanel #31'
+  type: trojan
+  server: 104.16.174.121
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.ignitelimit.com
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+- name: 'T.ME: @aristapanel #32'
+  type: trojan
+  server: 199.232.0.0
+  port: 80
+  password: MiTiVPN
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: s4-mitivpn--mitivpn------mitivpn.global.ssl.fastly.net
+  ws-opts:
+    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/NL---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
+    headers:
+      Host: s4-mitivpn--mitivpn------mitivpn.global.ssl.fastly.net
+- name: 'T.ME: @aristapanel #33'
+  type: trojan
+  server: 165.215.250.14
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.ignitelimit.com
+  client-fingerprint: chrome
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+- name: 'T.ME: @aristapanel #34'
+  type: trojan
+  server: chat.openai.com
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.calmlunch.com
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: 'T.ME: @aristapanel #35'
+  type: trojan
+  server: 216.24.57.7
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.ignitelimit.com
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+- name: 'T.ME: @aristapanel #36'
+  type: trojan
+  server: uwu.blueknightnet.qzz.io
+  port: 2087
+  password: sa1t0t6rz6zbjlcs
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: uwu.dianaw.cc.cd
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  ws-opts:
+    path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
+    headers:
+      Host: uwu.dianaw.cc.cd
+- name: 'T.ME: @aristapanel #37'
+  type: trojan
+  server: uwu.blueknightnet.qzz.io
+  port: 2087
+  password: n9c6f0usjhj6kqbq
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: uwu.dianaw.cc.cd
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  ws-opts:
+    path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
+    headers:
+      Host: uwu.dianaw.cc.cd
+- name: 'T.ME: @aristapanel #38'
+  type: trojan
+  server: charming-puma.rooster465.autos
+  port: 443
+  password: FH72359861
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: charming-puma.rooster465.autos
+- name: 'T.ME: @aristapanel #39'
+  type: trojan
+  server: jgzt1997.qivfelo.ir
+  port: 1080
+  password: BbNnpOgc1j9WOaWoslbSyeob1r47IRHV
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: maps.google.com
+  client-fingerprint: chrome
+- name: 'T.ME: @aristapanel #40'
+  type: trojan
+  server: 100.42.228.109
+  port: 443
+  password: BxceQaOe
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: t.me/ripaojiedian
+- name: 'T.ME: @aristapanel #41'
+  type: trojan
+  server: 151.101.56.101
+  port: 443
+  password: MiTiVPN
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: ssl.fastly.com
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/des---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
+    headers:
+      Host: mitivpn---ss--s---mitivpn-5.global.ssl.fastly.net
+- name: 'T.ME: @aristapanel #42'
+  type: trojan
+  server: 167.82.76.7
+  port: 443
+  password: MiTiVPN
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: ssl.fastly.com
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /
+    headers:
+      Host: mitivpn---ss--s---mitivpn-33.global.ssl.fastly.net
+- name: 'T.ME: @aristapanel #43'
+  type: trojan
+  server: 199.232.78.101
+  port: 443
+  password: MiTiVPN
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: ssl.fastly.com
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /
+    headers:
+      Host: mitivpn---ss--s---mitivpn-11.global.ssl.fastly.net
+- name: 'T.ME: @aristapanel #44'
+  type: trojan
+  server: 199.232.78.160
+  port: 443
+  password: MiTiVPN
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: ssl.fastly.com
+  client-fingerprint: firefox
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/D-e1i@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
+    headers:
+      Host: mitivpn---ss--s---mitivpn-44.global.ssl.fastly.net
+- name: 'T.ME: @aristapanel #45'
+  type: trojan
+  server: 172.67.130.7
+  port: 443
+  password: QpNH_nu0%2BwWmXFvF
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: DvZnjmU8WBcwFWG6.4DhAt6ZqjXCxI6YxmX.wORkeRS.DEV
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /tr/CX8cdDNl20JS1rylKmNr0qLb8y?ed=2560
+    headers:
+      Host: dvznjmu8wbcwfwg6.4dhat6zqjxcxi6yxmx.workers.dev
+- name: 'T.ME: @aristapanel #46'
+  type: trojan
+  server: 188.114.96.3
+  port: 443
+  password: Telegram_healer_config
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: cdtfrgmtcsbaarmz-9owpz7g4.f9w96pzky6un-covzx6b-hzlm80woj2.workers.dev
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /tr/3F3fUAGJks9doKvjt8AREH4QR?ed
+    headers:
+      Host: cdtfrgmtcsbaarmz-9owpz7g4.f9w96pzky6un-covzx6b-hzlm80woj2.workers.dev
+- name: 'T.ME: @aristapanel #47'
+  type: trojan
+  server: 104.18.152.246
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.calmloud.com
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmloud.com
+- name: 'T.ME: @aristapanel #48'
+  type: trojan
+  server: 188.114.96.3
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.calmlunch.com
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: 'T.ME: @aristapanel #49'
+  type: trojan
+  server: render.com
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.ignitelimit.com
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+- name: 'T.ME: @aristapanel #50'
+  type: trojan
+  server: www.speedtest.net
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.ignitelimit.com
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+proxy-groups:
+- name: 🚀 ARISTA LOW LATENCY
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  lazy: true
+  timeout: 3000
+  proxies: &id001
+  - 'ARISTA #1'
+  - 'ARISTA #2'
+  - 'ARISTA #3'
+  - 'ARISTA #4'
+  - 'ARISTA #5'
+  - 'ARISTA #6'
+  - 'ARISTA #7'
+  - 'ARISTA #8'
+  - 'ARISTA #9'
+  - 'ARISTA #10'
+  - 'ARISTA #11'
+  - 'ARISTA #12'
+  - 'ARISTA #13'
+  - 'ARISTA #14'
+  - 'ARISTA #15'
+  - 'ARISTA #16'
+  - 'ARISTA #17'
+  - 'ARISTA #18'
+  - 'ARISTA #19'
+  - 'ARISTA #20'
+  - 'ARISTA #21'
+  - 'ARISTA #22'
+  - 'ARISTA #23'
+  - 'ARISTA #24'
+  - 'ARISTA #25'
+  - 'ARISTA #26'
+  - 'ARISTA #27'
+  - 'T.ME: @aristapanel #28'
+  - 'T.ME: @aristapanel #29'
+  - 'T.ME: @aristapanel #30'
+  - 'T.ME: @aristapanel #31'
+  - 'T.ME: @aristapanel #32'
+  - 'T.ME: @aristapanel #33'
+  - 'T.ME: @aristapanel #34'
+  - 'T.ME: @aristapanel #35'
+  - 'T.ME: @aristapanel #36'
+  - 'T.ME: @aristapanel #37'
+  - 'T.ME: @aristapanel #38'
+  - 'T.ME: @aristapanel #39'
+  - 'T.ME: @aristapanel #40'
+  - 'T.ME: @aristapanel #41'
+  - 'T.ME: @aristapanel #42'
+  - 'T.ME: @aristapanel #43'
+  - 'T.ME: @aristapanel #44'
+  - 'T.ME: @aristapanel #45'
+  - 'T.ME: @aristapanel #46'
+  - 'T.ME: @aristapanel #47'
+  - 'T.ME: @aristapanel #48'
+  - 'T.ME: @aristapanel #49'
+  - 'T.ME: @aristapanel #50'
+- name: 🎬 ARISTA STREAM
+  type: fallback
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  lazy: true
+  proxies: *id001
+- name: ⚖️ ARISTA BALANCE
+  type: load-balance
+  strategy: consistent-hashing
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  lazy: true
+  proxies: *id001
+- name: 🎯 ARISTA CORE
+  type: select
+  proxies:
+  - 🚀 ARISTA LOW LATENCY
+  - 🎬 ARISTA STREAM
+  - ⚖️ ARISTA BALANCE
+  - DIRECT
+  - REJECT
