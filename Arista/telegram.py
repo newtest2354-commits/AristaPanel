@@ -79,7 +79,8 @@ class TelegramConfigExtractor:
         self.permanent_blacklist = {}
         self.temp_suspended_cache = {}
 
-        self.message_lookback_days = 1
+        self.message_lookback_hours = 48
+        self.channel_inactive_hours = 48
 
         cache_dir = ".cache/telegram"
         os.makedirs(cache_dir, exist_ok=True)
@@ -502,7 +503,7 @@ class TelegramConfigExtractor:
                 - last_fail_time
             )
 
-            if time_since_fail < timedelta(hours=24):
+            if time_since_fail < timedelta(hours=48):
                 print(
                     "  → Skipped "
                     f"(in dead cache, "
@@ -547,13 +548,25 @@ class TelegramConfigExtractor:
                     continue
 
                 try:
+                    normalized = dt_str.strip()
+
+                    if normalized.endswith("Z"):
+                        normalized = (
+                            normalized[:-1]
+                            + "+00:00"
+                        )
+
                     post_time = datetime.fromisoformat(
-                        dt_str.replace("Z", "+00:00")
+                        normalized
                     )
 
                     if post_time.tzinfo is None:
                         post_time = post_time.replace(
                             tzinfo=timezone.utc
+                        )
+                    else:
+                        post_time = post_time.astimezone(
+                            timezone.utc
                         )
 
                     if (
@@ -562,7 +575,10 @@ class TelegramConfigExtractor:
                     ):
                         latest_time = post_time
 
-                except ValueError:
+                except (
+                    ValueError,
+                    TypeError
+                ):
                     continue
 
             return latest_time
@@ -585,18 +601,28 @@ class TelegramConfigExtractor:
             if not dt_str:
                 return None
 
+            normalized = dt_str.strip()
+
+            if normalized.endswith("Z"):
+                normalized = (
+                    normalized[:-1]
+                    + "+00:00"
+                )
+
             post_time = datetime.fromisoformat(
-                dt_str.replace("Z", "+00:00")
+                normalized
             )
 
             if post_time.tzinfo is None:
                 post_time = post_time.replace(
                     tzinfo=timezone.utc
                 )
+            else:
+                post_time = post_time.astimezone(
+                    timezone.utc
+                )
 
-            return post_time.astimezone(
-                timezone.utc
-            )
+            return post_time
 
         except (
             ValueError,
@@ -615,16 +641,14 @@ class TelegramConfigExtractor:
 
         now = datetime.now(timezone.utc)
 
-        current_date = now.date()
-
-        oldest_allowed_date = (
-            current_date
+        oldest_allowed = (
+            now
             - timedelta(
-                days=self.message_lookback_days
+                hours=self.message_lookback_hours
             )
         )
 
-        return post_time.date() >= oldest_allowed_date
+        return post_time >= oldest_allowed
 
     def extract_from_soup(self, soup):
         configs = []
@@ -2340,74 +2364,74 @@ class TelegramConfigExtractor:
             self.update_dead_cache(url)
             return [], 0
 
-        last_seen = self.last_post_cache.get(
-            url
-        )
+        now = datetime.now(timezone.utc)
 
-        if (
-            last_seen
-            and last_post_time == last_seen
-        ):
-            time_since_last = (
-                datetime.now(timezone.utc)
-                - last_post_time
+        if last_post_time.tzinfo is None:
+            last_post_time = last_post_time.replace(
+                tzinfo=timezone.utc
+            )
+        else:
+            last_post_time = last_post_time.astimezone(
+                timezone.utc
             )
 
-            if time_since_last >= timedelta(
-                hours=24
-            ):
-                if (
-                    url
-                    not in self.temp_suspended_cache
-                ):
-                    self.temp_suspended_cache[url] = (
-                        datetime.now(timezone.utc)
-                    )
-
-                    self.save_temp_suspend()
-
-                    print(
-                        "  → Channel suspended "
-                        f"(no new posts for "
-                        f"{int(time_since_last.total_seconds() / 3600)}h)"
-                    )
-
-                return [], 0
-
-        self.last_post_cache[url] = (
-            last_post_time
+        time_since_last = (
+            now - last_post_time
         )
 
         if (
-            datetime.now(timezone.utc)
-            - last_post_time
-            > timedelta(days=2)
+            time_since_last
+            >= timedelta(
+                hours=self.channel_inactive_hours
+            )
         ):
             if (
                 url
                 not in self.temp_suspended_cache
             ):
-                self.temp_suspended_cache[url] = (
-                    datetime.now(timezone.utc)
-                )
-
+                self.temp_suspended_cache[url] = now
                 self.save_temp_suspend()
 
                 print(
                     "  → Channel suspended "
-                    "(last post >2 days)"
+                    f"(no new posts for "
+                    f"{int(time_since_last.total_seconds() / 3600)}h)"
                 )
 
             return [], 0
 
-        if url in self.temp_suspended_cache:
-            del self.temp_suspended_cache[url]
-            self.save_temp_suspend()
+        last_seen = self.last_post_cache.get(
+            url
+        )
 
-            print(
-                "  → Channel reactivated "
-                "(new post detected)"
-            )
+        if last_seen is not None:
+            if last_seen.tzinfo is None:
+                last_seen = last_seen.replace(
+                    tzinfo=timezone.utc
+                )
+            else:
+                last_seen = last_seen.astimezone(
+                    timezone.utc
+                )
+
+        new_post_detected = (
+            last_seen is None
+            or last_post_time > last_seen
+        )
+
+        self.last_post_cache[url] = last_post_time
+
+        if url in self.temp_suspended_cache:
+            if new_post_detected:
+                del self.temp_suspended_cache[url]
+                self.save_temp_suspend()
+
+                print(
+                    "  → Channel reactivated "
+                    "(new post detected)"
+                )
+            else:
+                return [], 0
 
         raw_configs = self.extract_from_soup(
             soup
