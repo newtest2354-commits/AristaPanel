@@ -105,8 +105,8 @@ jobs:
               print("::error::Telegram stats missing 'added'.")
               sys.exit(1)
 
-          if not isinstance(data["added"], (int, float)) or isinstance(data["added"], bool):
-              print("::error::Telegram 'added' must be numeric.")
+          if not isinstance(data["added"], int) or isinstance(data["added"], bool):
+              print("::error::Telegram 'added' must be an integer.")
               sys.exit(1)
 
           if data["added"] < 0:
@@ -119,7 +119,7 @@ jobs:
               print("::error::Telegram stats missing 'protocols'.")
               sys.exit(1)
 
-          required = [
+          required_protocols = [
               "vless",
               "vmess",
               "trojan",
@@ -127,22 +127,52 @@ jobs:
               "hysteria2",
               "hysteria",
               "tuic",
+              "wireguard",
               "other"
           ]
 
-          for key in required:
+          for key in required_protocols:
               if key not in protocols:
                   print(f"::error::Telegram stats missing protocol '{key}'.")
                   sys.exit(1)
 
               value = protocols[key]
 
-              if not isinstance(value, (int, float)) or isinstance(value, bool):
-                  print(f"::error::Telegram protocol '{key}' must be numeric.")
+              if not isinstance(value, int) or isinstance(value, bool):
+                  print(f"::error::Telegram protocol '{key}' must be an integer.")
                   sys.exit(1)
 
               if value < 0:
                   print(f"::error::Telegram protocol '{key}' cannot be negative.")
+                  sys.exit(1)
+
+          health = data.get("health")
+
+          if not isinstance(health, dict):
+              print("::error::Telegram stats missing 'health'.")
+              sys.exit(1)
+
+          required_health = [
+              "checked",
+              "healthy",
+              "unstable",
+              "dead",
+              "unchecked"
+          ]
+
+          for key in required_health:
+              if key not in health:
+                  print(f"::error::Telegram health missing '{key}'.")
+                  sys.exit(1)
+
+              value = health[key]
+
+              if not isinstance(value, int) or isinstance(value, bool):
+                  print(f"::error::Telegram health '{key}' must be an integer.")
+                  sys.exit(1)
+
+              if value < 0:
+                  print(f"::error::Telegram health '{key}' cannot be negative.")
                   sys.exit(1)
 
           print("Telegram statistics validation passed.")
@@ -189,8 +219,8 @@ jobs:
               print("::error::GitHub stats missing 'added'.")
               sys.exit(1)
 
-          if not isinstance(data["added"], (int, float)) or isinstance(data["added"], bool):
-              print("::error::GitHub 'added' must be numeric.")
+          if not isinstance(data["added"], int) or isinstance(data["added"], bool):
+              print("::error::GitHub 'added' must be an integer.")
               sys.exit(1)
 
           if data["added"] < 0:
@@ -203,7 +233,7 @@ jobs:
               print("::error::GitHub stats missing 'protocols'.")
               sys.exit(1)
 
-          required = [
+          required_protocols = [
               "vless",
               "vmess",
               "trojan",
@@ -214,19 +244,48 @@ jobs:
               "other"
           ]
 
-          for key in required:
+          for key in required_protocols:
               if key not in protocols:
                   print(f"::error::GitHub stats missing protocol '{key}'.")
                   sys.exit(1)
 
               value = protocols[key]
 
-              if not isinstance(value, (int, float)) or isinstance(value, bool):
-                  print(f"::error::GitHub protocol '{key}' must be numeric.")
+              if not isinstance(value, int) or isinstance(value, bool):
+                  print(f"::error::GitHub protocol '{key}' must be an integer.")
                   sys.exit(1)
 
               if value < 0:
                   print(f"::error::GitHub protocol '{key}' cannot be negative.")
+                  sys.exit(1)
+
+          health = data.get("health")
+
+          if not isinstance(health, dict):
+              print("::error::GitHub stats missing 'health'.")
+              sys.exit(1)
+
+          required_health = [
+              "checked",
+              "healthy",
+              "unstable",
+              "dead",
+              "unchecked"
+          ]
+
+          for key in required_health:
+              if key not in health:
+                  print(f"::error::GitHub health missing '{key}'.")
+                  sys.exit(1)
+
+              value = health[key]
+
+              if not isinstance(value, int) or isinstance(value, bool):
+                  print(f"::error::GitHub health '{key}' must be an integer.")
+                  sys.exit(1)
+
+              if value < 0:
+                  print(f"::error::GitHub health '{key}' cannot be negative.")
                   sys.exit(1)
 
           print("GitHub statistics validation passed.")
@@ -265,6 +324,26 @@ jobs:
           import sys
           from datetime import datetime, timezone
 
+          PROTOCOLS = [
+              "vless",
+              "vmess",
+              "trojan",
+              "shadowsocks",
+              "hysteria2",
+              "hysteria",
+              "tuic",
+              "wireguard",
+              "other"
+          ]
+
+          HEALTH_FIELDS = [
+              "checked",
+              "healthy",
+              "unstable",
+              "dead",
+              "unchecked"
+          ]
+
           def load_stats(filename, source):
               try:
                   with open(filename, "r", encoding="utf-8") as f:
@@ -281,9 +360,70 @@ jobs:
                   print(f"::error::{source} stats missing 'added'.")
                   sys.exit(1)
 
-              if "protocols" not in data or not isinstance(data["protocols"], dict):
+              if not isinstance(data["added"], int) or isinstance(data["added"], bool):
+                  print(f"::error::{source} added must be an integer.")
+                  sys.exit(1)
+
+              if data["added"] < 0:
+                  print(f"::error::{source} added cannot be negative.")
+                  sys.exit(1)
+
+              protocols = data.get("protocols")
+
+              if not isinstance(protocols, dict):
                   print(f"::error::{source} stats missing 'protocols'.")
                   sys.exit(1)
+
+              health = data.get("health")
+
+              if not isinstance(health, dict):
+                  print(f"::error::{source} stats missing 'health'.")
+                  sys.exit(1)
+
+              for protocol in PROTOCOLS:
+                  if protocol not in protocols:
+                      if protocol == "wireguard":
+                          protocols[protocol] = 0
+                      else:
+                          print(
+                              f"::error::{source} stats missing protocol '{protocol}'."
+                          )
+                          sys.exit(1)
+
+                  value = protocols[protocol]
+
+                  if not isinstance(value, int) or isinstance(value, bool):
+                      print(
+                          f"::error::{source} protocol '{protocol}' must be an integer."
+                      )
+                      sys.exit(1)
+
+                  if value < 0:
+                      print(
+                          f"::error::{source} protocol '{protocol}' cannot be negative."
+                      )
+                      sys.exit(1)
+
+              for field in HEALTH_FIELDS:
+                  if field not in health:
+                      print(
+                          f"::error::{source} health missing '{field}'."
+                      )
+                      sys.exit(1)
+
+                  value = health[field]
+
+                  if not isinstance(value, int) or isinstance(value, bool):
+                      print(
+                          f"::error::{source} health '{field}' must be an integer."
+                      )
+                      sys.exit(1)
+
+                  if value < 0:
+                      print(
+                          f"::error::{source} health '{field}' cannot be negative."
+                      )
+                      sys.exit(1)
 
               return data
 
@@ -300,56 +440,11 @@ jobs:
           telegram_added = telegram_stats["added"]
           github_added = github_stats["added"]
 
-          if not isinstance(telegram_added, int) or isinstance(telegram_added, bool):
-              print("::error::Telegram added must be an integer.")
-              sys.exit(1)
-
-          if not isinstance(github_added, int) or isinstance(github_added, bool):
-              print("::error::GitHub added must be an integer.")
-              sys.exit(1)
-
-          if telegram_added < 0 or github_added < 0:
-              print("::error::Added values cannot be negative.")
-              sys.exit(1)
-
           telegram_protocols = telegram_stats["protocols"]
           github_protocols = github_stats["protocols"]
 
-          required = [
-              "vless",
-              "vmess",
-              "trojan",
-              "shadowsocks",
-              "hysteria2",
-              "hysteria",
-              "tuic",
-              "other"
-          ]
-
-          for source, protocols in [
-              ("Telegram", telegram_protocols),
-              ("GitHub", github_protocols)
-          ]:
-              for protocol in required:
-                  if protocol not in protocols:
-                      print(
-                          f"::error::{source} stats missing '{protocol}'."
-                      )
-                      sys.exit(1)
-
-                  value = protocols[protocol]
-
-                  if not isinstance(value, int) or isinstance(value, bool):
-                      print(
-                          f"::error::{source} '{protocol}' must be an integer."
-                      )
-                      sys.exit(1)
-
-                  if value < 0:
-                      print(
-                          f"::error::{source} '{protocol}' cannot be negative."
-                      )
-                      sys.exit(1)
+          telegram_health = telegram_stats["health"]
+          github_health = github_stats["health"]
 
           total_added = telegram_added + github_added
 
@@ -357,25 +452,25 @@ jobs:
               "added": total_added,
               "telegram": {
                   "added": telegram_added,
-                  "vless": telegram_protocols["vless"],
-                  "vmess": telegram_protocols["vmess"],
-                  "trojan": telegram_protocols["trojan"],
-                  "shadowsocks": telegram_protocols["shadowsocks"],
-                  "hysteria2": telegram_protocols["hysteria2"],
-                  "hysteria": telegram_protocols["hysteria"],
-                  "tuic": telegram_protocols["tuic"],
-                  "other": telegram_protocols["other"]
+                  "protocols": {
+                      protocol: telegram_protocols.get(protocol, 0)
+                      for protocol in PROTOCOLS
+                  },
+                  "health": {
+                      field: telegram_health[field]
+                      for field in HEALTH_FIELDS
+                  }
               },
               "github": {
                   "added": github_added,
-                  "vless": github_protocols["vless"],
-                  "vmess": github_protocols["vmess"],
-                  "trojan": github_protocols["trojan"],
-                  "shadowsocks": github_protocols["shadowsocks"],
-                  "hysteria2": github_protocols["hysteria2"],
-                  "hysteria": github_protocols["hysteria"],
-                  "tuic": github_protocols["tuic"],
-                  "other": github_protocols["other"]
+                  "protocols": {
+                      protocol: github_protocols.get(protocol, 0)
+                      for protocol in PROTOCOLS
+                  },
+                  "health": {
+                      field: github_health[field]
+                      for field in HEALTH_FIELDS
+                  }
               },
               "updated_at": datetime.now(
                   timezone.utc
@@ -441,6 +536,26 @@ jobs:
           import json
           import sys
 
+          PROTOCOLS = [
+              "vless",
+              "vmess",
+              "trojan",
+              "shadowsocks",
+              "hysteria2",
+              "hysteria",
+              "tuic",
+              "wireguard",
+              "other"
+          ]
+
+          HEALTH_FIELDS = [
+              "checked",
+              "healthy",
+              "unstable",
+              "dead",
+              "unchecked"
+          ]
+
           try:
               with open("stats_payload.json", "r", encoding="utf-8") as f:
                   payload = json.load(f)
@@ -460,16 +575,13 @@ jobs:
                   print(f"::error::Missing payload field: {key}")
                   sys.exit(1)
 
-          required_protocols = [
-              "vless",
-              "vmess",
-              "trojan",
-              "shadowsocks",
-              "hysteria2",
-              "hysteria",
-              "tuic",
-              "other"
-          ]
+          if not isinstance(payload["added"], int) or isinstance(payload["added"], bool):
+              print("::error::Payload added must be an integer.")
+              sys.exit(1)
+
+          if payload["added"] < 0:
+              print("::error::Payload added cannot be negative.")
+              sys.exit(1)
 
           for source in ["telegram", "github"]:
               if not isinstance(payload[source], dict):
@@ -477,15 +589,78 @@ jobs:
                   sys.exit(1)
 
               if "added" not in payload[source]:
+                  print(f"::error::{source}.added is missing.")
+                  sys.exit(1)
+
+              if not isinstance(payload[source]["added"], int) or isinstance(
+                  payload[source]["added"], bool
+              ):
                   print(
-                      f"::error::{source}.added is missing."
+                      f"::error::{source}.added must be an integer."
                   )
                   sys.exit(1)
 
-              for protocol in required_protocols:
-                  if protocol not in payload[source]:
+              if payload[source]["added"] < 0:
+                  print(
+                      f"::error::{source}.added cannot be negative."
+                  )
+                  sys.exit(1)
+
+              protocols = payload[source].get("protocols")
+
+              if not isinstance(protocols, dict):
+                  print(
+                      f"::error::{source}.protocols is missing or invalid."
+                  )
+                  sys.exit(1)
+
+              for protocol in PROTOCOLS:
+                  if protocol not in protocols:
                       print(
-                          f"::error::{source}.{protocol} is missing."
+                          f"::error::{source}.protocols.{protocol} is missing."
+                      )
+                      sys.exit(1)
+
+                  value = protocols[protocol]
+
+                  if not isinstance(value, int) or isinstance(value, bool):
+                      print(
+                          f"::error::{source}.protocols.{protocol} must be an integer."
+                      )
+                      sys.exit(1)
+
+                  if value < 0:
+                      print(
+                          f"::error::{source}.protocols.{protocol} cannot be negative."
+                      )
+                      sys.exit(1)
+
+              health = payload[source].get("health")
+
+              if not isinstance(health, dict):
+                  print(
+                      f"::error::{source}.health is missing or invalid."
+                  )
+                  sys.exit(1)
+
+              for field in HEALTH_FIELDS:
+                  if field not in health:
+                      print(
+                          f"::error::{source}.health.{field} is missing."
+                      )
+                      sys.exit(1)
+
+                  value = health[field]
+
+                  if not isinstance(value, int) or isinstance(value, bool):
+                      print(
+                          f"::error::{source}.health.{field} must be an integer."
+                      )
+                      sys.exit(1)
+
+                  if value < 0:
+                      print(
+                          f"::error::{source}.health.{field} cannot be negative."
                       )
                       sys.exit(1)
 
