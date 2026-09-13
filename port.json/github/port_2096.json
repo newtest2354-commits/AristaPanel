@@ -1,6 +1,6 @@
 // GITHUB - Port 2096
-// Updated: 2026-09-13 17:06:51
-// Count: 5
+// Updated: 2026-09-13 18:02:25
+// Count: 13
 
 {
   "log": {
@@ -41,13 +41,38 @@
     {
       "type": "vless",
       "tag": "ARISTA #1",
-      "server": "188.114.97.6",
+      "server": "188.164.248.78",
       "server_port": 2096,
-      "uuid": "395d040e-a04a-43d7-a1e9-8635f545879a",
+      "uuid": "42c62a5a-cd31-4551-80ef-908732370287",
       "domain_resolver": "google",
       "tls": {
         "enabled": true,
-        "server_name": "shalana.xyz",
+        "server_name": "fq.jp188.dpdns.org",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "packet_encoding": "none",
+      "transport": {
+        "type": "ws",
+        "path": "/proxyip=154.17.22.207,69.63.210.157,134.195.211.13,172.236.245.153,209.146.115.209,64.186.224.194,149.28.94.52,107.151.188.57",
+        "headers": {
+          "Host": "fq.jp188.dpdns.org"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "ARISTA #2",
+      "server": "104.18.33.211",
+      "server_port": 2096,
+      "uuid": "9f534ac4-3c58-4a16-8b74-13dff09a0cf1",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "d39333476.pages.dev",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -56,15 +81,15 @@
       },
       "transport": {
         "type": "ws",
-        "path": "/shalana",
+        "path": "/app",
         "headers": {
-          "Host": "shalana.xyz"
+          "Host": "d39333476.pages.dev"
         }
       }
     },
     {
       "type": "vless",
-      "tag": "ARISTA #2",
+      "tag": "ARISTA #3",
       "server": "172.64.53.240",
       "server_port": 2096,
       "uuid": "77777777-8a3e-6666-b6d1-a9c5f0e8b3a2",
@@ -87,6 +112,27 @@
       }
     },
     {
+      "type": "vless",
+      "tag": "ARISTA #4",
+      "server": "104.16.72.251",
+      "server_port": 2096,
+      "uuid": "12af43c3-84b4-4248-878b-b75f35835487",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "decdn.ramlike.ir",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "network"
+      }
+    },
+    {
       "type": "direct",
       "tag": "direct"
     },
@@ -99,7 +145,9 @@
       "tag": "🚀 ARISTA AUTO BEST",
       "outbounds": [
         "ARISTA #1",
-        "ARISTA #2"
+        "ARISTA #2",
+        "ARISTA #3",
+        "ARISTA #4"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "2m",
