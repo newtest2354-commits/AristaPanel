@@ -1,6 +1,6 @@
 # COMBINED - Port 2096
-# Updated: 2026-09-13 16:39:19
-# Count: 9
+# Updated: 2026-09-13 16:48:46
+# Count: 10
 
 mixed-port: 7890
 allow-lan: false
@@ -62,18 +62,6 @@ proxies:
     grpc-service-name: network
 - name: 'ARISTA #2'
   type: vless
-  server: 104.16.72.251
-  port: 2096
-  uuid: 12af43c3-84b4-4248-878b-b75f35835487
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: decdn.ramlike.ir
-  grpc-opts:
-    grpc-service-name: network
-- name: 'ARISTA #3'
-  type: vless
   server: 91.193.59.255
   port: 2096
   uuid: 42c62a5a-cd31-4551-80ef-908732370287
@@ -86,6 +74,18 @@ proxies:
     path: /proxyip=154.17.22.207,69.63.210.157,134.195.211.13,172.236.245.153,209.146.115.209,64.186.224.194,149.28.94.52,107.151.188.57
     headers:
       Host: fq.jp188.dpdns.org
+- name: 'ARISTA #3'
+  type: vless
+  server: 104.16.72.251
+  port: 2096
+  uuid: 12af43c3-84b4-4248-878b-b75f35835487
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: decdn.ramlike.ir
+  grpc-opts:
+    grpc-service-name: network
 - name: 'ARISTA #4'
   type: vless
   server: 104.16.72.251
@@ -114,17 +114,31 @@ proxies:
       Host: fq.jp188.dpdns.org
 - name: 'ARISTA #6'
   type: vless
-  server: 47.242.252.237
+  server: 104.16.72.251
   port: 2096
-  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  uuid: 12af43c3-84b4-4248-878b-b75f35835487
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: decdn.ramlike.ir
+  grpc-opts:
+    grpc-service-name: network
+- name: 'ARISTA #7'
+  type: vless
+  server: 91.193.59.255
+  port: 2096
+  uuid: 42c62a5a-cd31-4551-80ef-908732370287
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: jp667.ylks01.eu.org
+  servername: fq.jp188.dpdns.org
   ws-opts:
-    path: /blue
-- name: 'T.ME: @aristapanel #7'
+    path: /proxyip=154.17.22.207,69.63.210.157,134.195.211.13,172.236.245.153,209.146.115.209,64.186.224.194,149.28.94.52,107.151.188.57
+    headers:
+      Host: fq.jp188.dpdns.org
+- name: 'T.ME: @aristapanel #8'
   type: vless
   server: 188.114.97.6
   port: 2096
@@ -139,7 +153,7 @@ proxies:
     path: /shalana
     headers:
       Host: shalana.xyz
-- name: 'T.ME: @aristapanel #8'
+- name: 'T.ME: @aristapanel #9'
   type: vless
   server: 172.64.53.240
   port: 2096
@@ -155,7 +169,7 @@ proxies:
     path: /
     headers:
       Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-- name: 'ARISTA #9'
+- name: 'ARISTA #10'
   type: vless
   server: 104.16.72.251
   port: 2096
@@ -182,9 +196,10 @@ proxy-groups:
   - 'ARISTA #4'
   - 'ARISTA #5'
   - 'ARISTA #6'
-  - 'T.ME: @aristapanel #7'
+  - 'ARISTA #7'
   - 'T.ME: @aristapanel #8'
-  - 'ARISTA #9'
+  - 'T.ME: @aristapanel #9'
+  - 'ARISTA #10'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
