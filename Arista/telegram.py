@@ -79,6 +79,8 @@ class TelegramConfigExtractor:
         self.permanent_blacklist = {}
         self.temp_suspended_cache = {}
 
+        self.message_lookback_days = 1
+
         cache_dir = ".cache/telegram"
         os.makedirs(cache_dir, exist_ok=True)
 
@@ -549,6 +551,11 @@ class TelegramConfigExtractor:
                         dt_str.replace("Z", "+00:00")
                     )
 
+                    if post_time.tzinfo is None:
+                        post_time = post_time.replace(
+                            tzinfo=timezone.utc
+                        )
+
                     if (
                         latest_time is None
                         or post_time > latest_time
@@ -566,14 +573,76 @@ class TelegramConfigExtractor:
             )
             return None
 
-    def extract_from_soup(self, soup):
-        configs = []
-        elements = soup.find_all(
-            ["code", "pre", "div"]
+    def get_message_post_time(self, message):
+        try:
+            time_tag = message.find("time")
+
+            if not time_tag:
+                return None
+
+            dt_str = time_tag.get("datetime")
+
+            if not dt_str:
+                return None
+
+            post_time = datetime.fromisoformat(
+                dt_str.replace("Z", "+00:00")
+            )
+
+            if post_time.tzinfo is None:
+                post_time = post_time.replace(
+                    tzinfo=timezone.utc
+                )
+
+            return post_time.astimezone(
+                timezone.utc
+            )
+
+        except (
+            ValueError,
+            TypeError,
+            AttributeError
+        ):
+            return None
+
+    def is_recent_message(self, message):
+        post_time = self.get_message_post_time(
+            message
         )
 
-        for element in elements:
-            text = element.get_text(
+        if post_time is None:
+            return False
+
+        now = datetime.now(timezone.utc)
+
+        current_date = now.date()
+
+        oldest_allowed_date = (
+            current_date
+            - timedelta(
+                days=self.message_lookback_days
+            )
+        )
+
+        return post_time.date() >= oldest_allowed_date
+
+    def extract_from_soup(self, soup):
+        configs = []
+
+        messages = soup.select(
+            ".tgme_widget_message"
+        )
+
+        if not messages:
+            return configs
+
+        for message in messages:
+            if not self.is_recent_message(
+                message
+            ):
+                continue
+
+            text = message.get_text(
                 " ",
                 strip=False
             )
@@ -586,7 +655,9 @@ class TelegramConfigExtractor:
                 )
 
                 for match in matches:
-                    cleaned = self.clean_config(match)
+                    cleaned = self.clean_config(
+                        match
+                    )
 
                     if cleaned:
                         configs.append(cleaned)
@@ -1301,12 +1372,12 @@ class TelegramConfigExtractor:
                     decoded,
                     separators=(",", ":"),
                     ensure_ascii=False
-                )
+                ).encode()
 
                 return (
                     "vmess://"
                     + base64.b64encode(
-                        json_str.encode()
+                        json_str
                     ).decode()
                 )
 
@@ -1699,15 +1770,15 @@ class TelegramConfigExtractor:
             return {}
 
     def save_health_state(self, state):
+        temp_file = (
+            self.health_file
+            + ".tmp"
+        )
+
         try:
             os.makedirs(
                 self.health_dir,
                 exist_ok=True
-            )
-
-            temp_file = (
-                self.health_file
-                + ".tmp"
             )
 
             with open(
