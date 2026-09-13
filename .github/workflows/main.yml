@@ -501,11 +501,44 @@ jobs:
 
       - name: Send stats to notification worker
         run: |
-          curl --fail-with-body \
+          echo "Sending statistics payload to notification worker..."
+
+          response_file="$(mktemp)"
+
+          set +e
+
+          http_code=$(curl \
             --silent \
             --show-error \
+            --output "$response_file" \
+            --write-out "%{http_code}" \
             --retry 3 \
             --retry-delay 2 \
             -X POST "${{ secrets.WORKER_URL }}" \
             -H "Content-Type: application/json" \
-            --data-binary @stats_payload.json
+            --data-binary @stats_payload.json)
+
+          curl_exit=$?
+
+          set -e
+
+          echo "curl exit code: $curl_exit"
+          echo "HTTP status: $http_code"
+          echo "Worker response:"
+          cat "$response_file"
+
+          if [ "$curl_exit" -ne 0 ]; then
+            echo "::error::curl request failed with exit code $curl_exit"
+            rm -f "$response_file"
+            exit "$curl_exit"
+          fi
+
+          if [ "$http_code" -lt 200 ] || [ "$http_code" -ge 300 ]; then
+            echo "::error::Notification worker returned HTTP $http_code"
+            rm -f "$response_file"
+            exit 1
+          fi
+
+          echo "Notification worker request completed successfully."
+
+          rm -f "$response_file"
