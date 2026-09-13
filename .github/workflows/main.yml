@@ -17,519 +17,495 @@ jobs:
     environment: production
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v6
-      with:
-        fetch-depth: 0
-
-    - name: Random delay
-      run: sleep $((RANDOM % 300 + 60))
-
-    - name: Set up Python
-      uses: actions/setup-python@v6
-      with:
-        python-version: '3.14'
-
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install requests beautifulsoup4 pyyaml aiohttp
-
-    - name: Clean old config files
-      run: |
-        rm -rf configs.txt/
-        mkdir -p configs.txt/telegram configs.txt/github configs.txt/combined
-
-    - name: Clean old yaml files
-      run: |
-        rm -rf config.yaml/
-        mkdir -p config.yaml
-
-    - name: Clean old json files
-      run: |
-        rm -rf config.json/
-        mkdir -p config.json
-
-    - name: Clean old best_ip files
-      run: |
-        rm -rf best_ip/
-        mkdir -p best_ip
-
-    - name: Clean old port files
-      run: |
-        rm -rf port.txt/
-        mkdir -p port.txt
-
-    - name: Clean old stats files
-      run: |
-        rm -f stats.json telegram_stats.json github_stats.json stats_payload.json
-
-    - name: Prepare health state
-      run: |
-        mkdir -p health
-
-    - name: Run Telegram Config Extractor
-      run: python Arista/telegram.py
-      timeout-minutes: 20
-      env:
-        CHANNELS_JSON: ${{ secrets.CHANNELS_JSON }}
-
-    - name: Validate Telegram stats
-      run: |
-        if [ ! -f stats.json ]; then
-          echo "::error::Telegram stats.json was not created."
-          exit 1
-        fi
-
-        if [ ! -s stats.json ]; then
-          echo "::error::Telegram stats.json is empty."
-          exit 1
-        fi
-
-        python - <<'PY'
-        import json
-        import sys
-
-        try:
-            with open("stats.json", "r", encoding="utf-8") as f:
-                data = json.load(f)
-        except Exception as e:
-            print(f"::error::Invalid Telegram stats JSON: {e}")
-            sys.exit(1)
-
-        if not isinstance(data, dict):
-            print("::error::Telegram stats must be a JSON object.")
-            sys.exit(1)
-
-        if "added" not in data:
-            print("::error::Telegram stats missing 'added'.")
-            sys.exit(1)
-
-        if not isinstance(data["added"], (int, float)) or isinstance(data["added"], bool):
-            print("::error::Telegram 'added' must be numeric.")
-            sys.exit(1)
-
-        if data["added"] < 0:
-            print("::error::Telegram 'added' cannot be negative.")
-            sys.exit(1)
-
-        protocols = data.get("protocols")
-
-        if not isinstance(protocols, dict):
-            print("::error::Telegram stats missing 'protocols'.")
-            sys.exit(1)
-
-        required = [
-            "vless",
-            "vmess",
-            "trojan",
-            "shadowsocks",
-            "hysteria2",
-            "hysteria",
-            "tuic",
-            "other"
-        ]
-
-        for key in required:
-            if key not in protocols:
-                print(f"::error::Telegram stats missing protocol '{key}'.")
-                sys.exit(1)
-
-            value = protocols[key]
-
-            if not isinstance(value, (int, float)) or isinstance(value, bool):
-                print(f"::error::Telegram protocol '{key}' must be numeric.")
-                sys.exit(1)
-
-            if value < 0:
-                print(f"::error::Telegram protocol '{key}' cannot be negative.")
-                sys.exit(1)
-
-        print("Telegram statistics validation passed.")
-        PY
-
-    - name: Rename telegram stats
-      run: |
-        mv stats.json telegram_stats.json
-
-    - name: Run GitHub Config Extractor
-      run: python Arista/github.py
-      timeout-minutes: 15
-      env:
-        REPO_JSON: ${{ secrets.REPO_JSON }}
-
-    - name: Validate GitHub stats
-      run: |
-        if [ ! -f stats.json ]; then
-          echo "::error::GitHub stats.json was not created."
-          exit 1
-        fi
-
-        if [ ! -s stats.json ]; then
-          echo "::error::GitHub stats.json is empty."
-          exit 1
-        fi
-
-        python - <<'PY'
-        import json
-        import sys
-
-        try:
-            with open("stats.json", "r", encoding="utf-8") as f:
-                data = json.load(f)
-        except Exception as e:
-            print(f"::error::Invalid GitHub stats JSON: {e}")
-            sys.exit(1)
-
-        if not isinstance(data, dict):
-            print("::error::GitHub stats must be a JSON object.")
-            sys.exit(1)
-
-        if "added" not in data:
-            print("::error::GitHub stats missing 'added'.")
-            sys.exit(1)
-
-        if not isinstance(data["added"], (int, float)) or isinstance(data["added"], bool):
-            print("::error::GitHub 'added' must be numeric.")
-            sys.exit(1)
-
-        if data["added"] < 0:
-            print("::error::GitHub 'added' cannot be negative.")
-            sys.exit(1)
-
-        protocols = data.get("protocols")
-
-        if not isinstance(protocols, dict):
-            print("::error::GitHub stats missing 'protocols'.")
-            sys.exit(1)
-
-        required = [
-            "vless",
-            "vmess",
-            "trojan",
-            "shadowsocks",
-            "hysteria2",
-            "hysteria",
-            "tuic",
-            "other"
-        ]
-
-        for key in required:
-            if key not in protocols:
-                print(f"::error::GitHub stats missing protocol '{key}'.")
-                sys.exit(1)
-
-            value = protocols[key]
-
-            if not isinstance(value, (int, float)) or isinstance(value, bool):
-                print(f"::error::GitHub protocol '{key}' must be numeric.")
-                sys.exit(1)
-
-            if value < 0:
-                print(f"::error::GitHub protocol '{key}' cannot be negative.")
-                sys.exit(1)
-
-        print("GitHub statistics validation passed.")
-        PY
-
-    - name: Rename github stats
-      run: |
-        mv stats.json github_stats.json
-
-    - name: Combine Configs
-      run: python Arista/combine.py
-
-    - name: Convert to YAML (Clash Meta)
-      run: python Arista/to_yaml.py
-
-    - name: Convert to JSON (Sing-Box)
-      run: python Arista/to_json.py
-
-    - name: Process Best IPs
-      run: python Arista/best_ip.py
-      timeout-minutes: 10
-
-    - name: Process Port Filters
-      run: python Arista/port_filter.py
-      timeout-minutes: 5
-
-    - name: Create summary
-      run: |
-        date > last_update.txt
-        echo "Updated: $(date -u '+%Y-%m-%d %H:%M UTC')" > update_info.txt
-
-    - name: Build and validate stats payload
-      run: |
-        python - <<'PY'
-        import json
-        import sys
-        from datetime import datetime, timezone
-
-        def load_stats(filename, source):
-            try:
-                with open(filename, "r", encoding="utf-8") as f:
-                    data = json.load(f)
-            except Exception as e:
-                print(f"::error::Failed to load {source} stats: {e}")
-                sys.exit(1)
-
-            if not isinstance(data, dict):
-                print(f"::error::{source} stats must be a JSON object.")
-                sys.exit(1)
-
-            if "added" not in data:
-                print(f"::error::{source} stats missing 'added'.")
-                sys.exit(1)
-
-            if "protocols" not in data or not isinstance(data["protocols"], dict):
-                print(f"::error::{source} stats missing 'protocols'.")
-                sys.exit(1)
-
-            return data
-
-        telegram_stats = load_stats(
-            "telegram_stats.json",
-            "Telegram"
-        )
-
-        github_stats = load_stats(
-            "github_stats.json",
-            "GitHub"
-        )
-
-        telegram_added = telegram_stats["added"]
-        github_added = github_stats["added"]
-
-        if not isinstance(telegram_added, int) or isinstance(telegram_added, bool):
-            print("::error::Telegram added must be an integer.")
-            sys.exit(1)
-
-        if not isinstance(github_added, int) or isinstance(github_added, bool):
-            print("::error::GitHub added must be an integer.")
-            sys.exit(1)
-
-        if telegram_added < 0 or github_added < 0:
-            print("::error::Added values cannot be negative.")
-            sys.exit(1)
-
-        telegram_protocols = telegram_stats["protocols"]
-        github_protocols = github_stats["protocols"]
-
-        required = [
-            "vless",
-            "vmess",
-            "trojan",
-            "shadowsocks",
-            "hysteria2",
-            "hysteria",
-            "tuic",
-            "other"
-        ]
-
-        for source, protocols in [
-            ("Telegram", telegram_protocols),
-            ("GitHub", github_protocols)
-        ]:
-            for protocol in required:
-                if protocol not in protocols:
-                    print(
-                        f"::error::{source} stats missing '{protocol}'."
-                    )
-                    sys.exit(1)
-
-                value = protocols[protocol]
-
-                if not isinstance(value, int) or isinstance(value, bool):
-                    print(
-                        f"::error::{source} '{protocol}' must be an integer."
-                    )
-                    sys.exit(1)
-
-                if value < 0:
-                    print(
-                        f"::error::{source} '{protocol}' cannot be negative."
-                    )
-                    sys.exit(1)
-
-        telegram_protocol_total = sum(
-            telegram_protocols[p] for p in required
-        )
-
-        github_protocol_total = sum(
-            github_protocols[p] for p in required
-        )
-
-        if telegram_protocol_total != telegram_added:
-            print(
-                "::error::Telegram statistics mismatch: "
-                f"added={telegram_added}, "
-                f"protocol_total={telegram_protocol_total}"
-            )
-            sys.exit(1)
-
-        if github_protocol_total != github_added:
-            print(
-                "::error::GitHub statistics mismatch: "
-                f"added={github_added}, "
-                f"protocol_total={github_protocol_total}"
-            )
-            sys.exit(1)
-
-        total_added = telegram_added + github_added
-
-        payload = {
-            "added": total_added,
-            "telegram": {
-                "added": telegram_added,
-                "vless": telegram_protocols["vless"],
-                "vmess": telegram_protocols["vmess"],
-                "trojan": telegram_protocols["trojan"],
-                "shadowsocks": telegram_protocols["shadowsocks"],
-                "hysteria2": telegram_protocols["hysteria2"],
-                "hysteria": telegram_protocols["hysteria"],
-                "tuic": telegram_protocols["tuic"],
-                "other": telegram_protocols["other"]
-            },
-            "github": {
-                "added": github_added,
-                "vless": github_protocols["vless"],
-                "vmess": github_protocols["vmess"],
-                "trojan": github_protocols["trojan"],
-                "shadowsocks": github_protocols["shadowsocks"],
-                "hysteria2": github_protocols["hysteria2"],
-                "hysteria": github_protocols["hysteria"],
-                "tuic": github_protocols["tuic"],
-                "other": github_protocols["other"]
-            },
-            "updated_at": datetime.now(
-                timezone.utc
-            ).strftime("%Y-%m-%d %H:%M:%S UTC")
-        }
-
-        if (
-            payload["telegram"]["added"] +
-            payload["github"]["added"]
-        ) != payload["added"]:
-            print("::error::Total statistics validation failed.")
-            sys.exit(1)
-
-        with open("stats_payload.json", "w", encoding="utf-8") as f:
-            json.dump(
-                payload,
-                f,
-                ensure_ascii=False,
-                indent=2
-            )
-
-        print(json.dumps(
-            payload,
-            ensure_ascii=False,
-            indent=2
-        ))
-
-        print("Statistics payload validation passed.")
-        PY
-
-    - name: Configure Git
-      run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-    - name: Stage all changes
-      run: git add .
-
-    - name: Check for changes
-      id: check_changes
-      run: |
-        if git diff --cached --quiet; then
-          echo "changes=false" >> "$GITHUB_OUTPUT"
-        else
-          echo "changes=true" >> "$GITHUB_OUTPUT"
-        fi
-
-    - name: Commit changes
-      if: steps.check_changes.outputs.changes == 'true'
-      run: |
-        git commit -m "🔄 Configs update $(date -u '+%Y-%m-%d %H:%M UTC')"
-
-    - name: Push changes (safe mode)
-      if: steps.check_changes.outputs.changes == 'true'
-      run: |
-        git fetch origin main
-        git rebase origin/main || true
-        git push origin HEAD:main
-
-    - name: Verify stats payload before notification
-      run: |
-        python - <<'PY'
-        import json
-        import sys
-
-        try:
-            with open("stats_payload.json", "r", encoding="utf-8") as f:
-                payload = json.load(f)
-        except Exception as e:
-            print(f"::error::Cannot read stats payload: {e}")
-            sys.exit(1)
-
-        required_top = [
-            "added",
-            "telegram",
-            "github",
-            "updated_at"
-        ]
-
-        for key in required_top:
-            if key not in payload:
-                print(f"::error::Missing payload field: {key}")
-                sys.exit(1)
-
-        required_protocols = [
-            "vless",
-            "vmess",
-            "trojan",
-            "shadowsocks",
-            "hysteria2",
-            "hysteria",
-            "tuic",
-            "other"
-        ]
-
-        for source in ["telegram", "github"]:
-            if not isinstance(payload[source], dict):
-                print(f"::error::{source} payload is invalid.")
-                sys.exit(1)
-
-            if "added" not in payload[source]:
-                print(
-                    f"::error::{source}.added is missing."
-                )
-                sys.exit(1)
-
-            for protocol in required_protocols:
-                if protocol not in payload[source]:
-                    print(
-                        f"::error::{source}.{protocol} is missing."
-                    )
-                    sys.exit(1)
-
-        if (
-            payload["telegram"]["added"] +
-            payload["github"]["added"]
-        ) != payload["added"]:
-            print("::error::Payload total does not match sources.")
-            sys.exit(1)
-
-        print("Final notification payload validation passed.")
-        PY
-
-    - name: Send stats to notification worker
-      run: |
-        curl --fail-with-body \
-          --silent \
-          --show-error \
-          --retry 3 \
-          --retry-delay 2 \
-          -X POST "${{ secrets.WORKER_URL }}" \
-          -H "Content-Type: application/json" \
-          --data-binary @stats_payload.json
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Random delay
+        run: sleep $((RANDOM % 300 + 60))
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.14'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4 pyyaml aiohttp
+
+      - name: Clean old config files
+        run: |
+          rm -rf configs.txt/
+          mkdir -p configs.txt/telegram configs.txt/github configs.txt/combined
+
+      - name: Clean old yaml files
+        run: |
+          rm -rf config.yaml/
+          mkdir -p config.yaml
+
+      - name: Clean old json files
+        run: |
+          rm -rf config.json/
+          mkdir -p config.json
+
+      - name: Clean old best_ip files
+        run: |
+          rm -rf best_ip/
+          mkdir -p best_ip
+
+      - name: Clean old port files
+        run: |
+          rm -rf port.txt/
+          mkdir -p port.txt
+
+      - name: Clean old stats files
+        run: |
+          rm -f stats.json telegram_stats.json github_stats.json stats_payload.json
+
+      - name: Prepare health state
+        run: |
+          mkdir -p health
+
+      - name: Run Telegram Config Extractor
+        run: python Arista/telegram.py
+        timeout-minutes: 20
+        env:
+          CHANNELS_JSON: ${{ secrets.CHANNELS_JSON }}
+
+      - name: Validate Telegram stats
+        run: |
+          if [ ! -f stats.json ]; then
+            echo "::error::Telegram stats.json was not created."
+            exit 1
+          fi
+
+          if [ ! -s stats.json ]; then
+            echo "::error::Telegram stats.json is empty."
+            exit 1
+          fi
+
+          python - <<'PY'
+          import json
+          import sys
+
+          try:
+              with open("stats.json", "r", encoding="utf-8") as f:
+                  data = json.load(f)
+          except Exception as e:
+              print(f"::error::Invalid Telegram stats JSON: {e}")
+              sys.exit(1)
+
+          if not isinstance(data, dict):
+              print("::error::Telegram stats must be a JSON object.")
+              sys.exit(1)
+
+          if "added" not in data:
+              print("::error::Telegram stats missing 'added'.")
+              sys.exit(1)
+
+          if not isinstance(data["added"], (int, float)) or isinstance(data["added"], bool):
+              print("::error::Telegram 'added' must be numeric.")
+              sys.exit(1)
+
+          if data["added"] < 0:
+              print("::error::Telegram 'added' cannot be negative.")
+              sys.exit(1)
+
+          protocols = data.get("protocols")
+
+          if not isinstance(protocols, dict):
+              print("::error::Telegram stats missing 'protocols'.")
+              sys.exit(1)
+
+          required = [
+              "vless",
+              "vmess",
+              "trojan",
+              "shadowsocks",
+              "hysteria2",
+              "hysteria",
+              "tuic",
+              "other"
+          ]
+
+          for key in required:
+              if key not in protocols:
+                  print(f"::error::Telegram stats missing protocol '{key}'.")
+                  sys.exit(1)
+
+              value = protocols[key]
+
+              if not isinstance(value, (int, float)) or isinstance(value, bool):
+                  print(f"::error::Telegram protocol '{key}' must be numeric.")
+                  sys.exit(1)
+
+              if value < 0:
+                  print(f"::error::Telegram protocol '{key}' cannot be negative.")
+                  sys.exit(1)
+
+          print("Telegram statistics validation passed.")
+          PY
+
+      - name: Rename telegram stats
+        run: |
+          mv stats.json telegram_stats.json
+
+      - name: Run GitHub Config Extractor
+        run: python Arista/github.py
+        timeout-minutes: 15
+        env:
+          REPO_JSON: ${{ secrets.REPO_JSON }}
+
+      - name: Validate GitHub stats
+        run: |
+          if [ ! -f stats.json ]; then
+            echo "::error::GitHub stats.json was not created."
+            exit 1
+          fi
+
+          if [ ! -s stats.json ]; then
+            echo "::error::GitHub stats.json is empty."
+            exit 1
+          fi
+
+          python - <<'PY'
+          import json
+          import sys
+
+          try:
+              with open("stats.json", "r", encoding="utf-8") as f:
+                  data = json.load(f)
+          except Exception as e:
+              print(f"::error::Invalid GitHub stats JSON: {e}")
+              sys.exit(1)
+
+          if not isinstance(data, dict):
+              print("::error::GitHub stats must be a JSON object.")
+              sys.exit(1)
+
+          if "added" not in data:
+              print("::error::GitHub stats missing 'added'.")
+              sys.exit(1)
+
+          if not isinstance(data["added"], (int, float)) or isinstance(data["added"], bool):
+              print("::error::GitHub 'added' must be numeric.")
+              sys.exit(1)
+
+          if data["added"] < 0:
+              print("::error::GitHub 'added' cannot be negative.")
+              sys.exit(1)
+
+          protocols = data.get("protocols")
+
+          if not isinstance(protocols, dict):
+              print("::error::GitHub stats missing 'protocols'.")
+              sys.exit(1)
+
+          required = [
+              "vless",
+              "vmess",
+              "trojan",
+              "shadowsocks",
+              "hysteria2",
+              "hysteria",
+              "tuic",
+              "other"
+          ]
+
+          for key in required:
+              if key not in protocols:
+                  print(f"::error::GitHub stats missing protocol '{key}'.")
+                  sys.exit(1)
+
+              value = protocols[key]
+
+              if not isinstance(value, (int, float)) or isinstance(value, bool):
+                  print(f"::error::GitHub protocol '{key}' must be numeric.")
+                  sys.exit(1)
+
+              if value < 0:
+                  print(f"::error::GitHub protocol '{key}' cannot be negative.")
+                  sys.exit(1)
+
+          print("GitHub statistics validation passed.")
+          PY
+
+      - name: Rename github stats
+        run: |
+          mv stats.json github_stats.json
+
+      - name: Combine Configs
+        run: python Arista/combine.py
+
+      - name: Convert to YAML (Clash Meta)
+        run: python Arista/to_yaml.py
+
+      - name: Convert to JSON (Sing-Box)
+        run: python Arista/to_json.py
+
+      - name: Process Best IPs
+        run: python Arista/best_ip.py
+        timeout-minutes: 10
+
+      - name: Process Port Filters
+        run: python Arista/port_filter.py
+        timeout-minutes: 5
+
+      - name: Create summary
+        run: |
+          date > last_update.txt
+          echo "Updated: $(date -u '+%Y-%m-%d %H:%M UTC')" > update_info.txt
+
+      - name: Build and validate stats payload
+        run: |
+          python - <<'PY'
+          import json
+          import sys
+          from datetime import datetime, timezone
+
+          def load_stats(filename, source):
+              try:
+                  with open(filename, "r", encoding="utf-8") as f:
+                      data = json.load(f)
+              except Exception as e:
+                  print(f"::error::Failed to load {source} stats: {e}")
+                  sys.exit(1)
+
+              if not isinstance(data, dict):
+                  print(f"::error::{source} stats must be a JSON object.")
+                  sys.exit(1)
+
+              if "added" not in data:
+                  print(f"::error::{source} stats missing 'added'.")
+                  sys.exit(1)
+
+              if "protocols" not in data or not isinstance(data["protocols"], dict):
+                  print(f"::error::{source} stats missing 'protocols'.")
+                  sys.exit(1)
+
+              return data
+
+          telegram_stats = load_stats(
+              "telegram_stats.json",
+              "Telegram"
+          )
+
+          github_stats = load_stats(
+              "github_stats.json",
+              "GitHub"
+          )
+
+          telegram_added = telegram_stats["added"]
+          github_added = github_stats["added"]
+
+          if not isinstance(telegram_added, int) or isinstance(telegram_added, bool):
+              print("::error::Telegram added must be an integer.")
+              sys.exit(1)
+
+          if not isinstance(github_added, int) or isinstance(github_added, bool):
+              print("::error::GitHub added must be an integer.")
+              sys.exit(1)
+
+          if telegram_added < 0 or github_added < 0:
+              print("::error::Added values cannot be negative.")
+              sys.exit(1)
+
+          telegram_protocols = telegram_stats["protocols"]
+          github_protocols = github_stats["protocols"]
+
+          required = [
+              "vless",
+              "vmess",
+              "trojan",
+              "shadowsocks",
+              "hysteria2",
+              "hysteria",
+              "tuic",
+              "other"
+          ]
+
+          for source, protocols in [
+              ("Telegram", telegram_protocols),
+              ("GitHub", github_protocols)
+          ]:
+              for protocol in required:
+                  if protocol not in protocols:
+                      print(
+                          f"::error::{source} stats missing '{protocol}'."
+                      )
+                      sys.exit(1)
+
+                  value = protocols[protocol]
+
+                  if not isinstance(value, int) or isinstance(value, bool):
+                      print(
+                          f"::error::{source} '{protocol}' must be an integer."
+                      )
+                      sys.exit(1)
+
+                  if value < 0:
+                      print(
+                          f"::error::{source} '{protocol}' cannot be negative."
+                      )
+                      sys.exit(1)
+
+          total_added = telegram_added + github_added
+
+          payload = {
+              "added": total_added,
+              "telegram": {
+                  "added": telegram_added,
+                  "vless": telegram_protocols["vless"],
+                  "vmess": telegram_protocols["vmess"],
+                  "trojan": telegram_protocols["trojan"],
+                  "shadowsocks": telegram_protocols["shadowsocks"],
+                  "hysteria2": telegram_protocols["hysteria2"],
+                  "hysteria": telegram_protocols["hysteria"],
+                  "tuic": telegram_protocols["tuic"],
+                  "other": telegram_protocols["other"]
+              },
+              "github": {
+                  "added": github_added,
+                  "vless": github_protocols["vless"],
+                  "vmess": github_protocols["vmess"],
+                  "trojan": github_protocols["trojan"],
+                  "shadowsocks": github_protocols["shadowsocks"],
+                  "hysteria2": github_protocols["hysteria2"],
+                  "hysteria": github_protocols["hysteria"],
+                  "tuic": github_protocols["tuic"],
+                  "other": github_protocols["other"]
+              },
+              "updated_at": datetime.now(
+                  timezone.utc
+              ).strftime("%Y-%m-%d %H:%M:%S UTC")
+          }
+
+          if (
+              payload["telegram"]["added"] +
+              payload["github"]["added"]
+          ) != payload["added"]:
+              print("::error::Total statistics validation failed.")
+              sys.exit(1)
+
+          with open("stats_payload.json", "w", encoding="utf-8") as f:
+              json.dump(
+                  payload,
+                  f,
+                  ensure_ascii=False,
+                  indent=2
+              )
+
+          print(json.dumps(
+              payload,
+              ensure_ascii=False,
+              indent=2
+          ))
+
+          print("Statistics payload validation passed.")
+          PY
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Stage all changes
+        run: git add .
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if git diff --cached --quiet; then
+            echo "changes=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changes=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit changes
+        if: steps.check_changes.outputs.changes == 'true'
+        run: |
+          git commit -m "🔄 Configs update $(date -u '+%Y-%m-%d %H:%M UTC')"
+
+      - name: Push changes (safe mode)
+        if: steps.check_changes.outputs.changes == 'true'
+        run: |
+          git fetch origin main
+          git rebase origin/main || true
+          git push origin HEAD:main
+
+      - name: Verify stats payload before notification
+        run: |
+          python - <<'PY'
+          import json
+          import sys
+
+          try:
+              with open("stats_payload.json", "r", encoding="utf-8") as f:
+                  payload = json.load(f)
+          except Exception as e:
+              print(f"::error::Cannot read stats payload: {e}")
+              sys.exit(1)
+
+          required_top = [
+              "added",
+              "telegram",
+              "github",
+              "updated_at"
+          ]
+
+          for key in required_top:
+              if key not in payload:
+                  print(f"::error::Missing payload field: {key}")
+                  sys.exit(1)
+
+          required_protocols = [
+              "vless",
+              "vmess",
+              "trojan",
+              "shadowsocks",
+              "hysteria2",
+              "hysteria",
+              "tuic",
+              "other"
+          ]
+
+          for source in ["telegram", "github"]:
+              if not isinstance(payload[source], dict):
+                  print(f"::error::{source} payload is invalid.")
+                  sys.exit(1)
+
+              if "added" not in payload[source]:
+                  print(
+                      f"::error::{source}.added is missing."
+                  )
+                  sys.exit(1)
+
+              for protocol in required_protocols:
+                  if protocol not in payload[source]:
+                      print(
+                          f"::error::{source}.{protocol} is missing."
+                      )
+                      sys.exit(1)
+
+          if (
+              payload["telegram"]["added"] +
+              payload["github"]["added"]
+          ) != payload["added"]:
+              print("::error::Payload total does not match sources.")
+              sys.exit(1)
+
+          print("Final notification payload validation passed.")
+          PY
+
+      - name: Send stats to notification worker
+        run: |
+          curl --fail-with-body \
+            --silent \
+            --show-error \
+            --retry 3 \
+            --retry-delay 2 \
+            -X POST "${{ secrets.WORKER_URL }}" \
+            -H "Content-Type: application/json" \
+            --data-binary @stats_payload.json
