@@ -1,6 +1,6 @@
 # COMBINED - Port 9443
-# Updated: 2026-09-14 19:51:12
-# Count: 1
+# Updated: 2026-09-14 23:51:52
+# Count: 2
 
 mixed-port: 7890
 allow-lan: false
@@ -63,6 +63,23 @@ proxies:
   reality-opts:
     public-key: RWu6ktBE4DFbUz_prmz-5KuolLhO53ehh19mNxhP-wI
     short-id: "a1b2c3d4"
+- name: 'T.ME: @aristapanel #2'
+  type: vless
+  server: 77.110.117.199
+  port: 9443
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: hub-nl-01.hanvpn.cc
+  ws-opts:
+    path: /nl01-ws-8e47a
+    headers:
+      Host: hub-nl-01.hanvpn.cc
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -73,6 +90,7 @@ proxy-groups:
   timeout: 3000
   proxies: &id001
   - 'T.ME: @aristapanel #1'
+  - 'T.ME: @aristapanel #2'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

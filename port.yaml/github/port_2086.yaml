@@ -1,6 +1,6 @@
 # GITHUB - Port 2086
-# Updated: 2026-09-14 19:51:25
-# Count: 3
+# Updated: 2026-09-14 23:52:06
+# Count: 6
 
 mixed-port: 7890
 allow-lan: false
@@ -49,14 +49,18 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'T.ME: @aristapanel #1'
-  type: vless
-  server: cdn.devmixa.ir
+  type: vmess
+  server: 188.132.174.236
   port: 2086
-  uuid: 7247b284-c40d-47c7-af4e-c4738f827a3d
-  network: xhttp
+  uuid: f6361af8-bb8f-4609-bf5d-3fc0f688f47b
+  alterId: 0
+  cipher: auto
+  network: tcp
   tls: false
   udp: true
   skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 188.132.174.236
 - name: 'T.ME: @aristapanel #2'
   type: vless
   server: cdn.devmixa.ir
@@ -75,6 +79,43 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
+- name: 'T.ME: @aristapanel #4'
+  type: vless
+  server: 91.107.247.54
+  port: 2086
+  uuid: 10fd9dfa-7e1c-481e-9693-ec962bed85c5
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: hetzner.com
+  reality-opts:
+    public-key: 6bsSPg0A-umaW53zP-sIvNlRJw1cBOENxtjSRqVAgUQ
+    short-id: "fd34e375b83876f3"
+- name: 'T.ME: @aristapanel #5'
+  type: vless
+  server: cdn.devmixa.ir
+  port: 2086
+  uuid: 7247b284-c40d-47c7-af4e-c4738f827a3d
+  network: xhttp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'T.ME: @aristapanel #6'
+  type: vless
+  server: 91.107.247.54
+  port: 2086
+  uuid: 10fd9dfa-7e1c-481e-9693-ec962bed85c5
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: hetzner.com
+  reality-opts:
+    public-key: 6bsSPg0A-umaW53zP-sIvNlRJw1cBOENxtjSRqVAgUQ
+    short-id: "fd34e375b83876f3"
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -87,6 +128,9 @@ proxy-groups:
   - 'T.ME: @aristapanel #1'
   - 'T.ME: @aristapanel #2'
   - 'T.ME: @aristapanel #3'
+  - 'T.ME: @aristapanel #4'
+  - 'T.ME: @aristapanel #5'
+  - 'T.ME: @aristapanel #6'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
