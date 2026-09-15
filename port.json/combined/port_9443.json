@@ -1,6 +1,6 @@
 // COMBINED - Port 9443
-// Updated: 2026-09-15 16:48:43
-// Count: 3
+// Updated: 2026-09-15 21:14:32
+// Count: 5
 
 {
   "log": {
@@ -51,7 +51,7 @@
         "insecure": true,
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
+          "fingerprint": "safari"
         },
         "reality": {
           "enabled": true,
@@ -108,6 +108,55 @@
       "flow": "xtls-rprx-vision"
     },
     {
+      "type": "vless",
+      "tag": "ARISTA #4",
+      "server": "178.105.168.171",
+      "server_port": 9443,
+      "uuid": "2e87e644-ab8f-48ba-a7b9-08288a8a81c7",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "shop-eu-de.amd.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "OvEpExEu-A6ZRSO1BddxIrQVCvLNcHCVlVpb8Gxzcxs",
+          "short_id": "a57f7057942da836"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "ARISTA #5",
+      "server": "77.110.117.199",
+      "server_port": 9443,
+      "uuid": "d9d0f208-d582-41d5-bb7b-742671402810",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "hub-nl-01.hanvpn.cc",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "alpn": [
+          "http/1.1"
+        ]
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/nl01-ws-8e47a",
+        "headers": {
+          "Host": "hub-nl-01.hanvpn.cc"
+        }
+      }
+    },
+    {
       "type": "direct",
       "tag": "direct"
     },
@@ -121,7 +170,9 @@
       "outbounds": [
         "ARISTA #1",
         "ARISTA #2",
-        "ARISTA #3"
+        "ARISTA #3",
+        "ARISTA #4",
+        "ARISTA #5"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "2m",
