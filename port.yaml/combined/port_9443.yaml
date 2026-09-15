@@ -1,6 +1,6 @@
 # COMBINED - Port 9443
-# Updated: 2026-09-14 23:51:52
-# Count: 2
+# Updated: 2026-09-15 04:38:36
+# Count: 10
 
 mixed-port: 7890
 allow-lan: false
@@ -48,7 +48,109 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'T.ME: @aristapanel #1'
+- name: 'ARISTA #1'
+  type: vless
+  server: 77.110.117.199
+  port: 9443
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: hub-nl-01.hanvpn.cc
+  ws-opts:
+    path: /nl01-ws-8e47a
+    headers:
+      Host: hub-nl-01.hanvpn.cc
+- name: 'ARISTA #2'
+  type: vless
+  server: 77.110.117.199
+  port: 9443
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: hub-nl-01.hanvpn.cc
+  ws-opts:
+    path: /nl01-ws-8e47a
+    headers:
+      Host: hub-nl-01.hanvpn.cc
+- name: 'ARISTA #3'
+  type: vless
+  server: 77.110.117.199
+  port: 9443
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: hub-nl-01.hanvpn.cc
+  ws-opts:
+    path: /nl01-ws-8e47a
+    headers:
+      Host: hub-nl-01.hanvpn.cc
+- name: 'ARISTA #4'
+  type: vless
+  server: 77.110.117.199
+  port: 9443
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: hub-nl-01.hanvpn.cc
+  ws-opts:
+    path: /nl01-ws-8e47a
+    headers:
+      Host: hub-nl-01.hanvpn.cc
+- name: 'ARISTA #5'
+  type: vless
+  server: 77.110.117.199
+  port: 9443
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: hub-nl-01.hanvpn.cc
+  ws-opts:
+    path: /nl01-ws-8e47a
+    headers:
+      Host: hub-nl-01.hanvpn.cc
+- name: 'ARISTA #6'
+  type: vless
+  server: 77.110.117.199
+  port: 9443
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: hub-nl-01.hanvpn.cc
+  ws-opts:
+    path: /nl01-ws-8e47a
+    headers:
+      Host: hub-nl-01.hanvpn.cc
+- name: 'T.ME: @aristapanel #7'
   type: vless
   server: 31.59.150.174
   port: 9443
@@ -63,7 +165,37 @@ proxies:
   reality-opts:
     public-key: RWu6ktBE4DFbUz_prmz-5KuolLhO53ehh19mNxhP-wI
     short-id: "a1b2c3d4"
-- name: 'T.ME: @aristapanel #2'
+- name: 'T.ME: @aristapanel #8'
+  type: vless
+  server: 91.217.10.166
+  port: 9443
+  uuid: 97c0bcaf-76a0-4d1c-9d19-fde3c99a9dc8
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: api.avito.ru
+  reality-opts:
+    public-key: WvNaAxI0W__qfUKbtysH4IwF155YENlv3PG6crCmPkA
+- name: 'ARISTA #9'
+  type: vless
+  server: 77.110.117.199
+  port: 9443
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: hub-nl-01.hanvpn.cc
+  ws-opts:
+    path: /nl01-ws-8e47a
+    headers:
+      Host: hub-nl-01.hanvpn.cc
+- name: 'ARISTA #10'
   type: vless
   server: 77.110.117.199
   port: 9443
@@ -89,8 +221,16 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'T.ME: @aristapanel #1'
-  - 'T.ME: @aristapanel #2'
+  - 'ARISTA #1'
+  - 'ARISTA #2'
+  - 'ARISTA #3'
+  - 'ARISTA #4'
+  - 'ARISTA #5'
+  - 'ARISTA #6'
+  - 'T.ME: @aristapanel #7'
+  - 'T.ME: @aristapanel #8'
+  - 'ARISTA #9'
+  - 'ARISTA #10'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
