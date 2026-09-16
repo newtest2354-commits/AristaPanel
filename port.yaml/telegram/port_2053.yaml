@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2053
-# Updated: 2026-09-15 21:14:22
-# Count: 10
+# Updated: 2026-09-16 04:30:25
+# Count: 22
 
 mixed-port: 7890
 allow-lan: false
@@ -50,59 +50,56 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: piki.speediihub.ir
+  server: new3.smart-cats.ru
   port: 2053
-  uuid: 4925d57f-1fd6-4cf3-9640-c4cad64d604f
-  network: tcp
+  uuid: 60a361f9-3c45-4954-9e4c-92a85bda243d
+  network: grpc
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: www.speedtest.net
+  servername: www.google.com
+  grpc-opts:
+    grpc-service-name: grpc
   reality-opts:
-    public-key: 80gx4VJQMhIOfst4X6MdcBqDSubKt5rPD9dB9LBTgwg
-    short-id: "7b9af11c1921713b"
+    public-key: mzrVbIsEggpJfXR8M7yxki2vgv3sXWQdy1bGhXqatUY
+    short-id: "4881f8244d1b9021"
 - name: 'ARISTA #2'
   type: vless
-  server: 54.37.136.194
+  server: 14.102.228.64
   port: 2053
-  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
-  network: tcp
+  uuid: 17565eb3-3535-4fc1-bbaa-e9fbd94b2f0c
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
-    short-id: "50ba05992b05c1c3"
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: randomized
+  servername: fi1.v2vless.xyz
+  ws-opts:
+    path: /vless?ed=@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi?ed
+    headers:
+      Host: fi1.v2vless.xyz
 - name: 'ARISTA #3'
   type: vless
-  server: piki.speediihub.ir
+  server: new2.smart-cats.ru
   port: 2053
-  uuid: 4925d57f-1fd6-4cf3-9640-c4cad64d604f
-  network: tcp
+  uuid: 60a361f9-3c45-4954-9e4c-92a85bda243d
+  network: grpc
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: www.speedtest.net
+  servername: www.google.com
+  grpc-opts:
+    grpc-service-name: grpc
   reality-opts:
-    public-key: 80gx4VJQMhIOfst4X6MdcBqDSubKt5rPD9dB9LBTgwg
-    short-id: "7b9af11c1921713b"
+    public-key: mzrVbIsEggpJfXR8M7yxki2vgv3sXWQdy1bGhXqatUY
+    short-id: "4881f8244d1b9021"
 - name: 'ARISTA #4'
-  type: vless
-  server: 54.37.136.194
-  port: 2053
-  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
-    short-id: "50ba05992b05c1c3"
-- name: 'ARISTA #5'
   type: vless
   server: new3.smart-cats.ru
   port: 2053
@@ -118,6 +115,25 @@ proxies:
   reality-opts:
     public-key: mzrVbIsEggpJfXR8M7yxki2vgv3sXWQdy1bGhXqatUY
     short-id: "4881f8244d1b9021"
+- name: 'ARISTA #5'
+  type: vless
+  server: 14.102.228.64
+  port: 2053
+  uuid: 17565eb3-3535-4fc1-bbaa-e9fbd94b2f0c
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: randomized
+  servername: fi1.v2vless.xyz
+  ws-opts:
+    path: /vless?ed=@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi?ed
+    headers:
+      Host: fi1.v2vless.xyz
 - name: 'ARISTA #6'
   type: vless
   server: new2.smart-cats.ru
@@ -136,32 +152,21 @@ proxies:
     short-id: "4881f8244d1b9021"
 - name: 'ARISTA #7'
   type: vless
-  server: piki.speediihub.ir
+  server: new3.smart-cats.ru
   port: 2053
-  uuid: 4925d57f-1fd6-4cf3-9640-c4cad64d604f
-  network: tcp
+  uuid: 60a361f9-3c45-4954-9e4c-92a85bda243d
+  network: grpc
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: www.speedtest.net
+  servername: www.google.com
+  grpc-opts:
+    grpc-service-name: grpc
   reality-opts:
-    public-key: 80gx4VJQMhIOfst4X6MdcBqDSubKt5rPD9dB9LBTgwg
-    short-id: "7b9af11c1921713b"
+    public-key: mzrVbIsEggpJfXR8M7yxki2vgv3sXWQdy1bGhXqatUY
+    short-id: "4881f8244d1b9021"
 - name: 'ARISTA #8'
-  type: vless
-  server: 54.37.136.194
-  port: 2053
-  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
-    short-id: "50ba05992b05c1c3"
-- name: 'ARISTA #9'
   type: vless
   server: new3.smart-cats.ru
   port: 2053
@@ -177,7 +182,221 @@ proxies:
   reality-opts:
     public-key: mzrVbIsEggpJfXR8M7yxki2vgv3sXWQdy1bGhXqatUY
     short-id: "4881f8244d1b9021"
+- name: 'ARISTA #9'
+  type: vless
+  server: 14.102.228.64
+  port: 2053
+  uuid: 17565eb3-3535-4fc1-bbaa-e9fbd94b2f0c
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: randomized
+  servername: fi1.v2vless.xyz
+  ws-opts:
+    path: /vless?ed=@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi?ed
+    headers:
+      Host: fi1.v2vless.xyz
 - name: 'ARISTA #10'
+  type: vless
+  server: new3.smart-cats.ru
+  port: 2053
+  uuid: 60a361f9-3c45-4954-9e4c-92a85bda243d
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.google.com
+  grpc-opts:
+    grpc-service-name: grpc
+  reality-opts:
+    public-key: mzrVbIsEggpJfXR8M7yxki2vgv3sXWQdy1bGhXqatUY
+    short-id: "4881f8244d1b9021"
+- name: 'ARISTA #11'
+  type: vless
+  server: 14.102.228.64
+  port: 2053
+  uuid: 17565eb3-3535-4fc1-bbaa-e9fbd94b2f0c
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: randomized
+  servername: fi1.v2vless.xyz
+  ws-opts:
+    path: /vless?ed=@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi?ed
+    headers:
+      Host: fi1.v2vless.xyz
+- name: 'ARISTA #12'
+  type: vless
+  server: new2.smart-cats.ru
+  port: 2053
+  uuid: 60a361f9-3c45-4954-9e4c-92a85bda243d
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.google.com
+  grpc-opts:
+    grpc-service-name: grpc
+  reality-opts:
+    public-key: mzrVbIsEggpJfXR8M7yxki2vgv3sXWQdy1bGhXqatUY
+    short-id: "4881f8244d1b9021"
+- name: 'ARISTA #13'
+  type: vless
+  server: 54.37.136.194
+  port: 2053
+  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
+    short-id: "50ba05992b05c1c3"
+- name: 'ARISTA #14'
+  type: vless
+  server: 154.219.5.98
+  port: 2053
+  uuid: dcca1cd9-08da-4756-9e47-ba6c47705fa1
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  - h2
+  client-fingerprint: chrome
+  servername: v2rayb.peymod.com
+  grpc-opts:
+    grpc-service-name: '@V2RIRAN-TEL--@V2RIRAN-TEL--@V2RIRAN-TEL--@V2RIRAN-JOIN-@V2RIRAN-TEL--@V2RIRAN-JOIN-@V2RIRAN-TEL-@V2RIRAN-TEL--@V2RIRAN-JOIN-@V2RIRAN-TEL--@V2RIRAN-@ViV2ray/2053'
+- name: 'ARISTA #15'
+  type: vless
+  server: new3.smart-cats.ru
+  port: 2053
+  uuid: 60a361f9-3c45-4954-9e4c-92a85bda243d
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.google.com
+  grpc-opts:
+    grpc-service-name: grpc
+  reality-opts:
+    public-key: mzrVbIsEggpJfXR8M7yxki2vgv3sXWQdy1bGhXqatUY
+    short-id: "4881f8244d1b9021"
+- name: 'ARISTA #16'
+  type: vless
+  server: 14.102.228.64
+  port: 2053
+  uuid: 17565eb3-3535-4fc1-bbaa-e9fbd94b2f0c
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: randomized
+  servername: fi1.v2vless.xyz
+  ws-opts:
+    path: /vless?ed=@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi?ed
+    headers:
+      Host: fi1.v2vless.xyz
+- name: 'ARISTA #17'
+  type: vless
+  server: new2.smart-cats.ru
+  port: 2053
+  uuid: 60a361f9-3c45-4954-9e4c-92a85bda243d
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.google.com
+  grpc-opts:
+    grpc-service-name: grpc
+  reality-opts:
+    public-key: mzrVbIsEggpJfXR8M7yxki2vgv3sXWQdy1bGhXqatUY
+    short-id: "4881f8244d1b9021"
+- name: 'ARISTA #18'
+  type: vless
+  server: 54.37.136.194
+  port: 2053
+  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
+    short-id: "50ba05992b05c1c3"
+- name: 'ARISTA #19'
+  type: vless
+  server: 154.219.5.98
+  port: 2053
+  uuid: dcca1cd9-08da-4756-9e47-ba6c47705fa1
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  - h2
+  client-fingerprint: chrome
+  servername: v2rayb.peymod.com
+  grpc-opts:
+    grpc-service-name: '@V2RIRAN-TEL--@V2RIRAN-TEL--@V2RIRAN-TEL--@V2RIRAN-JOIN-@V2RIRAN-TEL--@V2RIRAN-JOIN-@V2RIRAN-TEL-@V2RIRAN-TEL--@V2RIRAN-JOIN-@V2RIRAN-TEL--@V2RIRAN-@ViV2ray/2053'
+- name: 'ARISTA #20'
+  type: vless
+  server: new3.smart-cats.ru
+  port: 2053
+  uuid: 60a361f9-3c45-4954-9e4c-92a85bda243d
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.google.com
+  grpc-opts:
+    grpc-service-name: grpc
+  reality-opts:
+    public-key: mzrVbIsEggpJfXR8M7yxki2vgv3sXWQdy1bGhXqatUY
+    short-id: "4881f8244d1b9021"
+- name: 'ARISTA #21'
+  type: vless
+  server: 14.102.228.64
+  port: 2053
+  uuid: 17565eb3-3535-4fc1-bbaa-e9fbd94b2f0c
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: randomized
+  servername: fi1.v2vless.xyz
+  ws-opts:
+    path: /vless?ed=@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi?ed
+    headers:
+      Host: fi1.v2vless.xyz
+- name: 'ARISTA #22'
   type: vless
   server: new2.smart-cats.ru
   port: 2053
@@ -212,6 +431,18 @@ proxy-groups:
   - 'ARISTA #8'
   - 'ARISTA #9'
   - 'ARISTA #10'
+  - 'ARISTA #11'
+  - 'ARISTA #12'
+  - 'ARISTA #13'
+  - 'ARISTA #14'
+  - 'ARISTA #15'
+  - 'ARISTA #16'
+  - 'ARISTA #17'
+  - 'ARISTA #18'
+  - 'ARISTA #19'
+  - 'ARISTA #20'
+  - 'ARISTA #21'
+  - 'ARISTA #22'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

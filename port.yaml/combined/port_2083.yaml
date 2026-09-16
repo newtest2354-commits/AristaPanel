@@ -1,6 +1,6 @@
 # COMBINED - Port 2083
-# Updated: 2026-09-15 21:14:15
-# Count: 34
+# Updated: 2026-09-16 04:30:18
+# Count: 53
 
 mixed-port: 7890
 allow-lan: false
@@ -50,6 +50,40 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
+  server: 172.67.221.68
+  port: 2083
+  uuid: 6df800b7-d053-5232-9d0d-ac6c80a44e6c
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: randomized
+  servername: arkarain.arkarain-co.wOrkers.DEv
+  ws-opts:
+    path: vless-ws/?ed=2048
+    headers:
+      Host: arkarain.arkarain-co.wOrkers.DEv
+- name: 'ARISTA #2'
+  type: vless
+  server: 178.105.61.61
+  port: 2083
+  uuid: cb077bf2-70b7-457b-af42-27cdc3e0e544
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: 178.105.61.61
+  reality-opts:
+    public-key: H0nCazQFHVhSObfqSUhGLhK7KRwKzTMggIBPjnMMqhk
+    short-id: "af04ff8094115e93"
+- name: 'ARISTA #3'
+  type: vless
   server: 185.126.238.87
   port: 2083
   uuid: 7668f678-faee-40cc-9b56-9c39dc773388
@@ -59,7 +93,7 @@ proxies:
   skip-cert-verify: true
   grpc-opts:
     grpc-service-name: security.debian.org
-- name: 'ARISTA #2'
+- name: 'ARISTA #4'
   type: vless
   server: 66.90.104.42
   port: 2083
@@ -70,7 +104,7 @@ proxies:
   skip-cert-verify: true
   grpc-opts:
     grpc-service-name: vless
-- name: 'ARISTA #3'
+- name: 'ARISTA #5'
   type: vless
   server: 172.66.0.234
   port: 2083
@@ -85,22 +119,7 @@ proxies:
     path: /
     headers:
       Host: cfvvv-ev1.pages.dev
-- name: 'ARISTA #4'
-  type: vless
-  server: 104.19.151.7
-  port: 2083
-  uuid: c35db02d-c978-4d50-add3-d546f5a0c5dd
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: ez-0b9f28.ezaccess1c317f6.workers.dev
-  ws-opts:
-    path: /
-    headers:
-      Host: ez-0b9f28.ezaccess1c317f6.workers.dev
-- name: 'ARISTA #5'
+- name: 'ARISTA #6'
   type: vless
   server: 172.67.221.68
   port: 2083
@@ -119,28 +138,21 @@ proxies:
     path: vless-ws/?ed=2048
     headers:
       Host: arkarain.arkarain-co.wOrkers.DEv
-- name: 'ARISTA #6'
-  type: vless
-  server: 185.126.238.87
-  port: 2083
-  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
-  network: grpc
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: security.debian.org
 - name: 'ARISTA #7'
   type: vless
-  server: 66.90.104.42
+  server: 178.105.61.61
   port: 2083
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  network: grpc
-  tls: false
+  uuid: cb077bf2-70b7-457b-af42-27cdc3e0e544
+  network: tcp
+  tls: true
   udp: true
   skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: vless
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: 178.105.61.61
+  reality-opts:
+    public-key: H0nCazQFHVhSObfqSUhGLhK7KRwKzTMggIBPjnMMqhk
+    short-id: "af04ff8094115e93"
 - name: 'ARISTA #8'
   type: vless
   server: 185.126.238.87
@@ -165,34 +177,38 @@ proxies:
     grpc-service-name: vless
 - name: 'ARISTA #10'
   type: vless
-  server: 172.66.0.234
+  server: 172.67.221.68
   port: 2083
-  uuid: 44eae030-290b-4083-8102-6f8bab05701b
+  uuid: 6df800b7-d053-5232-9d0d-ac6c80a44e6c
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: android
-  servername: cfvvv-ev1.pages.dev
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: randomized
+  servername: arkarain.arkarain-co.wOrkers.DEv
   ws-opts:
-    path: /
+    path: vless-ws/?ed=2048
     headers:
-      Host: cfvvv-ev1.pages.dev
+      Host: arkarain.arkarain-co.wOrkers.DEv
 - name: 'ARISTA #11'
   type: vless
-  server: 104.19.151.7
+  server: 178.105.61.61
   port: 2083
-  uuid: c35db02d-c978-4d50-add3-d546f5a0c5dd
-  network: ws
+  uuid: cb077bf2-70b7-457b-af42-27cdc3e0e544
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
+  flow: xtls-rprx-vision
   client-fingerprint: chrome
-  servername: ez-0b9f28.ezaccess1c317f6.workers.dev
-  ws-opts:
-    path: /
-    headers:
-      Host: ez-0b9f28.ezaccess1c317f6.workers.dev
+  servername: 178.105.61.61
+  reality-opts:
+    public-key: H0nCazQFHVhSObfqSUhGLhK7KRwKzTMggIBPjnMMqhk
+    short-id: "af04ff8094115e93"
 - name: 'ARISTA #12'
   type: vless
   server: 172.67.221.68
@@ -214,72 +230,20 @@ proxies:
       Host: arkarain.arkarain-co.wOrkers.DEv
 - name: 'ARISTA #13'
   type: vless
-  server: 167.172.165.106
+  server: 178.105.61.61
   port: 2083
-  uuid: bba95b1f-f48c-454b-897b-a6c6bc307df1
-  network: ws
+  uuid: cb077bf2-70b7-457b-af42-27cdc3e0e544
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
+  flow: xtls-rprx-vision
   client-fingerprint: chrome
-  servername: edge.yzkvm.top
-  ws-opts:
-    path: /
-    headers:
-      Host: edge.yzkvm.top
+  servername: 178.105.61.61
+  reality-opts:
+    public-key: H0nCazQFHVhSObfqSUhGLhK7KRwKzTMggIBPjnMMqhk
+    short-id: "af04ff8094115e93"
 - name: 'ARISTA #14'
-  type: vless
-  server: 185.126.238.87
-  port: 2083
-  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
-  network: grpc
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: security.debian.org
-- name: 'ARISTA #15'
-  type: vless
-  server: 66.90.104.42
-  port: 2083
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  network: grpc
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: vless
-- name: 'ARISTA #16'
-  type: vless
-  server: 172.66.0.234
-  port: 2083
-  uuid: 44eae030-290b-4083-8102-6f8bab05701b
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: android
-  servername: cfvvv-ev1.pages.dev
-  ws-opts:
-    path: /
-    headers:
-      Host: cfvvv-ev1.pages.dev
-- name: 'ARISTA #17'
-  type: vless
-  server: 104.19.151.7
-  port: 2083
-  uuid: c35db02d-c978-4d50-add3-d546f5a0c5dd
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: ez-0b9f28.ezaccess1c317f6.workers.dev
-  ws-opts:
-    path: /
-    headers:
-      Host: ez-0b9f28.ezaccess1c317f6.workers.dev
-- name: 'ARISTA #18'
   type: vless
   server: 172.67.221.68
   port: 2083
@@ -298,34 +262,7 @@ proxies:
     path: vless-ws/?ed=2048
     headers:
       Host: arkarain.arkarain-co.wOrkers.DEv
-- name: 'ARISTA #19'
-  type: vless
-  server: 167.172.165.106
-  port: 2083
-  uuid: bba95b1f-f48c-454b-897b-a6c6bc307df1
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: edge.yzkvm.top
-  ws-opts:
-    path: /
-    headers:
-      Host: edge.yzkvm.top
-- name: 'ARISTA #20'
-  type: vless
-  server: 45.144.28.39
-  port: 2083
-  uuid: 70e20b2e-3b1f-4c25-9a3d-9240570391bb
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: usejh2.neobo-tooth.ru
-  grpc-opts:
-    grpc-service-name: grpc
-- name: 'T.ME: @aristapanel #21'
+- name: 'ARISTA #15'
   type: vless
   server: 178.105.61.61
   port: 2083
@@ -340,36 +277,7 @@ proxies:
   reality-opts:
     public-key: H0nCazQFHVhSObfqSUhGLhK7KRwKzTMggIBPjnMMqhk
     short-id: "af04ff8094115e93"
-- name: 'T.ME: @aristapanel #22'
-  type: vless
-  server: 178.105.61.61
-  port: 2083
-  uuid: cb077bf2-70b7-457b-af42-27cdc3e0e544
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: 178.105.61.61
-  reality-opts:
-    public-key: H0nCazQFHVhSObfqSUhGLhK7KRwKzTMggIBPjnMMqhk
-    short-id: "af04ff8094115e93"
-- name: 'T.ME: @aristapanel #23'
-  type: vless
-  server: 172.66.0.236
-  port: 2083
-  uuid: 44eae030-290b-4083-8102-6f8bab05701b
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: cfvvv-ev1.pages.dev
-  ws-opts:
-    path: /
-    headers:
-      Host: cfvvv-ev1.pages.dev
-- name: 'T.ME: @aristapanel #24'
+- name: 'ARISTA #16'
   type: vless
   server: 185.126.238.87
   port: 2083
@@ -380,18 +288,7 @@ proxies:
   skip-cert-verify: true
   grpc-opts:
     grpc-service-name: security.debian.org
-- name: 'ARISTA #25'
-  type: vless
-  server: 185.126.238.87
-  port: 2083
-  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
-  network: grpc
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: security.debian.org
-- name: 'ARISTA #26'
+- name: 'ARISTA #17'
   type: vless
   server: 66.90.104.42
   port: 2083
@@ -402,67 +299,317 @@ proxies:
   skip-cert-verify: true
   grpc-opts:
     grpc-service-name: vless
-- name: 'ARISTA #27'
-  type: trojan
-  server: 188.114.96.1
+- name: 'ARISTA #18'
+  type: vless
+  server: 172.66.0.234
   port: 2083
-  password: nzrc4ma4087c1ukr
-  network: httpupgrade
+  uuid: 44eae030-290b-4083-8102-6f8bab05701b
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  tcp-fast-open: true
-  servername: dl2.rahetejarat.com
-  client-fingerprint: chrome
-- name: 'ARISTA #28'
-  type: trojan
-  server: 188.114.96.5
+  client-fingerprint: android
+  servername: cfvvv-ev1.pages.dev
+  ws-opts:
+    path: /
+    headers:
+      Host: cfvvv-ev1.pages.dev
+- name: 'ARISTA #19'
+  type: vless
+  server: 172.67.221.68
   port: 2083
-  password: nzrc4ma4087c1ukr
-  network: httpupgrade
+  uuid: 6df800b7-d053-5232-9d0d-ac6c80a44e6c
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  tcp-fast-open: true
-  servername: dl2.rahetejarat.com
-  client-fingerprint: chrome
-- name: 'ARISTA #29'
-  type: trojan
-  server: 188.114.96.4
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: randomized
+  servername: arkarain.arkarain-co.wOrkers.DEv
+  ws-opts:
+    path: vless-ws/?ed=2048
+    headers:
+      Host: arkarain.arkarain-co.wOrkers.DEv
+- name: 'ARISTA #20'
+  type: vless
+  server: 172.67.221.68
   port: 2083
-  password: nzrc4ma4087c1ukr
-  network: httpupgrade
+  uuid: 6df800b7-d053-5232-9d0d-ac6c80a44e6c
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  tcp-fast-open: true
-  servername: dl2.rahetejarat.com
-  client-fingerprint: chrome
-- name: 'ARISTA #30'
-  type: trojan
-  server: 104.18.154.96
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: randomized
+  servername: arkarain.arkarain-co.wOrkers.DEv
+  ws-opts:
+    path: vless-ws/?ed=2048
+    headers:
+      Host: arkarain.arkarain-co.wOrkers.DEv
+- name: 'ARISTA #21'
+  type: vless
+  server: 178.105.61.61
   port: 2083
-  password: nzrc4ma4087c1ukr
-  network: httpupgrade
+  uuid: cb077bf2-70b7-457b-af42-27cdc3e0e544
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  tcp-fast-open: true
-  servername: dl2.rahetejarat.com
+  flow: xtls-rprx-vision
   client-fingerprint: chrome
-- name: 'ARISTA #31'
-  type: trojan
-  server: 188.114.96.1
+  servername: 178.105.61.61
+  reality-opts:
+    public-key: H0nCazQFHVhSObfqSUhGLhK7KRwKzTMggIBPjnMMqhk
+    short-id: "af04ff8094115e93"
+- name: 'ARISTA #22'
+  type: vless
+  server: 185.126.238.87
   port: 2083
-  password: nzrc4ma4087c1ukr
-  network: httpupgrade
+  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: security.debian.org
+- name: 'ARISTA #23'
+  type: vless
+  server: 66.90.104.42
+  port: 2083
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: vless
+- name: 'ARISTA #24'
+  type: vless
+  server: 172.66.0.234
+  port: 2083
+  uuid: 44eae030-290b-4083-8102-6f8bab05701b
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  tcp-fast-open: true
-  servername: dl2.rahetejarat.com
+  client-fingerprint: android
+  servername: cfvvv-ev1.pages.dev
+  ws-opts:
+    path: /
+    headers:
+      Host: cfvvv-ev1.pages.dev
+- name: 'T.ME: @aristapanel #25'
+  type: vless
+  server: 104.18.140.67
+  port: 2083
+  uuid: 1a67126c-b9c4-4e78-b96e-eabd4002ab0c
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
   client-fingerprint: chrome
+  servername: cuhwuycneynsieuocxniseunciusecmsepiock.novexgroup.ir
+- name: 'T.ME: @aristapanel #26'
+  type: vless
+  server: solar.appleseraj.ir
+  port: 2083
+  uuid: 5ed7fb94-bacd-485b-aca1-6a439738ed1f
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: eunetherla.appleseraj.ir
+  ws-opts:
+    path: ?ed=2048
+    headers:
+      Host: eunetherla.appleseraj.ir
+- name: 'T.ME: @aristapanel #27'
+  type: vless
+  server: 172.66.0.236
+  port: 2083
+  uuid: 44eae030-290b-4083-8102-6f8bab05701b
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: cfvvv-ev1.pages.dev
+  ws-opts:
+    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI?ed=512
+    headers:
+      Host: cfvvv-ev1.pages.dev
+- name: 'T.ME: @aristapanel #28'
+  type: vless
+  server: 104.19.151.7
+  port: 2083
+  uuid: c35db02d-c978-4d50-add3-d546f5a0c5dd
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: ez-0b9f28.ezaccess1c317f6.workers.dev
+  ws-opts:
+    path: /
+    headers:
+      Host: ez-0b9f28.ezaccess1c317f6.workers.dev
+- name: 'T.ME: @aristapanel #29'
+  type: vless
+  server: 23.227.39.222
+  port: 2083
+  uuid: c4000cda-6237-4702-ac6a-024444978b8e
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: randomized
+  servername: BPB-JUly.PaGeS.dEv
+  ws-opts:
+    path: /y0xrkaaBOQCyQR8T?ed=2560
+    headers:
+      Host: bPb-July.Pages.dEV
+- name: 'T.ME: @aristapanel #30'
+  type: vless
+  server: 172.66.0.236
+  port: 2083
+  uuid: 44eae030-290b-4083-8102-6f8bab05701b
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: cfvvv-ev1.pages.dev
+  ws-opts:
+    path: /
+    headers:
+      Host: cfvvv-ev1.pages.dev
+- name: 'T.ME: @aristapanel #31'
+  type: vless
+  server: 185.126.238.87
+  port: 2083
+  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: security.debian.org
 - name: 'ARISTA #32'
+  type: vless
+  server: 172.67.221.68
+  port: 2083
+  uuid: 6df800b7-d053-5232-9d0d-ac6c80a44e6c
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: randomized
+  servername: arkarain.arkarain-co.wOrkers.DEv
+  ws-opts:
+    path: vless-ws/?ed=2048
+    headers:
+      Host: arkarain.arkarain-co.wOrkers.DEv
+- name: 'ARISTA #33'
+  type: vless
+  server: 178.105.61.61
+  port: 2083
+  uuid: cb077bf2-70b7-457b-af42-27cdc3e0e544
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: 178.105.61.61
+  reality-opts:
+    public-key: H0nCazQFHVhSObfqSUhGLhK7KRwKzTMggIBPjnMMqhk
+    short-id: "af04ff8094115e93"
+- name: 'ARISTA #34'
+  type: vless
+  server: 172.67.221.68
+  port: 2083
+  uuid: 6df800b7-d053-5232-9d0d-ac6c80a44e6c
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: randomized
+  servername: arkarain.arkarain-co.wOrkers.DEv
+  ws-opts:
+    path: vless-ws/?ed=2048
+    headers:
+      Host: arkarain.arkarain-co.wOrkers.DEv
+- name: 'ARISTA #35'
+  type: vless
+  server: 178.105.61.61
+  port: 2083
+  uuid: cb077bf2-70b7-457b-af42-27cdc3e0e544
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: 178.105.61.61
+  reality-opts:
+    public-key: H0nCazQFHVhSObfqSUhGLhK7KRwKzTMggIBPjnMMqhk
+    short-id: "af04ff8094115e93"
+- name: 'ARISTA #36'
+  type: vless
+  server: 185.126.238.87
+  port: 2083
+  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: security.debian.org
+- name: 'ARISTA #37'
+  type: vless
+  server: 66.90.104.42
+  port: 2083
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: vless
+- name: 'ARISTA #38'
+  type: trojan
+  server: 188.114.96.1
+  port: 2083
+  password: nzrc4ma4087c1ukr
+  network: httpupgrade
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: dl2.rahetejarat.com
+  client-fingerprint: chrome
+- name: 'ARISTA #39'
   type: trojan
   server: 188.114.96.5
   port: 2083
@@ -474,7 +621,7 @@ proxies:
   tcp-fast-open: true
   servername: dl2.rahetejarat.com
   client-fingerprint: chrome
-- name: 'ARISTA #33'
+- name: 'ARISTA #40'
   type: trojan
   server: 188.114.96.4
   port: 2083
@@ -486,7 +633,7 @@ proxies:
   tcp-fast-open: true
   servername: dl2.rahetejarat.com
   client-fingerprint: chrome
-- name: 'ARISTA #34'
+- name: 'ARISTA #41'
   type: trojan
   server: 104.18.154.96
   port: 2083
@@ -498,6 +645,134 @@ proxies:
   tcp-fast-open: true
   servername: dl2.rahetejarat.com
   client-fingerprint: chrome
+- name: 'ARISTA #42'
+  type: trojan
+  server: 188.114.96.1
+  port: 2083
+  password: nzrc4ma4087c1ukr
+  network: httpupgrade
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: dl2.rahetejarat.com
+  client-fingerprint: chrome
+- name: 'ARISTA #43'
+  type: trojan
+  server: 188.114.96.5
+  port: 2083
+  password: nzrc4ma4087c1ukr
+  network: httpupgrade
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: dl2.rahetejarat.com
+  client-fingerprint: chrome
+- name: 'ARISTA #44'
+  type: trojan
+  server: 188.114.96.4
+  port: 2083
+  password: nzrc4ma4087c1ukr
+  network: httpupgrade
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: dl2.rahetejarat.com
+  client-fingerprint: chrome
+- name: 'ARISTA #45'
+  type: trojan
+  server: 104.18.154.96
+  port: 2083
+  password: nzrc4ma4087c1ukr
+  network: httpupgrade
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: dl2.rahetejarat.com
+  client-fingerprint: chrome
+- name: 'ARISTA #46'
+  type: trojan
+  server: 188.114.96.1
+  port: 2083
+  password: nzrc4ma4087c1ukr
+  network: httpupgrade
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: dl2.rahetejarat.com
+  client-fingerprint: chrome
+- name: 'ARISTA #47'
+  type: trojan
+  server: 188.114.96.5
+  port: 2083
+  password: nzrc4ma4087c1ukr
+  network: httpupgrade
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: dl2.rahetejarat.com
+  client-fingerprint: chrome
+- name: 'ARISTA #48'
+  type: trojan
+  server: 188.114.96.4
+  port: 2083
+  password: nzrc4ma4087c1ukr
+  network: httpupgrade
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: dl2.rahetejarat.com
+  client-fingerprint: chrome
+- name: 'ARISTA #49'
+  type: trojan
+  server: 104.18.154.96
+  port: 2083
+  password: nzrc4ma4087c1ukr
+  network: httpupgrade
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: dl2.rahetejarat.com
+  client-fingerprint: chrome
+- name: 'ARISTA #50'
+  type: ss
+  server: 51.222.107.43
+  port: 2083
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:HWFFJN19JkvbTKo/79AfnbRBK9uHUUaFNZJyLjEoJGs=
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #51'
+  type: ss
+  server: 51.222.107.43
+  port: 2083
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:HWFFJN19JkvbTKo/79AfnbRBK9uHUUaFNZJyLjEoJGs=
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #52'
+  type: ss
+  server: 51.222.107.43
+  port: 2083
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:HWFFJN19JkvbTKo/79AfnbRBK9uHUUaFNZJyLjEoJGs=
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #53'
+  type: ss
+  server: 51.222.107.43
+  port: 2083
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:HWFFJN19JkvbTKo/79AfnbRBK9uHUUaFNZJyLjEoJGs=
+  udp: true
+  tcp-fast-open: true
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -527,20 +802,39 @@ proxy-groups:
   - 'ARISTA #18'
   - 'ARISTA #19'
   - 'ARISTA #20'
-  - 'T.ME: @aristapanel #21'
-  - 'T.ME: @aristapanel #22'
-  - 'T.ME: @aristapanel #23'
-  - 'T.ME: @aristapanel #24'
-  - 'ARISTA #25'
-  - 'ARISTA #26'
-  - 'ARISTA #27'
-  - 'ARISTA #28'
-  - 'ARISTA #29'
-  - 'ARISTA #30'
-  - 'ARISTA #31'
+  - 'ARISTA #21'
+  - 'ARISTA #22'
+  - 'ARISTA #23'
+  - 'ARISTA #24'
+  - 'T.ME: @aristapanel #25'
+  - 'T.ME: @aristapanel #26'
+  - 'T.ME: @aristapanel #27'
+  - 'T.ME: @aristapanel #28'
+  - 'T.ME: @aristapanel #29'
+  - 'T.ME: @aristapanel #30'
+  - 'T.ME: @aristapanel #31'
   - 'ARISTA #32'
   - 'ARISTA #33'
   - 'ARISTA #34'
+  - 'ARISTA #35'
+  - 'ARISTA #36'
+  - 'ARISTA #37'
+  - 'ARISTA #38'
+  - 'ARISTA #39'
+  - 'ARISTA #40'
+  - 'ARISTA #41'
+  - 'ARISTA #42'
+  - 'ARISTA #43'
+  - 'ARISTA #44'
+  - 'ARISTA #45'
+  - 'ARISTA #46'
+  - 'ARISTA #47'
+  - 'ARISTA #48'
+  - 'ARISTA #49'
+  - 'ARISTA #50'
+  - 'ARISTA #51'
+  - 'ARISTA #52'
+  - 'ARISTA #53'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

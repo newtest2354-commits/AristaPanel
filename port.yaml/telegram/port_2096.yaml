@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2096
-# Updated: 2026-09-15 21:14:22
-# Count: 19
+# Updated: 2026-09-16 04:30:25
+# Count: 16
 
 mixed-port: 7890
 allow-lan: false
@@ -50,19 +50,6 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: meshddeck.ir
-  port: 2096
-  uuid: 3a5d5fec-bb6c-4e52-a57d-4a6134d5ad78
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: unsafe
-  servername: UfQrSpMu.jEeShPeCh.bOnD
-- name: 'ARISTA #2'
-  type: vless
   server: 172.67.130.29
   port: 2096
   uuid: f5c799a0-46d0-4c2f-8e1e-acccb1a87019
@@ -75,7 +62,7 @@ proxies:
     path: /java
     headers:
       Host: ircdn.trafficfast.ir
-- name: 'ARISTA #3'
+- name: 'ARISTA #2'
   type: vless
   server: 172.67.145.156
   port: 2096
@@ -93,19 +80,38 @@ proxies:
     path: vless-ws/?ed=2048
     headers:
       Host: parmo.koyohi9973.wOrKErs.Dev
+- name: 'ARISTA #3'
+  type: vless
+  server: 172.67.130.29
+  port: 2096
+  uuid: f5c799a0-46d0-4c2f-8e1e-acccb1a87019
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: ircdn.trafficfast.ir
+  ws-opts:
+    path: /java
+    headers:
+      Host: ircdn.trafficfast.ir
 - name: 'ARISTA #4'
   type: vless
-  server: meshddeck.ir
+  server: 172.67.145.156
   port: 2096
-  uuid: 3a5d5fec-bb6c-4e52-a57d-4a6134d5ad78
-  network: xhttp
+  uuid: 0e5ee689-d40e-594e-9555-8ae7159c7bf7
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   alpn:
+  - h3
   - h2
-  client-fingerprint: unsafe
-  servername: UfQrSpMu.jEeShPeCh.bOnD
+  client-fingerprint: chrome
+  servername: parmo.koyohi9973.wOrKErs.Dev
+  ws-opts:
+    path: vless-ws/?ed=2048
+    headers:
+      Host: parmo.koyohi9973.wOrKErs.Dev
 - name: 'ARISTA #5'
   type: vless
   server: 172.67.130.29
@@ -122,72 +128,19 @@ proxies:
       Host: ircdn.trafficfast.ir
 - name: 'ARISTA #6'
   type: vless
-  server: meshddeck.ir
+  server: 172.67.130.29
   port: 2096
-  uuid: 3a5d5fec-bb6c-4e52-a57d-4a6134d5ad78
-  network: xhttp
+  uuid: f5c799a0-46d0-4c2f-8e1e-acccb1a87019
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: unsafe
-  servername: UfQrSpMu.jEeShPeCh.bOnD
+  servername: ircdn.trafficfast.ir
+  ws-opts:
+    path: /java
+    headers:
+      Host: ircdn.trafficfast.ir
 - name: 'ARISTA #7'
-  type: vless
-  server: meshddeck.ir
-  port: 2096
-  uuid: 3a5d5fec-bb6c-4e52-a57d-4a6134d5ad78
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: unsafe
-  servername: UfQrSpMu.jEeShPeCh.bOnD
-- name: 'ARISTA #8'
-  type: vless
-  server: 172.67.130.29
-  port: 2096
-  uuid: f5c799a0-46d0-4c2f-8e1e-acccb1a87019
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: ircdn.trafficfast.ir
-  ws-opts:
-    path: /java
-    headers:
-      Host: ircdn.trafficfast.ir
-- name: 'ARISTA #9'
-  type: vless
-  server: meshddeck.ir
-  port: 2096
-  uuid: 3a5d5fec-bb6c-4e52-a57d-4a6134d5ad78
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: unsafe
-  servername: UfQrSpMu.jEeShPeCh.bOnD
-- name: 'ARISTA #10'
-  type: vless
-  server: 172.67.130.29
-  port: 2096
-  uuid: f5c799a0-46d0-4c2f-8e1e-acccb1a87019
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: ircdn.trafficfast.ir
-  ws-opts:
-    path: /java
-    headers:
-      Host: ircdn.trafficfast.ir
-- name: 'ARISTA #11'
   type: vless
   server: 172.67.145.156
   port: 2096
@@ -205,21 +158,83 @@ proxies:
     path: vless-ws/?ed=2048
     headers:
       Host: parmo.koyohi9973.wOrKErs.Dev
-- name: 'ARISTA #12'
+- name: 'ARISTA #8'
   type: vless
-  server: 172.64.52.97
+  server: 172.67.130.29
   port: 2096
-  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
+  uuid: f5c799a0-46d0-4c2f-8e1e-acccb1a87019
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+  servername: ircdn.trafficfast.ir
   ws-opts:
-    path: /
+    path: /java
     headers:
-      Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+      Host: ircdn.trafficfast.ir
+- name: 'ARISTA #9'
+  type: vless
+  server: 172.67.145.156
+  port: 2096
+  uuid: 0e5ee689-d40e-594e-9555-8ae7159c7bf7
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  client-fingerprint: chrome
+  servername: parmo.koyohi9973.wOrKErs.Dev
+  ws-opts:
+    path: vless-ws/?ed=2048
+    headers:
+      Host: parmo.koyohi9973.wOrKErs.Dev
+- name: 'ARISTA #10'
+  type: vless
+  server: meshddeck.ir
+  port: 2096
+  uuid: 3a5d5fec-bb6c-4e52-a57d-4a6134d5ad78
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: unsafe
+  servername: UfQrSpMu.jEeShPeCh.bOnD
+- name: 'ARISTA #11'
+  type: vless
+  server: 172.67.130.29
+  port: 2096
+  uuid: f5c799a0-46d0-4c2f-8e1e-acccb1a87019
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: ircdn.trafficfast.ir
+  ws-opts:
+    path: /java
+    headers:
+      Host: ircdn.trafficfast.ir
+- name: 'ARISTA #12'
+  type: vless
+  server: 172.67.145.156
+  port: 2096
+  uuid: 0e5ee689-d40e-594e-9555-8ae7159c7bf7
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  client-fingerprint: chrome
+  servername: parmo.koyohi9973.wOrKErs.Dev
+  ws-opts:
+    path: vless-ws/?ed=2048
+    headers:
+      Host: parmo.koyohi9973.wOrKErs.Dev
 - name: 'ARISTA #13'
   type: vless
   server: meshddeck.ir
@@ -249,52 +264,6 @@ proxies:
       Host: ircdn.trafficfast.ir
 - name: 'ARISTA #15'
   type: vless
-  server: 172.67.145.156
-  port: 2096
-  uuid: 0e5ee689-d40e-594e-9555-8ae7159c7bf7
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  client-fingerprint: chrome
-  servername: parmo.koyohi9973.wOrKErs.Dev
-  ws-opts:
-    path: vless-ws/?ed=2048
-    headers:
-      Host: parmo.koyohi9973.wOrKErs.Dev
-- name: 'ARISTA #16'
-  type: vless
-  server: 172.64.52.97
-  port: 2096
-  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  ws-opts:
-    path: /
-    headers:
-      Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-- name: 'ARISTA #17'
-  type: vless
-  server: meshddeck.ir
-  port: 2096
-  uuid: 3a5d5fec-bb6c-4e52-a57d-4a6134d5ad78
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: unsafe
-  servername: UfQrSpMu.jEeShPeCh.bOnD
-- name: 'ARISTA #18'
-  type: vless
   server: 172.67.130.29
   port: 2096
   uuid: f5c799a0-46d0-4c2f-8e1e-acccb1a87019
@@ -307,7 +276,7 @@ proxies:
     path: /java
     headers:
       Host: ircdn.trafficfast.ir
-- name: 'ARISTA #19'
+- name: 'ARISTA #16'
   type: vless
   server: 172.67.145.156
   port: 2096
@@ -350,9 +319,6 @@ proxy-groups:
   - 'ARISTA #14'
   - 'ARISTA #15'
   - 'ARISTA #16'
-  - 'ARISTA #17'
-  - 'ARISTA #18'
-  - 'ARISTA #19'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
