@@ -1,6 +1,6 @@
 # COMBINED - Port 9443
-# Updated: 2026-09-16 04:30:18
-# Count: 6
+# Updated: 2026-09-16 11:16:23
+# Count: 4
 
 mixed-port: 7890
 allow-lan: false
@@ -82,52 +82,24 @@ proxies:
     path: /nl01-ws-8e47a
     headers:
       Host: hub-nl-01.hanvpn.cc
-- name: 'T.ME: @aristapanel #3'
+- name: 'ARISTA #3'
   type: vless
-  server: 31.59.150.174
+  server: 77.110.117.199
   port: 9443
-  uuid: 92089155-6602-4122-86d4-fe6de20e8c4d
-  network: tcp
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: hotcoals.aeternavpn.space
-  reality-opts:
-    public-key: RWu6ktBE4DFbUz_prmz-5KuolLhO53ehh19mNxhP-wI
-    short-id: "a1b2c3d4"
-- name: 'T.ME: @aristapanel #4'
-  type: vless
-  server: 31.59.150.174
-  port: 9443
-  uuid: 92089155-6602-4122-86d4-fe6de20e8c4d
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
+  alpn:
+  - http/1.1
   client-fingerprint: chrome
-  servername: hotcoals.aeternavpn.space
-  reality-opts:
-    public-key: RWu6ktBE4DFbUz_prmz-5KuolLhO53ehh19mNxhP-wI
-    short-id: "a1b2c3d4"
-- name: 'T.ME: @aristapanel #5'
-  type: vless
-  server: 13.143.137.164
-  port: 9443
-  uuid: 953358cb-82ba-4296-960d-6d2ec3468f4c
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: plaincanvas.videoclothing.xyz
-  reality-opts:
-    public-key: dZ0rhO_PL67-Ciwc6CHQgtde3a5EUUuReA7M-lRNCDQ
-    short-id: "e336c9a786fae301"
-- name: 'T.ME: @aristapanel #6'
+  servername: hub-nl-01.hanvpn.cc
+  ws-opts:
+    path: /nl01-ws-8e47a
+    headers:
+      Host: hub-nl-01.hanvpn.cc
+- name: 'T.ME: @aristapanel #4'
   type: vless
   server: 178.105.168.171
   port: 9443
@@ -152,10 +124,8 @@ proxy-groups:
   proxies: &id001
   - 'ARISTA #1'
   - 'ARISTA #2'
-  - 'T.ME: @aristapanel #3'
+  - 'ARISTA #3'
   - 'T.ME: @aristapanel #4'
-  - 'T.ME: @aristapanel #5'
-  - 'T.ME: @aristapanel #6'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

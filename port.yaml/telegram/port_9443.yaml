@@ -1,6 +1,6 @@
 # TELEGRAM - Port 9443
-# Updated: 2026-09-16 04:30:25
-# Count: 2
+# Updated: 2026-09-16 11:16:29
+# Count: 3
 
 mixed-port: 7890
 allow-lan: false
@@ -82,6 +82,23 @@ proxies:
     path: /nl01-ws-8e47a
     headers:
       Host: hub-nl-01.hanvpn.cc
+- name: 'ARISTA #3'
+  type: vless
+  server: 77.110.117.199
+  port: 9443
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: hub-nl-01.hanvpn.cc
+  ws-opts:
+    path: /nl01-ws-8e47a
+    headers:
+      Host: hub-nl-01.hanvpn.cc
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -93,6 +110,7 @@ proxy-groups:
   proxies: &id001
   - 'ARISTA #1'
   - 'ARISTA #2'
+  - 'ARISTA #3'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

@@ -1,6 +1,6 @@
 // TELEGRAM - Port 2096
-// Updated: 2026-09-16 04:30:36
-// Count: 16
+// Updated: 2026-09-16 11:16:38
+// Count: 26
 
 {
   "log": {
@@ -41,6 +41,31 @@
     {
       "type": "vless",
       "tag": "ARISTA #1",
+      "server": "104.27.5.143",
+      "server_port": 2096,
+      "uuid": "b9f18c99-321b-48f3-8c92-981828f9ff89",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "Iran.harchi.monster",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "alpn": [
+          "h2",
+          "http/1.1"
+        ]
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "Asa"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "ARISTA #2",
       "server": "172.67.130.29",
       "server_port": 2096,
       "uuid": "f5c799a0-46d0-4c2f-8e1e-acccb1a87019",
@@ -59,34 +84,6 @@
         "path": "/java",
         "headers": {
           "Host": "ircdn.trafficfast.ir"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "ARISTA #2",
-      "server": "172.67.145.156",
-      "server_port": 2096,
-      "uuid": "0e5ee689-d40e-594e-9555-8ae7159c7bf7",
-      "domain_resolver": "google",
-      "tls": {
-        "enabled": true,
-        "server_name": "parmo.koyohi9973.wOrKErs.Dev",
-        "insecure": true,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "alpn": [
-          "h3",
-          "h2"
-        ]
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/vless-ws/?ed=2048",
-        "headers": {
-          "Host": "parmo.koyohi9973.wOrKErs.Dev"
         }
       }
     },
@@ -111,6 +108,30 @@
       }
     },
     {
+      "type": "vless",
+      "tag": "ARISTA #4",
+      "server": "45.81.58.159",
+      "server_port": 2096,
+      "uuid": "359b9ad3-0009-4655-8872-d0ab566751d3",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "e832b8629fff3263.hozheen.ir",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/ws?ed=2560",
+        "headers": {
+          "Host": "newgen14.hozheen.ir"
+        }
+      }
+    },
+    {
       "type": "direct",
       "tag": "direct"
     },
@@ -124,7 +145,8 @@
       "outbounds": [
         "ARISTA #1",
         "ARISTA #2",
-        "ARISTA #3"
+        "ARISTA #3",
+        "ARISTA #4"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "2m",
