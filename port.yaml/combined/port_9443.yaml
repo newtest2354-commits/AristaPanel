@@ -1,6 +1,6 @@
 # COMBINED - Port 9443
-# Updated: 2026-09-16 21:16:29
-# Count: 5
+# Updated: 2026-09-17 04:37:08
+# Count: 8
 
 mixed-port: 7890
 allow-lan: false
@@ -99,7 +99,56 @@ proxies:
     path: /nl01-ws-8e47a
     headers:
       Host: hub-nl-01.hanvpn.cc
-- name: 'T.ME: @aristapanel #4'
+- name: 'ARISTA #4'
+  type: vless
+  server: 77.110.117.199
+  port: 9443
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: hub-nl-01.hanvpn.cc
+  ws-opts:
+    path: /nl01-ws-8e47a
+    headers:
+      Host: hub-nl-01.hanvpn.cc
+- name: 'ARISTA #5'
+  type: vless
+  server: 77.110.117.199
+  port: 9443
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: hub-nl-01.hanvpn.cc
+  ws-opts:
+    path: /nl01-ws-8e47a
+    headers:
+      Host: hub-nl-01.hanvpn.cc
+- name: 'T.ME: @aristapanel #6'
+  type: vless
+  server: 13.143.137.164
+  port: 9443
+  uuid: 953358cb-82ba-4296-960d-6d2ec3468f4c
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: plaincanvas.videoclothing.xyz
+  reality-opts:
+    public-key: dZ0rhO_PL67-Ciwc6CHQgtde3a5EUUuReA7M-lRNCDQ
+    short-id: "e336c9a786fae301"
+- name: 'T.ME: @aristapanel #7'
   type: vless
   server: 178.105.168.171
   port: 9443
@@ -113,7 +162,7 @@ proxies:
   reality-opts:
     public-key: OvEpExEu-A6ZRSO1BddxIrQVCvLNcHCVlVpb8Gxzcxs
     short-id: "a57f7057942da836"
-- name: 'ARISTA #5'
+- name: 'ARISTA #8'
   type: vless
   server: 77.110.117.199
   port: 9443
@@ -142,8 +191,11 @@ proxy-groups:
   - 'ARISTA #1'
   - 'ARISTA #2'
   - 'ARISTA #3'
-  - 'T.ME: @aristapanel #4'
+  - 'ARISTA #4'
   - 'ARISTA #5'
+  - 'T.ME: @aristapanel #6'
+  - 'T.ME: @aristapanel #7'
+  - 'ARISTA #8'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
