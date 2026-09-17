@@ -1,6 +1,6 @@
 # TELEGRAM - Port 9443
-# Updated: 2026-09-17 04:37:15
-# Count: 6
+# Updated: 2026-09-17 21:17:55
+# Count: 5
 
 mixed-port: 7890
 allow-lan: false
@@ -50,106 +50,64 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 77.110.117.199
+  server: 185.255.179.11
   port: 9443
   uuid: d9d0f208-d582-41d5-bb7b-742671402810
-  network: ws
+  network: grpc
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: hub-nl-01.hanvpn.cc
-  ws-opts:
-    path: /nl01-ws-8e47a
-    headers:
-      Host: hub-nl-01.hanvpn.cc
+  servername: hub-fi-02.hanvpn.cc
+  grpc-opts:
+    grpc-service-name: fi02-grpc-8e47a
 - name: 'ARISTA #2'
   type: vless
-  server: 77.110.117.199
+  server: 185.255.179.11
   port: 9443
   uuid: d9d0f208-d582-41d5-bb7b-742671402810
-  network: ws
+  network: grpc
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: hub-nl-01.hanvpn.cc
-  ws-opts:
-    path: /nl01-ws-8e47a
-    headers:
-      Host: hub-nl-01.hanvpn.cc
+  servername: hub-fi-02.hanvpn.cc
+  grpc-opts:
+    grpc-service-name: fi02-grpc-8e47a
 - name: 'ARISTA #3'
   type: vless
-  server: 77.110.117.199
+  server: 185.255.179.11
   port: 9443
   uuid: d9d0f208-d582-41d5-bb7b-742671402810
-  network: ws
+  network: grpc
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: hub-nl-01.hanvpn.cc
-  ws-opts:
-    path: /nl01-ws-8e47a
-    headers:
-      Host: hub-nl-01.hanvpn.cc
+  servername: hub-fi-02.hanvpn.cc
+  grpc-opts:
+    grpc-service-name: fi02-grpc-8e47a
 - name: 'ARISTA #4'
   type: vless
-  server: 77.110.117.199
+  server: 185.255.179.11
   port: 9443
   uuid: d9d0f208-d582-41d5-bb7b-742671402810
-  network: ws
+  network: grpc
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: hub-nl-01.hanvpn.cc
-  ws-opts:
-    path: /nl01-ws-8e47a
-    headers:
-      Host: hub-nl-01.hanvpn.cc
+  servername: hub-fi-02.hanvpn.cc
+  grpc-opts:
+    grpc-service-name: fi02-grpc-8e47a
 - name: 'ARISTA #5'
   type: vless
-  server: 77.110.117.199
+  server: 185.255.179.11
   port: 9443
   uuid: d9d0f208-d582-41d5-bb7b-742671402810
-  network: ws
+  network: grpc
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: hub-nl-01.hanvpn.cc
-  ws-opts:
-    path: /nl01-ws-8e47a
-    headers:
-      Host: hub-nl-01.hanvpn.cc
-- name: 'ARISTA #6'
-  type: vless
-  server: 77.110.117.199
-  port: 9443
-  uuid: d9d0f208-d582-41d5-bb7b-742671402810
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: hub-nl-01.hanvpn.cc
-  ws-opts:
-    path: /nl01-ws-8e47a
-    headers:
-      Host: hub-nl-01.hanvpn.cc
+  servername: hub-fi-02.hanvpn.cc
+  grpc-opts:
+    grpc-service-name: fi02-grpc-8e47a
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -164,7 +122,6 @@ proxy-groups:
   - 'ARISTA #3'
   - 'ARISTA #4'
   - 'ARISTA #5'
-  - 'ARISTA #6'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

@@ -1,6 +1,6 @@
 # COMBINED - Port 9443
-# Updated: 2026-09-17 16:48:52
-# Count: 1
+# Updated: 2026-09-17 21:17:50
+# Count: 5
 
 mixed-port: 7890
 allow-lan: false
@@ -48,20 +48,66 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'T.ME: @aristapanel #1'
+- name: 'ARISTA #1'
   type: vless
-  server: 178.105.168.171
+  server: 185.255.179.11
   port: 9443
-  uuid: 2e87e644-ab8f-48ba-a7b9-08288a8a81c7
-  network: tcp
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: grpc
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: shop-eu-de.amd.com
-  reality-opts:
-    public-key: OvEpExEu-A6ZRSO1BddxIrQVCvLNcHCVlVpb8Gxzcxs
-    short-id: "a57f7057942da836"
+  servername: hub-fi-02.hanvpn.cc
+  grpc-opts:
+    grpc-service-name: fi02-grpc-8e47a
+- name: 'ARISTA #2'
+  type: vless
+  server: 185.255.179.11
+  port: 9443
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: hub-fi-02.hanvpn.cc
+  grpc-opts:
+    grpc-service-name: fi02-grpc-8e47a
+- name: 'ARISTA #3'
+  type: vless
+  server: 185.255.179.11
+  port: 9443
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: hub-fi-02.hanvpn.cc
+  grpc-opts:
+    grpc-service-name: fi02-grpc-8e47a
+- name: 'ARISTA #4'
+  type: vless
+  server: 185.255.179.11
+  port: 9443
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: hub-fi-02.hanvpn.cc
+  grpc-opts:
+    grpc-service-name: fi02-grpc-8e47a
+- name: 'ARISTA #5'
+  type: vless
+  server: 185.255.179.11
+  port: 9443
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: hub-fi-02.hanvpn.cc
+  grpc-opts:
+    grpc-service-name: fi02-grpc-8e47a
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -71,7 +117,11 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'T.ME: @aristapanel #1'
+  - 'ARISTA #1'
+  - 'ARISTA #2'
+  - 'ARISTA #3'
+  - 'ARISTA #4'
+  - 'ARISTA #5'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
