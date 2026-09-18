@@ -117,7 +117,8 @@ class TelegramConfigExtractor:
             "healthy": 0,
             "unstable": 0,
             "dead": 0,
-            "unchecked": 0
+            "unchecked": 0,
+            "unchecked_protocols": {}
         }
 
         self.config_hash_cache = LRUCache(
@@ -1842,11 +1843,22 @@ class TelegramConfigExtractor:
             config
         )
 
+        obj = self.normalize_config(
+            config
+        )
+
+        actual_protocol = (
+            str(
+                (obj or {}).get("scheme")
+                or "unknown"
+            ).lower()
+        )
+
         if not config_hash:
             return (
                 "",
                 None,
-                "unchecked",
+                actual_protocol,
                 "invalid_config"
             )
 
@@ -1858,7 +1870,7 @@ class TelegramConfigExtractor:
             return (
                 config_hash,
                 None,
-                "unchecked",
+                actual_protocol,
                 "protocol_not_tcp_checked"
             )
 
@@ -1927,6 +1939,7 @@ class TelegramConfigExtractor:
         unstable = 0
         dead = 0
         unchecked = 0
+        unchecked_protocols = {}
 
         current_hashes = set()
 
@@ -1942,12 +1955,21 @@ class TelegramConfigExtractor:
                     config
                 )
 
+                obj = self.normalize_config(
+                    config
+                )
+
+                actual_protocol = (
+                    str(
+                        (obj or {}).get("scheme")
+                        or "unknown"
+                    ).lower()
+                )
+
                 result = (
                     config_hash,
                     False,
-                    self.get_health_protocol(
-                        config
-                    ),
+                    actual_protocol,
                     str(result)
                 )
 
@@ -1963,6 +1985,25 @@ class TelegramConfigExtractor:
                     config
                 )
                 unchecked += 1
+
+                obj = self.normalize_config(
+                    config
+                )
+
+                protocol_name = (
+                    str(
+                        (obj or {}).get("scheme")
+                        or "unknown"
+                    ).lower()
+                )
+
+                unchecked_protocols[protocol_name] = (
+                    unchecked_protocols.get(
+                        protocol_name,
+                        0
+                    ) + 1
+                )
+
                 continue
 
             current_hashes.add(
@@ -2027,6 +2068,18 @@ class TelegramConfigExtractor:
                     config
                 )
                 unchecked += 1
+
+                protocol_name = (
+                    protocol
+                    or "unknown"
+                )
+
+                unchecked_protocols[protocol_name] = (
+                    unchecked_protocols.get(
+                        protocol_name,
+                        0
+                    ) + 1
+                )
 
             elif success:
                 entry["status"] = "healthy"
@@ -2149,7 +2202,8 @@ class TelegramConfigExtractor:
             "healthy": healthy,
             "unstable": unstable,
             "dead": dead,
-            "unchecked": unchecked
+            "unchecked": unchecked,
+            "unchecked_protocols": unchecked_protocols
         }
 
         output_configs = healthy_configs
@@ -2174,7 +2228,8 @@ class TelegramConfigExtractor:
                 "healthy": 0,
                 "unstable": 0,
                 "dead": 0,
-                "unchecked": 0
+                "unchecked": 0,
+                "unchecked_protocols": {}
             }
 
             return (
@@ -2831,6 +2886,10 @@ class TelegramConfigExtractor:
                 "unchecked": self.health_stats.get(
                     "unchecked",
                     0
+                ),
+                "unchecked_protocols": self.health_stats.get(
+                    "unchecked_protocols",
+                    {}
                 )
             }
         }
