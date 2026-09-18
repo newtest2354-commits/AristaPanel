@@ -904,13 +904,17 @@ class GitHubConfigExtractor:
         semaphore
     ):
         config_hash = self.get_config_hash(config)
+        obj = self.normalize_config(config)
+        actual_protocol = str(
+            (obj or {}).get("scheme") or "unknown"
+        ).lower()
         protocol = self.get_health_protocol(config)
 
         if protocol is None:
             return (
                 config_hash,
                 None,
-                "unchecked",
+                actual_protocol,
                 ""
             )
 
@@ -922,7 +926,7 @@ class GitHubConfigExtractor:
             return (
                 config_hash,
                 False,
-                "invalid_endpoint",
+                protocol,
                 "invalid_endpoint"
             )
 
@@ -970,6 +974,7 @@ class GitHubConfigExtractor:
         unstable = []
         dead = []
         unchecked = 0
+        checked = 0
 
         for config, result in zip(
             configs,
@@ -980,9 +985,15 @@ class GitHubConfigExtractor:
             )
 
             if isinstance(result, Exception):
-                success = False
-                protocol = "error"
+                obj = self.normalize_config(config)
+                actual_protocol = str(
+                    (obj or {}).get("scheme") or "unknown"
+                ).lower()
+
+                success = None
+                protocol = actual_protocol
                 error = "health_check_exception"
+
             else:
                 (
                     result_hash,
@@ -1003,23 +1014,19 @@ class GitHubConfigExtractor:
 
             entry["last_check"] = now
 
-            if protocol == "unchecked":
+            if success is None:
                 unchecked += 1
 
                 entry["status"] = "unchecked"
-                entry["protocol"] = (
-                    self.normalize_config(config) or {}
-                ).get(
-                    "scheme",
-                    "unknown"
-                )
+                entry["protocol"] = protocol
                 entry["failures"] = 0
-                entry["last_error"] = ""
+                entry["last_error"] = error
 
                 state[config_hash] = entry
 
-                healthy.append(config)
                 continue
+
+            checked += 1
 
             if success:
                 entry["failures"] = 0
@@ -1088,7 +1095,7 @@ class GitHubConfigExtractor:
             "unstable": unstable,
             "dead": dead,
             "unchecked": unchecked,
-            "checked": len(configs),
+            "checked": checked,
             "health_state": cleaned_state
         }
 
