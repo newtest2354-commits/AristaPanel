@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2096
-# Updated: 2026-09-18 12:21:43
-# Count: 3
+# Updated: 2026-09-18 12:29:44
+# Count: 4
 
 mixed-port: 7890
 allow-lan: false
@@ -50,20 +50,23 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 91.193.58.218
+  server: warp-1.s1n4-nexu.ir
   port: 2096
-  uuid: 6e59d5c5-7aa3-4c36-a4c4-e3b899525ed2
-  network: ws
-  tls: true
+  uuid: b487f9b9-904b-4d47-9a0b-f00b046fb7d1
+  network: tcp
+  tls: false
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: free-server.techsonic.dev
-  ws-opts:
-    path: /free-server.techsonic.dev
-    headers:
-      Host: free-server.techsonic.dev
 - name: 'ARISTA #2'
+  type: vless
+  server: warp-1.s1n4-nexu.ir
+  port: 2096
+  uuid: b487f9b9-904b-4d47-9a0b-f00b046fb7d1
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #3'
   type: vless
   server: 91.193.58.218
   port: 2096
@@ -78,7 +81,7 @@ proxies:
     path: /free-server.techsonic.dev
     headers:
       Host: free-server.techsonic.dev
-- name: 'ARISTA #3'
+- name: 'ARISTA #4'
   type: vless
   server: warp-1.s1n4-nexu.ir
   port: 2096
@@ -99,6 +102,7 @@ proxy-groups:
   - 'ARISTA #1'
   - 'ARISTA #2'
   - 'ARISTA #3'
+  - 'ARISTA #4'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

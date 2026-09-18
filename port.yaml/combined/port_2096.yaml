@@ -1,6 +1,6 @@
 # COMBINED - Port 2096
-# Updated: 2026-09-18 12:21:39
-# Count: 7
+# Updated: 2026-09-18 12:29:37
+# Count: 8
 
 mixed-port: 7890
 allow-lan: false
@@ -50,36 +50,39 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 91.193.58.218
+  server: warp-1.s1n4-nexu.ir
   port: 2096
-  uuid: 6e59d5c5-7aa3-4c36-a4c4-e3b899525ed2
-  network: ws
-  tls: true
+  uuid: b487f9b9-904b-4d47-9a0b-f00b046fb7d1
+  network: tcp
+  tls: false
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: free-server.techsonic.dev
-  ws-opts:
-    path: /free-server.techsonic.dev
-    headers:
-      Host: free-server.techsonic.dev
 - name: 'ARISTA #2'
   type: vless
-  server: 91.193.58.218
+  server: warp-1.s1n4-nexu.ir
   port: 2096
-  uuid: 6e59d5c5-7aa3-4c36-a4c4-e3b899525ed2
-  network: ws
-  tls: true
+  uuid: b487f9b9-904b-4d47-9a0b-f00b046fb7d1
+  network: tcp
+  tls: false
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: free-server.techsonic.dev
-  ws-opts:
-    path: /free-server.techsonic.dev
-    headers:
-      Host: free-server.techsonic.dev
 - name: 'ARISTA #3'
   type: vless
+  server: 91.193.58.218
+  port: 2096
+  uuid: 6e59d5c5-7aa3-4c36-a4c4-e3b899525ed2
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: free-server.techsonic.dev
+  ws-opts:
+    path: /free-server.techsonic.dev
+    headers:
+      Host: free-server.techsonic.dev
+- name: 'ARISTA #4'
+  type: vless
   server: warp-1.s1n4-nexu.ir
   port: 2096
   uuid: b487f9b9-904b-4d47-9a0b-f00b046fb7d1
@@ -87,7 +90,7 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'ARISTA #4'
+- name: 'ARISTA #5'
   type: vless
   server: 91.193.58.218
   port: 2096
@@ -102,15 +105,6 @@ proxies:
     path: /free-server.techsonic.dev
     headers:
       Host: free-server.techsonic.dev
-- name: 'ARISTA #5'
-  type: vless
-  server: warp-1.s1n4-nexu.ir
-  port: 2096
-  uuid: b487f9b9-904b-4d47-9a0b-f00b046fb7d1
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
 - name: 'T.ME: @aristapanel #6'
   type: vless
   server: 172.64.145.202
@@ -138,6 +132,15 @@ proxies:
   servername: re4485a2ld.pasarguardpro.ir
   ws-opts:
     path: /?TELEGRAM--MARAMBASHI--MARAMBASHI?ed=512
+- name: 'ARISTA #8'
+  type: vless
+  server: warp-1.s1n4-nexu.ir
+  port: 2096
+  uuid: b487f9b9-904b-4d47-9a0b-f00b046fb7d1
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -154,6 +157,7 @@ proxy-groups:
   - 'ARISTA #5'
   - 'T.ME: @aristapanel #6'
   - 'T.ME: @aristapanel #7'
+  - 'ARISTA #8'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
