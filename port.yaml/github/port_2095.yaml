@@ -1,6 +1,6 @@
 # GITHUB - Port 2095
-# Updated: 2026-09-18 12:29:50
-# Count: 3
+# Updated: 2026-09-18 16:20:32
+# Count: 4
 
 mixed-port: 7890
 allow-lan: false
@@ -49,18 +49,22 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'T.ME: @aristapanel #1'
-  type: vless
-  server: 172.67.155.136
+  type: vmess
+  server: russia.com
   port: 2095
-  uuid: 73796e63-0000-4000-8000-000000000008
+  uuid: b7c56170-edb4-4c4a-bb64-ed5ef40b8739
+  alterId: 0
+  cipher: auto
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  tcp-fast-open: true
+  servername: russia.com
   ws-opts:
-    path: /sync
+    path: /api/v3/download.getFile
     headers:
-      Host: vqrlof-pwa5a7-onfjlv.zedbazi061.workers.dev
+      Host: sssub.v2.001.ssrsub.com
 - name: 'T.ME: @aristapanel #2'
   type: vless
   server: 172.67.155.136
@@ -75,6 +79,19 @@ proxies:
     headers:
       Host: vqrlof-pwa5a7-onfjlv.zedbazi061.workers.dev
 - name: 'T.ME: @aristapanel #3'
+  type: vless
+  server: 172.67.155.136
+  port: 2095
+  uuid: 73796e63-0000-4000-8000-000000000008
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /sync
+    headers:
+      Host: vqrlof-pwa5a7-onfjlv.zedbazi061.workers.dev
+- name: 'T.ME: @aristapanel #4'
   type: vless
   server: 104.16.148.244
   port: 2095
@@ -100,6 +117,7 @@ proxy-groups:
   - 'T.ME: @aristapanel #1'
   - 'T.ME: @aristapanel #2'
   - 'T.ME: @aristapanel #3'
+  - 'T.ME: @aristapanel #4'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
