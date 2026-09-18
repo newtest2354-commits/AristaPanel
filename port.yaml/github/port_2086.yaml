@@ -1,6 +1,6 @@
 # GITHUB - Port 2086
-# Updated: 2026-09-18 11:51:59
-# Count: 5
+# Updated: 2026-09-18 11:58:49
+# Count: 4
 
 mixed-port: 7890
 allow-lan: false
@@ -49,18 +49,18 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'T.ME: @aristapanel #1'
-  type: vmess
-  server: 153.52.92.81
+  type: vless
+  server: 172.67.155.136
   port: 2086
-  uuid: f6361af8-bb8f-4609-bf5d-3fc0f688f47b
-  alterId: 0
-  cipher: auto
-  network: tcp
+  uuid: 73796e63-0000-4000-8000-000000000007
+  network: ws
   tls: false
   udp: true
   skip-cert-verify: true
-  tcp-fast-open: true
-  servername: 153.52.92.81
+  ws-opts:
+    path: /sync
+    headers:
+      Host: vqrlof-pwa5a7-onfjlv.zedbazi061.workers.dev
 - name: 'T.ME: @aristapanel #2'
   type: vless
   server: 172.67.155.136
@@ -89,19 +89,6 @@ proxies:
       Host: vqrlof-pwa5a7-onfjlv.zedbazi061.workers.dev
 - name: 'T.ME: @aristapanel #4'
   type: vless
-  server: 172.67.155.136
-  port: 2086
-  uuid: 73796e63-0000-4000-8000-000000000007
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /sync
-    headers:
-      Host: vqrlof-pwa5a7-onfjlv.zedbazi061.workers.dev
-- name: 'T.ME: @aristapanel #5'
-  type: vless
   server: 172.67.151.243
   port: 2086
   uuid: b4a16091-a25d-4d33-aee3-f5ae04f34b14
@@ -126,7 +113,6 @@ proxy-groups:
   - 'T.ME: @aristapanel #2'
   - 'T.ME: @aristapanel #3'
   - 'T.ME: @aristapanel #4'
-  - 'T.ME: @aristapanel #5'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

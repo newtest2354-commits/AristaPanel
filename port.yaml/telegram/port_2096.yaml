@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2096
-# Updated: 2026-09-18 11:51:53
-# Count: 6
+# Updated: 2026-09-18 11:58:44
+# Count: 7
 
 mixed-port: 7890
 allow-lan: false
@@ -59,19 +59,13 @@ proxies:
   skip-cert-verify: true
 - name: 'ARISTA #2'
   type: vless
-  server: 91.193.58.218
+  server: warp-1.s1n4-nexu.ir
   port: 2096
-  uuid: 6e59d5c5-7aa3-4c36-a4c4-e3b899525ed2
-  network: ws
-  tls: true
+  uuid: b487f9b9-904b-4d47-9a0b-f00b046fb7d1
+  network: tcp
+  tls: false
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: free-server.techsonic.dev
-  ws-opts:
-    path: /free-server.techsonic.dev
-    headers:
-      Host: free-server.techsonic.dev
 - name: 'ARISTA #3'
   type: vless
   server: warp-1.s1n4-nexu.ir
@@ -83,19 +77,13 @@ proxies:
   skip-cert-verify: true
 - name: 'ARISTA #4'
   type: vless
-  server: 91.193.58.218
+  server: warp-1.s1n4-nexu.ir
   port: 2096
-  uuid: 6e59d5c5-7aa3-4c36-a4c4-e3b899525ed2
-  network: ws
-  tls: true
+  uuid: b487f9b9-904b-4d47-9a0b-f00b046fb7d1
+  network: tcp
+  tls: false
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: free-server.techsonic.dev
-  ws-opts:
-    path: /free-server.techsonic.dev
-    headers:
-      Host: free-server.techsonic.dev
 - name: 'ARISTA #5'
   type: vless
   server: warp-1.s1n4-nexu.ir
@@ -120,6 +108,15 @@ proxies:
     path: /free-server.techsonic.dev
     headers:
       Host: free-server.techsonic.dev
+- name: 'ARISTA #7'
+  type: vless
+  server: warp-1.s1n4-nexu.ir
+  port: 2096
+  uuid: b487f9b9-904b-4d47-9a0b-f00b046fb7d1
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -135,6 +132,7 @@ proxy-groups:
   - 'ARISTA #4'
   - 'ARISTA #5'
   - 'ARISTA #6'
+  - 'ARISTA #7'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
