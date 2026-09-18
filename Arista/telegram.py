@@ -2152,11 +2152,7 @@ class TelegramConfigExtractor:
             "unchecked": unchecked
         }
 
-        output_configs = (
-            healthy_configs
-            + unstable_configs
-            + unchecked_configs
-        )
+        output_configs = healthy_configs
 
         return (
             output_configs,
