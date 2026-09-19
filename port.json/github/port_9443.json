@@ -1,6 +1,6 @@
 // GITHUB - Port 9443
-// Updated: 2026-09-19 15:52:00
-// Count: 3
+// Updated: 2026-09-19 20:32:04
+// Count: 5
 
 {
   "log": {
@@ -39,8 +39,29 @@
   ],
   "outbounds": [
     {
-      "type": "shadowsocks",
+      "type": "vless",
       "tag": "ARISTA #1",
+      "server": "185.255.179.11",
+      "server_port": 9443,
+      "uuid": "d9d0f208-d582-41d5-bb7b-742671402810",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "hub-de-05.hanvpn.cc",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "de05-grpc-8e47a"
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "ARISTA #2",
       "server": "yyz-ca-01.blncvpn4u.cc",
       "server_port": 9443,
       "method": "aes-256-gcm",
@@ -59,7 +80,8 @@
       "type": "urltest",
       "tag": "🚀 ARISTA AUTO BEST",
       "outbounds": [
-        "ARISTA #1"
+        "ARISTA #1",
+        "ARISTA #2"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "2m",

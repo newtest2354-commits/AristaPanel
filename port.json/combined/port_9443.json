@@ -1,6 +1,6 @@
 // COMBINED - Port 9443
-// Updated: 2026-09-19 15:51:59
-// Count: 8
+// Updated: 2026-09-19 20:32:02
+// Count: 13
 
 {
   "log": {
@@ -57,8 +57,29 @@
       "flow": "xtls-rprx-vision"
     },
     {
-      "type": "shadowsocks",
+      "type": "vless",
       "tag": "ARISTA #2",
+      "server": "185.255.179.11",
+      "server_port": 9443,
+      "uuid": "d9d0f208-d582-41d5-bb7b-742671402810",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "hub-de-05.hanvpn.cc",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "de05-grpc-8e47a"
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "ARISTA #3",
       "server": "yyz-ca-01.blncvpn4u.cc",
       "server_port": 9443,
       "method": "aes-256-gcm",
@@ -78,7 +99,8 @@
       "tag": "🚀 ARISTA AUTO BEST",
       "outbounds": [
         "ARISTA #1",
-        "ARISTA #2"
+        "ARISTA #2",
+        "ARISTA #3"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "2m",
