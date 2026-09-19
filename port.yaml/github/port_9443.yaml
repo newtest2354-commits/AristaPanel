@@ -1,6 +1,6 @@
 # GITHUB - Port 9443
-# Updated: 2026-09-19 04:20:54
-# Count: 4
+# Updated: 2026-09-19 10:46:33
+# Count: 3
 
 mixed-port: 7890
 allow-lan: false
@@ -49,17 +49,13 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'T.ME: @aristapanel #1'
-  type: vless
-  server: 13.143.137.164
+  type: ss
+  server: yyz-ca-01.blncvpn4u.cc
   port: 9443
-  uuid: 953358cb-82ba-4296-960d-6d2ec3468f4c
-  network: tcp
-  tls: true
+  cipher: aes-256-gcm
+  password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
   udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: plaincanvas.videoclothing.xyz
+  tcp-fast-open: true
 - name: 'T.ME: @aristapanel #2'
   type: ss
   server: yyz-ca-01.blncvpn4u.cc
@@ -69,14 +65,6 @@ proxies:
   udp: true
   tcp-fast-open: true
 - name: 'T.ME: @aristapanel #3'
-  type: ss
-  server: yyz-ca-01.blncvpn4u.cc
-  port: 9443
-  cipher: aes-256-gcm
-  password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
-  udp: true
-  tcp-fast-open: true
-- name: 'T.ME: @aristapanel #4'
   type: ss
   server: yyz-ca-01.blncvpn4u.cc
   port: 9443
@@ -96,7 +84,6 @@ proxy-groups:
   - 'T.ME: @aristapanel #1'
   - 'T.ME: @aristapanel #2'
   - 'T.ME: @aristapanel #3'
-  - 'T.ME: @aristapanel #4'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

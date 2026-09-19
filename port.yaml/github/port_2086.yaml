@@ -1,6 +1,6 @@
 # GITHUB - Port 2086
-# Updated: 2026-09-19 04:20:54
-# Count: 2
+# Updated: 2026-09-19 10:46:33
+# Count: 4
 
 mixed-port: 7890
 allow-lan: false
@@ -49,18 +49,18 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'T.ME: @aristapanel #1'
-  type: vmess
-  server: 153.52.92.81
+  type: vless
+  server: 172.67.151.243
   port: 2086
-  uuid: f6361af8-bb8f-4609-bf5d-3fc0f688f47b
-  alterId: 0
-  cipher: auto
-  network: tcp
+  uuid: b4a16091-a25d-4d33-aee3-f5ae04f34b14
+  network: ws
   tls: false
   udp: true
   skip-cert-verify: true
-  tcp-fast-open: true
-  servername: 153.52.92.81
+  ws-opts:
+    path: /eyJqdW5rIjoiRjJEdlF3U251aCIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbIjE0Ni4xMDMuMTEzLjE1OCIsIjEwMy45Ny44OC4xMzMiLCIxOTQuMTgwLjE4OC4yNDEiLCIxMTYuMjAyLjEzMi4yMDUiXX0=?ed=2560
+    headers:
+      Host: blue-brook-cc73.karren391.workers.dev
 - name: 'T.ME: @aristapanel #2'
   type: vless
   server: 172.67.151.243
@@ -74,6 +74,32 @@ proxies:
     path: /eyJqdW5rIjoiRjJEdlF3U251aCIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbIjE0Ni4xMDMuMTEzLjE1OCIsIjEwMy45Ny44OC4xMzMiLCIxOTQuMTgwLjE4OC4yNDEiLCIxMTYuMjAyLjEzMi4yMDUiXX0=?ed=2560
     headers:
       Host: blue-brook-cc73.karren391.workers.dev
+- name: 'T.ME: @aristapanel #3'
+  type: vless
+  server: 162.159.38.127
+  port: 2086
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /?ed=2560security=tls
+    headers:
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
+- name: 'T.ME: @aristapanel #4'
+  type: vless
+  server: 162.159.43.187
+  port: 2086
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /?ed=2560security=tls
+    headers:
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -85,6 +111,8 @@ proxy-groups:
   proxies: &id001
   - 'T.ME: @aristapanel #1'
   - 'T.ME: @aristapanel #2'
+  - 'T.ME: @aristapanel #3'
+  - 'T.ME: @aristapanel #4'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
