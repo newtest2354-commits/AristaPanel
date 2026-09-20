@@ -1,6 +1,6 @@
 # COMBINED - Port 2095
-# Updated: 2026-09-20 11:11:23
-# Count: 1
+# Updated: 2026-09-20 15:55:15
+# Count: 5
 
 mixed-port: 7890
 allow-lan: false
@@ -48,7 +48,46 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'T.ME: @aristapanel #1'
+- name: 'ARISTA #1'
+  type: vless
+  server: varzesh3.com
+  port: 2095
+  uuid: 801b75cb-3998-44ab-8552-62bd1438aaff
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /pgcfws-r4
+    headers:
+      Host: boxi.safari-df.ir
+- name: 'ARISTA #2'
+  type: vless
+  server: varzesh3.com
+  port: 2095
+  uuid: 801b75cb-3998-44ab-8552-62bd1438aaff
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /pgcfws-r4
+    headers:
+      Host: boxi.safari-df.ir
+- name: 'ARISTA #3'
+  type: vless
+  server: varzesh3.com
+  port: 2095
+  uuid: 801b75cb-3998-44ab-8552-62bd1438aaff
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /pgcfws-r4
+    headers:
+      Host: boxi.safari-df.ir
+- name: 'T.ME: @aristapanel #4'
   type: vless
   server: 104.18.20.94
   port: 2095
@@ -61,6 +100,19 @@ proxies:
     path: /
     headers:
       Host: free-claude-api.asshole.us.ci
+- name: 'ARISTA #5'
+  type: vless
+  server: varzesh3.com
+  port: 2095
+  uuid: 801b75cb-3998-44ab-8552-62bd1438aaff
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /pgcfws-r4
+    headers:
+      Host: boxi.safari-df.ir
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -70,7 +122,11 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'T.ME: @aristapanel #1'
+  - 'ARISTA #1'
+  - 'ARISTA #2'
+  - 'ARISTA #3'
+  - 'T.ME: @aristapanel #4'
+  - 'ARISTA #5'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
