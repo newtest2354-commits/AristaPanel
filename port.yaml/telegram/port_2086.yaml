@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2086
-# Updated: 2026-09-20 04:36:23
-# Count: 13
+# Updated: 2026-09-20 11:11:31
+# Count: 4
 
 mixed-port: 7890
 allow-lan: false
@@ -59,13 +59,17 @@ proxies:
   skip-cert-verify: true
 - name: 'ARISTA #2'
   type: vless
-  server: 104.27.39.172
+  server: www.speedtest.net
   port: 2086
-  uuid: d6ff470b-51b3-4fe3-b4db-419f101adc85
-  network: httpupgrade
+  uuid: 550a8cd4-de01-4882-a914-5f717d85ac6a
+  network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  ws-opts:
+    path: /eyJqdW5rIjoiWjNGVWZEaXBkbWQ5Z0RQIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMmEwMjo4OTg6MTQ2OjY0OjpdIl19?ed=2560
+    headers:
+      Host: bold-tree-50e7.salehi1972s.workers.dev
 - name: 'ARISTA #3'
   type: vless
   server: 104.27.39.172
@@ -77,24 +81,6 @@ proxies:
   skip-cert-verify: true
 - name: 'ARISTA #4'
   type: vless
-  server: 104.27.39.172
-  port: 2086
-  uuid: d6ff470b-51b3-4fe3-b4db-419f101adc85
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #5'
-  type: vless
-  server: 104.27.39.172
-  port: 2086
-  uuid: d6ff470b-51b3-4fe3-b4db-419f101adc85
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #6'
-  type: vless
   server: www.speedtest.net
   port: 2086
   uuid: 550a8cd4-de01-4882-a914-5f717d85ac6a
@@ -106,73 +92,6 @@ proxies:
     path: /eyJqdW5rIjoiWjNGVWZEaXBkbWQ5Z0RQIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMmEwMjo4OTg6MTQ2OjY0OjpdIl19?ed=2560
     headers:
       Host: bold-tree-50e7.salehi1972s.workers.dev
-- name: 'ARISTA #7'
-  type: vless
-  server: 217.163.76.118
-  port: 2086
-  uuid: b7977b65-cfd8-4db9-a029-6ef014a4ae4a
-  network: xhttp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #8'
-  type: vless
-  server: 104.27.39.172
-  port: 2086
-  uuid: d6ff470b-51b3-4fe3-b4db-419f101adc85
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #9'
-  type: vless
-  server: 104.27.39.172
-  port: 2086
-  uuid: d6ff470b-51b3-4fe3-b4db-419f101adc85
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #10'
-  type: vless
-  server: www.speedtest.net
-  port: 2086
-  uuid: 550a8cd4-de01-4882-a914-5f717d85ac6a
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /eyJqdW5rIjoiWjNGVWZEaXBkbWQ5Z0RQIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMmEwMjo4OTg6MTQ2OjY0OjpdIl19?ed=2560
-    headers:
-      Host: bold-tree-50e7.salehi1972s.workers.dev
-- name: 'ARISTA #11'
-  type: vless
-  server: 217.163.76.118
-  port: 2086
-  uuid: b7977b65-cfd8-4db9-a029-6ef014a4ae4a
-  network: xhttp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #12'
-  type: vless
-  server: 104.27.39.172
-  port: 2086
-  uuid: d6ff470b-51b3-4fe3-b4db-419f101adc85
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #13'
-  type: vless
-  server: 104.27.39.172
-  port: 2086
-  uuid: d6ff470b-51b3-4fe3-b4db-419f101adc85
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -186,15 +105,6 @@ proxy-groups:
   - 'ARISTA #2'
   - 'ARISTA #3'
   - 'ARISTA #4'
-  - 'ARISTA #5'
-  - 'ARISTA #6'
-  - 'ARISTA #7'
-  - 'ARISTA #8'
-  - 'ARISTA #9'
-  - 'ARISTA #10'
-  - 'ARISTA #11'
-  - 'ARISTA #12'
-  - 'ARISTA #13'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

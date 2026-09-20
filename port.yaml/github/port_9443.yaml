@@ -1,6 +1,6 @@
 # GITHUB - Port 9443
-# Updated: 2026-09-20 04:36:26
-# Count: 4
+# Updated: 2026-09-20 11:11:37
+# Count: 5
 
 mixed-port: 7890
 allow-lan: false
@@ -57,17 +57,25 @@ proxies:
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: hub-de-05.hanvpn.cc
+  client-fingerprint: random
+  servername: hub-nl-03.hanvpn.cc
   grpc-opts:
-    grpc-service-name: de05-grpc-8e47a
+    grpc-service-name: nl03-grpc-8e47a
 - name: 'T.ME: @aristapanel #2'
-  type: ss
-  server: yyz-ca-01.blncvpn4u.cc
+  type: vless
+  server: 2.27.12.211
   port: 9443
-  cipher: aes-256-gcm
-  password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
+  uuid: e12d4a74-88e8-4326-9672-5e2f173ffc49
+  network: tcp
+  tls: true
   udp: true
-  tcp-fast-open: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: b2bshop.samsung.com
+  reality-opts:
+    public-key: maF7kOb9q2KpTnUFoJQhTPVvZ3p5besP3xBGF-pO3xY
+    short-id: "00849d56be"
 - name: 'T.ME: @aristapanel #3'
   type: ss
   server: yyz-ca-01.blncvpn4u.cc
@@ -77,6 +85,14 @@ proxies:
   udp: true
   tcp-fast-open: true
 - name: 'T.ME: @aristapanel #4'
+  type: ss
+  server: yyz-ca-01.blncvpn4u.cc
+  port: 9443
+  cipher: aes-256-gcm
+  password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
+  udp: true
+  tcp-fast-open: true
+- name: 'T.ME: @aristapanel #5'
   type: ss
   server: yyz-ca-01.blncvpn4u.cc
   port: 9443
@@ -97,6 +113,7 @@ proxy-groups:
   - 'T.ME: @aristapanel #2'
   - 'T.ME: @aristapanel #3'
   - 'T.ME: @aristapanel #4'
+  - 'T.ME: @aristapanel #5'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

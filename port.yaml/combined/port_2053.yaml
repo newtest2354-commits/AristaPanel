@@ -1,6 +1,6 @@
 # COMBINED - Port 2053
-# Updated: 2026-09-20 04:36:20
-# Count: 83
+# Updated: 2026-09-20 11:11:23
+# Count: 57
 
 mixed-port: 7890
 allow-lan: false
@@ -50,6 +50,32 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
+  server: 54.37.136.194
+  port: 2053
+  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
+    short-id: "50ba05992b05c1c3"
+- name: 'ARISTA #2'
+  type: vless
+  server: 198.251.78.29
+  port: 2053
+  uuid: c423cc1b-f88e-421c-9a16-c480d84da20f
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: 198.251.78.29
+  reality-opts:
+    public-key: Uk5b-Wh_uxeCc7R8NS9iWE40xc0h9wWC04rSB9yhgAw
+- name: 'ARISTA #3'
+  type: vless
   server: 103.31.77.108
   port: 2053
   uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
@@ -63,55 +89,22 @@ proxies:
     path: /channels/act
     headers:
       Host: cdn8848.776676.xyz
-- name: 'ARISTA #2'
+- name: 'ARISTA #4'
   type: vless
-  server: 172.67.65.56
+  server: 31.77.7.122
   port: 2053
-  uuid: 099244b9-2168-4dbd-870e-cbbe9d6eb573
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: whitecreeper.pages.dev
-  ws-opts:
-    path: /proxyip
-    headers:
-      Host: whitecreeper.pages.dev
-- name: 'ARISTA #3'
-  type: vless
-  server: 31.184.244.162
-  port: 2053
-  uuid: 60a361f9-3c45-4954-9e4c-92a85bda243d
+  uuid: 36cd557b-2b3d-46d3-8071-c77dd9cf7623
   network: grpc
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: www.google.com
+  client-fingerprint: ios
+  servername: www.nokia.com
   grpc-opts:
     grpc-service-name: grpc
   reality-opts:
-    public-key: mzrVbIsEggpJfXR8M7yxki2vgv3sXWQdy1bGhXqatUY
-    short-id: "4881f8244d1b9021"
-- name: 'ARISTA #4'
-  type: vless
-  server: land.zavqeron.ir
-  port: 2053
-  uuid: 2fa4235a-51a7-452b-a760-498951646043
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: zavqeron.ir
-  ws-opts:
-    path: /fi-cdn
-    headers:
-      Host: land.zavqeron.ir
+    public-key: TqsHQWg0oFULyLiaXe9vuwYXmLR6mRLiL376GJbX2Cs
+    short-id: "407f4d9be75efc56"
 - name: 'ARISTA #5'
   type: vless
   server: any.zavqeron.ir
@@ -133,39 +126,6 @@ proxies:
       Host: any.zavqeron.ir
 - name: 'ARISTA #6'
   type: vless
-  server: land.zavqeron.ir
-  port: 2053
-  uuid: 2fa4235a-51a7-452b-a760-498951646043
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: zavqeron.ir
-  ws-opts:
-    path: /fr-cdn
-    headers:
-      Host: land.zavqeron.ir
-- name: 'ARISTA #7'
-  type: vless
-  server: 54.37.136.194
-  port: 2053
-  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
-    short-id: "50ba05992b05c1c3"
-- name: 'ARISTA #8'
-  type: vless
   server: herd.zavqeron.ir
   port: 2053
   uuid: 2fa4235a-51a7-452b-a760-498951646043
@@ -183,67 +143,21 @@ proxies:
     path: /de2-cdn
     headers:
       Host: herd.zavqeron.ir
-- name: 'ARISTA #9'
+- name: 'ARISTA #7'
   type: vless
-  server: 172.67.77.98
+  server: 198.251.78.29
   port: 2053
-  uuid: 73bcd72f-9545-4cb8-8daf-7d004501880d
-  network: ws
+  uuid: c423cc1b-f88e-421c-9a16-c480d84da20f
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: shanxp.dpdns.org
-  ws-opts:
-    path: /
-    headers:
-      Host: shanxp.dpdns.org
-- name: 'ARISTA #10'
-  type: vless
-  server: 103.31.77.108
-  port: 2053
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: cdn8848.776676.xyz
-  ws-opts:
-    path: /channels/act
-    headers:
-      Host: cdn8848.776676.xyz
-- name: 'ARISTA #11'
-  type: vless
-  server: 172.67.65.56
-  port: 2053
-  uuid: 099244b9-2168-4dbd-870e-cbbe9d6eb573
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: whitecreeper.pages.dev
-  ws-opts:
-    path: /proxyip
-    headers:
-      Host: whitecreeper.pages.dev
-- name: 'ARISTA #12'
-  type: vless
-  server: 31.184.244.162
-  port: 2053
-  uuid: 60a361f9-3c45-4954-9e4c-92a85bda243d
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: www.google.com
-  grpc-opts:
-    grpc-service-name: grpc
+  client-fingerprint: firefox
+  servername: www.cloudflare.com
   reality-opts:
-    public-key: mzrVbIsEggpJfXR8M7yxki2vgv3sXWQdy1bGhXqatUY
-    short-id: "4881f8244d1b9021"
-- name: 'ARISTA #13'
+    public-key: Uk5b-Wh_uxeCc7R8NS9iWE40xc0h9wWC04rSB9yhgAw
+    short-id: "b5d625695ec82c7e"
+- name: 'ARISTA #8'
   type: vless
   server: land.zavqeron.ir
   port: 2053
@@ -262,44 +176,104 @@ proxies:
     path: /fi-cdn
     headers:
       Host: land.zavqeron.ir
+- name: 'ARISTA #9'
+  type: vless
+  server: 54.37.136.194
+  port: 2053
+  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
+    short-id: "50ba05992b05c1c3"
+- name: 'ARISTA #10'
+  type: vless
+  server: 198.251.78.29
+  port: 2053
+  uuid: c423cc1b-f88e-421c-9a16-c480d84da20f
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: 198.251.78.29
+  reality-opts:
+    public-key: Uk5b-Wh_uxeCc7R8NS9iWE40xc0h9wWC04rSB9yhgAw
+- name: 'ARISTA #11'
+  type: vless
+  server: 103.31.77.108
+  port: 2053
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: cdn8848.776676.xyz
+  ws-opts:
+    path: /channels/act
+    headers:
+      Host: cdn8848.776676.xyz
+- name: 'ARISTA #12'
+  type: vless
+  server: 31.77.7.122
+  port: 2053
+  uuid: 36cd557b-2b3d-46d3-8071-c77dd9cf7623
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: ios
+  servername: www.nokia.com
+  grpc-opts:
+    grpc-service-name: grpc
+  reality-opts:
+    public-key: TqsHQWg0oFULyLiaXe9vuwYXmLR6mRLiL376GJbX2Cs
+    short-id: "407f4d9be75efc56"
+- name: 'ARISTA #13'
+  type: vless
+  server: 54.37.136.194
+  port: 2053
+  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
+    short-id: "50ba05992b05c1c3"
 - name: 'ARISTA #14'
   type: vless
-  server: any.zavqeron.ir
+  server: 198.251.78.29
   port: 2053
-  uuid: 2fa4235a-51a7-452b-a760-498951646043
-  network: ws
+  uuid: c423cc1b-f88e-421c-9a16-c480d84da20f
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: zavqeron.ir
-  ws-opts:
-    path: /de1-cdn
-    headers:
-      Host: any.zavqeron.ir
+  servername: 198.251.78.29
+  reality-opts:
+    public-key: Uk5b-Wh_uxeCc7R8NS9iWE40xc0h9wWC04rSB9yhgAw
 - name: 'ARISTA #15'
   type: vless
-  server: land.zavqeron.ir
+  server: 103.31.77.108
   port: 2053
-  uuid: 2fa4235a-51a7-452b-a760-498951646043
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
   client-fingerprint: chrome
-  servername: zavqeron.ir
+  servername: cdn8848.776676.xyz
   ws-opts:
-    path: /fr-cdn
+    path: /channels/act
     headers:
-      Host: land.zavqeron.ir
+      Host: cdn8848.776676.xyz
 - name: 'ARISTA #16'
   type: vless
   server: 54.37.136.194
@@ -316,23 +290,16 @@ proxies:
     short-id: "50ba05992b05c1c3"
 - name: 'ARISTA #17'
   type: vless
-  server: herd.zavqeron.ir
+  server: 198.251.78.29
   port: 2053
-  uuid: 2fa4235a-51a7-452b-a760-498951646043
-  network: ws
+  uuid: c423cc1b-f88e-421c-9a16-c480d84da20f
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: zavqeron.ir
-  ws-opts:
-    path: /de2-cdn
-    headers:
-      Host: herd.zavqeron.ir
+  servername: 198.251.78.29
+  reality-opts:
+    public-key: Uk5b-Wh_uxeCc7R8NS9iWE40xc0h9wWC04rSB9yhgAw
 - name: 'ARISTA #18'
   type: vless
   server: 103.31.77.108
@@ -350,92 +317,31 @@ proxies:
       Host: cdn8848.776676.xyz
 - name: 'ARISTA #19'
   type: vless
-  server: 172.67.65.56
+  server: 54.37.136.194
   port: 2053
-  uuid: 099244b9-2168-4dbd-870e-cbbe9d6eb573
-  network: ws
+  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: whitecreeper.pages.dev
-  ws-opts:
-    path: /proxyip
-    headers:
-      Host: whitecreeper.pages.dev
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
+    short-id: "50ba05992b05c1c3"
 - name: 'ARISTA #20'
   type: vless
-  server: 31.184.244.162
+  server: 198.251.78.29
   port: 2053
-  uuid: 60a361f9-3c45-4954-9e4c-92a85bda243d
-  network: grpc
+  uuid: c423cc1b-f88e-421c-9a16-c480d84da20f
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: www.google.com
-  grpc-opts:
-    grpc-service-name: grpc
+  servername: 198.251.78.29
   reality-opts:
-    public-key: mzrVbIsEggpJfXR8M7yxki2vgv3sXWQdy1bGhXqatUY
-    short-id: "4881f8244d1b9021"
+    public-key: Uk5b-Wh_uxeCc7R8NS9iWE40xc0h9wWC04rSB9yhgAw
 - name: 'ARISTA #21'
-  type: vless
-  server: land.zavqeron.ir
-  port: 2053
-  uuid: 2fa4235a-51a7-452b-a760-498951646043
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: zavqeron.ir
-  ws-opts:
-    path: /fi-cdn
-    headers:
-      Host: land.zavqeron.ir
-- name: 'ARISTA #22'
-  type: vless
-  server: any.zavqeron.ir
-  port: 2053
-  uuid: 2fa4235a-51a7-452b-a760-498951646043
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: zavqeron.ir
-  ws-opts:
-    path: /de1-cdn
-    headers:
-      Host: any.zavqeron.ir
-- name: 'ARISTA #23'
-  type: vless
-  server: land.zavqeron.ir
-  port: 2053
-  uuid: 2fa4235a-51a7-452b-a760-498951646043
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: zavqeron.ir
-  ws-opts:
-    path: /fr-cdn
-    headers:
-      Host: land.zavqeron.ir
-- name: 'ARISTA #24'
   type: vless
   server: 103.31.77.108
   port: 2053
@@ -450,56 +356,23 @@ proxies:
     path: /channels/act
     headers:
       Host: cdn8848.776676.xyz
-- name: 'ARISTA #25'
+- name: 'ARISTA #22'
   type: vless
-  server: 172.67.65.56
+  server: 31.77.7.122
   port: 2053
-  uuid: 099244b9-2168-4dbd-870e-cbbe9d6eb573
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: whitecreeper.pages.dev
-  ws-opts:
-    path: /proxyip
-    headers:
-      Host: whitecreeper.pages.dev
-- name: 'ARISTA #26'
-  type: vless
-  server: 31.184.244.162
-  port: 2053
-  uuid: 60a361f9-3c45-4954-9e4c-92a85bda243d
+  uuid: 36cd557b-2b3d-46d3-8071-c77dd9cf7623
   network: grpc
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: www.google.com
+  client-fingerprint: ios
+  servername: www.nokia.com
   grpc-opts:
     grpc-service-name: grpc
   reality-opts:
-    public-key: mzrVbIsEggpJfXR8M7yxki2vgv3sXWQdy1bGhXqatUY
-    short-id: "4881f8244d1b9021"
-- name: 'ARISTA #27'
-  type: vless
-  server: land.zavqeron.ir
-  port: 2053
-  uuid: 2fa4235a-51a7-452b-a760-498951646043
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: zavqeron.ir
-  ws-opts:
-    path: /fi-cdn
-    headers:
-      Host: land.zavqeron.ir
-- name: 'ARISTA #28'
+    public-key: TqsHQWg0oFULyLiaXe9vuwYXmLR6mRLiL376GJbX2Cs
+    short-id: "407f4d9be75efc56"
+- name: 'ARISTA #23'
   type: vless
   server: any.zavqeron.ir
   port: 2053
@@ -518,7 +391,40 @@ proxies:
     path: /de1-cdn
     headers:
       Host: any.zavqeron.ir
-- name: 'ARISTA #29'
+- name: 'ARISTA #24'
+  type: vless
+  server: herd.zavqeron.ir
+  port: 2053
+  uuid: 2fa4235a-51a7-452b-a760-498951646043
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: zavqeron.ir
+  ws-opts:
+    path: /de2-cdn
+    headers:
+      Host: herd.zavqeron.ir
+- name: 'ARISTA #25'
+  type: vless
+  server: 198.251.78.29
+  port: 2053
+  uuid: c423cc1b-f88e-421c-9a16-c480d84da20f
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: Uk5b-Wh_uxeCc7R8NS9iWE40xc0h9wWC04rSB9yhgAw
+    short-id: "b5d625695ec82c7e"
+- name: 'ARISTA #26'
   type: vless
   server: land.zavqeron.ir
   port: 2053
@@ -534,9 +440,51 @@ proxies:
   client-fingerprint: chrome
   servername: zavqeron.ir
   ws-opts:
-    path: /fr-cdn
+    path: /fi-cdn
     headers:
       Host: land.zavqeron.ir
+- name: 'ARISTA #27'
+  type: vless
+  server: 147.45.97.168
+  port: 2053
+  uuid: 4d1c33bd-b4a7-4dda-b594-562a5d563247
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: market.yandex.ru
+  reality-opts:
+    public-key: FWkH7C_t9obV_NI48ir9DHJed6OVBQTh-Hi8fVnUlDM
+    short-id: "118dc2786b9de6b6"
+- name: 'ARISTA #28'
+  type: vless
+  server: 198.251.78.29
+  port: 2053
+  uuid: c423cc1b-f88e-421c-9a16-c480d84da20f
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: 198.251.78.29
+  reality-opts:
+    public-key: Uk5b-Wh_uxeCc7R8NS9iWE40xc0h9wWC04rSB9yhgAw
+- name: 'ARISTA #29'
+  type: vless
+  server: 54.37.136.194
+  port: 2053
+  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
+    short-id: "50ba05992b05c1c3"
 - name: 'ARISTA #30'
   type: vless
   server: 54.37.136.194
@@ -553,52 +501,50 @@ proxies:
     short-id: "50ba05992b05c1c3"
 - name: 'ARISTA #31'
   type: vless
-  server: 103.31.77.108
+  server: 198.251.78.29
   port: 2053
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  network: ws
+  uuid: c423cc1b-f88e-421c-9a16-c480d84da20f
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: cdn8848.776676.xyz
-  ws-opts:
-    path: /channels/act
-    headers:
-      Host: cdn8848.776676.xyz
+  servername: 198.251.78.29
+  reality-opts:
+    public-key: Uk5b-Wh_uxeCc7R8NS9iWE40xc0h9wWC04rSB9yhgAw
 - name: 'ARISTA #32'
   type: vless
-  server: 172.67.65.56
+  server: 103.31.77.108
   port: 2053
-  uuid: 099244b9-2168-4dbd-870e-cbbe9d6eb573
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: whitecreeper.pages.dev
+  servername: cdn8848.776676.xyz
   ws-opts:
-    path: /proxyip
+    path: /channels/act
     headers:
-      Host: whitecreeper.pages.dev
+      Host: cdn8848.776676.xyz
 - name: 'ARISTA #33'
   type: vless
-  server: 31.184.244.162
+  server: 31.77.7.122
   port: 2053
-  uuid: 60a361f9-3c45-4954-9e4c-92a85bda243d
+  uuid: 36cd557b-2b3d-46d3-8071-c77dd9cf7623
   network: grpc
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: www.google.com
+  client-fingerprint: ios
+  servername: www.nokia.com
   grpc-opts:
     grpc-service-name: grpc
   reality-opts:
-    public-key: mzrVbIsEggpJfXR8M7yxki2vgv3sXWQdy1bGhXqatUY
-    short-id: "4881f8244d1b9021"
+    public-key: TqsHQWg0oFULyLiaXe9vuwYXmLR6mRLiL376GJbX2Cs
+    short-id: "407f4d9be75efc56"
 - name: 'ARISTA #34'
   type: vless
-  server: land.zavqeron.ir
+  server: any.zavqeron.ir
   port: 2053
   uuid: 2fa4235a-51a7-452b-a760-498951646043
   network: ws
@@ -612,12 +558,12 @@ proxies:
   client-fingerprint: chrome
   servername: zavqeron.ir
   ws-opts:
-    path: /fi-cdn
+    path: /de1-cdn
     headers:
-      Host: land.zavqeron.ir
+      Host: any.zavqeron.ir
 - name: 'ARISTA #35'
   type: vless
-  server: any.zavqeron.ir
+  server: herd.zavqeron.ir
   port: 2053
   uuid: 2fa4235a-51a7-452b-a760-498951646043
   network: ws
@@ -631,328 +577,10 @@ proxies:
   client-fingerprint: chrome
   servername: zavqeron.ir
   ws-opts:
-    path: /de1-cdn
+    path: /de2-cdn
     headers:
-      Host: any.zavqeron.ir
+      Host: herd.zavqeron.ir
 - name: 'ARISTA #36'
-  type: vless
-  server: land.zavqeron.ir
-  port: 2053
-  uuid: 2fa4235a-51a7-452b-a760-498951646043
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: zavqeron.ir
-  ws-opts:
-    path: /fr-cdn
-    headers:
-      Host: land.zavqeron.ir
-- name: 'ARISTA #37'
-  type: vless
-  server: 54.37.136.194
-  port: 2053
-  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
-    short-id: "50ba05992b05c1c3"
-- name: 'ARISTA #38'
-  type: vless
-  server: herd.zavqeron.ir
-  port: 2053
-  uuid: 2fa4235a-51a7-452b-a760-498951646043
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: zavqeron.ir
-  ws-opts:
-    path: /de2-cdn
-    headers:
-      Host: herd.zavqeron.ir
-- name: 'ARISTA #39'
-  type: vless
-  server: 172.67.77.98
-  port: 2053
-  uuid: 73bcd72f-9545-4cb8-8daf-7d004501880d
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: shanxp.dpdns.org
-  ws-opts:
-    path: /
-    headers:
-      Host: shanxp.dpdns.org
-- name: 'ARISTA #40'
-  type: vless
-  server: 54.37.136.194
-  port: 2053
-  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
-    short-id: "50ba05992b05c1c3"
-- name: 'ARISTA #41'
-  type: vless
-  server: 103.31.77.108
-  port: 2053
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: cdn8848.776676.xyz
-  ws-opts:
-    path: /channels/act
-    headers:
-      Host: cdn8848.776676.xyz
-- name: 'ARISTA #42'
-  type: vless
-  server: 172.67.65.56
-  port: 2053
-  uuid: 099244b9-2168-4dbd-870e-cbbe9d6eb573
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: whitecreeper.pages.dev
-  ws-opts:
-    path: /proxyip
-    headers:
-      Host: whitecreeper.pages.dev
-- name: 'ARISTA #43'
-  type: vless
-  server: 31.184.244.162
-  port: 2053
-  uuid: 60a361f9-3c45-4954-9e4c-92a85bda243d
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: www.google.com
-  grpc-opts:
-    grpc-service-name: grpc
-  reality-opts:
-    public-key: mzrVbIsEggpJfXR8M7yxki2vgv3sXWQdy1bGhXqatUY
-    short-id: "4881f8244d1b9021"
-- name: 'ARISTA #44'
-  type: vless
-  server: 103.31.77.108
-  port: 2053
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: cdn8848.776676.xyz
-  ws-opts:
-    path: /channels/act
-    headers:
-      Host: cdn8848.776676.xyz
-- name: 'ARISTA #45'
-  type: vless
-  server: 172.67.65.56
-  port: 2053
-  uuid: 099244b9-2168-4dbd-870e-cbbe9d6eb573
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: whitecreeper.pages.dev
-  ws-opts:
-    path: /proxyip
-    headers:
-      Host: whitecreeper.pages.dev
-- name: 'ARISTA #46'
-  type: vless
-  server: 31.184.244.162
-  port: 2053
-  uuid: 60a361f9-3c45-4954-9e4c-92a85bda243d
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: www.google.com
-  grpc-opts:
-    grpc-service-name: grpc
-  reality-opts:
-    public-key: mzrVbIsEggpJfXR8M7yxki2vgv3sXWQdy1bGhXqatUY
-    short-id: "4881f8244d1b9021"
-- name: 'ARISTA #47'
-  type: vless
-  server: land.zavqeron.ir
-  port: 2053
-  uuid: 2fa4235a-51a7-452b-a760-498951646043
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: zavqeron.ir
-  ws-opts:
-    path: /fi-cdn
-    headers:
-      Host: land.zavqeron.ir
-- name: 'ARISTA #48'
-  type: vless
-  server: any.zavqeron.ir
-  port: 2053
-  uuid: 2fa4235a-51a7-452b-a760-498951646043
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: zavqeron.ir
-  ws-opts:
-    path: /de1-cdn
-    headers:
-      Host: any.zavqeron.ir
-- name: 'ARISTA #49'
-  type: vless
-  server: land.zavqeron.ir
-  port: 2053
-  uuid: 2fa4235a-51a7-452b-a760-498951646043
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: zavqeron.ir
-  ws-opts:
-    path: /fr-cdn
-    headers:
-      Host: land.zavqeron.ir
-- name: 'ARISTA #50'
-  type: vless
-  server: 54.37.136.194
-  port: 2053
-  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
-    short-id: "50ba05992b05c1c3"
-- name: 'ARISTA #51'
-  type: vless
-  server: herd.zavqeron.ir
-  port: 2053
-  uuid: 2fa4235a-51a7-452b-a760-498951646043
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: zavqeron.ir
-  ws-opts:
-    path: /de2-cdn
-    headers:
-      Host: herd.zavqeron.ir
-- name: 'ARISTA #52'
-  type: vless
-  server: 172.67.77.98
-  port: 2053
-  uuid: 73bcd72f-9545-4cb8-8daf-7d004501880d
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: shanxp.dpdns.org
-  ws-opts:
-    path: /
-    headers:
-      Host: shanxp.dpdns.org
-- name: 'ARISTA #53'
-  type: vless
-  server: 54.37.136.194
-  port: 2053
-  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
-    short-id: "50ba05992b05c1c3"
-- name: 'ARISTA #54'
-  type: vless
-  server: 57.131.38.163
-  port: 2053
-  uuid: d4b08cd6-0903-411a-9dac-45dbdf5c9712
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: www.apple.com
-  reality-opts:
-    public-key: Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc
-    short-id: "5b8a942318178e7b"
-- name: 'T.ME: @aristapanel #55'
-  type: vless
-  server: 212.227.235.66
-  port: 2053
-  uuid: ead0dd61-d398-40ad-80d6-a0e1e516d7d3
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: www.apple.com
-  reality-opts:
-    public-key: 7Y6Xb5Ql_03K25x8yKUSOKI2JTOMyv2nyCcFza90uxk
-    short-id: "29e8dcd2b37aaa7f"
-- name: 'T.ME: @aristapanel #56'
   type: vless
   server: 198.251.78.29
   port: 2053
@@ -966,7 +594,68 @@ proxies:
   reality-opts:
     public-key: Uk5b-Wh_uxeCc7R8NS9iWE40xc0h9wWC04rSB9yhgAw
     short-id: "b5d625695ec82c7e"
-- name: 'T.ME: @aristapanel #57'
+- name: 'ARISTA #37'
+  type: vless
+  server: land.zavqeron.ir
+  port: 2053
+  uuid: 2fa4235a-51a7-452b-a760-498951646043
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: zavqeron.ir
+  ws-opts:
+    path: /fi-cdn
+    headers:
+      Host: land.zavqeron.ir
+- name: 'ARISTA #38'
+  type: vless
+  server: 147.45.97.168
+  port: 2053
+  uuid: 4d1c33bd-b4a7-4dda-b594-562a5d563247
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: market.yandex.ru
+  reality-opts:
+    public-key: FWkH7C_t9obV_NI48ir9DHJed6OVBQTh-Hi8fVnUlDM
+    short-id: "118dc2786b9de6b6"
+- name: 'ARISTA #39'
+  type: vless
+  server: 198.251.78.29
+  port: 2053
+  uuid: c423cc1b-f88e-421c-9a16-c480d84da20f
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: 198.251.78.29
+  reality-opts:
+    public-key: Uk5b-Wh_uxeCc7R8NS9iWE40xc0h9wWC04rSB9yhgAw
+- name: 'T.ME: @aristapanel #40'
+  type: vless
+  server: 212.227.235.66
+  port: 2053
+  uuid: ead0dd61-d398-40ad-80d6-a0e1e516d7d3
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: www.apple.com
+  reality-opts:
+    public-key: 7Y6Xb5Ql_03K25x8yKUSOKI2JTOMyv2nyCcFza90uxk
+    short-id: "29e8dcd2b37aaa7f"
+- name: 'T.ME: @aristapanel #41'
   type: vless
   server: cctvhikvision.center
   port: 2053
@@ -983,7 +672,7 @@ proxies:
     path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
     headers:
       Host: uwu.blueknightnet.qzz.io
-- name: 'T.ME: @aristapanel #58'
+- name: 'T.ME: @aristapanel #42'
   type: vless
   server: freesocks.work
   port: 2053
@@ -1000,7 +689,7 @@ proxies:
     path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
     headers:
       Host: uwu.blueknightnet.qzz.io
-- name: 'T.ME: @aristapanel #59'
+- name: 'T.ME: @aristapanel #43'
   type: vless
   server: undef.network
   port: 2053
@@ -1017,7 +706,7 @@ proxies:
     path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
     headers:
       Host: uwu.blueknightnet.qzz.io
-- name: 'T.ME: @aristapanel #60'
+- name: 'T.ME: @aristapanel #44'
   type: vless
   server: hikvision-plus.com
   port: 2053
@@ -1034,21 +723,21 @@ proxies:
     path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
     headers:
       Host: uwu.blueknightnet.qzz.io
-- name: 'T.ME: @aristapanel #61'
+- name: 'T.ME: @aristapanel #45'
   type: vless
-  server: 95.216.27.15
+  server: 188.114.98.238
   port: 2053
-  uuid: 1c81f6d3-5771-4c5d-9fdd-1655eff50634
-  network: tcp
+  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: www.google.com
-  reality-opts:
-    public-key: 4nfogj5mHqNowtSn_2sXS3xTX8vcH75rFEU2BWvyekM
-    short-id: "d368b94e275ab080"
-- name: 'T.ME: @aristapanel #62'
+  servername: bPB-v.PaGeS.DEV
+  ws-opts:
+    path: /KheiTaJ43GZuGk3r/MTI5LjE1OS4yNDEuMTcy
+    headers:
+      Host: bPB-v.PaGeS.DEV
+- name: 'T.ME: @aristapanel #46'
   type: vless
   server: 46.250.240.80
   port: 2053
@@ -1062,133 +751,11 @@ proxies:
   reality-opts:
     public-key: CYFeysLf--_IVhxQOCd3ZxLrAVWFFOkJzvIGHOVXN3E
     short-id: "4cc9dc65f7770115"
-- name: 'T.ME: @aristapanel #63'
-  type: vless
-  server: 172.64.52.97
-  port: 2053
-  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  ws-opts:
-    path: /
-    headers:
-      Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-- name: 'T.ME: @aristapanel #64'
-  type: vless
-  server: 66.70.179.198
-  port: 2053
-  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
-  network: raw
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
-    short-id: "83f8317a948bb769"
-- name: 'T.ME: @aristapanel #65'
-  type: vless
-  server: 141.193.213.30
-  port: 2053
-  uuid: 64a28ed6-2238-42d9-8452-b83674f741e5
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: edge
-  servername: sunny-comet-55.curiocar.com
-  ws-opts:
-    path: /?ed=2053
-    headers:
-      Host: sunny-comet-55.curiocar.com
-- name: 'T.ME: @aristapanel #66'
-  type: vless
-  server: b3y.riganshop.info
-  port: 2053
-  uuid: 7d360844-6f0a-4da5-9a4a-ec27da2da4f0
-  network: httpupgrade
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: best.riganshop.info
-- name: 'T.ME: @aristapanel #67'
-  type: vless
-  server: 83.217.9.101
-  port: 2053
-  uuid: c8912ceb-599c-49c9-9976-a1c26a462366
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: safari
-  servername: tur1.prosetka.site
-  ws-opts:
-    path: /pleasework
-    headers:
-      Host: tur1.prosetka.site
-- name: 'ARISTA #68'
-  type: vless
-  server: 103.31.77.108
-  port: 2053
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: cdn8848.776676.xyz
-  ws-opts:
-    path: /channels/act
-    headers:
-      Host: cdn8848.776676.xyz
-- name: 'ARISTA #69'
-  type: vless
-  server: 172.67.65.56
-  port: 2053
-  uuid: 099244b9-2168-4dbd-870e-cbbe9d6eb573
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: whitecreeper.pages.dev
-  ws-opts:
-    path: /proxyip
-    headers:
-      Host: whitecreeper.pages.dev
-- name: 'ARISTA #70'
-  type: vless
-  server: 31.184.244.162
-  port: 2053
-  uuid: 60a361f9-3c45-4954-9e4c-92a85bda243d
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: www.google.com
-  grpc-opts:
-    grpc-service-name: grpc
-  reality-opts:
-    public-key: mzrVbIsEggpJfXR8M7yxki2vgv3sXWQdy1bGhXqatUY
-    short-id: "4881f8244d1b9021"
-- name: 'ARISTA #71'
+- name: 'T.ME: @aristapanel #47'
   type: vless
   server: land.zavqeron.ir
   port: 2053
-  uuid: 2fa4235a-51a7-452b-a760-498951646043
+  uuid: f2900749-7cff-42b7-9566-dfb03840d374
   network: ws
   tls: true
   udp: true
@@ -1203,147 +770,7 @@ proxies:
     path: /fi-cdn
     headers:
       Host: land.zavqeron.ir
-- name: 'ARISTA #72'
-  type: vless
-  server: any.zavqeron.ir
-  port: 2053
-  uuid: 2fa4235a-51a7-452b-a760-498951646043
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: zavqeron.ir
-  ws-opts:
-    path: /de1-cdn
-    headers:
-      Host: any.zavqeron.ir
-- name: 'ARISTA #73'
-  type: vless
-  server: land.zavqeron.ir
-  port: 2053
-  uuid: 2fa4235a-51a7-452b-a760-498951646043
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: zavqeron.ir
-  ws-opts:
-    path: /fr-cdn
-    headers:
-      Host: land.zavqeron.ir
-- name: 'ARISTA #74'
-  type: vless
-  server: 103.31.77.108
-  port: 2053
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: cdn8848.776676.xyz
-  ws-opts:
-    path: /channels/act
-    headers:
-      Host: cdn8848.776676.xyz
-- name: 'ARISTA #75'
-  type: vless
-  server: 172.67.65.56
-  port: 2053
-  uuid: 099244b9-2168-4dbd-870e-cbbe9d6eb573
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: whitecreeper.pages.dev
-  ws-opts:
-    path: /proxyip
-    headers:
-      Host: whitecreeper.pages.dev
-- name: 'ARISTA #76'
-  type: vless
-  server: 31.184.244.162
-  port: 2053
-  uuid: 60a361f9-3c45-4954-9e4c-92a85bda243d
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: www.google.com
-  grpc-opts:
-    grpc-service-name: grpc
-  reality-opts:
-    public-key: mzrVbIsEggpJfXR8M7yxki2vgv3sXWQdy1bGhXqatUY
-    short-id: "4881f8244d1b9021"
-- name: 'ARISTA #77'
-  type: vless
-  server: land.zavqeron.ir
-  port: 2053
-  uuid: 2fa4235a-51a7-452b-a760-498951646043
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: zavqeron.ir
-  ws-opts:
-    path: /fi-cdn
-    headers:
-      Host: land.zavqeron.ir
-- name: 'ARISTA #78'
-  type: vless
-  server: any.zavqeron.ir
-  port: 2053
-  uuid: 2fa4235a-51a7-452b-a760-498951646043
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: zavqeron.ir
-  ws-opts:
-    path: /de1-cdn
-    headers:
-      Host: any.zavqeron.ir
-- name: 'ARISTA #79'
-  type: vless
-  server: land.zavqeron.ir
-  port: 2053
-  uuid: 2fa4235a-51a7-452b-a760-498951646043
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: zavqeron.ir
-  ws-opts:
-    path: /fr-cdn
-    headers:
-      Host: land.zavqeron.ir
-- name: 'ARISTA #80'
+- name: 'ARISTA #48'
   type: vless
   server: 54.37.136.194
   port: 2053
@@ -1357,9 +784,78 @@ proxies:
   reality-opts:
     public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
     short-id: "50ba05992b05c1c3"
-- name: 'ARISTA #81'
+- name: 'ARISTA #49'
   type: vless
-  server: herd.zavqeron.ir
+  server: 198.251.78.29
+  port: 2053
+  uuid: c423cc1b-f88e-421c-9a16-c480d84da20f
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: 198.251.78.29
+  reality-opts:
+    public-key: Uk5b-Wh_uxeCc7R8NS9iWE40xc0h9wWC04rSB9yhgAw
+- name: 'ARISTA #50'
+  type: vless
+  server: 54.37.136.194
+  port: 2053
+  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
+    short-id: "50ba05992b05c1c3"
+- name: 'ARISTA #51'
+  type: vless
+  server: 198.251.78.29
+  port: 2053
+  uuid: c423cc1b-f88e-421c-9a16-c480d84da20f
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: 198.251.78.29
+  reality-opts:
+    public-key: Uk5b-Wh_uxeCc7R8NS9iWE40xc0h9wWC04rSB9yhgAw
+- name: 'ARISTA #52'
+  type: vless
+  server: 103.31.77.108
+  port: 2053
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: cdn8848.776676.xyz
+  ws-opts:
+    path: /channels/act
+    headers:
+      Host: cdn8848.776676.xyz
+- name: 'ARISTA #53'
+  type: vless
+  server: 31.77.7.122
+  port: 2053
+  uuid: 36cd557b-2b3d-46d3-8071-c77dd9cf7623
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: ios
+  servername: www.nokia.com
+  grpc-opts:
+    grpc-service-name: grpc
+  reality-opts:
+    public-key: TqsHQWg0oFULyLiaXe9vuwYXmLR6mRLiL376GJbX2Cs
+    short-id: "407f4d9be75efc56"
+- name: 'ARISTA #54'
+  type: vless
+  server: any.zavqeron.ir
   port: 2053
   uuid: 2fa4235a-51a7-452b-a760-498951646043
   network: ws
@@ -1373,10 +869,10 @@ proxies:
   client-fingerprint: chrome
   servername: zavqeron.ir
   ws-opts:
-    path: /de2-cdn
+    path: /de1-cdn
     headers:
-      Host: herd.zavqeron.ir
-- name: 'T.ME: @aristapanel #82'
+      Host: any.zavqeron.ir
+- name: 'T.ME: @aristapanel #55'
   type: trojan
   server: 185.114.72.31
   port: 2053
@@ -1391,7 +887,21 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: 'T.ME: @aristapanel #83'
+- name: 'T.ME: @aristapanel #56'
+  type: trojan
+  server: nl2.pleiades.codes
+  port: 2053
+  password: d5bee0afdbc500b8cda02d80
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: nl2.pleiades.codes
+  alpn:
+  - h2
+  - http/1.1
+- name: 'T.ME: @aristapanel #57'
   type: trojan
   server: 185.114.72.31
   port: 2053
@@ -1454,14 +964,14 @@ proxy-groups:
   - 'ARISTA #37'
   - 'ARISTA #38'
   - 'ARISTA #39'
-  - 'ARISTA #40'
-  - 'ARISTA #41'
-  - 'ARISTA #42'
-  - 'ARISTA #43'
-  - 'ARISTA #44'
-  - 'ARISTA #45'
-  - 'ARISTA #46'
-  - 'ARISTA #47'
+  - 'T.ME: @aristapanel #40'
+  - 'T.ME: @aristapanel #41'
+  - 'T.ME: @aristapanel #42'
+  - 'T.ME: @aristapanel #43'
+  - 'T.ME: @aristapanel #44'
+  - 'T.ME: @aristapanel #45'
+  - 'T.ME: @aristapanel #46'
+  - 'T.ME: @aristapanel #47'
   - 'ARISTA #48'
   - 'ARISTA #49'
   - 'ARISTA #50'
@@ -1472,32 +982,6 @@ proxy-groups:
   - 'T.ME: @aristapanel #55'
   - 'T.ME: @aristapanel #56'
   - 'T.ME: @aristapanel #57'
-  - 'T.ME: @aristapanel #58'
-  - 'T.ME: @aristapanel #59'
-  - 'T.ME: @aristapanel #60'
-  - 'T.ME: @aristapanel #61'
-  - 'T.ME: @aristapanel #62'
-  - 'T.ME: @aristapanel #63'
-  - 'T.ME: @aristapanel #64'
-  - 'T.ME: @aristapanel #65'
-  - 'T.ME: @aristapanel #66'
-  - 'T.ME: @aristapanel #67'
-  - 'ARISTA #68'
-  - 'ARISTA #69'
-  - 'ARISTA #70'
-  - 'ARISTA #71'
-  - 'ARISTA #72'
-  - 'ARISTA #73'
-  - 'ARISTA #74'
-  - 'ARISTA #75'
-  - 'ARISTA #76'
-  - 'ARISTA #77'
-  - 'ARISTA #78'
-  - 'ARISTA #79'
-  - 'ARISTA #80'
-  - 'ARISTA #81'
-  - 'T.ME: @aristapanel #82'
-  - 'T.ME: @aristapanel #83'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
