@@ -1,6 +1,6 @@
 # TELEGRAM - Port 9443
-# Updated: 2026-09-20 15:55:22
-# Count: 4
+# Updated: 2026-09-20 20:44:59
+# Count: 2
 
 mixed-port: 7890
 allow-lan: false
@@ -50,56 +50,34 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 185.255.179.11
+  server: 144.31.214.172
   port: 9443
-  uuid: d9d0f208-d582-41d5-bb7b-742671402810
-  network: grpc
+  uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: random
-  servername: hub-nl-03.hanvpn.cc
-  grpc-opts:
-    grpc-service-name: nl03-grpc-8e47a
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: storage.yandexcloud.net
+  reality-opts:
+    public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+    short-id: "ad20d2bc"
 - name: 'ARISTA #2'
   type: vless
-  server: 185.255.179.11
+  server: 144.31.214.172
   port: 9443
-  uuid: d9d0f208-d582-41d5-bb7b-742671402810
-  network: grpc
+  uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: random
-  servername: hub-nl-03.hanvpn.cc
-  grpc-opts:
-    grpc-service-name: nl03-grpc-8e47a
-- name: 'ARISTA #3'
-  type: vless
-  server: 185.255.179.11
-  port: 9443
-  uuid: d9d0f208-d582-41d5-bb7b-742671402810
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: random
-  servername: hub-nl-03.hanvpn.cc
-  grpc-opts:
-    grpc-service-name: nl03-grpc-8e47a
-- name: 'ARISTA #4'
-  type: vless
-  server: 185.255.179.11
-  port: 9443
-  uuid: d9d0f208-d582-41d5-bb7b-742671402810
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: random
-  servername: hub-nl-03.hanvpn.cc
-  grpc-opts:
-    grpc-service-name: nl03-grpc-8e47a
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: storage.yandexcloud.net
+  reality-opts:
+    public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+    short-id: "ad20d2bc"
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -111,8 +89,6 @@ proxy-groups:
   proxies: &id001
   - 'ARISTA #1'
   - 'ARISTA #2'
-  - 'ARISTA #3'
-  - 'ARISTA #4'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
