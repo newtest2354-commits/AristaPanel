@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2083
-# Updated: 2026-09-21 04:35:21
-# Count: 23
+# Updated: 2026-09-21 12:41:37
+# Count: 29
 
 mixed-port: 7890
 allow-lan: false
@@ -50,15 +50,19 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 185.126.238.87
+  server: 64.225.110.247
   port: 2083
-  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
-  network: grpc
-  tls: false
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
   udp: true
   skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: security.debian.org
+  client-fingerprint: chrome
+  servername: cdn8848.776676.xyz
+  ws-opts:
+    path: /acg/buy/ajax?ed=2560
+    headers:
+      Host: cdn8848.776676.xyz
 - name: 'ARISTA #2'
   type: vless
   server: 164.92.137.46
@@ -76,27 +80,57 @@ proxies:
       Host: cdn8848.776676.xyz
 - name: 'ARISTA #3'
   type: vless
-  server: 66.90.104.42
+  server: 95.217.24.119
   port: 2083
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  network: grpc
-  tls: false
+  uuid: d78de562-872e-43dd-be48-e9d7b06c87a3
+  network: tcp
+  tls: true
   udp: true
   skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: vless
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.yahoo.com
+  reality-opts:
+    public-key: tADYkZWWksM_mCqqwlRHCciSCXnP3JMYrPi5eoRHh2s
+    short-id: "d059fb98048c5318"
 - name: 'ARISTA #4'
   type: vless
-  server: 185.126.238.87
+  server: 66.90.104.42
   port: 2083
-  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
   network: grpc
   tls: false
   udp: true
   skip-cert-verify: true
   grpc-opts:
-    grpc-service-name: security.debian.org
+    grpc-service-name: vless
 - name: 'ARISTA #5'
+  type: vless
+  server: 66.90.105.210
+  port: 2083
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: vless
+- name: 'ARISTA #6'
+  type: vless
+  server: 64.225.110.247
+  port: 2083
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: cdn8848.776676.xyz
+  ws-opts:
+    path: /acg/buy/ajax?ed=2560
+    headers:
+      Host: cdn8848.776676.xyz
+- name: 'ARISTA #7'
   type: vless
   server: 164.92.137.46
   port: 2083
@@ -111,7 +145,22 @@ proxies:
     path: '%2Fbt%2Fstreaming%2Fad%3Fed%3D2560'
     headers:
       Host: cdn8848.776676.xyz
-- name: 'ARISTA #6'
+- name: 'ARISTA #8'
+  type: vless
+  server: 95.217.24.119
+  port: 2083
+  uuid: d78de562-872e-43dd-be48-e9d7b06c87a3
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.yahoo.com
+  reality-opts:
+    public-key: tADYkZWWksM_mCqqwlRHCciSCXnP3JMYrPi5eoRHh2s
+    short-id: "d059fb98048c5318"
+- name: 'ARISTA #9'
   type: vless
   server: 66.90.104.42
   port: 2083
@@ -122,46 +171,9 @@ proxies:
   skip-cert-verify: true
   grpc-opts:
     grpc-service-name: vless
-- name: 'ARISTA #7'
-  type: vless
-  server: 185.126.238.87
-  port: 2083
-  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
-  network: grpc
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: security.debian.org
-- name: 'ARISTA #8'
-  type: vless
-  server: 164.92.137.46
-  port: 2083
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: cdn8848.776676.xyz
-  ws-opts:
-    path: '%2Fbt%2Fstreaming%2Fad%3Fed%3D2560'
-    headers:
-      Host: cdn8848.776676.xyz
-- name: 'ARISTA #9'
-  type: vless
-  server: 185.126.238.87
-  port: 2083
-  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
-  network: grpc
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: security.debian.org
 - name: 'ARISTA #10'
   type: vless
-  server: 164.92.137.46
+  server: 64.225.110.247
   port: 2083
   uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
   network: ws
@@ -171,22 +183,11 @@ proxies:
   client-fingerprint: chrome
   servername: cdn8848.776676.xyz
   ws-opts:
-    path: '%2Fbt%2Fstreaming%2Fad%3Fed%3D2560'
+    path: /acg/buy/ajax?ed=2560
     headers:
       Host: cdn8848.776676.xyz
 - name: 'ARISTA #11'
   type: vless
-  server: 185.126.238.87
-  port: 2083
-  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
-  network: grpc
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: security.debian.org
-- name: 'ARISTA #12'
-  type: vless
   server: 164.92.137.46
   port: 2083
   uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
@@ -198,42 +199,54 @@ proxies:
   servername: cdn8848.776676.xyz
   ws-opts:
     path: '%2Fbt%2Fstreaming%2Fad%3Fed%3D2560'
+    headers:
+      Host: cdn8848.776676.xyz
+- name: 'ARISTA #12'
+  type: vless
+  server: 64.225.110.247
+  port: 2083
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: cdn8848.776676.xyz
+  ws-opts:
+    path: /acg/buy/ajax?ed=2560
     headers:
       Host: cdn8848.776676.xyz
 - name: 'ARISTA #13'
   type: vless
-  server: 66.90.104.42
+  server: 164.92.137.46
   port: 2083
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  network: grpc
-  tls: false
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
   udp: true
   skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: vless
+  client-fingerprint: chrome
+  servername: cdn8848.776676.xyz
+  ws-opts:
+    path: '%2Fbt%2Fstreaming%2Fad%3Fed%3D2560'
+    headers:
+      Host: cdn8848.776676.xyz
 - name: 'ARISTA #14'
   type: vless
-  server: 185.126.238.87
+  server: 64.225.110.247
   port: 2083
-  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
-  network: grpc
-  tls: false
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
   udp: true
   skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: security.debian.org
+  client-fingerprint: chrome
+  servername: cdn8848.776676.xyz
+  ws-opts:
+    path: /acg/buy/ajax?ed=2560
+    headers:
+      Host: cdn8848.776676.xyz
 - name: 'ARISTA #15'
-  type: vless
-  server: 185.126.238.87
-  port: 2083
-  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
-  network: grpc
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: security.debian.org
-- name: 'ARISTA #16'
   type: vless
   server: 164.92.137.46
   port: 2083
@@ -248,6 +261,21 @@ proxies:
     path: '%2Fbt%2Fstreaming%2Fad%3Fed%3D2560'
     headers:
       Host: cdn8848.776676.xyz
+- name: 'ARISTA #16'
+  type: vless
+  server: 95.217.24.119
+  port: 2083
+  uuid: d78de562-872e-43dd-be48-e9d7b06c87a3
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.yahoo.com
+  reality-opts:
+    public-key: tADYkZWWksM_mCqqwlRHCciSCXnP3JMYrPi5eoRHh2s
+    short-id: "d059fb98048c5318"
 - name: 'ARISTA #17'
   type: vless
   server: 66.90.104.42
@@ -261,18 +289,18 @@ proxies:
     grpc-service-name: vless
 - name: 'ARISTA #18'
   type: vless
-  server: 185.126.238.87
+  server: 66.90.105.210
   port: 2083
-  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
   network: grpc
   tls: false
   udp: true
   skip-cert-verify: true
   grpc-opts:
-    grpc-service-name: security.debian.org
+    grpc-service-name: vless
 - name: 'ARISTA #19'
   type: vless
-  server: 164.92.137.46
+  server: 64.225.110.247
   port: 2083
   uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
   network: ws
@@ -282,22 +310,11 @@ proxies:
   client-fingerprint: chrome
   servername: cdn8848.776676.xyz
   ws-opts:
-    path: '%2Fbt%2Fstreaming%2Fad%3Fed%3D2560'
+    path: /acg/buy/ajax?ed=2560
     headers:
       Host: cdn8848.776676.xyz
 - name: 'ARISTA #20'
   type: vless
-  server: 185.126.238.87
-  port: 2083
-  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
-  network: grpc
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: security.debian.org
-- name: 'ARISTA #21'
-  type: vless
   server: 164.92.137.46
   port: 2083
   uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
@@ -311,6 +328,21 @@ proxies:
     path: '%2Fbt%2Fstreaming%2Fad%3Fed%3D2560'
     headers:
       Host: cdn8848.776676.xyz
+- name: 'ARISTA #21'
+  type: vless
+  server: 95.217.24.119
+  port: 2083
+  uuid: d78de562-872e-43dd-be48-e9d7b06c87a3
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.yahoo.com
+  reality-opts:
+    public-key: tADYkZWWksM_mCqqwlRHCciSCXnP3JMYrPi5eoRHh2s
+    short-id: "d059fb98048c5318"
 - name: 'ARISTA #22'
   type: vless
   server: 66.90.104.42
@@ -323,6 +355,88 @@ proxies:
   grpc-opts:
     grpc-service-name: vless
 - name: 'ARISTA #23'
+  type: vless
+  server: 66.90.105.210
+  port: 2083
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: vless
+- name: 'ARISTA #24'
+  type: vless
+  server: 64.225.110.247
+  port: 2083
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: cdn8848.776676.xyz
+  ws-opts:
+    path: /acg/buy/ajax?ed=2560
+    headers:
+      Host: cdn8848.776676.xyz
+- name: 'ARISTA #25'
+  type: vless
+  server: 64.225.110.247
+  port: 2083
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: cdn8848.776676.xyz
+  ws-opts:
+    path: /acg/buy/ajax?ed=2560
+    headers:
+      Host: cdn8848.776676.xyz
+- name: 'ARISTA #26'
+  type: vless
+  server: 164.92.137.46
+  port: 2083
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: cdn8848.776676.xyz
+  ws-opts:
+    path: '%2Fbt%2Fstreaming%2Fad%3Fed%3D2560'
+    headers:
+      Host: cdn8848.776676.xyz
+- name: 'ARISTA #27'
+  type: vless
+  server: 95.217.24.119
+  port: 2083
+  uuid: d78de562-872e-43dd-be48-e9d7b06c87a3
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.yahoo.com
+  reality-opts:
+    public-key: tADYkZWWksM_mCqqwlRHCciSCXnP3JMYrPi5eoRHh2s
+    short-id: "d059fb98048c5318"
+- name: 'ARISTA #28'
+  type: vless
+  server: 66.90.104.42
+  port: 2083
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: vless
+- name: 'ARISTA #29'
   type: ss
   server: 51.222.107.43
   port: 2083
@@ -362,6 +476,12 @@ proxy-groups:
   - 'ARISTA #21'
   - 'ARISTA #22'
   - 'ARISTA #23'
+  - 'ARISTA #24'
+  - 'ARISTA #25'
+  - 'ARISTA #26'
+  - 'ARISTA #27'
+  - 'ARISTA #28'
+  - 'ARISTA #29'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
