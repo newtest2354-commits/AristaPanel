@@ -1,6 +1,6 @@
 # COMBINED - Port 2083
-# Updated: 2026-09-20 23:11:22
-# Count: 31
+# Updated: 2026-09-21 04:35:14
+# Count: 36
 
 mixed-port: 7890
 allow-lan: false
@@ -50,6 +50,17 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
+  server: 185.126.238.87
+  port: 2083
+  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: security.debian.org
+- name: 'ARISTA #2'
+  type: vless
   server: 164.92.137.46
   port: 2083
   uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
@@ -63,17 +74,6 @@ proxies:
     path: '%2Fbt%2Fstreaming%2Fad%3Fed%3D2560'
     headers:
       Host: cdn8848.776676.xyz
-- name: 'ARISTA #2'
-  type: vless
-  server: 185.126.238.87
-  port: 2083
-  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
-  network: grpc
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: security.debian.org
 - name: 'ARISTA #3'
   type: vless
   server: 66.90.104.42
@@ -87,98 +87,31 @@ proxies:
     grpc-service-name: vless
 - name: 'ARISTA #4'
   type: vless
-  server: 164.92.137.46
+  server: 185.126.238.87
   port: 2083
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  network: ws
-  tls: true
+  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
+  network: grpc
+  tls: false
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: cdn8848.776676.xyz
-  ws-opts:
-    path: '%2Fbt%2Fstreaming%2Fad%3Fed%3D2560'
-    headers:
-      Host: cdn8848.776676.xyz
+  grpc-opts:
+    grpc-service-name: security.debian.org
 - name: 'ARISTA #5'
   type: vless
-  server: 185.126.238.87
+  server: 164.92.137.46
   port: 2083
-  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
-  network: grpc
-  tls: false
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
   udp: true
   skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: security.debian.org
+  client-fingerprint: chrome
+  servername: cdn8848.776676.xyz
+  ws-opts:
+    path: '%2Fbt%2Fstreaming%2Fad%3Fed%3D2560'
+    headers:
+      Host: cdn8848.776676.xyz
 - name: 'ARISTA #6'
-  type: vless
-  server: 164.92.137.46
-  port: 2083
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: cdn8848.776676.xyz
-  ws-opts:
-    path: '%2Fbt%2Fstreaming%2Fad%3Fed%3D2560'
-    headers:
-      Host: cdn8848.776676.xyz
-- name: 'ARISTA #7'
-  type: vless
-  server: 164.92.137.46
-  port: 2083
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: cdn8848.776676.xyz
-  ws-opts:
-    path: '%2Fbt%2Fstreaming%2Fad%3Fed%3D2560'
-    headers:
-      Host: cdn8848.776676.xyz
-- name: 'ARISTA #8'
-  type: vless
-  server: 185.126.238.87
-  port: 2083
-  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
-  network: grpc
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: security.debian.org
-- name: 'ARISTA #9'
-  type: vless
-  server: 164.92.137.46
-  port: 2083
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: cdn8848.776676.xyz
-  ws-opts:
-    path: '%2Fbt%2Fstreaming%2Fad%3Fed%3D2560'
-    headers:
-      Host: cdn8848.776676.xyz
-- name: 'ARISTA #10'
-  type: vless
-  server: 185.126.238.87
-  port: 2083
-  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
-  network: grpc
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: security.debian.org
-- name: 'ARISTA #11'
   type: vless
   server: 66.90.104.42
   port: 2083
@@ -189,6 +122,69 @@ proxies:
   skip-cert-verify: true
   grpc-opts:
     grpc-service-name: vless
+- name: 'ARISTA #7'
+  type: vless
+  server: 185.126.238.87
+  port: 2083
+  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: security.debian.org
+- name: 'ARISTA #8'
+  type: vless
+  server: 164.92.137.46
+  port: 2083
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: cdn8848.776676.xyz
+  ws-opts:
+    path: '%2Fbt%2Fstreaming%2Fad%3Fed%3D2560'
+    headers:
+      Host: cdn8848.776676.xyz
+- name: 'ARISTA #9'
+  type: vless
+  server: 185.126.238.87
+  port: 2083
+  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: security.debian.org
+- name: 'ARISTA #10'
+  type: vless
+  server: 164.92.137.46
+  port: 2083
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: cdn8848.776676.xyz
+  ws-opts:
+    path: '%2Fbt%2Fstreaming%2Fad%3Fed%3D2560'
+    headers:
+      Host: cdn8848.776676.xyz
+- name: 'ARISTA #11'
+  type: vless
+  server: 185.126.238.87
+  port: 2083
+  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: security.debian.org
 - name: 'ARISTA #12'
   type: vless
   server: 164.92.137.46
@@ -206,6 +202,17 @@ proxies:
       Host: cdn8848.776676.xyz
 - name: 'ARISTA #13'
   type: vless
+  server: 66.90.104.42
+  port: 2083
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: vless
+- name: 'ARISTA #14'
+  type: vless
   server: 185.126.238.87
   port: 2083
   uuid: 7668f678-faee-40cc-9b56-9c39dc773388
@@ -215,7 +222,33 @@ proxies:
   skip-cert-verify: true
   grpc-opts:
     grpc-service-name: security.debian.org
-- name: 'ARISTA #14'
+- name: 'ARISTA #15'
+  type: vless
+  server: 185.126.238.87
+  port: 2083
+  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: security.debian.org
+- name: 'ARISTA #16'
+  type: vless
+  server: 164.92.137.46
+  port: 2083
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: cdn8848.776676.xyz
+  ws-opts:
+    path: '%2Fbt%2Fstreaming%2Fad%3Fed%3D2560'
+    headers:
+      Host: cdn8848.776676.xyz
+- name: 'ARISTA #17'
   type: vless
   server: 66.90.104.42
   port: 2083
@@ -226,7 +259,7 @@ proxies:
   skip-cert-verify: true
   grpc-opts:
     grpc-service-name: vless
-- name: 'T.ME: @aristapanel #15'
+- name: 'T.ME: @aristapanel #18'
   type: vless
   server: 185.126.238.87
   port: 2083
@@ -237,7 +270,7 @@ proxies:
   skip-cert-verify: true
   grpc-opts:
     grpc-service-name: security.debian.org
-- name: 'T.ME: @aristapanel #16'
+- name: 'T.ME: @aristapanel #19'
   type: vless
   server: 172.66.0.236
   port: 2083
@@ -252,7 +285,7 @@ proxies:
     path: /
     headers:
       Host: cfvvv-ev1.pages.dev
-- name: 'T.ME: @aristapanel #17'
+- name: 'T.ME: @aristapanel #20'
   type: vless
   server: 66.90.105.210
   port: 2083
@@ -265,7 +298,7 @@ proxies:
   - v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus
   grpc-opts:
     grpc-service-name: vless
-- name: 'T.ME: @aristapanel #18'
+- name: 'T.ME: @aristapanel #21'
   type: vless
   server: 66.90.104.42
   port: 2083
@@ -276,7 +309,7 @@ proxies:
   skip-cert-verify: true
   grpc-opts:
     grpc-service-name: vless
-- name: 'T.ME: @aristapanel #19'
+- name: 'T.ME: @aristapanel #22'
   type: vless
   server: 66.90.105.210
   port: 2083
@@ -287,7 +320,7 @@ proxies:
   skip-cert-verify: true
   grpc-opts:
     grpc-service-name: vless
-- name: 'T.ME: @aristapanel #20'
+- name: 'T.ME: @aristapanel #23'
   type: vless
   server: 172.66.0.236
   port: 2083
@@ -302,7 +335,7 @@ proxies:
     path: /?TELEGRAM--MARAMBASHI--MARAMBASHI?ed=512
     headers:
       Host: cfvvv-ev1.pages.dev
-- name: 'T.ME: @aristapanel #21'
+- name: 'T.ME: @aristapanel #24'
   type: vless
   server: 91.193.59.32
   port: 2083
@@ -317,37 +350,7 @@ proxies:
     path: /socks5=888:888@hkip.1d.mom:1080
     headers:
       Host: vlsovip.1d.mom
-- name: 'ARISTA #22'
-  type: vless
-  server: 164.92.137.46
-  port: 2083
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: cdn8848.776676.xyz
-  ws-opts:
-    path: '%2Fbt%2Fstreaming%2Fad%3Fed%3D2560'
-    headers:
-      Host: cdn8848.776676.xyz
-- name: 'ARISTA #23'
-  type: vless
-  server: 164.92.137.46
-  port: 2083
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: cdn8848.776676.xyz
-  ws-opts:
-    path: '%2Fbt%2Fstreaming%2Fad%3Fed%3D2560'
-    headers:
-      Host: cdn8848.776676.xyz
-- name: 'ARISTA #24'
+- name: 'ARISTA #25'
   type: vless
   server: 185.126.238.87
   port: 2083
@@ -358,46 +361,58 @@ proxies:
   skip-cert-verify: true
   grpc-opts:
     grpc-service-name: security.debian.org
-- name: 'ARISTA #25'
-  type: ss
-  server: 51.222.107.43
+- name: 'ARISTA #26'
+  type: vless
+  server: 164.92.137.46
   port: 2083
-  cipher: 2022-blake3-aes-256-gcm
-  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:HWFFJN19JkvbTKo/79AfnbRBK9uHUUaFNZJyLjEoJGs=
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
   udp: true
-  tcp-fast-open: true
-- name: 'T.ME: @aristapanel #26'
-  type: ss
-  server: 51.38.71.51
-  port: 2083
-  cipher: 2022-blake3-aes-256-gcm
-  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
-  udp: true
-  tcp-fast-open: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: cdn8848.776676.xyz
+  ws-opts:
+    path: '%2Fbt%2Fstreaming%2Fad%3Fed%3D2560'
+    headers:
+      Host: cdn8848.776676.xyz
 - name: 'ARISTA #27'
-  type: ss
-  server: 51.222.107.43
+  type: vless
+  server: 185.126.238.87
   port: 2083
-  cipher: 2022-blake3-aes-256-gcm
-  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:HWFFJN19JkvbTKo/79AfnbRBK9uHUUaFNZJyLjEoJGs=
+  uuid: 7668f678-faee-40cc-9b56-9c39dc773388
+  network: grpc
+  tls: false
   udp: true
-  tcp-fast-open: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: security.debian.org
 - name: 'ARISTA #28'
-  type: ss
-  server: 51.222.107.43
+  type: vless
+  server: 164.92.137.46
   port: 2083
-  cipher: 2022-blake3-aes-256-gcm
-  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:HWFFJN19JkvbTKo/79AfnbRBK9uHUUaFNZJyLjEoJGs=
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
   udp: true
-  tcp-fast-open: true
-- name: 'T.ME: @aristapanel #29'
-  type: ss
-  server: 51.38.71.51
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: cdn8848.776676.xyz
+  ws-opts:
+    path: '%2Fbt%2Fstreaming%2Fad%3Fed%3D2560'
+    headers:
+      Host: cdn8848.776676.xyz
+- name: 'ARISTA #29'
+  type: vless
+  server: 66.90.104.42
   port: 2083
-  cipher: 2022-blake3-aes-256-gcm
-  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  network: grpc
+  tls: false
   udp: true
-  tcp-fast-open: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: vless
 - name: 'ARISTA #30'
   type: ss
   server: 51.222.107.43
@@ -407,6 +422,46 @@ proxies:
   udp: true
   tcp-fast-open: true
 - name: 'T.ME: @aristapanel #31'
+  type: ss
+  server: 51.38.71.51
+  port: 2083
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #32'
+  type: ss
+  server: 51.222.107.43
+  port: 2083
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:HWFFJN19JkvbTKo/79AfnbRBK9uHUUaFNZJyLjEoJGs=
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #33'
+  type: ss
+  server: 51.222.107.43
+  port: 2083
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:HWFFJN19JkvbTKo/79AfnbRBK9uHUUaFNZJyLjEoJGs=
+  udp: true
+  tcp-fast-open: true
+- name: 'T.ME: @aristapanel #34'
+  type: ss
+  server: 51.38.71.51
+  port: 2083
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #35'
+  type: ss
+  server: 51.222.107.43
+  port: 2083
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:HWFFJN19JkvbTKo/79AfnbRBK9uHUUaFNZJyLjEoJGs=
+  udp: true
+  tcp-fast-open: true
+- name: 'T.ME: @aristapanel #36'
   type: ss
   server: 51.38.71.51
   port: 2083
@@ -437,23 +492,28 @@ proxy-groups:
   - 'ARISTA #12'
   - 'ARISTA #13'
   - 'ARISTA #14'
-  - 'T.ME: @aristapanel #15'
-  - 'T.ME: @aristapanel #16'
-  - 'T.ME: @aristapanel #17'
+  - 'ARISTA #15'
+  - 'ARISTA #16'
+  - 'ARISTA #17'
   - 'T.ME: @aristapanel #18'
   - 'T.ME: @aristapanel #19'
   - 'T.ME: @aristapanel #20'
   - 'T.ME: @aristapanel #21'
-  - 'ARISTA #22'
-  - 'ARISTA #23'
-  - 'ARISTA #24'
+  - 'T.ME: @aristapanel #22'
+  - 'T.ME: @aristapanel #23'
+  - 'T.ME: @aristapanel #24'
   - 'ARISTA #25'
-  - 'T.ME: @aristapanel #26'
+  - 'ARISTA #26'
   - 'ARISTA #27'
   - 'ARISTA #28'
-  - 'T.ME: @aristapanel #29'
+  - 'ARISTA #29'
   - 'ARISTA #30'
   - 'T.ME: @aristapanel #31'
+  - 'ARISTA #32'
+  - 'ARISTA #33'
+  - 'T.ME: @aristapanel #34'
+  - 'ARISTA #35'
+  - 'T.ME: @aristapanel #36'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2096
-# Updated: 2026-09-20 23:11:26
-# Count: 9
+# Updated: 2026-09-21 04:35:21
+# Count: 8
 
 mixed-port: 7890
 allow-lan: false
@@ -50,6 +50,23 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
+  server: 185.18.250.127
+  port: 2096
+  uuid: 2ee26119-94e5-40b4-ba3a-16354021b600
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: 69565ce3109804e7813f98ee.mmdbay.blog
+  ws-opts:
+    path: /graphql
+    headers:
+      Host: 69565ce3109804e7813f98ee.mmdbay.blog
+- name: 'ARISTA #2'
+  type: vless
   server: 45.130.125.69
   port: 2096
   uuid: a9160eba-23cd-407d-8cb3-39a2bc43148c
@@ -64,7 +81,7 @@ proxies:
   servername: sHort-aCtIon40S8o1J3v9.SaMSUNgOVEnS.Ir
   grpc-opts:
     grpc-service-name: sharghdaily.com.tasnimnews.com.yjc.ir.entekhab.ir.tasnimnews.com.isna.ir.entekhab.ir
-- name: 'ARISTA #2'
+- name: 'ARISTA #3'
   type: vless
   server: 185.18.250.127
   port: 2096
@@ -81,38 +98,23 @@ proxies:
     path: /graphql
     headers:
       Host: 69565ce3109804e7813f98ee.mmdbay.blog
-- name: 'ARISTA #3'
-  type: vless
-  server: 45.130.125.69
-  port: 2096
-  uuid: a9160eba-23cd-407d-8cb3-39a2bc43148c
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: sHort-aCtIon40S8o1J3v9.SaMSUNgOVEnS.Ir
-  grpc-opts:
-    grpc-service-name: sharghdaily.com.tasnimnews.com.yjc.ir.entekhab.ir.tasnimnews.com.isna.ir.entekhab.ir
 - name: 'ARISTA #4'
   type: vless
-  server: 45.130.125.69
+  server: 185.18.250.127
   port: 2096
-  uuid: a9160eba-23cd-407d-8cb3-39a2bc43148c
-  network: grpc
+  uuid: 2ee26119-94e5-40b4-ba3a-16354021b600
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   alpn:
   - h2
-  - http/1.1
   client-fingerprint: chrome
-  servername: sHort-aCtIon40S8o1J3v9.SaMSUNgOVEnS.Ir
-  grpc-opts:
-    grpc-service-name: sharghdaily.com.tasnimnews.com.yjc.ir.entekhab.ir.tasnimnews.com.isna.ir.entekhab.ir
+  servername: 69565ce3109804e7813f98ee.mmdbay.blog
+  ws-opts:
+    path: /graphql
+    headers:
+      Host: 69565ce3109804e7813f98ee.mmdbay.blog
 - name: 'ARISTA #5'
   type: vless
   server: 45.130.125.69
@@ -131,22 +133,6 @@ proxies:
     grpc-service-name: sharghdaily.com.tasnimnews.com.yjc.ir.entekhab.ir.tasnimnews.com.isna.ir.entekhab.ir
 - name: 'ARISTA #6'
   type: vless
-  server: 45.130.125.69
-  port: 2096
-  uuid: a9160eba-23cd-407d-8cb3-39a2bc43148c
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: sHort-aCtIon40S8o1J3v9.SaMSUNgOVEnS.Ir
-  grpc-opts:
-    grpc-service-name: sharghdaily.com.tasnimnews.com.yjc.ir.entekhab.ir.tasnimnews.com.isna.ir.entekhab.ir
-- name: 'ARISTA #7'
-  type: vless
   server: 185.18.250.127
   port: 2096
   uuid: 2ee26119-94e5-40b4-ba3a-16354021b600
@@ -162,7 +148,7 @@ proxies:
     path: /graphql
     headers:
       Host: 69565ce3109804e7813f98ee.mmdbay.blog
-- name: 'ARISTA #8'
+- name: 'ARISTA #7'
   type: vless
   server: 45.130.125.69
   port: 2096
@@ -178,7 +164,7 @@ proxies:
   servername: sHort-aCtIon40S8o1J3v9.SaMSUNgOVEnS.Ir
   grpc-opts:
     grpc-service-name: sharghdaily.com.tasnimnews.com.yjc.ir.entekhab.ir.tasnimnews.com.isna.ir.entekhab.ir
-- name: 'ARISTA #9'
+- name: 'ARISTA #8'
   type: vless
   server: 185.18.250.127
   port: 2096
@@ -212,7 +198,6 @@ proxy-groups:
   - 'ARISTA #6'
   - 'ARISTA #7'
   - 'ARISTA #8'
-  - 'ARISTA #9'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
