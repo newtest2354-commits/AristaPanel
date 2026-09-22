@@ -1,6 +1,6 @@
 # COMBINED - Port 9443
-# Updated: 2026-09-21 20:01:13
-# Count: 4
+# Updated: 2026-09-22 00:01:50
+# Count: 8
 
 mixed-port: 7890
 allow-lan: false
@@ -48,7 +48,69 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'T.ME: @aristapanel #1'
+- name: 'ARISTA #1'
+  type: vless
+  server: 144.31.214.172
+  port: 9443
+  uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: storage.yandexcloud.net
+  reality-opts:
+    public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+    short-id: "ad20d2bc"
+- name: 'ARISTA #2'
+  type: vless
+  server: 144.31.214.172
+  port: 9443
+  uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: storage.yandexcloud.net
+  reality-opts:
+    public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+    short-id: "ad20d2bc"
+- name: 'ARISTA #3'
+  type: vless
+  server: 144.31.214.172
+  port: 9443
+  uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: storage.yandexcloud.net
+  reality-opts:
+    public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+    short-id: "ad20d2bc"
+- name: 'T.ME: @aristapanel #4'
+  type: vless
+  server: 185.255.179.11
+  port: 9443
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: random
+  servername: hub-de-03.hanvpn.cc
+  ws-opts:
+    path: /de03-ws-8e47a
+    headers:
+      Host: hub-de-03.hanvpn.cc
+- name: 'T.ME: @aristapanel #5'
   type: ss
   server: yyz-ca-01.blncvpn4u.cc
   port: 9443
@@ -56,7 +118,7 @@ proxies:
   password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
   udp: true
   tcp-fast-open: true
-- name: 'T.ME: @aristapanel #2'
+- name: 'T.ME: @aristapanel #6'
   type: ss
   server: 185.156.47.97
   port: 9443
@@ -64,7 +126,7 @@ proxies:
   password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
   udp: true
   tcp-fast-open: true
-- name: 'T.ME: @aristapanel #3'
+- name: 'T.ME: @aristapanel #7'
   type: ss
   server: yyz-ca-01.blncvpn4u.cc
   port: 9443
@@ -72,7 +134,7 @@ proxies:
   password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
   udp: true
   tcp-fast-open: true
-- name: 'T.ME: @aristapanel #4'
+- name: 'T.ME: @aristapanel #8'
   type: ss
   server: 185.156.47.97
   port: 9443
@@ -89,10 +151,14 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'T.ME: @aristapanel #1'
-  - 'T.ME: @aristapanel #2'
-  - 'T.ME: @aristapanel #3'
+  - 'ARISTA #1'
+  - 'ARISTA #2'
+  - 'ARISTA #3'
   - 'T.ME: @aristapanel #4'
+  - 'T.ME: @aristapanel #5'
+  - 'T.ME: @aristapanel #6'
+  - 'T.ME: @aristapanel #7'
+  - 'T.ME: @aristapanel #8'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
