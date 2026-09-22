@@ -1,6 +1,6 @@
 # COMBINED - Port 2053
-# Updated: 2026-09-22 04:47:21
-# Count: 86
+# Updated: 2026-09-22 11:27:08
+# Count: 70
 
 mixed-port: 7890
 allow-lan: false
@@ -49,6 +49,49 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'ARISTA #1'
+  type: vmess
+  server: de.connfull.org
+  port: 2053
+  uuid: 64f18876-ce22-4172-a596-d8c1be125e78
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: de.connfull.org
+  client-fingerprint: chrome
+- name: 'ARISTA #2'
+  type: vmess
+  server: de.connfull.org
+  port: 2053
+  uuid: 64f18876-ce22-4172-a596-d8c1be125e78
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: de.connfull.org
+  client-fingerprint: chrome
+- name: 'ARISTA #3'
+  type: vless
+  server: 138.68.142.165
+  port: 2053
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: cdn8848.776676.xyz
+  ws-opts:
+    path: /resource/channel
+    headers:
+      Host: cdn8848.776676.xyz
+- name: 'ARISTA #4'
   type: vless
   server: 31.77.7.122
   port: 2053
@@ -64,94 +107,55 @@ proxies:
   reality-opts:
     public-key: TqsHQWg0oFULyLiaXe9vuwYXmLR6mRLiL376GJbX2Cs
     short-id: "407f4d9be75efc56"
-- name: 'ARISTA #2'
-  type: vless
-  server: 138.68.142.165
-  port: 2053
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: cdn8848.776676.xyz
-  ws-opts:
-    path: /resource/channel
-    headers:
-      Host: cdn8848.776676.xyz
-- name: 'ARISTA #3'
-  type: vless
-  server: 54.37.136.194
-  port: 2053
-  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
-    short-id: "50ba05992b05c1c3"
-- name: 'ARISTA #4'
-  type: vless
-  server: de.huge-b.com
-  port: 2053
-  uuid: 522df6b1-a110-4163-a92f-9935561b1f77
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: de.huge-b.com
-  ws-opts:
-    path: /@Artemis_Vpn
-    headers:
-      Host: de.huge-b.com
 - name: 'ARISTA #5'
   type: vless
-  server: de.huge-b.com
+  server: 159.69.103.251
   port: 2053
-  uuid: 522df6b1-a110-4163-a92f-9935561b1f77
+  uuid: 6cf6bb53-9785-49d5-9d39-53b4de45ff84
   network: tcp
-  tls: false
+  tls: true
   udp: true
   skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: 91.98.44.116
+  reality-opts:
+    public-key: W2V2xk0G3_neYDnTLNhaYxovp_ThMXDw68uweM12W2Y
+    short-id: "5ecb8c5a753a36fc"
 - name: 'ARISTA #6'
   type: vless
-  server: de.huge-b.com
+  server: 5.223.74.174
   port: 2053
-  uuid: b3329b57-8b0b-4573-ae7a-67651eaba2a9
-  network: ws
+  uuid: 29b81e1a-1989-4778-b0cb-a7223730f59d
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
+  flow: xtls-rprx-vision
   client-fingerprint: chrome
-  servername: de.huge-b.com
-  ws-opts:
-    path: /@Artemis_Vpn
-    headers:
-      Host: de.huge-b.com
+  servername: 5.223.74.174
+  reality-opts:
+    public-key: pIkxGlcFFawk7e0T-2VcdFXOc9LsjoBhl47vl8EuRgg
+    short-id: "36151c48e28cfb65"
 - name: 'ARISTA #7'
   type: vless
-  server: de.huge-b.com
+  server: 31.76.53.20
   port: 2053
-  uuid: 9d33a05a-a51f-4d9e-afa2-592adc5dc293
-  network: ws
+  uuid: c0d50d44-de29-43e8-bb83-f05a80552b6d
+  network: grpc
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: de.huge-b.com
-  ws-opts:
-    path: /@Artemis_Vpn
-    headers:
-      Host: de.huge-b.com
+  client-fingerprint: safari
+  servername: dl.google.com
+  reality-opts:
+    public-key: Jl60WixqwUX4OaCW-jWb0j8kylBB4ogJPc1K5G2EYGw
+    short-id: "ffbb5b9f"
 - name: 'ARISTA #8'
   type: vless
   server: de.huge-b.com
   port: 2053
-  uuid: c01ead94-927a-4a44-a0a3-7b6a8013935f
+  uuid: b3329b57-8b0b-4573-ae7a-67651eaba2a9
   network: ws
   tls: true
   udp: true
@@ -166,7 +170,7 @@ proxies:
   type: vless
   server: de.huge-b.com
   port: 2053
-  uuid: 571259d4-9cd4-48c7-a2b8-0cfd7f41a953
+  uuid: 9d33a05a-a51f-4d9e-afa2-592adc5dc293
   network: ws
   tls: true
   udp: true
@@ -181,7 +185,7 @@ proxies:
   type: vless
   server: de.huge-b.com
   port: 2053
-  uuid: e589de2a-af14-4f42-b18a-d9f8bdaaadc4
+  uuid: c01ead94-927a-4a44-a0a3-7b6a8013935f
   network: ws
   tls: true
   udp: true
@@ -194,63 +198,80 @@ proxies:
       Host: de.huge-b.com
 - name: 'ARISTA #11'
   type: vless
-  server: 31.76.53.20
+  server: de.huge-b.com
   port: 2053
-  uuid: c0d50d44-de29-43e8-bb83-f05a80552b6d
-  network: grpc
+  uuid: 571259d4-9cd4-48c7-a2b8-0cfd7f41a953
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: safari
-  servername: dl.google.com
-  reality-opts:
-    public-key: Jl60WixqwUX4OaCW-jWb0j8kylBB4ogJPc1K5G2EYGw
-    short-id: "ffbb5b9f"
+  client-fingerprint: chrome
+  servername: de.huge-b.com
+  ws-opts:
+    path: /@Artemis_Vpn
+    headers:
+      Host: de.huge-b.com
 - name: 'ARISTA #12'
   type: vless
-  server: ger.huge-b.com
+  server: de.huge-b.com
   port: 2053
-  uuid: 26687af7-46ef-40f7-b19c-09dce2c7bc3c
+  uuid: e589de2a-af14-4f42-b18a-d9f8bdaaadc4
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: ger.huge-b.com
+  servername: de.huge-b.com
   ws-opts:
     path: /@Artemis_Vpn
     headers:
-      Host: ger.huge-b.com
+      Host: de.huge-b.com
 - name: 'ARISTA #13'
   type: vless
-  server: fra.huge-b.com
+  server: do.huge-b.com
   port: 2053
-  uuid: 26687af7-46ef-40f7-b19c-09dce2c7bc3c
+  uuid: e589de2a-af14-4f42-b18a-d9f8bdaaadc4
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: fra.huge-b.com
+  servername: do.huge-b.com
   ws-opts:
     path: /@Artemis_Vpn
     headers:
-      Host: fra.huge-b.com
+      Host: do.huge-b.com
 - name: 'ARISTA #14'
   type: vless
-  server: dismissaltree.net
+  server: de.huge-b.com
   port: 2053
-  uuid: 2c634977-584e-4e1f-b501-1b70c77a6743
-  network: xhttp
+  uuid: 13011288-2737-489e-adf0-9314cd7dc4bd
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: random
-  servername: dismissaltree.net
+  client-fingerprint: chrome
+  servername: de.huge-b.com
+  ws-opts:
+    path: /@Artemis_Vpn
+    headers:
+      Host: de.huge-b.com
 - name: 'ARISTA #15'
+  type: vless
+  server: 138.68.142.165
+  port: 2053
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: cdn8848.776676.xyz
+  ws-opts:
+    path: /resource/channel
+    headers:
+      Host: cdn8848.776676.xyz
+- name: 'ARISTA #16'
   type: vless
   server: 31.77.7.122
   port: 2053
@@ -266,7 +287,37 @@ proxies:
   reality-opts:
     public-key: TqsHQWg0oFULyLiaXe9vuwYXmLR6mRLiL376GJbX2Cs
     short-id: "407f4d9be75efc56"
-- name: 'ARISTA #16'
+- name: 'ARISTA #17'
+  type: vless
+  server: 159.69.103.251
+  port: 2053
+  uuid: 6cf6bb53-9785-49d5-9d39-53b4de45ff84
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: 91.98.44.116
+  reality-opts:
+    public-key: W2V2xk0G3_neYDnTLNhaYxovp_ThMXDw68uweM12W2Y
+    short-id: "5ecb8c5a753a36fc"
+- name: 'ARISTA #18'
+  type: vless
+  server: 5.223.74.174
+  port: 2053
+  uuid: 29b81e1a-1989-4778-b0cb-a7223730f59d
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: 5.223.74.174
+  reality-opts:
+    public-key: pIkxGlcFFawk7e0T-2VcdFXOc9LsjoBhl47vl8EuRgg
+    short-id: "36151c48e28cfb65"
+- name: 'ARISTA #19'
   type: vless
   server: 138.68.142.165
   port: 2053
@@ -281,119 +332,82 @@ proxies:
     path: /resource/channel
     headers:
       Host: cdn8848.776676.xyz
-- name: 'ARISTA #17'
-  type: vless
-  server: 54.37.136.194
-  port: 2053
-  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
-    short-id: "50ba05992b05c1c3"
-- name: 'ARISTA #18'
-  type: vless
-  server: de.huge-b.com
-  port: 2053
-  uuid: 522df6b1-a110-4163-a92f-9935561b1f77
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: de.huge-b.com
-  ws-opts:
-    path: /@Artemis_Vpn
-    headers:
-      Host: de.huge-b.com
-- name: 'ARISTA #19'
-  type: vless
-  server: de.huge-b.com
-  port: 2053
-  uuid: 522df6b1-a110-4163-a92f-9935561b1f77
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
 - name: 'ARISTA #20'
   type: vless
-  server: de.huge-b.com
+  server: 138.68.142.165
   port: 2053
-  uuid: b3329b57-8b0b-4573-ae7a-67651eaba2a9
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: de.huge-b.com
+  servername: cdn8848.776676.xyz
   ws-opts:
-    path: /@Artemis_Vpn
+    path: /resource/channel
     headers:
-      Host: de.huge-b.com
+      Host: cdn8848.776676.xyz
 - name: 'ARISTA #21'
   type: vless
-  server: de.huge-b.com
+  server: 31.77.7.122
   port: 2053
-  uuid: 9d33a05a-a51f-4d9e-afa2-592adc5dc293
-  network: ws
+  uuid: 36cd557b-2b3d-46d3-8071-c77dd9cf7623
+  network: grpc
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: de.huge-b.com
-  ws-opts:
-    path: /@Artemis_Vpn
-    headers:
-      Host: de.huge-b.com
+  client-fingerprint: ios
+  servername: www.nokia.com
+  grpc-opts:
+    grpc-service-name: grpc
+  reality-opts:
+    public-key: TqsHQWg0oFULyLiaXe9vuwYXmLR6mRLiL376GJbX2Cs
+    short-id: "407f4d9be75efc56"
 - name: 'ARISTA #22'
   type: vless
-  server: de.huge-b.com
+  server: 159.69.103.251
   port: 2053
-  uuid: c01ead94-927a-4a44-a0a3-7b6a8013935f
-  network: ws
+  uuid: 6cf6bb53-9785-49d5-9d39-53b4de45ff84
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
+  flow: xtls-rprx-vision
   client-fingerprint: chrome
-  servername: de.huge-b.com
-  ws-opts:
-    path: /@Artemis_Vpn
-    headers:
-      Host: de.huge-b.com
+  servername: 91.98.44.116
+  reality-opts:
+    public-key: W2V2xk0G3_neYDnTLNhaYxovp_ThMXDw68uweM12W2Y
+    short-id: "5ecb8c5a753a36fc"
 - name: 'ARISTA #23'
   type: vless
-  server: de.huge-b.com
+  server: 5.223.74.174
   port: 2053
-  uuid: 571259d4-9cd4-48c7-a2b8-0cfd7f41a953
-  network: ws
+  uuid: 29b81e1a-1989-4778-b0cb-a7223730f59d
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
+  flow: xtls-rprx-vision
   client-fingerprint: chrome
-  servername: de.huge-b.com
-  ws-opts:
-    path: /@Artemis_Vpn
-    headers:
-      Host: de.huge-b.com
+  servername: 5.223.74.174
+  reality-opts:
+    public-key: pIkxGlcFFawk7e0T-2VcdFXOc9LsjoBhl47vl8EuRgg
+    short-id: "36151c48e28cfb65"
 - name: 'ARISTA #24'
   type: vless
-  server: de.huge-b.com
+  server: 138.68.142.165
   port: 2053
-  uuid: e589de2a-af14-4f42-b18a-d9f8bdaaadc4
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: de.huge-b.com
+  servername: cdn8848.776676.xyz
   ws-opts:
-    path: /@Artemis_Vpn
+    path: /resource/channel
     headers:
-      Host: de.huge-b.com
+      Host: cdn8848.776676.xyz
 - name: 'ARISTA #25'
   type: vless
   server: 31.77.7.122
@@ -412,100 +426,98 @@ proxies:
     short-id: "407f4d9be75efc56"
 - name: 'ARISTA #26'
   type: vless
-  server: 138.68.142.165
+  server: 159.69.103.251
   port: 2053
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: cdn8848.776676.xyz
-  ws-opts:
-    path: /resource/channel
-    headers:
-      Host: cdn8848.776676.xyz
-- name: 'ARISTA #27'
-  type: vless
-  server: 31.77.7.122
-  port: 2053
-  uuid: 36cd557b-2b3d-46d3-8071-c77dd9cf7623
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: ios
-  servername: www.nokia.com
-  grpc-opts:
-    grpc-service-name: grpc
-  reality-opts:
-    public-key: TqsHQWg0oFULyLiaXe9vuwYXmLR6mRLiL376GJbX2Cs
-    short-id: "407f4d9be75efc56"
-- name: 'ARISTA #28'
-  type: vless
-  server: 138.68.142.165
-  port: 2053
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: cdn8848.776676.xyz
-  ws-opts:
-    path: /resource/channel
-    headers:
-      Host: cdn8848.776676.xyz
-- name: 'ARISTA #29'
-  type: vless
-  server: 31.77.7.122
-  port: 2053
-  uuid: 36cd557b-2b3d-46d3-8071-c77dd9cf7623
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: ios
-  servername: www.nokia.com
-  grpc-opts:
-    grpc-service-name: grpc
-  reality-opts:
-    public-key: TqsHQWg0oFULyLiaXe9vuwYXmLR6mRLiL376GJbX2Cs
-    short-id: "407f4d9be75efc56"
-- name: 'ARISTA #30'
-  type: vless
-  server: 138.68.142.165
-  port: 2053
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: cdn8848.776676.xyz
-  ws-opts:
-    path: /resource/channel
-    headers:
-      Host: cdn8848.776676.xyz
-- name: 'ARISTA #31'
-  type: vless
-  server: 54.37.136.194
-  port: 2053
-  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
+  uuid: 6cf6bb53-9785-49d5-9d39-53b4de45ff84
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
+  flow: xtls-rprx-vision
   client-fingerprint: chrome
-  servername: www.cloudflare.com
+  servername: 91.98.44.116
   reality-opts:
-    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
-    short-id: "50ba05992b05c1c3"
+    public-key: W2V2xk0G3_neYDnTLNhaYxovp_ThMXDw68uweM12W2Y
+    short-id: "5ecb8c5a753a36fc"
+- name: 'ARISTA #27'
+  type: vless
+  server: 5.223.74.174
+  port: 2053
+  uuid: 29b81e1a-1989-4778-b0cb-a7223730f59d
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: 5.223.74.174
+  reality-opts:
+    public-key: pIkxGlcFFawk7e0T-2VcdFXOc9LsjoBhl47vl8EuRgg
+    short-id: "36151c48e28cfb65"
+- name: 'ARISTA #28'
+  type: vless
+  server: 31.76.53.20
+  port: 2053
+  uuid: c0d50d44-de29-43e8-bb83-f05a80552b6d
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: safari
+  servername: dl.google.com
+  reality-opts:
+    public-key: Jl60WixqwUX4OaCW-jWb0j8kylBB4ogJPc1K5G2EYGw
+    short-id: "ffbb5b9f"
+- name: 'ARISTA #29'
+  type: vless
+  server: de.huge-b.com
+  port: 2053
+  uuid: b3329b57-8b0b-4573-ae7a-67651eaba2a9
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: de.huge-b.com
+  ws-opts:
+    path: /@Artemis_Vpn
+    headers:
+      Host: de.huge-b.com
+- name: 'ARISTA #30'
+  type: vless
+  server: de.huge-b.com
+  port: 2053
+  uuid: 9d33a05a-a51f-4d9e-afa2-592adc5dc293
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: de.huge-b.com
+  ws-opts:
+    path: /@Artemis_Vpn
+    headers:
+      Host: de.huge-b.com
+- name: 'ARISTA #31'
+  type: vless
+  server: de.huge-b.com
+  port: 2053
+  uuid: c01ead94-927a-4a44-a0a3-7b6a8013935f
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: de.huge-b.com
+  ws-opts:
+    path: /@Artemis_Vpn
+    headers:
+      Host: de.huge-b.com
 - name: 'ARISTA #32'
   type: vless
   server: de.huge-b.com
   port: 2053
-  uuid: 522df6b1-a110-4163-a92f-9935561b1f77
+  uuid: 571259d4-9cd4-48c7-a2b8-0cfd7f41a953
   network: ws
   tls: true
   udp: true
@@ -520,16 +532,7 @@ proxies:
   type: vless
   server: de.huge-b.com
   port: 2053
-  uuid: 522df6b1-a110-4163-a92f-9935561b1f77
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #34'
-  type: vless
-  server: de.huge-b.com
-  port: 2053
-  uuid: b3329b57-8b0b-4573-ae7a-67651eaba2a9
+  uuid: e589de2a-af14-4f42-b18a-d9f8bdaaadc4
   network: ws
   tls: true
   udp: true
@@ -540,11 +543,26 @@ proxies:
     path: /@Artemis_Vpn
     headers:
       Host: de.huge-b.com
+- name: 'ARISTA #34'
+  type: vless
+  server: do.huge-b.com
+  port: 2053
+  uuid: e589de2a-af14-4f42-b18a-d9f8bdaaadc4
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: do.huge-b.com
+  ws-opts:
+    path: /@Artemis_Vpn
+    headers:
+      Host: do.huge-b.com
 - name: 'ARISTA #35'
   type: vless
   server: de.huge-b.com
   port: 2053
-  uuid: 9d33a05a-a51f-4d9e-afa2-592adc5dc293
+  uuid: 13011288-2737-489e-adf0-9314cd7dc4bd
   network: ws
   tls: true
   udp: true
@@ -557,50 +575,81 @@ proxies:
       Host: de.huge-b.com
 - name: 'ARISTA #36'
   type: vless
-  server: de.huge-b.com
+  server: 138.68.142.165
   port: 2053
-  uuid: c01ead94-927a-4a44-a0a3-7b6a8013935f
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: de.huge-b.com
+  servername: cdn8848.776676.xyz
   ws-opts:
-    path: /@Artemis_Vpn
+    path: /resource/channel
     headers:
-      Host: de.huge-b.com
+      Host: cdn8848.776676.xyz
 - name: 'ARISTA #37'
   type: vless
-  server: de.huge-b.com
+  server: 138.68.142.165
   port: 2053
-  uuid: 571259d4-9cd4-48c7-a2b8-0cfd7f41a953
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: de.huge-b.com
+  servername: cdn8848.776676.xyz
   ws-opts:
-    path: /@Artemis_Vpn
+    path: /resource/channel
     headers:
-      Host: de.huge-b.com
+      Host: cdn8848.776676.xyz
 - name: 'ARISTA #38'
   type: vless
-  server: de.huge-b.com
+  server: 31.77.7.122
   port: 2053
-  uuid: e589de2a-af14-4f42-b18a-d9f8bdaaadc4
-  network: ws
+  uuid: 36cd557b-2b3d-46d3-8071-c77dd9cf7623
+  network: grpc
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: de.huge-b.com
-  ws-opts:
-    path: /@Artemis_Vpn
-    headers:
-      Host: de.huge-b.com
+  client-fingerprint: ios
+  servername: www.nokia.com
+  grpc-opts:
+    grpc-service-name: grpc
+  reality-opts:
+    public-key: TqsHQWg0oFULyLiaXe9vuwYXmLR6mRLiL376GJbX2Cs
+    short-id: "407f4d9be75efc56"
 - name: 'ARISTA #39'
+  type: vless
+  server: 159.69.103.251
+  port: 2053
+  uuid: 6cf6bb53-9785-49d5-9d39-53b4de45ff84
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: 91.98.44.116
+  reality-opts:
+    public-key: W2V2xk0G3_neYDnTLNhaYxovp_ThMXDw68uweM12W2Y
+    short-id: "5ecb8c5a753a36fc"
+- name: 'ARISTA #40'
+  type: vless
+  server: 5.223.74.174
+  port: 2053
+  uuid: 29b81e1a-1989-4778-b0cb-a7223730f59d
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: 5.223.74.174
+  reality-opts:
+    public-key: pIkxGlcFFawk7e0T-2VcdFXOc9LsjoBhl47vl8EuRgg
+    short-id: "36151c48e28cfb65"
+- name: 'ARISTA #41'
   type: vless
   server: 31.76.53.20
   port: 2053
@@ -614,151 +663,7 @@ proxies:
   reality-opts:
     public-key: Jl60WixqwUX4OaCW-jWb0j8kylBB4ogJPc1K5G2EYGw
     short-id: "ffbb5b9f"
-- name: 'ARISTA #40'
-  type: vless
-  server: ger.huge-b.com
-  port: 2053
-  uuid: 26687af7-46ef-40f7-b19c-09dce2c7bc3c
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: ger.huge-b.com
-  ws-opts:
-    path: /@Artemis_Vpn
-    headers:
-      Host: ger.huge-b.com
-- name: 'ARISTA #41'
-  type: vless
-  server: fra.huge-b.com
-  port: 2053
-  uuid: 26687af7-46ef-40f7-b19c-09dce2c7bc3c
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: fra.huge-b.com
-  ws-opts:
-    path: /@Artemis_Vpn
-    headers:
-      Host: fra.huge-b.com
 - name: 'ARISTA #42'
-  type: vless
-  server: dismissaltree.net
-  port: 2053
-  uuid: 2c634977-584e-4e1f-b501-1b70c77a6743
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: random
-  servername: dismissaltree.net
-- name: 'ARISTA #43'
-  type: vless
-  server: 31.77.7.122
-  port: 2053
-  uuid: 36cd557b-2b3d-46d3-8071-c77dd9cf7623
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: ios
-  servername: www.nokia.com
-  grpc-opts:
-    grpc-service-name: grpc
-  reality-opts:
-    public-key: TqsHQWg0oFULyLiaXe9vuwYXmLR6mRLiL376GJbX2Cs
-    short-id: "407f4d9be75efc56"
-- name: 'ARISTA #44'
-  type: vless
-  server: 138.68.142.165
-  port: 2053
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: cdn8848.776676.xyz
-  ws-opts:
-    path: /resource/channel
-    headers:
-      Host: cdn8848.776676.xyz
-- name: 'ARISTA #45'
-  type: vless
-  server: 31.77.7.122
-  port: 2053
-  uuid: 36cd557b-2b3d-46d3-8071-c77dd9cf7623
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: ios
-  servername: www.nokia.com
-  grpc-opts:
-    grpc-service-name: grpc
-  reality-opts:
-    public-key: TqsHQWg0oFULyLiaXe9vuwYXmLR6mRLiL376GJbX2Cs
-    short-id: "407f4d9be75efc56"
-- name: 'ARISTA #46'
-  type: vless
-  server: 138.68.142.165
-  port: 2053
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: cdn8848.776676.xyz
-  ws-opts:
-    path: /resource/channel
-    headers:
-      Host: cdn8848.776676.xyz
-- name: 'ARISTA #47'
-  type: vless
-  server: 54.37.136.194
-  port: 2053
-  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
-    short-id: "50ba05992b05c1c3"
-- name: 'ARISTA #48'
-  type: vless
-  server: de.huge-b.com
-  port: 2053
-  uuid: 522df6b1-a110-4163-a92f-9935561b1f77
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: de.huge-b.com
-  ws-opts:
-    path: /@Artemis_Vpn
-    headers:
-      Host: de.huge-b.com
-- name: 'ARISTA #49'
-  type: vless
-  server: de.huge-b.com
-  port: 2053
-  uuid: 522df6b1-a110-4163-a92f-9935561b1f77
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #50'
   type: vless
   server: de.huge-b.com
   port: 2053
@@ -773,7 +678,7 @@ proxies:
     path: /@Artemis_Vpn
     headers:
       Host: de.huge-b.com
-- name: 'ARISTA #51'
+- name: 'ARISTA #43'
   type: vless
   server: de.huge-b.com
   port: 2053
@@ -788,7 +693,7 @@ proxies:
     path: /@Artemis_Vpn
     headers:
       Host: de.huge-b.com
-- name: 'ARISTA #52'
+- name: 'ARISTA #44'
   type: vless
   server: de.huge-b.com
   port: 2053
@@ -803,7 +708,7 @@ proxies:
     path: /@Artemis_Vpn
     headers:
       Host: de.huge-b.com
-- name: 'ARISTA #53'
+- name: 'ARISTA #45'
   type: vless
   server: de.huge-b.com
   port: 2053
@@ -818,7 +723,7 @@ proxies:
     path: /@Artemis_Vpn
     headers:
       Host: de.huge-b.com
-- name: 'ARISTA #54'
+- name: 'ARISTA #46'
   type: vless
   server: de.huge-b.com
   port: 2053
@@ -833,65 +738,37 @@ proxies:
     path: /@Artemis_Vpn
     headers:
       Host: de.huge-b.com
-- name: 'ARISTA #55'
+- name: 'ARISTA #47'
   type: vless
-  server: 31.76.53.20
+  server: do.huge-b.com
   port: 2053
-  uuid: c0d50d44-de29-43e8-bb83-f05a80552b6d
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: safari
-  servername: dl.google.com
-  reality-opts:
-    public-key: Jl60WixqwUX4OaCW-jWb0j8kylBB4ogJPc1K5G2EYGw
-    short-id: "ffbb5b9f"
-- name: 'ARISTA #56'
-  type: vless
-  server: ger.huge-b.com
-  port: 2053
-  uuid: 26687af7-46ef-40f7-b19c-09dce2c7bc3c
+  uuid: e589de2a-af14-4f42-b18a-d9f8bdaaadc4
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: ger.huge-b.com
+  servername: do.huge-b.com
   ws-opts:
     path: /@Artemis_Vpn
     headers:
-      Host: ger.huge-b.com
-- name: 'ARISTA #57'
+      Host: do.huge-b.com
+- name: 'ARISTA #48'
   type: vless
-  server: fra.huge-b.com
+  server: de.huge-b.com
   port: 2053
-  uuid: 26687af7-46ef-40f7-b19c-09dce2c7bc3c
+  uuid: 13011288-2737-489e-adf0-9314cd7dc4bd
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: fra.huge-b.com
+  servername: de.huge-b.com
   ws-opts:
     path: /@Artemis_Vpn
     headers:
-      Host: fra.huge-b.com
-- name: 'ARISTA #58'
-  type: vless
-  server: dismissaltree.net
-  port: 2053
-  uuid: 2c634977-584e-4e1f-b501-1b70c77a6743
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: random
-  servername: dismissaltree.net
-- name: 'T.ME: @aristapanel #59'
+      Host: de.huge-b.com
+- name: 'T.ME: @aristapanel #49'
   type: vless
   server: 212.227.235.66
   port: 2053
@@ -905,7 +782,21 @@ proxies:
   reality-opts:
     public-key: 7Y6Xb5Ql_03K25x8yKUSOKI2JTOMyv2nyCcFza90uxk
     short-id: "29e8dcd2b37aaa7f"
-- name: 'T.ME: @aristapanel #60'
+- name: 'T.ME: @aristapanel #50'
+  type: vless
+  server: 54.37.136.194
+  port: 2053
+  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
+    short-id: "50ba05992b05c1c3"
+- name: 'T.ME: @aristapanel #51'
   type: vless
   server: 103.31.77.108
   port: 2053
@@ -920,7 +811,7 @@ proxies:
     path: /channels/act
     headers:
       Host: cdn8848.776676.xyz
-- name: 'T.ME: @aristapanel #61'
+- name: 'T.ME: @aristapanel #52'
   type: vless
   server: 198.251.78.29
   port: 2053
@@ -934,7 +825,7 @@ proxies:
   reality-opts:
     public-key: Uk5b-Wh_uxeCc7R8NS9iWE40xc0h9wWC04rSB9yhgAw
     short-id: "b5d625695ec82c7e"
-- name: 'T.ME: @aristapanel #62'
+- name: 'T.ME: @aristapanel #53'
   type: vless
   server: cctvhikvision.center
   port: 2053
@@ -951,7 +842,7 @@ proxies:
     path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
     headers:
       Host: uwu.blueknightnet.qzz.io
-- name: 'T.ME: @aristapanel #63'
+- name: 'T.ME: @aristapanel #54'
   type: vless
   server: freesocks.work
   port: 2053
@@ -968,7 +859,7 @@ proxies:
     path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
     headers:
       Host: uwu.blueknightnet.qzz.io
-- name: 'T.ME: @aristapanel #64'
+- name: 'T.ME: @aristapanel #55'
   type: vless
   server: undef.network
   port: 2053
@@ -985,7 +876,7 @@ proxies:
     path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
     headers:
       Host: uwu.blueknightnet.qzz.io
-- name: 'T.ME: @aristapanel #65'
+- name: 'T.ME: @aristapanel #56'
   type: vless
   server: hikvision-plus.com
   port: 2053
@@ -1002,21 +893,7 @@ proxies:
     path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
     headers:
       Host: uwu.blueknightnet.qzz.io
-- name: 'T.ME: @aristapanel #66'
-  type: vless
-  server: 46.250.240.80
-  port: 2053
-  uuid: 948df76f-505d-4608-9c76-a933ee3ccc76
-  network: raw
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: CYFeysLf--_IVhxQOCd3ZxLrAVWFFOkJzvIGHOVXN3E
-    short-id: "4cc9dc65f7770115"
-- name: 'T.ME: @aristapanel #67'
+- name: 'T.ME: @aristapanel #57'
   type: vless
   server: 66.70.179.198
   port: 2053
@@ -1030,197 +907,157 @@ proxies:
   reality-opts:
     public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
     short-id: "83f8317a948bb769"
-- name: 'T.ME: @aristapanel #68'
+- name: 'T.ME: @aristapanel #58'
   type: vless
-  server: 188.114.97.6
+  server: 46.250.240.80
   port: 2053
-  uuid: d4d2d3f3-9dec-4e8f-8daf-145ecac96e66
-  network: ws
+  uuid: 948df76f-505d-4608-9c76-a933ee3ccc76
+  network: raw
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: cRIMSON-LeAf-7E45.hzhdUuEBFjDCB.workERs.DEv
-  ws-opts:
-    path: /eyJqdW5rIjoiODgwQ1AwWDV0MnFTRWE1cCIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=?ed=2560
-    headers:
-      Host: crimson-leaf-7e45.hzhduuebfjdcb.workers.dev
-- name: 'ARISTA #69'
-  type: vless
-  server: 31.77.7.122
-  port: 2053
-  uuid: 36cd557b-2b3d-46d3-8071-c77dd9cf7623
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: ios
-  servername: www.nokia.com
-  grpc-opts:
-    grpc-service-name: grpc
-  reality-opts:
-    public-key: TqsHQWg0oFULyLiaXe9vuwYXmLR6mRLiL376GJbX2Cs
-    short-id: "407f4d9be75efc56"
-- name: 'ARISTA #70'
-  type: vless
-  server: 138.68.142.165
-  port: 2053
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: cdn8848.776676.xyz
-  ws-opts:
-    path: /resource/channel
-    headers:
-      Host: cdn8848.776676.xyz
-- name: 'ARISTA #71'
-  type: vless
-  server: 31.77.7.122
-  port: 2053
-  uuid: 36cd557b-2b3d-46d3-8071-c77dd9cf7623
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: ios
-  servername: www.nokia.com
-  grpc-opts:
-    grpc-service-name: grpc
-  reality-opts:
-    public-key: TqsHQWg0oFULyLiaXe9vuwYXmLR6mRLiL376GJbX2Cs
-    short-id: "407f4d9be75efc56"
-- name: 'ARISTA #72'
-  type: vless
-  server: 138.68.142.165
-  port: 2053
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: cdn8848.776676.xyz
-  ws-opts:
-    path: /resource/channel
-    headers:
-      Host: cdn8848.776676.xyz
-- name: 'ARISTA #73'
-  type: vless
-  server: 54.37.136.194
-  port: 2053
-  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
+  client-fingerprint: firefox
   servername: www.cloudflare.com
   reality-opts:
-    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
-    short-id: "50ba05992b05c1c3"
-- name: 'ARISTA #74'
+    public-key: CYFeysLf--_IVhxQOCd3ZxLrAVWFFOkJzvIGHOVXN3E
+    short-id: "4cc9dc65f7770115"
+- name: 'T.ME: @aristapanel #59'
   type: vless
-  server: de.huge-b.com
+  server: 104.26.6.95
   port: 2053
-  uuid: 522df6b1-a110-4163-a92f-9935561b1f77
+  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: de.huge-b.com
+  servername: gU-2r-E35m-eO-2rTT-3f-b-CDq-2G4t-t5-Hdr4-6Yvd-35gH-dwE64-w.pAGes.Dev
   ws-opts:
-    path: /@Artemis_Vpn
+    path: /
     headers:
-      Host: de.huge-b.com
-- name: 'ARISTA #75'
+      Host: gU-2r-E35m-eO-2rTT-3f-b-CDq-2G4t-t5-Hdr4-6Yvd-35gH-dwE64-w.pAGes.Dev
+- name: 'T.ME: @aristapanel #60'
   type: vless
-  server: de.huge-b.com
+  server: cl.ultrrasound.com
   port: 2053
-  uuid: 522df6b1-a110-4163-a92f-9935561b1f77
+  uuid: 247396b2-12d9-4744-8203-9cd761a1117a
+  network: httpupgrade
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: fra2.musichubmel.ir
+- name: 'T.ME: @aristapanel #61'
+  type: vless
+  server: 185.141.227.180
+  port: 2053
+  uuid: 2c634977-584e-4e1f-b501-1b70c77a6743
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: random
+  servername: dismissaltree.net
+- name: 'T.ME: @aristapanel #62'
+  type: vless
+  server: land.zavqeron.ir
+  port: 2053
+  uuid: f2900749-7cff-42b7-9566-dfb03840d374
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: zavqeron.ir
+  ws-opts:
+    path: /fi-cdn
+    headers:
+      Host: land.zavqeron.ir
+- name: 'ARISTA #63'
+  type: vless
+  server: 138.68.142.165
+  port: 2053
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: cdn8848.776676.xyz
+  ws-opts:
+    path: /resource/channel
+    headers:
+      Host: cdn8848.776676.xyz
+- name: 'ARISTA #64'
+  type: vless
+  server: 138.68.142.165
+  port: 2053
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: cdn8848.776676.xyz
+  ws-opts:
+    path: /resource/channel
+    headers:
+      Host: cdn8848.776676.xyz
+- name: 'ARISTA #65'
+  type: vless
+  server: 31.77.7.122
+  port: 2053
+  uuid: 36cd557b-2b3d-46d3-8071-c77dd9cf7623
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: ios
+  servername: www.nokia.com
+  grpc-opts:
+    grpc-service-name: grpc
+  reality-opts:
+    public-key: TqsHQWg0oFULyLiaXe9vuwYXmLR6mRLiL376GJbX2Cs
+    short-id: "407f4d9be75efc56"
+- name: 'ARISTA #66'
+  type: vless
+  server: 159.69.103.251
+  port: 2053
+  uuid: 6cf6bb53-9785-49d5-9d39-53b4de45ff84
   network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #76'
-  type: vless
-  server: de.huge-b.com
-  port: 2053
-  uuid: b3329b57-8b0b-4573-ae7a-67651eaba2a9
-  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
+  flow: xtls-rprx-vision
   client-fingerprint: chrome
-  servername: de.huge-b.com
-  ws-opts:
-    path: /@Artemis_Vpn
-    headers:
-      Host: de.huge-b.com
-- name: 'ARISTA #77'
+  servername: 91.98.44.116
+  reality-opts:
+    public-key: W2V2xk0G3_neYDnTLNhaYxovp_ThMXDw68uweM12W2Y
+    short-id: "5ecb8c5a753a36fc"
+- name: 'ARISTA #67'
   type: vless
-  server: de.huge-b.com
+  server: 5.223.74.174
   port: 2053
-  uuid: 9d33a05a-a51f-4d9e-afa2-592adc5dc293
-  network: ws
+  uuid: 29b81e1a-1989-4778-b0cb-a7223730f59d
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
+  flow: xtls-rprx-vision
   client-fingerprint: chrome
-  servername: de.huge-b.com
-  ws-opts:
-    path: /@Artemis_Vpn
-    headers:
-      Host: de.huge-b.com
-- name: 'ARISTA #78'
-  type: vless
-  server: de.huge-b.com
-  port: 2053
-  uuid: c01ead94-927a-4a44-a0a3-7b6a8013935f
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: de.huge-b.com
-  ws-opts:
-    path: /@Artemis_Vpn
-    headers:
-      Host: de.huge-b.com
-- name: 'ARISTA #79'
-  type: vless
-  server: de.huge-b.com
-  port: 2053
-  uuid: 571259d4-9cd4-48c7-a2b8-0cfd7f41a953
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: de.huge-b.com
-  ws-opts:
-    path: /@Artemis_Vpn
-    headers:
-      Host: de.huge-b.com
-- name: 'ARISTA #80'
-  type: vless
-  server: de.huge-b.com
-  port: 2053
-  uuid: e589de2a-af14-4f42-b18a-d9f8bdaaadc4
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: de.huge-b.com
-  ws-opts:
-    path: /@Artemis_Vpn
-    headers:
-      Host: de.huge-b.com
-- name: 'ARISTA #81'
+  servername: 5.223.74.174
+  reality-opts:
+    public-key: pIkxGlcFFawk7e0T-2VcdFXOc9LsjoBhl47vl8EuRgg
+    short-id: "36151c48e28cfb65"
+- name: 'ARISTA #68'
   type: vless
   server: 31.76.53.20
   port: 2053
@@ -1234,37 +1071,7 @@ proxies:
   reality-opts:
     public-key: Jl60WixqwUX4OaCW-jWb0j8kylBB4ogJPc1K5G2EYGw
     short-id: "ffbb5b9f"
-- name: 'ARISTA #82'
-  type: trojan
-  server: nl2.pleiades.codes
-  port: 2053
-  password: d5bee0afdbc500b8cda02d80
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: nl2.pleiades.codes
-  client-fingerprint: random
-  alpn:
-  - h2
-  - http/1.1
-- name: 'ARISTA #83'
-  type: trojan
-  server: nl2.pleiades.codes
-  port: 2053
-  password: d5bee0afdbc500b8cda02d80
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: nl2.pleiades.codes
-  client-fingerprint: random
-  alpn:
-  - h2
-  - http/1.1
-- name: 'T.ME: @aristapanel #84'
+- name: 'T.ME: @aristapanel #69'
   type: trojan
   server: 185.114.72.31
   port: 2053
@@ -1279,22 +1086,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: 'ARISTA #85'
-  type: trojan
-  server: nl2.pleiades.codes
-  port: 2053
-  password: d5bee0afdbc500b8cda02d80
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: nl2.pleiades.codes
-  client-fingerprint: random
-  alpn:
-  - h2
-  - http/1.1
-- name: 'T.ME: @aristapanel #86'
+- name: 'T.ME: @aristapanel #70'
   type: trojan
   server: 185.114.72.31
   port: 2053
@@ -1366,44 +1158,28 @@ proxy-groups:
   - 'ARISTA #46'
   - 'ARISTA #47'
   - 'ARISTA #48'
-  - 'ARISTA #49'
-  - 'ARISTA #50'
-  - 'ARISTA #51'
-  - 'ARISTA #52'
-  - 'ARISTA #53'
-  - 'ARISTA #54'
-  - 'ARISTA #55'
-  - 'ARISTA #56'
-  - 'ARISTA #57'
-  - 'ARISTA #58'
+  - 'T.ME: @aristapanel #49'
+  - 'T.ME: @aristapanel #50'
+  - 'T.ME: @aristapanel #51'
+  - 'T.ME: @aristapanel #52'
+  - 'T.ME: @aristapanel #53'
+  - 'T.ME: @aristapanel #54'
+  - 'T.ME: @aristapanel #55'
+  - 'T.ME: @aristapanel #56'
+  - 'T.ME: @aristapanel #57'
+  - 'T.ME: @aristapanel #58'
   - 'T.ME: @aristapanel #59'
   - 'T.ME: @aristapanel #60'
   - 'T.ME: @aristapanel #61'
   - 'T.ME: @aristapanel #62'
-  - 'T.ME: @aristapanel #63'
-  - 'T.ME: @aristapanel #64'
-  - 'T.ME: @aristapanel #65'
-  - 'T.ME: @aristapanel #66'
-  - 'T.ME: @aristapanel #67'
-  - 'T.ME: @aristapanel #68'
-  - 'ARISTA #69'
-  - 'ARISTA #70'
-  - 'ARISTA #71'
-  - 'ARISTA #72'
-  - 'ARISTA #73'
-  - 'ARISTA #74'
-  - 'ARISTA #75'
-  - 'ARISTA #76'
-  - 'ARISTA #77'
-  - 'ARISTA #78'
-  - 'ARISTA #79'
-  - 'ARISTA #80'
-  - 'ARISTA #81'
-  - 'ARISTA #82'
-  - 'ARISTA #83'
-  - 'T.ME: @aristapanel #84'
-  - 'ARISTA #85'
-  - 'T.ME: @aristapanel #86'
+  - 'ARISTA #63'
+  - 'ARISTA #64'
+  - 'ARISTA #65'
+  - 'ARISTA #66'
+  - 'ARISTA #67'
+  - 'ARISTA #68'
+  - 'T.ME: @aristapanel #69'
+  - 'T.ME: @aristapanel #70'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
