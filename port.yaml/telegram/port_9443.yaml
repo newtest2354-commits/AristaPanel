@@ -1,6 +1,6 @@
 # TELEGRAM - Port 9443
-# Updated: 2026-09-22 11:27:15
-# Count: 5
+# Updated: 2026-09-22 16:49:54
+# Count: 24
 
 mixed-port: 7890
 allow-lan: false
@@ -65,35 +65,43 @@ proxies:
     short-id: "ad20d2bc"
 - name: 'ARISTA #2'
   type: vless
-  server: 144.31.214.172
+  server: 185.255.179.11
   port: 9443
-  uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
-  network: tcp
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: grpc
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: safari
-  servername: storage.yandexcloud.net
-  reality-opts:
-    public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
-    short-id: "ad20d2bc"
+  servername: hub-de-04.hanvpn.cc
+  grpc-opts:
+    grpc-service-name: de04-grpc-8e47a
 - name: 'ARISTA #3'
   type: vless
-  server: 144.31.214.172
+  server: 185.255.179.11
   port: 9443
-  uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
-  network: tcp
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: safari
-  servername: storage.yandexcloud.net
-  reality-opts:
-    public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
-    short-id: "ad20d2bc"
+  servername: hub-nl-02.hanvpn.cc
 - name: 'ARISTA #4'
+  type: vless
+  server: 185.255.179.11
+  port: 9443
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  servername: hub-nl-02.hanvpn.cc
+  ws-opts:
+    path: /nl02-ws-8e47a
+    headers:
+      Host: hub-nl-02.hanvpn.cc
+- name: 'ARISTA #5'
   type: vless
   server: 144.31.214.172
   port: 9443
@@ -108,7 +116,249 @@ proxies:
   reality-opts:
     public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
     short-id: "ad20d2bc"
-- name: 'ARISTA #5'
+- name: 'ARISTA #6'
+  type: vless
+  server: 185.255.179.11
+  port: 9443
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: hub-de-04.hanvpn.cc
+  grpc-opts:
+    grpc-service-name: de04-grpc-8e47a
+- name: 'ARISTA #7'
+  type: vless
+  server: 185.255.179.11
+  port: 9443
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: hub-nl-02.hanvpn.cc
+- name: 'ARISTA #8'
+  type: vless
+  server: 185.255.179.11
+  port: 9443
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  servername: hub-nl-02.hanvpn.cc
+  ws-opts:
+    path: /nl02-ws-8e47a
+    headers:
+      Host: hub-nl-02.hanvpn.cc
+- name: 'ARISTA #9'
+  type: vless
+  server: 144.31.214.172
+  port: 9443
+  uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: storage.yandexcloud.net
+  reality-opts:
+    public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+    short-id: "ad20d2bc"
+- name: 'ARISTA #10'
+  type: vless
+  server: 144.31.214.172
+  port: 9443
+  uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: storage.yandexcloud.net
+  reality-opts:
+    public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+    short-id: "ad20d2bc"
+- name: 'ARISTA #11'
+  type: vless
+  server: 185.255.179.11
+  port: 9443
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: hub-de-04.hanvpn.cc
+  grpc-opts:
+    grpc-service-name: de04-grpc-8e47a
+- name: 'ARISTA #12'
+  type: vless
+  server: 185.255.179.11
+  port: 9443
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: hub-nl-02.hanvpn.cc
+- name: 'ARISTA #13'
+  type: vless
+  server: 185.255.179.11
+  port: 9443
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  servername: hub-nl-02.hanvpn.cc
+  ws-opts:
+    path: /nl02-ws-8e47a
+    headers:
+      Host: hub-nl-02.hanvpn.cc
+- name: 'ARISTA #14'
+  type: vless
+  server: 144.31.214.172
+  port: 9443
+  uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: storage.yandexcloud.net
+  reality-opts:
+    public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+    short-id: "ad20d2bc"
+- name: 'ARISTA #15'
+  type: vless
+  server: 144.31.214.172
+  port: 9443
+  uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: storage.yandexcloud.net
+  reality-opts:
+    public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+    short-id: "ad20d2bc"
+- name: 'ARISTA #16'
+  type: vless
+  server: 185.255.179.11
+  port: 9443
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: hub-de-04.hanvpn.cc
+  grpc-opts:
+    grpc-service-name: de04-grpc-8e47a
+- name: 'ARISTA #17'
+  type: vless
+  server: 185.255.179.11
+  port: 9443
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: hub-nl-02.hanvpn.cc
+- name: 'ARISTA #18'
+  type: vless
+  server: 185.255.179.11
+  port: 9443
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  servername: hub-nl-02.hanvpn.cc
+  ws-opts:
+    path: /nl02-ws-8e47a
+    headers:
+      Host: hub-nl-02.hanvpn.cc
+- name: 'ARISTA #19'
+  type: vless
+  server: 144.31.214.172
+  port: 9443
+  uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: storage.yandexcloud.net
+  reality-opts:
+    public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+    short-id: "ad20d2bc"
+- name: 'ARISTA #20'
+  type: vless
+  server: 144.31.214.172
+  port: 9443
+  uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: storage.yandexcloud.net
+  reality-opts:
+    public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+    short-id: "ad20d2bc"
+- name: 'ARISTA #21'
+  type: vless
+  server: 185.255.179.11
+  port: 9443
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: hub-de-04.hanvpn.cc
+  grpc-opts:
+    grpc-service-name: de04-grpc-8e47a
+- name: 'ARISTA #22'
+  type: vless
+  server: 185.255.179.11
+  port: 9443
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: hub-nl-02.hanvpn.cc
+- name: 'ARISTA #23'
+  type: vless
+  server: 185.255.179.11
+  port: 9443
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  servername: hub-nl-02.hanvpn.cc
+  ws-opts:
+    path: /nl02-ws-8e47a
+    headers:
+      Host: hub-nl-02.hanvpn.cc
+- name: 'ARISTA #24'
   type: ss
   server: 185.156.47.97
   port: 9443
@@ -130,6 +380,25 @@ proxy-groups:
   - 'ARISTA #3'
   - 'ARISTA #4'
   - 'ARISTA #5'
+  - 'ARISTA #6'
+  - 'ARISTA #7'
+  - 'ARISTA #8'
+  - 'ARISTA #9'
+  - 'ARISTA #10'
+  - 'ARISTA #11'
+  - 'ARISTA #12'
+  - 'ARISTA #13'
+  - 'ARISTA #14'
+  - 'ARISTA #15'
+  - 'ARISTA #16'
+  - 'ARISTA #17'
+  - 'ARISTA #18'
+  - 'ARISTA #19'
+  - 'ARISTA #20'
+  - 'ARISTA #21'
+  - 'ARISTA #22'
+  - 'ARISTA #23'
+  - 'ARISTA #24'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
