@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2053
-# Updated: 2026-09-22 16:49:54
-# Count: 28
+# Updated: 2026-09-22 21:13:06
+# Count: 39
 
 mixed-port: 7890
 allow-lan: false
@@ -50,20 +50,6 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 141.227.137.177
-  port: 2053
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: shuma.ccwu.cc
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
-- name: 'ARISTA #2'
-  type: vless
   server: 31.77.7.122
   port: 2053
   uuid: 36cd557b-2b3d-46d3-8071-c77dd9cf7623
@@ -78,7 +64,35 @@ proxies:
   reality-opts:
     public-key: TqsHQWg0oFULyLiaXe9vuwYXmLR6mRLiL376GJbX2Cs
     short-id: "407f4d9be75efc56"
+- name: 'ARISTA #2'
+  type: vless
+  server: 185.141.227.180
+  port: 2053
+  uuid: 2c634977-584e-4e1f-b501-1b70c77a6743
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: random
+  servername: dismissaltree.net
 - name: 'ARISTA #3'
+  type: vless
+  server: 104.21.78.194
+  port: 2053
+  uuid: 4b603ef3-a466-4e95-83a5-f926acae4149
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: findo.chalghooz.com
+  ws-opts:
+    path: /fintest
+    headers:
+      Host: findo.chalghooz.com
+- name: 'ARISTA #4'
   type: vless
   server: 159.69.103.251
   port: 2053
@@ -93,7 +107,7 @@ proxies:
   reality-opts:
     public-key: W2V2xk0G3_neYDnTLNhaYxovp_ThMXDw68uweM12W2Y
     short-id: "5ecb8c5a753a36fc"
-- name: 'ARISTA #4'
+- name: 'ARISTA #5'
   type: vless
   server: 5.223.74.174
   port: 2053
@@ -108,26 +122,11 @@ proxies:
   reality-opts:
     public-key: pIkxGlcFFawk7e0T-2VcdFXOc9LsjoBhl47vl8EuRgg
     short-id: "36151c48e28cfb65"
-- name: 'ARISTA #5'
-  type: vless
-  server: de.huge-b.com
-  port: 2053
-  uuid: b3329b57-8b0b-4573-ae7a-67651eaba2a9
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: de.huge-b.com
-  ws-opts:
-    path: /@Artemis_Vpn
-    headers:
-      Host: de.huge-b.com
 - name: 'ARISTA #6'
   type: vless
   server: de.huge-b.com
   port: 2053
-  uuid: 9d33a05a-a51f-4d9e-afa2-592adc5dc293
+  uuid: b3329b57-8b0b-4573-ae7a-67651eaba2a9
   network: ws
   tls: true
   udp: true
@@ -142,7 +141,7 @@ proxies:
   type: vless
   server: de.huge-b.com
   port: 2053
-  uuid: c01ead94-927a-4a44-a0a3-7b6a8013935f
+  uuid: 9d33a05a-a51f-4d9e-afa2-592adc5dc293
   network: ws
   tls: true
   udp: true
@@ -157,7 +156,7 @@ proxies:
   type: vless
   server: de.huge-b.com
   port: 2053
-  uuid: 571259d4-9cd4-48c7-a2b8-0cfd7f41a953
+  uuid: c01ead94-927a-4a44-a0a3-7b6a8013935f
   network: ws
   tls: true
   udp: true
@@ -172,7 +171,7 @@ proxies:
   type: vless
   server: de.huge-b.com
   port: 2053
-  uuid: e589de2a-af14-4f42-b18a-d9f8bdaaadc4
+  uuid: 571259d4-9cd4-48c7-a2b8-0cfd7f41a953
   network: ws
   tls: true
   udp: true
@@ -184,6 +183,21 @@ proxies:
     headers:
       Host: de.huge-b.com
 - name: 'ARISTA #10'
+  type: vless
+  server: de.huge-b.com
+  port: 2053
+  uuid: e589de2a-af14-4f42-b18a-d9f8bdaaadc4
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: de.huge-b.com
+  ws-opts:
+    path: /@Artemis_Vpn
+    headers:
+      Host: de.huge-b.com
+- name: 'ARISTA #11'
   type: vless
   server: do.huge-b.com
   port: 2053
@@ -198,7 +212,7 @@ proxies:
     path: /@Artemis_Vpn
     headers:
       Host: do.huge-b.com
-- name: 'ARISTA #11'
+- name: 'ARISTA #12'
   type: vless
   server: de.huge-b.com
   port: 2053
@@ -213,60 +227,21 @@ proxies:
     path: /@Artemis_Vpn
     headers:
       Host: de.huge-b.com
-- name: 'ARISTA #12'
-  type: vless
-  server: 185.141.227.180
-  port: 2053
-  uuid: 2c634977-584e-4e1f-b501-1b70c77a6743
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: random
-  servername: dismissaltree.net
 - name: 'ARISTA #13'
   type: vless
-  server: 141.227.137.177
+  server: 54.37.136.194
   port: 2053
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
+  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: shuma.ccwu.cc
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
+    short-id: "50ba05992b05c1c3"
 - name: 'ARISTA #14'
-  type: vless
-  server: 141.227.137.177
-  port: 2053
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: shuma.ccwu.cc
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
-- name: 'ARISTA #15'
-  type: vless
-  server: 141.227.137.177
-  port: 2053
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: shuma.ccwu.cc
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
-- name: 'ARISTA #16'
   type: vless
   server: 31.77.7.122
   port: 2053
@@ -282,7 +257,133 @@ proxies:
   reality-opts:
     public-key: TqsHQWg0oFULyLiaXe9vuwYXmLR6mRLiL376GJbX2Cs
     short-id: "407f4d9be75efc56"
+- name: 'ARISTA #15'
+  type: vless
+  server: 185.141.227.180
+  port: 2053
+  uuid: 2c634977-584e-4e1f-b501-1b70c77a6743
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: random
+  servername: dismissaltree.net
+- name: 'ARISTA #16'
+  type: vless
+  server: 104.21.78.194
+  port: 2053
+  uuid: 4b603ef3-a466-4e95-83a5-f926acae4149
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: findo.chalghooz.com
+  ws-opts:
+    path: /fintest
+    headers:
+      Host: findo.chalghooz.com
 - name: 'ARISTA #17'
+  type: vless
+  server: 31.77.7.122
+  port: 2053
+  uuid: 36cd557b-2b3d-46d3-8071-c77dd9cf7623
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: ios
+  servername: www.nokia.com
+  grpc-opts:
+    grpc-service-name: grpc
+  reality-opts:
+    public-key: TqsHQWg0oFULyLiaXe9vuwYXmLR6mRLiL376GJbX2Cs
+    short-id: "407f4d9be75efc56"
+- name: 'ARISTA #18'
+  type: vless
+  server: 185.141.227.180
+  port: 2053
+  uuid: 2c634977-584e-4e1f-b501-1b70c77a6743
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: random
+  servername: dismissaltree.net
+- name: 'ARISTA #19'
+  type: vless
+  server: 31.77.7.122
+  port: 2053
+  uuid: 36cd557b-2b3d-46d3-8071-c77dd9cf7623
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: ios
+  servername: www.nokia.com
+  grpc-opts:
+    grpc-service-name: grpc
+  reality-opts:
+    public-key: TqsHQWg0oFULyLiaXe9vuwYXmLR6mRLiL376GJbX2Cs
+    short-id: "407f4d9be75efc56"
+- name: 'ARISTA #20'
+  type: vless
+  server: 185.141.227.180
+  port: 2053
+  uuid: 2c634977-584e-4e1f-b501-1b70c77a6743
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: random
+  servername: dismissaltree.net
+- name: 'ARISTA #21'
+  type: vless
+  server: 31.77.7.122
+  port: 2053
+  uuid: 36cd557b-2b3d-46d3-8071-c77dd9cf7623
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: ios
+  servername: www.nokia.com
+  grpc-opts:
+    grpc-service-name: grpc
+  reality-opts:
+    public-key: TqsHQWg0oFULyLiaXe9vuwYXmLR6mRLiL376GJbX2Cs
+    short-id: "407f4d9be75efc56"
+- name: 'ARISTA #22'
+  type: vless
+  server: 185.141.227.180
+  port: 2053
+  uuid: 2c634977-584e-4e1f-b501-1b70c77a6743
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: random
+  servername: dismissaltree.net
+- name: 'ARISTA #23'
+  type: vless
+  server: 104.21.78.194
+  port: 2053
+  uuid: 4b603ef3-a466-4e95-83a5-f926acae4149
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: findo.chalghooz.com
+  ws-opts:
+    path: /fintest
+    headers:
+      Host: findo.chalghooz.com
+- name: 'ARISTA #24'
   type: vless
   server: 159.69.103.251
   port: 2053
@@ -297,7 +398,7 @@ proxies:
   reality-opts:
     public-key: W2V2xk0G3_neYDnTLNhaYxovp_ThMXDw68uweM12W2Y
     short-id: "5ecb8c5a753a36fc"
-- name: 'ARISTA #18'
+- name: 'ARISTA #25'
   type: vless
   server: 5.223.74.174
   port: 2053
@@ -312,7 +413,7 @@ proxies:
   reality-opts:
     public-key: pIkxGlcFFawk7e0T-2VcdFXOc9LsjoBhl47vl8EuRgg
     short-id: "36151c48e28cfb65"
-- name: 'ARISTA #19'
+- name: 'ARISTA #26'
   type: vless
   server: de.huge-b.com
   port: 2053
@@ -327,7 +428,7 @@ proxies:
     path: /@Artemis_Vpn
     headers:
       Host: de.huge-b.com
-- name: 'ARISTA #20'
+- name: 'ARISTA #27'
   type: vless
   server: de.huge-b.com
   port: 2053
@@ -342,7 +443,7 @@ proxies:
     path: /@Artemis_Vpn
     headers:
       Host: de.huge-b.com
-- name: 'ARISTA #21'
+- name: 'ARISTA #28'
   type: vless
   server: de.huge-b.com
   port: 2053
@@ -357,7 +458,7 @@ proxies:
     path: /@Artemis_Vpn
     headers:
       Host: de.huge-b.com
-- name: 'ARISTA #22'
+- name: 'ARISTA #29'
   type: vless
   server: de.huge-b.com
   port: 2053
@@ -372,7 +473,7 @@ proxies:
     path: /@Artemis_Vpn
     headers:
       Host: de.huge-b.com
-- name: 'ARISTA #23'
+- name: 'ARISTA #30'
   type: vless
   server: de.huge-b.com
   port: 2053
@@ -387,7 +488,7 @@ proxies:
     path: /@Artemis_Vpn
     headers:
       Host: de.huge-b.com
-- name: 'ARISTA #24'
+- name: 'ARISTA #31'
   type: vless
   server: do.huge-b.com
   port: 2053
@@ -402,7 +503,7 @@ proxies:
     path: /@Artemis_Vpn
     headers:
       Host: do.huge-b.com
-- name: 'ARISTA #25'
+- name: 'ARISTA #32'
   type: vless
   server: de.huge-b.com
   port: 2053
@@ -417,7 +518,53 @@ proxies:
     path: /@Artemis_Vpn
     headers:
       Host: de.huge-b.com
-- name: 'ARISTA #26'
+- name: 'ARISTA #33'
+  type: vless
+  server: 54.37.136.194
+  port: 2053
+  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
+    short-id: "50ba05992b05c1c3"
+- name: 'ARISTA #34'
+  type: vless
+  server: 31.77.7.122
+  port: 2053
+  uuid: 36cd557b-2b3d-46d3-8071-c77dd9cf7623
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: ios
+  servername: www.nokia.com
+  grpc-opts:
+    grpc-service-name: grpc
+  reality-opts:
+    public-key: TqsHQWg0oFULyLiaXe9vuwYXmLR6mRLiL376GJbX2Cs
+    short-id: "407f4d9be75efc56"
+- name: 'ARISTA #35'
+  type: vless
+  server: 31.77.7.122
+  port: 2053
+  uuid: 36cd557b-2b3d-46d3-8071-c77dd9cf7623
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: ios
+  servername: www.nokia.com
+  grpc-opts:
+    grpc-service-name: grpc
+  reality-opts:
+    public-key: TqsHQWg0oFULyLiaXe9vuwYXmLR6mRLiL376GJbX2Cs
+    short-id: "407f4d9be75efc56"
+- name: 'ARISTA #36'
   type: vless
   server: 185.141.227.180
   port: 2053
@@ -428,35 +575,53 @@ proxies:
   skip-cert-verify: true
   client-fingerprint: random
   servername: dismissaltree.net
-- name: 'ARISTA #27'
+- name: 'ARISTA #37'
   type: vless
-  server: 138.68.142.165
+  server: 104.21.78.194
   port: 2053
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  uuid: 4b603ef3-a466-4e95-83a5-f926acae4149
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
+  alpn:
+  - http/1.1
   client-fingerprint: chrome
-  servername: cdn8848.776676.xyz
+  servername: findo.chalghooz.com
   ws-opts:
-    path: /resource/channel
+    path: /fintest
     headers:
-      Host: cdn8848.776676.xyz
-- name: 'ARISTA #28'
+      Host: findo.chalghooz.com
+- name: 'ARISTA #38'
   type: vless
-  server: 141.227.137.177
+  server: 159.69.103.251
   port: 2053
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
+  uuid: 6cf6bb53-9785-49d5-9d39-53b4de45ff84
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: shuma.ccwu.cc
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: 91.98.44.116
+  reality-opts:
+    public-key: W2V2xk0G3_neYDnTLNhaYxovp_ThMXDw68uweM12W2Y
+    short-id: "5ecb8c5a753a36fc"
+- name: 'ARISTA #39'
+  type: vless
+  server: 5.223.74.174
+  port: 2053
+  uuid: 29b81e1a-1989-4778-b0cb-a7223730f59d
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: 5.223.74.174
+  reality-opts:
+    public-key: pIkxGlcFFawk7e0T-2VcdFXOc9LsjoBhl47vl8EuRgg
+    short-id: "36151c48e28cfb65"
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -494,6 +659,17 @@ proxy-groups:
   - 'ARISTA #26'
   - 'ARISTA #27'
   - 'ARISTA #28'
+  - 'ARISTA #29'
+  - 'ARISTA #30'
+  - 'ARISTA #31'
+  - 'ARISTA #32'
+  - 'ARISTA #33'
+  - 'ARISTA #34'
+  - 'ARISTA #35'
+  - 'ARISTA #36'
+  - 'ARISTA #37'
+  - 'ARISTA #38'
+  - 'ARISTA #39'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
