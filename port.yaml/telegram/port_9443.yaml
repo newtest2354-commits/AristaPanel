@@ -1,6 +1,6 @@
 # TELEGRAM - Port 9443
-# Updated: 2026-09-23 16:44:59
-# Count: 17
+# Updated: 2026-09-23 21:29:22
+# Count: 22
 
 mixed-port: 7890
 allow-lan: false
@@ -50,7 +50,7 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 194.150.166.108
+  server: 194.150.166.228
   port: 9443
   uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
   network: tcp
@@ -65,19 +65,22 @@ proxies:
     short-id: "ad20d2ba"
 - name: 'ARISTA #2'
   type: vless
-  server: 185.255.179.11
+  server: 145.223.70.129
   port: 9443
-  uuid: d9d0f208-d582-41d5-bb7b-742671402810
-  network: grpc
+  uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: hub-nl-03.hanvpn.cc
-  grpc-opts:
-    grpc-service-name: nl03-grpc-8e47a
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: storage.yandexcloud.net
+  reality-opts:
+    public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+    short-id: "ad20d2bc"
 - name: 'ARISTA #3'
   type: vless
-  server: 194.150.166.230
+  server: 194.150.166.108
   port: 9443
   uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
   network: tcp
@@ -92,7 +95,7 @@ proxies:
     short-id: "ad20d2ba"
 - name: 'ARISTA #4'
   type: vless
-  server: 194.150.166.108
+  server: 194.150.166.228
   port: 9443
   uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
   network: tcp
@@ -107,7 +110,7 @@ proxies:
     short-id: "ad20d2ba"
 - name: 'ARISTA #5'
   type: vless
-  server: 194.150.166.108
+  server: 145.223.70.129
   port: 9443
   uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
   network: tcp
@@ -119,35 +122,8 @@ proxies:
   servername: storage.yandexcloud.net
   reality-opts:
     public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
-    short-id: "ad20d2ba"
+    short-id: "ad20d2bc"
 - name: 'ARISTA #6'
-  type: vless
-  server: 185.255.179.11
-  port: 9443
-  uuid: d9d0f208-d582-41d5-bb7b-742671402810
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: hub-nl-03.hanvpn.cc
-  grpc-opts:
-    grpc-service-name: nl03-grpc-8e47a
-- name: 'ARISTA #7'
-  type: vless
-  server: 194.150.166.230
-  port: 9443
-  uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: safari
-  servername: storage.yandexcloud.net
-  reality-opts:
-    public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
-    short-id: "ad20d2ba"
-- name: 'ARISTA #8'
   type: vless
   server: 194.150.166.228
   port: 9443
@@ -162,6 +138,36 @@ proxies:
   reality-opts:
     public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
     short-id: "ad20d2ba"
+- name: 'ARISTA #7'
+  type: vless
+  server: 194.150.166.228
+  port: 9443
+  uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: storage.yandexcloud.net
+  reality-opts:
+    public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+    short-id: "ad20d2ba"
+- name: 'ARISTA #8'
+  type: vless
+  server: 145.223.70.129
+  port: 9443
+  uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: storage.yandexcloud.net
+  reality-opts:
+    public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+    short-id: "ad20d2bc"
 - name: 'ARISTA #9'
   type: vless
   server: 194.150.166.108
@@ -179,19 +185,22 @@ proxies:
     short-id: "ad20d2ba"
 - name: 'ARISTA #10'
   type: vless
-  server: 185.255.179.11
+  server: 194.150.166.228
   port: 9443
-  uuid: d9d0f208-d582-41d5-bb7b-742671402810
-  network: grpc
+  uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: hub-nl-03.hanvpn.cc
-  grpc-opts:
-    grpc-service-name: nl03-grpc-8e47a
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: storage.yandexcloud.net
+  reality-opts:
+    public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+    short-id: "ad20d2ba"
 - name: 'ARISTA #11'
   type: vless
-  server: 194.150.166.230
+  server: 194.150.166.228
   port: 9443
   uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
   network: tcp
@@ -206,7 +215,22 @@ proxies:
     short-id: "ad20d2ba"
 - name: 'ARISTA #12'
   type: vless
-  server: 194.150.166.228
+  server: 145.223.70.129
+  port: 9443
+  uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: storage.yandexcloud.net
+  reality-opts:
+    public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+    short-id: "ad20d2bc"
+- name: 'ARISTA #13'
+  type: vless
+  server: 194.150.166.108
   port: 9443
   uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
   network: tcp
@@ -219,7 +243,7 @@ proxies:
   reality-opts:
     public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
     short-id: "ad20d2ba"
-- name: 'ARISTA #13'
+- name: 'ARISTA #14'
   type: vless
   server: 194.150.166.228
   port: 9443
@@ -234,7 +258,63 @@ proxies:
   reality-opts:
     public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
     short-id: "ad20d2ba"
-- name: 'ARISTA #14'
+- name: 'ARISTA #15'
+  type: vless
+  server: 144.31.214.172
+  port: 9443
+  uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: storage.yandexcloud.net
+  reality-opts:
+    public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+- name: 'ARISTA #16'
+  type: vless
+  server: 185.255.179.11
+  port: 9443
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: hub-nl-03.hanvpn.cc
+  grpc-opts:
+    grpc-service-name: nl03-grpc-8e47a
+- name: 'ARISTA #17'
+  type: vless
+  server: 194.150.166.228
+  port: 9443
+  uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: storage.yandexcloud.net
+  reality-opts:
+    public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+    short-id: "ad20d2ba"
+- name: 'ARISTA #18'
+  type: vless
+  server: 145.223.70.129
+  port: 9443
+  uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: storage.yandexcloud.net
+  reality-opts:
+    public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+    short-id: "ad20d2bc"
+- name: 'ARISTA #19'
   type: ss
   server: 185.156.47.97
   port: 9443
@@ -242,7 +322,7 @@ proxies:
   password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
   udp: true
   tcp-fast-open: true
-- name: 'ARISTA #15'
+- name: 'ARISTA #20'
   type: ss
   server: yyz-ca-01.blncvpn4u.cc
   port: 9443
@@ -250,7 +330,7 @@ proxies:
   password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
   udp: true
   tcp-fast-open: true
-- name: 'ARISTA #16'
+- name: 'ARISTA #21'
   type: ss
   server: 185.156.47.97
   port: 9443
@@ -258,7 +338,7 @@ proxies:
   password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
   udp: true
   tcp-fast-open: true
-- name: 'ARISTA #17'
+- name: 'ARISTA #22'
   type: ss
   server: yyz-ca-01.blncvpn4u.cc
   port: 9443
@@ -292,6 +372,11 @@ proxy-groups:
   - 'ARISTA #15'
   - 'ARISTA #16'
   - 'ARISTA #17'
+  - 'ARISTA #18'
+  - 'ARISTA #19'
+  - 'ARISTA #20'
+  - 'ARISTA #21'
+  - 'ARISTA #22'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
