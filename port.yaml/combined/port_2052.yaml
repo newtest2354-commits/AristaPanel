@@ -1,6 +1,6 @@
 # COMBINED - Port 2052
-# Updated: 2026-09-23 21:29:18
-# Count: 12
+# Updated: 2026-09-24 04:26:22
+# Count: 18
 
 mixed-port: 7890
 allow-lan: false
@@ -48,7 +48,53 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'T.ME: @aristapanel #1'
+- name: 'ARISTA #1'
+  type: vless
+  server: 185.71.219.128
+  port: 2052
+  uuid: f4ade6db-3c64-4939-9f32-788b87a9392f
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: ios
+  servername: 185.71.219.128
+- name: 'ARISTA #2'
+  type: vless
+  server: 188.114.96.12
+  port: 2052
+  uuid: 1cc9916b-7de3-451d-941e-0fe4298208cb
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #3'
+  type: vless
+  server: 185.71.219.128
+  port: 2052
+  uuid: f4ade6db-3c64-4939-9f32-788b87a9392f
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: ios
+  servername: 185.71.219.128
+- name: 'ARISTA #4'
+  type: vless
+  server: 188.114.96.12
+  port: 2052
+  uuid: 1cc9916b-7de3-451d-941e-0fe4298208cb
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'T.ME: @aristapanel #5'
   type: vless
   server: cctvhikvision.center
   port: 2052
@@ -61,7 +107,7 @@ proxies:
     path: /@BlueKnight_net--@BlueKnight_net
     headers:
       Host: uwu.blueknightnet.qzz.io
-- name: 'T.ME: @aristapanel #2'
+- name: 'T.ME: @aristapanel #6'
   type: vless
   server: freesocks.work
   port: 2052
@@ -74,7 +120,7 @@ proxies:
     path: /@BlueKnight_net--@BlueKnight_net
     headers:
       Host: uwu.blueknightnet.qzz.io
-- name: 'T.ME: @aristapanel #3'
+- name: 'T.ME: @aristapanel #7'
   type: vless
   server: undef.network
   port: 2052
@@ -87,7 +133,7 @@ proxies:
     path: /@BlueKnight_net--@BlueKnight_net
     headers:
       Host: uwu.blueknightnet.qzz.io
-- name: 'T.ME: @aristapanel #4'
+- name: 'T.ME: @aristapanel #8'
   type: vless
   server: hikvision-plus.com
   port: 2052
@@ -100,7 +146,7 @@ proxies:
     path: /@BlueKnight_net--@BlueKnight_net
     headers:
       Host: uwu.blueknightnet.qzz.io
-- name: 'T.ME: @aristapanel #5'
+- name: 'T.ME: @aristapanel #9'
   type: vless
   server: 193.227.99.54
   port: 2052
@@ -109,7 +155,7 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #6'
+- name: 'T.ME: @aristapanel #10'
   type: vless
   server: 104.17.121.110
   port: 2052
@@ -118,7 +164,7 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #7'
+- name: 'T.ME: @aristapanel #11'
   type: vless
   server: 172.67.157.183
   port: 2052
@@ -131,7 +177,21 @@ proxies:
     path: /eyJqdW5rIjoic3pLZkVUMlIiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByb3h5aXAiLCJwYW5lbElQcyI6W119
     headers:
       Host: 7x70yyvt7eqotx-iq9n3rjt1xn1jwkh9.asdfsafdsaf.workers.dev
-- name: 'T.ME: @aristapanel #8'
+- name: 'ARISTA #12'
+  type: vless
+  server: 185.71.219.128
+  port: 2052
+  uuid: f4ade6db-3c64-4939-9f32-788b87a9392f
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: ios
+  servername: 185.71.219.128
+- name: 'ARISTA #13'
   type: vless
   server: 188.114.96.12
   port: 2052
@@ -140,7 +200,7 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'ARISTA #9'
+- name: 'ARISTA #14'
   type: ss
   server: 94.130.68.139
   port: 2052
@@ -148,7 +208,7 @@ proxies:
   password: qPHdpb8aXgvZxFK5SKTMRjQeTTEdcPLN7uJQ4KttKfI=
   udp: true
   tcp-fast-open: true
-- name: 'ARISTA #10'
+- name: 'ARISTA #15'
   type: ss
   server: 94.130.68.139
   port: 2052
@@ -156,7 +216,7 @@ proxies:
   password: qPHdpb8aXgvZxFK5SKTMRjQeTTEdcPLN7uJQ4KttKfI=
   udp: true
   tcp-fast-open: true
-- name: 'ARISTA #11'
+- name: 'ARISTA #16'
   type: ss
   server: 94.130.68.139
   port: 2052
@@ -164,7 +224,15 @@ proxies:
   password: qPHdpb8aXgvZxFK5SKTMRjQeTTEdcPLN7uJQ4KttKfI=
   udp: true
   tcp-fast-open: true
-- name: 'ARISTA #12'
+- name: 'ARISTA #17'
+  type: ss
+  server: 94.130.68.139
+  port: 2052
+  cipher: chacha20-ietf-poly1305
+  password: qPHdpb8aXgvZxFK5SKTMRjQeTTEdcPLN7uJQ4KttKfI=
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #18'
   type: ss
   server: 94.130.68.139
   port: 2052
@@ -181,18 +249,24 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'T.ME: @aristapanel #1'
-  - 'T.ME: @aristapanel #2'
-  - 'T.ME: @aristapanel #3'
-  - 'T.ME: @aristapanel #4'
+  - 'ARISTA #1'
+  - 'ARISTA #2'
+  - 'ARISTA #3'
+  - 'ARISTA #4'
   - 'T.ME: @aristapanel #5'
   - 'T.ME: @aristapanel #6'
   - 'T.ME: @aristapanel #7'
   - 'T.ME: @aristapanel #8'
-  - 'ARISTA #9'
-  - 'ARISTA #10'
-  - 'ARISTA #11'
+  - 'T.ME: @aristapanel #9'
+  - 'T.ME: @aristapanel #10'
+  - 'T.ME: @aristapanel #11'
   - 'ARISTA #12'
+  - 'ARISTA #13'
+  - 'ARISTA #14'
+  - 'ARISTA #15'
+  - 'ARISTA #16'
+  - 'ARISTA #17'
+  - 'ARISTA #18'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
