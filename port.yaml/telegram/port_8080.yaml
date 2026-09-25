@@ -1,6 +1,6 @@
 # TELEGRAM - Port 8080
-# Updated: 2026-09-25 17:04:15
-# Count: 6
+# Updated: 2026-09-25 21:29:35
+# Count: 11
 
 mixed-port: 7890
 allow-lan: false
@@ -49,22 +49,61 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'ARISTA #1'
+  type: vless
+  server: 9fa3d4cb9e690e86.ravenlo.ir
+  port: 8080
+  uuid: 8d20ad0d-a1b1-4b5e-b228-8ed16e03431f
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: play.google.com
+- name: 'ARISTA #2'
+  type: vless
+  server: 9fa3d4cb9e690e86.ravenlo.ir
+  port: 8080
+  uuid: 8d20ad0d-a1b1-4b5e-b228-8ed16e03431f
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: play.google.com
+- name: 'ARISTA #3'
+  type: vless
+  server: 9fa3d4cb9e690e86.ravenlo.ir
+  port: 8080
+  uuid: 8d20ad0d-a1b1-4b5e-b228-8ed16e03431f
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: play.google.com
+- name: 'ARISTA #4'
   type: ss
-  server: 193.29.139.234
+  server: 193.29.139.168
   port: 8080
   cipher: chacha20-ietf-poly1305
-  password: 4a2rfixophdjffa8KVA4Aa
+  password: QCXDxuDlTTMD7jtgHUjIoj
   udp: true
   tcp-fast-open: true
-- name: 'ARISTA #2'
+- name: 'ARISTA #5'
   type: ss
-  server: 82.38.31.47
+  server: 82.38.31.149
   port: 8080
   cipher: chacha20-ietf-poly1305
   password: oZIoA69Q8yhcQV8ka3Pa3A
   udp: true
   tcp-fast-open: true
-- name: 'ARISTA #3'
+- name: 'ARISTA #6'
   type: ss
   server: 82.38.31.184
   port: 8080
@@ -72,7 +111,7 @@ proxies:
   password: k1dBOmOB4oqi7Ump37a1bQ
   udp: true
   tcp-fast-open: true
-- name: 'ARISTA #4'
+- name: 'ARISTA #7'
   type: ss
   server: 82.38.31.203
   port: 8080
@@ -80,7 +119,15 @@ proxies:
   password: k1dBOmOB4oqi7Ump37a1bQ
   udp: true
   tcp-fast-open: true
-- name: 'ARISTA #5'
+- name: 'ARISTA #8'
+  type: ss
+  server: 193.29.139.234
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: 4a2rfixophdjffa8KVA4Aa
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #9'
   type: ss
   server: 82.38.31.192
   port: 8080
@@ -88,12 +135,20 @@ proxies:
   password: k1dBOmOB4oqi7Ump37a1bQ
   udp: true
   tcp-fast-open: true
-- name: 'ARISTA #6'
+- name: 'ARISTA #10'
   type: ss
-  server: 193.29.139.132
+  server: 82.38.31.210
   port: 8080
   cipher: chacha20-ietf-poly1305
   password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #11'
+  type: ss
+  server: 82.38.31.47
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
   udp: true
   tcp-fast-open: true
 proxy-groups:
@@ -111,6 +166,11 @@ proxy-groups:
   - 'ARISTA #4'
   - 'ARISTA #5'
   - 'ARISTA #6'
+  - 'ARISTA #7'
+  - 'ARISTA #8'
+  - 'ARISTA #9'
+  - 'ARISTA #10'
+  - 'ARISTA #11'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
