@@ -1,6 +1,6 @@
 # TELEGRAM - VMESS - Tier ALL
-# Updated: 2026-09-25 04:34:29
-# Count: 26
+# Updated: 2026-09-25 11:41:00
+# Count: 33
 
 mixed-port: 7890
 allow-lan: false
@@ -50,6 +50,25 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vmess
+  server: web-pmapdcb-mabtu.up.railway.app
+  port: 443
+  uuid: e5cc130a-c773-4c3c-beea-b55fee28ed72
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: web-pmapdcb-mabtu.up.railway.app
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /vm-ws
+    headers:
+      Host: web-pmapdcb-mabtu.up.railway.app
+- name: 'ARISTA #2'
+  type: vmess
   server: s1.connect.labex.pro
   port: 1007
   uuid: 14594d5e-86bd-4727-8772-feb16dbf24ec
@@ -61,9 +80,22 @@ proxies:
   skip-cert-verify: true
   tcp-fast-open: true
   servername: s1.connect.labex.pro
-- name: 'ARISTA #2'
+- name: 'ARISTA #3'
   type: vmess
-  server: 45.80.215.8
+  server: 149.88.23.207
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 149.88.23.207
+- name: 'ARISTA #4'
+  type: vmess
+  server: 66.163.117.58
   port: 22324
   uuid: 04621bae-ab36-11ec-b909-0242ac120002
   alterId: 0
@@ -73,8 +105,50 @@ proxies:
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: 45.80.215.8
-- name: 'ARISTA #3'
+  servername: 66.163.117.58
+- name: 'ARISTA #5'
+  type: vmess
+  server: 64.176.51.214
+  port: 23462
+  uuid: 95c5abc1-018d-4628-89a7-25ab9c62ab74
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 64.176.51.214
+  ws-opts:
+    path: /a15206
+- name: 'ARISTA #6'
+  type: vmess
+  server: 38.110.1.246
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 38.110.1.246
+- name: 'ARISTA #7'
+  type: vmess
+  server: 191.96.94.50
+  port: 27501
+  uuid: 93842911-bc7f-47e9-a036-904d205b3d11
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 191.96.94.50
+  client-fingerprint: chrome
+- name: 'ARISTA #8'
   type: vmess
   server: 89.41.172.85
   port: 22324
@@ -87,41 +161,7 @@ proxies:
   skip-cert-verify: true
   tcp-fast-open: true
   servername: 89.41.172.85
-- name: 'ARISTA #4'
-  type: vmess
-  server: aidrivercat.org
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: aidrivercat.org
-  ws-opts:
-    path: /linkvws
-    headers:
-      Host: aidrivercat.org
-- name: 'ARISTA #5'
-  type: vmess
-  server: pahobac.org
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: pahobac.org
-  ws-opts:
-    path: /linkvws
-    headers:
-      Host: pahobac.org
-- name: 'ARISTA #6'
+- name: 'ARISTA #9'
   type: vmess
   server: 188.114.96.19
   port: 80
@@ -138,11 +178,11 @@ proxies:
     path: /
     headers:
       Host: google.whatsapp.snapp.torob.basalam.fortresshost.ir.
-- name: 'ARISTA #7'
+- name: 'ARISTA #10'
   type: vmess
-  server: 38.110.1.246
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  server: 82.198.246.37
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
   alterId: 0
   cipher: auto
   network: tcp
@@ -150,12 +190,12 @@ proxies:
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: 38.110.1.246
-- name: 'ARISTA #8'
+  servername: 82.198.246.37
+- name: 'ARISTA #11'
   type: vmess
-  server: 191.96.94.50
-  port: 27501
-  uuid: 93842911-bc7f-47e9-a036-904d205b3d11
+  server: 82.198.246.250
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
   alterId: 0
   cipher: auto
   network: tcp
@@ -163,11 +203,95 @@ proxies:
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: 191.96.94.50
+  servername: usaapp2.jisuyun.top
+- name: 'ARISTA #12'
+  type: vmess
+  server: vah4urdzl3jdx5r2.v.3dns.vip
+  port: 443
+  uuid: f23bb427c1f94373876c2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: vah4urdzl3jdx5r2.v.3dns.vip
+  ws-opts:
+    path: /ws-vmess
+- name: 'ARISTA #13'
+  type: vmess
+  server: lcv8v9l7oyamxxfz.v.3dns.vip
+  port: 443
+  uuid: f23bb427c1f94373876c2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: lcv8v9l7oyamxxfz.v.3dns.vip
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: lcv8v9l7OyamxxfZ.v.3dns.vip
+- name: 'ARISTA #14'
+  type: vmess
+  server: de.connfull.org
+  port: 2053
+  uuid: 64f18876-ce22-4172-a596-d8c1be125e78
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: de.connfull.org
   client-fingerprint: chrome
-- name: 'ARISTA #9'
+- name: 'ARISTA #15'
   type: vmess
-  server: 66.163.117.58
+  server: 31.77.8.97
+  port: 110
+  uuid: e8758bf0-c234-4809-89f7-25fd868316d0
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 31.77.8.97
+- name: 'ARISTA #16'
+  type: vmess
+  server: 165.154.195.38
+  port: 35034
+  uuid: 959a8caf-4cea-43d0-a548-3628e7ddfafc
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 165.154.195.38
+- name: 'ARISTA #17'
+  type: vmess
+  server: dl1.armd.fun
+  port: 443
+  uuid: 72ec8eaf-6a67-4026-aea6-963e3a9ca16a
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: dl1.armd.fun
+- name: 'ARISTA #18'
+  type: vmess
+  server: 103.215.218.158
   port: 22324
   uuid: 04621bae-ab36-11ec-b909-0242ac120002
   alterId: 0
@@ -177,8 +301,38 @@ proxies:
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: 66.163.117.58
-- name: 'ARISTA #10'
+  servername: 103.215.218.158
+- name: 'ARISTA #19'
+  type: vmess
+  server: 5.45.97.147
+  port: 10803
+  uuid: 018fbfb7-721a-49a9-b9f5-fb55d92592b6
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 5.45.97.147
+- name: 'ARISTA #20'
+  type: vmess
+  server: amir.amirport.ir
+  port: 8880
+  uuid: a2bba858-e8c2-438e-9da5-52687a0aa201
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: amir.amirport.ir
+  ws-opts:
+    path: /
+    headers:
+      Host: amir.amirport.ir
+- name: 'ARISTA #21'
   type: vmess
   server: 188.114.96.19
   port: 80
@@ -195,63 +349,7 @@ proxies:
     path: /
     headers:
       Host: google.whatsapp.snapp.torob.basalam.hesanid8.ir.
-- name: 'ARISTA #11'
-  type: vmess
-  server: 216.106.187.60
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  alterId: 0
-  cipher: auto
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: 216.106.187.60
-- name: 'ARISTA #12'
-  type: vmess
-  server: 167.88.63.59
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  alterId: 0
-  cipher: auto
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: 167.88.63.59
-- name: 'ARISTA #13'
-  type: vmess
-  server: kentspark.org
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: kentspark.org
-  ws-opts:
-    path: /linkvws
-    headers:
-      Host: kentspark.org
-- name: 'ARISTA #14'
-  type: vmess
-  server: 165.154.195.38
-  port: 35034
-  uuid: 959a8caf-4cea-43d0-a548-3628e7ddfafc
-  alterId: 0
-  cipher: auto
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: 165.154.195.38
-- name: 'ARISTA #15'
+- name: 'ARISTA #22'
   type: vmess
   server: 82.198.246.233
   port: 180
@@ -264,7 +362,7 @@ proxies:
   skip-cert-verify: true
   tcp-fast-open: true
   servername: 82.198.246.233
-- name: 'ARISTA #16'
+- name: 'ARISTA #23'
   type: vmess
   server: 82.198.246.37
   port: 180
@@ -277,46 +375,7 @@ proxies:
   skip-cert-verify: true
   tcp-fast-open: true
   servername: 82.198.246.37
-- name: 'ARISTA #17'
-  type: vmess
-  server: 103.215.218.158
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  alterId: 0
-  cipher: auto
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: 103.215.218.158
-- name: 'ARISTA #18'
-  type: vmess
-  server: 134.195.196.211
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  alterId: 0
-  cipher: auto
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: 134.195.196.211
-- name: 'ARISTA #19'
-  type: vmess
-  server: 149.88.23.207
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  alterId: 0
-  cipher: auto
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: 149.88.23.207
-- name: 'ARISTA #20'
+- name: 'ARISTA #24'
   type: vmess
   server: 66.163.117.58
   port: 22324
@@ -329,11 +388,11 @@ proxies:
   skip-cert-verify: true
   tcp-fast-open: true
   servername: 66.163.117.58
-- name: 'ARISTA #21'
+- name: 'ARISTA #25'
   type: vmess
-  server: 31.77.8.97
-  port: 110
-  uuid: e8758bf0-c234-4809-89f7-25fd868316d0
+  server: me6.movieseryalirani.ir
+  port: 57361
+  uuid: ed815caa-bff1-4419-8c61-1d108eabaf1f
   alterId: 0
   cipher: auto
   network: tcp
@@ -341,21 +400,8 @@ proxies:
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: 31.77.8.97
-- name: 'ARISTA #22'
-  type: vmess
-  server: 66.163.118.73
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  alterId: 0
-  cipher: auto
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: 66.163.118.73
-- name: 'ARISTA #23'
+  servername: me6.movieseryalirani.ir
+- name: 'ARISTA #26'
   type: vmess
   server: 139.64.166.25
   port: 443
@@ -372,7 +418,7 @@ proxies:
     path: /linkvws
     headers:
       Host: pahobac.org
-- name: 'ARISTA #24'
+- name: 'ARISTA #27'
   type: vmess
   server: 216.106.187.60
   port: 22324
@@ -385,7 +431,7 @@ proxies:
   skip-cert-verify: true
   tcp-fast-open: true
   servername: 216.106.187.60
-- name: 'ARISTA #25'
+- name: 'ARISTA #28'
   type: vmess
   server: 31.77.8.97
   port: 110
@@ -398,7 +444,7 @@ proxies:
   skip-cert-verify: true
   tcp-fast-open: true
   servername: 31.77.8.97
-- name: 'ARISTA #26'
+- name: 'ARISTA #29'
   type: vmess
   server: mygptagent.org
   port: 443
@@ -415,6 +461,64 @@ proxies:
     path: /linkvws
     headers:
       Host: mygptagent.org
+- name: 'ARISTA #30'
+  type: vmess
+  server: 45.80.215.8
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 45.80.215.8
+- name: 'ARISTA #31'
+  type: vmess
+  server: pahobac.org
+  port: 443
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: pahobac.org
+  ws-opts:
+    path: /linkvws
+    headers:
+      Host: pahobac.org
+- name: 'ARISTA #32'
+  type: vmess
+  server: aidrivercat.org
+  port: 443
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: aidrivercat.org
+  ws-opts:
+    path: /linkvws
+- name: 'ARISTA #33'
+  type: vmess
+  server: 66.163.118.73
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 66.163.118.73
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -450,6 +554,13 @@ proxy-groups:
   - 'ARISTA #24'
   - 'ARISTA #25'
   - 'ARISTA #26'
+  - 'ARISTA #27'
+  - 'ARISTA #28'
+  - 'ARISTA #29'
+  - 'ARISTA #30'
+  - 'ARISTA #31'
+  - 'ARISTA #32'
+  - 'ARISTA #33'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
