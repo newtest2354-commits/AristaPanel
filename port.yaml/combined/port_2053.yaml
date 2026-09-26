@@ -1,6 +1,6 @@
 # COMBINED - Port 2053
-# Updated: 2026-09-26 21:02:38
-# Count: 64
+# Updated: 2026-09-26 23:32:32
+# Count: 82
 
 mixed-port: 7890
 allow-lan: false
@@ -50,6 +50,36 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
+  server: ccvtv.tgseenrobo.ir
+  port: 2053
+  uuid: 56ba454e-f6c3-4965-ab7c-a752b9d075fa
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: ccvtv.tgseenrobo.ir
+  ws-opts:
+    path: /
+- name: 'ARISTA #2'
+  type: vless
+  server: netcraft.com
+  port: 2053
+  uuid: 56ba454e-f6c3-4965-ab7c-a752b9d075fa
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: firefox
+  servername: camera.tgseenrobo.ir
+  ws-opts:
+    path: /api/v1/payment/verify/9mQ2rL8sKp4xN7
+- name: 'ARISTA #3'
+  type: vless
   server: 185.141.227.180
   port: 2053
   uuid: 2c634977-584e-4e1f-b501-1b70c77a6743
@@ -57,42 +87,15 @@ proxies:
   tls: true
   udp: true
   skip-cert-verify: true
+  alpn:
+  - GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN
   client-fingerprint: random
   servername: dismissaltree.net
-- name: 'ARISTA #2'
-  type: vless
-  server: 54.37.136.194
-  port: 2053
-  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-
-  client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
-    short-id: "50ba05992b05c1c3"
-- name: 'ARISTA #3'
-  type: vless
-  server: crow.trustpacket.ir
-  port: 2053
-  uuid: 16f42b76-b7d5-4dd2-8d57-fe6bc51f8ebb
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: chrome
-  servername: crow.trustpacket.ir
 - name: 'ARISTA #4'
   type: vless
-  server: 104.16.22.21
+  server: 162.159.82.123
   port: 2053
-  uuid: ab6e4542-64b4-4673-9396-da882fb430b3
+  uuid: 8847fd86-7d22-40ab-80b7-1fa585242654
   network: ws
   tls: true
   udp: true
@@ -105,42 +108,27 @@ proxies:
       Host: ca.roomode.ir
 - name: 'ARISTA #5'
   type: vless
-  server: pp.degeristir.ir
-  port: 2053
-  uuid: 0717d74e-7ec5-479f-aab9-fa23d25e88f6
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: tls.zerossrz.ir
-- name: 'ARISTA #6'
-  type: vless
-  server: ccvtv.tgseenrobo.ir
+  server: netcraft.com
   port: 2053
   uuid: 56ba454e-f6c3-4965-ab7c-a752b9d075fa
-  network: ws
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #6'
+  type: vless
+  server: crow.trustpacket.ir
+  port: 2053
+  uuid: 16f42b76-b7d5-4dd2-8d57-fe6bc51f8ebb
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
   alpn:
   - h2
   client-fingerprint: chrome
-  servername: ccvtv.tgseenrobo.ir
-  ws-opts:
-    path: /
+  servername: crow.trustpacket.ir
 - name: 'ARISTA #7'
-  type: vless
-  server: 185.141.227.180
-  port: 2053
-  uuid: 2c634977-584e-4e1f-b501-1b70c77a6743
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: random
-  servername: dismissaltree.net
-- name: 'ARISTA #8'
   type: vless
   server: 54.37.136.194
   port: 2053
@@ -156,34 +144,55 @@ proxies:
   reality-opts:
     public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
     short-id: "50ba05992b05c1c3"
+- name: 'ARISTA #8'
+  type: vless
+  server: 104.18.1.1
+  port: 2053
+  uuid: da4747a6-be0d-4c1b-90f4-d82ec3012be2
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: ios
+  servername: music1000.melobitmusic1.ir
+  ws-opts:
+    path: /
+    headers:
+      Host: music1000.melobitmusic1.ir
 - name: 'ARISTA #9'
   type: vless
-  server: crow.trustpacket.ir
+  server: ccvtv.tgseenrobo.ir
   port: 2053
-  uuid: 16f42b76-b7d5-4dd2-8d57-fe6bc51f8ebb
-  network: xhttp
+  uuid: 56ba454e-f6c3-4965-ab7c-a752b9d075fa
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   alpn:
   - h2
   client-fingerprint: chrome
-  servername: crow.trustpacket.ir
+  servername: ccvtv.tgseenrobo.ir
+  ws-opts:
+    path: /
 - name: 'ARISTA #10'
   type: vless
-  server: 104.16.22.21
+  server: netcraft.com
   port: 2053
-  uuid: ab6e4542-64b4-4673-9396-da882fb430b3
+  uuid: 56ba454e-f6c3-4965-ab7c-a752b9d075fa
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: ca.roomode.ir
+  alpn:
+  - h2
+  client-fingerprint: firefox
+  servername: camera.tgseenrobo.ir
   ws-opts:
-    path: /
-    headers:
-      Host: ca.roomode.ir
+    path: /api/v1/payment/verify/9mQ2rL8sKp4xN7
 - name: 'ARISTA #11'
   type: vless
   server: 185.141.227.180
@@ -193,82 +202,15 @@ proxies:
   tls: true
   udp: true
   skip-cert-verify: true
+  alpn:
+  - GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN
   client-fingerprint: random
   servername: dismissaltree.net
 - name: 'ARISTA #12'
   type: vless
-  server: 54.37.136.194
+  server: 162.159.82.123
   port: 2053
-  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-
-  client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
-    short-id: "50ba05992b05c1c3"
-- name: 'ARISTA #13'
-  type: vless
-  server: crow.trustpacket.ir
-  port: 2053
-  uuid: 16f42b76-b7d5-4dd2-8d57-fe6bc51f8ebb
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: chrome
-  servername: crow.trustpacket.ir
-- name: 'ARISTA #14'
-  type: vless
-  server: 185.141.227.180
-  port: 2053
-  uuid: 2c634977-584e-4e1f-b501-1b70c77a6743
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: random
-  servername: dismissaltree.net
-- name: 'ARISTA #15'
-  type: vless
-  server: 54.37.136.194
-  port: 2053
-  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-
-  client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
-    short-id: "50ba05992b05c1c3"
-- name: 'ARISTA #16'
-  type: vless
-  server: crow.trustpacket.ir
-  port: 2053
-  uuid: 16f42b76-b7d5-4dd2-8d57-fe6bc51f8ebb
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: chrome
-  servername: crow.trustpacket.ir
-- name: 'ARISTA #17'
-  type: vless
-  server: 104.16.22.21
-  port: 2053
-  uuid: ab6e4542-64b4-4673-9396-da882fb430b3
+  uuid: 8847fd86-7d22-40ab-80b7-1fa585242654
   network: ws
   tls: true
   udp: true
@@ -279,18 +221,16 @@ proxies:
     path: /
     headers:
       Host: ca.roomode.ir
-- name: 'ARISTA #18'
+- name: 'ARISTA #13'
   type: vless
-  server: pp.degeristir.ir
+  server: netcraft.com
   port: 2053
-  uuid: 0717d74e-7ec5-479f-aab9-fa23d25e88f6
-  network: xhttp
-  tls: true
+  uuid: 56ba454e-f6c3-4965-ab7c-a752b9d075fa
+  network: tcp
+  tls: false
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: tls.zerossrz.ir
-- name: 'ARISTA #19'
+- name: 'ARISTA #14'
   type: vless
   server: ccvtv.tgseenrobo.ir
   port: 2053
@@ -305,7 +245,37 @@ proxies:
   servername: ccvtv.tgseenrobo.ir
   ws-opts:
     path: /
-- name: 'ARISTA #20'
+- name: 'ARISTA #15'
+  type: vless
+  server: ccvtv.tgseenrobo.ir
+  port: 2053
+  uuid: 56ba454e-f6c3-4965-ab7c-a752b9d075fa
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: ccvtv.tgseenrobo.ir
+  ws-opts:
+    path: /
+- name: 'ARISTA #16'
+  type: vless
+  server: netcraft.com
+  port: 2053
+  uuid: 56ba454e-f6c3-4965-ab7c-a752b9d075fa
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: firefox
+  servername: camera.tgseenrobo.ir
+  ws-opts:
+    path: /api/v1/payment/verify/9mQ2rL8sKp4xN7
+- name: 'ARISTA #17'
   type: vless
   server: 185.141.227.180
   port: 2053
@@ -314,8 +284,47 @@ proxies:
   tls: true
   udp: true
   skip-cert-verify: true
+  alpn:
+  - GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN
   client-fingerprint: random
   servername: dismissaltree.net
+- name: 'ARISTA #18'
+  type: vless
+  server: 162.159.82.123
+  port: 2053
+  uuid: 8847fd86-7d22-40ab-80b7-1fa585242654
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: ca.roomode.ir
+  ws-opts:
+    path: /
+    headers:
+      Host: ca.roomode.ir
+- name: 'ARISTA #19'
+  type: vless
+  server: netcraft.com
+  port: 2053
+  uuid: 56ba454e-f6c3-4965-ab7c-a752b9d075fa
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #20'
+  type: vless
+  server: crow.trustpacket.ir
+  port: 2053
+  uuid: 16f42b76-b7d5-4dd2-8d57-fe6bc51f8ebb
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: crow.trustpacket.ir
 - name: 'ARISTA #21'
   type: vless
   server: 54.37.136.194
@@ -334,99 +343,24 @@ proxies:
     short-id: "50ba05992b05c1c3"
 - name: 'ARISTA #22'
   type: vless
-  server: crow.trustpacket.ir
+  server: 104.18.1.1
   port: 2053
-  uuid: 16f42b76-b7d5-4dd2-8d57-fe6bc51f8ebb
-  network: xhttp
+  uuid: da4747a6-be0d-4c1b-90f4-d82ec3012be2
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   alpn:
+  - h3
   - h2
-  client-fingerprint: chrome
-  servername: crow.trustpacket.ir
+  - http/1.1
+  client-fingerprint: ios
+  servername: music1000.melobitmusic1.ir
+  ws-opts:
+    path: /
+    headers:
+      Host: music1000.melobitmusic1.ir
 - name: 'ARISTA #23'
-  type: vless
-  server: 104.16.22.21
-  port: 2053
-  uuid: ab6e4542-64b4-4673-9396-da882fb430b3
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: ca.roomode.ir
-  ws-opts:
-    path: /
-    headers:
-      Host: ca.roomode.ir
-- name: 'ARISTA #24'
-  type: vless
-  server: 185.141.227.180
-  port: 2053
-  uuid: 2c634977-584e-4e1f-b501-1b70c77a6743
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: random
-  servername: dismissaltree.net
-- name: 'ARISTA #25'
-  type: vless
-  server: 54.37.136.194
-  port: 2053
-  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-
-  client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
-    short-id: "50ba05992b05c1c3"
-- name: 'ARISTA #26'
-  type: vless
-  server: crow.trustpacket.ir
-  port: 2053
-  uuid: 16f42b76-b7d5-4dd2-8d57-fe6bc51f8ebb
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: chrome
-  servername: crow.trustpacket.ir
-- name: 'ARISTA #27'
-  type: vless
-  server: 104.16.22.21
-  port: 2053
-  uuid: ab6e4542-64b4-4673-9396-da882fb430b3
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: ca.roomode.ir
-  ws-opts:
-    path: /
-    headers:
-      Host: ca.roomode.ir
-- name: 'ARISTA #28'
-  type: vless
-  server: pp.degeristir.ir
-  port: 2053
-  uuid: 0717d74e-7ec5-479f-aab9-fa23d25e88f6
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: tls.zerossrz.ir
-- name: 'ARISTA #29'
   type: vless
   server: ccvtv.tgseenrobo.ir
   port: 2053
@@ -441,6 +375,88 @@ proxies:
   servername: ccvtv.tgseenrobo.ir
   ws-opts:
     path: /
+- name: 'ARISTA #24'
+  type: vless
+  server: netcraft.com
+  port: 2053
+  uuid: 56ba454e-f6c3-4965-ab7c-a752b9d075fa
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: firefox
+  servername: camera.tgseenrobo.ir
+  ws-opts:
+    path: /api/v1/payment/verify/9mQ2rL8sKp4xN7
+- name: 'ARISTA #25'
+  type: vless
+  server: 185.141.227.180
+  port: 2053
+  uuid: 2c634977-584e-4e1f-b501-1b70c77a6743
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN
+  client-fingerprint: random
+  servername: dismissaltree.net
+- name: 'ARISTA #26'
+  type: vless
+  server: 162.159.82.123
+  port: 2053
+  uuid: 8847fd86-7d22-40ab-80b7-1fa585242654
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: ca.roomode.ir
+  ws-opts:
+    path: /
+    headers:
+      Host: ca.roomode.ir
+- name: 'ARISTA #27'
+  type: vless
+  server: netcraft.com
+  port: 2053
+  uuid: 56ba454e-f6c3-4965-ab7c-a752b9d075fa
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #28'
+  type: vless
+  server: ccvtv.tgseenrobo.ir
+  port: 2053
+  uuid: 56ba454e-f6c3-4965-ab7c-a752b9d075fa
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: ccvtv.tgseenrobo.ir
+  ws-opts:
+    path: /
+- name: 'ARISTA #29'
+  type: vless
+  server: netcraft.com
+  port: 2053
+  uuid: 56ba454e-f6c3-4965-ab7c-a752b9d075fa
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: firefox
+  servername: camera.tgseenrobo.ir
+  ws-opts:
+    path: /api/v1/payment/verify/9mQ2rL8sKp4xN7
 - name: 'ARISTA #30'
   type: vless
   server: 185.141.227.180
@@ -450,9 +466,48 @@ proxies:
   tls: true
   udp: true
   skip-cert-verify: true
+  alpn:
+  - GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN
   client-fingerprint: random
   servername: dismissaltree.net
 - name: 'ARISTA #31'
+  type: vless
+  server: 162.159.82.123
+  port: 2053
+  uuid: 8847fd86-7d22-40ab-80b7-1fa585242654
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: ca.roomode.ir
+  ws-opts:
+    path: /
+    headers:
+      Host: ca.roomode.ir
+- name: 'ARISTA #32'
+  type: vless
+  server: netcraft.com
+  port: 2053
+  uuid: 56ba454e-f6c3-4965-ab7c-a752b9d075fa
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #33'
+  type: vless
+  server: crow.trustpacket.ir
+  port: 2053
+  uuid: 16f42b76-b7d5-4dd2-8d57-fe6bc51f8ebb
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: crow.trustpacket.ir
+- name: 'ARISTA #34'
   type: vless
   server: 54.37.136.194
   port: 2053
@@ -468,46 +523,44 @@ proxies:
   reality-opts:
     public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
     short-id: "50ba05992b05c1c3"
-- name: 'ARISTA #32'
+- name: 'ARISTA #35'
   type: vless
-  server: crow.trustpacket.ir
+  server: 104.18.1.1
   port: 2053
-  uuid: 16f42b76-b7d5-4dd2-8d57-fe6bc51f8ebb
-  network: xhttp
+  uuid: da4747a6-be0d-4c1b-90f4-d82ec3012be2
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: ios
+  servername: music1000.melobitmusic1.ir
+  ws-opts:
+    path: /
+    headers:
+      Host: music1000.melobitmusic1.ir
+- name: 'ARISTA #36'
+  type: vless
+  server: 141.193.213.30
+  port: 2053
+  uuid: 64a28ed6-2238-42d9-8452-b83674f741e5
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   alpn:
   - h2
-  client-fingerprint: chrome
-  servername: crow.trustpacket.ir
-- name: 'ARISTA #33'
-  type: vless
-  server: 104.16.22.21
-  port: 2053
-  uuid: ab6e4542-64b4-4673-9396-da882fb430b3
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: ca.roomode.ir
+  - http/1.1
+  client-fingerprint: edge
+  servername: sunny-comet-55.curiocar.com
   ws-opts:
-    path: /
+    path: /?ed=2053
     headers:
-      Host: ca.roomode.ir
-- name: 'ARISTA #34'
-  type: vless
-  server: pp.degeristir.ir
-  port: 2053
-  uuid: 0717d74e-7ec5-479f-aab9-fa23d25e88f6
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: tls.zerossrz.ir
-- name: 'ARISTA #35'
+      Host: sunny-comet-55.curiocar.com
+- name: 'ARISTA #37'
   type: vless
   server: ccvtv.tgseenrobo.ir
   port: 2053
@@ -522,22 +575,125 @@ proxies:
   servername: ccvtv.tgseenrobo.ir
   ws-opts:
     path: /
-- name: 'ARISTA #36'
+- name: 'ARISTA #38'
   type: vless
-  server: 5.189.254.168
+  server: netcraft.com
   port: 2053
-  uuid: 9ce4c9e2-1dcc-abe8-9abf-9bf8bc1269f6
+  uuid: 56ba454e-f6c3-4965-ab7c-a752b9d075fa
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: firefox
+  servername: camera.tgseenrobo.ir
+  ws-opts:
+    path: /api/v1/payment/verify/9mQ2rL8sKp4xN7
+- name: 'ARISTA #39'
+  type: vless
+  server: 185.141.227.180
+  port: 2053
+  uuid: 2c634977-584e-4e1f-b501-1b70c77a6743
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN
+  client-fingerprint: random
+  servername: dismissaltree.net
+- name: 'ARISTA #40'
+  type: vless
+  server: 162.159.82.123
+  port: 2053
+  uuid: 8847fd86-7d22-40ab-80b7-1fa585242654
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: j.n.i.l.6.m.7.3.o.t.e.s.j.3.us.art-us.kdns.fr
+  servername: ca.roomode.ir
   ws-opts:
-    path: /pg/10086-dfc816f117c49173
+    path: /
     headers:
-      Host: j.n.i.l.6.m.7.3.o.t.e.s.j.3.us.art-us.kdns.fr
-- name: 'T.ME: @aristapanel #37'
+      Host: ca.roomode.ir
+- name: 'ARISTA #41'
+  type: vless
+  server: netcraft.com
+  port: 2053
+  uuid: 56ba454e-f6c3-4965-ab7c-a752b9d075fa
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #42'
+  type: vless
+  server: crow.trustpacket.ir
+  port: 2053
+  uuid: 16f42b76-b7d5-4dd2-8d57-fe6bc51f8ebb
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: crow.trustpacket.ir
+- name: 'ARISTA #43'
+  type: vless
+  server: 54.37.136.194
+  port: 2053
+  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
+    short-id: "50ba05992b05c1c3"
+- name: 'ARISTA #44'
+  type: vless
+  server: 104.18.1.1
+  port: 2053
+  uuid: da4747a6-be0d-4c1b-90f4-d82ec3012be2
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: ios
+  servername: music1000.melobitmusic1.ir
+  ws-opts:
+    path: /
+    headers:
+      Host: music1000.melobitmusic1.ir
+- name: 'ARISTA #45'
+  type: vless
+  server: 141.193.213.30
+  port: 2053
+  uuid: 64a28ed6-2238-42d9-8452-b83674f741e5
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: edge
+  servername: sunny-comet-55.curiocar.com
+  ws-opts:
+    path: /?ed=2053
+    headers:
+      Host: sunny-comet-55.curiocar.com
+- name: 'T.ME: @aristapanel #46'
   type: vless
   server: 212.227.235.66
   port: 2053
@@ -551,7 +707,7 @@ proxies:
   reality-opts:
     public-key: 7Y6Xb5Ql_03K25x8yKUSOKI2JTOMyv2nyCcFza90uxk
     short-id: "29e8dcd2b37aaa7f"
-- name: 'T.ME: @aristapanel #38'
+- name: 'T.ME: @aristapanel #47'
   type: vless
   server: 198.251.78.29
   port: 2053
@@ -565,7 +721,7 @@ proxies:
   reality-opts:
     public-key: Uk5b-Wh_uxeCc7R8NS9iWE40xc0h9wWC04rSB9yhgAw
     short-id: "b5d625695ec82c7e"
-- name: 'T.ME: @aristapanel #39'
+- name: 'T.ME: @aristapanel #48'
   type: vless
   server: 5.223.74.174
   port: 2053
@@ -580,7 +736,7 @@ proxies:
   reality-opts:
     public-key: pIkxGlcFFawk7e0T-2VcdFXOc9LsjoBhl47vl8EuRgg
     short-id: "36151c48e28cfb65"
-- name: 'T.ME: @aristapanel #40'
+- name: 'T.ME: @aristapanel #49'
   type: vless
   server: freesocks.work
   port: 2053
@@ -597,7 +753,16 @@ proxies:
     path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
     headers:
       Host: uwu.blueknightnet.qzz.io
-- name: 'T.ME: @aristapanel #41'
+- name: 'T.ME: @aristapanel #50'
+  type: vless
+  server: test.keoplentuio.xyz
+  port: 2053
+  uuid: 9ef61079-6f7d-4911-9608-943da85d8e6f
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'T.ME: @aristapanel #51'
   type: vless
   server: cctvhikvision.center
   port: 2053
@@ -614,7 +779,7 @@ proxies:
     path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
     headers:
       Host: uwu.blueknightnet.qzz.io
-- name: 'T.ME: @aristapanel #42'
+- name: 'T.ME: @aristapanel #52'
   type: vless
   server: undef.network
   port: 2053
@@ -631,7 +796,7 @@ proxies:
     path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
     headers:
       Host: uwu.blueknightnet.qzz.io
-- name: 'T.ME: @aristapanel #43'
+- name: 'T.ME: @aristapanel #53'
   type: vless
   server: hikvision-plus.com
   port: 2053
@@ -648,7 +813,7 @@ proxies:
     path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
     headers:
       Host: uwu.blueknightnet.qzz.io
-- name: 'T.ME: @aristapanel #44'
+- name: 'T.ME: @aristapanel #54'
   type: vless
   server: 185.141.227.180
   port: 2053
@@ -657,7 +822,7 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #45'
+- name: 'T.ME: @aristapanel #55'
   type: vless
   server: 46.250.240.80
   port: 2053
@@ -671,7 +836,7 @@ proxies:
   reality-opts:
     public-key: CYFeysLf--_IVhxQOCd3ZxLrAVWFFOkJzvIGHOVXN3E
     short-id: "4cc9dc65f7770115"
-- name: 'T.ME: @aristapanel #46'
+- name: 'T.ME: @aristapanel #56'
   type: vless
   server: 66.70.179.198
   port: 2053
@@ -685,7 +850,18 @@ proxies:
   reality-opts:
     public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
     short-id: "83f8317a948bb769"
-- name: 'T.ME: @aristapanel #47'
+- name: 'T.ME: @aristapanel #57'
+  type: vless
+  server: pp.degeristir.ir
+  port: 2053
+  uuid: 0717d74e-7ec5-479f-aab9-fa23d25e88f6
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: tls.zerossrz.ir
+- name: 'T.ME: @aristapanel #58'
   type: vless
   server: 194.61.31.126
   port: 2053
@@ -698,7 +874,7 @@ proxies:
   reality-opts:
     public-key: PuAGLfJy6cu1TNoHuKIKSxPetCbZI41fc8hQDjWPIAU
     short-id: "9980e0609b0d3891"
-- name: 'T.ME: @aristapanel #48'
+- name: 'T.ME: @aristapanel #59'
   type: vless
   server: 104.16.22.21
   port: 2053
@@ -713,139 +889,26 @@ proxies:
     path: /?TELEGRAM--MARAMBASHI--MARAMBASHI?ed=512
     headers:
       Host: ca.roomode.ir
-- name: 'ARISTA #49'
+- name: 'T.ME: @aristapanel #60'
   type: vless
-  server: 185.141.227.180
+  server: land.zavqeron.ir
   port: 2053
-  uuid: 2c634977-584e-4e1f-b501-1b70c77a6743
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: random
-  servername: dismissaltree.net
-- name: 'ARISTA #50'
-  type: vless
-  server: 54.37.136.194
-  port: 2053
-  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-
-  client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
-    short-id: "50ba05992b05c1c3"
-- name: 'ARISTA #51'
-  type: vless
-  server: crow.trustpacket.ir
-  port: 2053
-  uuid: 16f42b76-b7d5-4dd2-8d57-fe6bc51f8ebb
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: chrome
-  servername: crow.trustpacket.ir
-- name: 'ARISTA #52'
-  type: vless
-  server: 104.16.22.21
-  port: 2053
-  uuid: ab6e4542-64b4-4673-9396-da882fb430b3
+  uuid: f2900749-7cff-42b7-9566-dfb03840d374
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: ca.roomode.ir
-  ws-opts:
-    path: /
-    headers:
-      Host: ca.roomode.ir
-- name: 'ARISTA #53'
-  type: vless
-  server: pp.degeristir.ir
-  port: 2053
-  uuid: 0717d74e-7ec5-479f-aab9-fa23d25e88f6
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: tls.zerossrz.ir
-- name: 'ARISTA #54'
-  type: vless
-  server: 185.141.227.180
-  port: 2053
-  uuid: 2c634977-584e-4e1f-b501-1b70c77a6743
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: random
-  servername: dismissaltree.net
-- name: 'ARISTA #55'
-  type: vless
-  server: 54.37.136.194
-  port: 2053
-  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
   alpn:
-  - networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-
-  client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
-    short-id: "50ba05992b05c1c3"
-- name: 'ARISTA #56'
-  type: vless
-  server: crow.trustpacket.ir
-  port: 2053
-  uuid: 16f42b76-b7d5-4dd2-8d57-fe6bc51f8ebb
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
+  - h3
   - h2
+  - http/1.1
   client-fingerprint: chrome
-  servername: crow.trustpacket.ir
-- name: 'ARISTA #57'
-  type: vless
-  server: 104.16.22.21
-  port: 2053
-  uuid: ab6e4542-64b4-4673-9396-da882fb430b3
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: ca.roomode.ir
+  servername: zavqeron.ir
   ws-opts:
-    path: /
+    path: /fi-cdn
     headers:
-      Host: ca.roomode.ir
-- name: 'ARISTA #58'
-  type: vless
-  server: pp.degeristir.ir
-  port: 2053
-  uuid: 0717d74e-7ec5-479f-aab9-fa23d25e88f6
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: tls.zerossrz.ir
-- name: 'ARISTA #59'
+      Host: land.zavqeron.ir
+- name: 'ARISTA #61'
   type: vless
   server: ccvtv.tgseenrobo.ir
   port: 2053
@@ -860,22 +923,221 @@ proxies:
   servername: ccvtv.tgseenrobo.ir
   ws-opts:
     path: /
-- name: 'ARISTA #60'
+- name: 'ARISTA #62'
   type: vless
-  server: 5.189.254.168
+  server: netcraft.com
   port: 2053
-  uuid: 9ce4c9e2-1dcc-abe8-9abf-9bf8bc1269f6
+  uuid: 56ba454e-f6c3-4965-ab7c-a752b9d075fa
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: firefox
+  servername: camera.tgseenrobo.ir
+  ws-opts:
+    path: /api/v1/payment/verify/9mQ2rL8sKp4xN7
+- name: 'ARISTA #63'
+  type: vless
+  server: 185.141.227.180
+  port: 2053
+  uuid: 2c634977-584e-4e1f-b501-1b70c77a6743
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN
+  client-fingerprint: random
+  servername: dismissaltree.net
+- name: 'ARISTA #64'
+  type: vless
+  server: 162.159.82.123
+  port: 2053
+  uuid: 8847fd86-7d22-40ab-80b7-1fa585242654
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: j.n.i.l.6.m.7.3.o.t.e.s.j.3.us.art-us.kdns.fr
+  servername: ca.roomode.ir
   ws-opts:
-    path: /pg/10086-dfc816f117c49173
+    path: /
     headers:
-      Host: j.n.i.l.6.m.7.3.o.t.e.s.j.3.us.art-us.kdns.fr
-- name: 'T.ME: @aristapanel #61'
+      Host: ca.roomode.ir
+- name: 'ARISTA #65'
+  type: vless
+  server: netcraft.com
+  port: 2053
+  uuid: 56ba454e-f6c3-4965-ab7c-a752b9d075fa
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #66'
+  type: vless
+  server: crow.trustpacket.ir
+  port: 2053
+  uuid: 16f42b76-b7d5-4dd2-8d57-fe6bc51f8ebb
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: crow.trustpacket.ir
+- name: 'ARISTA #67'
+  type: vless
+  server: 54.37.136.194
+  port: 2053
+  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
+    short-id: "50ba05992b05c1c3"
+- name: 'ARISTA #68'
+  type: vless
+  server: ccvtv.tgseenrobo.ir
+  port: 2053
+  uuid: 56ba454e-f6c3-4965-ab7c-a752b9d075fa
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: ccvtv.tgseenrobo.ir
+  ws-opts:
+    path: /
+- name: 'ARISTA #69'
+  type: vless
+  server: netcraft.com
+  port: 2053
+  uuid: 56ba454e-f6c3-4965-ab7c-a752b9d075fa
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: firefox
+  servername: camera.tgseenrobo.ir
+  ws-opts:
+    path: /api/v1/payment/verify/9mQ2rL8sKp4xN7
+- name: 'ARISTA #70'
+  type: vless
+  server: 185.141.227.180
+  port: 2053
+  uuid: 2c634977-584e-4e1f-b501-1b70c77a6743
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN--GHOFLSHCAN
+  client-fingerprint: random
+  servername: dismissaltree.net
+- name: 'ARISTA #71'
+  type: vless
+  server: 162.159.82.123
+  port: 2053
+  uuid: 8847fd86-7d22-40ab-80b7-1fa585242654
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: ca.roomode.ir
+  ws-opts:
+    path: /
+    headers:
+      Host: ca.roomode.ir
+- name: 'ARISTA #72'
+  type: vless
+  server: netcraft.com
+  port: 2053
+  uuid: 56ba454e-f6c3-4965-ab7c-a752b9d075fa
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #73'
+  type: vless
+  server: crow.trustpacket.ir
+  port: 2053
+  uuid: 16f42b76-b7d5-4dd2-8d57-fe6bc51f8ebb
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: crow.trustpacket.ir
+- name: 'ARISTA #74'
+  type: vless
+  server: 54.37.136.194
+  port: 2053
+  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
+    short-id: "50ba05992b05c1c3"
+- name: 'ARISTA #75'
+  type: vless
+  server: 104.18.1.1
+  port: 2053
+  uuid: da4747a6-be0d-4c1b-90f4-d82ec3012be2
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: ios
+  servername: music1000.melobitmusic1.ir
+  ws-opts:
+    path: /
+    headers:
+      Host: music1000.melobitmusic1.ir
+- name: 'ARISTA #76'
+  type: vless
+  server: 141.193.213.30
+  port: 2053
+  uuid: 64a28ed6-2238-42d9-8452-b83674f741e5
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: edge
+  servername: sunny-comet-55.curiocar.com
+  ws-opts:
+    path: /?ed=2053
+    headers:
+      Host: sunny-comet-55.curiocar.com
+- name: 'ARISTA #77'
   type: trojan
   server: 185.114.72.31
   port: 2053
@@ -890,7 +1152,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: 'T.ME: @aristapanel #62'
+- name: 'ARISTA #78'
   type: trojan
   server: 185.114.72.31
   port: 2053
@@ -905,7 +1167,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: 'T.ME: @aristapanel #63'
+- name: 'ARISTA #79'
   type: trojan
   server: 185.114.72.31
   port: 2053
@@ -920,7 +1182,37 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: 'T.ME: @aristapanel #64'
+- name: 'ARISTA #80'
+  type: trojan
+  server: 185.114.72.31
+  port: 2053
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.calmlunch.com
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: 'ARISTA #81'
+  type: trojan
+  server: 185.114.72.31
+  port: 2053
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.calmlunch.com
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: 'ARISTA #82'
   type: trojan
   server: 185.114.72.31
   port: 2053
@@ -980,34 +1272,52 @@ proxy-groups:
   - 'ARISTA #34'
   - 'ARISTA #35'
   - 'ARISTA #36'
-  - 'T.ME: @aristapanel #37'
-  - 'T.ME: @aristapanel #38'
-  - 'T.ME: @aristapanel #39'
-  - 'T.ME: @aristapanel #40'
-  - 'T.ME: @aristapanel #41'
-  - 'T.ME: @aristapanel #42'
-  - 'T.ME: @aristapanel #43'
-  - 'T.ME: @aristapanel #44'
-  - 'T.ME: @aristapanel #45'
+  - 'ARISTA #37'
+  - 'ARISTA #38'
+  - 'ARISTA #39'
+  - 'ARISTA #40'
+  - 'ARISTA #41'
+  - 'ARISTA #42'
+  - 'ARISTA #43'
+  - 'ARISTA #44'
+  - 'ARISTA #45'
   - 'T.ME: @aristapanel #46'
   - 'T.ME: @aristapanel #47'
   - 'T.ME: @aristapanel #48'
-  - 'ARISTA #49'
-  - 'ARISTA #50'
-  - 'ARISTA #51'
-  - 'ARISTA #52'
-  - 'ARISTA #53'
-  - 'ARISTA #54'
-  - 'ARISTA #55'
-  - 'ARISTA #56'
-  - 'ARISTA #57'
-  - 'ARISTA #58'
-  - 'ARISTA #59'
-  - 'ARISTA #60'
-  - 'T.ME: @aristapanel #61'
-  - 'T.ME: @aristapanel #62'
-  - 'T.ME: @aristapanel #63'
-  - 'T.ME: @aristapanel #64'
+  - 'T.ME: @aristapanel #49'
+  - 'T.ME: @aristapanel #50'
+  - 'T.ME: @aristapanel #51'
+  - 'T.ME: @aristapanel #52'
+  - 'T.ME: @aristapanel #53'
+  - 'T.ME: @aristapanel #54'
+  - 'T.ME: @aristapanel #55'
+  - 'T.ME: @aristapanel #56'
+  - 'T.ME: @aristapanel #57'
+  - 'T.ME: @aristapanel #58'
+  - 'T.ME: @aristapanel #59'
+  - 'T.ME: @aristapanel #60'
+  - 'ARISTA #61'
+  - 'ARISTA #62'
+  - 'ARISTA #63'
+  - 'ARISTA #64'
+  - 'ARISTA #65'
+  - 'ARISTA #66'
+  - 'ARISTA #67'
+  - 'ARISTA #68'
+  - 'ARISTA #69'
+  - 'ARISTA #70'
+  - 'ARISTA #71'
+  - 'ARISTA #72'
+  - 'ARISTA #73'
+  - 'ARISTA #74'
+  - 'ARISTA #75'
+  - 'ARISTA #76'
+  - 'ARISTA #77'
+  - 'ARISTA #78'
+  - 'ARISTA #79'
+  - 'ARISTA #80'
+  - 'ARISTA #81'
+  - 'ARISTA #82'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

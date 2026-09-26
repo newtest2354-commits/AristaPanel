@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2095
-# Updated: 2026-09-26 21:02:46
-# Count: 9
+# Updated: 2026-09-26 23:32:40
+# Count: 5
 
 mixed-port: 7890
 allow-lan: false
@@ -50,40 +50,56 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: cdn2.portalcode.ir
+  server: support.cloudflare.com
   port: 2095
-  uuid: 681314c5-b3ee-41f1-a959-fa42841f5383
-  network: httpupgrade
+  uuid: 86c50e3a-5b87-49dd-bd20-03c7f2735e40
+  network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: llm-api.sofurry.dpdns.org
 - name: 'ARISTA #2'
   type: vless
-  server: cdn2.portalcode.ir
+  server: support.cloudflare.com
   port: 2095
-  uuid: 681314c5-b3ee-41f1-a959-fa42841f5383
-  network: httpupgrade
+  uuid: 86c50e3a-5b87-49dd-bd20-03c7f2735e40
+  network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: llm-api.sofurry.dpdns.org
 - name: 'ARISTA #3'
   type: vless
-  server: cdn2.portalcode.ir
+  server: support.cloudflare.com
   port: 2095
-  uuid: 681314c5-b3ee-41f1-a959-fa42841f5383
-  network: httpupgrade
+  uuid: 86c50e3a-5b87-49dd-bd20-03c7f2735e40
+  network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: llm-api.sofurry.dpdns.org
 - name: 'ARISTA #4'
   type: vless
-  server: cdn2.portalcode.ir
+  server: support.cloudflare.com
   port: 2095
-  uuid: 681314c5-b3ee-41f1-a959-fa42841f5383
-  network: httpupgrade
+  uuid: 86c50e3a-5b87-49dd-bd20-03c7f2735e40
+  network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: llm-api.sofurry.dpdns.org
 - name: 'ARISTA #5'
   type: vless
   server: support.cloudflare.com
@@ -97,50 +113,6 @@ proxies:
     path: /
     headers:
       Host: llm-api.sofurry.dpdns.org
-- name: 'ARISTA #6'
-  type: vless
-  server: cdn2.portalcode.ir
-  port: 2095
-  uuid: 681314c5-b3ee-41f1-a959-fa42841f5383
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #7'
-  type: vless
-  server: support.cloudflare.com
-  port: 2095
-  uuid: 86c50e3a-5b87-49dd-bd20-03c7f2735e40
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: llm-api.sofurry.dpdns.org
-- name: 'ARISTA #8'
-  type: vless
-  server: support.cloudflare.com
-  port: 2095
-  uuid: 86c50e3a-5b87-49dd-bd20-03c7f2735e40
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: llm-api.sofurry.dpdns.org
-- name: 'ARISTA #9'
-  type: vless
-  server: cdn2.portalcode.ir
-  port: 2095
-  uuid: 681314c5-b3ee-41f1-a959-fa42841f5383
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -155,10 +127,6 @@ proxy-groups:
   - 'ARISTA #3'
   - 'ARISTA #4'
   - 'ARISTA #5'
-  - 'ARISTA #6'
-  - 'ARISTA #7'
-  - 'ARISTA #8'
-  - 'ARISTA #9'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
