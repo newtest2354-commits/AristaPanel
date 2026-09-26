@@ -1,6 +1,6 @@
 # COMBINED - Port 2086
-# Updated: 2026-09-25 21:29:30
-# Count: 2
+# Updated: 2026-09-26 04:41:56
+# Count: 4
 
 mixed-port: 7890
 allow-lan: false
@@ -48,7 +48,41 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'T.ME: @aristapanel #1'
+- name: 'ARISTA #1'
+  type: vmess
+  server: 108.186.180.148
+  port: 2086
+  uuid: af24a0e4-f5a2-4b97-a678-992d45346147
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 108.186.180.148
+  ws-opts:
+    path: af24a0e4-f5a2-4b97-a678-992d45346147-vm
+    headers:
+      Host: www.bing.com
+- name: 'ARISTA #2'
+  type: vmess
+  server: 108.186.180.148
+  port: 2086
+  uuid: af24a0e4-f5a2-4b97-a678-992d45346147
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 108.186.180.148
+  ws-opts:
+    path: af24a0e4-f5a2-4b97-a678-992d45346147-vm
+    headers:
+      Host: www.bing.com
+- name: 'T.ME: @aristapanel #3'
   type: vless
   server: 217.163.76.118
   port: 2086
@@ -57,7 +91,7 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #2'
+- name: 'T.ME: @aristapanel #4'
   type: vless
   server: 172.67.151.243
   port: 2086
@@ -79,8 +113,10 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'T.ME: @aristapanel #1'
-  - 'T.ME: @aristapanel #2'
+  - 'ARISTA #1'
+  - 'ARISTA #2'
+  - 'T.ME: @aristapanel #3'
+  - 'T.ME: @aristapanel #4'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

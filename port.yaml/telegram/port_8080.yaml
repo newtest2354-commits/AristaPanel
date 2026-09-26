@@ -1,6 +1,6 @@
 # TELEGRAM - Port 8080
-# Updated: 2026-09-25 21:29:35
-# Count: 11
+# Updated: 2026-09-26 04:42:04
+# Count: 12
 
 mixed-port: 7890
 allow-lan: false
@@ -50,9 +50,9 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 9fa3d4cb9e690e86.ravenlo.ir
+  server: 45.92.219.170
   port: 8080
-  uuid: 8d20ad0d-a1b1-4b5e-b228-8ed16e03431f
+  uuid: 560ecca1-7e20-4b41-b4d6-781fb3bc179d
   network: ws
   tls: false
   udp: true
@@ -60,12 +60,12 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: play.google.com
+      Host: primevideo.com
 - name: 'ARISTA #2'
   type: vless
-  server: 9fa3d4cb9e690e86.ravenlo.ir
+  server: 45.92.219.170
   port: 8080
-  uuid: 8d20ad0d-a1b1-4b5e-b228-8ed16e03431f
+  uuid: 560ecca1-7e20-4b41-b4d6-781fb3bc179d
   network: ws
   tls: false
   udp: true
@@ -73,12 +73,12 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: play.google.com
+      Host: primevideo.com
 - name: 'ARISTA #3'
   type: vless
-  server: 9fa3d4cb9e690e86.ravenlo.ir
+  server: 45.92.219.170
   port: 8080
-  uuid: 8d20ad0d-a1b1-4b5e-b228-8ed16e03431f
+  uuid: 560ecca1-7e20-4b41-b4d6-781fb3bc179d
   network: ws
   tls: false
   udp: true
@@ -86,18 +86,23 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: play.google.com
+      Host: primevideo.com
 - name: 'ARISTA #4'
-  type: ss
-  server: 193.29.139.168
+  type: vless
+  server: 45.92.219.170
   port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: QCXDxuDlTTMD7jtgHUjIoj
+  uuid: 560ecca1-7e20-4b41-b4d6-781fb3bc179d
+  network: ws
+  tls: false
   udp: true
-  tcp-fast-open: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: primevideo.com
 - name: 'ARISTA #5'
   type: ss
-  server: 82.38.31.149
+  server: 82.38.31.47
   port: 8080
   cipher: chacha20-ietf-poly1305
   password: oZIoA69Q8yhcQV8ka3Pa3A
@@ -105,7 +110,7 @@ proxies:
   tcp-fast-open: true
 - name: 'ARISTA #6'
   type: ss
-  server: 82.38.31.184
+  server: 82.38.31.210
   port: 8080
   cipher: chacha20-ietf-poly1305
   password: k1dBOmOB4oqi7Ump37a1bQ
@@ -113,7 +118,7 @@ proxies:
   tcp-fast-open: true
 - name: 'ARISTA #7'
   type: ss
-  server: 82.38.31.203
+  server: 82.38.31.184
   port: 8080
   cipher: chacha20-ietf-poly1305
   password: k1dBOmOB4oqi7Ump37a1bQ
@@ -121,10 +126,10 @@ proxies:
   tcp-fast-open: true
 - name: 'ARISTA #8'
   type: ss
-  server: 193.29.139.234
+  server: 82.38.31.203
   port: 8080
   cipher: chacha20-ietf-poly1305
-  password: 4a2rfixophdjffa8KVA4Aa
+  password: k1dBOmOB4oqi7Ump37a1bQ
   udp: true
   tcp-fast-open: true
 - name: 'ARISTA #9'
@@ -137,18 +142,26 @@ proxies:
   tcp-fast-open: true
 - name: 'ARISTA #10'
   type: ss
-  server: 82.38.31.210
+  server: 193.29.139.168
   port: 8080
   cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
+  password: QCXDxuDlTTMD7jtgHUjIoj
   udp: true
   tcp-fast-open: true
 - name: 'ARISTA #11'
   type: ss
-  server: 82.38.31.47
+  server: 82.38.31.149
   port: 8080
   cipher: chacha20-ietf-poly1305
   password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #12'
+  type: ss
+  server: 193.29.139.212
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: QCXDxuDlTTMD7jtgHUjIoj
   udp: true
   tcp-fast-open: true
 proxy-groups:
@@ -171,6 +184,7 @@ proxy-groups:
   - 'ARISTA #9'
   - 'ARISTA #10'
   - 'ARISTA #11'
+  - 'ARISTA #12'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

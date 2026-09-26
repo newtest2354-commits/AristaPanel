@@ -1,6 +1,6 @@
 # GITHUB - Port 2086
-# Updated: 2026-09-25 21:29:39
-# Count: 8
+# Updated: 2026-09-26 04:42:10
+# Count: 9
 
 mixed-port: 7890
 allow-lan: false
@@ -49,14 +49,22 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'T.ME: @aristapanel #1'
-  type: vless
-  server: 217.163.76.118
+  type: vmess
+  server: 108.186.180.148
   port: 2086
-  uuid: b7977b65-cfd8-4db9-a029-6ef014a4ae4a
-  network: xhttp
+  uuid: af24a0e4-f5a2-4b97-a678-992d45346147
+  alterId: 0
+  cipher: auto
+  network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 108.186.180.148
+  ws-opts:
+    path: af24a0e4-f5a2-4b97-a678-992d45346147-vm
+    headers:
+      Host: www.bing.com
 - name: 'T.ME: @aristapanel #2'
   type: vless
   server: 217.163.76.118
@@ -86,6 +94,15 @@ proxies:
   skip-cert-verify: true
 - name: 'T.ME: @aristapanel #5'
   type: vless
+  server: 217.163.76.118
+  port: 2086
+  uuid: b7977b65-cfd8-4db9-a029-6ef014a4ae4a
+  network: xhttp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'T.ME: @aristapanel #6'
+  type: vless
   server: 172.67.151.243
   port: 2086
   uuid: b4a16091-a25d-4d33-aee3-f5ae04f34b14
@@ -97,15 +114,6 @@ proxies:
     path: /eyJqdW5rIjoiRjJEdlF3U251aCIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbIjE0Ni4xMDMuMTEzLjE1OCIsIjEwMy45Ny44OC4xMzMiLCIxOTQuMTgwLjE4OC4yNDEiLCIxMTYuMjAyLjEzMi4yMDUiXX0=?ed=2560
     headers:
       Host: blue-brook-cc73.karren391.workers.dev
-- name: 'T.ME: @aristapanel #6'
-  type: vless
-  server: 217.163.76.118
-  port: 2086
-  uuid: b7977b65-cfd8-4db9-a029-6ef014a4ae4a
-  network: xhttp
-  tls: false
-  udp: true
-  skip-cert-verify: true
 - name: 'T.ME: @aristapanel #7'
   type: vless
   server: 217.163.76.118
@@ -116,6 +124,15 @@ proxies:
   udp: true
   skip-cert-verify: true
 - name: 'T.ME: @aristapanel #8'
+  type: vless
+  server: 217.163.76.118
+  port: 2086
+  uuid: b7977b65-cfd8-4db9-a029-6ef014a4ae4a
+  network: xhttp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'T.ME: @aristapanel #9'
   type: vless
   server: 172.67.151.243
   port: 2086
@@ -145,6 +162,7 @@ proxy-groups:
   - 'T.ME: @aristapanel #6'
   - 'T.ME: @aristapanel #7'
   - 'T.ME: @aristapanel #8'
+  - 'T.ME: @aristapanel #9'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
