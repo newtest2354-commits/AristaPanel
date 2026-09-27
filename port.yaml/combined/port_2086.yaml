@@ -1,6 +1,6 @@
 # COMBINED - Port 2086
-# Updated: 2026-09-27 16:53:24
-# Count: 7
+# Updated: 2026-09-27 21:19:56
+# Count: 8
 
 mixed-port: 7890
 allow-lan: false
@@ -50,7 +50,7 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 162.159.38.127
+  server: 172.64.32.108
   port: 2086
   uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
   network: ws
@@ -63,7 +63,7 @@ proxies:
       Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
 - name: 'ARISTA #2'
   type: vless
-  server: 162.159.38.127
+  server: 172.64.32.108
   port: 2086
   uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
   network: ws
@@ -74,7 +74,38 @@ proxies:
     path: /?ed=2560security=tls
     headers:
       Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
-- name: 'T.ME: @aristapanel #3'
+- name: 'ARISTA #3'
+  type: vless
+  server: html.iranpood.com
+  port: 2086
+  uuid: 3b715892-8610-4fdc-9086-647b36af5443
+  network: xhttp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #4'
+  type: vless
+  server: 172.64.32.108
+  port: 2086
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /?ed=2560security=tls
+    headers:
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
+- name: 'ARISTA #5'
+  type: vless
+  server: html.iranpood.com
+  port: 2086
+  uuid: 3b715892-8610-4fdc-9086-647b36af5443
+  network: xhttp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'T.ME: @aristapanel #6'
   type: vless
   server: 217.163.76.118
   port: 2086
@@ -83,9 +114,9 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'ARISTA #4'
+- name: 'ARISTA #7'
   type: vless
-  server: 162.159.38.127
+  server: 172.64.32.108
   port: 2086
   uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
   network: ws
@@ -96,30 +127,15 @@ proxies:
     path: /?ed=2560security=tls
     headers:
       Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
-- name: 'T.ME: @aristapanel #5'
-  type: ss
-  server: momoly2.rehan-iogsar.ir
+- name: 'ARISTA #8'
+  type: vless
+  server: html.iranpood.com
   port: 2086
-  cipher: 2022-blake3-aes-128-gcm
-  password: 1JvlmtT4v8y1yGczDtT6Ww==:m6LfxYiFfEUCMtEyWdJHIw==
+  uuid: 3b715892-8610-4fdc-9086-647b36af5443
+  network: xhttp
+  tls: false
   udp: true
-  tcp-fast-open: true
-- name: 'T.ME: @aristapanel #6'
-  type: ss
-  server: momoly2.rehan-iogsar.ir
-  port: 2086
-  cipher: 2022-blake3-aes-128-gcm
-  password: 1JvlmtT4v8y1yGczDtT6Ww==:m6LfxYiFfEUCMtEyWdJHIw==
-  udp: true
-  tcp-fast-open: true
-- name: 'T.ME: @aristapanel #7'
-  type: ss
-  server: momoly2.rehan-iogsar.ir
-  port: 2086
-  cipher: 2022-blake3-aes-128-gcm
-  password: 1JvlmtT4v8y1yGczDtT6Ww==:m6LfxYiFfEUCMtEyWdJHIw==
-  udp: true
-  tcp-fast-open: true
+  skip-cert-verify: true
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -131,11 +147,12 @@ proxy-groups:
   proxies: &id001
   - 'ARISTA #1'
   - 'ARISTA #2'
-  - 'T.ME: @aristapanel #3'
+  - 'ARISTA #3'
   - 'ARISTA #4'
-  - 'T.ME: @aristapanel #5'
+  - 'ARISTA #5'
   - 'T.ME: @aristapanel #6'
-  - 'T.ME: @aristapanel #7'
+  - 'ARISTA #7'
+  - 'ARISTA #8'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
