@@ -1,6 +1,6 @@
 # GITHUB - Port 2095
-# Updated: 2026-09-26 23:32:47
-# Count: 1
+# Updated: 2026-09-27 05:01:07
+# Count: 2
 
 mixed-port: 7890
 allow-lan: false
@@ -50,7 +50,20 @@ rules:
 proxies:
 - name: 'T.ME: @aristapanel #1'
   type: vless
-  server: 104.16.249.249
+  server: cloudflare-dns.com
+  port: 2095
+  uuid: 86c50e3a-5b87-49dd-bd20-03c7f2735e40
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: llm-api.sofurry.dpdns.org
+- name: 'T.ME: @aristapanel #2'
+  type: vless
+  server: cloudflare-dns.com
   port: 2095
   uuid: 86c50e3a-5b87-49dd-bd20-03c7f2735e40
   network: ws
@@ -71,6 +84,7 @@ proxy-groups:
   timeout: 3000
   proxies: &id001
   - 'T.ME: @aristapanel #1'
+  - 'T.ME: @aristapanel #2'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

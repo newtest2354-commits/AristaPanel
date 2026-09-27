@@ -1,6 +1,6 @@
 # GITHUB - Port 9443
-# Updated: 2026-09-26 23:32:47
-# Count: 8
+# Updated: 2026-09-27 05:01:07
+# Count: 9
 
 mixed-port: 7890
 allow-lan: false
@@ -50,13 +50,19 @@ rules:
 proxies:
 - name: 'T.ME: @aristapanel #1'
   type: vless
-  server: 65.109.178.91
+  server: 194.150.166.228
   port: 9443
-  uuid: 835604a6-06b7-4270-a670-cb211af5c65c
+  uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
   network: tcp
-  tls: false
+  tls: true
   udp: true
   skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: storage.yandexcloud.net
+  reality-opts:
+    public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+    short-id: "ad20d2ba"
 - name: 'T.ME: @aristapanel #2'
   type: ss
   server: 185.156.47.97
@@ -67,7 +73,7 @@ proxies:
   tcp-fast-open: true
 - name: 'T.ME: @aristapanel #3'
   type: ss
-  server: 185.156.47.97
+  server: yyz-ca-01.blncvpn4u.cc
   port: 9443
   cipher: aes-256-gcm
   password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
@@ -75,7 +81,7 @@ proxies:
   tcp-fast-open: true
 - name: 'T.ME: @aristapanel #4'
   type: ss
-  server: yyz-ca-01.blncvpn4u.cc
+  server: 185.156.47.97
   port: 9443
   cipher: aes-256-gcm
   password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
@@ -83,7 +89,7 @@ proxies:
   tcp-fast-open: true
 - name: 'T.ME: @aristapanel #5'
   type: ss
-  server: 185.156.47.97
+  server: yyz-ca-01.blncvpn4u.cc
   port: 9443
   cipher: aes-256-gcm
   password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
@@ -91,7 +97,7 @@ proxies:
   tcp-fast-open: true
 - name: 'T.ME: @aristapanel #6'
   type: ss
-  server: yyz-ca-01.blncvpn4u.cc
+  server: 185.156.47.97
   port: 9443
   cipher: aes-256-gcm
   password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
@@ -99,13 +105,21 @@ proxies:
   tcp-fast-open: true
 - name: 'T.ME: @aristapanel #7'
   type: ss
-  server: 185.156.47.97
+  server: yyz-ca-01.blncvpn4u.cc
   port: 9443
   cipher: aes-256-gcm
   password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
   udp: true
   tcp-fast-open: true
 - name: 'T.ME: @aristapanel #8'
+  type: ss
+  server: 185.156.47.97
+  port: 9443
+  cipher: aes-256-gcm
+  password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
+  udp: true
+  tcp-fast-open: true
+- name: 'T.ME: @aristapanel #9'
   type: ss
   server: yyz-ca-01.blncvpn4u.cc
   port: 9443
@@ -130,6 +144,7 @@ proxy-groups:
   - 'T.ME: @aristapanel #6'
   - 'T.ME: @aristapanel #7'
   - 'T.ME: @aristapanel #8'
+  - 'T.ME: @aristapanel #9'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
