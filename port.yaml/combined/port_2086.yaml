@@ -1,6 +1,6 @@
 # COMBINED - Port 2086
-# Updated: 2026-09-27 11:53:48
-# Count: 2
+# Updated: 2026-09-27 16:53:24
+# Count: 7
 
 mixed-port: 7890
 allow-lan: false
@@ -48,7 +48,33 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'T.ME: @aristapanel #1'
+- name: 'ARISTA #1'
+  type: vless
+  server: 162.159.38.127
+  port: 2086
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /?ed=2560security=tls
+    headers:
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
+- name: 'ARISTA #2'
+  type: vless
+  server: 162.159.38.127
+  port: 2086
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /?ed=2560security=tls
+    headers:
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
+- name: 'T.ME: @aristapanel #3'
   type: vless
   server: 217.163.76.118
   port: 2086
@@ -57,19 +83,43 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #2'
+- name: 'ARISTA #4'
   type: vless
-  server: 104.21.64.198
+  server: 162.159.38.127
   port: 2086
-  uuid: 73796e63-0000-4000-8000-000000000007
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
   ws-opts:
-    path: /sync
+    path: /?ed=2560security=tls
     headers:
-      Host: vqrlof-pwa5a7-onfjlv.zedbazi061.workers.dev
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
+- name: 'T.ME: @aristapanel #5'
+  type: ss
+  server: momoly2.rehan-iogsar.ir
+  port: 2086
+  cipher: 2022-blake3-aes-128-gcm
+  password: 1JvlmtT4v8y1yGczDtT6Ww==:m6LfxYiFfEUCMtEyWdJHIw==
+  udp: true
+  tcp-fast-open: true
+- name: 'T.ME: @aristapanel #6'
+  type: ss
+  server: momoly2.rehan-iogsar.ir
+  port: 2086
+  cipher: 2022-blake3-aes-128-gcm
+  password: 1JvlmtT4v8y1yGczDtT6Ww==:m6LfxYiFfEUCMtEyWdJHIw==
+  udp: true
+  tcp-fast-open: true
+- name: 'T.ME: @aristapanel #7'
+  type: ss
+  server: momoly2.rehan-iogsar.ir
+  port: 2086
+  cipher: 2022-blake3-aes-128-gcm
+  password: 1JvlmtT4v8y1yGczDtT6Ww==:m6LfxYiFfEUCMtEyWdJHIw==
+  udp: true
+  tcp-fast-open: true
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -79,8 +129,13 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'T.ME: @aristapanel #1'
-  - 'T.ME: @aristapanel #2'
+  - 'ARISTA #1'
+  - 'ARISTA #2'
+  - 'T.ME: @aristapanel #3'
+  - 'ARISTA #4'
+  - 'T.ME: @aristapanel #5'
+  - 'T.ME: @aristapanel #6'
+  - 'T.ME: @aristapanel #7'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

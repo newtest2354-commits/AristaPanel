@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2083
-# Updated: 2026-09-27 11:53:56
-# Count: 8
+# Updated: 2026-09-27 16:53:30
+# Count: 6
 
 mixed-port: 7890
 allow-lan: false
@@ -64,15 +64,18 @@ proxies:
       Host: proxy-34l.pages.dev
 - name: 'ARISTA #2'
   type: vless
-  server: 66.90.105.211
+  server: 27.50.49.154
   port: 2083
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  network: grpc
-  tls: false
+  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
+  network: ws
+  tls: true
   udp: true
   skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: vless
+  servername: proxy-34l.pages.dev
+  ws-opts:
+    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI?ed=512
+    headers:
+      Host: proxy-34l.pages.dev
 - name: 'ARISTA #3'
   type: vless
   server: 27.50.49.154
@@ -102,42 +105,14 @@ proxies:
     headers:
       Host: proxy-34l.pages.dev
 - name: 'ARISTA #5'
-  type: vless
-  server: 66.90.105.211
+  type: ss
+  server: 51.222.107.43
   port: 2083
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  network: grpc
-  tls: false
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:HWFFJN19JkvbTKo/79AfnbRBK9uHUUaFNZJyLjEoJGs=
   udp: true
-  skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: vless
+  tcp-fast-open: true
 - name: 'ARISTA #6'
-  type: vless
-  server: 27.50.49.154
-  port: 2083
-  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: proxy-34l.pages.dev
-  ws-opts:
-    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI?ed=512
-    headers:
-      Host: proxy-34l.pages.dev
-- name: 'ARISTA #7'
-  type: vless
-  server: 66.90.105.211
-  port: 2083
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  network: grpc
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: vless
-- name: 'ARISTA #8'
   type: ss
   server: 51.222.107.43
   port: 2083
@@ -160,8 +135,6 @@ proxy-groups:
   - 'ARISTA #4'
   - 'ARISTA #5'
   - 'ARISTA #6'
-  - 'ARISTA #7'
-  - 'ARISTA #8'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
