@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2083
-# Updated: 2026-09-28 05:03:39
-# Count: 11
+# Updated: 2026-09-28 13:40:57
+# Count: 36
 
 mixed-port: 7890
 allow-lan: false
@@ -49,99 +49,83 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'ARISTA #1'
-  type: vmess
-  server: or.521166.xyz
+  type: vless
+  server: tr111.zelqira.ir
   port: 2083
-  uuid: ac251237-576f-40c8-a543-554960c958b1
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
+  uuid: f8085df9-4a12-4fea-8ea7-3c1123c8cef1
+  network: tcp
+  tls: false
   udp: true
   skip-cert-verify: true
-  tcp-fast-open: true
-  servername: or.521166.xyz
-  ws-opts:
-    path: /or3
 - name: 'ARISTA #2'
   type: vless
-  server: 27.50.49.154
+  server: 66.90.104.43
   port: 2083
-  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
-  network: ws
-  tls: true
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  network: grpc
+  tls: false
   udp: true
   skip-cert-verify: true
-  servername: proxy-34l.pages.dev
-  ws-opts:
-    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI?ed=512
-    headers:
-      Host: proxy-34l.pages.dev
+  grpc-opts:
+    grpc-service-name: vless
 - name: 'ARISTA #3'
   type: vless
-  server: 66.90.104.43
+  server: netcraft.com
   port: 2083
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  network: grpc
-  tls: false
+  uuid: 29762512-1330-468d-a2f7-215c75affd3d
+  network: ws
+  tls: true
   udp: true
   skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: vless
+  alpn:
+  - h2
+  client-fingerprint: firefox
+  servername: camera.tgseenrobo.ir
+  ws-opts:
+    path: /api/v1/payment/verify/9mQ2rL8sKp4xN7?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
+    headers:
+      Host: camera.tgseenrobo.ir
 - name: 'ARISTA #4'
   type: vless
-  server: 27.50.49.154
+  server: netcraft.com
   port: 2083
-  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
+  uuid: 29762512-1330-468d-a2f7-215c75affd3d
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: proxy-34l.pages.dev
+  alpn:
+  - h2
+  client-fingerprint: firefox
+  servername: camera.tgseenrobo.ir
   ws-opts:
-    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI?ed=512
+    path: /api/v1/payment/verify/9mQ2rL8sKp4xN7
     headers:
-      Host: proxy-34l.pages.dev
+      Host: camera.tgseenrobo.ir
 - name: 'ARISTA #5'
   type: vless
-  server: 66.90.104.43
+  server: 27.50.49.154
   port: 2083
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  network: grpc
-  tls: false
+  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
+  network: ws
+  tls: true
   udp: true
   skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: vless
+  servername: proxy-34l.pages.dev
+  ws-opts:
+    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI?ed=512
+    headers:
+      Host: proxy-34l.pages.dev
 - name: 'ARISTA #6'
   type: vless
-  server: 27.50.49.154
+  server: tr111.zelqira.ir
   port: 2083
-  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
-  network: ws
-  tls: true
+  uuid: f8085df9-4a12-4fea-8ea7-3c1123c8cef1
+  network: tcp
+  tls: false
   udp: true
   skip-cert-verify: true
-  servername: proxy-34l.pages.dev
-  ws-opts:
-    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI?ed=512
-    headers:
-      Host: proxy-34l.pages.dev
 - name: 'ARISTA #7'
-  type: vless
-  server: 27.50.49.154
-  port: 2083
-  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: proxy-34l.pages.dev
-  ws-opts:
-    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI?ed=512
-    headers:
-      Host: proxy-34l.pages.dev
-- name: 'ARISTA #8'
   type: vless
   server: 66.90.104.43
   port: 2083
@@ -152,20 +136,24 @@ proxies:
   skip-cert-verify: true
   grpc-opts:
     grpc-service-name: vless
-- name: 'ARISTA #9'
+- name: 'ARISTA #8'
   type: vless
-  server: 27.50.49.154
+  server: tr111.zelqira.ir
   port: 2083
-  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
-  network: ws
-  tls: true
+  uuid: f8085df9-4a12-4fea-8ea7-3c1123c8cef1
+  network: tcp
+  tls: false
   udp: true
   skip-cert-verify: true
-  servername: proxy-34l.pages.dev
-  ws-opts:
-    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI?ed=512
-    headers:
-      Host: proxy-34l.pages.dev
+- name: 'ARISTA #9'
+  type: vless
+  server: tr111.zelqira.ir
+  port: 2083
+  uuid: f8085df9-4a12-4fea-8ea7-3c1123c8cef1
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
 - name: 'ARISTA #10'
   type: vless
   server: 66.90.104.43
@@ -179,6 +167,40 @@ proxies:
     grpc-service-name: vless
 - name: 'ARISTA #11'
   type: vless
+  server: netcraft.com
+  port: 2083
+  uuid: 29762512-1330-468d-a2f7-215c75affd3d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: firefox
+  servername: camera.tgseenrobo.ir
+  ws-opts:
+    path: /api/v1/payment/verify/9mQ2rL8sKp4xN7?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
+    headers:
+      Host: camera.tgseenrobo.ir
+- name: 'ARISTA #12'
+  type: vless
+  server: netcraft.com
+  port: 2083
+  uuid: 29762512-1330-468d-a2f7-215c75affd3d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: firefox
+  servername: camera.tgseenrobo.ir
+  ws-opts:
+    path: /api/v1/payment/verify/9mQ2rL8sKp4xN7
+    headers:
+      Host: camera.tgseenrobo.ir
+- name: 'ARISTA #13'
+  type: vless
   server: 27.50.49.154
   port: 2083
   uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
@@ -191,6 +213,301 @@ proxies:
     path: /?TELEGRAM--MARAMBASHI--MARAMBASHI?ed=512
     headers:
       Host: proxy-34l.pages.dev
+- name: 'ARISTA #14'
+  type: vless
+  server: tr111.zelqira.ir
+  port: 2083
+  uuid: f8085df9-4a12-4fea-8ea7-3c1123c8cef1
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #15'
+  type: vless
+  server: 66.90.104.43
+  port: 2083
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: vless
+- name: 'ARISTA #16'
+  type: vless
+  server: netcraft.com
+  port: 2083
+  uuid: 29762512-1330-468d-a2f7-215c75affd3d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: firefox
+  servername: camera.tgseenrobo.ir
+  ws-opts:
+    path: /api/v1/payment/verify/9mQ2rL8sKp4xN7?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
+    headers:
+      Host: camera.tgseenrobo.ir
+- name: 'ARISTA #17'
+  type: vless
+  server: netcraft.com
+  port: 2083
+  uuid: 29762512-1330-468d-a2f7-215c75affd3d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: firefox
+  servername: camera.tgseenrobo.ir
+  ws-opts:
+    path: /api/v1/payment/verify/9mQ2rL8sKp4xN7
+    headers:
+      Host: camera.tgseenrobo.ir
+- name: 'ARISTA #18'
+  type: vless
+  server: tr111.zelqira.ir
+  port: 2083
+  uuid: f8085df9-4a12-4fea-8ea7-3c1123c8cef1
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #19'
+  type: vless
+  server: 66.90.104.43
+  port: 2083
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: vless
+- name: 'ARISTA #20'
+  type: vless
+  server: netcraft.com
+  port: 2083
+  uuid: 29762512-1330-468d-a2f7-215c75affd3d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: firefox
+  servername: camera.tgseenrobo.ir
+  ws-opts:
+    path: /api/v1/payment/verify/9mQ2rL8sKp4xN7?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
+    headers:
+      Host: camera.tgseenrobo.ir
+- name: 'ARISTA #21'
+  type: vless
+  server: netcraft.com
+  port: 2083
+  uuid: 29762512-1330-468d-a2f7-215c75affd3d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: firefox
+  servername: camera.tgseenrobo.ir
+  ws-opts:
+    path: /api/v1/payment/verify/9mQ2rL8sKp4xN7
+    headers:
+      Host: camera.tgseenrobo.ir
+- name: 'ARISTA #22'
+  type: vless
+  server: 27.50.49.154
+  port: 2083
+  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: proxy-34l.pages.dev
+  ws-opts:
+    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI?ed=512
+    headers:
+      Host: proxy-34l.pages.dev
+- name: 'ARISTA #23'
+  type: vless
+  server: tr111.zelqira.ir
+  port: 2083
+  uuid: f8085df9-4a12-4fea-8ea7-3c1123c8cef1
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #24'
+  type: vless
+  server: 66.90.104.43
+  port: 2083
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: vless
+- name: 'ARISTA #25'
+  type: vless
+  server: netcraft.com
+  port: 2083
+  uuid: 29762512-1330-468d-a2f7-215c75affd3d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: firefox
+  servername: camera.tgseenrobo.ir
+  ws-opts:
+    path: /api/v1/payment/verify/9mQ2rL8sKp4xN7?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
+    headers:
+      Host: camera.tgseenrobo.ir
+- name: 'ARISTA #26'
+  type: vless
+  server: netcraft.com
+  port: 2083
+  uuid: 29762512-1330-468d-a2f7-215c75affd3d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: firefox
+  servername: camera.tgseenrobo.ir
+  ws-opts:
+    path: /api/v1/payment/verify/9mQ2rL8sKp4xN7
+    headers:
+      Host: camera.tgseenrobo.ir
+- name: 'ARISTA #27'
+  type: vless
+  server: 27.50.49.154
+  port: 2083
+  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: proxy-34l.pages.dev
+  ws-opts:
+    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI?ed=512
+    headers:
+      Host: proxy-34l.pages.dev
+- name: 'ARISTA #28'
+  type: vless
+  server: 66.90.105.211
+  port: 2083
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: vless
+- name: 'ARISTA #29'
+  type: vless
+  server: tr111.zelqira.ir
+  port: 2083
+  uuid: f8085df9-4a12-4fea-8ea7-3c1123c8cef1
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #30'
+  type: vless
+  server: 66.90.104.43
+  port: 2083
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: vless
+- name: 'ARISTA #31'
+  type: vless
+  server: netcraft.com
+  port: 2083
+  uuid: 29762512-1330-468d-a2f7-215c75affd3d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: firefox
+  servername: camera.tgseenrobo.ir
+  ws-opts:
+    path: /api/v1/payment/verify/9mQ2rL8sKp4xN7?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
+    headers:
+      Host: camera.tgseenrobo.ir
+- name: 'ARISTA #32'
+  type: vless
+  server: netcraft.com
+  port: 2083
+  uuid: 29762512-1330-468d-a2f7-215c75affd3d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: firefox
+  servername: camera.tgseenrobo.ir
+  ws-opts:
+    path: /api/v1/payment/verify/9mQ2rL8sKp4xN7
+    headers:
+      Host: camera.tgseenrobo.ir
+- name: 'ARISTA #33'
+  type: trojan
+  server: 104.18.154.96
+  port: 2083
+  password: nzrc4ma4087c1ukr
+  network: httpupgrade
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: dl2.rahetejarat.com
+  client-fingerprint: chrome
+- name: 'ARISTA #34'
+  type: trojan
+  server: 104.18.154.96
+  port: 2083
+  password: nzrc4ma4087c1ukr
+  network: httpupgrade
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: dl2.rahetejarat.com
+  client-fingerprint: chrome
+- name: 'ARISTA #35'
+  type: ss
+  server: 51.222.107.43
+  port: 2083
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:HWFFJN19JkvbTKo/79AfnbRBK9uHUUaFNZJyLjEoJGs=
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #36'
+  type: ss
+  server: 51.38.71.51
+  port: 2083
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
+  udp: true
+  tcp-fast-open: true
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -211,6 +528,31 @@ proxy-groups:
   - 'ARISTA #9'
   - 'ARISTA #10'
   - 'ARISTA #11'
+  - 'ARISTA #12'
+  - 'ARISTA #13'
+  - 'ARISTA #14'
+  - 'ARISTA #15'
+  - 'ARISTA #16'
+  - 'ARISTA #17'
+  - 'ARISTA #18'
+  - 'ARISTA #19'
+  - 'ARISTA #20'
+  - 'ARISTA #21'
+  - 'ARISTA #22'
+  - 'ARISTA #23'
+  - 'ARISTA #24'
+  - 'ARISTA #25'
+  - 'ARISTA #26'
+  - 'ARISTA #27'
+  - 'ARISTA #28'
+  - 'ARISTA #29'
+  - 'ARISTA #30'
+  - 'ARISTA #31'
+  - 'ARISTA #32'
+  - 'ARISTA #33'
+  - 'ARISTA #34'
+  - 'ARISTA #35'
+  - 'ARISTA #36'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
