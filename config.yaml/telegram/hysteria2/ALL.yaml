@@ -1,6 +1,6 @@
 # TELEGRAM - HYSTERIA2 - Tier ALL
-# Updated: 2026-09-28 13:40:55
-# Count: 3
+# Updated: 2026-09-28 21:14:19
+# Count: 5
 
 mixed-port: 7890
 allow-lan: false
@@ -50,13 +50,31 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: hysteria2
+  server: 144.31.49.138
+  port: 443
+  password: cd74c0a406664a5bc0bac098220a2468
+  sni: ru1.sferavpn.pro
+  skip-cert-verify: true
+  fast-open: true
+  obfs: salamander
+  obfs-password: 44f1c1e2f8b99e792ceed574627a1eb0
+- name: 'ARISTA #2'
+  type: hysteria2
+  server: 144.31.212.253
+  port: 443
+  password: cf83b611-6cba-4535-adcb-8da06c6a9146
+  sni: vps155-edge.kermemehori.ru
+  skip-cert-verify: true
+  fast-open: true
+- name: 'ARISTA #3'
+  type: hysteria2
   server: 217.60.33.215
   port: 443
   password: 865e271f7c97b549b024255c9d02cebe9cc0c2c070a82b1e11bb11b9cd88dd01
   sni: streambox.wwwinternetvideo.click
   skip-cert-verify: true
   fast-open: true
-- name: 'ARISTA #2'
+- name: 'ARISTA #4'
   type: hysteria2
   server: paris.nerabotaet.com
   port: 443
@@ -64,16 +82,14 @@ proxies:
   sni: paris.nerabotaet.com
   skip-cert-verify: true
   fast-open: true
-- name: 'ARISTA #3'
+- name: 'ARISTA #5'
   type: hysteria2
-  server: 2.27.59.206
+  server: 77.110.104.238
   port: 443
-  password: cd74c0a406664a5bc0bac098220a2468
-  sni: de1.sferavpn.pro
+  password: 5413edfb-08d6-4fba-b51c-809c04feb127
+  sni: ch2-hy2.veilvpn.life
   skip-cert-verify: true
   fast-open: true
-  obfs: salamander
-  obfs-password: 44f1c1e2f8b99e792ceed574627a1eb0
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -86,6 +102,8 @@ proxy-groups:
   - 'ARISTA #1'
   - 'ARISTA #2'
   - 'ARISTA #3'
+  - 'ARISTA #4'
+  - 'ARISTA #5'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
