@@ -1,6 +1,6 @@
 # COMBINED - Port 2053
-# Updated: 2026-09-28 21:14:15
-# Count: 52
+# Updated: 2026-09-29 05:27:09
+# Count: 53
 
 mixed-port: 7890
 allow-lan: false
@@ -50,31 +50,18 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: test.keoplentuio.xyz
+  server: crow.trustpacket.ir
   port: 2053
-  uuid: 9ef61079-6f7d-4911-9608-943da85d8e6f
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #2'
-  type: vless
-  server: fr.api-music-fa.com
-  port: 2053
-  uuid: 9d672694-c146-422e-b3b5-3717a38a0fcc
-  network: ws
+  uuid: 13cddba4-64ff-4691-a9d2-7603dcfb44e1
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
   alpn:
-  - http/1.1
+  - h2
   client-fingerprint: chrome
-  servername: fr.api-music-fa.com
-  ws-opts:
-    path: /api/voip/updates/static/fr2035
-    headers:
-      Host: fr.api-music-fa.com
-- name: 'ARISTA #3'
+  servername: crow.trustpacket.ir
+- name: 'ARISTA #2'
   type: vless
   server: 54.37.136.194
   port: 2053
@@ -87,26 +74,7 @@ proxies:
   reality-opts:
     public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
     short-id: "50ba05992b05c1c3"
-- name: 'ARISTA #4'
-  type: vless
-  server: 104.18.1.1
-  port: 2053
-  uuid: da4747a6-be0d-4c1b-90f4-d82ec3012be2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: ios
-  servername: music1000.melobitmusic1.ir
-  ws-opts:
-    path: /
-    headers:
-      Host: music1000.melobitmusic1.ir
-- name: 'ARISTA #5'
+- name: 'ARISTA #3'
   type: vless
   server: netcraft.com
   port: 2053
@@ -123,108 +91,120 @@ proxies:
     path: /api/v1/payment/verify/9mQ2rL8sKp4xN7
     headers:
       Host: camera.tgseenrobo.ir
+- name: 'ARISTA #4'
+  type: vless
+  server: fr.api-music-fa.com
+  port: 2053
+  uuid: 9d672694-c146-422e-b3b5-3717a38a0fcc
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: fr.api-music-fa.com
+  ws-opts:
+    path: /api/voip/updates/static/fr2035
+    headers:
+      Host: fr.api-music-fa.com
+- name: 'ARISTA #5'
+  type: vless
+  server: crow.trustpacket.ir
+  port: 2053
+  uuid: 13cddba4-64ff-4691-a9d2-7603dcfb44e1
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: crow.trustpacket.ir
 - name: 'ARISTA #6'
   type: vless
-  server: test.keoplentuio.xyz
+  server: crow.trustpacket.ir
   port: 2053
-  uuid: 9ef61079-6f7d-4911-9608-943da85d8e6f
-  network: tcp
-  tls: false
+  uuid: 13cddba4-64ff-4691-a9d2-7603dcfb44e1
+  network: xhttp
+  tls: true
   udp: true
   skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: crow.trustpacket.ir
 - name: 'ARISTA #7'
   type: vless
-  server: fr.api-music-fa.com
+  server: crow.trustpacket.ir
   port: 2053
-  uuid: 9d672694-c146-422e-b3b5-3717a38a0fcc
-  network: ws
+  uuid: 13cddba4-64ff-4691-a9d2-7603dcfb44e1
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
   alpn:
-  - http/1.1
+  - h2
   client-fingerprint: chrome
-  servername: fr.api-music-fa.com
-  ws-opts:
-    path: /api/voip/updates/static/fr2035
-    headers:
-      Host: fr.api-music-fa.com
+  servername: crow.trustpacket.ir
 - name: 'ARISTA #8'
   type: vless
-  server: test.keoplentuio.xyz
+  server: 54.37.136.194
   port: 2053
-  uuid: 9ef61079-6f7d-4911-9608-943da85d8e6f
+  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
   network: tcp
-  tls: false
+  tls: true
   udp: true
   skip-cert-verify: true
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
+    short-id: "50ba05992b05c1c3"
 - name: 'ARISTA #9'
   type: vless
-  server: test.keoplentuio.xyz
+  server: netcraft.com
   port: 2053
-  uuid: 9ef61079-6f7d-4911-9608-943da85d8e6f
-  network: tcp
-  tls: false
+  uuid: ac5a37a9-6238-45c2-a8ba-3d18f58e6be0
+  network: ws
+  tls: true
   udp: true
   skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: firefox
+  servername: camera.tgseenrobo.ir
+  ws-opts:
+    path: /api/v1/payment/verify/9mQ2rL8sKp4xN7
+    headers:
+      Host: camera.tgseenrobo.ir
 - name: 'ARISTA #10'
   type: vless
-  server: fr.api-music-fa.com
+  server: crow.trustpacket.ir
   port: 2053
-  uuid: 9d672694-c146-422e-b3b5-3717a38a0fcc
-  network: ws
+  uuid: 13cddba4-64ff-4691-a9d2-7603dcfb44e1
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
   alpn:
-  - http/1.1
+  - h2
   client-fingerprint: chrome
-  servername: fr.api-music-fa.com
-  ws-opts:
-    path: /api/voip/updates/static/fr2035
-    headers:
-      Host: fr.api-music-fa.com
+  servername: crow.trustpacket.ir
 - name: 'ARISTA #11'
   type: vless
-  server: 54.37.136.194
+  server: crow.trustpacket.ir
   port: 2053
-  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
-  network: tcp
+  uuid: 13cddba4-64ff-4691-a9d2-7603dcfb44e1
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
-    short-id: "50ba05992b05c1c3"
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: crow.trustpacket.ir
 - name: 'ARISTA #12'
   type: vless
-  server: test.keoplentuio.xyz
-  port: 2053
-  uuid: 9ef61079-6f7d-4911-9608-943da85d8e6f
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #13'
-  type: vless
-  server: fr.api-music-fa.com
-  port: 2053
-  uuid: 9d672694-c146-422e-b3b5-3717a38a0fcc
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: fr.api-music-fa.com
-  ws-opts:
-    path: /api/voip/updates/static/fr2035
-    headers:
-      Host: fr.api-music-fa.com
-- name: 'ARISTA #14'
-  type: vless
   server: 54.37.136.194
   port: 2053
   uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
@@ -236,16 +216,24 @@ proxies:
   reality-opts:
     public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
     short-id: "50ba05992b05c1c3"
-- name: 'ARISTA #15'
+- name: 'ARISTA #13'
   type: vless
-  server: test.keoplentuio.xyz
+  server: netcraft.com
   port: 2053
-  uuid: 9ef61079-6f7d-4911-9608-943da85d8e6f
-  network: tcp
-  tls: false
+  uuid: ac5a37a9-6238-45c2-a8ba-3d18f58e6be0
+  network: ws
+  tls: true
   udp: true
   skip-cert-verify: true
-- name: 'ARISTA #16'
+  alpn:
+  - h2
+  client-fingerprint: firefox
+  servername: camera.tgseenrobo.ir
+  ws-opts:
+    path: /api/v1/payment/verify/9mQ2rL8sKp4xN7
+    headers:
+      Host: camera.tgseenrobo.ir
+- name: 'ARISTA #14'
   type: vless
   server: fr.api-music-fa.com
   port: 2053
@@ -262,6 +250,33 @@ proxies:
     path: /api/voip/updates/static/fr2035
     headers:
       Host: fr.api-music-fa.com
+- name: 'ARISTA #15'
+  type: vless
+  server: 198.251.78.29
+  port: 2053
+  uuid: c423cc1b-f88e-421c-9a16-c480d84da20f
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: Uk5b-Wh_uxeCc7R8NS9iWE40xc0h9wWC04rSB9yhgAw
+    short-id: "b5d625695ec82c7e"
+- name: 'ARISTA #16'
+  type: vless
+  server: crow.trustpacket.ir
+  port: 2053
+  uuid: 13cddba4-64ff-4691-a9d2-7603dcfb44e1
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: crow.trustpacket.ir
 - name: 'ARISTA #17'
   type: vless
   server: 54.37.136.194
@@ -277,25 +292,6 @@ proxies:
     short-id: "50ba05992b05c1c3"
 - name: 'ARISTA #18'
   type: vless
-  server: 104.18.1.1
-  port: 2053
-  uuid: da4747a6-be0d-4c1b-90f4-d82ec3012be2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: ios
-  servername: music1000.melobitmusic1.ir
-  ws-opts:
-    path: /
-    headers:
-      Host: music1000.melobitmusic1.ir
-- name: 'ARISTA #19'
-  type: vless
   server: netcraft.com
   port: 2053
   uuid: ac5a37a9-6238-45c2-a8ba-3d18f58e6be0
@@ -311,16 +307,7 @@ proxies:
     path: /api/v1/payment/verify/9mQ2rL8sKp4xN7
     headers:
       Host: camera.tgseenrobo.ir
-- name: 'ARISTA #20'
-  type: vless
-  server: test.keoplentuio.xyz
-  port: 2053
-  uuid: 9ef61079-6f7d-4911-9608-943da85d8e6f
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #21'
+- name: 'ARISTA #19'
   type: vless
   server: fr.api-music-fa.com
   port: 2053
@@ -337,56 +324,7 @@ proxies:
     path: /api/voip/updates/static/fr2035
     headers:
       Host: fr.api-music-fa.com
-- name: 'ARISTA #22'
-  type: vless
-  server: 54.37.136.194
-  port: 2053
-  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
-    short-id: "50ba05992b05c1c3"
-- name: 'ARISTA #23'
-  type: vless
-  server: 104.18.1.1
-  port: 2053
-  uuid: da4747a6-be0d-4c1b-90f4-d82ec3012be2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: ios
-  servername: music1000.melobitmusic1.ir
-  ws-opts:
-    path: /
-    headers:
-      Host: music1000.melobitmusic1.ir
-- name: 'ARISTA #24'
-  type: vless
-  server: netcraft.com
-  port: 2053
-  uuid: ac5a37a9-6238-45c2-a8ba-3d18f58e6be0
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: firefox
-  servername: camera.tgseenrobo.ir
-  ws-opts:
-    path: /api/v1/payment/verify/9mQ2rL8sKp4xN7
-    headers:
-      Host: camera.tgseenrobo.ir
-- name: 'ARISTA #25'
+- name: 'ARISTA #20'
   type: vless
   server: 198.251.78.29
   port: 2053
@@ -400,7 +338,7 @@ proxies:
   reality-opts:
     public-key: Uk5b-Wh_uxeCc7R8NS9iWE40xc0h9wWC04rSB9yhgAw
     short-id: "b5d625695ec82c7e"
-- name: 'T.ME: @aristapanel #26'
+- name: 'T.ME: @aristapanel #21'
   type: vless
   server: 212.227.235.66
   port: 2053
@@ -414,24 +352,7 @@ proxies:
   reality-opts:
     public-key: 7Y6Xb5Ql_03K25x8yKUSOKI2JTOMyv2nyCcFza90uxk
     short-id: "29e8dcd2b37aaa7f"
-- name: 'T.ME: @aristapanel #27'
-  type: vless
-  server: freesocks.work
-  port: 2053
-  uuid: b1a8d1eb-dfb2-4dd3-afe6-cd0fff8177df
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: chrome
-  servername: uwu.blueknightnet.qzz.io
-  ws-opts:
-    path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
-    headers:
-      Host: uwu.blueknightnet.qzz.io
-- name: 'T.ME: @aristapanel #28'
+- name: 'T.ME: @aristapanel #22'
   type: vless
   server: test.keoplentuio.xyz
   port: 2053
@@ -440,7 +361,23 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #29'
+- name: 'T.ME: @aristapanel #23'
+  type: vless
+  server: 62.60.159.81
+  port: 2053
+  uuid: fc00adfb-232a-46ce-8b93-0c70e516aa8a
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: safari
+  servername: www.samsung.com
+  grpc-opts:
+    grpc-service-name: grpce5bb9e71
+  reality-opts:
+    public-key: ygmJxS-Mc7g0buNSUTVGhazT-FoBjyYtLLfUYIQxFTw
+    short-id: "d0ea1847066af5a6"
+- name: 'T.ME: @aristapanel #24'
   type: vless
   server: cctvhikvision.center
   port: 2053
@@ -457,7 +394,24 @@ proxies:
     path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
     headers:
       Host: uwu.blueknightnet.qzz.io
-- name: 'T.ME: @aristapanel #30'
+- name: 'T.ME: @aristapanel #25'
+  type: vless
+  server: freesocks.work
+  port: 2053
+  uuid: b1a8d1eb-dfb2-4dd3-afe6-cd0fff8177df
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: uwu.blueknightnet.qzz.io
+  ws-opts:
+    path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
+    headers:
+      Host: uwu.blueknightnet.qzz.io
+- name: 'T.ME: @aristapanel #26'
   type: vless
   server: undef.network
   port: 2053
@@ -474,7 +428,7 @@ proxies:
     path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
     headers:
       Host: uwu.blueknightnet.qzz.io
-- name: 'T.ME: @aristapanel #31'
+- name: 'T.ME: @aristapanel #27'
   type: vless
   server: hikvision-plus.com
   port: 2053
@@ -491,7 +445,7 @@ proxies:
     path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
     headers:
       Host: uwu.blueknightnet.qzz.io
-- name: 'T.ME: @aristapanel #32'
+- name: 'T.ME: @aristapanel #28'
   type: vless
   server: 46.250.240.80
   port: 2053
@@ -505,36 +459,35 @@ proxies:
   reality-opts:
     public-key: CYFeysLf--_IVhxQOCd3ZxLrAVWFFOkJzvIGHOVXN3E
     short-id: "4cc9dc65f7770115"
-- name: 'T.ME: @aristapanel #33'
+- name: 'T.ME: @aristapanel #29'
   type: vless
-  server: 5.175.178.41
+  server: 185.141.227.180
   port: 2053
-  uuid: 1ee0c3d2-9c42-463f-8497-ee05f76b84e5
+  uuid: 2c634977-584e-4e1f-b501-1b70c77a6743
   network: tcp
-  tls: true
+  tls: false
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: ee-t2.vinnypuxtomoon.today
-  reality-opts:
-    public-key: RwtMzZtTCmy9WRq3_27xeGF8-1l_qPXRVG3yIFp-6Go
-    short-id: "c0d1d1776fed0f6d"
-- name: 'T.ME: @aristapanel #34'
+- name: 'T.ME: @aristapanel #30'
   type: vless
-  server: 66.70.179.198
+  server: netcraft.com
   port: 2053
-  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
-  network: raw
+  uuid: 1f45f651-6409-4401-9d10-22f24aae3cfd
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
   client-fingerprint: firefox
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
-    short-id: "83f8317a948bb769"
-- name: 'T.ME: @aristapanel #35'
+  servername: camera.tgseenrobo.ir
+  ws-opts:
+    path: /api/v1/payment/verify/9mQ2rL8sKp4xN7
+    headers:
+      Host: camera.tgseenrobo.ir
+- name: 'T.ME: @aristapanel #31'
   type: vless
   server: 162.159.82.123
   port: 2053
@@ -549,7 +502,20 @@ proxies:
     path: /?TELEGRAM--MARAMBASHI--MARAMBASHI?ed=512
     headers:
       Host: paneluk.roomode.ir
-- name: 'T.ME: @aristapanel #36'
+- name: 'T.ME: @aristapanel #32'
+  type: vless
+  server: my.koloshami.ir
+  port: 2053
+  uuid: 9a162e37-4483-4190-85da-5d27f469d022
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: my.koloshami.ir
+- name: 'T.ME: @aristapanel #33'
   type: vless
   server: netcraft.com
   port: 2053
@@ -566,16 +532,26 @@ proxies:
     path: /api/v1/payment/verify/9mQ2rL8sKp4xN7?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
     headers:
       Host: camera.tgseenrobo.ir
-- name: 'T.ME: @aristapanel #37'
+- name: 'T.ME: @aristapanel #34'
   type: vless
-  server: de50.zelqira.ir
+  server: www.speedtest.net
   port: 2053
-  uuid: f8085df9-4a12-4fea-8ea7-3c1123c8cef1
-  network: tcp
-  tls: false
+  uuid: e34867b2-f918-4df3-9389-c85ca8dabc36
+  network: ws
+  tls: true
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #38'
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: tls.zerossrz.ir
+  ws-opts:
+    path: /nsbshshhsbdycyjebwejhrjeod
+    headers:
+      Host: Thost.zerossrz.ir
+- name: 'T.ME: @aristapanel #35'
   type: vless
   server: land.zavqeron.ir
   port: 2053
@@ -594,104 +570,59 @@ proxies:
     path: /fi-cdn
     headers:
       Host: land.zavqeron.ir
+- name: 'ARISTA #36'
+  type: vless
+  server: crow.trustpacket.ir
+  port: 2053
+  uuid: 13cddba4-64ff-4691-a9d2-7603dcfb44e1
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: crow.trustpacket.ir
+- name: 'ARISTA #37'
+  type: vless
+  server: 54.37.136.194
+  port: 2053
+  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
+    short-id: "50ba05992b05c1c3"
+- name: 'ARISTA #38'
+  type: vless
+  server: crow.trustpacket.ir
+  port: 2053
+  uuid: 13cddba4-64ff-4691-a9d2-7603dcfb44e1
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: crow.trustpacket.ir
 - name: 'ARISTA #39'
   type: vless
-  server: test.keoplentuio.xyz
+  server: 54.37.136.194
   port: 2053
-  uuid: 9ef61079-6f7d-4911-9608-943da85d8e6f
+  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
   network: tcp
-  tls: false
+  tls: true
   udp: true
   skip-cert-verify: true
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
+    short-id: "50ba05992b05c1c3"
 - name: 'ARISTA #40'
-  type: vless
-  server: fr.api-music-fa.com
-  port: 2053
-  uuid: 9d672694-c146-422e-b3b5-3717a38a0fcc
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: fr.api-music-fa.com
-  ws-opts:
-    path: /api/voip/updates/static/fr2035
-    headers:
-      Host: fr.api-music-fa.com
-- name: 'ARISTA #41'
-  type: vless
-  server: 54.37.136.194
-  port: 2053
-  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
-    short-id: "50ba05992b05c1c3"
-- name: 'ARISTA #42'
-  type: vless
-  server: test.keoplentuio.xyz
-  port: 2053
-  uuid: 9ef61079-6f7d-4911-9608-943da85d8e6f
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #43'
-  type: vless
-  server: fr.api-music-fa.com
-  port: 2053
-  uuid: 9d672694-c146-422e-b3b5-3717a38a0fcc
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: fr.api-music-fa.com
-  ws-opts:
-    path: /api/voip/updates/static/fr2035
-    headers:
-      Host: fr.api-music-fa.com
-- name: 'ARISTA #44'
-  type: vless
-  server: 54.37.136.194
-  port: 2053
-  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
-    short-id: "50ba05992b05c1c3"
-- name: 'ARISTA #45'
-  type: vless
-  server: 104.18.1.1
-  port: 2053
-  uuid: da4747a6-be0d-4c1b-90f4-d82ec3012be2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: ios
-  servername: music1000.melobitmusic1.ir
-  ws-opts:
-    path: /
-    headers:
-      Host: music1000.melobitmusic1.ir
-- name: 'ARISTA #46'
   type: vless
   server: netcraft.com
   port: 2053
@@ -708,7 +639,24 @@ proxies:
     path: /api/v1/payment/verify/9mQ2rL8sKp4xN7
     headers:
       Host: camera.tgseenrobo.ir
-- name: 'ARISTA #47'
+- name: 'ARISTA #41'
+  type: vless
+  server: fr.api-music-fa.com
+  port: 2053
+  uuid: 9d672694-c146-422e-b3b5-3717a38a0fcc
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: fr.api-music-fa.com
+  ws-opts:
+    path: /api/voip/updates/static/fr2035
+    headers:
+      Host: fr.api-music-fa.com
+- name: 'ARISTA #42'
   type: vless
   server: 198.251.78.29
   port: 2053
@@ -722,7 +670,18 @@ proxies:
   reality-opts:
     public-key: Uk5b-Wh_uxeCc7R8NS9iWE40xc0h9wWC04rSB9yhgAw
     short-id: "b5d625695ec82c7e"
-- name: 'T.ME: @aristapanel #48'
+- name: 'ARISTA #43'
+  type: trojan
+  server: official.tokyometropolis.odessa.ua
+  port: 2053
+  password: 96983eb4-c8f1-316e-ab00-500014ed3d8b
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: official.tokyometropolis.odessa.ua
+- name: 'T.ME: @aristapanel #44'
   type: trojan
   server: 185.114.72.31
   port: 2053
@@ -737,6 +696,54 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
+- name: 'ARISTA #45'
+  type: trojan
+  server: official.tokyometropolis.odessa.ua
+  port: 2053
+  password: 96983eb4-c8f1-316e-ab00-500014ed3d8b
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: official.tokyometropolis.odessa.ua
+- name: 'ARISTA #46'
+  type: trojan
+  server: official.tokyometropolis.odessa.ua
+  port: 2053
+  password: 96983eb4-c8f1-316e-ab00-500014ed3d8b
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: official.tokyometropolis.odessa.ua
+- name: 'T.ME: @aristapanel #47'
+  type: trojan
+  server: 185.114.72.31
+  port: 2053
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.calmlunch.com
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: 'ARISTA #48'
+  type: trojan
+  server: official.tokyometropolis.odessa.ua
+  port: 2053
+  password: 96983eb4-c8f1-316e-ab00-500014ed3d8b
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: official.tokyometropolis.odessa.ua
 - name: 'T.ME: @aristapanel #49'
   type: trojan
   server: 185.114.72.31
@@ -752,21 +759,17 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: 'T.ME: @aristapanel #50'
+- name: 'ARISTA #50'
   type: trojan
-  server: 185.114.72.31
+  server: official.tokyometropolis.odessa.ua
   port: 2053
-  password: humanity
-  network: ws
+  password: 96983eb4-c8f1-316e-ab00-500014ed3d8b
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: www.calmlunch.com
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
+  servername: official.tokyometropolis.odessa.ua
 - name: 'T.ME: @aristapanel #51'
   type: trojan
   server: 185.114.72.31
@@ -782,7 +785,18 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: 'T.ME: @aristapanel #52'
+- name: 'ARISTA #52'
+  type: trojan
+  server: official.tokyometropolis.odessa.ua
+  port: 2053
+  password: 96983eb4-c8f1-316e-ab00-500014ed3d8b
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: official.tokyometropolis.odessa.ua
+- name: 'T.ME: @aristapanel #53'
   type: trojan
   server: 185.114.72.31
   port: 2053
@@ -826,11 +840,11 @@ proxy-groups:
   - 'ARISTA #18'
   - 'ARISTA #19'
   - 'ARISTA #20'
-  - 'ARISTA #21'
-  - 'ARISTA #22'
-  - 'ARISTA #23'
-  - 'ARISTA #24'
-  - 'ARISTA #25'
+  - 'T.ME: @aristapanel #21'
+  - 'T.ME: @aristapanel #22'
+  - 'T.ME: @aristapanel #23'
+  - 'T.ME: @aristapanel #24'
+  - 'T.ME: @aristapanel #25'
   - 'T.ME: @aristapanel #26'
   - 'T.ME: @aristapanel #27'
   - 'T.ME: @aristapanel #28'
@@ -841,23 +855,24 @@ proxy-groups:
   - 'T.ME: @aristapanel #33'
   - 'T.ME: @aristapanel #34'
   - 'T.ME: @aristapanel #35'
-  - 'T.ME: @aristapanel #36'
-  - 'T.ME: @aristapanel #37'
-  - 'T.ME: @aristapanel #38'
+  - 'ARISTA #36'
+  - 'ARISTA #37'
+  - 'ARISTA #38'
   - 'ARISTA #39'
   - 'ARISTA #40'
   - 'ARISTA #41'
   - 'ARISTA #42'
   - 'ARISTA #43'
-  - 'ARISTA #44'
+  - 'T.ME: @aristapanel #44'
   - 'ARISTA #45'
   - 'ARISTA #46'
-  - 'ARISTA #47'
-  - 'T.ME: @aristapanel #48'
+  - 'T.ME: @aristapanel #47'
+  - 'ARISTA #48'
   - 'T.ME: @aristapanel #49'
-  - 'T.ME: @aristapanel #50'
+  - 'ARISTA #50'
   - 'T.ME: @aristapanel #51'
-  - 'T.ME: @aristapanel #52'
+  - 'ARISTA #52'
+  - 'T.ME: @aristapanel #53'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
