@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2095
-# Updated: 2026-09-30 18:02:58
-# Count: 8
+# Updated: 2026-09-30 22:10:48
+# Count: 9
 
 mixed-port: 7890
 allow-lan: false
@@ -103,14 +103,24 @@ proxies:
   udp: true
   skip-cert-verify: true
 - name: 'ARISTA #7'
-  type: ss
-  server: Fishy2.pconnectq.ir
+  type: vless
+  server: pl-irancell7.xelfona.ir
   port: 2095
-  cipher: chacha20-ietf-poly1305
-  password: 8q6GQjCBb9SLbf4yh31NBvtiQeqtFMmA
+  uuid: 452f869f-7720-47c3-a175-b6673e31d3e8
+  network: httpupgrade
+  tls: false
   udp: true
-  tcp-fast-open: true
+  skip-cert-verify: true
 - name: 'ARISTA #8'
+  type: vless
+  server: pl-irancell7.xelfona.ir
+  port: 2095
+  uuid: 452f869f-7720-47c3-a175-b6673e31d3e8
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #9'
   type: ss
   server: Fishy2.pconnectq.ir
   port: 2095
@@ -135,6 +145,7 @@ proxy-groups:
   - 'ARISTA #6'
   - 'ARISTA #7'
   - 'ARISTA #8'
+  - 'ARISTA #9'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
