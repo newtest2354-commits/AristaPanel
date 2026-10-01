@@ -1,6 +1,6 @@
 # GITHUB - Port 2086
-# Updated: 2026-10-01 05:30:04
-# Count: 1
+# Updated: 2026-10-01 12:59:50
+# Count: 3
 
 mixed-port: 7890
 allow-lan: false
@@ -50,18 +50,39 @@ rules:
 proxies:
 - name: 'T.ME: @aristapanel #1'
   type: vless
-  server: 188.114.97.6
+  server: 172.67.89.31
   port: 2086
-  uuid: 9c10d8b0-e1fb-48d5-af5d-03ad736f37bb
+  uuid: 98b6cb05-b5ab-4c82-8683-07de28f796a9
   network: ws
-  tls: true
+  tls: false
   udp: true
   skip-cert-verify: true
-  servername: snowy-fire-7369.mmdiborobav.workers.dev
   ws-opts:
-    path: /eyJqdW5rIjoiMENyWGlPUjVmIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcm94eWlwIiwicGFuZWxJUHMiOlsiODcuMTIwLjE2Ni4xNCJdfQ==?ed=2560
+    path: /eyJqdW5rIjoiRHF6VWU4SmYiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByZWZpeCIsInBhbmVsSVBzIjpbIlsyNjAyOmZjNTk6YjA6NjQ6Ol0iXX0
     headers:
-      Host: snowy-fire-7369.mmdiborobav.workers.dev
+      Host: holy-glitter-39f9.wwewee2dasdds.workers.dev
+- name: 'T.ME: @aristapanel #2'
+  type: vless
+  server: 108.162.194.165
+  port: 2086
+  uuid: a0fe052d-6ca1-4a9c-b626-7ecf78f386cb
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'T.ME: @aristapanel #3'
+  type: vless
+  server: 172.67.89.31
+  port: 2086
+  uuid: 98b6cb05-b5ab-4c82-8683-07de28f796a9
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /eyJqdW5rIjoiRHF6VWU4SmYiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByZWZpeCIsInBhbmVsSVBzIjpbIlsyNjAyOmZjNTk6YjA6NjQ6Ol0iXX0
+    headers:
+      Host: holy-glitter-39f9.wwewee2dasdds.workers.dev
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -72,6 +93,8 @@ proxy-groups:
   timeout: 3000
   proxies: &id001
   - 'T.ME: @aristapanel #1'
+  - 'T.ME: @aristapanel #2'
+  - 'T.ME: @aristapanel #3'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
