@@ -1,6 +1,6 @@
 # TELEGRAM - HYSTERIA2 - Tier ALL
-# Updated: 2026-10-02 09:42:12
-# Count: 2
+# Updated: 2026-10-02 17:51:59
+# Count: 3
 
 mixed-port: 7890
 allow-lan: false
@@ -50,10 +50,10 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: hysteria2
-  server: admin.wwwinternetvideo.click
+  server: streambox.wwwinternetvideo.click
   port: 443
-  password: YutbgyXL1mGaSlBXDoEucWvYbrDCINgUcQ6R6_At5Pjr2xCc
-  sni: admin.wwwinternetvideo.click
+  password: 865e271f7c97b549b024255c9d02cebe9cc0c2c070a82b1e11bb11b9cd88dd01
+  sni: streambox.wwwinternetvideo.click
   skip-cert-verify: true
   fast-open: true
 - name: 'ARISTA #2'
@@ -66,6 +66,14 @@ proxies:
   fast-open: true
   obfs: salamander
   obfs-password: c1b4086fea89914496c7e10967a419216566
+- name: 'ARISTA #3'
+  type: hysteria2
+  server: admin.wwwinternetvideo.click
+  port: 443
+  password: YutbgyXL1mGaSlBXDoEucWvYbrDCINgUcQ6R6_At5Pjr2xCc
+  sni: admin.wwwinternetvideo.click
+  skip-cert-verify: true
+  fast-open: true
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -77,6 +85,7 @@ proxy-groups:
   proxies: &id001
   - 'ARISTA #1'
   - 'ARISTA #2'
+  - 'ARISTA #3'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
