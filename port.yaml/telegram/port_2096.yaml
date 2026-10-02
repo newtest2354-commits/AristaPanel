@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2096
-# Updated: 2026-10-02 09:42:14
-# Count: 2
+# Updated: 2026-10-02 22:09:58
+# Count: 4
 
 mixed-port: 7890
 allow-lan: false
@@ -50,34 +50,56 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 64.226.88.144
+  server: r9b98f8977dfbeb5.valzema.ir
   port: 2096
-  uuid: 2b77e8eb-b03b-4f12-aa6d-23b421e5bed7
-  network: ws
+  uuid: 0af6e48f-18c6-4ad9-8486-a46336cf5f84
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
+  alpn:
+  - http/1.1
   client-fingerprint: chrome
-  servername: snni.868001.xyz
-  ws-opts:
-    path: /proxyip=tw.william.us.ci?uuid=2b77e8eb-b03b-4f12-aa6d-23b421e5bed7
-    headers:
-      Host: snni.868001.xyz
+  servername: r9b98f8977dfbeb5.valzema.ir
 - name: 'ARISTA #2'
   type: vless
-  server: 64.226.88.144
+  server: r333481b0f8276d6.salzivo.ir
   port: 2096
-  uuid: 2b77e8eb-b03b-4f12-aa6d-23b421e5bed7
-  network: ws
+  uuid: 0af6e48f-18c6-4ad9-8486-a46336cf5f84
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
+  alpn:
+  - http/1.1
   client-fingerprint: chrome
-  servername: snni.868001.xyz
-  ws-opts:
-    path: /proxyip=tw.william.us.ci?uuid=2b77e8eb-b03b-4f12-aa6d-23b421e5bed7
-    headers:
-      Host: snni.868001.xyz
+  servername: r333481b0f8276d6.salzivo.ir
+- name: 'ARISTA #3'
+  type: vless
+  server: r9b98f8977dfbeb5.valzema.ir
+  port: 2096
+  uuid: 0af6e48f-18c6-4ad9-8486-a46336cf5f84
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: r9b98f8977dfbeb5.valzema.ir
+- name: 'ARISTA #4'
+  type: vless
+  server: r333481b0f8276d6.salzivo.ir
+  port: 2096
+  uuid: 0af6e48f-18c6-4ad9-8486-a46336cf5f84
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: r333481b0f8276d6.salzivo.ir
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -89,6 +111,8 @@ proxy-groups:
   proxies: &id001
   - 'ARISTA #1'
   - 'ARISTA #2'
+  - 'ARISTA #3'
+  - 'ARISTA #4'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
