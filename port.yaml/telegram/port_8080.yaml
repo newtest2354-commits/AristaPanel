@@ -1,6 +1,6 @@
 # TELEGRAM - Port 8080
-# Updated: 2026-10-03 05:00:29
-# Count: 96
+# Updated: 2026-10-03 11:35:09
+# Count: 74
 
 mixed-port: 7890
 allow-lan: false
@@ -49,28 +49,36 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'ARISTA #1'
-  type: vless
-  server: 104.16.102.112
+  type: vmess
+  server: 91.107.162.63
   port: 8080
-  uuid: f255384f-d448-439e-ba78-ff80ab42d2ea
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #2'
-  type: vless
-  server: milo.rubinaz.xyz
-  port: 8080
-  uuid: 6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8
+  uuid: d1d5430b-034f-4cec-963b-a18c1e353782
+  alterId: 0
+  cipher: auto
   network: tcp
   tls: false
   udp: true
   skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 91.107.162.63
+- name: 'ARISTA #2'
+  type: vmess
+  server: 91.107.162.63
+  port: 8080
+  uuid: 37ea458d-d9ba-40a8-9eb7-7ae3b51ead10
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 91.107.162.63
 - name: 'ARISTA #3'
   type: vless
-  server: 0cf703b86ea5a239.ravenlo.ir
+  server: e89ef98bea38bae0.ironly4l.ir
   port: 8080
-  uuid: 50d10e6c-37e1-4512-b35a-2d4e0adfd079
+  uuid: 40187f78-eee3-4f56-b080-1070f76bb6d3
   network: ws
   tls: false
   udp: true
@@ -81,41 +89,19 @@ proxies:
       Host: play.google.com
 - name: 'ARISTA #4'
   type: vless
-  server: de.azrping.com
+  server: 31.57.185.92
   port: 8080
-  uuid: 56fd26cd-10e0-4b40-b393-d7523aa60e6f
+  uuid: 78a82010-c288-49a8-a4db-efbd5e75729b
   network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: www.yahoo.com
+  servername: telewebion.net
   reality-opts:
-    public-key: xjWTzkwPpNWPFd_q239gUyjamzCoLw7OOMy1MswC60M
-    short-id: "8b01f4e667f4b074"
+    public-key: 8du0-zxF-XzdUT0BaOT_9rMLcoNVwONM1uKXoHGzFUE
+    short-id: "136a5c516f"
 - name: 'ARISTA #5'
-  type: vless
-  server: 188.114.97.6
-  port: 8080
-  uuid: e5c5c336-8ca7-44bc-82d6-0473a55ad1ae
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: pingoneorg.hydrash.workers.dev
-- name: 'ARISTA #6'
-  type: vless
-  server: 104.18.0.96
-  port: 8080
-  uuid: 7a9dba44-5d8c-493c-97ea-ce27f0b757c7
-  network: xhttp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #7'
   type: vless
   server: 0cf703b86ea5a239.ravenlo.ir
   port: 8080
@@ -128,64 +114,113 @@ proxies:
     path: /
     headers:
       Host: play.google.com
-- name: 'ARISTA #8'
+- name: 'ARISTA #6'
   type: vless
-  server: 104.21.70.21
+  server: 104.21.11.152
   port: 8080
-  uuid: 8ccb3a94-9e3c-45d0-a280-850faea6bbff
+  uuid: d7a8ae86-9904-4f71-8fe4-d754ded610d7
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
   ws-opts:
-    path: /vl/EpnESUGGdoM40CHmsDT?ed
+    path: /eyJqdW5rIjoiOHNqQ3Bqc2dTZlppTEl1IiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMmEwMjo4OTg6MTQ2OjY0OjpdIl19
     headers:
-      Host: fdjl8sdmc774ru70b3a45lv4w8.akbar1sale6.workers.dev
+      Host: server6.diwir81236.workers.dev
+- name: 'ARISTA #7'
+  type: vless
+  server: e89ef98bea38bae0.ironly4l.ir
+  port: 8080
+  uuid: 40187f78-eee3-4f56-b080-1070f76bb6d3
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: play.google.com
+- name: 'ARISTA #8'
+  type: vless
+  server: 31.57.185.92
+  port: 8080
+  uuid: 78a82010-c288-49a8-a4db-efbd5e75729b
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: telewebion.net
+  reality-opts:
+    public-key: 8du0-zxF-XzdUT0BaOT_9rMLcoNVwONM1uKXoHGzFUE
+    short-id: "136a5c516f"
 - name: 'ARISTA #9'
   type: vless
-  server: 104.16.102.112
+  server: 0cf703b86ea5a239.ravenlo.ir
   port: 8080
-  uuid: f255384f-d448-439e-ba78-ff80ab42d2ea
-  network: httpupgrade
+  uuid: 50d10e6c-37e1-4512-b35a-2d4e0adfd079
+  network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: play.google.com
 - name: 'ARISTA #10'
   type: vless
-  server: milo.rubinaz.xyz
+  server: e89ef98bea38bae0.ironly4l.ir
   port: 8080
-  uuid: 6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8
-  network: tcp
+  uuid: 40187f78-eee3-4f56-b080-1070f76bb6d3
+  network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: play.google.com
 - name: 'ARISTA #11'
   type: vless
-  server: 104.16.102.112
+  server: 31.57.185.92
   port: 8080
-  uuid: f255384f-d448-439e-ba78-ff80ab42d2ea
-  network: httpupgrade
-  tls: false
+  uuid: 78a82010-c288-49a8-a4db-efbd5e75729b
+  network: xhttp
+  tls: true
   udp: true
   skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: telewebion.net
+  reality-opts:
+    public-key: 8du0-zxF-XzdUT0BaOT_9rMLcoNVwONM1uKXoHGzFUE
+    short-id: "136a5c516f"
 - name: 'ARISTA #12'
   type: vless
-  server: 104.16.102.112
+  server: e89ef98bea38bae0.ironly4l.ir
   port: 8080
-  uuid: f255384f-d448-439e-ba78-ff80ab42d2ea
-  network: httpupgrade
+  uuid: 40187f78-eee3-4f56-b080-1070f76bb6d3
+  network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: play.google.com
 - name: 'ARISTA #13'
   type: vless
-  server: milo.rubinaz.xyz
+  server: 31.57.185.92
   port: 8080
-  uuid: 6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8
-  network: tcp
-  tls: false
+  uuid: 78a82010-c288-49a8-a4db-efbd5e75729b
+  network: xhttp
+  tls: true
   udp: true
   skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: telewebion.net
+  reality-opts:
+    public-key: 8du0-zxF-XzdUT0BaOT_9rMLcoNVwONM1uKXoHGzFUE
+    short-id: "136a5c516f"
 - name: 'ARISTA #14'
   type: vless
   server: 0cf703b86ea5a239.ravenlo.ir
@@ -201,23 +236,22 @@ proxies:
       Host: play.google.com
 - name: 'ARISTA #15'
   type: vless
-  server: de.azrping.com
+  server: 104.21.11.152
   port: 8080
-  uuid: 56fd26cd-10e0-4b40-b393-d7523aa60e6f
-  network: xhttp
-  tls: true
+  uuid: d7a8ae86-9904-4f71-8fe4-d754ded610d7
+  network: ws
+  tls: false
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.yahoo.com
-  reality-opts:
-    public-key: xjWTzkwPpNWPFd_q239gUyjamzCoLw7OOMy1MswC60M
-    short-id: "8b01f4e667f4b074"
+  ws-opts:
+    path: /eyJqdW5rIjoiOHNqQ3Bqc2dTZlppTEl1IiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMmEwMjo4OTg6MTQ2OjY0OjpdIl19
+    headers:
+      Host: server6.diwir81236.workers.dev
 - name: 'ARISTA #16'
   type: vless
-  server: 188.114.97.6
+  server: e89ef98bea38bae0.ironly4l.ir
   port: 8080
-  uuid: e5c5c336-8ca7-44bc-82d6-0473a55ad1ae
+  uuid: 40187f78-eee3-4f56-b080-1070f76bb6d3
   network: ws
   tls: false
   udp: true
@@ -225,35 +259,62 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: pingoneorg.hydrash.workers.dev
+      Host: play.google.com
 - name: 'ARISTA #17'
   type: vless
-  server: 104.18.0.96
+  server: 31.57.185.92
   port: 8080
-  uuid: 7a9dba44-5d8c-493c-97ea-ce27f0b757c7
+  uuid: 78a82010-c288-49a8-a4db-efbd5e75729b
   network: xhttp
-  tls: false
+  tls: true
   udp: true
   skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: telewebion.net
+  reality-opts:
+    public-key: 8du0-zxF-XzdUT0BaOT_9rMLcoNVwONM1uKXoHGzFUE
+    short-id: "136a5c516f"
 - name: 'ARISTA #18'
   type: vless
-  server: 104.16.102.112
+  server: 0cf703b86ea5a239.ravenlo.ir
   port: 8080
-  uuid: f255384f-d448-439e-ba78-ff80ab42d2ea
-  network: httpupgrade
+  uuid: 50d10e6c-37e1-4512-b35a-2d4e0adfd079
+  network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: play.google.com
 - name: 'ARISTA #19'
   type: vless
-  server: milo.rubinaz.xyz
+  server: e89ef98bea38bae0.ironly4l.ir
   port: 8080
-  uuid: 6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8
-  network: tcp
+  uuid: 40187f78-eee3-4f56-b080-1070f76bb6d3
+  network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: play.google.com
 - name: 'ARISTA #20'
+  type: vless
+  server: 31.57.185.92
+  port: 8080
+  uuid: 78a82010-c288-49a8-a4db-efbd5e75729b
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: telewebion.net
+  reality-opts:
+    public-key: 8du0-zxF-XzdUT0BaOT_9rMLcoNVwONM1uKXoHGzFUE
+    short-id: "136a5c516f"
+- name: 'ARISTA #21'
   type: vless
   server: 0cf703b86ea5a239.ravenlo.ir
   port: 8080
@@ -266,92 +327,86 @@ proxies:
     path: /
     headers:
       Host: play.google.com
-- name: 'ARISTA #21'
+- name: 'ARISTA #22'
   type: vless
-  server: de.azrping.com
+  server: 104.21.11.152
   port: 8080
-  uuid: 56fd26cd-10e0-4b40-b393-d7523aa60e6f
+  uuid: d7a8ae86-9904-4f71-8fe4-d754ded610d7
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /eyJqdW5rIjoiOHNqQ3Bqc2dTZlppTEl1IiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMmEwMjo4OTg6MTQ2OjY0OjpdIl19
+    headers:
+      Host: server6.diwir81236.workers.dev
+- name: 'ARISTA #23'
+  type: vless
+  server: e89ef98bea38bae0.ironly4l.ir
+  port: 8080
+  uuid: 40187f78-eee3-4f56-b080-1070f76bb6d3
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: play.google.com
+- name: 'ARISTA #24'
+  type: vless
+  server: 31.57.185.92
+  port: 8080
+  uuid: 78a82010-c288-49a8-a4db-efbd5e75729b
   network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: www.yahoo.com
+  servername: telewebion.net
   reality-opts:
-    public-key: xjWTzkwPpNWPFd_q239gUyjamzCoLw7OOMy1MswC60M
-    short-id: "8b01f4e667f4b074"
-- name: 'ARISTA #22'
+    public-key: 8du0-zxF-XzdUT0BaOT_9rMLcoNVwONM1uKXoHGzFUE
+    short-id: "136a5c516f"
+- name: 'ARISTA #25'
+  type: vless
+  server: 0cf703b86ea5a239.ravenlo.ir
+  port: 8080
+  uuid: 50d10e6c-37e1-4512-b35a-2d4e0adfd079
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: play.google.com
+- name: 'ARISTA #26'
+  type: vless
+  server: 104.21.11.152
+  port: 8080
+  uuid: d7a8ae86-9904-4f71-8fe4-d754ded610d7
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /eyJqdW5rIjoiOHNqQ3Bqc2dTZlppTEl1IiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMmEwMjo4OTg6MTQ2OjY0OjpdIl19
+    headers:
+      Host: server6.diwir81236.workers.dev
+- name: 'ARISTA #27'
   type: vless
   server: 104.16.102.112
   port: 8080
   uuid: f255384f-d448-439e-ba78-ff80ab42d2ea
   network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #23'
-  type: vless
-  server: milo.rubinaz.xyz
-  port: 8080
-  uuid: 6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #24'
-  type: vless
-  server: 0cf703b86ea5a239.ravenlo.ir
-  port: 8080
-  uuid: 50d10e6c-37e1-4512-b35a-2d4e0adfd079
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: play.google.com
-- name: 'ARISTA #25'
-  type: vless
-  server: de.azrping.com
-  port: 8080
-  uuid: 56fd26cd-10e0-4b40-b393-d7523aa60e6f
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.yahoo.com
-  reality-opts:
-    public-key: xjWTzkwPpNWPFd_q239gUyjamzCoLw7OOMy1MswC60M
-    short-id: "8b01f4e667f4b074"
-- name: 'ARISTA #26'
-  type: vless
-  server: 188.114.97.6
-  port: 8080
-  uuid: e5c5c336-8ca7-44bc-82d6-0473a55ad1ae
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: pingoneorg.hydrash.workers.dev
-- name: 'ARISTA #27'
-  type: vless
-  server: 104.18.0.96
-  port: 8080
-  uuid: 7a9dba44-5d8c-493c-97ea-ce27f0b757c7
-  network: xhttp
   tls: false
   udp: true
   skip-cert-verify: true
 - name: 'ARISTA #28'
   type: vless
-  server: 0cf703b86ea5a239.ravenlo.ir
+  server: 188.114.97.6
   port: 8080
-  uuid: 50d10e6c-37e1-4512-b35a-2d4e0adfd079
+  uuid: e5c5c336-8ca7-44bc-82d6-0473a55ad1ae
   network: ws
   tls: false
   udp: true
@@ -359,20 +414,20 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: play.google.com
+      Host: pingoneorg.hydrash.workers.dev
 - name: 'ARISTA #29'
   type: vless
-  server: 104.21.70.21
+  server: 172.64.154.8
   port: 8080
-  uuid: 8ccb3a94-9e3c-45d0-a280-850faea6bbff
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
   ws-opts:
-    path: /vl/EpnESUGGdoM40CHmsDT?ed
+    path: /?ed=2560security=tls
     headers:
-      Host: fdjl8sdmc774ru70b3a45lv4w8.akbar1sale6.workers.dev
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
 - name: 'ARISTA #30'
   type: vless
   server: e89ef98bea38bae0.ironly4l.ir
@@ -388,604 +443,141 @@ proxies:
       Host: play.google.com
 - name: 'ARISTA #31'
   type: vless
-  server: 104.16.102.112
+  server: 31.57.185.92
   port: 8080
-  uuid: f255384f-d448-439e-ba78-ff80ab42d2ea
-  network: httpupgrade
-  tls: false
+  uuid: 78a82010-c288-49a8-a4db-efbd5e75729b
+  network: xhttp
+  tls: true
   udp: true
   skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: telewebion.net
+  reality-opts:
+    public-key: 8du0-zxF-XzdUT0BaOT_9rMLcoNVwONM1uKXoHGzFUE
+    short-id: "136a5c516f"
 - name: 'ARISTA #32'
   type: vless
-  server: milo.rubinaz.xyz
+  server: 0cf703b86ea5a239.ravenlo.ir
   port: 8080
-  uuid: 6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8
-  network: tcp
+  uuid: 50d10e6c-37e1-4512-b35a-2d4e0adfd079
+  network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: play.google.com
 - name: 'ARISTA #33'
   type: vless
-  server: 0cf703b86ea5a239.ravenlo.ir
+  server: 104.21.11.152
   port: 8080
-  uuid: 50d10e6c-37e1-4512-b35a-2d4e0adfd079
+  uuid: d7a8ae86-9904-4f71-8fe4-d754ded610d7
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
   ws-opts:
-    path: /
+    path: /eyJqdW5rIjoiOHNqQ3Bqc2dTZlppTEl1IiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMmEwMjo4OTg6MTQ2OjY0OjpdIl19
     headers:
-      Host: play.google.com
+      Host: server6.diwir81236.workers.dev
 - name: 'ARISTA #34'
-  type: vless
-  server: de.azrping.com
+  type: ss
+  server: 82.38.31.82
   port: 8080
-  uuid: 56fd26cd-10e0-4b40-b393-d7523aa60e6f
-  network: xhttp
-  tls: true
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
   udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.yahoo.com
-  reality-opts:
-    public-key: xjWTzkwPpNWPFd_q239gUyjamzCoLw7OOMy1MswC60M
-    short-id: "8b01f4e667f4b074"
+  tcp-fast-open: true
 - name: 'ARISTA #35'
-  type: vless
-  server: 188.114.97.6
+  type: ss
+  server: 82.38.31.202
   port: 8080
-  uuid: e5c5c336-8ca7-44bc-82d6-0473a55ad1ae
-  network: ws
-  tls: false
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
   udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: pingoneorg.hydrash.workers.dev
+  tcp-fast-open: true
 - name: 'ARISTA #36'
-  type: vless
-  server: 104.18.0.96
+  type: ss
+  server: 82.38.31.174
   port: 8080
-  uuid: 7a9dba44-5d8c-493c-97ea-ce27f0b757c7
-  network: xhttp
-  tls: false
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
   udp: true
-  skip-cert-verify: true
+  tcp-fast-open: true
 - name: 'ARISTA #37'
-  type: vless
-  server: 0cf703b86ea5a239.ravenlo.ir
+  type: ss
+  server: 193.29.139.197
   port: 8080
-  uuid: 50d10e6c-37e1-4512-b35a-2d4e0adfd079
-  network: ws
-  tls: false
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
   udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: play.google.com
+  tcp-fast-open: true
 - name: 'ARISTA #38'
-  type: vless
-  server: 104.21.70.21
+  type: ss
+  server: 193.29.139.212
   port: 8080
-  uuid: 8ccb3a94-9e3c-45d0-a280-850faea6bbff
-  network: ws
-  tls: false
+  cipher: chacha20-ietf-poly1305
+  password: QCXDxuDlTTMD7jtgHUjIoj
   udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /vl/EpnESUGGdoM40CHmsDT?ed
-    headers:
-      Host: fdjl8sdmc774ru70b3a45lv4w8.akbar1sale6.workers.dev
+  tcp-fast-open: true
 - name: 'ARISTA #39'
-  type: vless
-  server: e89ef98bea38bae0.ironly4l.ir
+  type: ss
+  server: 85.133.250.17
   port: 8080
-  uuid: 40187f78-eee3-4f56-b080-1070f76bb6d3
-  network: ws
-  tls: false
+  cipher: 2022-blake3-aes-128-gcm
+  password: IsDcGLee0Vlvf3gbDpO+Fw==:/c6ZuxdY9Xp1+0sgNkvt7w==
   udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: play.google.com
+  tcp-fast-open: true
 - name: 'ARISTA #40'
-  type: vless
-  server: 104.21.44.253
+  type: ss
+  server: rel.pasmazy.ir
   port: 8080
-  uuid: c6ba83a7-c4b5-481f-8f71-0f17deff0bf2
-  network: ws
-  tls: false
+  cipher: 2022-blake3-aes-128-gcm
+  password: IL/7J/Cc5zQpJvpAP0ZVkA==:r6ZEW/vf0jvf8o9XkSIgaQ==
   udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /eyJqdW5rIjoiOUhPbnRlV0xaekI1cjciLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByZWZpeCIsInBhbmVsSVBzIjpbIlsyNjAyOmZjNTk6YjA6NjQ6Ol0iXX0=
-    headers:
-      Host: billowing-sunset-e340.qaraatayi.workers.dev
+  tcp-fast-open: true
 - name: 'ARISTA #41'
-  type: vless
-  server: 91.107.151.122
+  type: ss
+  server: 82.38.31.211
   port: 8080
-  uuid: 39098241-9c6e-4fe7-abbd-7f6f6ed4512c
-  network: tcp
-  tls: false
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
   udp: true
-  skip-cert-verify: true
+  tcp-fast-open: true
 - name: 'ARISTA #42'
-  type: vless
-  server: 104.16.102.112
+  type: ss
+  server: 82.38.31.216
   port: 8080
-  uuid: f255384f-d448-439e-ba78-ff80ab42d2ea
-  network: httpupgrade
-  tls: false
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
   udp: true
-  skip-cert-verify: true
+  tcp-fast-open: true
 - name: 'ARISTA #43'
-  type: vless
-  server: milo.rubinaz.xyz
+  type: ss
+  server: 82.38.31.192
   port: 8080
-  uuid: 6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8
-  network: tcp
-  tls: false
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
   udp: true
-  skip-cert-verify: true
+  tcp-fast-open: true
 - name: 'ARISTA #44'
-  type: vless
-  server: 0cf703b86ea5a239.ravenlo.ir
+  type: ss
+  server: 82.38.31.205
   port: 8080
-  uuid: 50d10e6c-37e1-4512-b35a-2d4e0adfd079
-  network: ws
-  tls: false
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
   udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: play.google.com
+  tcp-fast-open: true
 - name: 'ARISTA #45'
-  type: vless
-  server: de.azrping.com
+  type: ss
+  server: 82.38.31.69
   port: 8080
-  uuid: 56fd26cd-10e0-4b40-b393-d7523aa60e6f
-  network: xhttp
-  tls: true
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
   udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.yahoo.com
-  reality-opts:
-    public-key: xjWTzkwPpNWPFd_q239gUyjamzCoLw7OOMy1MswC60M
-    short-id: "8b01f4e667f4b074"
+  tcp-fast-open: true
 - name: 'ARISTA #46'
-  type: vless
-  server: 104.16.102.112
-  port: 8080
-  uuid: f255384f-d448-439e-ba78-ff80ab42d2ea
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #47'
-  type: vless
-  server: milo.rubinaz.xyz
-  port: 8080
-  uuid: 6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #48'
-  type: vless
-  server: 0cf703b86ea5a239.ravenlo.ir
-  port: 8080
-  uuid: 50d10e6c-37e1-4512-b35a-2d4e0adfd079
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: play.google.com
-- name: 'ARISTA #49'
-  type: vless
-  server: de.azrping.com
-  port: 8080
-  uuid: 56fd26cd-10e0-4b40-b393-d7523aa60e6f
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.yahoo.com
-  reality-opts:
-    public-key: xjWTzkwPpNWPFd_q239gUyjamzCoLw7OOMy1MswC60M
-    short-id: "8b01f4e667f4b074"
-- name: 'ARISTA #50'
-  type: vless
-  server: 188.114.97.6
-  port: 8080
-  uuid: e5c5c336-8ca7-44bc-82d6-0473a55ad1ae
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: pingoneorg.hydrash.workers.dev
-- name: 'ARISTA #51'
-  type: vless
-  server: 104.18.0.96
-  port: 8080
-  uuid: 7a9dba44-5d8c-493c-97ea-ce27f0b757c7
-  network: xhttp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #52'
-  type: vless
-  server: 0cf703b86ea5a239.ravenlo.ir
-  port: 8080
-  uuid: 50d10e6c-37e1-4512-b35a-2d4e0adfd079
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: play.google.com
-- name: 'ARISTA #53'
-  type: vless
-  server: 104.21.70.21
-  port: 8080
-  uuid: 8ccb3a94-9e3c-45d0-a280-850faea6bbff
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /vl/EpnESUGGdoM40CHmsDT?ed
-    headers:
-      Host: fdjl8sdmc774ru70b3a45lv4w8.akbar1sale6.workers.dev
-- name: 'ARISTA #54'
-  type: vless
-  server: e89ef98bea38bae0.ironly4l.ir
-  port: 8080
-  uuid: 40187f78-eee3-4f56-b080-1070f76bb6d3
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: play.google.com
-- name: 'ARISTA #55'
-  type: vless
-  server: 104.21.44.253
-  port: 8080
-  uuid: c6ba83a7-c4b5-481f-8f71-0f17deff0bf2
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /eyJqdW5rIjoiOUhPbnRlV0xaekI1cjciLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByZWZpeCIsInBhbmVsSVBzIjpbIlsyNjAyOmZjNTk6YjA6NjQ6Ol0iXX0=
-    headers:
-      Host: billowing-sunset-e340.qaraatayi.workers.dev
-- name: 'ARISTA #56'
-  type: vless
-  server: 91.107.151.122
-  port: 8080
-  uuid: 39098241-9c6e-4fe7-abbd-7f6f6ed4512c
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #57'
-  type: ss
-  server: 193.29.139.197
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #58'
-  type: ss
-  server: 82.38.31.205
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #59'
-  type: ss
-  server: 82.38.31.69
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #60'
-  type: ss
-  server: 82.38.31.149
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #62'
-  type: ss
-  server: 82.38.31.211
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #63'
-  type: ss
-  server: 82.38.31.216
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #64'
-  type: ss
-  server: 82.38.31.192
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #65'
-  type: ss
-  server: 82.38.31.174
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #66'
-  type: ss
-  server: 38.75.137.9
-  port: 8080
-  cipher: aes-256-gcm
-  password: KixLvKzwjekG00rm
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #67'
-  type: ss
-  server: 82.38.31.184
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #68'
-  type: ss
-  server: 82.38.31.35
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #69'
-  type: ss
-  server: 82.38.31.7
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #70'
-  type: ss
-  server: 82.38.31.212
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #71'
-  type: ss
-  server: 82.38.31.218
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #72'
-  type: ss
-  server: 82.38.31.207
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #73'
-  type: ss
-  server: 82.38.31.155
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #74'
-  type: ss
-  server: 82.38.31.214
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #75'
-  type: ss
-  server: 193.29.139.225
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #76'
-  type: ss
-  server: 193.29.139.197
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #77'
-  type: ss
-  server: 82.38.31.205
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #78'
-  type: ss
-  server: 82.38.31.69
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #79'
-  type: ss
-  server: 82.38.31.149
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #81'
-  type: ss
-  server: 82.38.31.211
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #82'
-  type: ss
-  server: 82.38.31.216
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #83'
-  type: ss
-  server: 82.38.31.192
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #84'
-  type: ss
-  server: 82.38.31.174
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #85'
-  type: ss
-  server: 38.75.137.9
-  port: 8080
-  cipher: aes-256-gcm
-  password: KixLvKzwjekG00rm
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #86'
-  type: ss
-  server: 82.38.31.184
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #87'
-  type: ss
-  server: 82.38.31.35
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #88'
-  type: ss
-  server: 82.38.31.7
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #89'
-  type: ss
-  server: 82.38.31.212
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #90'
-  type: ss
-  server: 82.38.31.218
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #91'
-  type: ss
-  server: 82.38.31.207
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #92'
-  type: ss
-  server: 82.38.31.155
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #93'
-  type: ss
-  server: 82.38.31.214
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #94'
-  type: ss
-  server: 193.29.139.225
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #95'
-  type: ss
-  server: 193.29.139.157
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: cvII85TrW6n0OGyfpHVS1u
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #96'
   type: ss
   server: 193.29.139.235
   port: 8080
@@ -993,7 +585,15 @@ proxies:
   password: oZIoA69Q8yhcQV8ka3Pa3A
   udp: true
   tcp-fast-open: true
-- name: 'ARISTA #97'
+- name: 'ARISTA #47'
+  type: ss
+  server: 193.29.139.157
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: cvII85TrW6n0OGyfpHVS1u
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #48'
   type: ss
   server: 193.29.139.251
   port: 8080
@@ -1001,9 +601,209 @@ proxies:
   password: oZIoA69Q8yhcQV8ka3Pa3A
   udp: true
   tcp-fast-open: true
-- name: 'ARISTA #98'
+- name: 'ARISTA #49'
   type: ss
   server: 193.29.139.188
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #50'
+  type: ss
+  server: 82.38.31.82
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #51'
+  type: ss
+  server: 82.38.31.202
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #52'
+  type: ss
+  server: 82.38.31.174
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #53'
+  type: ss
+  server: 193.29.139.197
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #54'
+  type: ss
+  server: 193.29.139.212
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: QCXDxuDlTTMD7jtgHUjIoj
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #55'
+  type: ss
+  server: 85.133.250.17
+  port: 8080
+  cipher: 2022-blake3-aes-128-gcm
+  password: IsDcGLee0Vlvf3gbDpO+Fw==:/c6ZuxdY9Xp1+0sgNkvt7w==
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #56'
+  type: ss
+  server: rel.pasmazy.ir
+  port: 8080
+  cipher: 2022-blake3-aes-128-gcm
+  password: IL/7J/Cc5zQpJvpAP0ZVkA==:r6ZEW/vf0jvf8o9XkSIgaQ==
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #57'
+  type: ss
+  server: 82.38.31.211
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #58'
+  type: ss
+  server: 82.38.31.216
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #59'
+  type: ss
+  server: 82.38.31.192
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #60'
+  type: ss
+  server: 82.38.31.205
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #61'
+  type: ss
+  server: 82.38.31.69
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #62'
+  type: ss
+  server: 193.29.139.235
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #63'
+  type: ss
+  server: 193.29.139.157
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: cvII85TrW6n0OGyfpHVS1u
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #64'
+  type: ss
+  server: 193.29.139.251
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #65'
+  type: ss
+  server: 193.29.139.188
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #66'
+  type: ss
+  server: 82.38.31.184
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #67'
+  type: ss
+  server: 82.38.31.35
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #68'
+  type: ss
+  server: 82.38.31.7
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #69'
+  type: ss
+  server: 82.38.31.212
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #70'
+  type: ss
+  server: 82.38.31.218
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #71'
+  type: ss
+  server: 82.38.31.207
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #72'
+  type: ss
+  server: 82.38.31.155
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #73'
+  type: ss
+  server: 82.38.31.214
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #74'
+  type: ss
+  server: 193.29.139.225
   port: 8080
   cipher: chacha20-ietf-poly1305
   password: oZIoA69Q8yhcQV8ka3Pa3A
@@ -1078,6 +878,7 @@ proxy-groups:
   - 'ARISTA #58'
   - 'ARISTA #59'
   - 'ARISTA #60'
+  - 'ARISTA #61'
   - 'ARISTA #62'
   - 'ARISTA #63'
   - 'ARISTA #64'
@@ -1091,29 +892,6 @@ proxy-groups:
   - 'ARISTA #72'
   - 'ARISTA #73'
   - 'ARISTA #74'
-  - 'ARISTA #75'
-  - 'ARISTA #76'
-  - 'ARISTA #77'
-  - 'ARISTA #78'
-  - 'ARISTA #79'
-  - 'ARISTA #81'
-  - 'ARISTA #82'
-  - 'ARISTA #83'
-  - 'ARISTA #84'
-  - 'ARISTA #85'
-  - 'ARISTA #86'
-  - 'ARISTA #87'
-  - 'ARISTA #88'
-  - 'ARISTA #89'
-  - 'ARISTA #90'
-  - 'ARISTA #91'
-  - 'ARISTA #92'
-  - 'ARISTA #93'
-  - 'ARISTA #94'
-  - 'ARISTA #95'
-  - 'ARISTA #96'
-  - 'ARISTA #97'
-  - 'ARISTA #98'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
