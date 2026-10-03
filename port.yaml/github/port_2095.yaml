@@ -1,6 +1,6 @@
 # GITHUB - Port 2095
-# Updated: 2026-10-03 11:35:15
-# Count: 1
+# Updated: 2026-10-03 16:09:35
+# Count: 2
 
 mixed-port: 7890
 allow-lan: false
@@ -50,21 +50,22 @@ rules:
 proxies:
 - name: 'T.ME: @aristapanel #1'
   type: vless
-  server: media.qeshmdiar.ir
+  server: cdn2.portalcode.ir
   port: 2095
-  uuid: ce3dab49-42ec-4a3d-b70c-a76efafd8eba
-  network: ws
-  tls: true
+  uuid: 681314c5-b3ee-41f1-a959-fa42841f5383
+  network: httpupgrade
+  tls: false
   udp: true
   skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: global.arshia-nova.ir
-  ws-opts:
-    path: /ws
-    headers:
-      Host: global.arshia-nova.ir
+- name: 'T.ME: @aristapanel #2'
+  type: vless
+  server: lv1.rovilo.ir
+  port: 2095
+  uuid: 452f869f-7720-47c3-a175-b6673e31d3e8
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -75,6 +76,7 @@ proxy-groups:
   timeout: 3000
   proxies: &id001
   - 'T.ME: @aristapanel #1'
+  - 'T.ME: @aristapanel #2'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
