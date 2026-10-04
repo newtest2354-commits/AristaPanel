@@ -1,6 +1,6 @@
 # COMBINED - Port 9443
-# Updated: 2026-10-03 23:48:19
-# Count: 11
+# Updated: 2026-10-04 05:34:35
+# Count: 15
 
 mixed-port: 7890
 allow-lan: false
@@ -49,40 +49,68 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'ARISTA #1'
-  type: ss
-  server: 185.156.47.97
+  type: vless
+  server: 194.150.166.228
   port: 9443
-  cipher: aes-256-gcm
-  password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
+  uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+  network: tcp
+  tls: true
   udp: true
-  tcp-fast-open: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: storage.yandexcloud.net
+  reality-opts:
+    public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+    short-id: "ad20d2ba"
 - name: 'ARISTA #2'
-  type: ss
-  server: 185.156.47.97
+  type: vless
+  server: 194.150.166.228
   port: 9443
-  cipher: aes-256-gcm
-  password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
+  uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+  network: tcp
+  tls: true
   udp: true
-  tcp-fast-open: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: storage.yandexcloud.net
+  reality-opts:
+    public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+    short-id: "ad20d2ba"
 - name: 'ARISTA #3'
+  type: vless
+  server: 194.150.166.228
+  port: 9443
+  uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: storage.yandexcloud.net
+  reality-opts:
+    public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+    short-id: "ad20d2ba"
+- name: 'ARISTA #4'
+  type: vless
+  server: 194.150.166.228
+  port: 9443
+  uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  servername: storage.yandexcloud.net
+  reality-opts:
+    public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+    short-id: "ad20d2ba"
+- name: 'ARISTA #5'
   type: ss
   server: 185.156.47.97
-  port: 9443
-  cipher: aes-256-gcm
-  password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
-  udp: true
-  tcp-fast-open: true
-- name: 'T.ME: @aristapanel #4'
-  type: ss
-  server: 138.199.48.82
-  port: 9443
-  cipher: aes-256-gcm
-  password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
-  udp: true
-  tcp-fast-open: true
-- name: 'T.ME: @aristapanel #5'
-  type: ss
-  server: yyz-ca-01.blncvpn4u.cc
   port: 9443
   cipher: aes-256-gcm
   password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
@@ -96,9 +124,9 @@ proxies:
   password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
   udp: true
   tcp-fast-open: true
-- name: 'T.ME: @aristapanel #7'
+- name: 'ARISTA #7'
   type: ss
-  server: 138.199.48.82
+  server: 185.156.47.97
   port: 9443
   cipher: aes-256-gcm
   password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
@@ -112,17 +140,17 @@ proxies:
   password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
   udp: true
   tcp-fast-open: true
-- name: 'ARISTA #9'
+- name: 'T.ME: @aristapanel #9'
   type: ss
-  server: 185.156.47.97
+  server: 138.199.48.82
   port: 9443
   cipher: aes-256-gcm
   password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
   udp: true
   tcp-fast-open: true
-- name: 'T.ME: @aristapanel #10'
+- name: 'ARISTA #10'
   type: ss
-  server: 138.199.48.82
+  server: 185.156.47.97
   port: 9443
   cipher: aes-256-gcm
   password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
@@ -131,6 +159,38 @@ proxies:
 - name: 'T.ME: @aristapanel #11'
   type: ss
   server: yyz-ca-01.blncvpn4u.cc
+  port: 9443
+  cipher: aes-256-gcm
+  password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
+  udp: true
+  tcp-fast-open: true
+- name: 'T.ME: @aristapanel #12'
+  type: ss
+  server: 138.199.48.82
+  port: 9443
+  cipher: aes-256-gcm
+  password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #13'
+  type: ss
+  server: 185.156.47.97
+  port: 9443
+  cipher: aes-256-gcm
+  password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
+  udp: true
+  tcp-fast-open: true
+- name: 'T.ME: @aristapanel #14'
+  type: ss
+  server: yyz-ca-01.blncvpn4u.cc
+  port: 9443
+  cipher: aes-256-gcm
+  password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
+  udp: true
+  tcp-fast-open: true
+- name: 'T.ME: @aristapanel #15'
+  type: ss
+  server: 138.199.48.82
   port: 9443
   cipher: aes-256-gcm
   password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
@@ -148,14 +208,18 @@ proxy-groups:
   - 'ARISTA #1'
   - 'ARISTA #2'
   - 'ARISTA #3'
-  - 'T.ME: @aristapanel #4'
-  - 'T.ME: @aristapanel #5'
+  - 'ARISTA #4'
+  - 'ARISTA #5'
   - 'ARISTA #6'
-  - 'T.ME: @aristapanel #7'
+  - 'ARISTA #7'
   - 'T.ME: @aristapanel #8'
-  - 'ARISTA #9'
-  - 'T.ME: @aristapanel #10'
+  - 'T.ME: @aristapanel #9'
+  - 'ARISTA #10'
   - 'T.ME: @aristapanel #11'
+  - 'T.ME: @aristapanel #12'
+  - 'ARISTA #13'
+  - 'T.ME: @aristapanel #14'
+  - 'T.ME: @aristapanel #15'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

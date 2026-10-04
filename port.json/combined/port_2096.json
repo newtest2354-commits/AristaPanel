@@ -1,6 +1,6 @@
 // COMBINED - Port 2096
-// Updated: 2026-10-03 23:48:30
-// Count: 8
+// Updated: 2026-10-04 05:34:53
+// Count: 6
 
 {
   "log": {
@@ -41,32 +41,51 @@
     {
       "type": "vless",
       "tag": "ARISTA #1",
-      "server": "104.21.27.230",
+      "server": "sh.770886.xyz",
       "server_port": 2096,
-      "uuid": "35fe75e4-e67b-4255-afe3-5086cc3edfcf",
+      "uuid": "819c49c1-a44d-4d6e-80c7-363933028771",
       "domain_resolver": "google",
       "tls": {
         "enabled": true,
-        "server_name": "aneshastam.plmusic.ir",
+        "server_name": "sh.770886.xyz",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        },
+        "alpn": [
+          "h2"
+        ]
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "ARISTA #2",
+      "server": "104.21.8.201",
+      "server_port": 2096,
+      "uuid": "bdc5e450-3e2d-4001-928e-e3bc6cecb249",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "cdn.skyvora.app",
         "insecure": true,
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
-        },
-        "alpn": [
-          "h3",
-          "h2",
-          "http/1.1"
-        ]
+        }
       },
+      "packet_encoding": "xudp",
       "transport": {
-        "type": "grpc",
-        "service_name": "aneshastam"
+        "type": "ws",
+        "path": "/hux9duzm54",
+        "headers": {
+          "Host": "cdn.skyvora.app"
+        }
       }
     },
     {
       "type": "hysteria2",
-      "tag": "ARISTA #2",
+      "tag": "ARISTA #3",
       "server": "karo.rick313.dpdns.org",
       "server_port": 2096,
       "password": "hoeutf1ryy41wrtw",
@@ -101,7 +120,8 @@
       "tag": "🚀 ARISTA AUTO BEST",
       "outbounds": [
         "ARISTA #1",
-        "ARISTA #2"
+        "ARISTA #2",
+        "ARISTA #3"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "2m",
