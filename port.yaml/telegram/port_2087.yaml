@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2087
-# Updated: 2026-10-07 00:37:00
-# Count: 10
+# Updated: 2026-10-07 10:12:33
+# Count: 52
 
 mixed-port: 7890
 allow-lan: false
@@ -50,20 +50,34 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 13.143.174.201
+  server: s3.zynetraq.ir
   port: 2087
-  uuid: 689b65e0-57a8-41ba-804d-10c079c2b393
+  uuid: 4e55b2d0-7622-4424-8c23-07d89d281f99
   network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chr…
+- name: 'ARISTA #2'
+  type: vless
+  server: s2.yorqino.ir
+  port: 2087
+  uuid: 86618dfc-855b-41aa-b6fd-552dcf7a5ca7
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  - h3
   client-fingerprint: chrome
-  servername: files.meridian-labs.net
-  reality-opts:
-    public-key: dBvFkg2zny545Ws6H_LXKEohOYV2MW_zACRrRQE1IUg
-    short-id: "992e5a9a"
-- name: 'ARISTA #2'
+  servername: s2.yorqino.ir
+- name: 'ARISTA #3'
   type: vless
   server: s2.zynetraq.ir
   port: 2087
@@ -73,37 +87,16 @@ proxies:
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: s2.zynetraq.ir🇩🇪@FreakConfig
-- name: 'ARISTA #3'
-  type: vless
-  server: 13.143.174.201
-  port: 2087
-  uuid: 689b65e0-57a8-41ba-804d-10c079c2b393
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: files.meridian-labs.net
-  reality-opts:
-    public-key: dBvFkg2zny545Ws6H_LXKEohOYV2MW_zACRrRQE1IUg
-    short-id: "992e5a9a"
+  servername: s2.zynetraq.ir
 - name: 'ARISTA #4'
   type: vless
-  server: 13.143.174.201
+  server: sub2.silen3eux.ir
   port: 2087
-  uuid: 689b65e0-57a8-41ba-804d-10c079c2b393
+  uuid: e6b8d3a0-2cb0-48f7-a6b2-0e252eab9a77
   network: tcp
-  tls: true
+  tls: false
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: files.meridian-labs.net
-  reality-opts:
-    public-key: dBvFkg2zny545Ws6H_LXKEohOYV2MW_zACRrRQE1IUg
-    short-id: "992e5a9a"
 - name: 'ARISTA #5'
   type: vless
   server: s2.zynetraq.ir
@@ -117,31 +110,67 @@ proxies:
   servername: s2.zynetraq.ir🇩🇪@FreakConfig
 - name: 'ARISTA #6'
   type: vless
-  server: 13.143.174.201
+  server: s4.zynetraq.ir
   port: 2087
-  uuid: 689b65e0-57a8-41ba-804d-10c079c2b393
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: files.meridian-labs.net
-  reality-opts:
-    public-key: dBvFkg2zny545Ws6H_LXKEohOYV2MW_zACRrRQE1IUg
-    short-id: "992e5a9a"
-- name: 'ARISTA #7'
-  type: vless
-  server: s2.zynetraq.ir
-  port: 2087
-  uuid: 7451454d-a345-45b5-d6ed-c35cf38c53dc
+  uuid: f3cdd41b-06d5-4bc1-da5f-f5b46157dbc3
   network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: s2.zynetraq.ir🇩🇪@FreakConfig
+  servername: s4.zynetraq.ir
+- name: 'ARISTA #7'
+  type: vless
+  server: s3.zynetraq.ir
+  port: 2087
+  uuid: 6a3385a0-c98f-4382-d1c8-a68259add544
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: s3.zynetraq.ir
 - name: 'ARISTA #8'
+  type: vless
+  server: bs.cexora.ir
+  port: 2087
+  uuid: c0653ebb-c8dc-46f3-f1dc-d0cf873dbc71
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: bs.cexora.ir
+- name: 'ARISTA #9'
+  type: vless
+  server: s3.zynetraq.ir
+  port: 2087
+  uuid: 4e55b2d0-7622-4424-8c23-07d89d281f99
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chr…
+- name: 'ARISTA #10'
+  type: vless
+  server: s2.yorqino.ir
+  port: 2087
+  uuid: 86618dfc-855b-41aa-b6fd-552dcf7a5ca7
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: s2.yorqino.ir
+- name: 'ARISTA #11'
   type: vless
   server: s2.zynetraq.ir
   port: 2087
@@ -152,7 +181,282 @@ proxies:
   skip-cert-verify: true
   client-fingerprint: chrome
   servername: s2.zynetraq.ir
-- name: 'ARISTA #9'
+- name: 'ARISTA #12'
+  type: vless
+  server: s3.zynetraq.ir
+  port: 2087
+  uuid: 4e55b2d0-7622-4424-8c23-07d89d281f99
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chr…
+- name: 'ARISTA #13'
+  type: vless
+  server: s2.yorqino.ir
+  port: 2087
+  uuid: 86618dfc-855b-41aa-b6fd-552dcf7a5ca7
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: s2.yorqino.ir
+- name: 'ARISTA #14'
+  type: vless
+  server: s3.zynetraq.ir
+  port: 2087
+  uuid: 4e55b2d0-7622-4424-8c23-07d89d281f99
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chr…
+- name: 'ARISTA #15'
+  type: vless
+  server: s2.yorqino.ir
+  port: 2087
+  uuid: 86618dfc-855b-41aa-b6fd-552dcf7a5ca7
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: s2.yorqino.ir
+- name: 'ARISTA #16'
+  type: vless
+  server: s2.zynetraq.ir
+  port: 2087
+  uuid: 7451454d-a345-45b5-d6ed-c35cf38c53dc
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: s2.zynetraq.ir
+- name: 'ARISTA #17'
+  type: vless
+  server: sub2.silen3eux.ir
+  port: 2087
+  uuid: e6b8d3a0-2cb0-48f7-a6b2-0e252eab9a77
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #18'
+  type: vless
+  server: s2.zynetraq.ir
+  port: 2087
+  uuid: 7451454d-a345-45b5-d6ed-c35cf38c53dc
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: s2.zynetraq.ir🇩🇪@FreakConfig
+- name: 'ARISTA #19'
+  type: vless
+  server: s4.zynetraq.ir
+  port: 2087
+  uuid: f3cdd41b-06d5-4bc1-da5f-f5b46157dbc3
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: s4.zynetraq.ir
+- name: 'ARISTA #20'
+  type: vless
+  server: s3.zynetraq.ir
+  port: 2087
+  uuid: 6a3385a0-c98f-4382-d1c8-a68259add544
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: s3.zynetraq.ir
+- name: 'ARISTA #21'
+  type: vless
+  server: bs.cexora.ir
+  port: 2087
+  uuid: c0653ebb-c8dc-46f3-f1dc-d0cf873dbc71
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: bs.cexora.ir
+- name: 'ARISTA #22'
+  type: vless
+  server: s3.zynetraq.ir
+  port: 2087
+  uuid: 4e55b2d0-7622-4424-8c23-07d89d281f99
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chr…
+- name: 'ARISTA #23'
+  type: vless
+  server: s2.yorqino.ir
+  port: 2087
+  uuid: 86618dfc-855b-41aa-b6fd-552dcf7a5ca7
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: s2.yorqino.ir
+- name: 'ARISTA #24'
+  type: vless
+  server: s2.zynetraq.ir
+  port: 2087
+  uuid: 7451454d-a345-45b5-d6ed-c35cf38c53dc
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: s2.zynetraq.ir
+- name: 'ARISTA #25'
+  type: vless
+  server: sub2.silen3eux.ir
+  port: 2087
+  uuid: e6b8d3a0-2cb0-48f7-a6b2-0e252eab9a77
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #26'
+  type: vless
+  server: s2.zynetraq.ir
+  port: 2087
+  uuid: 7451454d-a345-45b5-d6ed-c35cf38c53dc
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: s2.zynetraq.ir🇩🇪@FreakConfig
+- name: 'ARISTA #27'
+  type: vless
+  server: s3.zynetraq.ir
+  port: 2087
+  uuid: 4e55b2d0-7622-4424-8c23-07d89d281f99
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chr…
+- name: 'ARISTA #28'
+  type: vless
+  server: s2.yorqino.ir
+  port: 2087
+  uuid: 86618dfc-855b-41aa-b6fd-552dcf7a5ca7
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: s2.yorqino.ir
+- name: 'ARISTA #29'
+  type: vless
+  server: s2.zynetraq.ir
+  port: 2087
+  uuid: 7451454d-a345-45b5-d6ed-c35cf38c53dc
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: s2.zynetraq.ir
+- name: 'ARISTA #30'
+  type: vless
+  server: sub2.silen3eux.ir
+  port: 2087
+  uuid: e6b8d3a0-2cb0-48f7-a6b2-0e252eab9a77
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #31'
+  type: vless
+  server: s2.zynetraq.ir
+  port: 2087
+  uuid: 7451454d-a345-45b5-d6ed-c35cf38c53dc
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: s2.zynetraq.ir🇩🇪@FreakConfig
+- name: 'ARISTA #32'
+  type: vless
+  server: s4.zynetraq.ir
+  port: 2087
+  uuid: f3cdd41b-06d5-4bc1-da5f-f5b46157dbc3
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: s4.zynetraq.ir
+- name: 'ARISTA #33'
+  type: vless
+  server: s3.zynetraq.ir
+  port: 2087
+  uuid: 6a3385a0-c98f-4382-d1c8-a68259add544
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: s3.zynetraq.ir
+- name: 'ARISTA #34'
+  type: vless
+  server: bs.cexora.ir
+  port: 2087
+  uuid: c0653ebb-c8dc-46f3-f1dc-d0cf873dbc71
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: bs.cexora.ir
+- name: 'ARISTA #35'
   type: vless
   server: 104.21.67.187
   port: 2087
@@ -166,21 +470,206 @@ proxies:
   - http/1.1
   client-fingerprint: firefox
   servername: unitedkingdom.iranfastspeed.net
-- name: 'ARISTA #10'
+- name: 'ARISTA #36'
   type: vless
-  server: 13.143.174.201
+  server: s3.zynetraq.ir
   port: 2087
-  uuid: 689b65e0-57a8-41ba-804d-10c079c2b393
+  uuid: 4e55b2d0-7622-4424-8c23-07d89d281f99
   network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chr…
+- name: 'ARISTA #37'
+  type: vless
+  server: s2.yorqino.ir
+  port: 2087
+  uuid: 86618dfc-855b-41aa-b6fd-552dcf7a5ca7
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  - h3
   client-fingerprint: chrome
-  servername: files.meridian-labs.net
-  reality-opts:
-    public-key: dBvFkg2zny545Ws6H_LXKEohOYV2MW_zACRrRQE1IUg
-    short-id: "992e5a9a"
+  servername: s2.yorqino.ir
+- name: 'ARISTA #38'
+  type: vless
+  server: s2.zynetraq.ir
+  port: 2087
+  uuid: 7451454d-a345-45b5-d6ed-c35cf38c53dc
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: s2.zynetraq.ir
+- name: 'ARISTA #39'
+  type: vless
+  server: sub2.silen3eux.ir
+  port: 2087
+  uuid: e6b8d3a0-2cb0-48f7-a6b2-0e252eab9a77
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #40'
+  type: vless
+  server: s2.zynetraq.ir
+  port: 2087
+  uuid: 7451454d-a345-45b5-d6ed-c35cf38c53dc
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: s2.zynetraq.ir🇩🇪@FreakConfig
+- name: 'ARISTA #41'
+  type: vless
+  server: s4.zynetraq.ir
+  port: 2087
+  uuid: f3cdd41b-06d5-4bc1-da5f-f5b46157dbc3
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: s4.zynetraq.ir
+- name: 'ARISTA #42'
+  type: vless
+  server: s3.zynetraq.ir
+  port: 2087
+  uuid: 6a3385a0-c98f-4382-d1c8-a68259add544
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: s3.zynetraq.ir
+- name: 'ARISTA #43'
+  type: vless
+  server: bs.cexora.ir
+  port: 2087
+  uuid: c0653ebb-c8dc-46f3-f1dc-d0cf873dbc71
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: bs.cexora.ir
+- name: 'ARISTA #44'
+  type: vless
+  server: 104.21.67.187
+  port: 2087
+  uuid: d8506e85-4631-4513-9651-5914b8b33e5d
+  network: httpupgrade
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: firefox
+  servername: unitedkingdom.iranfastspeed.net
+- name: 'ARISTA #45'
+  type: vless
+  server: s3.zynetraq.ir
+  port: 2087
+  uuid: 4e55b2d0-7622-4424-8c23-07d89d281f99
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chr…
+- name: 'ARISTA #46'
+  type: vless
+  server: s2.yorqino.ir
+  port: 2087
+  uuid: 86618dfc-855b-41aa-b6fd-552dcf7a5ca7
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: s2.yorqino.ir
+- name: 'ARISTA #47'
+  type: vless
+  server: s2.zynetraq.ir
+  port: 2087
+  uuid: 7451454d-a345-45b5-d6ed-c35cf38c53dc
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: s2.zynetraq.ir
+- name: 'ARISTA #48'
+  type: vless
+  server: sub2.silen3eux.ir
+  port: 2087
+  uuid: e6b8d3a0-2cb0-48f7-a6b2-0e252eab9a77
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #49'
+  type: vless
+  server: s2.zynetraq.ir
+  port: 2087
+  uuid: 7451454d-a345-45b5-d6ed-c35cf38c53dc
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: s2.zynetraq.ir🇩🇪@FreakConfig
+- name: 'ARISTA #50'
+  type: vless
+  server: s4.zynetraq.ir
+  port: 2087
+  uuid: f3cdd41b-06d5-4bc1-da5f-f5b46157dbc3
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: s4.zynetraq.ir
+- name: 'ARISTA #51'
+  type: vless
+  server: s3.zynetraq.ir
+  port: 2087
+  uuid: 6a3385a0-c98f-4382-d1c8-a68259add544
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: s3.zynetraq.ir
+- name: 'ARISTA #52'
+  type: vless
+  server: bs.cexora.ir
+  port: 2087
+  uuid: c0653ebb-c8dc-46f3-f1dc-d0cf873dbc71
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: bs.cexora.ir
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -200,6 +689,48 @@ proxy-groups:
   - 'ARISTA #8'
   - 'ARISTA #9'
   - 'ARISTA #10'
+  - 'ARISTA #11'
+  - 'ARISTA #12'
+  - 'ARISTA #13'
+  - 'ARISTA #14'
+  - 'ARISTA #15'
+  - 'ARISTA #16'
+  - 'ARISTA #17'
+  - 'ARISTA #18'
+  - 'ARISTA #19'
+  - 'ARISTA #20'
+  - 'ARISTA #21'
+  - 'ARISTA #22'
+  - 'ARISTA #23'
+  - 'ARISTA #24'
+  - 'ARISTA #25'
+  - 'ARISTA #26'
+  - 'ARISTA #27'
+  - 'ARISTA #28'
+  - 'ARISTA #29'
+  - 'ARISTA #30'
+  - 'ARISTA #31'
+  - 'ARISTA #32'
+  - 'ARISTA #33'
+  - 'ARISTA #34'
+  - 'ARISTA #35'
+  - 'ARISTA #36'
+  - 'ARISTA #37'
+  - 'ARISTA #38'
+  - 'ARISTA #39'
+  - 'ARISTA #40'
+  - 'ARISTA #41'
+  - 'ARISTA #42'
+  - 'ARISTA #43'
+  - 'ARISTA #44'
+  - 'ARISTA #45'
+  - 'ARISTA #46'
+  - 'ARISTA #47'
+  - 'ARISTA #48'
+  - 'ARISTA #49'
+  - 'ARISTA #50'
+  - 'ARISTA #51'
+  - 'ARISTA #52'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

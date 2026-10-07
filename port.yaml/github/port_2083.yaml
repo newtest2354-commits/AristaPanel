@@ -1,6 +1,6 @@
 # GITHUB - Port 2083
-# Updated: 2026-10-07 00:37:06
-# Count: 7
+# Updated: 2026-10-07 10:12:39
+# Count: 6
 
 mixed-port: 7890
 allow-lan: false
@@ -83,24 +83,13 @@ proxies:
     headers:
       Host: or3.sfacg.uk
 - name: 'T.ME: @aristapanel #3'
-  type: vless
-  server: 172.67.68.157
+  type: ss
+  server: 51.222.107.43
   port: 2083
-  uuid: fc8a0708-951a-4027-860f-2a154ebc4dd7
-  network: ws
-  tls: true
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:HWFFJN19JkvbTKo/79AfnbRBK9uHUUaFNZJyLjEoJGs=
   udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: crimson-king-301d.nexoxnet.workers.dev
-  ws-opts:
-    path: /
-    headers:
-      Host: crimson-king-301d.nexoxnet.workers.dev
+  tcp-fast-open: true
 - name: 'T.ME: @aristapanel #4'
   type: ss
   server: 51.222.107.43
@@ -125,14 +114,6 @@ proxies:
   password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:HWFFJN19JkvbTKo/79AfnbRBK9uHUUaFNZJyLjEoJGs=
   udp: true
   tcp-fast-open: true
-- name: 'T.ME: @aristapanel #7'
-  type: ss
-  server: 51.222.107.43
-  port: 2083
-  cipher: 2022-blake3-aes-256-gcm
-  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:HWFFJN19JkvbTKo/79AfnbRBK9uHUUaFNZJyLjEoJGs=
-  udp: true
-  tcp-fast-open: true
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -148,7 +129,6 @@ proxy-groups:
   - 'T.ME: @aristapanel #4'
   - 'T.ME: @aristapanel #5'
   - 'T.ME: @aristapanel #6'
-  - 'T.ME: @aristapanel #7'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
