@@ -1,6 +1,6 @@
 # COMBINED - Port 2052
-# Updated: 2026-10-07 10:12:26
-# Count: 11
+# Updated: 2026-10-07 18:53:09
+# Count: 10
 
 mixed-port: 7890
 allow-lan: false
@@ -49,31 +49,39 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'ARISTA #1'
-  type: vless
-  server: freesocks.work
+  type: vmess
+  server: al1.vipsite2.top
   port: 2052
-  uuid: aa5d861a-7799-41a7-bdf4-7a6414cf98fd
-  network: ws
-  tls: false
+  uuid: d7ce743c-76ad-4158-b2f0-1c59c0393a12
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: true
   udp: true
   skip-cert-verify: true
-  ws-opts:
-    path: /@BlueKnight_net--@BlueKnight_net
-    headers:
-      Host: uwu.blueknightnet.qzz.io
+  tcp-fast-open: true
+  servername: alman1.rendai.ir
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  - http/1.1
 - name: 'ARISTA #2'
-  type: vless
-  server: freesocks.work
+  type: vmess
+  server: al1.vipsite2.top
   port: 2052
-  uuid: aa5d861a-7799-41a7-bdf4-7a6414cf98fd
-  network: ws
-  tls: false
+  uuid: d7ce743c-76ad-4158-b2f0-1c59c0393a12
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: true
   udp: true
   skip-cert-verify: true
-  ws-opts:
-    path: /@BlueKnight_net--@BlueKnight_net
-    headers:
-      Host: uwu.blueknightnet.qzz.io
+  tcp-fast-open: true
+  servername: alman1.rendai.ir
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  - http/1.1
 - name: 'T.ME: @aristapanel #3'
   type: vless
   server: cctvhikvision.center
@@ -146,18 +154,18 @@ proxies:
   skip-cert-verify: true
 - name: 'T.ME: @aristapanel #9'
   type: vless
-  server: 188.114.98.224
+  server: 188.114.97.1
   port: 2052
-  uuid: fe334bef-4f9a-47a5-9622-0c3571196e9e
+  uuid: 0fbe0c5e-b479-4d91-8b42-f194f781b6bb
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: Usa.SnaapfooD.ir.MYBABY.NofilterinG2.SBS.
+  servername: z0ndd1onnp04unxjemim9lf8.abaravi51.workers.dev
   ws-opts:
-    path: /-
+    path: /vl/ujKKGE3Opd2787ja1VfP3T2IuqjNe?ed=2560
     headers:
-      Host: Usa.SnaapfooD.ir.MYBABY.NofilterinG2.SBS.
+      Host: z0ndd1onnp04unxjemim9lf8.abaravi51.workers.dev
 - name: 'T.ME: @aristapanel #10'
   type: vless
   server: 172.64.53.55
@@ -171,19 +179,6 @@ proxies:
     path: /?ed=2560security=tls
     headers:
       Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
-- name: 'ARISTA #11'
-  type: vless
-  server: freesocks.work
-  port: 2052
-  uuid: aa5d861a-7799-41a7-bdf4-7a6414cf98fd
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /@BlueKnight_net--@BlueKnight_net
-    headers:
-      Host: uwu.blueknightnet.qzz.io
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -203,7 +198,6 @@ proxy-groups:
   - 'T.ME: @aristapanel #8'
   - 'T.ME: @aristapanel #9'
   - 'T.ME: @aristapanel #10'
-  - 'ARISTA #11'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
