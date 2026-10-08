@@ -1,6 +1,6 @@
 // GITHUB - Port 2083
-// Updated: 2026-10-07 18:53:29
-// Count: 6
+// Updated: 2026-10-08 00:56:59
+// Count: 7
 
 {
   "log": {
@@ -64,8 +64,59 @@
       }
     },
     {
-      "type": "shadowsocks",
+      "type": "vless",
       "tag": "ARISTA #2",
+      "server": "45.88.12.36",
+      "server_port": 2083,
+      "uuid": "ecb99a7f-9ea4-4ca5-9eaa-7585240f6b9d",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "crt.viktorthebest.lol",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/vless-ws",
+        "headers": {
+          "Host": "45.88.12.36"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "ARISTA #3",
+      "server": "45.88.12.44",
+      "server_port": 2083,
+      "uuid": "ecb99a7f-9ea4-4ca5-9eaa-7585240f6b9d",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "crt.viktorthebest.lol",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "alpn": [
+          "http/1.1"
+        ]
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/vless-ws",
+        "headers": {
+          "Host": "45.88.12.44"
+        }
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "ARISTA #4",
       "server": "51.222.107.43",
       "server_port": 2083,
       "method": "2022-blake3-aes-256-gcm",
@@ -85,7 +136,9 @@
       "tag": "🚀 ARISTA AUTO BEST",
       "outbounds": [
         "ARISTA #1",
-        "ARISTA #2"
+        "ARISTA #2",
+        "ARISTA #3",
+        "ARISTA #4"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "2m",
