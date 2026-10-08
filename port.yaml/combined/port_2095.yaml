@@ -1,6 +1,6 @@
 # COMBINED - Port 2095
-# Updated: 2026-10-08 00:56:46
-# Count: 1
+# Updated: 2026-10-08 10:21:52
+# Count: 3
 
 mixed-port: 7890
 allow-lan: false
@@ -48,19 +48,45 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'T.ME: @aristapanel #1'
+- name: 'ARISTA #1'
   type: vless
-  server: 104.18.241.114
+  server: 188.114.97.0
   port: 2095
-  uuid: ef23616d-8a9d-4b22-b2f5-9bda864de179
+  uuid: a0906133-bc17-49da-aa1a-d5ea99ee2e3e
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
   ws-opts:
-    path: /l25hqs0onbig
+    path: /vl/CpDcN0yzoudwZ3jo?ed=2560
     headers:
-      Host: index.arcane509.workers.dev
+      Host: prop0yauife5z9t5sa5681bq1.rjsc50uq2-b6gdjw21gm-c154p.workers.dev
+- name: 'T.ME: @aristapanel #2'
+  type: vless
+  server: 172.67.155.136
+  port: 2095
+  uuid: 73796e63-0000-4000-8000-000000000008
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /sync
+    headers:
+      Host: vqrlof-pwa5a7-onfjlv.zedbazi061.workers.dev
+- name: 'ARISTA #3'
+  type: vless
+  server: 188.114.97.0
+  port: 2095
+  uuid: a0906133-bc17-49da-aa1a-d5ea99ee2e3e
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /vl/CpDcN0yzoudwZ3jo?ed=2560
+    headers:
+      Host: prop0yauife5z9t5sa5681bq1.rjsc50uq2-b6gdjw21gm-c154p.workers.dev
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -70,7 +96,9 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'T.ME: @aristapanel #1'
+  - 'ARISTA #1'
+  - 'T.ME: @aristapanel #2'
+  - 'ARISTA #3'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

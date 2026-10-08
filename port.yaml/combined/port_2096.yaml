@@ -1,6 +1,6 @@
 # COMBINED - Port 2096
-# Updated: 2026-10-08 00:56:46
-# Count: 3
+# Updated: 2026-10-08 10:21:52
+# Count: 7
 
 mixed-port: 7890
 allow-lan: false
@@ -48,7 +48,35 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'T.ME: @aristapanel #1'
+- name: 'ARISTA #1'
+  type: vless
+  server: 104.17.189.184
+  port: 2096
+  uuid: da30a28c-5c01-4c93-8da8-c8d39d58bfb9
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: hk.yindu.cc.cd
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      Host: hk.yindu.cc.cd
+- name: 'ARISTA #2'
+  type: vless
+  server: 188.244.122.111
+  port: 2096
+  uuid: 0c784107-cd05-47e8-9281-c9cba047ea89
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: web.studioatlaiouaetopten.info
+- name: 'T.ME: @aristapanel #3'
   type: vless
   server: 104.17.70.206
   port: 2096
@@ -61,7 +89,35 @@ proxies:
   servername: free-server.techsonic.dev
   ws-opts:
     path: /free-server.techsonic.dev
-- name: 'T.ME: @aristapanel #2'
+- name: 'ARISTA #4'
+  type: vless
+  server: 104.17.189.184
+  port: 2096
+  uuid: da30a28c-5c01-4c93-8da8-c8d39d58bfb9
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: hk.yindu.cc.cd
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      Host: hk.yindu.cc.cd
+- name: 'ARISTA #5'
+  type: vless
+  server: 188.244.122.111
+  port: 2096
+  uuid: 0c784107-cd05-47e8-9281-c9cba047ea89
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: web.studioatlaiouaetopten.info
+- name: 'T.ME: @aristapanel #6'
   type: hysteria2
   server: karo.rick313.dpdns.org
   port: 2096
@@ -71,7 +127,7 @@ proxies:
   fast-open: true
   obfs: salamander
   obfs-password: karo123
-- name: 'T.ME: @aristapanel #3'
+- name: 'T.ME: @aristapanel #7'
   type: hysteria2
   server: karo.rick313.dpdns.org
   port: 2096
@@ -90,9 +146,13 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'T.ME: @aristapanel #1'
-  - 'T.ME: @aristapanel #2'
+  - 'ARISTA #1'
+  - 'ARISTA #2'
   - 'T.ME: @aristapanel #3'
+  - 'ARISTA #4'
+  - 'ARISTA #5'
+  - 'T.ME: @aristapanel #6'
+  - 'T.ME: @aristapanel #7'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
