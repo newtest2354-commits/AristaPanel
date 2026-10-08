@@ -1,6 +1,6 @@
 # COMBINED - Port 2095
-# Updated: 2026-10-08 10:21:52
-# Count: 3
+# Updated: 2026-10-08 18:50:29
+# Count: 7
 
 mixed-port: 7890
 allow-lan: false
@@ -50,6 +50,24 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
+  server: cdn2.portalcode.ir
+  port: 2095
+  uuid: 681314c5-b3ee-41f1-a959-fa42841f5383
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #2'
+  type: vless
+  server: cdn2.portalcode.ir
+  port: 2095
+  uuid: 681314c5-b3ee-41f1-a959-fa42841f5383
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #3'
+  type: vless
   server: 188.114.97.0
   port: 2095
   uuid: a0906133-bc17-49da-aa1a-d5ea99ee2e3e
@@ -61,20 +79,38 @@ proxies:
     path: /vl/CpDcN0yzoudwZ3jo?ed=2560
     headers:
       Host: prop0yauife5z9t5sa5681bq1.rjsc50uq2-b6gdjw21gm-c154p.workers.dev
-- name: 'T.ME: @aristapanel #2'
+- name: 'ARISTA #4'
   type: vless
-  server: 172.67.155.136
+  server: cdn2.portalcode.ir
   port: 2095
-  uuid: 73796e63-0000-4000-8000-000000000008
+  uuid: 681314c5-b3ee-41f1-a959-fa42841f5383
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #5'
+  type: vless
+  server: 188.114.97.0
+  port: 2095
+  uuid: a0906133-bc17-49da-aa1a-d5ea99ee2e3e
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
   ws-opts:
-    path: /sync
+    path: /vl/CpDcN0yzoudwZ3jo?ed=2560
     headers:
-      Host: vqrlof-pwa5a7-onfjlv.zedbazi061.workers.dev
-- name: 'ARISTA #3'
+      Host: prop0yauife5z9t5sa5681bq1.rjsc50uq2-b6gdjw21gm-c154p.workers.dev
+- name: 'ARISTA #6'
+  type: vless
+  server: cdn2.portalcode.ir
+  port: 2095
+  uuid: 681314c5-b3ee-41f1-a959-fa42841f5383
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #7'
   type: vless
   server: 188.114.97.0
   port: 2095
@@ -97,8 +133,12 @@ proxy-groups:
   timeout: 3000
   proxies: &id001
   - 'ARISTA #1'
-  - 'T.ME: @aristapanel #2'
+  - 'ARISTA #2'
   - 'ARISTA #3'
+  - 'ARISTA #4'
+  - 'ARISTA #5'
+  - 'ARISTA #6'
+  - 'ARISTA #7'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

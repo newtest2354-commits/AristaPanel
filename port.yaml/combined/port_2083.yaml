@@ -1,6 +1,6 @@
 # COMBINED - Port 2083
-# Updated: 2026-10-08 10:21:52
-# Count: 25
+# Updated: 2026-10-08 18:50:29
+# Count: 48
 
 mixed-port: 7890
 allow-lan: false
@@ -48,7 +48,39 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'T.ME: @aristapanel #1'
+- name: 'ARISTA #1'
+  type: vmess
+  server: or.521166.xyz
+  port: 2083
+  uuid: ac251237-576f-40c8-a543-554960c958b1
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: or.521166.xyz
+  ws-opts:
+    path: /or3
+- name: 'ARISTA #2'
+  type: vmess
+  server: 188.130.154.174
+  port: 2083
+  uuid: 74c17cae-bf8b-4cda-8cdd-cf7983bf0a49
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 188.130.154.174
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  - http/1.1
+- name: 'T.ME: @aristapanel #3'
   type: vmess
   server: cdn.sfacg.uk
   port: 2083
@@ -65,60 +97,87 @@ proxies:
     path: /or3
     headers:
       Host: or3.sfacg.uk
-- name: 'ARISTA #2'
-  type: vless
-  server: 141.98.7.193
-  port: 2083
-  uuid: e9e60f73-1618-491c-a85b-477bdc959ae6
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: 141.98.7.193
-- name: 'ARISTA #3'
-  type: vless
-  server: 141.98.7.193
-  port: 2083
-  uuid: e9e60f73-1618-491c-a85b-477bdc959ae6
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: 141.98.7.193
 - name: 'ARISTA #4'
-  type: vless
-  server: 141.98.7.193
+  type: vmess
+  server: or.521166.xyz
   port: 2083
-  uuid: e9e60f73-1618-491c-a85b-477bdc959ae6
-  network: tcp
+  uuid: ac251237-576f-40c8-a543-554960c958b1
+  alterId: 0
+  cipher: auto
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: 141.98.7.193
+  tcp-fast-open: true
+  servername: or.521166.xyz
+  ws-opts:
+    path: /or3
 - name: 'ARISTA #5'
-  type: vless
-  server: 141.98.7.193
+  type: vmess
+  server: 188.130.154.174
   port: 2083
-  uuid: e9e60f73-1618-491c-a85b-477bdc959ae6
+  uuid: 74c17cae-bf8b-4cda-8cdd-cf7983bf0a49
+  alterId: 0
+  cipher: auto
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: 141.98.7.193
-- name: 'ARISTA #6'
-  type: vless
-  server: 104.16.14.245
+  tcp-fast-open: true
+  servername: 188.130.154.174
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  - http/1.1
+- name: 'T.ME: @aristapanel #6'
+  type: vmess
+  server: cdn.sfacg.uk
   port: 2083
-  uuid: 602e8e0a-8334-4e23-a5e8-bdb089656236
-  network: xhttp
+  uuid: ac251237-576f-40c8-a543-554960c958b1
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: or3.sfacg.uk
+  ws-opts:
+    path: /or3
+    headers:
+      Host: or3.sfacg.uk
+- name: 'ARISTA #7'
+  type: vless
+  server: 104.18.32.47
+  port: 2083
+  uuid: ca608afb-55ff-4f36-9d00-606fedbb30e1
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   alpn:
   - h2
-  client-fingerprint: firefox
-  servername: nanegaeidamakhond.kirpeople2sepahkosnaneh.info
-- name: 'ARISTA #7'
+  - http/1.1
+  client-fingerprint: chrome
+  servername: Site.check-looks.space
+  ws-opts:
+    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI?ed=512
+- name: 'ARISTA #8'
+  type: vless
+  server: 159.195.5.79
+  port: 2083
+  uuid: f49d04d6-aaa7-4013-b323-bc35b78230db
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: s4ws.ragingbull.de5.net
+  ws-opts:
+    path: /wsrb7k2m
+    headers:
+      Host: s4ws.ragingbull.de5.net
+- name: 'ARISTA #9'
   type: vless
   server: 2.26.228.218
   port: 2083
@@ -133,122 +192,208 @@ proxies:
   reality-opts:
     public-key: s80ri6u0H3ZKnkqjpgqu6HZlR4Byq5hhv6Gm9V43bEM
     short-id: "a2aa"
-- name: 'T.ME: @aristapanel #8'
+- name: 'ARISTA #10'
   type: vless
-  server: 45.88.12.44
+  server: 104.18.32.47
   port: 2083
-  uuid: ecb99a7f-9ea4-4ca5-9eaa-7585240f6b9d
+  uuid: ca608afb-55ff-4f36-9d00-606fedbb30e1
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: Site.check-looks.space
+  ws-opts:
+    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI?ed=512
+- name: 'ARISTA #11'
+  type: vless
+  server: 104.18.32.47
+  port: 2083
+  uuid: ca608afb-55ff-4f36-9d00-606fedbb30e1
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: Site.check-looks.space
+  ws-opts:
+    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI?ed=512
+- name: 'ARISTA #12'
+  type: vless
+  server: 104.18.32.47
+  port: 2083
+  uuid: ca608afb-55ff-4f36-9d00-606fedbb30e1
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: Site.check-looks.space
+  ws-opts:
+    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI?ed=512
+- name: 'ARISTA #13'
+  type: vless
+  server: 159.195.5.79
+  port: 2083
+  uuid: f49d04d6-aaa7-4013-b323-bc35b78230db
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: s4ws.ragingbull.de5.net
+  ws-opts:
+    path: /wsrb7k2m
+    headers:
+      Host: s4ws.ragingbull.de5.net
+- name: 'ARISTA #14'
+  type: vless
+  server: 2.26.228.218
+  port: 2083
+  uuid: 47e8985a-317e-4ece-b283-61330bb27474
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: fin.vanekfree.xyz
+  reality-opts:
+    public-key: s80ri6u0H3ZKnkqjpgqu6HZlR4Byq5hhv6Gm9V43bEM
+    short-id: "a2aa"
+- name: 'ARISTA #15'
+  type: vless
+  server: 104.18.32.47
+  port: 2083
+  uuid: ca608afb-55ff-4f36-9d00-606fedbb30e1
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: Site.check-looks.space
+  ws-opts:
+    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI?ed=512
+- name: 'ARISTA #16'
+  type: vless
+  server: 104.18.32.47
+  port: 2083
+  uuid: ca608afb-55ff-4f36-9d00-606fedbb30e1
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: Site.check-looks.space
+  ws-opts:
+    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI?ed=512
+- name: 'ARISTA #17'
+  type: vless
+  server: 159.195.5.79
+  port: 2083
+  uuid: f49d04d6-aaa7-4013-b323-bc35b78230db
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: s4ws.ragingbull.de5.net
+  ws-opts:
+    path: /wsrb7k2m
+    headers:
+      Host: s4ws.ragingbull.de5.net
+- name: 'ARISTA #18'
+  type: vless
+  server: 2.26.228.218
+  port: 2083
+  uuid: 47e8985a-317e-4ece-b283-61330bb27474
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: fin.vanekfree.xyz
+  reality-opts:
+    public-key: s80ri6u0H3ZKnkqjpgqu6HZlR4Byq5hhv6Gm9V43bEM
+    short-id: "a2aa"
+- name: 'ARISTA #19'
+  type: vless
+  server: 45.88.12.151
+  port: 2083
+  uuid: cc4074d6-f450-4025-833a-a6e0100ceaff
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   alpn:
   - http/1.1
-  servername: crt.viktorthebest.lol
+  client-fingerprint: chrome
+  servername: crt.molniya.sbs
   ws-opts:
     path: /vless-ws
-- name: 'T.ME: @aristapanel #9'
+- name: 'ARISTA #20'
   type: vless
-  server: 172.66.44.211
+  server: 31.76.22.195
   port: 2083
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  uuid: cc4074d6-f450-4025-833a-a6e0100ceaff
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
+  alpn:
+  - http/1.1
   client-fingerprint: chrome
-  servername: wk1.f1w.de5.net
-  ws-opts:
-    path: /
-    headers:
-      Host: wk1.f1w.de5.net
-- name: 'T.ME: @aristapanel #10'
-  type: vless
-  server: 172.66.0.230
-  port: 2083
-  uuid: a21b9103-1693-49c1-8dc9-e8e8098ee969
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: helloapps.cc.cd
-  ws-opts:
-    path: /
-    headers:
-      Host: helloapps.cc.cd
-- name: 'T.ME: @aristapanel #11'
-  type: vless
-  server: 13.143.174.97
-  port: 2083
-  uuid: cfae6477-e8ad-4114-8efd-a7c3e5d8a05b
-  network: raw
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: random
-  servername: 13.143.174.97
-- name: 'T.ME: @aristapanel #12'
-  type: vless
-  server: 45.88.12.36
-  port: 2083
-  uuid: ecb99a7f-9ea4-4ca5-9eaa-7585240f6b9d
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: crt.viktorthebest.lol
+  servername: crt.molniya.sbs
   ws-opts:
     path: /vless-ws
-- name: 'T.ME: @aristapanel #13'
+- name: 'ARISTA #21'
   type: vless
-  server: 172.67.69.86
+  server: 104.18.32.47
   port: 2083
-  uuid: a21b9103-1693-49c1-8dc9-e8e8098ee969
+  uuid: ca608afb-55ff-4f36-9d00-606fedbb30e1
   network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: helloapps.cc.cd
-  ws-opts:
-    path: /
-    headers:
-      Host: helloapps.cc.cd
-- name: 'ARISTA #14'
-  type: vless
-  server: 141.98.7.193
-  port: 2083
-  uuid: e9e60f73-1618-491c-a85b-477bdc959ae6
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: 141.98.7.193
-- name: 'ARISTA #15'
-  type: vless
-  server: 141.98.7.193
-  port: 2083
-  uuid: e9e60f73-1618-491c-a85b-477bdc959ae6
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: 141.98.7.193
-- name: 'ARISTA #16'
-  type: vless
-  server: 104.16.14.245
-  port: 2083
-  uuid: 602e8e0a-8334-4e23-a5e8-bdb089656236
-  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
   alpn:
   - h2
-  client-fingerprint: firefox
-  servername: nanegaeidamakhond.kirpeople2sepahkosnaneh.info
-- name: 'ARISTA #17'
+  - http/1.1
+  client-fingerprint: chrome
+  servername: Site.check-looks.space
+  ws-opts:
+    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI?ed=512
+- name: 'ARISTA #22'
+  type: vless
+  server: 159.195.5.79
+  port: 2083
+  uuid: f49d04d6-aaa7-4013-b323-bc35b78230db
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: s4ws.ragingbull.de5.net
+  ws-opts:
+    path: /wsrb7k2m
+    headers:
+      Host: s4ws.ragingbull.de5.net
+- name: 'ARISTA #23'
   type: vless
   server: 2.26.228.218
   port: 2083
@@ -263,55 +408,223 @@ proxies:
   reality-opts:
     public-key: s80ri6u0H3ZKnkqjpgqu6HZlR4Byq5hhv6Gm9V43bEM
     short-id: "a2aa"
-- name: 'ARISTA #18'
-  type: ss
-  server: 51.38.71.51
-  port: 2083
-  cipher: 2022-blake3-aes-256-gcm
-  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #19'
-  type: ss
-  server: 51.38.71.51
-  port: 2083
-  cipher: 2022-blake3-aes-256-gcm
-  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #20'
-  type: ss
-  server: 51.38.71.51
-  port: 2083
-  cipher: 2022-blake3-aes-256-gcm
-  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
-  udp: true
-  tcp-fast-open: true
-- name: 'T.ME: @aristapanel #21'
-  type: ss
-  server: 51.222.107.43
-  port: 2083
-  cipher: 2022-blake3-aes-256-gcm
-  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:HWFFJN19JkvbTKo/79AfnbRBK9uHUUaFNZJyLjEoJGs=
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #22'
-  type: ss
-  server: 51.38.71.51
-  port: 2083
-  cipher: 2022-blake3-aes-256-gcm
-  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
-  udp: true
-  tcp-fast-open: true
-- name: 'T.ME: @aristapanel #23'
-  type: ss
-  server: 51.222.107.43
-  port: 2083
-  cipher: 2022-blake3-aes-256-gcm
-  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:HWFFJN19JkvbTKo/79AfnbRBK9uHUUaFNZJyLjEoJGs=
-  udp: true
-  tcp-fast-open: true
 - name: 'ARISTA #24'
+  type: vless
+  server: 45.88.12.151
+  port: 2083
+  uuid: cc4074d6-f450-4025-833a-a6e0100ceaff
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: crt.molniya.sbs
+  ws-opts:
+    path: /vless-ws
+- name: 'ARISTA #25'
+  type: vless
+  server: 31.76.22.195
+  port: 2083
+  uuid: cc4074d6-f450-4025-833a-a6e0100ceaff
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: crt.molniya.sbs
+  ws-opts:
+    path: /vless-ws
+- name: 'ARISTA #26'
+  type: vless
+  server: 8.6.112.4
+  port: 2083
+  uuid: ca608afb-55ff-4f36-9d00-606fedbb30e1
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  servername: Site.check-looks.space
+- name: 'ARISTA #27'
+  type: vless
+  server: 45.88.12.151
+  port: 2083
+  uuid: cc4074d6-f450-4025-833a-a6e0100ceaff
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'T.ME: @aristapanel #28'
+  type: vless
+  server: 141.98.7.193
+  port: 2083
+  uuid: e9e60f73-1618-491c-a85b-477bdc959ae6
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: 141.98.7.193
+- name: 'T.ME: @aristapanel #29'
+  type: vless
+  server: 13.143.172.203
+  port: 2083
+  uuid: 88aefb0c-cdbf-489f-9e6b-9be5b5fd5a11
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: 13.143.172.203
+- name: 'T.ME: @aristapanel #30'
+  type: vless
+  server: 104.16.14.245
+  port: 2083
+  uuid: 602e8e0a-8334-4e23-a5e8-bdb089656236
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: firefox
+  servername: nanegaeidamakhond.kirpeople2sepahkosnaneh.info
+- name: 'T.ME: @aristapanel #31'
+  type: vless
+  server: sino.bestsellers1.site
+  port: 2083
+  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: sino.bestsellers1.site
+  ws-opts:
+    path: /
+- name: 'ARISTA #32'
+  type: vless
+  server: 104.18.32.47
+  port: 2083
+  uuid: ca608afb-55ff-4f36-9d00-606fedbb30e1
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: Site.check-looks.space
+  ws-opts:
+    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI?ed=512
+- name: 'ARISTA #33'
+  type: vless
+  server: 104.18.32.47
+  port: 2083
+  uuid: ca608afb-55ff-4f36-9d00-606fedbb30e1
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: Site.check-looks.space
+  ws-opts:
+    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI?ed=512
+- name: 'ARISTA #34'
+  type: vless
+  server: 159.195.5.79
+  port: 2083
+  uuid: f49d04d6-aaa7-4013-b323-bc35b78230db
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: s4ws.ragingbull.de5.net
+  ws-opts:
+    path: /wsrb7k2m
+    headers:
+      Host: s4ws.ragingbull.de5.net
+- name: 'ARISTA #35'
+  type: vless
+  server: 2.26.228.218
+  port: 2083
+  uuid: 47e8985a-317e-4ece-b283-61330bb27474
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: fin.vanekfree.xyz
+  reality-opts:
+    public-key: s80ri6u0H3ZKnkqjpgqu6HZlR4Byq5hhv6Gm9V43bEM
+    short-id: "a2aa"
+- name: 'ARISTA #36'
+  type: vless
+  server: 45.88.12.151
+  port: 2083
+  uuid: cc4074d6-f450-4025-833a-a6e0100ceaff
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: crt.molniya.sbs
+  ws-opts:
+    path: /vless-ws
+- name: 'ARISTA #37'
+  type: vless
+  server: 31.76.22.195
+  port: 2083
+  uuid: cc4074d6-f450-4025-833a-a6e0100ceaff
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: crt.molniya.sbs
+  ws-opts:
+    path: /vless-ws
+- name: 'ARISTA #38'
+  type: vless
+  server: 8.6.112.4
+  port: 2083
+  uuid: ca608afb-55ff-4f36-9d00-606fedbb30e1
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  servername: Site.check-looks.space
+- name: 'ARISTA #39'
+  type: vless
+  server: 45.88.12.151
+  port: 2083
+  uuid: cc4074d6-f450-4025-833a-a6e0100ceaff
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #40'
   type: ss
   server: 51.38.71.51
   port: 2083
@@ -319,7 +632,63 @@ proxies:
   password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
   udp: true
   tcp-fast-open: true
-- name: 'T.ME: @aristapanel #25'
+- name: 'ARISTA #41'
+  type: ss
+  server: 51.38.71.51
+  port: 2083
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
+  udp: true
+  tcp-fast-open: true
+- name: 'T.ME: @aristapanel #42'
+  type: ss
+  server: 51.222.107.43
+  port: 2083
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:HWFFJN19JkvbTKo/79AfnbRBK9uHUUaFNZJyLjEoJGs=
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #43'
+  type: ss
+  server: 51.38.71.51
+  port: 2083
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
+  udp: true
+  tcp-fast-open: true
+- name: 'T.ME: @aristapanel #44'
+  type: ss
+  server: 51.222.107.43
+  port: 2083
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:HWFFJN19JkvbTKo/79AfnbRBK9uHUUaFNZJyLjEoJGs=
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #45'
+  type: ss
+  server: 51.38.71.51
+  port: 2083
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
+  udp: true
+  tcp-fast-open: true
+- name: 'T.ME: @aristapanel #46'
+  type: ss
+  server: 51.222.107.43
+  port: 2083
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:HWFFJN19JkvbTKo/79AfnbRBK9uHUUaFNZJyLjEoJGs=
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #47'
+  type: ss
+  server: 51.38.71.51
+  port: 2083
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
+  udp: true
+  tcp-fast-open: true
+- name: 'T.ME: @aristapanel #48'
   type: ss
   server: 51.222.107.43
   port: 2083
@@ -336,19 +705,19 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'T.ME: @aristapanel #1'
+  - 'ARISTA #1'
   - 'ARISTA #2'
-  - 'ARISTA #3'
+  - 'T.ME: @aristapanel #3'
   - 'ARISTA #4'
   - 'ARISTA #5'
-  - 'ARISTA #6'
+  - 'T.ME: @aristapanel #6'
   - 'ARISTA #7'
-  - 'T.ME: @aristapanel #8'
-  - 'T.ME: @aristapanel #9'
-  - 'T.ME: @aristapanel #10'
-  - 'T.ME: @aristapanel #11'
-  - 'T.ME: @aristapanel #12'
-  - 'T.ME: @aristapanel #13'
+  - 'ARISTA #8'
+  - 'ARISTA #9'
+  - 'ARISTA #10'
+  - 'ARISTA #11'
+  - 'ARISTA #12'
+  - 'ARISTA #13'
   - 'ARISTA #14'
   - 'ARISTA #15'
   - 'ARISTA #16'
@@ -356,11 +725,34 @@ proxy-groups:
   - 'ARISTA #18'
   - 'ARISTA #19'
   - 'ARISTA #20'
-  - 'T.ME: @aristapanel #21'
+  - 'ARISTA #21'
   - 'ARISTA #22'
-  - 'T.ME: @aristapanel #23'
+  - 'ARISTA #23'
   - 'ARISTA #24'
-  - 'T.ME: @aristapanel #25'
+  - 'ARISTA #25'
+  - 'ARISTA #26'
+  - 'ARISTA #27'
+  - 'T.ME: @aristapanel #28'
+  - 'T.ME: @aristapanel #29'
+  - 'T.ME: @aristapanel #30'
+  - 'T.ME: @aristapanel #31'
+  - 'ARISTA #32'
+  - 'ARISTA #33'
+  - 'ARISTA #34'
+  - 'ARISTA #35'
+  - 'ARISTA #36'
+  - 'ARISTA #37'
+  - 'ARISTA #38'
+  - 'ARISTA #39'
+  - 'ARISTA #40'
+  - 'ARISTA #41'
+  - 'T.ME: @aristapanel #42'
+  - 'ARISTA #43'
+  - 'T.ME: @aristapanel #44'
+  - 'ARISTA #45'
+  - 'T.ME: @aristapanel #46'
+  - 'ARISTA #47'
+  - 'T.ME: @aristapanel #48'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
