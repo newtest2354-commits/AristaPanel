@@ -1,6 +1,6 @@
 # GITHUB - Port 2083
-# Updated: 2026-10-09 10:26:35
-# Count: 15
+# Updated: 2026-10-09 18:17:29
+# Count: 16
 
 mixed-port: 7890
 allow-lan: false
@@ -67,21 +67,21 @@ proxies:
       Host: or3.sfacg.uk
 - name: 'T.ME: @aristapanel #2'
   type: vmess
-  server: 188.130.154.174
+  server: cdn.sfacg.uk
   port: 2083
-  uuid: 74c17cae-bf8b-4cda-8cdd-cf7983bf0a49
+  uuid: ac251237-576f-40c8-a543-554960c958b1
   alterId: 0
   cipher: auto
-  network: tcp
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: 188.130.154.174
-  client-fingerprint: chrome
-  alpn:
-  - h2
-  - http/1.1
+  servername: or3.sfacg.uk
+  ws-opts:
+    path: /or3
+    headers:
+      Host: or3.sfacg.uk
 - name: 'T.ME: @aristapanel #3'
   type: vless
   server: 141.98.7.193
@@ -106,14 +106,19 @@ proxies:
   servername: 141.98.7.193
 - name: 'T.ME: @aristapanel #5'
   type: vless
-  server: 141.98.7.193
+  server: 104.17.50.174
   port: 2083
-  uuid: e9e60f73-1618-491c-a85b-477bdc959ae6
-  network: tcp
+  uuid: 8666ab45-8e3d-4988-841b-2561d91e32d5
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: 141.98.7.193
+  client-fingerprint: chrome
+  servername: mianfei-73q.pages.dev
+  ws-opts:
+    path: /proxyip=154.3.33.43
+    headers:
+      Host: mianfei-73q.pages.dev
 - name: 'T.ME: @aristapanel #6'
   type: vless
   server: 141.98.7.193
@@ -126,6 +131,21 @@ proxies:
   client-fingerprint: chrome
   servername: 141.98.7.193
 - name: 'T.ME: @aristapanel #7'
+  type: vless
+  server: 104.17.50.174
+  port: 2083
+  uuid: 8666ab45-8e3d-4988-841b-2561d91e32d5
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: mianfei-73q.pages.dev
+  ws-opts:
+    path: /proxyip=154.3.33.43
+    headers:
+      Host: mianfei-73q.pages.dev
+- name: 'T.ME: @aristapanel #8'
   type: ss
   server: 51.222.107.43
   port: 2083
@@ -133,20 +153,12 @@ proxies:
   password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:HWFFJN19JkvbTKo/79AfnbRBK9uHUUaFNZJyLjEoJGs=
   udp: true
   tcp-fast-open: true
-- name: 'T.ME: @aristapanel #8'
+- name: 'T.ME: @aristapanel #9'
   type: ss
   server: 51.38.71.51
   port: 2083
   cipher: 2022-blake3-aes-256-gcm
   password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
-  udp: true
-  tcp-fast-open: true
-- name: 'T.ME: @aristapanel #9'
-  type: ss
-  server: 51.222.107.43
-  port: 2083
-  cipher: 2022-blake3-aes-256-gcm
-  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:HWFFJN19JkvbTKo/79AfnbRBK9uHUUaFNZJyLjEoJGs=
   udp: true
   tcp-fast-open: true
 - name: 'T.ME: @aristapanel #10'
@@ -159,21 +171,29 @@ proxies:
   tcp-fast-open: true
 - name: 'T.ME: @aristapanel #11'
   type: ss
-  server: 51.38.71.51
+  server: 51.222.107.43
   port: 2083
   cipher: 2022-blake3-aes-256-gcm
-  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:HWFFJN19JkvbTKo/79AfnbRBK9uHUUaFNZJyLjEoJGs=
   udp: true
   tcp-fast-open: true
 - name: 'T.ME: @aristapanel #12'
   type: ss
+  server: 51.38.71.51
+  port: 2083
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
+  udp: true
+  tcp-fast-open: true
+- name: 'T.ME: @aristapanel #13'
+  type: ss
   server: 51.222.107.43
   port: 2083
   cipher: 2022-blake3-aes-256-gcm
   password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:HWFFJN19JkvbTKo/79AfnbRBK9uHUUaFNZJyLjEoJGs=
   udp: true
   tcp-fast-open: true
-- name: 'T.ME: @aristapanel #13'
+- name: 'T.ME: @aristapanel #14'
   type: ss
   server: 51.38.71.51
   port: 2083
@@ -181,7 +201,7 @@ proxies:
   password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
   udp: true
   tcp-fast-open: true
-- name: 'T.ME: @aristapanel #14'
+- name: 'T.ME: @aristapanel #15'
   type: ss
   server: 51.222.107.43
   port: 2083
@@ -189,7 +209,7 @@ proxies:
   password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:HWFFJN19JkvbTKo/79AfnbRBK9uHUUaFNZJyLjEoJGs=
   udp: true
   tcp-fast-open: true
-- name: 'T.ME: @aristapanel #15'
+- name: 'T.ME: @aristapanel #16'
   type: ss
   server: 51.38.71.51
   port: 2083
@@ -221,6 +241,7 @@ proxy-groups:
   - 'T.ME: @aristapanel #13'
   - 'T.ME: @aristapanel #14'
   - 'T.ME: @aristapanel #15'
+  - 'T.ME: @aristapanel #16'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

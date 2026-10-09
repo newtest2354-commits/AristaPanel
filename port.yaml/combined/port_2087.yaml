@@ -1,6 +1,6 @@
 # COMBINED - Port 2087
-# Updated: 2026-10-09 10:26:26
-# Count: 37
+# Updated: 2026-10-09 18:17:20
+# Count: 38
 
 mixed-port: 7890
 allow-lan: false
@@ -50,16 +50,21 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 94.103.168.57
+  server: keris.ronaldosu3.tickyou.ir
   port: 2087
-  uuid: ecbe8dbc-44f7-4275-8a6c-b0976a7bb5c8
-  network: xhttp
+  uuid: b441327d-d84b-42a8-9a2b-3797dcd631af
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   alpn:
   - h2
-  servername: spp1.localip.ir
+  client-fingerprint: firefox
+  servername: faezanavardo.ticklitickli.ir
+  ws-opts:
+    path: /
+    headers:
+      Host: faezanavardo.ticklitickli.ir
 - name: 'ARISTA #2'
   type: vless
   server: 141.98.7.193
@@ -72,107 +77,85 @@ proxies:
   servername: 141.98.7.193
 - name: 'ARISTA #3'
   type: vless
-  server: 46.183.16.4
+  server: vpn.cyrionflare.xyz
   port: 2087
-  uuid: 69d76969-4c52-40f5-ac1d-303571634362
-  network: ws
-  tls: true
+  uuid: 15f434b8-aaec-4306-98c9-dd8f5ef608d4
+  network: tcp
+  tls: false
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  - h3
-  client-fingerprint: chrome
-  servername: ro1.b0w.ir
-  ws-opts:
-    path: /
 - name: 'ARISTA #4'
   type: vless
-  server: 94.103.168.57
+  server: vpn.cyrionflare.xyz
   port: 2087
-  uuid: ecbe8dbc-44f7-4275-8a6c-b0976a7bb5c8
-  network: xhttp
-  tls: true
+  uuid: 15f434b8-aaec-4306-98c9-dd8f5ef608d4
+  network: tcp
+  tls: false
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
-  servername: spp1.localip.ir
 - name: 'ARISTA #5'
   type: vless
-  server: 141.98.7.193
+  server: keris.ronaldosu3.tickyou.ir
   port: 2087
-  uuid: e9e60f73-1618-491c-a85b-477bdc959ae6
-  network: tcp
+  uuid: b441327d-d84b-42a8-9a2b-3797dcd631af
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: 141.98.7.193
+  alpn:
+  - h2
+  client-fingerprint: firefox
+  servername: faezanavardo.ticklitickli.ir
+  ws-opts:
+    path: /
+    headers:
+      Host: faezanavardo.ticklitickli.ir
 - name: 'ARISTA #6'
   type: vless
-  server: 94.103.168.57
+  server: 141.98.7.193
   port: 2087
-  uuid: ecbe8dbc-44f7-4275-8a6c-b0976a7bb5c8
-  network: xhttp
+  uuid: e9e60f73-1618-491c-a85b-477bdc959ae6
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
-  servername: spp1.localip.ir
+  servername: 141.98.7.193
 - name: 'ARISTA #7'
   type: vless
-  server: 94.103.168.57
+  server: vpn.cyrionflare.xyz
   port: 2087
-  uuid: ecbe8dbc-44f7-4275-8a6c-b0976a7bb5c8
-  network: xhttp
-  tls: true
+  uuid: 15f434b8-aaec-4306-98c9-dd8f5ef608d4
+  network: tcp
+  tls: false
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
-  servername: spp1.localip.ir
 - name: 'ARISTA #8'
   type: vless
-  server: 141.98.7.193
+  server: vpn.cyrionflare.xyz
   port: 2087
-  uuid: e9e60f73-1618-491c-a85b-477bdc959ae6
+  uuid: 15f434b8-aaec-4306-98c9-dd8f5ef608d4
   network: tcp
-  tls: true
+  tls: false
   udp: true
   skip-cert-verify: true
-  servername: 141.98.7.193
 - name: 'ARISTA #9'
   type: vless
-  server: 46.183.16.4
+  server: keris.ronaldosu3.tickyou.ir
   port: 2087
-  uuid: 69d76969-4c52-40f5-ac1d-303571634362
+  uuid: b441327d-d84b-42a8-9a2b-3797dcd631af
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   alpn:
   - h2
-  - http/1.1
-  - h3
-  client-fingerprint: chrome
-  servername: ro1.b0w.ir
+  client-fingerprint: firefox
+  servername: faezanavardo.ticklitickli.ir
   ws-opts:
     path: /
+    headers:
+      Host: faezanavardo.ticklitickli.ir
 - name: 'ARISTA #10'
-  type: vless
-  server: 94.103.168.57
-  port: 2087
-  uuid: ecbe8dbc-44f7-4275-8a6c-b0976a7bb5c8
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  servername: spp1.localip.ir
-- name: 'ARISTA #11'
   type: vless
   server: 141.98.7.193
   port: 2087
@@ -182,23 +165,24 @@ proxies:
   udp: true
   skip-cert-verify: true
   servername: 141.98.7.193
-- name: 'ARISTA #12'
+- name: 'ARISTA #11'
   type: vless
-  server: 46.183.16.4
+  server: vpn.cyrionflare.xyz
   port: 2087
-  uuid: 69d76969-4c52-40f5-ac1d-303571634362
-  network: ws
-  tls: true
+  uuid: 15f434b8-aaec-4306-98c9-dd8f5ef608d4
+  network: tcp
+  tls: false
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  - h3
-  client-fingerprint: chrome
-  servername: ro1.b0w.ir
-  ws-opts:
-    path: /
+- name: 'ARISTA #12'
+  type: vless
+  server: vpn.cyrionflare.xyz
+  port: 2087
+  uuid: 15f434b8-aaec-4306-98c9-dd8f5ef608d4
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
 - name: 'ARISTA #13'
   type: vless
   server: 94.103.168.57
@@ -213,6 +197,23 @@ proxies:
   servername: spp1.localip.ir
 - name: 'ARISTA #14'
   type: vless
+  server: keris.ronaldosu3.tickyou.ir
+  port: 2087
+  uuid: b441327d-d84b-42a8-9a2b-3797dcd631af
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: firefox
+  servername: faezanavardo.ticklitickli.ir
+  ws-opts:
+    path: /
+    headers:
+      Host: faezanavardo.ticklitickli.ir
+- name: 'ARISTA #15'
+  type: vless
   server: 141.98.7.193
   port: 2087
   uuid: e9e60f73-1618-491c-a85b-477bdc959ae6
@@ -221,24 +222,25 @@ proxies:
   udp: true
   skip-cert-verify: true
   servername: 141.98.7.193
-- name: 'ARISTA #15'
+- name: 'ARISTA #16'
   type: vless
-  server: 46.183.16.4
+  server: vpn.cyrionflare.xyz
   port: 2087
-  uuid: 69d76969-4c52-40f5-ac1d-303571634362
-  network: ws
-  tls: true
+  uuid: 15f434b8-aaec-4306-98c9-dd8f5ef608d4
+  network: tcp
+  tls: false
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  - h3
-  client-fingerprint: chrome
-  servername: ro1.b0w.ir
-  ws-opts:
-    path: /
-- name: 'ARISTA #16'
+- name: 'ARISTA #17'
+  type: vless
+  server: vpn.cyrionflare.xyz
+  port: 2087
+  uuid: 15f434b8-aaec-4306-98c9-dd8f5ef608d4
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #18'
   type: vless
   server: 94.103.168.57
   port: 2087
@@ -250,46 +252,18 @@ proxies:
   alpn:
   - h2
   servername: spp1.localip.ir
-- name: 'ARISTA #17'
+- name: 'ARISTA #19'
   type: vless
-  server: 141.98.7.193
+  server: 94.103.168.57
   port: 2087
-  uuid: e9e60f73-1618-491c-a85b-477bdc959ae6
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: 141.98.7.193
-- name: 'ARISTA #18'
-  type: vless
-  server: 46.183.16.4
-  port: 2087
-  uuid: 69d76969-4c52-40f5-ac1d-303571634362
-  network: ws
+  uuid: ecbe8dbc-44f7-4275-8a6c-b0976a7bb5c8
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
   alpn:
   - h2
-  - http/1.1
-  - h3
-  client-fingerprint: chrome
-  servername: ro1.b0w.ir
-  ws-opts:
-    path: /
-- name: 'ARISTA #19'
-  type: vless
-  server: game.celvixo.ir
-  port: 2087
-  uuid: 3ff78ab5-0b8f-4d83-36df-90f4294cc324
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: cp.xelzano.ir
+  servername: spp1.localip.ir
 - name: 'T.ME: @aristapanel #20'
   type: vless
   server: 94.103.168.57
@@ -347,48 +321,50 @@ proxies:
   reality-opts:
     public-key: JfuItzJ81sJehx1PbxyliWSJvuBMKoa9ahNgPO3R7R4
     short-id: "c226283c4de5b1ad"
-- name: 'T.ME: @aristapanel #24'
+- name: 'ARISTA #24'
   type: vless
-  server: 31.76.91.72
+  server: keris.ronaldosu3.tickyou.ir
   port: 2087
-  uuid: 524e00ce-ed89-481d-b4a4-6d7017f884e3
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: ads.x5.ru
-  reality-opts:
-    public-key: -ZTJcZ_UcqAB7LHgkUqhnlJsQs_oBafRgjsFtWZElmM
-    short-id: "c226283c4de5b1ad"
-- name: 'T.ME: @aristapanel #25'
-  type: vless
-  server: 31.59.210.24
-  port: 2087
-  uuid: 5413edfb-08d6-4fba-b51c-809c04feb127
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: safari
-  servername: www.yandex.ru
-  grpc-opts:
-    grpc-service-name: astracat
-  reality-opts:
-    public-key: W2OLbQ682PLJ9yHQ21Q0nPJk9U8RuL5YnlP-U1fdQzI
-    short-id: "a11023050f134216"
-- name: 'ARISTA #26'
-  type: vless
-  server: 94.103.168.57
-  port: 2087
-  uuid: ecbe8dbc-44f7-4275-8a6c-b0976a7bb5c8
-  network: xhttp
+  uuid: b441327d-d84b-42a8-9a2b-3797dcd631af
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   alpn:
   - h2
-  servername: spp1.localip.ir
+  client-fingerprint: firefox
+  servername: faezanavardo.ticklitickli.ir
+  ws-opts:
+    path: /
+    headers:
+      Host: faezanavardo.ticklitickli.ir
+- name: 'ARISTA #25'
+  type: vless
+  server: 141.98.7.193
+  port: 2087
+  uuid: e9e60f73-1618-491c-a85b-477bdc959ae6
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: 141.98.7.193
+- name: 'ARISTA #26'
+  type: vless
+  server: keris.ronaldosu3.tickyou.ir
+  port: 2087
+  uuid: b441327d-d84b-42a8-9a2b-3797dcd631af
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: firefox
+  servername: faezanavardo.ticklitickli.ir
+  ws-opts:
+    path: /
+    headers:
+      Host: faezanavardo.ticklitickli.ir
 - name: 'ARISTA #27'
   type: vless
   server: 141.98.7.193
@@ -401,22 +377,23 @@ proxies:
   servername: 141.98.7.193
 - name: 'ARISTA #28'
   type: vless
-  server: 46.183.16.4
+  server: vpn.cyrionflare.xyz
   port: 2087
-  uuid: 69d76969-4c52-40f5-ac1d-303571634362
-  network: ws
-  tls: true
+  uuid: 15f434b8-aaec-4306-98c9-dd8f5ef608d4
+  network: tcp
+  tls: false
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  - h3
-  client-fingerprint: chrome
-  servername: ro1.b0w.ir
-  ws-opts:
-    path: /
 - name: 'ARISTA #29'
+  type: vless
+  server: vpn.cyrionflare.xyz
+  port: 2087
+  uuid: 15f434b8-aaec-4306-98c9-dd8f5ef608d4
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #30'
   type: vless
   server: 94.103.168.57
   port: 2087
@@ -428,51 +405,23 @@ proxies:
   alpn:
   - h2
   servername: spp1.localip.ir
-- name: 'ARISTA #30'
-  type: vless
-  server: 141.98.7.193
-  port: 2087
-  uuid: e9e60f73-1618-491c-a85b-477bdc959ae6
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: 141.98.7.193
 - name: 'ARISTA #31'
   type: vless
-  server: 46.183.16.4
+  server: 94.103.168.57
   port: 2087
-  uuid: 69d76969-4c52-40f5-ac1d-303571634362
-  network: ws
+  uuid: ecbe8dbc-44f7-4275-8a6c-b0976a7bb5c8
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
   alpn:
   - h2
-  - http/1.1
-  - h3
-  client-fingerprint: chrome
-  servername: ro1.b0w.ir
-  ws-opts:
-    path: /
+  servername: spp1.localip.ir
 - name: 'ARISTA #32'
-  type: vless
-  server: game.celvixo.ir
-  port: 2087
-  uuid: 3ff78ab5-0b8f-4d83-36df-90f4294cc324
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: cp.xelzano.ir
-- name: 'T.ME: @aristapanel #33'
   type: trojan
   server: uwu.blueknightnet.qzz.io
   port: 2087
-  password: 5j3xqsajt1474jb3
+  password: av7fquzvuc99xcs9
   network: ws
   tls: true
   udp: true
@@ -486,11 +435,29 @@ proxies:
     path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
     headers:
       Host: uwu.dianaw.cc.cd
-- name: 'T.ME: @aristapanel #34'
+- name: 'ARISTA #33'
   type: trojan
   server: uwu.blueknightnet.qzz.io
   port: 2087
-  password: 5j3xqsajt1474jb3
+  password: av7fquzvuc99xcs9
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: uwu.dianaw.cc.cd
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  ws-opts:
+    path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
+    headers:
+      Host: uwu.dianaw.cc.cd
+- name: 'ARISTA #34'
+  type: trojan
+  server: uwu.blueknightnet.qzz.io
+  port: 2087
+  password: av7fquzvuc99xcs9
   network: ws
   tls: true
   udp: true
@@ -506,23 +473,23 @@ proxies:
       Host: uwu.dianaw.cc.cd
 - name: 'T.ME: @aristapanel #35'
   type: trojan
-  server: waysi.waysi6688.workers.dev
+  server: uwu.blueknightnet.qzz.io
   port: 2087
-  password: "eabf1999fefbb7d2"
+  password: 5j3xqsajt1474jb3
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: WaYSi.wAYsI6688.WOrkeRS.deV
-  client-fingerprint: ios
+  servername: uwu.dianaw.cc.cd
+  client-fingerprint: chrome
   alpn:
-  - http/1.1
+  - h2
   ws-opts:
-    path: /tr/sMpzOZ0eWEt6jbZ1jjN3BaM7LLoQ
+    path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
     headers:
-      Host: waysi.waysi6688.workers.dev
-- name: 'T.ME: @aristapanel #36'
+      Host: uwu.dianaw.cc.cd
+- name: 'ARISTA #36'
   type: trojan
   server: uwu.blueknightnet.qzz.io
   port: 2087
@@ -541,6 +508,24 @@ proxies:
     headers:
       Host: uwu.dianaw.cc.cd
 - name: 'T.ME: @aristapanel #37'
+  type: trojan
+  server: uwu.blueknightnet.qzz.io
+  port: 2087
+  password: 5j3xqsajt1474jb3
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: uwu.dianaw.cc.cd
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  ws-opts:
+    path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
+    headers:
+      Host: uwu.dianaw.cc.cd
+- name: 'T.ME: @aristapanel #38'
   type: trojan
   server: 172.67.140.126
   port: 2087
@@ -590,8 +575,8 @@ proxy-groups:
   - 'T.ME: @aristapanel #21'
   - 'T.ME: @aristapanel #22'
   - 'T.ME: @aristapanel #23'
-  - 'T.ME: @aristapanel #24'
-  - 'T.ME: @aristapanel #25'
+  - 'ARISTA #24'
+  - 'ARISTA #25'
   - 'ARISTA #26'
   - 'ARISTA #27'
   - 'ARISTA #28'
@@ -599,11 +584,12 @@ proxy-groups:
   - 'ARISTA #30'
   - 'ARISTA #31'
   - 'ARISTA #32'
-  - 'T.ME: @aristapanel #33'
-  - 'T.ME: @aristapanel #34'
+  - 'ARISTA #33'
+  - 'ARISTA #34'
   - 'T.ME: @aristapanel #35'
-  - 'T.ME: @aristapanel #36'
+  - 'ARISTA #36'
   - 'T.ME: @aristapanel #37'
+  - 'T.ME: @aristapanel #38'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
