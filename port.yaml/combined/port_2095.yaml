@@ -1,6 +1,6 @@
 # COMBINED - Port 2095
-# Updated: 2026-10-08 18:50:29
-# Count: 7
+# Updated: 2026-10-09 01:13:01
+# Count: 8
 
 mixed-port: 7890
 allow-lan: false
@@ -50,22 +50,30 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: cdn2.portalcode.ir
+  server: 188.114.97.0
   port: 2095
-  uuid: 681314c5-b3ee-41f1-a959-fa42841f5383
-  network: httpupgrade
+  uuid: a0906133-bc17-49da-aa1a-d5ea99ee2e3e
+  network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  ws-opts:
+    path: /vl/CpDcN0yzoudwZ3jo?ed=2560
+    headers:
+      Host: prop0yauife5z9t5sa5681bq1.rjsc50uq2-b6gdjw21gm-c154p.workers.dev
 - name: 'ARISTA #2'
   type: vless
-  server: cdn2.portalcode.ir
+  server: www.speedtest.net
   port: 2095
-  uuid: 681314c5-b3ee-41f1-a959-fa42841f5383
-  network: httpupgrade
+  uuid: a0906133-bc17-49da-aa1a-d5ea99ee2e3e
+  network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  ws-opts:
+    path: /vl/pVQHiSYWRFVmiwrg?ed=2560
+    headers:
+      Host: prop0yauife5z9t5sa5681bq1.rjsc50uq2-b6gdjw21gm-c154p.workers.dev
 - name: 'ARISTA #3'
   type: vless
   server: 188.114.97.0
@@ -81,16 +89,7 @@ proxies:
       Host: prop0yauife5z9t5sa5681bq1.rjsc50uq2-b6gdjw21gm-c154p.workers.dev
 - name: 'ARISTA #4'
   type: vless
-  server: cdn2.portalcode.ir
-  port: 2095
-  uuid: 681314c5-b3ee-41f1-a959-fa42841f5383
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #5'
-  type: vless
-  server: 188.114.97.0
+  server: www.speedtest.net
   port: 2095
   uuid: a0906133-bc17-49da-aa1a-d5ea99ee2e3e
   network: ws
@@ -98,14 +97,23 @@ proxies:
   udp: true
   skip-cert-verify: true
   ws-opts:
-    path: /vl/CpDcN0yzoudwZ3jo?ed=2560
+    path: /vl/pVQHiSYWRFVmiwrg?ed=2560
     headers:
       Host: prop0yauife5z9t5sa5681bq1.rjsc50uq2-b6gdjw21gm-c154p.workers.dev
-- name: 'ARISTA #6'
+- name: 'T.ME: @aristapanel #5'
   type: vless
   server: cdn2.portalcode.ir
   port: 2095
   uuid: 681314c5-b3ee-41f1-a959-fa42841f5383
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'T.ME: @aristapanel #6'
+  type: vless
+  server: 188.114.98.6
+  port: 2095
+  uuid: 7c1a2143-8047-4649-9bb6-3c7821f14110
   network: httpupgrade
   tls: false
   udp: true
@@ -123,6 +131,19 @@ proxies:
     path: /vl/CpDcN0yzoudwZ3jo?ed=2560
     headers:
       Host: prop0yauife5z9t5sa5681bq1.rjsc50uq2-b6gdjw21gm-c154p.workers.dev
+- name: 'ARISTA #8'
+  type: vless
+  server: www.speedtest.net
+  port: 2095
+  uuid: a0906133-bc17-49da-aa1a-d5ea99ee2e3e
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /vl/pVQHiSYWRFVmiwrg?ed=2560
+    headers:
+      Host: prop0yauife5z9t5sa5681bq1.rjsc50uq2-b6gdjw21gm-c154p.workers.dev
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -136,9 +157,10 @@ proxy-groups:
   - 'ARISTA #2'
   - 'ARISTA #3'
   - 'ARISTA #4'
-  - 'ARISTA #5'
-  - 'ARISTA #6'
+  - 'T.ME: @aristapanel #5'
+  - 'T.ME: @aristapanel #6'
   - 'ARISTA #7'
+  - 'ARISTA #8'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
