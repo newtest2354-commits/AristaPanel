@@ -1,6 +1,6 @@
 # GITHUB - Port 9443
-# Updated: 2026-10-09 18:17:29
-# Count: 1
+# Updated: 2026-10-10 09:43:52
+# Count: 2
 
 mixed-port: 7890
 allow-lan: false
@@ -50,19 +50,34 @@ rules:
 proxies:
 - name: 'T.ME: @aristapanel #1'
   type: vless
-  server: 194.150.166.228
+  server: est.riotvpn.eu
   port: 9443
-  uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+  uuid: 596bea4f-a61b-4ad9-86a1-717066a67192
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
   flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: storage.yandexcloud.net
+  client-fingerprint: qq
+  servername: jobs.vkimages.io
   reality-opts:
-    public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
-    short-id: "ad20d2ba"
+    public-key: 8h8t5eBWL9oERK7xWHQLFJE5j6sZdgNDQAs3EGnNbho
+    short-id: "2f49bccf11150ef2"
+- name: 'T.ME: @aristapanel #2'
+  type: vless
+  server: 185.254.98.181
+  port: 9443
+  uuid: 596bea4f-a61b-4ad9-86a1-717066a67192
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: static.vkimages.io
+  reality-opts:
+    public-key: 8h8t5eBWL9oERK7xWHQLFJE5j6sZdgNDQAs3EGnNbho
+    short-id: "2f49bccf11150ef2"
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -73,6 +88,7 @@ proxy-groups:
   timeout: 3000
   proxies: &id001
   - 'T.ME: @aristapanel #1'
+  - 'T.ME: @aristapanel #2'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
