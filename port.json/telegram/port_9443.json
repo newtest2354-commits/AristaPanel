@@ -1,6 +1,6 @@
 // TELEGRAM - Port 9443
-// Updated: 2026-10-08 18:50:49
-// Count: 4
+// Updated: 2026-10-10 21:32:48
+// Count: 20
 
 {
   "log": {
@@ -39,22 +39,77 @@
   ],
   "outbounds": [
     {
-      "type": "shadowsocks",
+      "type": "vless",
       "tag": "ARISTA #1",
-      "server": "185.156.47.97",
+      "server": "nlhy2.richforever.ru",
       "server_port": 9443,
-      "method": "aes-256-gcm",
-      "password": "eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH",
-      "domain_resolver": "google"
+      "uuid": "7918e6f6-df8f-4a20-9c1d-59dbd1f22770",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "nlhy2.richforever.ru",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "fKz8iMdY9dfMURdjdVcb9mYOJz2FlexJ3_v8mlM2RTE"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "grpc-service"
+      }
     },
     {
-      "type": "shadowsocks",
+      "type": "vless",
       "tag": "ARISTA #2",
-      "server": "direct.asan-ps.ir",
+      "server": "pl3.richforever.ru",
       "server_port": 9443,
-      "method": "2022-blake3-aes-128-gcm",
-      "password": "Xm3v5BuIiFFXE6vjacf52w==:LnXZj25pZVvsRF0kiIXD7Q==",
-      "domain_resolver": "google"
+      "uuid": "7918e6f6-df8f-4a20-9c1d-59dbd1f22770",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "pl3.richforever.ru",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "lQcmwpXJsT5tdh9mQhcsDyiDNFe0nAVLvSc_5WnfqSY"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "grpc-service"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "ARISTA #3",
+      "server": "185.254.98.181",
+      "server_port": 9443,
+      "uuid": "596bea4f-a61b-4ad9-86a1-717066a67192",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "static.vkimages.io",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "8h8t5eBWL9oERK7xWHQLFJE5j6sZdgNDQAs3EGnNbho",
+          "short_id": "2f49bccf11150ef2"
+        }
+      },
+      "flow": "xtls-rprx-vision"
     },
     {
       "type": "direct",
@@ -69,7 +124,8 @@
       "tag": "🚀 ARISTA AUTO BEST",
       "outbounds": [
         "ARISTA #1",
-        "ARISTA #2"
+        "ARISTA #2",
+        "ARISTA #3"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "2m",

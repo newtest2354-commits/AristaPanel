@@ -1,6 +1,6 @@
 // GITHUB - Port 2096
-// Updated: 2026-10-10 17:19:37
-// Count: 2
+// Updated: 2026-10-10 21:32:48
+// Count: 5
 
 {
   "log": {
@@ -39,8 +39,56 @@
   ],
   "outbounds": [
     {
-      "type": "hysteria2",
+      "type": "vless",
       "tag": "ARISTA #1",
+      "server": "pl3.richforever.ru",
+      "server_port": 2096,
+      "uuid": "7918e6f6-df8f-4a20-9c1d-59dbd1f22770",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "pl3.richforever.ru",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "lQcmwpXJsT5tdh9mQhcsDyiDNFe0nAVLvSc_5WnfqSY"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "ARISTA #2",
+      "server": "node-562276409-d1add2.subject88.workers.dev",
+      "server_port": 2096,
+      "password": "7990f64c-d3d0-4af6-a78b-fc690e5803ad",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "NODE-562276409-d1aDd2.sUbjECT88.WOrkErs.deV",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "alpn": [
+          "http/1.1"
+        ]
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/tr/rpmeJRDCbzoeQHjtWQtucdXDWonXCG?ed=2560",
+        "headers": {
+          "Host": "NODE-562276409-d1aDd2.sUbjECT88.WOrkErs.deV"
+        }
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "ARISTA #3",
       "server": "karo.rick313.dpdns.org",
       "server_port": 2096,
       "password": "hoeutf1ryy41wrtw",
@@ -74,7 +122,9 @@
       "type": "urltest",
       "tag": "🚀 ARISTA AUTO BEST",
       "outbounds": [
-        "ARISTA #1"
+        "ARISTA #1",
+        "ARISTA #2",
+        "ARISTA #3"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "2m",

@@ -1,6 +1,6 @@
 # TELEGRAM - Port 8443
-# Updated: 2026-10-10 17:19:23
-# Count: 205
+# Updated: 2026-10-10 21:32:38
+# Count: 235
 
 mixed-port: 7890
 allow-lan: false
@@ -49,125 +49,35 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'ARISTA #1'
-  type: vless
-  server: 104.21.60.29
+  type: vmess
+  server: chatgpt.com
   port: 8443
-  uuid: 7c99dc89-bf49-45c9-acc5-e43f36657518
+  uuid: 19e52bf4-1b7d-4bd4-ae66-6ca024436c17
+  alterId: 0
+  cipher: auto
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - http/1.1
-  servername: www.large-files.info
+  tcp-fast-open: true
+  servername: frsys.fl-dl.com
   ws-opts:
-    path: /var/www/html/video/preview/download/i8o0la
+    path: /gbt
 - name: 'ARISTA #2'
   type: vless
-  server: 185.147.27.164
+  server: 45.130.125.162
   port: 8443
-  uuid: 3a90bf69-1ffe-4ebb-b9a7-ad9ba8e9f66f
-  network: tcp
+  uuid: f106648e-0644-40bc-974c-6edc966fe18d
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: user-6a8d949a.noooo.win
+  alpn:
+  - h3
+  - h2
+  client-fingerprint: chrome
+  servername: cji.new-persian-song.ir
 - name: 'ARISTA #3'
-  type: vless
-  server: 185.147.27.183
-  port: 8443
-  uuid: 379998c5-2a71-4202-9c74-522e0c3c5404
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: user-6a917f32.noooo.win
-- name: 'ARISTA #4'
-  type: vless
-  server: 185.147.27.164
-  port: 8443
-  uuid: 3a90bf69-1ffe-4ebb-b9a7-ad9ba8e9f66f
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: speedtest.net
-- name: 'ARISTA #5'
-  type: vless
-  server: 192.145.29.143
-  port: 8443
-  uuid: ec6f8131-7a5d-4117-9627-6fb2b39ae0da
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: m654iEJUgHXsuJ8kMY5oERz0diC6yIGcpTCyOv6DygA
-    short-id: "ad75fb9b891310ce"
-- name: 'ARISTA #6'
-  type: vless
-  server: www.speedtest.net
-  port: 8443
-  uuid: dd3b59f1-1fa8-44f2-b188-45d8929a08ae
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: se1.talanetwork.eu.org
-  ws-opts:
-    path: /sg-melbi#TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=512
-    headers:
-      Host: se1.talanetwork.eu.org
-- name: 'ARISTA #7'
-  type: vless
-  server: 46.8.230.143
-  port: 8443
-  uuid: a0624d3f-79dd-455e-b06f-1f87957bdea0
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.sony.com.hn
-  reality-opts:
-    public-key: W346cXA49I0T8FDlWGyH7qTidk1IR1r-0BQrJm6cjD8
-    short-id: "85cd"
-- name: 'ARISTA #8'
-  type: vless
-  server: de3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir
-  port: 8443
-  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: dex3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir
-- name: 'ARISTA #9'
-  type: vless
-  server: de8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir
-  port: 8443
-  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: dex8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir
-- name: 'ARISTA #10'
   type: vless
   server: 13.143.137.206
   port: 8443
@@ -181,7 +91,7 @@ proxies:
   reality-opts:
     public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
     short-id: "d2061bb1"
-- name: 'ARISTA #11'
+- name: 'ARISTA #4'
   type: vless
   server: 87.242.94.90
   port: 8443
@@ -195,7 +105,35 @@ proxies:
   reality-opts:
     public-key: pobC1laHCtpMK1EA520CyOpYeel0t90hEV_eRJExFAE
     short-id: "20272c52657d22da"
-- name: 'ARISTA #12'
+- name: 'ARISTA #5'
+  type: vless
+  server: 150.241.101.80
+  port: 8443
+  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: yandex.net
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: "6ba85179e30d4fc2"
+- name: 'ARISTA #6'
+  type: vless
+  server: nlhy2.richforever.ru
+  port: 8443
+  uuid: 7918e6f6-df8f-4a20-9c1d-59dbd1f22770
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: nlhy2.richforever.ru
+  reality-opts:
+    public-key: fKz8iMdY9dfMURdjdVcb9mYOJz2FlexJ3_v8mlM2RTE
+- name: 'ARISTA #7'
   type: vless
   server: www.speedtest.net
   port: 8443
@@ -210,160 +148,47 @@ proxies:
     path: /sg-melbi
     headers:
       Host: ch2.talanetwork.eu.org
-- name: 'ARISTA #13'
+- name: 'ARISTA #8'
   type: vless
-  server: 87.242.94.90
+  server: 77.72.85.247
   port: 8443
-  uuid: f23bc4f1-cc71-4003-ae6c-d6abe21d8191
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: passport.yandex.ru
-  reality-opts:
-    public-key: pobC1laHCtpMK1EA520CyOpYeel0t90hEV_eRJExFAE
-    short-id: "20272c52657d22da"
-- name: 'ARISTA #14'
-  type: vless
-  server: 103.90.75.41
-  port: 8443
-  uuid: d342d11e-d224-4463-b982-532309285094
+  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: ccc.010304.xyz
+  servername: fdghyt.com
   ws-opts:
-    path: /
+    path: /vpn-wss/fluxor/59011/
     headers:
-      Host: ccc.010304.xyz
-- name: 'ARISTA #15'
+      Host: fdghyt.com
+- name: 'ARISTA #9'
   type: vless
-  server: 46.8.230.143
+  server: chatgpt.com
   port: 8443
-  uuid: a0624d3f-79dd-455e-b06f-1f87957bdea0
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.sony.ie
-  reality-opts:
-    public-key: W346cXA49I0T8FDlWGyH7qTidk1IR1r-0BQrJm6cjD8
-- name: 'ARISTA #16'
-  type: vless
-  server: 94.183.170.135
-  port: 8443
-  uuid: 06c4e938-2954-478f-a870-ca1b163e30e9
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: estproxy4.lockdwn.com
-- name: 'ARISTA #17'
-  type: vless
-  server: host.taghvimtime.ir
-  port: 8443
-  uuid: 20d51411-b4c2-4485-a80b-8f322da808b8
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: chrome
-  servername: host.taghvimtime.ir
-- name: 'ARISTA #18'
-  type: vless
-  server: du-rov.secureservice.top
-  port: 8443
-  uuid: c53ea5e9-ed8b-4990-805d-7f1d6451426c
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: random
-  servername: du-rov.secureservice.top
-  reality-opts:
-    public-key: fSVfR9NB-6J6smrZlavi0GWd8JfDh0aXuEkKbtuFzUI
-    short-id: "3cbc3d737fb9c4af"
-- name: 'ARISTA #19'
-  type: vless
-  server: logs.m2ip-video.cloud
-  port: 8443
-  uuid: 3ed41dfc-0d38-4379-a470-c815673dc504
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: apisynccloud.info
-  reality-opts:
-    public-key: cynncQk7kKzEQaExg-FN7pMqFaZPSXEi_Ggy7AXXmVg
-    short-id: "44103f58"
-- name: 'ARISTA #20'
-  type: vless
-  server: pubsub.m2ip-video.cloud
-  port: 8443
-  uuid: 3ed41dfc-0d38-4379-a470-c815673dc504
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: peplow-labs.info
-  reality-opts:
-    public-key: cynncQk7kKzEQaExg-FN7pMqFaZPSXEi_Ggy7AXXmVg
-    short-id: "44103f58"
-- name: 'ARISTA #21'
-  type: vless
-  server: 46.8.230.143
-  port: 8443
-  uuid: 732b94ca-7c0a-4b64-a53b-c14578b68e57
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.compliance.sony.eu
-  reality-opts:
-    public-key: W346cXA49I0T8FDlWGyH7qTidk1IR1r-0BQrJm6cjD8
-    short-id: "1005ae37d194664f"
-- name: 'ARISTA #22'
-  type: vless
-  server: www.speedtest.net
-  port: 8443
-  uuid: dd3b59f1-1fa8-44f2-b188-45d8929a08ae
+  uuid: 7c99dc89-bf49-45c9-acc5-e43f36657518
   network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: se1.talanetwork.eu.org
-  ws-opts:
-    path: /sg-melbi
-    headers:
-      Host: se1.talanetwork.eu.org
-- name: 'ARISTA #23'
-  type: vless
-  server: de6hr1yxt3nd6jep1nlr2rogekovysn3h.fanavarancenter24.ir
-  port: 8443
-  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
-  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
   alpn:
   - http/1.1
-  client-fingerprint: chrome
-  servername: dex6hr1yxt3nd6jep1nlr2rogekovysn3h.fanavarancenter24.ir
-- name: 'ARISTA #24'
+  servername: www.large-files.info
+  ws-opts:
+    path: /var/www/html/video/preview/download/i8o0la
+- name: 'ARISTA #10'
+  type: vless
+  server: 172.67.190.248
+  port: 8443
+  uuid: 7c99dc89-bf49-45c9-acc5-e43f36657518
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: www.large-files.info
+  ws-opts:
+    path: '%2Fvar%2Fwww%2Fhtml%2Fvideo%2Fpreview%2Fdownload%2Fi8o0la'
+- name: 'ARISTA #11'
   type: vless
   server: 77.72.85.247
   port: 8443
@@ -380,365 +205,315 @@ proxies:
     path: /vpn-wss/fluxor/59011/?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
     headers:
       Host: fdghyt.com
+- name: 'ARISTA #12'
+  type: vless
+  server: game-survival.surverssss.pro
+  port: 8443
+  uuid: efa9d618-443e-4d9a-9c67-c4b3d9d73995
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: game-survival.surverssss.pro
+  grpc-opts:
+    grpc-service-name: grpc
+  reality-opts:
+    public-key: h-lXoMXS7rllNOzX6BL8NdhZMPFxEG6GEha-LmzpY2A
+- name: 'ARISTA #13'
+  type: vless
+  server: sw1.hidenet.xyz
+  port: 8443
+  uuid: efa9d618-443e-4d9a-9c67-c4b3d9d73995
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: sw1.hidenet.xyz
+  grpc-opts:
+    grpc-service-name: grpc
+  reality-opts:
+    public-key: KytvB8Lzvah7cEpkRxXCWhaVAdjIrGZgZ-i_RWW8i0E
+- name: 'ARISTA #14'
+  type: vless
+  server: ee10.zazazuza.ru
+  port: 8443
+  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: fdghyt.com
+  ws-opts:
+    path: /vpn-wss/fluxor/59011/
+    headers:
+      Host: fdghyt.com
+- name: 'ARISTA #15'
+  type: vless
+  server: 103.90.75.41
+  port: 8443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: unsafe
+  servername: snip.edgeoneai.cc.cd
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@vpn748359672.opengw.net:1458?ed=2560
+    headers:
+      Host: snip.edgeoneai.cc.cd
+- name: 'ARISTA #16'
+  type: vless
+  server: 172.66.149.243
+  port: 8443
+  uuid: ededaf7e-ad86-40bc-b837-b1403c56f311
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: baZYepC.AMINRAZAvI1384.WoRkERS.dEv
+  ws-opts:
+    path: /eyJqdW5rIjoid2tkV0g2R3kxYlNTIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMjYwMjpmYzU5OmIwOjY0OjpdIl19
+    headers:
+      Host: bazyepc.aminrazavi1384.workers.dev
+- name: 'ARISTA #17'
+  type: vless
+  server: 87.242.94.90
+  port: 8443
+  uuid: f23bc4f1-cc71-4003-ae6c-d6abe21d8191
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: passport.yandex.ru
+  reality-opts:
+    public-key: pobC1laHCtpMK1EA520CyOpYeel0t90hEV_eRJExFAE
+    short-id: "20272c52657d22da"
+- name: 'ARISTA #18'
+  type: vless
+  server: de1n7335e761sttkq0z0ohxj03vcjruyu.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex1n7335e761sttkq0z0ohxj03vcjruyu.fanavarancenter24.ir🇩🇪@FreakConfig
+- name: 'ARISTA #19'
+  type: vless
+  server: de8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir🇬🇧@FreakConfig
+- name: 'ARISTA #20'
+  type: vless
+  server: de3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir🇩🇪@FreakConfig
+- name: 'ARISTA #21'
+  type: vless
+  server: de5phvgxbfi001fdwvijtyjcwxdw7bzu7.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex5phvgxbfi001fdwvijtyjcwxdw7bzu7.fanavarancenter24.ir🇩🇪@FreakConfig
+- name: 'ARISTA #22'
+  type: vless
+  server: us1g9zmvwp2okc6m2zrzpeo8l26jhey7l.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: usx1g9zmvwp2okc6m2zrzpeo8l26jhey7l.fanavarancenter24.ir🇺🇸@FreakConfig
+- name: 'ARISTA #23'
+  type: vless
+  server: tr1vo2t3ezixs93mjjz8nn5g5zj1jz0me.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: trx1vo2t3ezixs93mjjz8nn5g5zj1jz0me.fanavarancenter24.ir🇹🇷@FreakConfig
+- name: 'ARISTA #24'
+  type: vless
+  server: 141.98.7.193
+  port: 8443
+  uuid: e9e60f73-1618-491c-a85b-477bdc959ae6
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: 141.98.7.193
+  ws-opts:
+    path: /ws-cdn1-vless
+    headers:
+      Host: de.fastmirror-labs.xyz
 - name: 'ARISTA #25'
   type: vless
-  server: 104.21.60.29
+  server: 150.241.101.80
   port: 8443
-  uuid: 7c99dc89-bf49-45c9-acc5-e43f36657518
-  network: ws
+  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - http/1.1
-  servername: www.large-files.info
-  ws-opts:
-    path: /var/www/html/video/preview/download/i8o0la
+  flow: xtls-rprx-vision
+  servername: yandex.net
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: "6ba85179e30d4fc2"
 - name: 'ARISTA #26'
   type: vless
-  server: 185.147.27.164
+  server: pl.flen-vpn.xyz
   port: 8443
-  uuid: 3a90bf69-1ffe-4ebb-b9a7-ad9ba8e9f66f
+  uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: user-6a8d949a.noooo.win
+  servername: pl.flen-vpn.xyz
 - name: 'ARISTA #27'
   type: vless
-  server: 185.147.27.183
+  server: 13.143.137.206
   port: 8443
-  uuid: 379998c5-2a71-4202-9c74-522e0c3c5404
+  uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
   flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: user-6a917f32.noooo.win
+  servername: ya.ru
+  reality-opts:
+    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
+    short-id: "d2061bb1"
 - name: 'ARISTA #28'
   type: vless
-  server: 185.147.27.164
+  server: ukhy2.richforever.ru
   port: 8443
-  uuid: 3a90bf69-1ffe-4ebb-b9a7-ad9ba8e9f66f
+  uuid: 7918e6f6-df8f-4a20-9c1d-59dbd1f22770
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
   flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: speedtest.net
+  servername: ukhy2.richforever.ru
+  reality-opts:
+    public-key: 3ziuq7wssNcpYpcqcLHqax8nIb2uJok5qAwxuS3mKns
 - name: 'ARISTA #29'
   type: vless
-  server: 192.145.29.143
+  server: 45.130.125.162
   port: 8443
-  uuid: ec6f8131-7a5d-4117-9627-6fb2b39ae0da
-  network: tcp
+  uuid: f106648e-0644-40bc-974c-6edc966fe18d
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
+  alpn:
+  - h3
+  - h2
   client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: m654iEJUgHXsuJ8kMY5oERz0diC6yIGcpTCyOv6DygA
-    short-id: "ad75fb9b891310ce"
+  servername: cji.new-persian-song.ir
 - name: 'ARISTA #30'
   type: vless
-  server: www.speedtest.net
+  server: 13.143.137.206
   port: 8443
-  uuid: dd3b59f1-1fa8-44f2-b188-45d8929a08ae
-  network: ws
+  uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: se1.talanetwork.eu.org
-  ws-opts:
-    path: /sg-melbi#TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=512
-    headers:
-      Host: se1.talanetwork.eu.org
+  flow: xtls-rprx-vision
+  servername: ya.ru
+  reality-opts:
+    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
+    short-id: "d2061bb1"
 - name: 'ARISTA #31'
   type: vless
-  server: 46.8.230.143
+  server: 87.242.94.90
   port: 8443
-  uuid: a0624d3f-79dd-455e-b06f-1f87957bdea0
+  uuid: f23bc4f1-cc71-4003-ae6c-d6abe21d8191
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.sony.com.hn
+  flow: xtls-rprx-vision
+  servername: passport.yandex.ru
   reality-opts:
-    public-key: W346cXA49I0T8FDlWGyH7qTidk1IR1r-0BQrJm6cjD8
-    short-id: "85cd"
+    public-key: pobC1laHCtpMK1EA520CyOpYeel0t90hEV_eRJExFAE
+    short-id: "20272c52657d22da"
 - name: 'ARISTA #32'
   type: vless
-  server: de3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir
+  server: 150.241.101.80
   port: 8443
-  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: dex3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir
+  flow: xtls-rprx-vision
+  servername: yandex.net
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: "6ba85179e30d4fc2"
 - name: 'ARISTA #33'
   type: vless
-  server: de8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir
+  server: nlhy2.richforever.ru
   port: 8443
-  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  uuid: 7918e6f6-df8f-4a20-9c1d-59dbd1f22770
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: dex8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: nlhy2.richforever.ru
+  reality-opts:
+    public-key: fKz8iMdY9dfMURdjdVcb9mYOJz2FlexJ3_v8mlM2RTE
 - name: 'ARISTA #34'
-  type: vless
-  server: 13.143.137.206
-  port: 8443
-  uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: ya.ru
-  reality-opts:
-    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
-    short-id: "d2061bb1"
-- name: 'ARISTA #35'
-  type: vless
-  server: 87.242.94.90
-  port: 8443
-  uuid: f23bc4f1-cc71-4003-ae6c-d6abe21d8191
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: passport.yandex.ru
-  reality-opts:
-    public-key: pobC1laHCtpMK1EA520CyOpYeel0t90hEV_eRJExFAE
-    short-id: "20272c52657d22da"
-- name: 'ARISTA #36'
-  type: vless
-  server: 104.21.60.29
-  port: 8443
-  uuid: 7c99dc89-bf49-45c9-acc5-e43f36657518
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  servername: www.large-files.info
-  ws-opts:
-    path: /var/www/html/video/preview/download/i8o0la
-- name: 'ARISTA #37'
-  type: vless
-  server: 185.147.27.164
-  port: 8443
-  uuid: 3a90bf69-1ffe-4ebb-b9a7-ad9ba8e9f66f
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: user-6a8d949a.noooo.win
-- name: 'ARISTA #38'
-  type: vless
-  server: 185.147.27.183
-  port: 8443
-  uuid: 379998c5-2a71-4202-9c74-522e0c3c5404
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: user-6a917f32.noooo.win
-- name: 'ARISTA #39'
-  type: vless
-  server: 185.147.27.164
-  port: 8443
-  uuid: 3a90bf69-1ffe-4ebb-b9a7-ad9ba8e9f66f
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: speedtest.net
-- name: 'ARISTA #40'
-  type: vless
-  server: 192.145.29.143
-  port: 8443
-  uuid: ec6f8131-7a5d-4117-9627-6fb2b39ae0da
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: m654iEJUgHXsuJ8kMY5oERz0diC6yIGcpTCyOv6DygA
-    short-id: "ad75fb9b891310ce"
-- name: 'ARISTA #41'
-  type: vless
-  server: 104.21.60.29
-  port: 8443
-  uuid: 7c99dc89-bf49-45c9-acc5-e43f36657518
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  servername: www.large-files.info
-  ws-opts:
-    path: /var/www/html/video/preview/download/i8o0la
-- name: 'ARISTA #42'
-  type: vless
-  server: 185.147.27.164
-  port: 8443
-  uuid: 3a90bf69-1ffe-4ebb-b9a7-ad9ba8e9f66f
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: user-6a8d949a.noooo.win
-- name: 'ARISTA #43'
-  type: vless
-  server: 185.147.27.183
-  port: 8443
-  uuid: 379998c5-2a71-4202-9c74-522e0c3c5404
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: user-6a917f32.noooo.win
-- name: 'ARISTA #44'
-  type: vless
-  server: 185.147.27.164
-  port: 8443
-  uuid: 3a90bf69-1ffe-4ebb-b9a7-ad9ba8e9f66f
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: speedtest.net
-- name: 'ARISTA #45'
-  type: vless
-  server: 192.145.29.143
-  port: 8443
-  uuid: ec6f8131-7a5d-4117-9627-6fb2b39ae0da
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: m654iEJUgHXsuJ8kMY5oERz0diC6yIGcpTCyOv6DygA
-    short-id: "ad75fb9b891310ce"
-- name: 'ARISTA #46'
-  type: vless
-  server: www.speedtest.net
-  port: 8443
-  uuid: dd3b59f1-1fa8-44f2-b188-45d8929a08ae
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: se1.talanetwork.eu.org
-  ws-opts:
-    path: /sg-melbi#TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=512
-    headers:
-      Host: se1.talanetwork.eu.org
-- name: 'ARISTA #47'
-  type: vless
-  server: 46.8.230.143
-  port: 8443
-  uuid: a0624d3f-79dd-455e-b06f-1f87957bdea0
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.sony.com.hn
-  reality-opts:
-    public-key: W346cXA49I0T8FDlWGyH7qTidk1IR1r-0BQrJm6cjD8
-    short-id: "85cd"
-- name: 'ARISTA #48'
-  type: vless
-  server: de3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir
-  port: 8443
-  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: dex3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir
-- name: 'ARISTA #49'
-  type: vless
-  server: de8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir
-  port: 8443
-  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: dex8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir
-- name: 'ARISTA #50'
-  type: vless
-  server: 13.143.137.206
-  port: 8443
-  uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: ya.ru
-  reality-opts:
-    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
-    short-id: "d2061bb1"
-- name: 'ARISTA #51'
-  type: vless
-  server: 87.242.94.90
-  port: 8443
-  uuid: f23bc4f1-cc71-4003-ae6c-d6abe21d8191
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: passport.yandex.ru
-  reality-opts:
-    public-key: pobC1laHCtpMK1EA520CyOpYeel0t90hEV_eRJExFAE
-    short-id: "20272c52657d22da"
-- name: 'ARISTA #52'
   type: vless
   server: www.speedtest.net
   port: 8443
@@ -753,7 +528,341 @@ proxies:
     path: /sg-melbi
     headers:
       Host: ch2.talanetwork.eu.org
+- name: 'ARISTA #35'
+  type: vless
+  server: 77.72.85.247
+  port: 8443
+  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: fdghyt.com
+  ws-opts:
+    path: /vpn-wss/fluxor/59011/
+    headers:
+      Host: fdghyt.com
+- name: 'ARISTA #36'
+  type: vless
+  server: chatgpt.com
+  port: 8443
+  uuid: 7c99dc89-bf49-45c9-acc5-e43f36657518
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  servername: www.large-files.info
+  ws-opts:
+    path: /var/www/html/video/preview/download/i8o0la
+- name: 'ARISTA #37'
+  type: vless
+  server: 172.67.190.248
+  port: 8443
+  uuid: 7c99dc89-bf49-45c9-acc5-e43f36657518
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: www.large-files.info
+  ws-opts:
+    path: '%2Fvar%2Fwww%2Fhtml%2Fvideo%2Fpreview%2Fdownload%2Fi8o0la'
+- name: 'ARISTA #38'
+  type: vless
+  server: 77.72.85.247
+  port: 8443
+  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: fdghyt.com
+  ws-opts:
+    path: /vpn-wss/fluxor/59011/?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
+    headers:
+      Host: fdghyt.com
+- name: 'ARISTA #39'
+  type: vless
+  server: 45.130.125.162
+  port: 8443
+  uuid: f106648e-0644-40bc-974c-6edc966fe18d
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  client-fingerprint: chrome
+  servername: cji.new-persian-song.ir
+- name: 'ARISTA #40'
+  type: vless
+  server: 13.143.137.206
+  port: 8443
+  uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: ya.ru
+  reality-opts:
+    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
+    short-id: "d2061bb1"
+- name: 'ARISTA #41'
+  type: vless
+  server: 87.242.94.90
+  port: 8443
+  uuid: f23bc4f1-cc71-4003-ae6c-d6abe21d8191
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: passport.yandex.ru
+  reality-opts:
+    public-key: pobC1laHCtpMK1EA520CyOpYeel0t90hEV_eRJExFAE
+    short-id: "20272c52657d22da"
+- name: 'ARISTA #42'
+  type: vless
+  server: 150.241.101.80
+  port: 8443
+  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: yandex.net
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: "6ba85179e30d4fc2"
+- name: 'ARISTA #43'
+  type: vless
+  server: 45.130.125.162
+  port: 8443
+  uuid: f106648e-0644-40bc-974c-6edc966fe18d
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  client-fingerprint: chrome
+  servername: cji.new-persian-song.ir
+- name: 'ARISTA #44'
+  type: vless
+  server: 13.143.137.206
+  port: 8443
+  uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: ya.ru
+  reality-opts:
+    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
+    short-id: "d2061bb1"
+- name: 'ARISTA #45'
+  type: vless
+  server: 87.242.94.90
+  port: 8443
+  uuid: f23bc4f1-cc71-4003-ae6c-d6abe21d8191
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: passport.yandex.ru
+  reality-opts:
+    public-key: pobC1laHCtpMK1EA520CyOpYeel0t90hEV_eRJExFAE
+    short-id: "20272c52657d22da"
+- name: 'ARISTA #46'
+  type: vless
+  server: 150.241.101.80
+  port: 8443
+  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: yandex.net
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: "6ba85179e30d4fc2"
+- name: 'ARISTA #47'
+  type: vless
+  server: nlhy2.richforever.ru
+  port: 8443
+  uuid: 7918e6f6-df8f-4a20-9c1d-59dbd1f22770
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: nlhy2.richforever.ru
+  reality-opts:
+    public-key: fKz8iMdY9dfMURdjdVcb9mYOJz2FlexJ3_v8mlM2RTE
+- name: 'ARISTA #48'
+  type: vless
+  server: www.speedtest.net
+  port: 8443
+  uuid: dd3b59f1-1fa8-44f2-b188-45d8929a08ae
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: ch2.talanetwork.eu.org
+  ws-opts:
+    path: /sg-melbi
+    headers:
+      Host: ch2.talanetwork.eu.org
+- name: 'ARISTA #49'
+  type: vless
+  server: 77.72.85.247
+  port: 8443
+  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: fdghyt.com
+  ws-opts:
+    path: /vpn-wss/fluxor/59011/
+    headers:
+      Host: fdghyt.com
+- name: 'ARISTA #50'
+  type: vless
+  server: chatgpt.com
+  port: 8443
+  uuid: 7c99dc89-bf49-45c9-acc5-e43f36657518
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  servername: www.large-files.info
+  ws-opts:
+    path: /var/www/html/video/preview/download/i8o0la
+- name: 'ARISTA #51'
+  type: vless
+  server: 172.67.190.248
+  port: 8443
+  uuid: 7c99dc89-bf49-45c9-acc5-e43f36657518
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: www.large-files.info
+  ws-opts:
+    path: '%2Fvar%2Fwww%2Fhtml%2Fvideo%2Fpreview%2Fdownload%2Fi8o0la'
+- name: 'ARISTA #52'
+  type: vless
+  server: 77.72.85.247
+  port: 8443
+  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: fdghyt.com
+  ws-opts:
+    path: /vpn-wss/fluxor/59011/?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
+    headers:
+      Host: fdghyt.com
 - name: 'ARISTA #53'
+  type: vless
+  server: game-survival.surverssss.pro
+  port: 8443
+  uuid: efa9d618-443e-4d9a-9c67-c4b3d9d73995
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: game-survival.surverssss.pro
+  grpc-opts:
+    grpc-service-name: grpc
+  reality-opts:
+    public-key: h-lXoMXS7rllNOzX6BL8NdhZMPFxEG6GEha-LmzpY2A
+- name: 'ARISTA #54'
+  type: vless
+  server: sw1.hidenet.xyz
+  port: 8443
+  uuid: efa9d618-443e-4d9a-9c67-c4b3d9d73995
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: sw1.hidenet.xyz
+  grpc-opts:
+    grpc-service-name: grpc
+  reality-opts:
+    public-key: KytvB8Lzvah7cEpkRxXCWhaVAdjIrGZgZ-i_RWW8i0E
+- name: 'ARISTA #55'
+  type: vless
+  server: ee10.zazazuza.ru
+  port: 8443
+  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: fdghyt.com
+  ws-opts:
+    path: /vpn-wss/fluxor/59011/
+    headers:
+      Host: fdghyt.com
+- name: 'ARISTA #56'
+  type: vless
+  server: 103.90.75.41
+  port: 8443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: unsafe
+  servername: snip.edgeoneai.cc.cd
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@vpn748359672.opengw.net:1458?ed=2560
+    headers:
+      Host: snip.edgeoneai.cc.cd
+- name: 'ARISTA #57'
+  type: vless
+  server: 172.66.149.243
+  port: 8443
+  uuid: ededaf7e-ad86-40bc-b837-b1403c56f311
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: baZYepC.AMINRAZAvI1384.WoRkERS.dEv
+  ws-opts:
+    path: /eyJqdW5rIjoid2tkV0g2R3kxYlNTIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMjYwMjpmYzU5OmIwOjY0OjpdIl19
+    headers:
+      Host: bazyepc.aminrazavi1384.workers.dev
+- name: 'ARISTA #58'
   type: vless
   server: 87.242.94.90
   port: 8443
@@ -768,183 +877,9 @@ proxies:
   reality-opts:
     public-key: pobC1laHCtpMK1EA520CyOpYeel0t90hEV_eRJExFAE
     short-id: "20272c52657d22da"
-- name: 'ARISTA #54'
-  type: vless
-  server: 103.90.75.41
-  port: 8443
-  uuid: d342d11e-d224-4463-b982-532309285094
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: ccc.010304.xyz
-  ws-opts:
-    path: /
-    headers:
-      Host: ccc.010304.xyz
-- name: 'ARISTA #55'
-  type: vless
-  server: 46.8.230.143
-  port: 8443
-  uuid: a0624d3f-79dd-455e-b06f-1f87957bdea0
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.sony.ie
-  reality-opts:
-    public-key: W346cXA49I0T8FDlWGyH7qTidk1IR1r-0BQrJm6cjD8
-- name: 'ARISTA #56'
-  type: vless
-  server: 94.183.170.135
-  port: 8443
-  uuid: 06c4e938-2954-478f-a870-ca1b163e30e9
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: estproxy4.lockdwn.com
-- name: 'ARISTA #57'
-  type: vless
-  server: host.taghvimtime.ir
-  port: 8443
-  uuid: 20d51411-b4c2-4485-a80b-8f322da808b8
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: chrome
-  servername: host.taghvimtime.ir
-- name: 'ARISTA #58'
-  type: vless
-  server: du-rov.secureservice.top
-  port: 8443
-  uuid: c53ea5e9-ed8b-4990-805d-7f1d6451426c
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: random
-  servername: du-rov.secureservice.top
-  reality-opts:
-    public-key: fSVfR9NB-6J6smrZlavi0GWd8JfDh0aXuEkKbtuFzUI
-    short-id: "3cbc3d737fb9c4af"
 - name: 'ARISTA #59'
   type: vless
-  server: logs.m2ip-video.cloud
-  port: 8443
-  uuid: 3ed41dfc-0d38-4379-a470-c815673dc504
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: apisynccloud.info
-  reality-opts:
-    public-key: cynncQk7kKzEQaExg-FN7pMqFaZPSXEi_Ggy7AXXmVg
-    short-id: "44103f58"
-- name: 'ARISTA #60'
-  type: vless
-  server: 104.21.60.29
-  port: 8443
-  uuid: 7c99dc89-bf49-45c9-acc5-e43f36657518
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  servername: www.large-files.info
-  ws-opts:
-    path: /var/www/html/video/preview/download/i8o0la
-- name: 'ARISTA #61'
-  type: vless
-  server: 185.147.27.164
-  port: 8443
-  uuid: 3a90bf69-1ffe-4ebb-b9a7-ad9ba8e9f66f
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: user-6a8d949a.noooo.win
-- name: 'ARISTA #62'
-  type: vless
-  server: 185.147.27.183
-  port: 8443
-  uuid: 379998c5-2a71-4202-9c74-522e0c3c5404
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: user-6a917f32.noooo.win
-- name: 'ARISTA #63'
-  type: vless
-  server: 185.147.27.164
-  port: 8443
-  uuid: 3a90bf69-1ffe-4ebb-b9a7-ad9ba8e9f66f
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: speedtest.net
-- name: 'ARISTA #64'
-  type: vless
-  server: 192.145.29.143
-  port: 8443
-  uuid: ec6f8131-7a5d-4117-9627-6fb2b39ae0da
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: m654iEJUgHXsuJ8kMY5oERz0diC6yIGcpTCyOv6DygA
-    short-id: "ad75fb9b891310ce"
-- name: 'ARISTA #65'
-  type: vless
-  server: www.speedtest.net
-  port: 8443
-  uuid: dd3b59f1-1fa8-44f2-b188-45d8929a08ae
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: se1.talanetwork.eu.org
-  ws-opts:
-    path: /sg-melbi#TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=512
-    headers:
-      Host: se1.talanetwork.eu.org
-- name: 'ARISTA #66'
-  type: vless
-  server: 46.8.230.143
-  port: 8443
-  uuid: a0624d3f-79dd-455e-b06f-1f87957bdea0
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.sony.com.hn
-  reality-opts:
-    public-key: W346cXA49I0T8FDlWGyH7qTidk1IR1r-0BQrJm6cjD8
-    short-id: "85cd"
-- name: 'ARISTA #67'
-  type: vless
-  server: de3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir
+  server: de1n7335e761sttkq0z0ohxj03vcjruyu.fanavarancenter24.ir
   port: 8443
   uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
   network: tcp
@@ -954,8 +889,8 @@ proxies:
   alpn:
   - http/1.1
   client-fingerprint: chrome
-  servername: dex3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir
-- name: 'ARISTA #68'
+  servername: dex1n7335e761sttkq0z0ohxj03vcjruyu.fanavarancenter24.ir🇩🇪@FreakConfig
+- name: 'ARISTA #60'
   type: vless
   server: de8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir
   port: 8443
@@ -967,7 +902,112 @@ proxies:
   alpn:
   - http/1.1
   client-fingerprint: chrome
-  servername: dex8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir
+  servername: dex8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir🇬🇧@FreakConfig
+- name: 'ARISTA #61'
+  type: vless
+  server: de3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir🇩🇪@FreakConfig
+- name: 'ARISTA #62'
+  type: vless
+  server: de5phvgxbfi001fdwvijtyjcwxdw7bzu7.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex5phvgxbfi001fdwvijtyjcwxdw7bzu7.fanavarancenter24.ir🇩🇪@FreakConfig
+- name: 'ARISTA #63'
+  type: vless
+  server: us1g9zmvwp2okc6m2zrzpeo8l26jhey7l.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: usx1g9zmvwp2okc6m2zrzpeo8l26jhey7l.fanavarancenter24.ir🇺🇸@FreakConfig
+- name: 'ARISTA #64'
+  type: vless
+  server: tr1vo2t3ezixs93mjjz8nn5g5zj1jz0me.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: trx1vo2t3ezixs93mjjz8nn5g5zj1jz0me.fanavarancenter24.ir🇹🇷@FreakConfig
+- name: 'ARISTA #65'
+  type: vless
+  server: 141.98.7.193
+  port: 8443
+  uuid: e9e60f73-1618-491c-a85b-477bdc959ae6
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: 141.98.7.193
+  ws-opts:
+    path: /ws-cdn1-vless
+    headers:
+      Host: de.fastmirror-labs.xyz
+- name: 'ARISTA #66'
+  type: vless
+  server: 150.241.101.80
+  port: 8443
+  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: yandex.net
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: "6ba85179e30d4fc2"
+- name: 'ARISTA #67'
+  type: vless
+  server: pl.flen-vpn.xyz
+  port: 8443
+  uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: pl.flen-vpn.xyz
+- name: 'ARISTA #68'
+  type: vless
+  server: 45.130.125.162
+  port: 8443
+  uuid: f106648e-0644-40bc-974c-6edc966fe18d
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  client-fingerprint: chrome
+  servername: cji.new-persian-song.ir
 - name: 'ARISTA #69'
   type: vless
   server: 13.143.137.206
@@ -998,6 +1038,34 @@ proxies:
     short-id: "20272c52657d22da"
 - name: 'ARISTA #71'
   type: vless
+  server: 150.241.101.80
+  port: 8443
+  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: yandex.net
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: "6ba85179e30d4fc2"
+- name: 'ARISTA #72'
+  type: vless
+  server: nlhy2.richforever.ru
+  port: 8443
+  uuid: 7918e6f6-df8f-4a20-9c1d-59dbd1f22770
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: nlhy2.richforever.ru
+  reality-opts:
+    public-key: fKz8iMdY9dfMURdjdVcb9mYOJz2FlexJ3_v8mlM2RTE
+- name: 'ARISTA #73'
+  type: vless
   server: www.speedtest.net
   port: 8443
   uuid: dd3b59f1-1fa8-44f2-b188-45d8929a08ae
@@ -1011,38 +1079,23 @@ proxies:
     path: /sg-melbi
     headers:
       Host: ch2.talanetwork.eu.org
-- name: 'ARISTA #72'
+- name: 'ARISTA #74'
   type: vless
-  server: 87.242.94.90
+  server: 77.72.85.247
   port: 8443
-  uuid: f23bc4f1-cc71-4003-ae6c-d6abe21d8191
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: passport.yandex.ru
-  reality-opts:
-    public-key: pobC1laHCtpMK1EA520CyOpYeel0t90hEV_eRJExFAE
-    short-id: "20272c52657d22da"
-- name: 'ARISTA #73'
-  type: vless
-  server: 103.90.75.41
-  port: 8443
-  uuid: d342d11e-d224-4463-b982-532309285094
+  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: ccc.010304.xyz
+  servername: fdghyt.com
   ws-opts:
-    path: /
+    path: /vpn-wss/fluxor/59011/
     headers:
-      Host: ccc.010304.xyz
-- name: 'ARISTA #74'
+      Host: fdghyt.com
+- name: 'ARISTA #75'
   type: vless
-  server: 104.21.60.29
+  server: chatgpt.com
   port: 8443
   uuid: 7c99dc89-bf49-45c9-acc5-e43f36657518
   network: ws
@@ -1054,308 +1107,19 @@ proxies:
   servername: www.large-files.info
   ws-opts:
     path: /var/www/html/video/preview/download/i8o0la
-- name: 'ARISTA #75'
-  type: vless
-  server: 185.147.27.164
-  port: 8443
-  uuid: 3a90bf69-1ffe-4ebb-b9a7-ad9ba8e9f66f
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: user-6a8d949a.noooo.win
 - name: 'ARISTA #76'
   type: vless
-  server: 185.147.27.183
+  server: 172.67.190.248
   port: 8443
-  uuid: 379998c5-2a71-4202-9c74-522e0c3c5404
-  network: tcp
+  uuid: 7c99dc89-bf49-45c9-acc5-e43f36657518
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: user-6a917f32.noooo.win
+  servername: www.large-files.info
+  ws-opts:
+    path: '%2Fvar%2Fwww%2Fhtml%2Fvideo%2Fpreview%2Fdownload%2Fi8o0la'
 - name: 'ARISTA #77'
-  type: vless
-  server: 185.147.27.164
-  port: 8443
-  uuid: 3a90bf69-1ffe-4ebb-b9a7-ad9ba8e9f66f
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: speedtest.net
-- name: 'ARISTA #78'
-  type: vless
-  server: 192.145.29.143
-  port: 8443
-  uuid: ec6f8131-7a5d-4117-9627-6fb2b39ae0da
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: m654iEJUgHXsuJ8kMY5oERz0diC6yIGcpTCyOv6DygA
-    short-id: "ad75fb9b891310ce"
-- name: 'ARISTA #79'
-  type: vless
-  server: www.speedtest.net
-  port: 8443
-  uuid: dd3b59f1-1fa8-44f2-b188-45d8929a08ae
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: se1.talanetwork.eu.org
-  ws-opts:
-    path: /sg-melbi#TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=512
-    headers:
-      Host: se1.talanetwork.eu.org
-- name: 'ARISTA #80'
-  type: vless
-  server: 46.8.230.143
-  port: 8443
-  uuid: a0624d3f-79dd-455e-b06f-1f87957bdea0
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.sony.com.hn
-  reality-opts:
-    public-key: W346cXA49I0T8FDlWGyH7qTidk1IR1r-0BQrJm6cjD8
-    short-id: "85cd"
-- name: 'ARISTA #81'
-  type: vless
-  server: de3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir
-  port: 8443
-  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: dex3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir
-- name: 'ARISTA #82'
-  type: vless
-  server: de8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir
-  port: 8443
-  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: dex8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir
-- name: 'ARISTA #83'
-  type: vless
-  server: 13.143.137.206
-  port: 8443
-  uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: ya.ru
-  reality-opts:
-    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
-    short-id: "d2061bb1"
-- name: 'ARISTA #84'
-  type: vless
-  server: 87.242.94.90
-  port: 8443
-  uuid: f23bc4f1-cc71-4003-ae6c-d6abe21d8191
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: passport.yandex.ru
-  reality-opts:
-    public-key: pobC1laHCtpMK1EA520CyOpYeel0t90hEV_eRJExFAE
-    short-id: "20272c52657d22da"
-- name: 'ARISTA #85'
-  type: vless
-  server: www.speedtest.net
-  port: 8443
-  uuid: dd3b59f1-1fa8-44f2-b188-45d8929a08ae
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: ch2.talanetwork.eu.org
-  ws-opts:
-    path: /sg-melbi
-    headers:
-      Host: ch2.talanetwork.eu.org
-- name: 'ARISTA #86'
-  type: vless
-  server: 87.242.94.90
-  port: 8443
-  uuid: f23bc4f1-cc71-4003-ae6c-d6abe21d8191
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: passport.yandex.ru
-  reality-opts:
-    public-key: pobC1laHCtpMK1EA520CyOpYeel0t90hEV_eRJExFAE
-    short-id: "20272c52657d22da"
-- name: 'ARISTA #87'
-  type: vless
-  server: 103.90.75.41
-  port: 8443
-  uuid: d342d11e-d224-4463-b982-532309285094
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: ccc.010304.xyz
-  ws-opts:
-    path: /
-    headers:
-      Host: ccc.010304.xyz
-- name: 'ARISTA #88'
-  type: vless
-  server: 46.8.230.143
-  port: 8443
-  uuid: a0624d3f-79dd-455e-b06f-1f87957bdea0
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.sony.ie
-  reality-opts:
-    public-key: W346cXA49I0T8FDlWGyH7qTidk1IR1r-0BQrJm6cjD8
-- name: 'ARISTA #89'
-  type: vless
-  server: 94.183.170.135
-  port: 8443
-  uuid: 06c4e938-2954-478f-a870-ca1b163e30e9
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: estproxy4.lockdwn.com
-- name: 'ARISTA #90'
-  type: vless
-  server: host.taghvimtime.ir
-  port: 8443
-  uuid: 20d51411-b4c2-4485-a80b-8f322da808b8
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: chrome
-  servername: host.taghvimtime.ir
-- name: 'ARISTA #91'
-  type: vless
-  server: du-rov.secureservice.top
-  port: 8443
-  uuid: c53ea5e9-ed8b-4990-805d-7f1d6451426c
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: random
-  servername: du-rov.secureservice.top
-  reality-opts:
-    public-key: fSVfR9NB-6J6smrZlavi0GWd8JfDh0aXuEkKbtuFzUI
-    short-id: "3cbc3d737fb9c4af"
-- name: 'ARISTA #92'
-  type: vless
-  server: logs.m2ip-video.cloud
-  port: 8443
-  uuid: 3ed41dfc-0d38-4379-a470-c815673dc504
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: apisynccloud.info
-  reality-opts:
-    public-key: cynncQk7kKzEQaExg-FN7pMqFaZPSXEi_Ggy7AXXmVg
-    short-id: "44103f58"
-- name: 'ARISTA #93'
-  type: vless
-  server: pubsub.m2ip-video.cloud
-  port: 8443
-  uuid: 3ed41dfc-0d38-4379-a470-c815673dc504
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: peplow-labs.info
-  reality-opts:
-    public-key: cynncQk7kKzEQaExg-FN7pMqFaZPSXEi_Ggy7AXXmVg
-    short-id: "44103f58"
-- name: 'ARISTA #94'
-  type: vless
-  server: 46.8.230.143
-  port: 8443
-  uuid: 732b94ca-7c0a-4b64-a53b-c14578b68e57
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.compliance.sony.eu
-  reality-opts:
-    public-key: W346cXA49I0T8FDlWGyH7qTidk1IR1r-0BQrJm6cjD8
-    short-id: "1005ae37d194664f"
-- name: 'ARISTA #95'
-  type: vless
-  server: www.speedtest.net
-  port: 8443
-  uuid: dd3b59f1-1fa8-44f2-b188-45d8929a08ae
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: se1.talanetwork.eu.org
-  ws-opts:
-    path: /sg-melbi
-    headers:
-      Host: se1.talanetwork.eu.org
-- name: 'ARISTA #96'
-  type: vless
-  server: de6hr1yxt3nd6jep1nlr2rogekovysn3h.fanavarancenter24.ir
-  port: 8443
-  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: dex6hr1yxt3nd6jep1nlr2rogekovysn3h.fanavarancenter24.ir
-- name: 'ARISTA #97'
   type: vless
   server: 77.72.85.247
   port: 8443
@@ -1372,47 +1136,35 @@ proxies:
     path: /vpn-wss/fluxor/59011/?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
     headers:
       Host: fdghyt.com
-- name: 'ARISTA #98'
+- name: 'ARISTA #78'
   type: vless
-  server: xn-de-b.rzfp.ir
+  server: game-survival.surverssss.pro
   port: 8443
-  uuid: 47e39ff6-d772-4c24-b64b-3150af7f941e
-  network: tcp
+  uuid: efa9d618-443e-4d9a-9c67-c4b3d9d73995
+  network: grpc
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: edge
-  servername: ftp.heanet.ie
+  servername: game-survival.surverssss.pro
+  grpc-opts:
+    grpc-service-name: grpc
   reality-opts:
-    public-key: 3QHmuOX6nxAJlJEBeTi8VtIdz-XWvE5DMTOzhqlgEEM
-    short-id: "377d"
-- name: 'ARISTA #99'
+    public-key: h-lXoMXS7rllNOzX6BL8NdhZMPFxEG6GEha-LmzpY2A
+- name: 'ARISTA #79'
   type: vless
-  server: 150.241.101.80
+  server: sw1.hidenet.xyz
   port: 8443
-  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
-  network: tcp
+  uuid: efa9d618-443e-4d9a-9c67-c4b3d9d73995
+  network: grpc
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: /?telegram--
+  servername: sw1.hidenet.xyz
+  grpc-opts:
+    grpc-service-name: grpc
   reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-- name: 'ARISTA #100'
-  type: vless
-  server: 77.72.85.247
-  port: 8443
-  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: fdghyt.com
-  ws-opts:
-    path: /vpn-wss/fluxor/59011/
-    headers:
-      Host: fdghyt.com
-- name: 'ARISTA #101'
+    public-key: KytvB8Lzvah7cEpkRxXCWhaVAdjIrGZgZ-i_RWW8i0E
+- name: 'ARISTA #80'
   type: vless
   server: ee10.zazazuza.ru
   port: 8443
@@ -1429,16 +1181,320 @@ proxies:
     path: /vpn-wss/fluxor/59011/
     headers:
       Host: fdghyt.com
-- name: 'ARISTA #102'
+- name: 'ARISTA #81'
   type: vless
-  server: 94.183.170.135
+  server: 45.130.125.162
   port: 8443
-  uuid: 06c4e938-2954-478f-a870-ca1b163e30e9
+  uuid: f106648e-0644-40bc-974c-6edc966fe18d
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  client-fingerprint: chrome
+  servername: cji.new-persian-song.ir
+- name: 'ARISTA #82'
+  type: vless
+  server: 13.143.137.206
+  port: 8443
+  uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: estproxy4.lockdwn.com
+  flow: xtls-rprx-vision
+  servername: ya.ru
+  reality-opts:
+    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
+    short-id: "d2061bb1"
+- name: 'ARISTA #83'
+  type: vless
+  server: 87.242.94.90
+  port: 8443
+  uuid: f23bc4f1-cc71-4003-ae6c-d6abe21d8191
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: passport.yandex.ru
+  reality-opts:
+    public-key: pobC1laHCtpMK1EA520CyOpYeel0t90hEV_eRJExFAE
+    short-id: "20272c52657d22da"
+- name: 'ARISTA #84'
+  type: vless
+  server: 150.241.101.80
+  port: 8443
+  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: yandex.net
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: "6ba85179e30d4fc2"
+- name: 'ARISTA #85'
+  type: vless
+  server: nlhy2.richforever.ru
+  port: 8443
+  uuid: 7918e6f6-df8f-4a20-9c1d-59dbd1f22770
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: nlhy2.richforever.ru
+  reality-opts:
+    public-key: fKz8iMdY9dfMURdjdVcb9mYOJz2FlexJ3_v8mlM2RTE
+- name: 'ARISTA #86'
+  type: vless
+  server: www.speedtest.net
+  port: 8443
+  uuid: dd3b59f1-1fa8-44f2-b188-45d8929a08ae
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: ch2.talanetwork.eu.org
+  ws-opts:
+    path: /sg-melbi
+    headers:
+      Host: ch2.talanetwork.eu.org
+- name: 'ARISTA #87'
+  type: vless
+  server: 77.72.85.247
+  port: 8443
+  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: fdghyt.com
+  ws-opts:
+    path: /vpn-wss/fluxor/59011/
+    headers:
+      Host: fdghyt.com
+- name: 'ARISTA #88'
+  type: vless
+  server: chatgpt.com
+  port: 8443
+  uuid: 7c99dc89-bf49-45c9-acc5-e43f36657518
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  servername: www.large-files.info
+  ws-opts:
+    path: /var/www/html/video/preview/download/i8o0la
+- name: 'ARISTA #89'
+  type: vless
+  server: 172.67.190.248
+  port: 8443
+  uuid: 7c99dc89-bf49-45c9-acc5-e43f36657518
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: www.large-files.info
+  ws-opts:
+    path: '%2Fvar%2Fwww%2Fhtml%2Fvideo%2Fpreview%2Fdownload%2Fi8o0la'
+- name: 'ARISTA #90'
+  type: vless
+  server: 77.72.85.247
+  port: 8443
+  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: fdghyt.com
+  ws-opts:
+    path: /vpn-wss/fluxor/59011/?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
+    headers:
+      Host: fdghyt.com
+- name: 'ARISTA #91'
+  type: vless
+  server: game-survival.surverssss.pro
+  port: 8443
+  uuid: efa9d618-443e-4d9a-9c67-c4b3d9d73995
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: game-survival.surverssss.pro
+  grpc-opts:
+    grpc-service-name: grpc
+  reality-opts:
+    public-key: h-lXoMXS7rllNOzX6BL8NdhZMPFxEG6GEha-LmzpY2A
+- name: 'ARISTA #92'
+  type: vless
+  server: sw1.hidenet.xyz
+  port: 8443
+  uuid: efa9d618-443e-4d9a-9c67-c4b3d9d73995
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: sw1.hidenet.xyz
+  grpc-opts:
+    grpc-service-name: grpc
+  reality-opts:
+    public-key: KytvB8Lzvah7cEpkRxXCWhaVAdjIrGZgZ-i_RWW8i0E
+- name: 'ARISTA #93'
+  type: vless
+  server: ee10.zazazuza.ru
+  port: 8443
+  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: fdghyt.com
+  ws-opts:
+    path: /vpn-wss/fluxor/59011/
+    headers:
+      Host: fdghyt.com
+- name: 'ARISTA #94'
+  type: vless
+  server: 103.90.75.41
+  port: 8443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: unsafe
+  servername: snip.edgeoneai.cc.cd
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@vpn748359672.opengw.net:1458?ed=2560
+    headers:
+      Host: snip.edgeoneai.cc.cd
+- name: 'ARISTA #95'
+  type: vless
+  server: 172.66.149.243
+  port: 8443
+  uuid: ededaf7e-ad86-40bc-b837-b1403c56f311
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: baZYepC.AMINRAZAvI1384.WoRkERS.dEv
+  ws-opts:
+    path: /eyJqdW5rIjoid2tkV0g2R3kxYlNTIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMjYwMjpmYzU5OmIwOjY0OjpdIl19
+    headers:
+      Host: bazyepc.aminrazavi1384.workers.dev
+- name: 'ARISTA #96'
+  type: vless
+  server: 87.242.94.90
+  port: 8443
+  uuid: f23bc4f1-cc71-4003-ae6c-d6abe21d8191
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: passport.yandex.ru
+  reality-opts:
+    public-key: pobC1laHCtpMK1EA520CyOpYeel0t90hEV_eRJExFAE
+    short-id: "20272c52657d22da"
+- name: 'ARISTA #97'
+  type: vless
+  server: de1n7335e761sttkq0z0ohxj03vcjruyu.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex1n7335e761sttkq0z0ohxj03vcjruyu.fanavarancenter24.ir🇩🇪@FreakConfig
+- name: 'ARISTA #98'
+  type: vless
+  server: de8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir🇬🇧@FreakConfig
+- name: 'ARISTA #99'
+  type: vless
+  server: de3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir🇩🇪@FreakConfig
+- name: 'ARISTA #100'
+  type: vless
+  server: de5phvgxbfi001fdwvijtyjcwxdw7bzu7.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex5phvgxbfi001fdwvijtyjcwxdw7bzu7.fanavarancenter24.ir🇩🇪@FreakConfig
+- name: 'ARISTA #101'
+  type: vless
+  server: us1g9zmvwp2okc6m2zrzpeo8l26jhey7l.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: usx1g9zmvwp2okc6m2zrzpeo8l26jhey7l.fanavarancenter24.ir🇺🇸@FreakConfig
+- name: 'ARISTA #102'
+  type: vless
+  server: tr1vo2t3ezixs93mjjz8nn5g5zj1jz0me.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: trx1vo2t3ezixs93mjjz8nn5g5zj1jz0me.fanavarancenter24.ir🇹🇷@FreakConfig
 - name: 'ARISTA #103'
   type: vless
   server: 141.98.7.193
@@ -1470,153 +1526,15 @@ proxies:
     short-id: "6ba85179e30d4fc2"
 - name: 'ARISTA #105'
   type: vless
-  server: 208.68.180.72
+  server: pl.flen-vpn.xyz
   port: 8443
-  uuid: 51a0af77-a60c-4d9b-81a4-f50e1b38d90b
-  network: ws
+  uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: cf3.schzyc.cc.cd
-  ws-opts:
-    path: /proxyip=ProxyIP.CMLiussss.net
-    headers:
-      Host: cf3.schzyc.cc.cd
+  servername: pl.flen-vpn.xyz
 - name: 'ARISTA #106'
-  type: vless
-  server: 150.241.101.80
-  port: 8443
-  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: yandex.net
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #107'
-  type: vless
-  server: 104.21.60.29
-  port: 8443
-  uuid: 7c99dc89-bf49-45c9-acc5-e43f36657518
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  servername: www.large-files.info
-  ws-opts:
-    path: /var/www/html/video/preview/download/i8o0la
-- name: 'ARISTA #108'
-  type: vless
-  server: 185.147.27.164
-  port: 8443
-  uuid: 3a90bf69-1ffe-4ebb-b9a7-ad9ba8e9f66f
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: user-6a8d949a.noooo.win
-- name: 'ARISTA #109'
-  type: vless
-  server: 185.147.27.183
-  port: 8443
-  uuid: 379998c5-2a71-4202-9c74-522e0c3c5404
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: user-6a917f32.noooo.win
-- name: 'ARISTA #110'
-  type: vless
-  server: 185.147.27.164
-  port: 8443
-  uuid: 3a90bf69-1ffe-4ebb-b9a7-ad9ba8e9f66f
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: speedtest.net
-- name: 'ARISTA #111'
-  type: vless
-  server: 192.145.29.143
-  port: 8443
-  uuid: ec6f8131-7a5d-4117-9627-6fb2b39ae0da
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: m654iEJUgHXsuJ8kMY5oERz0diC6yIGcpTCyOv6DygA
-    short-id: "ad75fb9b891310ce"
-- name: 'ARISTA #112'
-  type: vless
-  server: www.speedtest.net
-  port: 8443
-  uuid: dd3b59f1-1fa8-44f2-b188-45d8929a08ae
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: se1.talanetwork.eu.org
-  ws-opts:
-    path: /sg-melbi#TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=512
-    headers:
-      Host: se1.talanetwork.eu.org
-- name: 'ARISTA #113'
-  type: vless
-  server: 46.8.230.143
-  port: 8443
-  uuid: a0624d3f-79dd-455e-b06f-1f87957bdea0
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.sony.com.hn
-  reality-opts:
-    public-key: W346cXA49I0T8FDlWGyH7qTidk1IR1r-0BQrJm6cjD8
-    short-id: "85cd"
-- name: 'ARISTA #114'
-  type: vless
-  server: de3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir
-  port: 8443
-  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: dex3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir
-- name: 'ARISTA #115'
-  type: vless
-  server: de8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir
-  port: 8443
-  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: dex8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir
-- name: 'ARISTA #116'
   type: vless
   server: 13.143.137.206
   port: 8443
@@ -1630,7 +1548,193 @@ proxies:
   reality-opts:
     public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
     short-id: "d2061bb1"
+- name: 'ARISTA #107'
+  type: vless
+  server: ukhy2.richforever.ru
+  port: 8443
+  uuid: 7918e6f6-df8f-4a20-9c1d-59dbd1f22770
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: ukhy2.richforever.ru
+  reality-opts:
+    public-key: 3ziuq7wssNcpYpcqcLHqax8nIb2uJok5qAwxuS3mKns
+- name: 'ARISTA #108'
+  type: vless
+  server: de1n7335e761sttkq0z0ohxj03vcjruyu.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex1n7335e761sttkq0z0ohxj03vcjruyu.fanavarancenter24.ir
+- name: 'ARISTA #109'
+  type: vless
+  server: de8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir
+- name: 'ARISTA #110'
+  type: vless
+  server: de3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir
+- name: 'ARISTA #111'
+  type: vless
+  server: de5phvgxbfi001fdwvijtyjcwxdw7bzu7.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex5phvgxbfi001fdwvijtyjcwxdw7bzu7.fanavarancenter24.ir
+- name: 'ARISTA #112'
+  type: vless
+  server: us1g9zmvwp2okc6m2zrzpeo8l26jhey7l.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: usx1g9zmvwp2okc6m2zrzpeo8l26jhey7l.fanavarancenter24.ir
+- name: 'ARISTA #113'
+  type: vless
+  server: tr1vo2t3ezixs93mjjz8nn5g5zj1jz0me.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: trx1vo2t3ezixs93mjjz8nn5g5zj1jz0me.fanavarancenter24.ir
+- name: 'ARISTA #114'
+  type: vless
+  server: du-rov.secureservice.top
+  port: 8443
+  uuid: c53ea5e9-ed8b-4990-805d-7f1d6451426c
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: du-rov.secureservice.top
+  reality-opts:
+    public-key: fSVfR9NB-6J6smrZlavi0GWd8JfDh0aXuEkKbtuFzUI
+    short-id: "3cbc3d737fb9c4af"
+- name: 'ARISTA #115'
+  type: vless
+  server: host.taghvimtime.ir
+  port: 8443
+  uuid: 20d51411-b4c2-4485-a80b-8f322da808b8
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: host.taghvimtime.ir
+- name: 'ARISTA #116'
+  type: vless
+  server: de6hr1yxt3nd6jep1nlr2rogekovysn3h.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex6hr1yxt3nd6jep1nlr2rogekovysn3h.fanavarancenter24.ir
 - name: 'ARISTA #117'
+  type: vless
+  server: node-uk.connectsuite.org
+  port: 8443
+  uuid: c08f0056-7a6d-4931-813b-aaa3cdd00aed
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: node-uk.connectsuite.org
+- name: 'ARISTA #118'
+  type: vless
+  server: 185.155.55.3
+  port: 8443
+  uuid: a6be94fc-e742-4714-8a38-c8d7410ae066
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: ee-nf.reddotcorp.org
+  reality-opts:
+    public-key: ApMfbcEyBOve6DxXoBNVu3bCCzQ7XCEYB4ummsDtTBE
+    short-id: "661766b2bcef440a"
+- name: 'ARISTA #119'
+  type: vless
+  server: 45.130.125.162
+  port: 8443
+  uuid: f106648e-0644-40bc-974c-6edc966fe18d
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  client-fingerprint: chrome
+  servername: cji.new-persian-song.ir
+- name: 'ARISTA #120'
+  type: vless
+  server: 13.143.137.206
+  port: 8443
+  uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: ya.ru
+  reality-opts:
+    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
+    short-id: "d2061bb1"
+- name: 'ARISTA #121'
   type: vless
   server: 87.242.94.90
   port: 8443
@@ -1644,7 +1748,35 @@ proxies:
   reality-opts:
     public-key: pobC1laHCtpMK1EA520CyOpYeel0t90hEV_eRJExFAE
     short-id: "20272c52657d22da"
-- name: 'ARISTA #118'
+- name: 'ARISTA #122'
+  type: vless
+  server: 150.241.101.80
+  port: 8443
+  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: yandex.net
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: "6ba85179e30d4fc2"
+- name: 'ARISTA #123'
+  type: vless
+  server: nlhy2.richforever.ru
+  port: 8443
+  uuid: 7918e6f6-df8f-4a20-9c1d-59dbd1f22770
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: nlhy2.richforever.ru
+  reality-opts:
+    public-key: fKz8iMdY9dfMURdjdVcb9mYOJz2FlexJ3_v8mlM2RTE
+- name: 'ARISTA #124'
   type: vless
   server: www.speedtest.net
   port: 8443
@@ -1659,160 +1791,47 @@ proxies:
     path: /sg-melbi
     headers:
       Host: ch2.talanetwork.eu.org
-- name: 'ARISTA #119'
-  type: vless
-  server: 87.242.94.90
-  port: 8443
-  uuid: f23bc4f1-cc71-4003-ae6c-d6abe21d8191
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: passport.yandex.ru
-  reality-opts:
-    public-key: pobC1laHCtpMK1EA520CyOpYeel0t90hEV_eRJExFAE
-    short-id: "20272c52657d22da"
-- name: 'ARISTA #120'
-  type: vless
-  server: 103.90.75.41
-  port: 8443
-  uuid: d342d11e-d224-4463-b982-532309285094
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: ccc.010304.xyz
-  ws-opts:
-    path: /
-    headers:
-      Host: ccc.010304.xyz
-- name: 'ARISTA #121'
-  type: vless
-  server: 46.8.230.143
-  port: 8443
-  uuid: a0624d3f-79dd-455e-b06f-1f87957bdea0
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.sony.ie
-  reality-opts:
-    public-key: W346cXA49I0T8FDlWGyH7qTidk1IR1r-0BQrJm6cjD8
-- name: 'ARISTA #122'
-  type: vless
-  server: 94.183.170.135
-  port: 8443
-  uuid: 06c4e938-2954-478f-a870-ca1b163e30e9
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: estproxy4.lockdwn.com
-- name: 'ARISTA #123'
-  type: vless
-  server: host.taghvimtime.ir
-  port: 8443
-  uuid: 20d51411-b4c2-4485-a80b-8f322da808b8
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: chrome
-  servername: host.taghvimtime.ir
-- name: 'ARISTA #124'
-  type: vless
-  server: du-rov.secureservice.top
-  port: 8443
-  uuid: c53ea5e9-ed8b-4990-805d-7f1d6451426c
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: random
-  servername: du-rov.secureservice.top
-  reality-opts:
-    public-key: fSVfR9NB-6J6smrZlavi0GWd8JfDh0aXuEkKbtuFzUI
-    short-id: "3cbc3d737fb9c4af"
 - name: 'ARISTA #125'
   type: vless
-  server: logs.m2ip-video.cloud
+  server: 77.72.85.247
   port: 8443
-  uuid: 3ed41dfc-0d38-4379-a470-c815673dc504
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: apisynccloud.info
-  reality-opts:
-    public-key: cynncQk7kKzEQaExg-FN7pMqFaZPSXEi_Ggy7AXXmVg
-    short-id: "44103f58"
-- name: 'ARISTA #126'
-  type: vless
-  server: pubsub.m2ip-video.cloud
-  port: 8443
-  uuid: 3ed41dfc-0d38-4379-a470-c815673dc504
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: peplow-labs.info
-  reality-opts:
-    public-key: cynncQk7kKzEQaExg-FN7pMqFaZPSXEi_Ggy7AXXmVg
-    short-id: "44103f58"
-- name: 'ARISTA #127'
-  type: vless
-  server: 46.8.230.143
-  port: 8443
-  uuid: 732b94ca-7c0a-4b64-a53b-c14578b68e57
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.compliance.sony.eu
-  reality-opts:
-    public-key: W346cXA49I0T8FDlWGyH7qTidk1IR1r-0BQrJm6cjD8
-    short-id: "1005ae37d194664f"
-- name: 'ARISTA #128'
-  type: vless
-  server: www.speedtest.net
-  port: 8443
-  uuid: dd3b59f1-1fa8-44f2-b188-45d8929a08ae
+  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: se1.talanetwork.eu.org
+  servername: fdghyt.com
   ws-opts:
-    path: /sg-melbi
+    path: /vpn-wss/fluxor/59011/
     headers:
-      Host: se1.talanetwork.eu.org
-- name: 'ARISTA #129'
+      Host: fdghyt.com
+- name: 'ARISTA #126'
   type: vless
-  server: de6hr1yxt3nd6jep1nlr2rogekovysn3h.fanavarancenter24.ir
+  server: chatgpt.com
   port: 8443
-  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
-  network: tcp
+  uuid: 7c99dc89-bf49-45c9-acc5-e43f36657518
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   alpn:
   - http/1.1
-  client-fingerprint: chrome
-  servername: dex6hr1yxt3nd6jep1nlr2rogekovysn3h.fanavarancenter24.ir
-- name: 'ARISTA #130'
+  servername: www.large-files.info
+  ws-opts:
+    path: /var/www/html/video/preview/download/i8o0la
+- name: 'ARISTA #127'
+  type: vless
+  server: 172.67.190.248
+  port: 8443
+  uuid: 7c99dc89-bf49-45c9-acc5-e43f36657518
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: www.large-files.info
+  ws-opts:
+    path: '%2Fvar%2Fwww%2Fhtml%2Fvideo%2Fpreview%2Fdownload%2Fi8o0la'
+- name: 'ARISTA #128'
   type: vless
   server: 77.72.85.247
   port: 8443
@@ -1829,47 +1848,35 @@ proxies:
     path: /vpn-wss/fluxor/59011/?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
     headers:
       Host: fdghyt.com
+- name: 'ARISTA #129'
+  type: vless
+  server: game-survival.surverssss.pro
+  port: 8443
+  uuid: efa9d618-443e-4d9a-9c67-c4b3d9d73995
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: game-survival.surverssss.pro
+  grpc-opts:
+    grpc-service-name: grpc
+  reality-opts:
+    public-key: h-lXoMXS7rllNOzX6BL8NdhZMPFxEG6GEha-LmzpY2A
+- name: 'ARISTA #130'
+  type: vless
+  server: sw1.hidenet.xyz
+  port: 8443
+  uuid: efa9d618-443e-4d9a-9c67-c4b3d9d73995
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: sw1.hidenet.xyz
+  grpc-opts:
+    grpc-service-name: grpc
+  reality-opts:
+    public-key: KytvB8Lzvah7cEpkRxXCWhaVAdjIrGZgZ-i_RWW8i0E
 - name: 'ARISTA #131'
-  type: vless
-  server: xn-de-b.rzfp.ir
-  port: 8443
-  uuid: 47e39ff6-d772-4c24-b64b-3150af7f941e
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: edge
-  servername: ftp.heanet.ie
-  reality-opts:
-    public-key: 3QHmuOX6nxAJlJEBeTi8VtIdz-XWvE5DMTOzhqlgEEM
-    short-id: "377d"
-- name: 'ARISTA #132'
-  type: vless
-  server: 150.241.101.80
-  port: 8443
-  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: /?telegram--
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-- name: 'ARISTA #133'
-  type: vless
-  server: 77.72.85.247
-  port: 8443
-  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: fdghyt.com
-  ws-opts:
-    path: /vpn-wss/fluxor/59011/
-    headers:
-      Host: fdghyt.com
-- name: 'ARISTA #134'
   type: vless
   server: ee10.zazazuza.ru
   port: 8443
@@ -1886,17 +1893,134 @@ proxies:
     path: /vpn-wss/fluxor/59011/
     headers:
       Host: fdghyt.com
-- name: 'ARISTA #135'
+- name: 'ARISTA #132'
   type: vless
-  server: 94.183.170.135
+  server: 103.90.75.41
   port: 8443
-  uuid: 06c4e938-2954-478f-a870-ca1b163e30e9
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: unsafe
+  servername: snip.edgeoneai.cc.cd
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@vpn748359672.opengw.net:1458?ed=2560
+    headers:
+      Host: snip.edgeoneai.cc.cd
+- name: 'ARISTA #133'
+  type: vless
+  server: 172.66.149.243
+  port: 8443
+  uuid: ededaf7e-ad86-40bc-b837-b1403c56f311
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: baZYepC.AMINRAZAvI1384.WoRkERS.dEv
+  ws-opts:
+    path: /eyJqdW5rIjoid2tkV0g2R3kxYlNTIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMjYwMjpmYzU5OmIwOjY0OjpdIl19
+    headers:
+      Host: bazyepc.aminrazavi1384.workers.dev
+- name: 'ARISTA #134'
+  type: vless
+  server: 87.242.94.90
+  port: 8443
+  uuid: f23bc4f1-cc71-4003-ae6c-d6abe21d8191
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: estproxy4.lockdwn.com
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: passport.yandex.ru
+  reality-opts:
+    public-key: pobC1laHCtpMK1EA520CyOpYeel0t90hEV_eRJExFAE
+    short-id: "20272c52657d22da"
+- name: 'ARISTA #135'
+  type: vless
+  server: de1n7335e761sttkq0z0ohxj03vcjruyu.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex1n7335e761sttkq0z0ohxj03vcjruyu.fanavarancenter24.ir🇩🇪@FreakConfig
 - name: 'ARISTA #136'
+  type: vless
+  server: de8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir🇬🇧@FreakConfig
+- name: 'ARISTA #137'
+  type: vless
+  server: de3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir🇩🇪@FreakConfig
+- name: 'ARISTA #138'
+  type: vless
+  server: de5phvgxbfi001fdwvijtyjcwxdw7bzu7.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex5phvgxbfi001fdwvijtyjcwxdw7bzu7.fanavarancenter24.ir🇩🇪@FreakConfig
+- name: 'ARISTA #139'
+  type: vless
+  server: us1g9zmvwp2okc6m2zrzpeo8l26jhey7l.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: usx1g9zmvwp2okc6m2zrzpeo8l26jhey7l.fanavarancenter24.ir🇺🇸@FreakConfig
+- name: 'ARISTA #140'
+  type: vless
+  server: tr1vo2t3ezixs93mjjz8nn5g5zj1jz0me.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: trx1vo2t3ezixs93mjjz8nn5g5zj1jz0me.fanavarancenter24.ir🇹🇷@FreakConfig
+- name: 'ARISTA #141'
   type: vless
   server: 141.98.7.193
   port: 8443
@@ -1911,146 +2035,23 @@ proxies:
     path: /ws-cdn1-vless
     headers:
       Host: de.fastmirror-labs.xyz
-- name: 'ARISTA #137'
-  type: vless
-  server: 150.241.101.80
-  port: 8443
-  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: yandex.net
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #138'
-  type: vless
-  server: 208.68.180.72
-  port: 8443
-  uuid: 51a0af77-a60c-4d9b-81a4-f50e1b38d90b
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: cf3.schzyc.cc.cd
-  ws-opts:
-    path: /proxyip=ProxyIP.CMLiussss.net
-    headers:
-      Host: cf3.schzyc.cc.cd
-- name: 'ARISTA #139'
-  type: vless
-  server: 150.241.101.80
-  port: 8443
-  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: yandex.net
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #140'
-  type: vless
-  server: tr1vo2t3ezixs93mjjz8nn5g5zj1jz0me.fanavarancenter24.ir
-  port: 8443
-  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: trx1vo2t3ezixs93mjjz8nn5g5zj1jz0me.fanavarancenter24.ir
-- name: 'ARISTA #141'
-  type: vless
-  server: nls3.zelnora.ir
-  port: 8443
-  uuid: e9f0d84f-8cd7-446c-b0ac-a5791615f90e
-  network: xhttp
-  tls: false
-  udp: true
-  skip-cert-verify: true
 - name: 'ARISTA #142'
   type: vless
-  server: 31.76.115.238
+  server: 150.241.101.80
   port: 8443
-  uuid: 8ff3db5a-5f41-4f25-a8a4-7fbf00f1c319
+  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
   flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: ya.ru
+  servername: yandex.net
   reality-opts:
-    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
-    short-id: "d2061bb1"
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: "6ba85179e30d4fc2"
 - name: 'ARISTA #143'
   type: vless
-  server: 5.42.99.64
-  port: 8443
-  uuid: c53ea5e9-ed8b-4990-805d-7f1d6451426c
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: random
-  servername: du-rov.secureservice.top
-  reality-opts:
-    public-key: fSVfR9NB-6J6smrZlavi0GWd8JfDh0aXuEkKbtuFzUI
-    short-id: "3cbc3d737fb9c4af"
-- name: 'ARISTA #144'
-  type: vless
-  server: 172.67.129.12
-  port: 8443
-  uuid: 51af2356-6837-4bd3-99ea-9da97763d2fb
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  servername: join22.servernettt.cfd
-  grpc-opts:
-    grpc-service-name: '@ServerNett'
-- name: 'ARISTA #145'
-  type: vless
-  server: 185.244.48.183
-  port: 8443
-  uuid: 228ecfd3-9bf0-42fd-a50e-581f84022513
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: www.ozone.nl
-  reality-opts:
-    public-key: XgdHElYEGdc0A5NTZP4uTya2Y4WTKnfFV4ormD7rLx4
-    short-id: "debb"
-- name: 'ARISTA #146'
-  type: vless
-  server: www.large-files.info
-  port: 8443
-  uuid: 7c99dc89-bf49-45c9-acc5-e43f36657518
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: www.large-files.info
-  ws-opts:
-    path: /var/www/html/video/preview/download/i8o0la
-- name: 'ARISTA #147'
-  type: vless
-  server: 2.26.225.89
+  server: pl.flen-vpn.xyz
   port: 8443
   uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
   network: tcp
@@ -2058,126 +2059,7 @@ proxies:
   udp: true
   skip-cert-verify: true
   servername: pl.flen-vpn.xyz
-- name: 'ARISTA #148'
-  type: vless
-  server: 104.21.60.29
-  port: 8443
-  uuid: 7c99dc89-bf49-45c9-acc5-e43f36657518
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  servername: www.large-files.info
-  ws-opts:
-    path: /var/www/html/video/preview/download/i8o0la
-- name: 'ARISTA #149'
-  type: vless
-  server: 185.147.27.164
-  port: 8443
-  uuid: 3a90bf69-1ffe-4ebb-b9a7-ad9ba8e9f66f
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: user-6a8d949a.noooo.win
-- name: 'ARISTA #150'
-  type: vless
-  server: 185.147.27.183
-  port: 8443
-  uuid: 379998c5-2a71-4202-9c74-522e0c3c5404
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: user-6a917f32.noooo.win
-- name: 'ARISTA #151'
-  type: vless
-  server: 185.147.27.164
-  port: 8443
-  uuid: 3a90bf69-1ffe-4ebb-b9a7-ad9ba8e9f66f
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: speedtest.net
-- name: 'ARISTA #152'
-  type: vless
-  server: 192.145.29.143
-  port: 8443
-  uuid: ec6f8131-7a5d-4117-9627-6fb2b39ae0da
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: m654iEJUgHXsuJ8kMY5oERz0diC6yIGcpTCyOv6DygA
-    short-id: "ad75fb9b891310ce"
-- name: 'ARISTA #153'
-  type: vless
-  server: www.speedtest.net
-  port: 8443
-  uuid: dd3b59f1-1fa8-44f2-b188-45d8929a08ae
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: se1.talanetwork.eu.org
-  ws-opts:
-    path: /sg-melbi#TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=512
-    headers:
-      Host: se1.talanetwork.eu.org
-- name: 'ARISTA #154'
-  type: vless
-  server: 46.8.230.143
-  port: 8443
-  uuid: a0624d3f-79dd-455e-b06f-1f87957bdea0
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.sony.com.hn
-  reality-opts:
-    public-key: W346cXA49I0T8FDlWGyH7qTidk1IR1r-0BQrJm6cjD8
-    short-id: "85cd"
-- name: 'ARISTA #155'
-  type: vless
-  server: de3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir
-  port: 8443
-  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: dex3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir
-- name: 'ARISTA #156'
-  type: vless
-  server: de8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir
-  port: 8443
-  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: dex8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir
-- name: 'ARISTA #157'
+- name: 'ARISTA #144'
   type: vless
   server: 13.143.137.206
   port: 8443
@@ -2191,50 +2073,220 @@ proxies:
   reality-opts:
     public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
     short-id: "d2061bb1"
-- name: 'ARISTA #158'
+- name: 'ARISTA #145'
   type: vless
-  server: 87.242.94.90
+  server: ukhy2.richforever.ru
   port: 8443
-  uuid: f23bc4f1-cc71-4003-ae6c-d6abe21d8191
+  uuid: 7918e6f6-df8f-4a20-9c1d-59dbd1f22770
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
   flow: xtls-rprx-vision
-  servername: passport.yandex.ru
+  servername: ukhy2.richforever.ru
   reality-opts:
-    public-key: pobC1laHCtpMK1EA520CyOpYeel0t90hEV_eRJExFAE
-    short-id: "20272c52657d22da"
-- name: 'ARISTA #159'
+    public-key: 3ziuq7wssNcpYpcqcLHqax8nIb2uJok5qAwxuS3mKns
+- name: 'ARISTA #146'
   type: vless
-  server: www.speedtest.net
+  server: de1n7335e761sttkq0z0ohxj03vcjruyu.fanavarancenter24.ir
   port: 8443
-  uuid: dd3b59f1-1fa8-44f2-b188-45d8929a08ae
-  network: ws
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex1n7335e761sttkq0z0ohxj03vcjruyu.fanavarancenter24.ir
+- name: 'ARISTA #147'
+  type: vless
+  server: de8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir
+- name: 'ARISTA #148'
+  type: vless
+  server: de3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir
+- name: 'ARISTA #149'
+  type: vless
+  server: de5phvgxbfi001fdwvijtyjcwxdw7bzu7.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex5phvgxbfi001fdwvijtyjcwxdw7bzu7.fanavarancenter24.ir
+- name: 'ARISTA #150'
+  type: vless
+  server: us1g9zmvwp2okc6m2zrzpeo8l26jhey7l.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: usx1g9zmvwp2okc6m2zrzpeo8l26jhey7l.fanavarancenter24.ir
+- name: 'ARISTA #151'
+  type: vless
+  server: tr1vo2t3ezixs93mjjz8nn5g5zj1jz0me.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: trx1vo2t3ezixs93mjjz8nn5g5zj1jz0me.fanavarancenter24.ir
+- name: 'ARISTA #152'
+  type: vless
+  server: du-rov.secureservice.top
+  port: 8443
+  uuid: c53ea5e9-ed8b-4990-805d-7f1d6451426c
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: du-rov.secureservice.top
+  reality-opts:
+    public-key: fSVfR9NB-6J6smrZlavi0GWd8JfDh0aXuEkKbtuFzUI
+    short-id: "3cbc3d737fb9c4af"
+- name: 'ARISTA #153'
+  type: vless
+  server: host.taghvimtime.ir
+  port: 8443
+  uuid: 20d51411-b4c2-4485-a80b-8f322da808b8
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: host.taghvimtime.ir
+- name: 'ARISTA #154'
+  type: vless
+  server: de6hr1yxt3nd6jep1nlr2rogekovysn3h.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex6hr1yxt3nd6jep1nlr2rogekovysn3h.fanavarancenter24.ir
+- name: 'ARISTA #155'
+  type: vless
+  server: node-uk.connectsuite.org
+  port: 8443
+  uuid: c08f0056-7a6d-4931-813b-aaa3cdd00aed
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: ch2.talanetwork.eu.org
-  ws-opts:
-    path: /sg-melbi
-    headers:
-      Host: ch2.talanetwork.eu.org
-- name: 'ARISTA #160'
+  servername: node-uk.connectsuite.org
+- name: 'ARISTA #156'
   type: vless
-  server: 87.242.94.90
+  server: 185.155.55.3
   port: 8443
-  uuid: f23bc4f1-cc71-4003-ae6c-d6abe21d8191
+  uuid: a6be94fc-e742-4714-8a38-c8d7410ae066
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
   flow: xtls-rprx-vision
   client-fingerprint: firefox
-  servername: passport.yandex.ru
+  servername: ee-nf.reddotcorp.org
   reality-opts:
-    public-key: pobC1laHCtpMK1EA520CyOpYeel0t90hEV_eRJExFAE
-    short-id: "20272c52657d22da"
+    public-key: ApMfbcEyBOve6DxXoBNVu3bCCzQ7XCEYB4ummsDtTBE
+    short-id: "661766b2bcef440a"
+- name: 'ARISTA #157'
+  type: vless
+  server: logs.m2ip-video.cloud
+  port: 8443
+  uuid: 3ed41dfc-0d38-4379-a470-c815673dc504
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: apisynccloud.info
+  reality-opts:
+    public-key: cynncQk7kKzEQaExg-FN7pMqFaZPSXEi_Ggy7AXXmVg
+    short-id: "44103f58"
+- name: 'ARISTA #158'
+  type: vless
+  server: pubsub.m2ip-video.cloud
+  port: 8443
+  uuid: 3ed41dfc-0d38-4379-a470-c815673dc504
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: peplow-labs.info
+  reality-opts:
+    public-key: cynncQk7kKzEQaExg-FN7pMqFaZPSXEi_Ggy7AXXmVg
+    short-id: "44103f58"
+- name: 'ARISTA #159'
+  type: vless
+  server: 94.183.170.135
+  port: 8443
+  uuid: 06c4e938-2954-478f-a870-ca1b163e30e9
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: estproxy4.lockdwn.com
+- name: 'ARISTA #160'
+  type: vless
+  server: swcdnmega.surverssss.pro
+  port: 8443
+  uuid: efa9d618-443e-4d9a-9c67-c4b3d9d73995
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: swcdnmega.surverssss.pro
+  grpc-opts:
+    grpc-service-name: grpc
+  reality-opts:
+    public-key: vGUZigu8NwSiqOSTu1PSfPnlXsdhpm58ZjuWvIJM81U
 - name: 'ARISTA #161'
   type: vless
   server: 103.90.75.41
@@ -2251,137 +2303,80 @@ proxies:
       Host: ccc.010304.xyz
 - name: 'ARISTA #162'
   type: vless
-  server: 46.8.230.143
+  server: de4ju5rq9cybjoptygvdzsn66nsdgybbt.fanavarancenter24.ir
   port: 8443
-  uuid: a0624d3f-79dd-455e-b06f-1f87957bdea0
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
+  alpn:
+  - http/1.1
   client-fingerprint: chrome
-  servername: www.sony.ie
-  reality-opts:
-    public-key: W346cXA49I0T8FDlWGyH7qTidk1IR1r-0BQrJm6cjD8
+  servername: dex4ju5rq9cybjoptygvdzsn66nsdgybbt.fanavarancenter24.ir
 - name: 'ARISTA #163'
   type: vless
-  server: 104.21.60.29
+  server: ops4.localip.ir
+  port: 8443
+  uuid: ecbe8dbc-44f7-4275-8a6c-b0976a7bb5c8
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  servername: ops4.localip.ir
+- name: 'ARISTA #164'
+  type: vless
+  server: nls3.zelnora.ir
+  port: 8443
+  uuid: e9f0d84f-8cd7-446c-b0ac-a5791615f90e
+  network: xhttp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #165'
+  type: vless
+  server: 185.244.48.183
+  port: 8443
+  uuid: 228ecfd3-9bf0-42fd-a50e-581f84022513
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.ozone.nl
+  reality-opts:
+    public-key: XgdHElYEGdc0A5NTZP4uTya2Y4WTKnfFV4ormD7rLx4
+    short-id: "debb"
+- name: 'ARISTA #166'
+  type: vless
+  server: www.large-files.info
   port: 8443
   uuid: 7c99dc89-bf49-45c9-acc5-e43f36657518
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - http/1.1
   servername: www.large-files.info
   ws-opts:
     path: /var/www/html/video/preview/download/i8o0la
-- name: 'ARISTA #164'
-  type: vless
-  server: 185.147.27.164
-  port: 8443
-  uuid: 3a90bf69-1ffe-4ebb-b9a7-ad9ba8e9f66f
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: user-6a8d949a.noooo.win
-- name: 'ARISTA #165'
-  type: vless
-  server: 185.147.27.183
-  port: 8443
-  uuid: 379998c5-2a71-4202-9c74-522e0c3c5404
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: user-6a917f32.noooo.win
-- name: 'ARISTA #166'
-  type: vless
-  server: 185.147.27.164
-  port: 8443
-  uuid: 3a90bf69-1ffe-4ebb-b9a7-ad9ba8e9f66f
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: speedtest.net
 - name: 'ARISTA #167'
   type: vless
-  server: 192.145.29.143
+  server: 45.130.125.162
   port: 8443
-  uuid: ec6f8131-7a5d-4117-9627-6fb2b39ae0da
-  network: tcp
+  uuid: f106648e-0644-40bc-974c-6edc966fe18d
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
+  alpn:
+  - h3
+  - h2
   client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: m654iEJUgHXsuJ8kMY5oERz0diC6yIGcpTCyOv6DygA
-    short-id: "ad75fb9b891310ce"
+  servername: cji.new-persian-song.ir
 - name: 'ARISTA #168'
-  type: vless
-  server: www.speedtest.net
-  port: 8443
-  uuid: dd3b59f1-1fa8-44f2-b188-45d8929a08ae
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: se1.talanetwork.eu.org
-  ws-opts:
-    path: /sg-melbi#TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=512
-    headers:
-      Host: se1.talanetwork.eu.org
-- name: 'ARISTA #169'
-  type: vless
-  server: 46.8.230.143
-  port: 8443
-  uuid: a0624d3f-79dd-455e-b06f-1f87957bdea0
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.sony.com.hn
-  reality-opts:
-    public-key: W346cXA49I0T8FDlWGyH7qTidk1IR1r-0BQrJm6cjD8
-    short-id: "85cd"
-- name: 'ARISTA #170'
-  type: vless
-  server: de3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir
-  port: 8443
-  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: dex3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir
-- name: 'ARISTA #171'
-  type: vless
-  server: de8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir
-  port: 8443
-  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: dex8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir
-- name: 'ARISTA #172'
   type: vless
   server: 13.143.137.206
   port: 8443
@@ -2395,7 +2390,7 @@ proxies:
   reality-opts:
     public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
     short-id: "d2061bb1"
-- name: 'ARISTA #173'
+- name: 'ARISTA #169'
   type: vless
   server: 87.242.94.90
   port: 8443
@@ -2409,7 +2404,35 @@ proxies:
   reality-opts:
     public-key: pobC1laHCtpMK1EA520CyOpYeel0t90hEV_eRJExFAE
     short-id: "20272c52657d22da"
-- name: 'ARISTA #174'
+- name: 'ARISTA #170'
+  type: vless
+  server: 150.241.101.80
+  port: 8443
+  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: yandex.net
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: "6ba85179e30d4fc2"
+- name: 'ARISTA #171'
+  type: vless
+  server: nlhy2.richforever.ru
+  port: 8443
+  uuid: 7918e6f6-df8f-4a20-9c1d-59dbd1f22770
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: nlhy2.richforever.ru
+  reality-opts:
+    public-key: fKz8iMdY9dfMURdjdVcb9mYOJz2FlexJ3_v8mlM2RTE
+- name: 'ARISTA #172'
   type: vless
   server: www.speedtest.net
   port: 8443
@@ -2424,160 +2447,47 @@ proxies:
     path: /sg-melbi
     headers:
       Host: ch2.talanetwork.eu.org
-- name: 'ARISTA #175'
+- name: 'ARISTA #173'
   type: vless
-  server: 87.242.94.90
+  server: 77.72.85.247
   port: 8443
-  uuid: f23bc4f1-cc71-4003-ae6c-d6abe21d8191
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: passport.yandex.ru
-  reality-opts:
-    public-key: pobC1laHCtpMK1EA520CyOpYeel0t90hEV_eRJExFAE
-    short-id: "20272c52657d22da"
-- name: 'ARISTA #176'
-  type: vless
-  server: 103.90.75.41
-  port: 8443
-  uuid: d342d11e-d224-4463-b982-532309285094
+  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: ccc.010304.xyz
+  servername: fdghyt.com
   ws-opts:
-    path: /
+    path: /vpn-wss/fluxor/59011/
     headers:
-      Host: ccc.010304.xyz
-- name: 'ARISTA #177'
+      Host: fdghyt.com
+- name: 'ARISTA #174'
   type: vless
-  server: 46.8.230.143
+  server: chatgpt.com
   port: 8443
-  uuid: a0624d3f-79dd-455e-b06f-1f87957bdea0
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.sony.ie
-  reality-opts:
-    public-key: W346cXA49I0T8FDlWGyH7qTidk1IR1r-0BQrJm6cjD8
-- name: 'ARISTA #178'
-  type: vless
-  server: 94.183.170.135
-  port: 8443
-  uuid: 06c4e938-2954-478f-a870-ca1b163e30e9
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: estproxy4.lockdwn.com
-- name: 'ARISTA #179'
-  type: vless
-  server: host.taghvimtime.ir
-  port: 8443
-  uuid: 20d51411-b4c2-4485-a80b-8f322da808b8
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: chrome
-  servername: host.taghvimtime.ir
-- name: 'ARISTA #180'
-  type: vless
-  server: du-rov.secureservice.top
-  port: 8443
-  uuid: c53ea5e9-ed8b-4990-805d-7f1d6451426c
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: random
-  servername: du-rov.secureservice.top
-  reality-opts:
-    public-key: fSVfR9NB-6J6smrZlavi0GWd8JfDh0aXuEkKbtuFzUI
-    short-id: "3cbc3d737fb9c4af"
-- name: 'ARISTA #181'
-  type: vless
-  server: logs.m2ip-video.cloud
-  port: 8443
-  uuid: 3ed41dfc-0d38-4379-a470-c815673dc504
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: apisynccloud.info
-  reality-opts:
-    public-key: cynncQk7kKzEQaExg-FN7pMqFaZPSXEi_Ggy7AXXmVg
-    short-id: "44103f58"
-- name: 'ARISTA #182'
-  type: vless
-  server: pubsub.m2ip-video.cloud
-  port: 8443
-  uuid: 3ed41dfc-0d38-4379-a470-c815673dc504
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: peplow-labs.info
-  reality-opts:
-    public-key: cynncQk7kKzEQaExg-FN7pMqFaZPSXEi_Ggy7AXXmVg
-    short-id: "44103f58"
-- name: 'ARISTA #183'
-  type: vless
-  server: 46.8.230.143
-  port: 8443
-  uuid: 732b94ca-7c0a-4b64-a53b-c14578b68e57
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.compliance.sony.eu
-  reality-opts:
-    public-key: W346cXA49I0T8FDlWGyH7qTidk1IR1r-0BQrJm6cjD8
-    short-id: "1005ae37d194664f"
-- name: 'ARISTA #184'
-  type: vless
-  server: www.speedtest.net
-  port: 8443
-  uuid: dd3b59f1-1fa8-44f2-b188-45d8929a08ae
+  uuid: 7c99dc89-bf49-45c9-acc5-e43f36657518
   network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: se1.talanetwork.eu.org
-  ws-opts:
-    path: /sg-melbi
-    headers:
-      Host: se1.talanetwork.eu.org
-- name: 'ARISTA #185'
-  type: vless
-  server: de6hr1yxt3nd6jep1nlr2rogekovysn3h.fanavarancenter24.ir
-  port: 8443
-  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
-  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
   alpn:
   - http/1.1
-  client-fingerprint: chrome
-  servername: dex6hr1yxt3nd6jep1nlr2rogekovysn3h.fanavarancenter24.ir
-- name: 'ARISTA #186'
+  servername: www.large-files.info
+  ws-opts:
+    path: /var/www/html/video/preview/download/i8o0la
+- name: 'ARISTA #175'
+  type: vless
+  server: 172.67.190.248
+  port: 8443
+  uuid: 7c99dc89-bf49-45c9-acc5-e43f36657518
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: www.large-files.info
+  ws-opts:
+    path: '%2Fvar%2Fwww%2Fhtml%2Fvideo%2Fpreview%2Fdownload%2Fi8o0la'
+- name: 'ARISTA #176'
   type: vless
   server: 77.72.85.247
   port: 8443
@@ -2594,47 +2504,35 @@ proxies:
     path: /vpn-wss/fluxor/59011/?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
     headers:
       Host: fdghyt.com
-- name: 'ARISTA #187'
+- name: 'ARISTA #177'
   type: vless
-  server: xn-de-b.rzfp.ir
+  server: game-survival.surverssss.pro
   port: 8443
-  uuid: 47e39ff6-d772-4c24-b64b-3150af7f941e
-  network: tcp
+  uuid: efa9d618-443e-4d9a-9c67-c4b3d9d73995
+  network: grpc
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: edge
-  servername: ftp.heanet.ie
+  servername: game-survival.surverssss.pro
+  grpc-opts:
+    grpc-service-name: grpc
   reality-opts:
-    public-key: 3QHmuOX6nxAJlJEBeTi8VtIdz-XWvE5DMTOzhqlgEEM
-    short-id: "377d"
-- name: 'ARISTA #188'
+    public-key: h-lXoMXS7rllNOzX6BL8NdhZMPFxEG6GEha-LmzpY2A
+- name: 'ARISTA #178'
   type: vless
-  server: 150.241.101.80
+  server: sw1.hidenet.xyz
   port: 8443
-  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
-  network: tcp
+  uuid: efa9d618-443e-4d9a-9c67-c4b3d9d73995
+  network: grpc
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: /?telegram--
+  servername: sw1.hidenet.xyz
+  grpc-opts:
+    grpc-service-name: grpc
   reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-- name: 'ARISTA #189'
-  type: vless
-  server: 77.72.85.247
-  port: 8443
-  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: fdghyt.com
-  ws-opts:
-    path: /vpn-wss/fluxor/59011/
-    headers:
-      Host: fdghyt.com
-- name: 'ARISTA #190'
+    public-key: KytvB8Lzvah7cEpkRxXCWhaVAdjIrGZgZ-i_RWW8i0E
+- name: 'ARISTA #179'
   type: vless
   server: ee10.zazazuza.ru
   port: 8443
@@ -2651,17 +2549,134 @@ proxies:
     path: /vpn-wss/fluxor/59011/
     headers:
       Host: fdghyt.com
-- name: 'ARISTA #191'
+- name: 'ARISTA #180'
   type: vless
-  server: 94.183.170.135
+  server: 103.90.75.41
   port: 8443
-  uuid: 06c4e938-2954-478f-a870-ca1b163e30e9
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: unsafe
+  servername: snip.edgeoneai.cc.cd
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@vpn748359672.opengw.net:1458?ed=2560
+    headers:
+      Host: snip.edgeoneai.cc.cd
+- name: 'ARISTA #181'
+  type: vless
+  server: 172.66.149.243
+  port: 8443
+  uuid: ededaf7e-ad86-40bc-b837-b1403c56f311
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: baZYepC.AMINRAZAvI1384.WoRkERS.dEv
+  ws-opts:
+    path: /eyJqdW5rIjoid2tkV0g2R3kxYlNTIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMjYwMjpmYzU5OmIwOjY0OjpdIl19
+    headers:
+      Host: bazyepc.aminrazavi1384.workers.dev
+- name: 'ARISTA #182'
+  type: vless
+  server: 87.242.94.90
+  port: 8443
+  uuid: f23bc4f1-cc71-4003-ae6c-d6abe21d8191
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: estproxy4.lockdwn.com
-- name: 'ARISTA #192'
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: passport.yandex.ru
+  reality-opts:
+    public-key: pobC1laHCtpMK1EA520CyOpYeel0t90hEV_eRJExFAE
+    short-id: "20272c52657d22da"
+- name: 'ARISTA #183'
+  type: vless
+  server: de1n7335e761sttkq0z0ohxj03vcjruyu.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex1n7335e761sttkq0z0ohxj03vcjruyu.fanavarancenter24.ir🇩🇪@FreakConfig
+- name: 'ARISTA #184'
+  type: vless
+  server: de8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir🇬🇧@FreakConfig
+- name: 'ARISTA #185'
+  type: vless
+  server: de3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir🇩🇪@FreakConfig
+- name: 'ARISTA #186'
+  type: vless
+  server: de5phvgxbfi001fdwvijtyjcwxdw7bzu7.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex5phvgxbfi001fdwvijtyjcwxdw7bzu7.fanavarancenter24.ir🇩🇪@FreakConfig
+- name: 'ARISTA #187'
+  type: vless
+  server: us1g9zmvwp2okc6m2zrzpeo8l26jhey7l.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: usx1g9zmvwp2okc6m2zrzpeo8l26jhey7l.fanavarancenter24.ir🇺🇸@FreakConfig
+- name: 'ARISTA #188'
+  type: vless
+  server: tr1vo2t3ezixs93mjjz8nn5g5zj1jz0me.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: trx1vo2t3ezixs93mjjz8nn5g5zj1jz0me.fanavarancenter24.ir🇹🇷@FreakConfig
+- name: 'ARISTA #189'
   type: vless
   server: 141.98.7.193
   port: 8443
@@ -2676,7 +2691,7 @@ proxies:
     path: /ws-cdn1-vless
     headers:
       Host: de.fastmirror-labs.xyz
-- name: 'ARISTA #193'
+- name: 'ARISTA #190'
   type: vless
   server: 150.241.101.80
   port: 8443
@@ -2690,22 +2705,336 @@ proxies:
   reality-opts:
     public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
     short-id: "6ba85179e30d4fc2"
+- name: 'ARISTA #191'
+  type: vless
+  server: 45.130.125.162
+  port: 8443
+  uuid: f106648e-0644-40bc-974c-6edc966fe18d
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  client-fingerprint: chrome
+  servername: cji.new-persian-song.ir
+- name: 'ARISTA #192'
+  type: vless
+  server: 13.143.137.206
+  port: 8443
+  uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: ya.ru
+  reality-opts:
+    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
+    short-id: "d2061bb1"
+- name: 'ARISTA #193'
+  type: vless
+  server: 87.242.94.90
+  port: 8443
+  uuid: f23bc4f1-cc71-4003-ae6c-d6abe21d8191
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: passport.yandex.ru
+  reality-opts:
+    public-key: pobC1laHCtpMK1EA520CyOpYeel0t90hEV_eRJExFAE
+    short-id: "20272c52657d22da"
 - name: 'ARISTA #194'
   type: vless
-  server: 208.68.180.72
+  server: 150.241.101.80
   port: 8443
-  uuid: 51a0af77-a60c-4d9b-81a4-f50e1b38d90b
+  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: yandex.net
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: "6ba85179e30d4fc2"
+- name: 'ARISTA #195'
+  type: vless
+  server: nlhy2.richforever.ru
+  port: 8443
+  uuid: 7918e6f6-df8f-4a20-9c1d-59dbd1f22770
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: nlhy2.richforever.ru
+  reality-opts:
+    public-key: fKz8iMdY9dfMURdjdVcb9mYOJz2FlexJ3_v8mlM2RTE
+- name: 'ARISTA #196'
+  type: vless
+  server: www.speedtest.net
+  port: 8443
+  uuid: dd3b59f1-1fa8-44f2-b188-45d8929a08ae
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: cf3.schzyc.cc.cd
+  servername: ch2.talanetwork.eu.org
   ws-opts:
-    path: /proxyip=ProxyIP.CMLiussss.net
+    path: /sg-melbi
     headers:
-      Host: cf3.schzyc.cc.cd
-- name: 'ARISTA #195'
+      Host: ch2.talanetwork.eu.org
+- name: 'ARISTA #197'
+  type: vless
+  server: 77.72.85.247
+  port: 8443
+  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: fdghyt.com
+  ws-opts:
+    path: /vpn-wss/fluxor/59011/
+    headers:
+      Host: fdghyt.com
+- name: 'ARISTA #198'
+  type: vless
+  server: chatgpt.com
+  port: 8443
+  uuid: 7c99dc89-bf49-45c9-acc5-e43f36657518
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  servername: www.large-files.info
+  ws-opts:
+    path: /var/www/html/video/preview/download/i8o0la
+- name: 'ARISTA #199'
+  type: vless
+  server: 172.67.190.248
+  port: 8443
+  uuid: 7c99dc89-bf49-45c9-acc5-e43f36657518
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: www.large-files.info
+  ws-opts:
+    path: '%2Fvar%2Fwww%2Fhtml%2Fvideo%2Fpreview%2Fdownload%2Fi8o0la'
+- name: 'ARISTA #200'
+  type: vless
+  server: 77.72.85.247
+  port: 8443
+  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: fdghyt.com
+  ws-opts:
+    path: /vpn-wss/fluxor/59011/?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
+    headers:
+      Host: fdghyt.com
+- name: 'ARISTA #201'
+  type: vless
+  server: game-survival.surverssss.pro
+  port: 8443
+  uuid: efa9d618-443e-4d9a-9c67-c4b3d9d73995
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: game-survival.surverssss.pro
+  grpc-opts:
+    grpc-service-name: grpc
+  reality-opts:
+    public-key: h-lXoMXS7rllNOzX6BL8NdhZMPFxEG6GEha-LmzpY2A
+- name: 'ARISTA #202'
+  type: vless
+  server: sw1.hidenet.xyz
+  port: 8443
+  uuid: efa9d618-443e-4d9a-9c67-c4b3d9d73995
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: sw1.hidenet.xyz
+  grpc-opts:
+    grpc-service-name: grpc
+  reality-opts:
+    public-key: KytvB8Lzvah7cEpkRxXCWhaVAdjIrGZgZ-i_RWW8i0E
+- name: 'ARISTA #203'
+  type: vless
+  server: ee10.zazazuza.ru
+  port: 8443
+  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: fdghyt.com
+  ws-opts:
+    path: /vpn-wss/fluxor/59011/
+    headers:
+      Host: fdghyt.com
+- name: 'ARISTA #204'
+  type: vless
+  server: 103.90.75.41
+  port: 8443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: unsafe
+  servername: snip.edgeoneai.cc.cd
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@vpn748359672.opengw.net:1458?ed=2560
+    headers:
+      Host: snip.edgeoneai.cc.cd
+- name: 'ARISTA #205'
+  type: vless
+  server: 172.66.149.243
+  port: 8443
+  uuid: ededaf7e-ad86-40bc-b837-b1403c56f311
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: baZYepC.AMINRAZAvI1384.WoRkERS.dEv
+  ws-opts:
+    path: /eyJqdW5rIjoid2tkV0g2R3kxYlNTIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMjYwMjpmYzU5OmIwOjY0OjpdIl19
+    headers:
+      Host: bazyepc.aminrazavi1384.workers.dev
+- name: 'ARISTA #206'
+  type: vless
+  server: 87.242.94.90
+  port: 8443
+  uuid: f23bc4f1-cc71-4003-ae6c-d6abe21d8191
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: passport.yandex.ru
+  reality-opts:
+    public-key: pobC1laHCtpMK1EA520CyOpYeel0t90hEV_eRJExFAE
+    short-id: "20272c52657d22da"
+- name: 'ARISTA #207'
+  type: vless
+  server: de1n7335e761sttkq0z0ohxj03vcjruyu.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex1n7335e761sttkq0z0ohxj03vcjruyu.fanavarancenter24.ir🇩🇪@FreakConfig
+- name: 'ARISTA #208'
+  type: vless
+  server: de8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir🇬🇧@FreakConfig
+- name: 'ARISTA #209'
+  type: vless
+  server: de3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir🇩🇪@FreakConfig
+- name: 'ARISTA #210'
+  type: vless
+  server: de5phvgxbfi001fdwvijtyjcwxdw7bzu7.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex5phvgxbfi001fdwvijtyjcwxdw7bzu7.fanavarancenter24.ir🇩🇪@FreakConfig
+- name: 'ARISTA #211'
+  type: vless
+  server: us1g9zmvwp2okc6m2zrzpeo8l26jhey7l.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: usx1g9zmvwp2okc6m2zrzpeo8l26jhey7l.fanavarancenter24.ir🇺🇸@FreakConfig
+- name: 'ARISTA #212'
+  type: vless
+  server: tr1vo2t3ezixs93mjjz8nn5g5zj1jz0me.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: trx1vo2t3ezixs93mjjz8nn5g5zj1jz0me.fanavarancenter24.ir🇹🇷@FreakConfig
+- name: 'ARISTA #213'
+  type: vless
+  server: 141.98.7.193
+  port: 8443
+  uuid: e9e60f73-1618-491c-a85b-477bdc959ae6
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: 141.98.7.193
+  ws-opts:
+    path: /ws-cdn1-vless
+    headers:
+      Host: de.fastmirror-labs.xyz
+- name: 'ARISTA #214'
   type: vless
   server: 150.241.101.80
   port: 8443
@@ -2719,7 +3048,109 @@ proxies:
   reality-opts:
     public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
     short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #196'
+- name: 'ARISTA #215'
+  type: vless
+  server: pl.flen-vpn.xyz
+  port: 8443
+  uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: pl.flen-vpn.xyz
+- name: 'ARISTA #216'
+  type: vless
+  server: 13.143.137.206
+  port: 8443
+  uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: ya.ru
+  reality-opts:
+    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
+    short-id: "d2061bb1"
+- name: 'ARISTA #217'
+  type: vless
+  server: ukhy2.richforever.ru
+  port: 8443
+  uuid: 7918e6f6-df8f-4a20-9c1d-59dbd1f22770
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: ukhy2.richforever.ru
+  reality-opts:
+    public-key: 3ziuq7wssNcpYpcqcLHqax8nIb2uJok5qAwxuS3mKns
+- name: 'ARISTA #218'
+  type: vless
+  server: de1n7335e761sttkq0z0ohxj03vcjruyu.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex1n7335e761sttkq0z0ohxj03vcjruyu.fanavarancenter24.ir
+- name: 'ARISTA #219'
+  type: vless
+  server: de8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex8r9pbeab77y8p29ughz8excptbo2s3e.fanavarancenter24.ir
+- name: 'ARISTA #220'
+  type: vless
+  server: de3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex3ovt93a8m6eaabukuzdpbqkibb3cmvw.fanavarancenter24.ir
+- name: 'ARISTA #221'
+  type: vless
+  server: de5phvgxbfi001fdwvijtyjcwxdw7bzu7.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex5phvgxbfi001fdwvijtyjcwxdw7bzu7.fanavarancenter24.ir
+- name: 'ARISTA #222'
+  type: vless
+  server: us1g9zmvwp2okc6m2zrzpeo8l26jhey7l.fanavarancenter24.ir
+  port: 8443
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: usx1g9zmvwp2okc6m2zrzpeo8l26jhey7l.fanavarancenter24.ir
+- name: 'ARISTA #223'
   type: vless
   server: tr1vo2t3ezixs93mjjz8nn5g5zj1jz0me.fanavarancenter24.ir
   port: 8443
@@ -2732,33 +3163,9 @@ proxies:
   - http/1.1
   client-fingerprint: chrome
   servername: trx1vo2t3ezixs93mjjz8nn5g5zj1jz0me.fanavarancenter24.ir
-- name: 'ARISTA #197'
+- name: 'ARISTA #224'
   type: vless
-  server: nls3.zelnora.ir
-  port: 8443
-  uuid: e9f0d84f-8cd7-446c-b0ac-a5791615f90e
-  network: xhttp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #198'
-  type: vless
-  server: 31.76.115.238
-  port: 8443
-  uuid: 8ff3db5a-5f41-4f25-a8a4-7fbf00f1c319
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: ya.ru
-  reality-opts:
-    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
-    short-id: "d2061bb1"
-- name: 'ARISTA #199'
-  type: vless
-  server: 5.42.99.64
+  server: du-rov.secureservice.top
   port: 8443
   uuid: c53ea5e9-ed8b-4990-805d-7f1d6451426c
   network: tcp
@@ -2766,75 +3173,147 @@ proxies:
   udp: true
   skip-cert-verify: true
   flow: xtls-rprx-vision
-  client-fingerprint: random
+  client-fingerprint: chrome
   servername: du-rov.secureservice.top
   reality-opts:
     public-key: fSVfR9NB-6J6smrZlavi0GWd8JfDh0aXuEkKbtuFzUI
     short-id: "3cbc3d737fb9c4af"
-- name: 'ARISTA #200'
+- name: 'ARISTA #225'
   type: vless
-  server: 172.67.129.12
+  server: host.taghvimtime.ir
   port: 8443
-  uuid: 51af2356-6837-4bd3-99ea-9da97763d2fb
-  network: grpc
+  uuid: 20d51411-b4c2-4485-a80b-8f322da808b8
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
   alpn:
   - h2
-  - http/1.1
-  servername: join22.servernettt.cfd
-  grpc-opts:
-    grpc-service-name: '@ServerNett'
-- name: 'ARISTA #201'
+  client-fingerprint: chrome
+  servername: host.taghvimtime.ir
+- name: 'ARISTA #226'
   type: vless
-  server: 185.244.48.183
+  server: de6hr1yxt3nd6jep1nlr2rogekovysn3h.fanavarancenter24.ir
   port: 8443
-  uuid: 228ecfd3-9bf0-42fd-a50e-581f84022513
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex6hr1yxt3nd6jep1nlr2rogekovysn3h.fanavarancenter24.ir
+- name: 'ARISTA #227'
+  type: vless
+  server: node-uk.connectsuite.org
+  port: 8443
+  uuid: c08f0056-7a6d-4931-813b-aaa3cdd00aed
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: node-uk.connectsuite.org
+- name: 'ARISTA #228'
+  type: vless
+  server: 185.155.55.3
+  port: 8443
+  uuid: a6be94fc-e742-4714-8a38-c8d7410ae066
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
   flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: www.ozone.nl
+  client-fingerprint: firefox
+  servername: ee-nf.reddotcorp.org
   reality-opts:
-    public-key: XgdHElYEGdc0A5NTZP4uTya2Y4WTKnfFV4ormD7rLx4
-    short-id: "debb"
-- name: 'ARISTA #202'
+    public-key: ApMfbcEyBOve6DxXoBNVu3bCCzQ7XCEYB4ummsDtTBE
+    short-id: "661766b2bcef440a"
+- name: 'ARISTA #229'
   type: vless
-  server: www.large-files.info
+  server: logs.m2ip-video.cloud
   port: 8443
-  uuid: 7c99dc89-bf49-45c9-acc5-e43f36657518
+  uuid: 3ed41dfc-0d38-4379-a470-c815673dc504
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: apisynccloud.info
+  reality-opts:
+    public-key: cynncQk7kKzEQaExg-FN7pMqFaZPSXEi_Ggy7AXXmVg
+    short-id: "44103f58"
+- name: 'ARISTA #230'
+  type: vless
+  server: pubsub.m2ip-video.cloud
+  port: 8443
+  uuid: 3ed41dfc-0d38-4379-a470-c815673dc504
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: peplow-labs.info
+  reality-opts:
+    public-key: cynncQk7kKzEQaExg-FN7pMqFaZPSXEi_Ggy7AXXmVg
+    short-id: "44103f58"
+- name: 'ARISTA #231'
+  type: vless
+  server: 94.183.170.135
+  port: 8443
+  uuid: 06c4e938-2954-478f-a870-ca1b163e30e9
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: estproxy4.lockdwn.com
+- name: 'ARISTA #232'
+  type: vless
+  server: swcdnmega.surverssss.pro
+  port: 8443
+  uuid: efa9d618-443e-4d9a-9c67-c4b3d9d73995
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: swcdnmega.surverssss.pro
+  grpc-opts:
+    grpc-service-name: grpc
+  reality-opts:
+    public-key: vGUZigu8NwSiqOSTu1PSfPnlXsdhpm58ZjuWvIJM81U
+- name: 'ARISTA #233'
+  type: vless
+  server: 103.90.75.41
+  port: 8443
+  uuid: d342d11e-d224-4463-b982-532309285094
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: www.large-files.info
+  servername: ccc.010304.xyz
   ws-opts:
-    path: /var/www/html/video/preview/download/i8o0la
-- name: 'ARISTA #203'
+    path: /
+    headers:
+      Host: ccc.010304.xyz
+- name: 'ARISTA #234'
   type: vless
-  server: 2.26.225.89
+  server: de4ju5rq9cybjoptygvdzsn66nsdgybbt.fanavarancenter24.ir
   port: 8443
-  uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
+  uuid: d7da7571-6be4-4d8d-9272-35a53b3b9de2
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: pl.flen-vpn.xyz
-- name: 'ARISTA #204'
-  type: trojan
-  server: 83.229.121.78
-  port: 8443
-  password: eeb6823c-b926-4ea2-866a-5542edd26e59
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: 83.229.121.78
-- name: 'ARISTA #205'
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dex4ju5rq9cybjoptygvdzsn66nsdgybbt.fanavarancenter24.ir
+- name: 'ARISTA #235'
   type: trojan
   server: www.wto.org
   port: 8443
@@ -3059,6 +3538,36 @@ proxy-groups:
   - 'ARISTA #203'
   - 'ARISTA #204'
   - 'ARISTA #205'
+  - 'ARISTA #206'
+  - 'ARISTA #207'
+  - 'ARISTA #208'
+  - 'ARISTA #209'
+  - 'ARISTA #210'
+  - 'ARISTA #211'
+  - 'ARISTA #212'
+  - 'ARISTA #213'
+  - 'ARISTA #214'
+  - 'ARISTA #215'
+  - 'ARISTA #216'
+  - 'ARISTA #217'
+  - 'ARISTA #218'
+  - 'ARISTA #219'
+  - 'ARISTA #220'
+  - 'ARISTA #221'
+  - 'ARISTA #222'
+  - 'ARISTA #223'
+  - 'ARISTA #224'
+  - 'ARISTA #225'
+  - 'ARISTA #226'
+  - 'ARISTA #227'
+  - 'ARISTA #228'
+  - 'ARISTA #229'
+  - 'ARISTA #230'
+  - 'ARISTA #231'
+  - 'ARISTA #232'
+  - 'ARISTA #233'
+  - 'ARISTA #234'
+  - 'ARISTA #235'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
