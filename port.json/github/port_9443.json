@@ -1,6 +1,6 @@
 // GITHUB - Port 9443
-// Updated: 2026-10-10 21:32:48
-// Count: 1
+// Updated: 2026-10-11 05:27:35
+// Count: 5
 
 {
   "log": {
@@ -41,6 +41,31 @@
     {
       "type": "vless",
       "tag": "ARISTA #1",
+      "server": "nlhy2.richforever.ru",
+      "server_port": 9443,
+      "uuid": "7918e6f6-df8f-4a20-9c1d-59dbd1f22770",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "nlhy2.richforever.ru",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "fKz8iMdY9dfMURdjdVcb9mYOJz2FlexJ3_v8mlM2RTE"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "grpc-service"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "ARISTA #2",
       "server": "pl3.richforever.ru",
       "server_port": 9443,
       "uuid": "7918e6f6-df8f-4a20-9c1d-59dbd1f22770",
@@ -64,6 +89,23 @@
       }
     },
     {
+      "type": "trojan",
+      "tag": "ARISTA #3",
+      "server": "38.181.42.136",
+      "server_port": 9443,
+      "password": "trj-qWC4DKUemeUYWSKA1xx7okumSKKw0QSX",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.jqyverse.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
       "type": "direct",
       "tag": "direct"
     },
@@ -75,7 +117,9 @@
       "type": "urltest",
       "tag": "🚀 ARISTA AUTO BEST",
       "outbounds": [
-        "ARISTA #1"
+        "ARISTA #1",
+        "ARISTA #2",
+        "ARISTA #3"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "2m",
