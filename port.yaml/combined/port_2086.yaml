@@ -1,6 +1,6 @@
 # COMBINED - Port 2086
-# Updated: 2026-10-11 05:27:13
-# Count: 3
+# Updated: 2026-10-11 12:36:21
+# Count: 6
 
 mixed-port: 7890
 allow-lan: false
@@ -50,43 +50,75 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 172.67.214.193
+  server: 104.18.47.113
   port: 2086
-  uuid: e5583623-53ef-4177-8070-8c553f70bcfa
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
   ws-opts:
-    path: /vl/NnAT20AqcYOuOLe1r?ed=2560
+    path: /?ed=2560security=tls
     headers:
-      Host: fvfb8xac5j0nthxzqf.dr5945ov0z598kfft573isahdj3fmmv4.workers.dev
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
 - name: 'ARISTA #2'
   type: vless
-  server: 172.67.214.193
+  server: 108.162.194.165
   port: 2086
-  uuid: e5583623-53ef-4177-8070-8c553f70bcfa
-  network: ws
+  uuid: a0fe052d-6ca1-4a9c-b626-7ecf78f386cb
+  network: httpupgrade
   tls: false
   udp: true
   skip-cert-verify: true
-  ws-opts:
-    path: /vl/NnAT20AqcYOuOLe1r?ed=2560
-    headers:
-      Host: fvfb8xac5j0nthxzqf.dr5945ov0z598kfft573isahdj3fmmv4.workers.dev
-- name: 'ARISTA #3'
+- name: 'T.ME: @aristapanel #3'
   type: vless
-  server: 172.67.214.193
+  server: 172.67.223.190
   port: 2086
-  uuid: e5583623-53ef-4177-8070-8c553f70bcfa
+  uuid: e6bad6ca-ab7c-4bdd-b07e-5c8ec407decd
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
   ws-opts:
-    path: /vl/NnAT20AqcYOuOLe1r?ed=2560
+    path: /eyJqdW5rIjoidGpkTkY2VHk0bE1pV3AiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByZWZpeCIsInBhbmVsSVBzIjpbIlsyNjAyOmZjNTk6YjA6NjQ6Ol0iXX0=?ed=2560
     headers:
-      Host: fvfb8xac5j0nthxzqf.dr5945ov0z598kfft573isahdj3fmmv4.workers.dev
+      Host: cool-hill-7fe5.thenewata.workers.dev
+- name: 'T.ME: @aristapanel #4'
+  type: vless
+  server: 172.67.131.114
+  port: 2086
+  uuid: 9ef1d60d-9e38-49c5-9405-131e11be1f9c
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: muddy-shadow-8905.qara-atayi-1.workers.dev
+  ws-opts:
+    path: /eyJqdW5rIjoiVGtvRGR4TXdHSzdseGpZWCIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJlZml4IiwicGFuZWxJUHMiOlsiWzI2MDI6ZmM1OTpiMDo2NDo6XSJdfQ
+    headers:
+      Host: muddy-shadow-8905.qara-atayi-1.workers.dev
+- name: 'ARISTA #5'
+  type: vless
+  server: 104.18.47.113
+  port: 2086
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /?ed=2560security=tls
+    headers:
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
+- name: 'ARISTA #6'
+  type: vless
+  server: 108.162.194.165
+  port: 2086
+  uuid: a0fe052d-6ca1-4a9c-b626-7ecf78f386cb
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -98,7 +130,10 @@ proxy-groups:
   proxies: &id001
   - 'ARISTA #1'
   - 'ARISTA #2'
-  - 'ARISTA #3'
+  - 'T.ME: @aristapanel #3'
+  - 'T.ME: @aristapanel #4'
+  - 'ARISTA #5'
+  - 'ARISTA #6'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

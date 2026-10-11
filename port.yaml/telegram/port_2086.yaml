@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2086
-# Updated: 2026-10-11 05:27:21
-# Count: 3
+# Updated: 2026-10-11 12:36:26
+# Count: 4
 
 mixed-port: 7890
 allow-lan: false
@@ -50,43 +50,48 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 172.67.214.193
+  server: 104.18.47.113
   port: 2086
-  uuid: e5583623-53ef-4177-8070-8c553f70bcfa
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
   ws-opts:
-    path: /vl/NnAT20AqcYOuOLe1r?ed=2560
+    path: /?ed=2560security=tls
     headers:
-      Host: fvfb8xac5j0nthxzqf.dr5945ov0z598kfft573isahdj3fmmv4.workers.dev
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
 - name: 'ARISTA #2'
   type: vless
-  server: 172.67.214.193
+  server: 108.162.194.165
   port: 2086
-  uuid: e5583623-53ef-4177-8070-8c553f70bcfa
-  network: ws
+  uuid: a0fe052d-6ca1-4a9c-b626-7ecf78f386cb
+  network: httpupgrade
   tls: false
   udp: true
   skip-cert-verify: true
-  ws-opts:
-    path: /vl/NnAT20AqcYOuOLe1r?ed=2560
-    headers:
-      Host: fvfb8xac5j0nthxzqf.dr5945ov0z598kfft573isahdj3fmmv4.workers.dev
 - name: 'ARISTA #3'
   type: vless
-  server: 172.67.214.193
+  server: 104.18.47.113
   port: 2086
-  uuid: e5583623-53ef-4177-8070-8c553f70bcfa
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
   ws-opts:
-    path: /vl/NnAT20AqcYOuOLe1r?ed=2560
+    path: /?ed=2560security=tls
     headers:
-      Host: fvfb8xac5j0nthxzqf.dr5945ov0z598kfft573isahdj3fmmv4.workers.dev
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
+- name: 'ARISTA #4'
+  type: vless
+  server: 108.162.194.165
+  port: 2086
+  uuid: a0fe052d-6ca1-4a9c-b626-7ecf78f386cb
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -99,6 +104,7 @@ proxy-groups:
   - 'ARISTA #1'
   - 'ARISTA #2'
   - 'ARISTA #3'
+  - 'ARISTA #4'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

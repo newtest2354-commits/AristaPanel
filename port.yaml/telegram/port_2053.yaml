@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2053
-# Updated: 2026-10-11 05:27:21
-# Count: 62
+# Updated: 2026-10-11 12:36:26
+# Count: 37
 
 mixed-port: 7890
 allow-lan: false
@@ -49,14 +49,19 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'ARISTA #1'
-  type: vless
-  server: test.keoplentuio.xyz
+  type: vmess
+  server: ca.connfull.org
   port: 2053
-  uuid: 9ef61079-6f7d-4911-9608-943da85d8e6f
+  uuid: 3aea687d-c6c0-4609-8719-ed8a5614fc47
+  alterId: 0
+  cipher: auto
   network: tcp
-  tls: false
+  tls: true
   udp: true
   skip-cert-verify: true
+  tcp-fast-open: true
+  servername: ca.connfull.org
+  client-fingerprint: chrome
 - name: 'ARISTA #2'
   type: vless
   server: 8.47.69.0
@@ -66,7 +71,6 @@ proxies:
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: qq
   servername: vless.api-music-fa.com
   ws-opts:
     path: /api/voip/updates/static/fr2035
@@ -74,33 +78,73 @@ proxies:
       Host: fr.api-music-fa.com
 - name: 'ARISTA #3'
   type: vless
-  server: 51.89.194.151
+  server: 198.251.78.29
   port: 2053
-  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
+  uuid: c423cc1b-f88e-421c-9a16-c480d84da20f
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: www.apple.com
+  servername: www.cloudflare.com
   reality-opts:
-    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
-    short-id: "d051f678212f9d54"
+    public-key: Uk5b-Wh_uxeCc7R8NS9iWE40xc0h9wWC04rSB9yhgAw
+    short-id: "b5d625695ec82c7e"
 - name: 'ARISTA #4'
   type: vless
-  server: iran.panelsaz.com
+  server: 51.89.194.151
   port: 2053
-  uuid: b6eeba72-2ce3-4576-b8c1-0ebae225c1d5
-  network: ws
-  tls: false
+  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
+  network: tcp
+  tls: true
   udp: true
   skip-cert-verify: true
-  ws-opts:
-    path: /free
-    headers:
-      Host: iran.panelsaz.com
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
+    short-id: "d051f678212f9d54"
 - name: 'ARISTA #5'
   type: vless
+  server: 78.159.250.84
+  port: 2053
+  uuid: 2c634977-584e-4e1f-b501-1b70c77a6743
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: summerculture.net
+- name: 'ARISTA #6'
+  type: vless
+  server: 8.47.69.0
+  port: 2053
+  uuid: 9d672694-c146-422e-b3b5-3717a38a0fcc
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: vless.api-music-fa.com
+  ws-opts:
+    path: /api/voip/updates/static/fr2035
+    headers:
+      Host: fr.api-music-fa.com
+- name: 'ARISTA #7'
+  type: vless
+  server: 8.47.69.0
+  port: 2053
+  uuid: 9d672694-c146-422e-b3b5-3717a38a0fcc
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: vless.api-music-fa.com
+  ws-opts:
+    path: /api/voip/updates/static/fr2035
+    headers:
+      Host: fr.api-music-fa.com
+- name: 'ARISTA #8'
+  type: vless
   server: 198.251.78.29
   port: 2053
   uuid: c423cc1b-f88e-421c-9a16-c480d84da20f
@@ -113,91 +157,32 @@ proxies:
   reality-opts:
     public-key: Uk5b-Wh_uxeCc7R8NS9iWE40xc0h9wWC04rSB9yhgAw
     short-id: "b5d625695ec82c7e"
-- name: 'ARISTA #6'
-  type: vless
-  server: fr.api-music-fa.com
-  port: 2053
-  uuid: 9d672694-c146-422e-b3b5-3717a38a0fcc
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: fr.api-music-fa.com
-  ws-opts:
-    path: '%2Fapi%2Fvoip%2Fupdates%2Fstatic%2Ffr2035'
-- name: 'ARISTA #7'
-  type: vless
-  server: cdn-2d12.giftcardbazarbot.com
-  port: 2053
-  uuid: 966f332d-f552-4a79-b57c-9151bf51f76e
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: cdn-2d12.giftcardbazarbot.com
-  reality-opts:
-    public-key: I9amRmbdpKTqhvPcfYqJcJqFbd-Sbq5ylCcIX9AQgxg
-    short-id: "9c2ca23e942cd346"
-- name: 'ARISTA #8'
-  type: vless
-  server: test.keoplentuio.xyz
-  port: 2053
-  uuid: 9ef61079-6f7d-4911-9608-943da85d8e6f
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
 - name: 'ARISTA #9'
   type: vless
-  server: 8.47.69.0
+  server: 51.89.194.151
   port: 2053
-  uuid: 9d672694-c146-422e-b3b5-3717a38a0fcc
-  network: ws
+  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: qq
-  servername: vless.api-music-fa.com
-  ws-opts:
-    path: /api/voip/updates/static/fr2035
-    headers:
-      Host: fr.api-music-fa.com
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
+    short-id: "d051f678212f9d54"
 - name: 'ARISTA #10'
   type: vless
-  server: 51.89.194.151
+  server: 78.159.250.84
   port: 2053
-  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
-  network: tcp
+  uuid: 2c634977-584e-4e1f-b501-1b70c77a6743
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
-    short-id: "d051f678212f9d54"
+  client-fingerprint: firefox
+  servername: summerculture.net
 - name: 'ARISTA #11'
-  type: vless
-  server: test.keoplentuio.xyz
-  port: 2053
-  uuid: 9ef61079-6f7d-4911-9608-943da85d8e6f
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #12'
-  type: vless
-  server: test.keoplentuio.xyz
-  port: 2053
-  uuid: 9ef61079-6f7d-4911-9608-943da85d8e6f
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #13'
   type: vless
   server: 8.47.69.0
   port: 2053
@@ -206,13 +191,26 @@ proxies:
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: qq
   servername: vless.api-music-fa.com
   ws-opts:
     path: /api/voip/updates/static/fr2035
     headers:
       Host: fr.api-music-fa.com
-- name: 'ARISTA #14'
+- name: 'ARISTA #12'
+  type: vless
+  server: 198.251.78.29
+  port: 2053
+  uuid: c423cc1b-f88e-421c-9a16-c480d84da20f
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: Uk5b-Wh_uxeCc7R8NS9iWE40xc0h9wWC04rSB9yhgAw
+    short-id: "b5d625695ec82c7e"
+- name: 'ARISTA #13'
   type: vless
   server: 51.89.194.151
   port: 2053
@@ -226,7 +224,60 @@ proxies:
   reality-opts:
     public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
     short-id: "d051f678212f9d54"
+- name: 'ARISTA #14'
+  type: vless
+  server: 8.47.69.0
+  port: 2053
+  uuid: 9d672694-c146-422e-b3b5-3717a38a0fcc
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: vless.api-music-fa.com
+  ws-opts:
+    path: /api/voip/updates/static/fr2035
+    headers:
+      Host: fr.api-music-fa.com
 - name: 'ARISTA #15'
+  type: vless
+  server: 198.251.78.29
+  port: 2053
+  uuid: c423cc1b-f88e-421c-9a16-c480d84da20f
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: Uk5b-Wh_uxeCc7R8NS9iWE40xc0h9wWC04rSB9yhgAw
+    short-id: "b5d625695ec82c7e"
+- name: 'ARISTA #16'
+  type: vless
+  server: 51.89.194.151
+  port: 2053
+  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
+    short-id: "d051f678212f9d54"
+- name: 'ARISTA #17'
+  type: vless
+  server: 78.159.250.84
+  port: 2053
+  uuid: 2c634977-584e-4e1f-b501-1b70c77a6743
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: summerculture.net
+- name: 'ARISTA #18'
   type: vless
   server: iran.panelsaz.com
   port: 2053
@@ -239,57 +290,25 @@ proxies:
     path: /free
     headers:
       Host: iran.panelsaz.com
-- name: 'ARISTA #16'
+- name: 'ARISTA #19'
   type: vless
-  server: 198.251.78.29
+  server: 188.114.98.0
   port: 2053
-  uuid: c423cc1b-f88e-421c-9a16-c480d84da20f
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: Uk5b-Wh_uxeCc7R8NS9iWE40xc0h9wWC04rSB9yhgAw
-    short-id: "b5d625695ec82c7e"
-- name: 'ARISTA #17'
-  type: vless
-  server: fr.api-music-fa.com
-  port: 2053
-  uuid: 9d672694-c146-422e-b3b5-3717a38a0fcc
+  uuid: 3ee10440-225e-4cbc-83ed-3c80b90bcb07
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: fr.api-music-fa.com
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: firefox
+  servername: ovh-gr1.mahkhorshidi.ir
   ws-opts:
-    path: '%2Fapi%2Fvoip%2Fupdates%2Fstatic%2Ffr2035'
-- name: 'ARISTA #18'
-  type: vless
-  server: cdn-2d12.giftcardbazarbot.com
-  port: 2053
-  uuid: 966f332d-f552-4a79-b57c-9151bf51f76e
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: cdn-2d12.giftcardbazarbot.com
-  reality-opts:
-    public-key: I9amRmbdpKTqhvPcfYqJcJqFbd-Sbq5ylCcIX9AQgxg
-    short-id: "9c2ca23e942cd346"
-- name: 'ARISTA #19'
-  type: vless
-  server: test.keoplentuio.xyz
-  port: 2053
-  uuid: 9ef61079-6f7d-4911-9608-943da85d8e6f
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
+    path: /movies/12345
+    headers:
+      Host: ovh-gr1.mahkhorshidi.ir
 - name: 'ARISTA #20'
   type: vless
   server: 8.47.69.0
@@ -299,91 +318,12 @@ proxies:
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: qq
   servername: vless.api-music-fa.com
   ws-opts:
     path: /api/voip/updates/static/fr2035
     headers:
       Host: fr.api-music-fa.com
 - name: 'ARISTA #21'
-  type: vless
-  server: 51.89.194.151
-  port: 2053
-  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
-    short-id: "d051f678212f9d54"
-- name: 'ARISTA #22'
-  type: vless
-  server: iran.panelsaz.com
-  port: 2053
-  uuid: b6eeba72-2ce3-4576-b8c1-0ebae225c1d5
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /free
-    headers:
-      Host: iran.panelsaz.com
-- name: 'ARISTA #23'
-  type: vless
-  server: test.keoplentuio.xyz
-  port: 2053
-  uuid: 9ef61079-6f7d-4911-9608-943da85d8e6f
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #24'
-  type: vless
-  server: 8.47.69.0
-  port: 2053
-  uuid: 9d672694-c146-422e-b3b5-3717a38a0fcc
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: qq
-  servername: vless.api-music-fa.com
-  ws-opts:
-    path: /api/voip/updates/static/fr2035
-    headers:
-      Host: fr.api-music-fa.com
-- name: 'ARISTA #25'
-  type: vless
-  server: 51.89.194.151
-  port: 2053
-  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
-    short-id: "d051f678212f9d54"
-- name: 'ARISTA #26'
-  type: vless
-  server: iran.panelsaz.com
-  port: 2053
-  uuid: b6eeba72-2ce3-4576-b8c1-0ebae225c1d5
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /free
-    headers:
-      Host: iran.panelsaz.com
-- name: 'ARISTA #27'
   type: vless
   server: 198.251.78.29
   port: 2053
@@ -397,35 +337,78 @@ proxies:
   reality-opts:
     public-key: Uk5b-Wh_uxeCc7R8NS9iWE40xc0h9wWC04rSB9yhgAw
     short-id: "b5d625695ec82c7e"
-- name: 'ARISTA #28'
+- name: 'ARISTA #22'
   type: vless
-  server: fr.api-music-fa.com
+  server: 51.89.194.151
   port: 2053
-  uuid: 9d672694-c146-422e-b3b5-3717a38a0fcc
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: fr.api-music-fa.com
-  ws-opts:
-    path: '%2Fapi%2Fvoip%2Fupdates%2Fstatic%2Ffr2035'
-- name: 'ARISTA #29'
-  type: vless
-  server: cdn-2d12.giftcardbazarbot.com
-  port: 2053
-  uuid: 966f332d-f552-4a79-b57c-9151bf51f76e
+  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
   client-fingerprint: chrome
-  servername: cdn-2d12.giftcardbazarbot.com
+  servername: www.apple.com
   reality-opts:
-    public-key: I9amRmbdpKTqhvPcfYqJcJqFbd-Sbq5ylCcIX9AQgxg
-    short-id: "9c2ca23e942cd346"
-- name: 'ARISTA #30'
+    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
+    short-id: "d051f678212f9d54"
+- name: 'ARISTA #23'
+  type: vless
+  server: 78.159.250.84
+  port: 2053
+  uuid: 2c634977-584e-4e1f-b501-1b70c77a6743
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: summerculture.net
+- name: 'ARISTA #24'
+  type: vless
+  server: iran.panelsaz.com
+  port: 2053
+  uuid: b6eeba72-2ce3-4576-b8c1-0ebae225c1d5
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /free
+    headers:
+      Host: iran.panelsaz.com
+- name: 'ARISTA #25'
+  type: vless
+  server: 188.114.98.0
+  port: 2053
+  uuid: 3ee10440-225e-4cbc-83ed-3c80b90bcb07
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: firefox
+  servername: ovh-gr1.mahkhorshidi.ir
+  ws-opts:
+    path: /movies/12345
+    headers:
+      Host: ovh-gr1.mahkhorshidi.ir
+- name: 'ARISTA #26'
+  type: vless
+  server: 95.216.27.15
+  port: 2053
+  uuid: 1c81f6d3-5771-4c5d-9fdd-1655eff50634
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.google.com
+  reality-opts:
+    public-key: 4nfogj5mHqNowtSn_2sXS3xTX8vcH75rFEU2BWvyekM
+    short-id: "d368b94e275ab080"
+- name: 'ARISTA #27'
   type: vless
   server: 89.125.96.89
   port: 2053
@@ -442,31 +425,7 @@ proxies:
     path: /vpn-wss/fluxor/59011/
     headers:
       Host: wss.zazazuza.ru
-- name: 'ARISTA #31'
-  type: vless
-  server: fr.api-music-fa.com
-  port: 2053
-  uuid: 9d672694-c146-422e-b3b5-3717a38a0fcc
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: fr.api-music-fa.com
-  ws-opts:
-    path: /api/voip/updates/static/fr2035
-- name: 'ARISTA #32'
-  type: vless
-  server: test.keoplentuio.xyz
-  port: 2053
-  uuid: 9ef61079-6f7d-4911-9608-943da85d8e6f
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #33'
+- name: 'ARISTA #28'
   type: vless
   server: 8.47.69.0
   port: 2053
@@ -475,13 +434,26 @@ proxies:
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: qq
   servername: vless.api-music-fa.com
   ws-opts:
     path: /api/voip/updates/static/fr2035
     headers:
       Host: fr.api-music-fa.com
-- name: 'ARISTA #34'
+- name: 'ARISTA #29'
+  type: vless
+  server: 198.251.78.29
+  port: 2053
+  uuid: c423cc1b-f88e-421c-9a16-c480d84da20f
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: Uk5b-Wh_uxeCc7R8NS9iWE40xc0h9wWC04rSB9yhgAw
+    short-id: "b5d625695ec82c7e"
+- name: 'ARISTA #30'
   type: vless
   server: 51.89.194.151
   port: 2053
@@ -495,6 +467,59 @@ proxies:
   reality-opts:
     public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
     short-id: "d051f678212f9d54"
+- name: 'ARISTA #31'
+  type: vless
+  server: 8.47.69.0
+  port: 2053
+  uuid: 9d672694-c146-422e-b3b5-3717a38a0fcc
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: vless.api-music-fa.com
+  ws-opts:
+    path: /api/voip/updates/static/fr2035
+    headers:
+      Host: fr.api-music-fa.com
+- name: 'ARISTA #32'
+  type: vless
+  server: 198.251.78.29
+  port: 2053
+  uuid: c423cc1b-f88e-421c-9a16-c480d84da20f
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: Uk5b-Wh_uxeCc7R8NS9iWE40xc0h9wWC04rSB9yhgAw
+    short-id: "b5d625695ec82c7e"
+- name: 'ARISTA #33'
+  type: vless
+  server: 51.89.194.151
+  port: 2053
+  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
+    short-id: "d051f678212f9d54"
+- name: 'ARISTA #34'
+  type: vless
+  server: 78.159.250.84
+  port: 2053
+  uuid: 2c634977-584e-4e1f-b501-1b70c77a6743
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: summerculture.net
 - name: 'ARISTA #35'
   type: vless
   server: iran.panelsaz.com
@@ -510,377 +535,24 @@ proxies:
       Host: iran.panelsaz.com
 - name: 'ARISTA #36'
   type: vless
-  server: 198.251.78.29
+  server: 188.114.98.0
   port: 2053
-  uuid: c423cc1b-f88e-421c-9a16-c480d84da20f
-  network: tcp
+  uuid: 3ee10440-225e-4cbc-83ed-3c80b90bcb07
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: Uk5b-Wh_uxeCc7R8NS9iWE40xc0h9wWC04rSB9yhgAw
-    short-id: "b5d625695ec82c7e"
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: firefox
+  servername: ovh-gr1.mahkhorshidi.ir
+  ws-opts:
+    path: /movies/12345
+    headers:
+      Host: ovh-gr1.mahkhorshidi.ir
 - name: 'ARISTA #37'
-  type: vless
-  server: fr.api-music-fa.com
-  port: 2053
-  uuid: 9d672694-c146-422e-b3b5-3717a38a0fcc
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: fr.api-music-fa.com
-  ws-opts:
-    path: '%2Fapi%2Fvoip%2Fupdates%2Fstatic%2Ffr2035'
-- name: 'ARISTA #38'
-  type: vless
-  server: cdn-2d12.giftcardbazarbot.com
-  port: 2053
-  uuid: 966f332d-f552-4a79-b57c-9151bf51f76e
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: cdn-2d12.giftcardbazarbot.com
-  reality-opts:
-    public-key: I9amRmbdpKTqhvPcfYqJcJqFbd-Sbq5ylCcIX9AQgxg
-    short-id: "9c2ca23e942cd346"
-- name: 'ARISTA #39'
-  type: vless
-  server: 89.125.96.89
-  port: 2053
-  uuid: 6c713691-3ca2-0008-ad25-113d1bed6b03
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: wss.zazazuza.ru
-  ws-opts:
-    path: /vpn-wss/fluxor/59011/
-    headers:
-      Host: wss.zazazuza.ru
-- name: 'ARISTA #40'
-  type: vless
-  server: fr.api-music-fa.com
-  port: 2053
-  uuid: 9d672694-c146-422e-b3b5-3717a38a0fcc
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: fr.api-music-fa.com
-  ws-opts:
-    path: /api/voip/updates/static/fr2035
-- name: 'ARISTA #41'
-  type: vless
-  server: 104.17.70.206
-  port: 2053
-  uuid: 1f45f651-6409-4401-9d10-22f24aae3cfd
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  - h3
-  client-fingerprint: chrome
-  servername: camera.tgseenrobo.ir
-  ws-opts:
-    path: /api/v1/payment/verify/9mQ2rL8sKp4xN7
-    headers:
-      Host: camera.tgseenrobo.ir
-- name: 'ARISTA #42'
-  type: vless
-  server: 51.89.194.151
-  port: 2053
-  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
-    short-id: "d051f678212f9d54"
-- name: 'ARISTA #43'
-  type: vless
-  server: 95.216.27.15
-  port: 2053
-  uuid: 1c81f6d3-5771-4c5d-9fdd-1655eff50634
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.google.com
-  reality-opts:
-    public-key: 4nfogj5mHqNowtSn_2sXS3xTX8vcH75rFEU2BWvyekM
-    short-id: "d368b94e275ab080"
-- name: 'ARISTA #44'
-  type: vless
-  server: test.keoplentuio.xyz
-  port: 2053
-  uuid: 9ef61079-6f7d-4911-9608-943da85d8e6f
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #45'
-  type: vless
-  server: 8.47.69.0
-  port: 2053
-  uuid: 9d672694-c146-422e-b3b5-3717a38a0fcc
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: qq
-  servername: vless.api-music-fa.com
-  ws-opts:
-    path: /api/voip/updates/static/fr2035
-    headers:
-      Host: fr.api-music-fa.com
-- name: 'ARISTA #46'
-  type: vless
-  server: 51.89.194.151
-  port: 2053
-  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
-    short-id: "d051f678212f9d54"
-- name: 'ARISTA #47'
-  type: vless
-  server: iran.panelsaz.com
-  port: 2053
-  uuid: b6eeba72-2ce3-4576-b8c1-0ebae225c1d5
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /free
-    headers:
-      Host: iran.panelsaz.com
-- name: 'ARISTA #48'
-  type: vless
-  server: 198.251.78.29
-  port: 2053
-  uuid: c423cc1b-f88e-421c-9a16-c480d84da20f
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: Uk5b-Wh_uxeCc7R8NS9iWE40xc0h9wWC04rSB9yhgAw
-    short-id: "b5d625695ec82c7e"
-- name: 'ARISTA #49'
-  type: vless
-  server: fr.api-music-fa.com
-  port: 2053
-  uuid: 9d672694-c146-422e-b3b5-3717a38a0fcc
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: fr.api-music-fa.com
-  ws-opts:
-    path: '%2Fapi%2Fvoip%2Fupdates%2Fstatic%2Ffr2035'
-- name: 'ARISTA #50'
-  type: vless
-  server: cdn-2d12.giftcardbazarbot.com
-  port: 2053
-  uuid: 966f332d-f552-4a79-b57c-9151bf51f76e
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: cdn-2d12.giftcardbazarbot.com
-  reality-opts:
-    public-key: I9amRmbdpKTqhvPcfYqJcJqFbd-Sbq5ylCcIX9AQgxg
-    short-id: "9c2ca23e942cd346"
-- name: 'ARISTA #51'
-  type: vless
-  server: test.keoplentuio.xyz
-  port: 2053
-  uuid: 9ef61079-6f7d-4911-9608-943da85d8e6f
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #52'
-  type: vless
-  server: 8.47.69.0
-  port: 2053
-  uuid: 9d672694-c146-422e-b3b5-3717a38a0fcc
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: qq
-  servername: vless.api-music-fa.com
-  ws-opts:
-    path: /api/voip/updates/static/fr2035
-    headers:
-      Host: fr.api-music-fa.com
-- name: 'ARISTA #53'
-  type: vless
-  server: 51.89.194.151
-  port: 2053
-  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
-    short-id: "d051f678212f9d54"
-- name: 'ARISTA #54'
-  type: vless
-  server: iran.panelsaz.com
-  port: 2053
-  uuid: b6eeba72-2ce3-4576-b8c1-0ebae225c1d5
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /free
-    headers:
-      Host: iran.panelsaz.com
-- name: 'ARISTA #55'
-  type: vless
-  server: 198.251.78.29
-  port: 2053
-  uuid: c423cc1b-f88e-421c-9a16-c480d84da20f
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: Uk5b-Wh_uxeCc7R8NS9iWE40xc0h9wWC04rSB9yhgAw
-    short-id: "b5d625695ec82c7e"
-- name: 'ARISTA #56'
-  type: vless
-  server: fr.api-music-fa.com
-  port: 2053
-  uuid: 9d672694-c146-422e-b3b5-3717a38a0fcc
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: fr.api-music-fa.com
-  ws-opts:
-    path: '%2Fapi%2Fvoip%2Fupdates%2Fstatic%2Ffr2035'
-- name: 'ARISTA #57'
-  type: vless
-  server: cdn-2d12.giftcardbazarbot.com
-  port: 2053
-  uuid: 966f332d-f552-4a79-b57c-9151bf51f76e
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: cdn-2d12.giftcardbazarbot.com
-  reality-opts:
-    public-key: I9amRmbdpKTqhvPcfYqJcJqFbd-Sbq5ylCcIX9AQgxg
-    short-id: "9c2ca23e942cd346"
-- name: 'ARISTA #58'
-  type: vless
-  server: 89.125.96.89
-  port: 2053
-  uuid: 6c713691-3ca2-0008-ad25-113d1bed6b03
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: wss.zazazuza.ru
-  ws-opts:
-    path: /vpn-wss/fluxor/59011/
-    headers:
-      Host: wss.zazazuza.ru
-- name: 'ARISTA #59'
-  type: vless
-  server: fr.api-music-fa.com
-  port: 2053
-  uuid: 9d672694-c146-422e-b3b5-3717a38a0fcc
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: fr.api-music-fa.com
-  ws-opts:
-    path: /api/voip/updates/static/fr2035
-- name: 'ARISTA #60'
-  type: vless
-  server: 104.17.70.206
-  port: 2053
-  uuid: 1f45f651-6409-4401-9d10-22f24aae3cfd
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  - h3
-  client-fingerprint: chrome
-  servername: camera.tgseenrobo.ir
-  ws-opts:
-    path: /api/v1/payment/verify/9mQ2rL8sKp4xN7
-    headers:
-      Host: camera.tgseenrobo.ir
-- name: 'ARISTA #61'
-  type: vless
-  server: 51.89.194.151
-  port: 2053
-  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
-    short-id: "d051f678212f9d54"
-- name: 'ARISTA #62'
   type: vless
   server: 95.216.27.15
   port: 2053
@@ -940,31 +612,6 @@ proxy-groups:
   - 'ARISTA #35'
   - 'ARISTA #36'
   - 'ARISTA #37'
-  - 'ARISTA #38'
-  - 'ARISTA #39'
-  - 'ARISTA #40'
-  - 'ARISTA #41'
-  - 'ARISTA #42'
-  - 'ARISTA #43'
-  - 'ARISTA #44'
-  - 'ARISTA #45'
-  - 'ARISTA #46'
-  - 'ARISTA #47'
-  - 'ARISTA #48'
-  - 'ARISTA #49'
-  - 'ARISTA #50'
-  - 'ARISTA #51'
-  - 'ARISTA #52'
-  - 'ARISTA #53'
-  - 'ARISTA #54'
-  - 'ARISTA #55'
-  - 'ARISTA #56'
-  - 'ARISTA #57'
-  - 'ARISTA #58'
-  - 'ARISTA #59'
-  - 'ARISTA #60'
-  - 'ARISTA #61'
-  - 'ARISTA #62'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
