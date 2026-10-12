@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2087
-# Updated: 2026-10-11 19:32:38
-# Count: 27
+# Updated: 2026-10-12 00:29:15
+# Count: 18
 
 mixed-port: 7890
 allow-lan: false
@@ -50,38 +50,46 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 95.85.253.241
+  server: ops5.localip.ir
   port: 2087
-  uuid: ee0a38e3-d148-48ac-ba99-5133446c2377
-  network: tcp
+  uuid: a5db5ab5-8d28-49c0-ad55-0ad4724e5c0d
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: 95.85.253.241
+  alpn:
+  - http/1.1
+  servername: ops5.localip.ir
+  ws-opts:
+    path: /hokm
 - name: 'ARISTA #2'
   type: vless
-  server: fert5.localip.ir
+  server: ops5.localip.ir
   port: 2087
-  uuid: ecbe8dbc-44f7-4275-8a6c-b0976a7bb5c8
-  network: xhttp
+  uuid: a5db5ab5-8d28-49c0-ad55-0ad4724e5c0d
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   alpn:
-  - h2
-  servername: fert5.localip.ir
+  - http/1.1
+  servername: ops5.localip.ir
+  ws-opts:
+    path: /hokm
 - name: 'ARISTA #3'
   type: vless
-  server: spp1.localip.ir
+  server: ops5.localip.ir
   port: 2087
-  uuid: ecbe8dbc-44f7-4275-8a6c-b0976a7bb5c8
-  network: xhttp
+  uuid: a5db5ab5-8d28-49c0-ad55-0ad4724e5c0d
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   alpn:
-  - h2
-  servername: spp1.localip.ir
+  - http/1.1
+  servername: ops5.localip.ir
+  ws-opts:
+    path: /hokm
 - name: 'ARISTA #4'
   type: vless
   server: ops5.localip.ir
@@ -98,39 +106,19 @@ proxies:
     path: /hokm
 - name: 'ARISTA #5'
   type: vless
-  server: 95.85.253.241
+  server: ops5.localip.ir
   port: 2087
-  uuid: ee0a38e3-d148-48ac-ba99-5133446c2377
-  network: tcp
+  uuid: a5db5ab5-8d28-49c0-ad55-0ad4724e5c0d
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: 95.85.253.241
+  alpn:
+  - http/1.1
+  servername: ops5.localip.ir
+  ws-opts:
+    path: /hokm
 - name: 'ARISTA #6'
-  type: vless
-  server: fert5.localip.ir
-  port: 2087
-  uuid: ecbe8dbc-44f7-4275-8a6c-b0976a7bb5c8
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  servername: fert5.localip.ir
-- name: 'ARISTA #7'
-  type: vless
-  server: spp1.localip.ir
-  port: 2087
-  uuid: ecbe8dbc-44f7-4275-8a6c-b0976a7bb5c8
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  servername: spp1.localip.ir
-- name: 'ARISTA #8'
   type: vless
   server: ops5.localip.ir
   port: 2087
@@ -144,52 +132,61 @@ proxies:
   servername: ops5.localip.ir
   ws-opts:
     path: /hokm
+- name: 'ARISTA #7'
+  type: vless
+  server: fert5.localip.ir
+  port: 2087
+  uuid: ecbe8dbc-44f7-4275-8a6c-b0976a7bb5c8
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  servername: fert5.localip.ir
+- name: 'ARISTA #8'
+  type: vless
+  server: spp1.localip.ir
+  port: 2087
+  uuid: ecbe8dbc-44f7-4275-8a6c-b0976a7bb5c8
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  servername: spp1.localip.ir
 - name: 'ARISTA #9'
   type: vless
-  server: 95.85.253.241
+  server: 172.64.146.211
   port: 2087
-  uuid: ee0a38e3-d148-48ac-ba99-5133446c2377
-  network: tcp
+  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: 95.85.253.241
+  client-fingerprint: chrome
+  servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+  ws-opts:
+    path: /
+    headers:
+      Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
 - name: 'ARISTA #10'
   type: vless
-  server: fert5.localip.ir
+  server: ops5.localip.ir
   port: 2087
-  uuid: ecbe8dbc-44f7-4275-8a6c-b0976a7bb5c8
-  network: xhttp
+  uuid: a5db5ab5-8d28-49c0-ad55-0ad4724e5c0d
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   alpn:
-  - h2
-  servername: fert5.localip.ir
+  - http/1.1
+  servername: ops5.localip.ir
+  ws-opts:
+    path: /hokm
 - name: 'ARISTA #11'
   type: vless
-  server: spp1.localip.ir
-  port: 2087
-  uuid: ecbe8dbc-44f7-4275-8a6c-b0976a7bb5c8
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  servername: spp1.localip.ir
-- name: 'ARISTA #12'
-  type: vless
-  server: 95.85.253.241
-  port: 2087
-  uuid: ee0a38e3-d148-48ac-ba99-5133446c2377
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: 95.85.253.241
-- name: 'ARISTA #13'
-  type: vless
   server: fert5.localip.ir
   port: 2087
   uuid: ecbe8dbc-44f7-4275-8a6c-b0976a7bb5c8
@@ -200,7 +197,7 @@ proxies:
   alpn:
   - h2
   servername: fert5.localip.ir
-- name: 'ARISTA #14'
+- name: 'ARISTA #12'
   type: vless
   server: spp1.localip.ir
   port: 2087
@@ -212,6 +209,35 @@ proxies:
   alpn:
   - h2
   servername: spp1.localip.ir
+- name: 'ARISTA #13'
+  type: vless
+  server: 172.64.146.211
+  port: 2087
+  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+  ws-opts:
+    path: /
+    headers:
+      Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+- name: 'ARISTA #14'
+  type: vless
+  server: ops5.localip.ir
+  port: 2087
+  uuid: a5db5ab5-8d28-49c0-ad55-0ad4724e5c0d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  servername: ops5.localip.ir
+  ws-opts:
+    path: /hokm
 - name: 'ARISTA #15'
   type: vless
   server: ops5.localip.ir
@@ -228,17 +254,19 @@ proxies:
     path: /hokm
 - name: 'ARISTA #16'
   type: vless
-  server: 95.85.253.241
+  server: fert5.localip.ir
   port: 2087
-  uuid: ee0a38e3-d148-48ac-ba99-5133446c2377
-  network: tcp
+  uuid: ecbe8dbc-44f7-4275-8a6c-b0976a7bb5c8
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: 95.85.253.241
+  alpn:
+  - h2
+  servername: fert5.localip.ir
 - name: 'ARISTA #17'
   type: vless
-  server: fert5.localip.ir
+  server: spp1.localip.ir
   port: 2087
   uuid: ecbe8dbc-44f7-4275-8a6c-b0976a7bb5c8
   network: xhttp
@@ -247,129 +275,22 @@ proxies:
   skip-cert-verify: true
   alpn:
   - h2
-  servername: fert5.localip.ir
+  servername: spp1.localip.ir
 - name: 'ARISTA #18'
   type: vless
-  server: spp1.localip.ir
+  server: 172.64.146.211
   port: 2087
-  uuid: ecbe8dbc-44f7-4275-8a6c-b0976a7bb5c8
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  servername: spp1.localip.ir
-- name: 'ARISTA #19'
-  type: vless
-  server: ops5.localip.ir
-  port: 2087
-  uuid: a5db5ab5-8d28-49c0-ad55-0ad4724e5c0d
+  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - http/1.1
-  servername: ops5.localip.ir
+  client-fingerprint: chrome
+  servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   ws-opts:
-    path: /hokm
-- name: 'ARISTA #20'
-  type: vless
-  server: 95.85.253.241
-  port: 2087
-  uuid: ee0a38e3-d148-48ac-ba99-5133446c2377
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: 95.85.253.241
-- name: 'ARISTA #21'
-  type: vless
-  server: fert5.localip.ir
-  port: 2087
-  uuid: ecbe8dbc-44f7-4275-8a6c-b0976a7bb5c8
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  servername: fert5.localip.ir
-- name: 'ARISTA #22'
-  type: vless
-  server: spp1.localip.ir
-  port: 2087
-  uuid: ecbe8dbc-44f7-4275-8a6c-b0976a7bb5c8
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  servername: spp1.localip.ir
-- name: 'ARISTA #23'
-  type: vless
-  server: ops5.localip.ir
-  port: 2087
-  uuid: a5db5ab5-8d28-49c0-ad55-0ad4724e5c0d
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  servername: ops5.localip.ir
-  ws-opts:
-    path: /hokm
-- name: 'ARISTA #24'
-  type: vless
-  server: 95.85.253.241
-  port: 2087
-  uuid: ee0a38e3-d148-48ac-ba99-5133446c2377
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: 95.85.253.241
-- name: 'ARISTA #25'
-  type: vless
-  server: fert5.localip.ir
-  port: 2087
-  uuid: ecbe8dbc-44f7-4275-8a6c-b0976a7bb5c8
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  servername: fert5.localip.ir
-- name: 'ARISTA #26'
-  type: vless
-  server: spp1.localip.ir
-  port: 2087
-  uuid: ecbe8dbc-44f7-4275-8a6c-b0976a7bb5c8
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  servername: spp1.localip.ir
-- name: 'ARISTA #27'
-  type: vless
-  server: ops5.localip.ir
-  port: 2087
-  uuid: a5db5ab5-8d28-49c0-ad55-0ad4724e5c0d
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  servername: ops5.localip.ir
-  ws-opts:
-    path: /hokm
+    path: /
+    headers:
+      Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -397,15 +318,6 @@ proxy-groups:
   - 'ARISTA #16'
   - 'ARISTA #17'
   - 'ARISTA #18'
-  - 'ARISTA #19'
-  - 'ARISTA #20'
-  - 'ARISTA #21'
-  - 'ARISTA #22'
-  - 'ARISTA #23'
-  - 'ARISTA #24'
-  - 'ARISTA #25'
-  - 'ARISTA #26'
-  - 'ARISTA #27'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
