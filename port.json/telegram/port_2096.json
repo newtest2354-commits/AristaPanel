@@ -1,6 +1,6 @@
 // TELEGRAM - Port 2096
-// Updated: 2026-10-12 10:39:18
-// Count: 23
+// Updated: 2026-10-12 21:16:21
+// Count: 6
 
 {
   "log": {
@@ -39,42 +39,37 @@
   ],
   "outbounds": [
     {
-      "type": "vless",
+      "type": "vmess",
       "tag": "ARISTA #1",
-      "server": "188.114.98.6",
+      "server": "ca.connfull.org",
       "server_port": 2096,
-      "uuid": "bc6bdb15-3aa6-410d-a534-412cc31bfdd2",
+      "uuid": "f2d7f0d2-9520-4d5c-9714-58cc138513a8",
+      "security": "auto",
       "domain_resolver": "google",
       "tls": {
         "enabled": true,
-        "server_name": "germany.varzeshfotsal.ir",
+        "server_name": "ca.connfull.org",
         "insecure": true,
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
-        },
-        "alpn": [
-          "h2"
-        ]
+        }
       },
       "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "germany.varzeshfotsal.ir"
-        }
+        "type": "grpc",
+        "service_name": "api"
       }
     },
     {
       "type": "vless",
       "tag": "ARISTA #2",
-      "server": "172.67.130.159",
+      "server": "104.21.8.201",
       "server_port": 2096,
-      "uuid": "1d54a125-8f1e-46bb-9a23-0ecf4ac92db8",
+      "uuid": "214bf4c5-045a-4ddb-944b-e2eef9b33338",
       "domain_resolver": "google",
       "tls": {
         "enabled": true,
-        "server_name": "cdn-ca.skyvora.app",
+        "server_name": "cdn-fr.skyvora.app",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -83,9 +78,9 @@
       },
       "transport": {
         "type": "ws",
-        "path": "/fqg7aacd8s?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET?ed=512",
+        "path": "/9hf8a67dhf",
         "headers": {
-          "Host": "cdn-ca.skyvora.app"
+          "Host": "cdn-fr.skyvora.app"
         }
       }
     },
@@ -112,57 +107,6 @@
       }
     },
     {
-      "type": "vless",
-      "tag": "ARISTA #4",
-      "server": "172.67.213.218",
-      "server_port": 2096,
-      "uuid": "e6b59d15-364c-4025-899a-84efa291d651",
-      "domain_resolver": "google",
-      "tls": {
-        "enabled": true,
-        "server_name": "REd-suRf-2007.MatriSkA.wOrkeRs.DeV",
-        "insecure": true,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/eyJqdW5rIjoiYWNoMkxHaUVYIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMmEwMjo4OTg6MTQ2OjY0OjpdIl19",
-        "headers": {
-          "Host": "REd-suRf-2007.MatriSkA.wOrkeRs.DeV"
-        }
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "ARISTA #5",
-      "server": "node-562276409-d1add2.subject88.workers.dev",
-      "server_port": 2096,
-      "password": "7990f64c-d3d0-4af6-a78b-fc690e5803ad",
-      "domain_resolver": "google",
-      "tls": {
-        "enabled": true,
-        "server_name": "NODE-562276409-d1aDd2.sUbjECT88.WOrkErs.deV",
-        "insecure": true,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "alpn": [
-          "http/1.1"
-        ]
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr/rpmeJRDCbzoeQHjtWQtucdXDWonXCG?ed=2560",
-        "headers": {
-          "Host": "NODE-562276409-d1aDd2.sUbjECT88.WOrkErs.deV"
-        }
-      }
-    },
-    {
       "type": "direct",
       "tag": "direct"
     },
@@ -176,9 +120,7 @@
       "outbounds": [
         "ARISTA #1",
         "ARISTA #2",
-        "ARISTA #3",
-        "ARISTA #4",
-        "ARISTA #5"
+        "ARISTA #3"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "2m",

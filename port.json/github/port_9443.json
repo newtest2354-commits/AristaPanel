@@ -1,6 +1,6 @@
 // GITHUB - Port 9443
-// Updated: 2026-10-12 10:39:19
-// Count: 1
+// Updated: 2026-10-12 21:16:22
+// Count: 2
 
 {
   "log": {
@@ -41,26 +41,54 @@
     {
       "type": "vless",
       "tag": "ARISTA #1",
-      "server": "pl3.richforever.ru",
+      "server": "87.242.95.164",
       "server_port": 9443,
-      "uuid": "7918e6f6-df8f-4a20-9c1d-59dbd1f22770",
+      "uuid": "8593ebae-2644-4b5c-b6e3-38d008115123",
       "domain_resolver": "google",
       "tls": {
         "enabled": true,
-        "server_name": "pl3.richforever.ru",
+        "server_name": "passport.yandex.ru",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "qq"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ",
+          "short_id": "8375b32501373f41"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "grpc"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "ARISTA #2",
+      "server": "95.129.234.36",
+      "server_port": 9443,
+      "uuid": "a1f00f09-80b8-415f-8258-801590975ca5",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "eh-ger1.country-tools.net",
         "insecure": true,
         "utls": {
           "enabled": true,
           "fingerprint": "firefox"
         },
-        "reality": {
-          "enabled": true,
-          "public_key": "lQcmwpXJsT5tdh9mQhcsDyiDNFe0nAVLvSc_5WnfqSY"
-        }
+        "alpn": [
+          "http/1.1"
+        ]
       },
       "transport": {
-        "type": "grpc",
-        "service_name": "grpc-service"
+        "type": "ws",
+        "path": "/images",
+        "headers": {
+          "Host": "eh-ger1.country-tools.net"
+        }
       }
     },
     {
@@ -75,7 +103,8 @@
       "type": "urltest",
       "tag": "🚀 ARISTA AUTO BEST",
       "outbounds": [
-        "ARISTA #1"
+        "ARISTA #1",
+        "ARISTA #2"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "2m",
