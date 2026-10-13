@@ -1,6 +1,6 @@
 # COMBINED - VMESS - Tier ALL
-# Updated: 2026-10-12 21:15:52
-# Count: 50
+# Updated: 2026-10-13 06:35:27
+# Count: 53
 
 mixed-port: 7890
 allow-lan: false
@@ -50,20 +50,56 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vmess
-  server: 120.48.133.162
-  port: 10086
-  uuid: fde10e39-48bb-4dcf-b3ba-71d711323a54
+  server: renderer-stream-2-114.mirra.now
+  port: 443
+  uuid: 8ffa41d4-e6b5-4af5-a8a9-69e26bec75f5
   alterId: 0
   cipher: auto
   network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: renderer-stream-2-114.mirra.now
+  client-fingerprint: firefox
+  alpn:
+  - h2
+  ws-opts:
+    path: /api/v1/gpu-stream/socket
+    headers:
+      Host: renderer-stream-2-114.mirra.now
+- name: 'ARISTA #2'
+  type: vmess
+  server: cf.0sm.com
+  port: 443
+  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: vmess.lbw666.dpdns.org
+  client-fingerprint: chrome
+  ws-opts:
+    path: /ws?ed=2048
+    headers:
+      Host: vmess.lbw666.dpdns.org
+- name: 'ARISTA #3'
+  type: vmess
+  server: 165.154.195.38
+  port: 35034
+  uuid: 959a8caf-4cea-43d0-a548-3628e7ddfafc
+  alterId: 0
+  cipher: auto
+  network: tcp
   tls: false
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: 120.48.133.162
-  ws-opts:
-    path: /?Telegram---MTMVPN---MTMVPN---MTMVPN---MTMVPN
-- name: 'ARISTA #2'
+  servername: 165.154.195.38
+- name: 'ARISTA #4'
   type: vmess
   server: 120.48.133.162
   port: 10086
@@ -78,20 +114,37 @@ proxies:
   servername: 120.48.133.162
   ws-opts:
     path: /?Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
-- name: 'ARISTA #3'
+- name: 'ARISTA #5'
   type: vmess
-  server: lucas.ehsanazizi-speed-server.com
-  port: 2110
-  uuid: 06d4d001-4168-4876-9416-7caecf578f40
+  server: 120.48.133.162
+  port: 10086
+  uuid: fde10e39-48bb-4dcf-b3ba-71d711323a54
   alterId: 0
   cipher: auto
-  network: tcp
+  network: ws
   tls: false
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: lucas.ehsanazizi-speed-server.com
-- name: 'ARISTA #4'
+  servername: 120.48.133.162
+  ws-opts:
+    path: /?Telegram---MTMVPN---MTMVPN---MTMVPN---MTMVPN
+- name: 'ARISTA #6'
+  type: vmess
+  server: 88.198.91.100
+  port: 30561
+  uuid: 7e1eb307-c809-4e13-963e-d17b49806683
+  alterId: 0
+  cipher: auto
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 88.198.91.100
+  grpc-opts:
+    grpc-service-name: GunService
+- name: 'ARISTA #7'
   type: vmess
   server: 145.239.55.210
   port: 80
@@ -108,11 +161,11 @@ proxies:
     path: /
     headers:
       Host: google.whatsapp.snapp.torob.basalam.fortresshost.ir.
-- name: 'ARISTA #5'
+- name: 'ARISTA #8'
   type: vmess
-  server: guanwang.awsno.com
+  server: cf.090227.xyz
   port: 443
-  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
   alterId: 0
   cipher: auto
   network: ws
@@ -120,12 +173,45 @@ proxies:
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: guanwang.awsno.com
+  servername: vmess.lbw666.dpdns.org
+  client-fingerprint: chrome
   ws-opts:
-    path: /hls/cctv5phd.m3u8
+    path: /ws?ed=2048
     headers:
-      Host: guanwang.awsno.com
-- name: 'ARISTA #6'
+      Host: vmess.lbw666.dpdns.org
+- name: 'ARISTA #9'
+  type: vmess
+  server: 172.64.229.21
+  port: 443
+  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: vmess.lbw666.dpdns.org
+  alpn:
+  - 'null'
+  ws-opts:
+    path: /ws?ed=2048
+    headers:
+      Host: vmess.lbw666.dpdns.org
+- name: 'ARISTA #10'
+  type: vmess
+  server: lucas.ehsanazizi-speed-server.com
+  port: 2110
+  uuid: 06d4d001-4168-4876-9416-7caecf578f40
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: lucas.ehsanazizi-speed-server.com
+- name: 'ARISTA #11'
   type: vmess
   server: 57.128.164.21
   port: 80
@@ -142,110 +228,9 @@ proxies:
     path: /d3d3LmlyYW5ob3N0LmNvbQ==?ed=2560
     headers:
       Host: https.http.www.net.com.ramseyv2.ir.
-- name: 'ARISTA #7'
-  type: vmess
-  server: 178.105.168.171
-  port: 2110
-  uuid: 06d4d001-4168-4876-9416-7caecf578f40
-  alterId: 0
-  cipher: auto
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: 178.105.168.171
-- name: 'ARISTA #8'
-  type: vmess
-  server: 3h-kazakhstan1.09vpn.com
-  port: 80
-  uuid: 567f4be5-12ab-42e1-b8d9-db6fd1fdd31c
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: 3h-kazakhstan1.09vpn.com
-  ws-opts:
-    path: /vmess/
-- name: 'ARISTA #9'
-  type: vmess
-  server: ca.connfull.org
-  port: 2096
-  uuid: f2d7f0d2-9520-4d5c-9714-58cc138513a8
-  alterId: 0
-  cipher: auto
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: ca.connfull.org
-  grpc-opts:
-    grpc-service-name: api
-- name: 'ARISTA #10'
-  type: vmess
-  server: 88.198.91.100
-  port: 30561
-  uuid: 7e1eb307-c809-4e13-963e-d17b49806683
-  alterId: 0
-  cipher: auto
-  network: grpc
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: 88.198.91.100
-  grpc-opts:
-    grpc-service-name: GunService
-- name: 'ARISTA #11'
-  type: vmess
-  server: 185.83.112.145
-  port: 1404
-  uuid: b87f0925-9448-4a8e-b8e4-dff88ba5b2bb
-  alterId: 0
-  cipher: auto
-  network: xhttp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: 185.83.112.145
 - name: 'ARISTA #12'
   type: vmess
-  server: 140.238.2.250
-  port: 443
-  uuid: 41a7089a-040b-4538-8b8d-010902405bde
-  alterId: 0
-  cipher: auto
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: 140.238.2.250
-- name: 'ARISTA #13'
-  type: vmess
-  server: us16-4.998998.best
-  port: 443
-  uuid: 5504eaa8-1395-402f-8e0e-75ecd762e627
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: server1.9966338.xyz
-  ws-opts:
-    path: /efrsdioy98wert
-    headers:
-      Host: server1.9966338.xyz
-- name: 'ARISTA #14'
-  type: vmess
-  server: i2psm3knof5qjjix.v.3dns.vip
+  server: 6jdvarazgu3qqr6q.v.3dns.vip
   port: 443
   uuid: f23bb427c1f94373876c2f43e9f790f3
   alterId: 0
@@ -255,25 +240,25 @@ proxies:
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: i2psm3knof5qjjix.v.3dns.vip
+  servername: 6JDvArazgU3qQR6Q.v.3dns.vip
   ws-opts:
     path: /ws-vmess
-- name: 'ARISTA #15'
+    headers:
+      Host: 6JDvArazgU3qQR6Q.v.3dns.vip
+- name: 'ARISTA #13'
   type: vmess
-  server: 120.48.133.162
-  port: 10086
-  uuid: fde10e39-48bb-4dcf-b3ba-71d711323a54
+  server: irc.jahanclick.sbs
+  port: 443
+  uuid: 57376e0a-ffad-412c-a801-9e35fa7a6b5f
   alterId: 0
   cipher: auto
-  network: ws
+  network: tcp
   tls: false
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: 120.48.133.162
-  ws-opts:
-    path: /
-- name: 'ARISTA #16'
+  servername: irc.jahanclick.sbs
+- name: 'ARISTA #14'
   type: vmess
   server: 120.48.133.162
   port: 10086
@@ -288,11 +273,11 @@ proxies:
   servername: 120.48.133.162
   ws-opts:
     path: /?Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
-- name: 'ARISTA #17'
+- name: 'ARISTA #15'
   type: vmess
-  server: sh.australiacaregroup.site
-  port: 3141
-  uuid: aec8e5e3-bb81-4b22-8802-0b88c54997b3
+  server: eeetst.aparatratinfo.ir
+  port: 8443
+  uuid: 4b89551a-7b7c-442b-b790-207e48229045
   alterId: 0
   cipher: auto
   network: tcp
@@ -300,7 +285,33 @@ proxies:
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: sh.australiacaregroup.site
+  servername: eeetst.aparatratinfo.ir
+- name: 'T.ME: @aristapanel #17'
+  type: vmess
+  server: 149.88.23.207
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 149.88.23.207
+- name: 'T.ME: @aristapanel #18'
+  type: vmess
+  server: ww11.levikogjgfdd.ir
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: ww11.levikogjgfdd.ir
 - name: 'T.ME: @aristapanel #19'
   type: vmess
   server: 149.88.23.207
@@ -316,7 +327,7 @@ proxies:
   servername: 149.88.23.207
 - name: 'T.ME: @aristapanel #20'
   type: vmess
-  server: ww11.levikogjgfdd.ir
+  server: 149.88.23.207
   port: 18000
   uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
   alterId: 0
@@ -326,35 +337,9 @@ proxies:
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: ww11.levikogjgfdd.ir
+  servername: 149.88.23.207
 - name: 'T.ME: @aristapanel #21'
   type: vmess
-  server: 149.88.23.207
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  alterId: 0
-  cipher: auto
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: 149.88.23.207
-- name: 'T.ME: @aristapanel #22'
-  type: vmess
-  server: 149.88.23.207
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  alterId: 0
-  cipher: auto
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: 149.88.23.207
-- name: 'T.ME: @aristapanel #23'
-  type: vmess
   server: ww11.levikogjgfdd.ir
   port: 18000
   uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
@@ -366,33 +351,33 @@ proxies:
   skip-cert-verify: true
   tcp-fast-open: true
   servername: ww11.levikogjgfdd.ir
+- name: 'T.ME: @aristapanel #22'
+  type: vmess
+  server: 134.195.196.211
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 134.195.196.211
+- name: 'T.ME: @aristapanel #23'
+  type: vmess
+  server: 134.195.196.211
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 134.195.196.211
 - name: 'T.ME: @aristapanel #24'
-  type: vmess
-  server: 134.195.196.211
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  alterId: 0
-  cipher: auto
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: 134.195.196.211
-- name: 'T.ME: @aristapanel #25'
-  type: vmess
-  server: 134.195.196.211
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  alterId: 0
-  cipher: auto
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: 134.195.196.211
-- name: 'T.ME: @aristapanel #26'
   type: vmess
   server: 149.88.23.207
   port: 18000
@@ -405,7 +390,7 @@ proxies:
   skip-cert-verify: true
   tcp-fast-open: true
   servername: 149.88.23.207
-- name: 'T.ME: @aristapanel #27'
+- name: 'T.ME: @aristapanel #25'
   type: vmess
   server: 67.220.95.3
   port: 18000
@@ -418,7 +403,24 @@ proxies:
   skip-cert-verify: true
   tcp-fast-open: true
   servername: 67.220.95.3
-- name: 'T.ME: @aristapanel #28'
+- name: 'T.ME: @aristapanel #26'
+  type: vmess
+  server: 186.190.211.67
+  port: 443
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: pahobac.org
+  ws-opts:
+    path: /linkvws
+    headers:
+      Host: pahobac.org
+- name: 'T.ME: @aristapanel #27'
   type: vmess
   server: 57.129.132.223
   port: 80
@@ -435,7 +437,7 @@ proxies:
     path: /vmess/
     headers:
       Host: google.com
-- name: 'T.ME: @aristapanel #29'
+- name: 'T.ME: @aristapanel #28'
   type: vmess
   server: 168.138.43.75
   port: 80
@@ -452,7 +454,7 @@ proxies:
     path: /cctv13.m3u8
     headers:
       Host: 168.138.43.75
-- name: 'T.ME: @aristapanel #30'
+- name: 'T.ME: @aristapanel #29'
   type: vmess
   server: 57.129.132.223
   port: 80
@@ -469,7 +471,7 @@ proxies:
     path: /vmess/
     headers:
       Host: google.com
-- name: 'T.ME: @aristapanel #32'
+- name: 'T.ME: @aristapanel #30'
   type: vmess
   server: 156.245.232.239
   port: 35043
@@ -484,6 +486,34 @@ proxies:
   servername: 156.245.232.239
   ws-opts:
     path: /
+- name: 'T.ME: @aristapanel #31'
+  type: vmess
+  server: 120.48.133.162
+  port: 10086
+  uuid: fde10e39-48bb-4dcf-b3ba-71d711323a54
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 120.48.133.162
+  ws-opts:
+    path: /?Telegram---MTMVPN---MTMVPN---MTMVPN---MTMVPN#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
+- name: 'T.ME: @aristapanel #32'
+  type: vmess
+  server: 51.132.38.134
+  port: 47832
+  uuid: 859cb52d-0a26-4b2f-a9b1-0eb83115c9d1
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 51.132.38.134
 - name: 'T.ME: @aristapanel #33'
   type: vmess
   server: aksai.org
@@ -516,78 +546,9 @@ proxies:
   servername: 216.152.152.187
 - name: 'T.ME: @aristapanel #35'
   type: vmess
-  server: cf.877771.xyz
-  port: 443
+  server: cf.0sm.com
+  port: 80
   uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: vmess.lbw666.dpdns.org
-  client-fingerprint: chrome
-  ws-opts:
-    path: /ws?ed=2048
-    headers:
-      Host: vmess.lbw666.dpdns.org
-- name: 'T.ME: @aristapanel #36'
-  type: vmess
-  server: 172.66.203.67
-  port: 443
-  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: vmess.lbw666.dpdns.org
-  client-fingerprint: chrome
-  ws-opts:
-    path: /ws?ed=2048
-    headers:
-      Host: vmess.lbw666.dpdns.org
-- name: 'T.ME: @aristapanel #37'
-  type: vmess
-  server: 159.223.13.109
-  port: 1234
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-  alterId: 0
-  cipher: aes-128-gcm
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: ekb.eg
-- name: 'T.ME: @aristapanel #38'
-  type: vmess
-  server: editmamad.ir
-  port: 443
-  uuid: addf2069-9c7f-42ef-8340-b8be35dd5c38
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: editmamad.ir
-  client-fingerprint: edge
-  alpn:
-  - http/1.1
-  ws-opts:
-    path: /gw/6ea24a26-1fef-4194-8d82-8cf7e6a1ca75?ed=2560
-    headers:
-      Host: editmamad.ir
-- name: 'T.ME: @aristapanel #39'
-  type: vmess
-  server: octpus1.gsmonline.ir
-  port: 8080
-  uuid: 6a6726c0-89c1-4f25-a1a7-9659a98cef37
   alterId: 0
   cipher: auto
   network: ws
@@ -595,12 +556,12 @@ proxies:
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: octpus1.gsmonline.ir
+  servername: cf.0sm.com
   ws-opts:
-    path: /
+    path: /ws?ed=2048
     headers:
-      Host: snapp.ir
-- name: 'T.ME: @aristapanel #40'
+      Host: vmess.lbw666.dpdns.org
+- name: 'T.ME: @aristapanel #36'
   type: vmess
   server: 129.146.77.248
   port: 39495
@@ -617,7 +578,76 @@ proxies:
     path: /cctv13.m3u8
     headers:
       Host: 129.146.77.248
+- name: 'T.ME: @aristapanel #37'
+  type: vmess
+  server: 23.162.200.198
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 23.162.200.198
+- name: 'T.ME: @aristapanel #38'
+  type: vmess
+  server: cd2.videobazi.com
+  port: 2052
+  uuid: 60b88bcf-4c90-4c41-9bd7-9f8fd5795848
+  alterId: 0
+  cipher: auto
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: cd2.videobazi.com
+- name: 'T.ME: @aristapanel #39'
+  type: vmess
+  server: cd2.videobazi.com
+  port: 2052
+  uuid: 60b88bcf-4c90-4c41-9bd7-9f8fd5795848
+  alterId: 0
+  cipher: auto
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: cd2.videobazi.com
+- name: 'T.ME: @aristapanel #40'
+  type: vmess
+  server: us5-1.998998.best
+  port: 443
+  uuid: 5504eaa8-1395-402f-8e0e-75ecd762e627
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: server4.9966338.xyz
+  ws-opts:
+    path: /androirfdsreoightrjh
+    headers:
+      Host: server4.9966338.xyz
 - name: 'T.ME: @aristapanel #41'
+  type: vmess
+  server: 178.105.168.171
+  port: 2110
+  uuid: 06d4d001-4168-4876-9416-7caecf578f40
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 178.105.168.171
+- name: 'T.ME: @aristapanel #43'
   type: vmess
   server: xcf037.facai2024.com
   port: 443
@@ -634,7 +664,7 @@ proxies:
     path: /d9863037
     headers:
       Host: xcf037.facai2024.com
-- name: 'T.ME: @aristapanel #42'
+- name: 'T.ME: @aristapanel #44'
   type: vmess
   server: www.wn03.cc
   port: 80
@@ -651,7 +681,7 @@ proxies:
     path: /rongseven?ed=2048
     headers:
       Host: us.freeyyds.dpdns.org
-- name: 'T.ME: @aristapanel #43'
+- name: 'T.ME: @aristapanel #45'
   type: vmess
   server: time.is
   port: 443
@@ -668,7 +698,20 @@ proxies:
     path: /
     headers:
       Host: shs111.kejixiaoqi666.store
-- name: 'T.ME: @aristapanel #44'
+- name: 'T.ME: @aristapanel #46'
+  type: vmess
+  server: 31.76.11.83
+  port: 22266
+  uuid: 2d8f57bd-12b5-41ad-a806-6501753c264c
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 31.76.11.83
+- name: 'T.ME: @aristapanel #47'
   type: vmess
   server: 23.162.200.198
   port: 18000
@@ -681,7 +724,7 @@ proxies:
   skip-cert-verify: true
   tcp-fast-open: true
   servername: 23.162.200.198
-- name: 'T.ME: @aristapanel #45'
+- name: 'T.ME: @aristapanel #48'
   type: vmess
   server: 23.162.200.198
   port: 18000
@@ -694,7 +737,7 @@ proxies:
   skip-cert-verify: true
   tcp-fast-open: true
   servername: 23.162.200.198
-- name: 'T.ME: @aristapanel #46'
+- name: 'T.ME: @aristapanel #49'
   type: vmess
   server: 188.114.96.19
   port: 80
@@ -711,7 +754,7 @@ proxies:
     path: /
     headers:
       Host: google.whatsapp.snapp.torob.basalam.hesanid8.ir.
-- name: 'T.ME: @aristapanel #47'
+- name: 'T.ME: @aristapanel #50'
   type: vmess
   server: 172.67.198.187
   port: 443
@@ -728,7 +771,7 @@ proxies:
     path: /linkws
     headers:
       Host: xmivideo.cfd
-- name: 'T.ME: @aristapanel #48'
+- name: 'T.ME: @aristapanel #51'
   type: vmess
   server: 168.138.43.75
   port: 80
@@ -745,7 +788,7 @@ proxies:
     path: /cctv13.m3u8
     headers:
       Host: 168.138.43.75
-- name: 'T.ME: @aristapanel #49'
+- name: 'T.ME: @aristapanel #52'
   type: vmess
   server: 165.154.195.38
   port: 35034
@@ -758,7 +801,7 @@ proxies:
   skip-cert-verify: true
   tcp-fast-open: true
   servername: 165.154.195.38
-- name: 'T.ME: @aristapanel #50'
+- name: 'T.ME: @aristapanel #53'
   type: vmess
   server: 104.19.32.0
   port: 443
@@ -775,7 +818,7 @@ proxies:
     path: /linkws
     headers:
       Host: xmivideo.cfd
-- name: 'T.ME: @aristapanel #51'
+- name: 'T.ME: @aristapanel #54'
   type: vmess
   server: 104.17.137.127
   port: 443
@@ -792,7 +835,7 @@ proxies:
     path: /aa
     headers:
       Host: hk.niskakowski.ggff.net
-- name: 'T.ME: @aristapanel #52'
+- name: 'T.ME: @aristapanel #55'
   type: vmess
   server: 66.163.117.58
   port: 22324
@@ -829,8 +872,8 @@ proxy-groups:
   - 'ARISTA #13'
   - 'ARISTA #14'
   - 'ARISTA #15'
-  - 'ARISTA #16'
-  - 'ARISTA #17'
+  - 'T.ME: @aristapanel #17'
+  - 'T.ME: @aristapanel #18'
   - 'T.ME: @aristapanel #19'
   - 'T.ME: @aristapanel #20'
   - 'T.ME: @aristapanel #21'
@@ -843,6 +886,7 @@ proxy-groups:
   - 'T.ME: @aristapanel #28'
   - 'T.ME: @aristapanel #29'
   - 'T.ME: @aristapanel #30'
+  - 'T.ME: @aristapanel #31'
   - 'T.ME: @aristapanel #32'
   - 'T.ME: @aristapanel #33'
   - 'T.ME: @aristapanel #34'
@@ -853,7 +897,6 @@ proxy-groups:
   - 'T.ME: @aristapanel #39'
   - 'T.ME: @aristapanel #40'
   - 'T.ME: @aristapanel #41'
-  - 'T.ME: @aristapanel #42'
   - 'T.ME: @aristapanel #43'
   - 'T.ME: @aristapanel #44'
   - 'T.ME: @aristapanel #45'
@@ -864,6 +907,9 @@ proxy-groups:
   - 'T.ME: @aristapanel #50'
   - 'T.ME: @aristapanel #51'
   - 'T.ME: @aristapanel #52'
+  - 'T.ME: @aristapanel #53'
+  - 'T.ME: @aristapanel #54'
+  - 'T.ME: @aristapanel #55'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

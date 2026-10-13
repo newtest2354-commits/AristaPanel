@@ -1,6 +1,6 @@
 # GITHUB - Port 9443
-# Updated: 2026-10-12 21:16:14
-# Count: 2
+# Updated: 2026-10-13 06:35:40
+# Count: 3
 
 mixed-port: 7890
 allow-lan: false
@@ -50,37 +50,49 @@ rules:
 proxies:
 - name: 'T.ME: @aristapanel #1'
   type: vless
-  server: 87.242.95.164
+  server: 193.233.202.250
   port: 9443
-  uuid: 8593ebae-2644-4b5c-b6e3-38d008115123
-  network: grpc
+  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: qq
-  servername: passport.yandex.ru
-  grpc-opts:
-    grpc-service-name: grpc
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: usa.edgeses.org
   reality-opts:
-    public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-    short-id: "8375b32501373f41"
+    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
+    short-id: "649ab61e575fdbc9"
 - name: 'T.ME: @aristapanel #2'
   type: vless
-  server: 95.129.234.36
+  server: 213.165.50.45
   port: 9443
-  uuid: a1f00f09-80b8-415f-8258-801590975ca5
-  network: ws
+  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - http/1.1
+  flow: xtls-rprx-vision
   client-fingerprint: firefox
-  servername: eh-ger1.country-tools.net
-  ws-opts:
-    path: /images
-    headers:
-      Host: eh-ger1.country-tools.net
+  servername: usa.edgeses.org
+  reality-opts:
+    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
+    short-id: "649ab61e575fdbc9"
+- name: 'T.ME: @aristapanel #3'
+  type: vless
+  server: 213.165.50.47
+  port: 9443
+  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: usa.edgeses.org
+  reality-opts:
+    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
+    short-id: "649ab61e575fdbc9"
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -92,6 +104,7 @@ proxy-groups:
   proxies: &id001
   - 'T.ME: @aristapanel #1'
   - 'T.ME: @aristapanel #2'
+  - 'T.ME: @aristapanel #3'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

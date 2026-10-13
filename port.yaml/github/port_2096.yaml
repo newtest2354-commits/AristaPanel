@@ -1,6 +1,6 @@
 # GITHUB - Port 2096
-# Updated: 2026-10-12 21:16:14
-# Count: 5
+# Updated: 2026-10-13 06:35:40
+# Count: 6
 
 mixed-port: 7890
 allow-lan: false
@@ -50,34 +50,24 @@ rules:
 proxies:
 - name: 'T.ME: @aristapanel #1'
   type: vless
-  server: www.speedtest.net
+  server: 104.18.1.1
   port: 2096
-  uuid: ad356e93-cc14-417d-9f4e-32376d03f5b7
+  uuid: 8d82944e-17b9-473f-a456-dec9a6e21471
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: 872ede3847653442.hozheen.ir
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: ios
+  servername: peekconfig.peekconf1.workers.dev
   ws-opts:
-    path: /ws?ed
+    path: /eyJqdW5rIjoidnlSRWhQQ3ZCNGZRNHVYMyIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJlZml4IiwicGFuZWxJUHMiOlsiWzJhMDI6ODk4OjE0Njo2NDo6XSJdfQ==
     headers:
-      Host: com.hozheen.ir
+      Host: peekconfig.peekconf1.workers.dev
 - name: 'T.ME: @aristapanel #2'
-  type: vless
-  server: ns.l90909l.vip
-  port: 2096
-  uuid: 3fcec4e4-a674-44d2-8cae-c253cec43b9c
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: id.vk.com
-  grpc-opts:
-    grpc-service-name: vless-grpc-reality
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-- name: 'T.ME: @aristapanel #3'
   type: vless
   server: 139.162.27.96
   port: 2096
@@ -86,12 +76,47 @@ proxies:
   tls: true
   udp: true
   skip-cert-verify: true
+  client-fingerprint: chrome
   servername: free-server.techsonic.dev
   ws-opts:
     path: /free-server.techsonic.dev
     headers:
       Host: free-server.techsonic.dev
+- name: 'T.ME: @aristapanel #3'
+  type: trojan
+  server: node-562276409-d1add2.subject88.workers.dev
+  port: 2096
+  password: 7990f64c-d3d0-4af6-a78b-fc690e5803ad
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: NODE-562276409-d1aDd2.sUbjECT88.WOrkErs.deV
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /tr/rpmeJRDCbzoeQHjtWQtucdXDWonXCG?ed=2560
+    headers:
+      Host: node-562276409-d1add2.subject88.workers.dev
 - name: 'T.ME: @aristapanel #4'
+  type: trojan
+  server: node-562276409-d1add2.subject88.workers.dev
+  port: 2096
+  password: 7990f64c-d3d0-4af6-a78b-fc690e5803ad
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: NODE-562276409-d1aDd2.sUbjECT88.WOrkErs.deV
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /tr/rpmeJRDCbzoeQHjtWQtucdXDWonXCG?ed=2560
+    headers:
+      Host: node-562276409-d1add2.subject88.workers.dev
+- name: 'T.ME: @aristapanel #5'
   type: hysteria2
   server: karo.rick313.dpdns.org
   port: 2096
@@ -101,7 +126,7 @@ proxies:
   fast-open: true
   obfs: salamander
   obfs-password: karo123
-- name: 'T.ME: @aristapanel #5'
+- name: 'T.ME: @aristapanel #6'
   type: hysteria2
   server: karo.rick313.dpdns.org
   port: 2096
@@ -125,6 +150,7 @@ proxy-groups:
   - 'T.ME: @aristapanel #3'
   - 'T.ME: @aristapanel #4'
   - 'T.ME: @aristapanel #5'
+  - 'T.ME: @aristapanel #6'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
