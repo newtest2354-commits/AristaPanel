@@ -1,6 +1,6 @@
 # COMBINED - Port 9443
-# Updated: 2026-10-13 16:55:57
-# Count: 30
+# Updated: 2026-10-13 22:37:50
+# Count: 10
 
 mixed-port: 7890
 allow-lan: false
@@ -50,7 +50,7 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 95.181.173.68
+  server: 213.165.50.45
   port: 9443
   uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
   network: tcp
@@ -58,13 +58,14 @@ proxies:
   udp: true
   skip-cert-verify: true
   flow: xtls-rprx-vision
+  client-fingerprint: firefox
   servername: usa.edgeses.org
   reality-opts:
     public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
     short-id: "649ab61e575fdbc9"
 - name: 'ARISTA #2'
   type: vless
-  server: 213.165.50.47
+  server: 213.165.50.45
   port: 9443
   uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
   network: tcp
@@ -72,32 +73,46 @@ proxies:
   udp: true
   skip-cert-verify: true
   flow: xtls-rprx-vision
-  client-fingerprint: chrome
+  client-fingerprint: firefox
   servername: usa.edgeses.org
   reality-opts:
     public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
     short-id: "649ab61e575fdbc9"
 - name: 'ARISTA #3'
   type: vless
-  server: 213.165.50.45
+  server: 193.233.202.250
   port: 9443
   uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-  network: tcp
+  network: raw
   tls: true
   udp: true
   skip-cert-verify: true
   flow: xtls-rprx-vision
-  client-fingerprint: chrome
+  client-fingerprint: firefox
   servername: usa.edgeses.org
   reality-opts:
     public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
     short-id: "649ab61e575fdbc9"
 - name: 'ARISTA #4'
   type: vless
+  server: 95.181.173.68
+  port: 9443
+  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: usa.edgeses.org
+  reality-opts:
+    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
+    short-id: "649ab61e575fdbc9"
+- name: 'T.ME: @aristapanel #5'
+  type: vless
   server: 193.233.202.250
   port: 9443
   uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-  network: raw
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
@@ -107,52 +122,38 @@ proxies:
   reality-opts:
     public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
     short-id: "649ab61e575fdbc9"
-- name: 'ARISTA #5'
+- name: 'T.ME: @aristapanel #6'
   type: vless
-  server: 95.181.173.68
+  server: fastly.vexogf.ir
   port: 9443
-  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
+  uuid: eacd1f67-5f70-425a-a424-8c95e12a92c1
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: usa.edgeses.org
-  reality-opts:
-    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
-    short-id: "649ab61e575fdbc9"
-- name: 'ARISTA #6'
-  type: vless
-  server: 213.165.50.47
-  port: 9443
-  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
   client-fingerprint: chrome
-  servername: usa.edgeses.org
+  servername: play.google.com
   reality-opts:
-    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
-    short-id: "649ab61e575fdbc9"
-- name: 'ARISTA #7'
+    public-key: YO2IIMfb_rukoknmG-91KRGGNb7BE1aBcr_-XKQkVXY
+    short-id: "f0c56d4f73d757f0"
+- name: 'T.ME: @aristapanel #7'
   type: vless
-  server: 95.181.173.68
+  server: 38.180.137.143
   port: 9443
-  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
+  uuid: fe0721ac-c577-4938-b7ca-8ab5f43bb8da
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
   flow: xtls-rprx-vision
-  servername: usa.edgeses.org
+  client-fingerprint: random
+  servername: www.amazon.com
   reality-opts:
-    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
-    short-id: "649ab61e575fdbc9"
+    public-key: 0hIFPaEn4RdFib8_eP8HYxMywR5izEwM3JA2W1Zo8U4
+    short-id: "b390142456517acc"
 - name: 'ARISTA #8'
   type: vless
-  server: 95.181.173.68
+  server: 213.165.50.45
   port: 9443
   uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
   network: tcp
@@ -160,57 +161,28 @@ proxies:
   udp: true
   skip-cert-verify: true
   flow: xtls-rprx-vision
+  client-fingerprint: firefox
   servername: usa.edgeses.org
   reality-opts:
     public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
     short-id: "649ab61e575fdbc9"
 - name: 'ARISTA #9'
   type: vless
-  server: 213.165.50.47
+  server: 193.233.202.250
   port: 9443
   uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-  network: tcp
+  network: raw
   tls: true
   udp: true
   skip-cert-verify: true
   flow: xtls-rprx-vision
-  client-fingerprint: chrome
+  client-fingerprint: firefox
   servername: usa.edgeses.org
   reality-opts:
     public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
     short-id: "649ab61e575fdbc9"
 - name: 'ARISTA #10'
   type: vless
-  server: 213.165.50.45
-  port: 9443
-  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: usa.edgeses.org
-  reality-opts:
-    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
-    short-id: "649ab61e575fdbc9"
-- name: 'ARISTA #11'
-  type: vless
-  server: 193.233.202.250
-  port: 9443
-  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-  network: raw
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: usa.edgeses.org
-  reality-opts:
-    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
-    short-id: "649ab61e575fdbc9"
-- name: 'ARISTA #12'
-  type: vless
   server: 95.181.173.68
   port: 9443
   uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
@@ -219,272 +191,6 @@ proxies:
   udp: true
   skip-cert-verify: true
   flow: xtls-rprx-vision
-  servername: usa.edgeses.org
-  reality-opts:
-    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
-    short-id: "649ab61e575fdbc9"
-- name: 'ARISTA #13'
-  type: vless
-  server: 213.165.50.47
-  port: 9443
-  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: usa.edgeses.org
-  reality-opts:
-    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
-    short-id: "649ab61e575fdbc9"
-- name: 'ARISTA #14'
-  type: vless
-  server: 213.165.50.45
-  port: 9443
-  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: usa.edgeses.org
-  reality-opts:
-    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
-    short-id: "649ab61e575fdbc9"
-- name: 'ARISTA #15'
-  type: vless
-  server: 95.181.173.68
-  port: 9443
-  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: usa.edgeses.org
-  reality-opts:
-    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
-    short-id: "649ab61e575fdbc9"
-- name: 'ARISTA #16'
-  type: vless
-  server: 213.165.50.47
-  port: 9443
-  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: usa.edgeses.org
-  reality-opts:
-    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
-    short-id: "649ab61e575fdbc9"
-- name: 'ARISTA #17'
-  type: vless
-  server: 213.165.50.45
-  port: 9443
-  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: usa.edgeses.org
-  reality-opts:
-    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
-    short-id: "649ab61e575fdbc9"
-- name: 'ARISTA #18'
-  type: vless
-  server: 193.233.202.250
-  port: 9443
-  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-  network: raw
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: usa.edgeses.org
-  reality-opts:
-    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
-    short-id: "649ab61e575fdbc9"
-- name: 'ARISTA #19'
-  type: vless
-  server: 95.181.173.68
-  port: 9443
-  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: usa.edgeses.org
-  reality-opts:
-    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
-    short-id: "649ab61e575fdbc9"
-- name: 'ARISTA #20'
-  type: vless
-  server: 213.165.50.47
-  port: 9443
-  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: usa.edgeses.org
-  reality-opts:
-    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
-    short-id: "649ab61e575fdbc9"
-- name: 'ARISTA #21'
-  type: vless
-  server: 213.165.50.45
-  port: 9443
-  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: usa.edgeses.org
-  reality-opts:
-    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
-    short-id: "649ab61e575fdbc9"
-- name: 'ARISTA #22'
-  type: vless
-  server: 193.233.202.250
-  port: 9443
-  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-  network: raw
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: usa.edgeses.org
-  reality-opts:
-    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
-    short-id: "649ab61e575fdbc9"
-- name: 'T.ME: @aristapanel #23'
-  type: vless
-  server: 193.233.202.250
-  port: 9443
-  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: usa.edgeses.org
-  reality-opts:
-    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
-    short-id: "649ab61e575fdbc9"
-- name: 'ARISTA #24'
-  type: vless
-  server: 95.181.173.68
-  port: 9443
-  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: usa.edgeses.org
-  reality-opts:
-    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
-    short-id: "649ab61e575fdbc9"
-- name: 'ARISTA #25'
-  type: vless
-  server: 213.165.50.47
-  port: 9443
-  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: usa.edgeses.org
-  reality-opts:
-    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
-    short-id: "649ab61e575fdbc9"
-- name: 'ARISTA #26'
-  type: vless
-  server: 213.165.50.45
-  port: 9443
-  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: usa.edgeses.org
-  reality-opts:
-    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
-    short-id: "649ab61e575fdbc9"
-- name: 'ARISTA #27'
-  type: vless
-  server: 95.181.173.68
-  port: 9443
-  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: usa.edgeses.org
-  reality-opts:
-    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
-    short-id: "649ab61e575fdbc9"
-- name: 'ARISTA #28'
-  type: vless
-  server: 213.165.50.47
-  port: 9443
-  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: usa.edgeses.org
-  reality-opts:
-    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
-    short-id: "649ab61e575fdbc9"
-- name: 'ARISTA #29'
-  type: vless
-  server: 213.165.50.45
-  port: 9443
-  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: usa.edgeses.org
-  reality-opts:
-    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
-    short-id: "649ab61e575fdbc9"
-- name: 'ARISTA #30'
-  type: vless
-  server: 193.233.202.250
-  port: 9443
-  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-  network: raw
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
   servername: usa.edgeses.org
   reality-opts:
     public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
@@ -502,32 +208,12 @@ proxy-groups:
   - 'ARISTA #2'
   - 'ARISTA #3'
   - 'ARISTA #4'
-  - 'ARISTA #5'
-  - 'ARISTA #6'
-  - 'ARISTA #7'
+  - 'T.ME: @aristapanel #5'
+  - 'T.ME: @aristapanel #6'
+  - 'T.ME: @aristapanel #7'
   - 'ARISTA #8'
   - 'ARISTA #9'
   - 'ARISTA #10'
-  - 'ARISTA #11'
-  - 'ARISTA #12'
-  - 'ARISTA #13'
-  - 'ARISTA #14'
-  - 'ARISTA #15'
-  - 'ARISTA #16'
-  - 'ARISTA #17'
-  - 'ARISTA #18'
-  - 'ARISTA #19'
-  - 'ARISTA #20'
-  - 'ARISTA #21'
-  - 'ARISTA #22'
-  - 'T.ME: @aristapanel #23'
-  - 'ARISTA #24'
-  - 'ARISTA #25'
-  - 'ARISTA #26'
-  - 'ARISTA #27'
-  - 'ARISTA #28'
-  - 'ARISTA #29'
-  - 'ARISTA #30'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
