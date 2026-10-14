@@ -1,6 +1,6 @@
 # TELEGRAM - Port 9443
-# Updated: 2026-10-13 22:37:58
-# Count: 7
+# Updated: 2026-10-14 04:34:24
+# Count: 4
 
 mixed-port: 7890
 allow-lan: false
@@ -50,7 +50,7 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 213.165.50.45
+  server: 95.181.173.68
   port: 9443
   uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
   network: tcp
@@ -58,17 +58,16 @@ proxies:
   udp: true
   skip-cert-verify: true
   flow: xtls-rprx-vision
-  client-fingerprint: firefox
   servername: usa.edgeses.org
   reality-opts:
     public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
     short-id: "649ab61e575fdbc9"
 - name: 'ARISTA #2'
   type: vless
-  server: 213.165.50.45
+  server: 193.233.202.250
   port: 9443
   uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-  network: tcp
+  network: raw
   tls: true
   udp: true
   skip-cert-verify: true
@@ -80,50 +79,20 @@ proxies:
     short-id: "649ab61e575fdbc9"
 - name: 'ARISTA #3'
   type: vless
-  server: 193.233.202.250
+  server: 95.181.173.68
   port: 9443
   uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-  network: raw
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
   flow: xtls-rprx-vision
-  client-fingerprint: firefox
   servername: usa.edgeses.org
   reality-opts:
     public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
     short-id: "649ab61e575fdbc9"
 - name: 'ARISTA #4'
   type: vless
-  server: 95.181.173.68
-  port: 9443
-  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: usa.edgeses.org
-  reality-opts:
-    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
-    short-id: "649ab61e575fdbc9"
-- name: 'ARISTA #5'
-  type: vless
-  server: 213.165.50.45
-  port: 9443
-  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: usa.edgeses.org
-  reality-opts:
-    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
-    short-id: "649ab61e575fdbc9"
-- name: 'ARISTA #6'
-  type: vless
   server: 193.233.202.250
   port: 9443
   uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
@@ -133,20 +102,6 @@ proxies:
   skip-cert-verify: true
   flow: xtls-rprx-vision
   client-fingerprint: firefox
-  servername: usa.edgeses.org
-  reality-opts:
-    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
-    short-id: "649ab61e575fdbc9"
-- name: 'ARISTA #7'
-  type: vless
-  server: 95.181.173.68
-  port: 9443
-  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
   servername: usa.edgeses.org
   reality-opts:
     public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
@@ -164,9 +119,6 @@ proxy-groups:
   - 'ARISTA #2'
   - 'ARISTA #3'
   - 'ARISTA #4'
-  - 'ARISTA #5'
-  - 'ARISTA #6'
-  - 'ARISTA #7'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
