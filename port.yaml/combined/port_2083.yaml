@@ -1,6 +1,6 @@
 # COMBINED - Port 2083
-# Updated: 2026-10-14 04:34:20
-# Count: 50
+# Updated: 2026-10-14 11:41:10
+# Count: 59
 
 mixed-port: 7890
 allow-lan: false
@@ -49,23 +49,42 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'ARISTA #1'
-  type: vless
-  server: cf1.w3bschool.ir
+  type: vmess
+  server: cdn.sfacg.uk
   port: 2083
-  uuid: fe12ec72-4d23-4958-b495-494296774d6a
+  uuid: ac251237-576f-40c8-a543-554960c958b1
+  alterId: 0
+  cipher: auto
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
+  tcp-fast-open: true
+  servername: cdn.sfacg.uk
   client-fingerprint: chrome
-  servername: ch.topdigit.ir
   ws-opts:
-    path: /path
+    path: /or3
     headers:
-      Host: ch.topdigit.ir
+      Host: or3.sfacg.uk
 - name: 'ARISTA #2'
+  type: vmess
+  server: cdn.sfacg.uk
+  port: 2083
+  uuid: ac251237-576f-40c8-a543-554960c958b1
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: cdn.sfacg.uk
+  client-fingerprint: chrome
+  ws-opts:
+    path: /or3
+    headers:
+      Host: or3.sfacg.uk
+- name: 'ARISTA #3'
   type: vless
   server: sino.bestsellers1.site
   port: 2083
@@ -82,7 +101,7 @@ proxies:
   servername: sino.bestsellers1.site
   ws-opts:
     path: /
-- name: 'ARISTA #3'
+- name: 'ARISTA #4'
   type: vless
   server: 31.76.249.99
   port: 2083
@@ -97,7 +116,22 @@ proxies:
   reality-opts:
     public-key: 52ubfjA6UOtgDpRoap_ERN7qIFl0VgucprglobhPjnw
     short-id: "f9e41dee3defd503"
-- name: 'ARISTA #4'
+- name: 'ARISTA #5'
+  type: vless
+  server: 31.56.18.68
+  port: 2083
+  uuid: 0be0a2bf-aa20-4e52-aa5a-3d59d56b1582
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: sege.underground.company
+  reality-opts:
+    public-key: scciA01bQ-ytPPwzcRAo9RKoy2CouZieWg77k6WTe2g
+    short-id: "8ba8e547c140ea3f"
+- name: 'ARISTA #6'
   type: vless
   server: 188.114.97.6
   port: 2083
@@ -111,7 +145,7 @@ proxies:
   - http/1.1
   client-fingerprint: chrome
   servername: dsn1.nidu.ir
-- name: 'ARISTA #5'
+- name: 'ARISTA #7'
   type: vless
   server: 188.114.97.6
   port: 2083
@@ -125,24 +159,22 @@ proxies:
   - http/1.1
   client-fingerprint: chrome
   servername: cdnusa.nidu.ir
-- name: 'ARISTA #6'
+- name: 'ARISTA #8'
   type: vless
-  server: cf1.w3bschool.ir
+  server: 31.56.185.175
   port: 2083
-  uuid: fe12ec72-4d23-4958-b495-494296774d6a
-  network: ws
+  uuid: 0be0a2bf-aa20-4e52-aa5a-3d59d56b1582
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: chrome
-  servername: ch.topdigit.ir
-  ws-opts:
-    path: /path
-    headers:
-      Host: ch.topdigit.ir
-- name: 'ARISTA #7'
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: nlh2.underground.company
+  reality-opts:
+    public-key: z4kKH-ZtCuJOEMOxWIjYrYmgT-7lbCNpU2wz5eFCYWg
+    short-id: "cbf7d7d0f10b65cf"
+- name: 'ARISTA #9'
   type: vless
   server: sino.bestsellers1.site
   port: 2083
@@ -159,38 +191,6 @@ proxies:
   servername: sino.bestsellers1.site
   ws-opts:
     path: /
-- name: 'ARISTA #8'
-  type: vless
-  server: 31.76.249.99
-  port: 2083
-  uuid: 0be0a2bf-aa20-4e52-aa5a-3d59d56b1582
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: genexus.underground.company
-  reality-opts:
-    public-key: 52ubfjA6UOtgDpRoap_ERN7qIFl0VgucprglobhPjnw
-    short-id: "f9e41dee3defd503"
-- name: 'ARISTA #9'
-  type: vless
-  server: cf1.w3bschool.ir
-  port: 2083
-  uuid: fe12ec72-4d23-4958-b495-494296774d6a
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: chrome
-  servername: ch.topdigit.ir
-  ws-opts:
-    path: /path
-    headers:
-      Host: ch.topdigit.ir
 - name: 'ARISTA #10'
   type: vless
   server: sino.bestsellers1.site
@@ -210,40 +210,6 @@ proxies:
     path: /
 - name: 'ARISTA #11'
   type: vless
-  server: cf1.w3bschool.ir
-  port: 2083
-  uuid: fe12ec72-4d23-4958-b495-494296774d6a
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: chrome
-  servername: ch.topdigit.ir
-  ws-opts:
-    path: /path
-    headers:
-      Host: ch.topdigit.ir
-- name: 'ARISTA #12'
-  type: vless
-  server: sino.bestsellers1.site
-  port: 2083
-  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: sino.bestsellers1.site
-  ws-opts:
-    path: /
-- name: 'ARISTA #13'
-  type: vless
   server: 31.76.249.99
   port: 2083
   uuid: 0be0a2bf-aa20-4e52-aa5a-3d59d56b1582
@@ -257,6 +223,35 @@ proxies:
   reality-opts:
     public-key: 52ubfjA6UOtgDpRoap_ERN7qIFl0VgucprglobhPjnw
     short-id: "f9e41dee3defd503"
+- name: 'ARISTA #12'
+  type: vless
+  server: 31.56.18.68
+  port: 2083
+  uuid: 0be0a2bf-aa20-4e52-aa5a-3d59d56b1582
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: sege.underground.company
+  reality-opts:
+    public-key: scciA01bQ-ytPPwzcRAo9RKoy2CouZieWg77k6WTe2g
+    short-id: "8ba8e547c140ea3f"
+- name: 'ARISTA #13'
+  type: vless
+  server: 188.114.97.6
+  port: 2083
+  uuid: 32cbf931-7279-419b-a5eb-3ef2630a680c
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dsn1.nidu.ir
 - name: 'ARISTA #14'
   type: vless
   server: 188.114.97.6
@@ -270,8 +265,102 @@ proxies:
   - h2
   - http/1.1
   client-fingerprint: chrome
-  servername: dsn1.nidu.ir
+  servername: cdnusa.nidu.ir
 - name: 'ARISTA #15'
+  type: vless
+  server: sino.bestsellers1.site
+  port: 2083
+  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: sino.bestsellers1.site
+  ws-opts:
+    path: /
+- name: 'ARISTA #16'
+  type: vless
+  server: 31.76.249.99
+  port: 2083
+  uuid: 0be0a2bf-aa20-4e52-aa5a-3d59d56b1582
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: genexus.underground.company
+  reality-opts:
+    public-key: 52ubfjA6UOtgDpRoap_ERN7qIFl0VgucprglobhPjnw
+    short-id: "f9e41dee3defd503"
+- name: 'ARISTA #17'
+  type: vless
+  server: 31.56.18.68
+  port: 2083
+  uuid: 0be0a2bf-aa20-4e52-aa5a-3d59d56b1582
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: sege.underground.company
+  reality-opts:
+    public-key: scciA01bQ-ytPPwzcRAo9RKoy2CouZieWg77k6WTe2g
+    short-id: "8ba8e547c140ea3f"
+- name: 'ARISTA #18'
+  type: vless
+  server: sino.bestsellers1.site
+  port: 2083
+  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: sino.bestsellers1.site
+  ws-opts:
+    path: /
+- name: 'ARISTA #19'
+  type: vless
+  server: 31.76.249.99
+  port: 2083
+  uuid: 0be0a2bf-aa20-4e52-aa5a-3d59d56b1582
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: genexus.underground.company
+  reality-opts:
+    public-key: 52ubfjA6UOtgDpRoap_ERN7qIFl0VgucprglobhPjnw
+    short-id: "f9e41dee3defd503"
+- name: 'ARISTA #20'
+  type: vless
+  server: 31.56.18.68
+  port: 2083
+  uuid: 0be0a2bf-aa20-4e52-aa5a-3d59d56b1582
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: sege.underground.company
+  reality-opts:
+    public-key: scciA01bQ-ytPPwzcRAo9RKoy2CouZieWg77k6WTe2g
+    short-id: "8ba8e547c140ea3f"
+- name: 'ARISTA #21'
   type: vless
   server: 188.114.97.6
   port: 2083
@@ -284,105 +373,7 @@ proxies:
   - h2
   - http/1.1
   client-fingerprint: chrome
-  servername: cdnusa.nidu.ir
-- name: 'ARISTA #16'
-  type: vless
-  server: cf1.w3bschool.ir
-  port: 2083
-  uuid: fe12ec72-4d23-4958-b495-494296774d6a
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: chrome
-  servername: ch.topdigit.ir
-  ws-opts:
-    path: /path
-    headers:
-      Host: ch.topdigit.ir
-- name: 'ARISTA #17'
-  type: vless
-  server: sino.bestsellers1.site
-  port: 2083
-  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: sino.bestsellers1.site
-  ws-opts:
-    path: /
-- name: 'ARISTA #18'
-  type: vless
-  server: 31.76.249.99
-  port: 2083
-  uuid: 0be0a2bf-aa20-4e52-aa5a-3d59d56b1582
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: genexus.underground.company
-  reality-opts:
-    public-key: 52ubfjA6UOtgDpRoap_ERN7qIFl0VgucprglobhPjnw
-    short-id: "f9e41dee3defd503"
-- name: 'ARISTA #19'
-  type: vless
-  server: cf1.w3bschool.ir
-  port: 2083
-  uuid: fe12ec72-4d23-4958-b495-494296774d6a
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: chrome
-  servername: ch.topdigit.ir
-  ws-opts:
-    path: /path
-    headers:
-      Host: ch.topdigit.ir
-- name: 'ARISTA #20'
-  type: vless
-  server: sino.bestsellers1.site
-  port: 2083
-  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: sino.bestsellers1.site
-  ws-opts:
-    path: /
-- name: 'ARISTA #21'
-  type: vless
-  server: 31.76.249.99
-  port: 2083
-  uuid: 0be0a2bf-aa20-4e52-aa5a-3d59d56b1582
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: genexus.underground.company
-  reality-opts:
-    public-key: 52ubfjA6UOtgDpRoap_ERN7qIFl0VgucprglobhPjnw
-    short-id: "f9e41dee3defd503"
+  servername: dsn1.nidu.ir
 - name: 'ARISTA #22'
   type: vless
   server: 188.114.97.6
@@ -396,38 +387,37 @@ proxies:
   - h2
   - http/1.1
   client-fingerprint: chrome
-  servername: dsn1.nidu.ir
+  servername: cdnusa.nidu.ir
 - name: 'ARISTA #23'
   type: vless
-  server: 188.114.97.6
+  server: 31.56.185.175
   port: 2083
-  uuid: 32cbf931-7279-419b-a5eb-3ef2630a680c
+  uuid: 0be0a2bf-aa20-4e52-aa5a-3d59d56b1582
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: nlh2.underground.company
+  reality-opts:
+    public-key: z4kKH-ZtCuJOEMOxWIjYrYmgT-7lbCNpU2wz5eFCYWg
+    short-id: "cbf7d7d0f10b65cf"
+- name: 'ARISTA #24'
+  type: vless
+  server: api.nuxt.com
+  port: 2083
+  uuid: 90482e93-bfac-e118-d81a-322d2143f16b
   network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
   alpn:
-  - h2
   - http/1.1
-  client-fingerprint: chrome
-  servername: cdnusa.nidu.ir
-- name: 'ARISTA #24'
-  type: vless
-  server: cf1.w3bschool.ir
-  port: 2083
-  uuid: fe12ec72-4d23-4958-b495-494296774d6a
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
   - h2
+  - h3
   client-fingerprint: chrome
-  servername: ch.topdigit.ir
-  ws-opts:
-    path: /path
-    headers:
-      Host: ch.topdigit.ir
+  servername: 49geclud1.varzeshfotsal.ir
 - name: 'ARISTA #25'
   type: vless
   server: sino.bestsellers1.site
@@ -462,49 +452,6 @@ proxies:
     short-id: "f9e41dee3defd503"
 - name: 'ARISTA #27'
   type: vless
-  server: 188.114.97.6
-  port: 2083
-  uuid: 32cbf931-7279-419b-a5eb-3ef2630a680c
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: dsn1.nidu.ir
-- name: 'ARISTA #28'
-  type: vless
-  server: 188.114.97.6
-  port: 2083
-  uuid: 32cbf931-7279-419b-a5eb-3ef2630a680c
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: cdnusa.nidu.ir
-- name: 'ARISTA #29'
-  type: vless
-  server: api.nuxt.com
-  port: 2083
-  uuid: 90482e93-bfac-e118-d81a-322d2143f16b
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  - h2
-  - h3
-  client-fingerprint: chrome
-  servername: 49geclud1.varzeshfotsal.ir
-- name: 'ARISTA #30'
-  type: vless
   server: 31.56.18.68
   port: 2083
   uuid: 0be0a2bf-aa20-4e52-aa5a-3d59d56b1582
@@ -518,7 +465,35 @@ proxies:
   reality-opts:
     public-key: scciA01bQ-ytPPwzcRAo9RKoy2CouZieWg77k6WTe2g
     short-id: "8ba8e547c140ea3f"
-- name: 'ARISTA #31'
+- name: 'ARISTA #28'
+  type: vless
+  server: 188.114.97.6
+  port: 2083
+  uuid: 32cbf931-7279-419b-a5eb-3ef2630a680c
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dsn1.nidu.ir
+- name: 'ARISTA #29'
+  type: vless
+  server: 188.114.97.6
+  port: 2083
+  uuid: 32cbf931-7279-419b-a5eb-3ef2630a680c
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: cdnusa.nidu.ir
+- name: 'ARISTA #30'
   type: vless
   server: 31.56.185.175
   port: 2083
@@ -533,7 +508,22 @@ proxies:
   reality-opts:
     public-key: z4kKH-ZtCuJOEMOxWIjYrYmgT-7lbCNpU2wz5eFCYWg
     short-id: "cbf7d7d0f10b65cf"
-- name: 'T.ME: @aristapanel #32'
+- name: 'ARISTA #31'
+  type: vless
+  server: api.nuxt.com
+  port: 2083
+  uuid: 90482e93-bfac-e118-d81a-322d2143f16b
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  - h2
+  - h3
+  client-fingerprint: chrome
+  servername: 49geclud1.varzeshfotsal.ir
+- name: 'ARISTA #32'
   type: vless
   server: 31.56.18.67
   port: 2083
@@ -548,7 +538,71 @@ proxies:
   reality-opts:
     public-key: RAsD3YMZiEtRBEQ6hNpsyfVE9ro1M4H2AQ-CKbBjJGU
     short-id: "7878a3f029e04e23"
-- name: 'T.ME: @aristapanel #33'
+- name: 'ARISTA #33'
+  type: vless
+  server: cf1.w3bschool.ir
+  port: 2083
+  uuid: fe12ec72-4d23-4958-b495-494296774d6a
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: ch.topdigit.ir
+  ws-opts:
+    path: /path
+    headers:
+      Host: ch.topdigit.ir
+- name: 'ARISTA #34'
+  type: vless
+  server: 172.67.174.157
+  port: 2083
+  uuid: 283665ab-54c2-4c59-ac55-5e8388558eba
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: 27l432tlhnpcojr6u0d3.adfasdfadfasdf.workers.dev
+  ws-opts:
+    path: /vl/oCCSZfAWhGqcVO3WOEnIPj9Z9ke?ed
+    headers:
+      Host: 27l432tlhnpcojr6u0d3.adfasdfadfasdf.workers.dev
+- name: 'ARISTA #35'
+  type: vless
+  server: 164.90.176.31
+  port: 2083
+  uuid: a747c516-34bd-41b8-8590-a9d1edb79e95
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: random
+  servername: summer-hall-8b23.asddsaasan.workers.dev
+  ws-opts:
+    path: /
+    headers:
+      Host: summer-hall-8b23.asddsaasan.workers.dev
+- name: 'ARISTA #36'
+  type: vless
+  server: 27.50.49.154
+  port: 2083
+  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: proxy-34l.pages.dev
+  ws-opts:
+    path: /
+    headers:
+      Host: proxy-34l.pages.dev
+- name: 'T.ME: @aristapanel #37'
   type: vless
   server: 31.77.28.118
   port: 2083
@@ -563,91 +617,8 @@ proxies:
   reality-opts:
     public-key: niPkNwQ3kdNewalJ25vG_8GNJDdsxJTxbzgyX4lce0I
     short-id: "f26f705a6e554a41"
-- name: 'T.ME: @aristapanel #34'
-  type: vless
-  server: www.varzesh3.com
-  port: 2083
-  uuid: 492aa4d4-26e5-4e16-96f5-70beee66bc65
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: serv2.servvadd.org
-  ws-opts:
-    path: /api/v1
-    headers:
-      Host: serv2.servvadd.org
-- name: 'ARISTA #35'
-  type: vless
-  server: cf1.w3bschool.ir
-  port: 2083
-  uuid: fe12ec72-4d23-4958-b495-494296774d6a
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: chrome
-  servername: ch.topdigit.ir
-  ws-opts:
-    path: /path
-    headers:
-      Host: ch.topdigit.ir
-- name: 'ARISTA #36'
-  type: vless
-  server: sino.bestsellers1.site
-  port: 2083
-  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: sino.bestsellers1.site
-  ws-opts:
-    path: /
-- name: 'ARISTA #37'
-  type: vless
-  server: 31.76.249.99
-  port: 2083
-  uuid: 0be0a2bf-aa20-4e52-aa5a-3d59d56b1582
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: genexus.underground.company
-  reality-opts:
-    public-key: 52ubfjA6UOtgDpRoap_ERN7qIFl0VgucprglobhPjnw
-    short-id: "f9e41dee3defd503"
 - name: 'ARISTA #38'
   type: vless
-  server: cf1.w3bschool.ir
-  port: 2083
-  uuid: fe12ec72-4d23-4958-b495-494296774d6a
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: chrome
-  servername: ch.topdigit.ir
-  ws-opts:
-    path: /path
-    headers:
-      Host: ch.topdigit.ir
-- name: 'ARISTA #39'
-  type: vless
   server: sino.bestsellers1.site
   port: 2083
   uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
@@ -663,7 +634,7 @@ proxies:
   servername: sino.bestsellers1.site
   ws-opts:
     path: /
-- name: 'ARISTA #40'
+- name: 'ARISTA #39'
   type: vless
   server: 31.76.249.99
   port: 2083
@@ -678,6 +649,21 @@ proxies:
   reality-opts:
     public-key: 52ubfjA6UOtgDpRoap_ERN7qIFl0VgucprglobhPjnw
     short-id: "f9e41dee3defd503"
+- name: 'ARISTA #40'
+  type: vless
+  server: 31.56.18.68
+  port: 2083
+  uuid: 0be0a2bf-aa20-4e52-aa5a-3d59d56b1582
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: sege.underground.company
+  reality-opts:
+    public-key: scciA01bQ-ytPPwzcRAo9RKoy2CouZieWg77k6WTe2g
+    short-id: "8ba8e547c140ea3f"
 - name: 'ARISTA #41'
   type: vless
   server: 188.114.97.6
@@ -708,20 +694,37 @@ proxies:
   servername: cdnusa.nidu.ir
 - name: 'ARISTA #43'
   type: vless
-  server: api.nuxt.com
+  server: sino.bestsellers1.site
   port: 2083
-  uuid: 90482e93-bfac-e118-d81a-322d2143f16b
-  network: xhttp
+  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   alpn:
-  - http/1.1
-  - h2
   - h3
+  - h2
+  - http/1.1
   client-fingerprint: chrome
-  servername: 49geclud1.varzeshfotsal.ir
+  servername: sino.bestsellers1.site
+  ws-opts:
+    path: /
 - name: 'ARISTA #44'
+  type: vless
+  server: 31.76.249.99
+  port: 2083
+  uuid: 0be0a2bf-aa20-4e52-aa5a-3d59d56b1582
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: genexus.underground.company
+  reality-opts:
+    public-key: 52ubfjA6UOtgDpRoap_ERN7qIFl0VgucprglobhPjnw
+    short-id: "f9e41dee3defd503"
+- name: 'ARISTA #45'
   type: vless
   server: 31.56.18.68
   port: 2083
@@ -736,7 +739,35 @@ proxies:
   reality-opts:
     public-key: scciA01bQ-ytPPwzcRAo9RKoy2CouZieWg77k6WTe2g
     short-id: "8ba8e547c140ea3f"
-- name: 'ARISTA #45'
+- name: 'ARISTA #46'
+  type: vless
+  server: 188.114.97.6
+  port: 2083
+  uuid: 32cbf931-7279-419b-a5eb-3ef2630a680c
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dsn1.nidu.ir
+- name: 'ARISTA #47'
+  type: vless
+  server: 188.114.97.6
+  port: 2083
+  uuid: 32cbf931-7279-419b-a5eb-3ef2630a680c
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: cdnusa.nidu.ir
+- name: 'ARISTA #48'
   type: vless
   server: 31.56.185.175
   port: 2083
@@ -751,31 +782,101 @@ proxies:
   reality-opts:
     public-key: z4kKH-ZtCuJOEMOxWIjYrYmgT-7lbCNpU2wz5eFCYWg
     short-id: "cbf7d7d0f10b65cf"
-- name: 'ARISTA #46'
-  type: ss
-  server: 51.38.71.51
-  port: 2083
-  cipher: 2022-blake3-aes-256-gcm
-  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #47'
-  type: ss
-  server: 51.38.71.51
-  port: 2083
-  cipher: 2022-blake3-aes-256-gcm
-  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #48'
-  type: ss
-  server: 51.38.71.51
-  port: 2083
-  cipher: 2022-blake3-aes-256-gcm
-  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
-  udp: true
-  tcp-fast-open: true
 - name: 'ARISTA #49'
+  type: vless
+  server: api.nuxt.com
+  port: 2083
+  uuid: 90482e93-bfac-e118-d81a-322d2143f16b
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  - h2
+  - h3
+  client-fingerprint: chrome
+  servername: 49geclud1.varzeshfotsal.ir
+- name: 'ARISTA #50'
+  type: vless
+  server: 31.56.18.67
+  port: 2083
+  uuid: 0be0a2bf-aa20-4e52-aa5a-3d59d56b1582
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: dege.underground.company
+  reality-opts:
+    public-key: RAsD3YMZiEtRBEQ6hNpsyfVE9ro1M4H2AQ-CKbBjJGU
+    short-id: "7878a3f029e04e23"
+- name: 'ARISTA #51'
+  type: vless
+  server: cf1.w3bschool.ir
+  port: 2083
+  uuid: fe12ec72-4d23-4958-b495-494296774d6a
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: ch.topdigit.ir
+  ws-opts:
+    path: /path
+    headers:
+      Host: ch.topdigit.ir
+- name: 'ARISTA #52'
+  type: vless
+  server: 172.67.174.157
+  port: 2083
+  uuid: 283665ab-54c2-4c59-ac55-5e8388558eba
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: 27l432tlhnpcojr6u0d3.adfasdfadfasdf.workers.dev
+  ws-opts:
+    path: /vl/oCCSZfAWhGqcVO3WOEnIPj9Z9ke?ed
+    headers:
+      Host: 27l432tlhnpcojr6u0d3.adfasdfadfasdf.workers.dev
+- name: 'ARISTA #53'
+  type: vless
+  server: 164.90.176.31
+  port: 2083
+  uuid: a747c516-34bd-41b8-8590-a9d1edb79e95
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: random
+  servername: summer-hall-8b23.asddsaasan.workers.dev
+  ws-opts:
+    path: /
+    headers:
+      Host: summer-hall-8b23.asddsaasan.workers.dev
+- name: 'ARISTA #54'
+  type: vless
+  server: 27.50.49.154
+  port: 2083
+  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: proxy-34l.pages.dev
+  ws-opts:
+    path: /
+    headers:
+      Host: proxy-34l.pages.dev
+- name: 'ARISTA #55'
   type: ss
   server: 51.38.71.51
   port: 2083
@@ -783,7 +884,31 @@ proxies:
   password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
   udp: true
   tcp-fast-open: true
-- name: 'ARISTA #50'
+- name: 'ARISTA #56'
+  type: ss
+  server: 51.38.71.51
+  port: 2083
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #57'
+  type: ss
+  server: 51.38.71.51
+  port: 2083
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #58'
+  type: ss
+  server: 51.38.71.51
+  port: 2083
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #59'
   type: ss
   server: 51.38.71.51
   port: 2083
@@ -831,12 +956,12 @@ proxy-groups:
   - 'ARISTA #29'
   - 'ARISTA #30'
   - 'ARISTA #31'
-  - 'T.ME: @aristapanel #32'
-  - 'T.ME: @aristapanel #33'
-  - 'T.ME: @aristapanel #34'
+  - 'ARISTA #32'
+  - 'ARISTA #33'
+  - 'ARISTA #34'
   - 'ARISTA #35'
   - 'ARISTA #36'
-  - 'ARISTA #37'
+  - 'T.ME: @aristapanel #37'
   - 'ARISTA #38'
   - 'ARISTA #39'
   - 'ARISTA #40'
@@ -850,6 +975,15 @@ proxy-groups:
   - 'ARISTA #48'
   - 'ARISTA #49'
   - 'ARISTA #50'
+  - 'ARISTA #51'
+  - 'ARISTA #52'
+  - 'ARISTA #53'
+  - 'ARISTA #54'
+  - 'ARISTA #55'
+  - 'ARISTA #56'
+  - 'ARISTA #57'
+  - 'ARISTA #58'
+  - 'ARISTA #59'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

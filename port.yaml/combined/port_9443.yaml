@@ -1,6 +1,6 @@
 # COMBINED - Port 9443
-# Updated: 2026-10-14 04:34:20
-# Count: 8
+# Updated: 2026-10-14 11:41:10
+# Count: 19
 
 mixed-port: 7890
 allow-lan: false
@@ -50,6 +50,21 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
+  server: 193.233.202.250
+  port: 9443
+  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
+  network: raw
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: usa.edgeses.org
+  reality-opts:
+    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
+    short-id: "649ab61e575fdbc9"
+- name: 'ARISTA #2'
+  type: vless
   server: 95.181.173.68
   port: 9443
   uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
@@ -62,7 +77,21 @@ proxies:
   reality-opts:
     public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
     short-id: "649ab61e575fdbc9"
-- name: 'ARISTA #2'
+- name: 'ARISTA #3'
+  type: vless
+  server: fastly.vexogf.ir
+  port: 9443
+  uuid: eacd1f67-5f70-425a-a424-8c95e12a92c1
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: play.google.com
+  reality-opts:
+    public-key: YO2IIMfb_rukoknmG-91KRGGNb7BE1aBcr_-XKQkVXY
+    short-id: "f0c56d4f73d757f0"
+- name: 'ARISTA #4'
   type: vless
   server: 193.233.202.250
   port: 9443
@@ -77,12 +106,12 @@ proxies:
   reality-opts:
     public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
     short-id: "649ab61e575fdbc9"
-- name: 'T.ME: @aristapanel #3'
+- name: 'ARISTA #5'
   type: vless
   server: 193.233.202.250
   port: 9443
   uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-  network: tcp
+  network: raw
   tls: true
   udp: true
   skip-cert-verify: true
@@ -92,41 +121,12 @@ proxies:
   reality-opts:
     public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
     short-id: "649ab61e575fdbc9"
-- name: 'T.ME: @aristapanel #4'
+- name: 'ARISTA #6'
   type: vless
-  server: fastly.vexogf.ir
-  port: 9443
-  uuid: eacd1f67-5f70-425a-a424-8c95e12a92c1
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: play.google.com
-  reality-opts:
-    public-key: YO2IIMfb_rukoknmG-91KRGGNb7BE1aBcr_-XKQkVXY
-    short-id: "f0c56d4f73d757f0"
-- name: 'T.ME: @aristapanel #5'
-  type: vless
-  server: 38.180.137.143
-  port: 9443
-  uuid: fe0721ac-c577-4938-b7ca-8ab5f43bb8da
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: random
-  servername: www.amazon.com
-  reality-opts:
-    public-key: 0hIFPaEn4RdFib8_eP8HYxMywR5izEwM3JA2W1Zo8U4
-    short-id: "b390142456517acc"
-- name: 'T.ME: @aristapanel #6'
-  type: vless
-  server: 213.165.50.45
+  server: 193.233.202.250
   port: 9443
   uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-  network: tcp
+  network: raw
   tls: true
   udp: true
   skip-cert-verify: true
@@ -138,14 +138,15 @@ proxies:
     short-id: "649ab61e575fdbc9"
 - name: 'ARISTA #7'
   type: vless
-  server: 95.181.173.68
+  server: 193.233.202.250
   port: 9443
   uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-  network: tcp
+  network: raw
   tls: true
   udp: true
   skip-cert-verify: true
   flow: xtls-rprx-vision
+  client-fingerprint: firefox
   servername: usa.edgeses.org
   reality-opts:
     public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
@@ -165,6 +166,165 @@ proxies:
   reality-opts:
     public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
     short-id: "649ab61e575fdbc9"
+- name: 'ARISTA #9'
+  type: vless
+  server: 95.181.173.68
+  port: 9443
+  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: usa.edgeses.org
+  reality-opts:
+    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
+    short-id: "649ab61e575fdbc9"
+- name: 'ARISTA #10'
+  type: vless
+  server: fastly.vexogf.ir
+  port: 9443
+  uuid: eacd1f67-5f70-425a-a424-8c95e12a92c1
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: play.google.com
+  reality-opts:
+    public-key: YO2IIMfb_rukoknmG-91KRGGNb7BE1aBcr_-XKQkVXY
+    short-id: "f0c56d4f73d757f0"
+- name: 'ARISTA #11'
+  type: vless
+  server: 193.233.202.250
+  port: 9443
+  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
+  network: raw
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: usa.edgeses.org
+  reality-opts:
+    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
+    short-id: "649ab61e575fdbc9"
+- name: 'ARISTA #12'
+  type: vless
+  server: 95.181.173.68
+  port: 9443
+  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: usa.edgeses.org
+  reality-opts:
+    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
+    short-id: "649ab61e575fdbc9"
+- name: 'ARISTA #13'
+  type: vless
+  server: fastly.vexogf.ir
+  port: 9443
+  uuid: eacd1f67-5f70-425a-a424-8c95e12a92c1
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: play.google.com
+  reality-opts:
+    public-key: YO2IIMfb_rukoknmG-91KRGGNb7BE1aBcr_-XKQkVXY
+    short-id: "f0c56d4f73d757f0"
+- name: 'T.ME: @aristapanel #14'
+  type: vless
+  server: 193.233.202.250
+  port: 9443
+  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: usa.edgeses.org
+  reality-opts:
+    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
+    short-id: "649ab61e575fdbc9"
+- name: 'T.ME: @aristapanel #15'
+  type: vless
+  server: 213.165.50.45
+  port: 9443
+  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: usa.edgeses.org
+  reality-opts:
+    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
+    short-id: "649ab61e575fdbc9"
+- name: 'ARISTA #16'
+  type: vless
+  server: 193.233.202.250
+  port: 9443
+  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
+  network: raw
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: usa.edgeses.org
+  reality-opts:
+    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
+    short-id: "649ab61e575fdbc9"
+- name: 'ARISTA #17'
+  type: vless
+  server: 193.233.202.250
+  port: 9443
+  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
+  network: raw
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: usa.edgeses.org
+  reality-opts:
+    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
+    short-id: "649ab61e575fdbc9"
+- name: 'ARISTA #18'
+  type: vless
+  server: 95.181.173.68
+  port: 9443
+  uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: usa.edgeses.org
+  reality-opts:
+    public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
+    short-id: "649ab61e575fdbc9"
+- name: 'ARISTA #19'
+  type: vless
+  server: fastly.vexogf.ir
+  port: 9443
+  uuid: eacd1f67-5f70-425a-a424-8c95e12a92c1
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: play.google.com
+  reality-opts:
+    public-key: YO2IIMfb_rukoknmG-91KRGGNb7BE1aBcr_-XKQkVXY
+    short-id: "f0c56d4f73d757f0"
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -176,12 +336,23 @@ proxy-groups:
   proxies: &id001
   - 'ARISTA #1'
   - 'ARISTA #2'
-  - 'T.ME: @aristapanel #3'
-  - 'T.ME: @aristapanel #4'
-  - 'T.ME: @aristapanel #5'
-  - 'T.ME: @aristapanel #6'
+  - 'ARISTA #3'
+  - 'ARISTA #4'
+  - 'ARISTA #5'
+  - 'ARISTA #6'
   - 'ARISTA #7'
   - 'ARISTA #8'
+  - 'ARISTA #9'
+  - 'ARISTA #10'
+  - 'ARISTA #11'
+  - 'ARISTA #12'
+  - 'ARISTA #13'
+  - 'T.ME: @aristapanel #14'
+  - 'T.ME: @aristapanel #15'
+  - 'ARISTA #16'
+  - 'ARISTA #17'
+  - 'ARISTA #18'
+  - 'ARISTA #19'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
