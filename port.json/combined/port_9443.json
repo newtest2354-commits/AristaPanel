@@ -1,6 +1,6 @@
 // COMBINED - Port 9443
-// Updated: 2026-10-15 04:17:06
-// Count: 18
+// Updated: 2026-10-15 11:22:12
+// Count: 40
 
 {
   "log": {
@@ -41,7 +41,7 @@
     {
       "type": "vless",
       "tag": "ARISTA #1",
-      "server": "213.165.50.45",
+      "server": "193.233.202.250",
       "server_port": 9443,
       "uuid": "c3db7657-88ce-42a6-b998-1e0364b277ac",
       "domain_resolver": "google",
@@ -51,7 +51,7 @@
         "insecure": true,
         "utls": {
           "enabled": true,
-          "fingerprint": "firefox"
+          "fingerprint": "chrome"
         },
         "reality": {
           "enabled": true,
@@ -64,6 +64,29 @@
     {
       "type": "vless",
       "tag": "ARISTA #2",
+      "server": "213.165.50.45",
+      "server_port": 9443,
+      "uuid": "c3db7657-88ce-42a6-b998-1e0364b277ac",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "usa.edgeses.org",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g",
+          "short_id": "649ab61e575fdbc9"
+        }
+      },
+      "flow": "xtls-rprx-vision"
+    },
+    {
+      "type": "vless",
+      "tag": "ARISTA #3",
       "server": "193.233.202.250",
       "server_port": 9443,
       "uuid": "c3db7657-88ce-42a6-b998-1e0364b277ac",
@@ -86,7 +109,35 @@
     },
     {
       "type": "vless",
-      "tag": "ARISTA #3",
+      "tag": "ARISTA #4",
+      "server": "fr.connfull.org",
+      "server_port": 9443,
+      "uuid": "5ea7b26b-7dde-43c8-8f1a-5052a97d46c6",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "fr.connfull.org",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "alpn": [
+          "h2",
+          "http/1.1"
+        ]
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/stream",
+        "headers": {
+          "Host": "fr.connfull.org"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "ARISTA #5",
       "server": "213.165.50.44",
       "server_port": 9443,
       "uuid": "c3db7657-88ce-42a6-b998-1e0364b277ac",
@@ -109,7 +160,7 @@
     },
     {
       "type": "vless",
-      "tag": "ARISTA #4",
+      "tag": "ARISTA #6",
       "server": "95.181.173.68",
       "server_port": 9443,
       "uuid": "c3db7657-88ce-42a6-b998-1e0364b277ac",
@@ -145,7 +196,9 @@
         "ARISTA #1",
         "ARISTA #2",
         "ARISTA #3",
-        "ARISTA #4"
+        "ARISTA #4",
+        "ARISTA #5",
+        "ARISTA #6"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "2m",
