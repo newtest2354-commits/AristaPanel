@@ -1,0 +1,122 @@
+// TELEGRAM - HYSTERIA2 - Tier ALL
+// Updated: 2026-10-16 04:11:52
+// Count: 2
+
+{
+  "log": {
+    "level": "info",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "type": "udp",
+        "tag": "google",
+        "server": "8.8.8.8"
+      },
+      {
+        "type": "udp",
+        "tag": "cloudflare",
+        "server": "1.1.1.1"
+      }
+    ],
+    "rules": [],
+    "final": "google"
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "interface_name": "singbox-tun",
+      "address": [
+        "172.19.0.1/30"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "stack": "system",
+      "sniff": false
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "hysteria2",
+      "tag": "ARISTA #1",
+      "server": "ru77.vpnruss1.ru",
+      "server_port": 443,
+      "password": "u0ok38gncx3p8niu",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "de77.vpnruss1.ru",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "alpn": [
+          "h3"
+        ]
+      },
+      "obfs": {
+        "type": "salamander",
+        "password": "3g8z8duodujncotx"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "ARISTA #2",
+      "server": "spb.alexander-official.ru",
+      "server_port": 443,
+      "password": "u0ok38gncx3p8niu",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "de77.vpnruss1.ru",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "alpn": [
+          "h3"
+        ]
+      },
+      "obfs": {
+        "type": "salamander",
+        "password": "9dvfbadb5sz86egg"
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    },
+    {
+      "type": "urltest",
+      "tag": "🚀 ARISTA AUTO BEST",
+      "outbounds": [
+        "ARISTA #1",
+        "ARISTA #2"
+      ],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "2m",
+      "tolerance": 30,
+      "idle_timeout": "20m",
+      "interrupt_exist_connections": true
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true,
+    "default_domain_resolver": "google",
+    "final": "🚀 ARISTA AUTO BEST",
+    "rules": [
+      {
+        "protocol": "dns",
+        "outbound": "direct"
+      }
+    ]
+  }
+}
