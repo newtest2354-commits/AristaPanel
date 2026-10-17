@@ -1,6 +1,6 @@
 # TELEGRAM - Port 8443
-# Updated: 2026-10-16 23:29:18
-# Count: 80
+# Updated: 2026-10-17 04:04:48
+# Count: 61
 
 mixed-port: 7890
 allow-lan: false
@@ -50,34 +50,32 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: nl5.hap-plus.ru
+  server: 129.101.121.70
   port: 8443
-  uuid: 05d7a479-a099-40cf-aecf-41aa934767b0
-  network: ws
+  uuid: a96ad3ea-4820-43d2-bbf3-27c6bf19d652
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: firefox
-  servername: nl5.hap-plus.ru
-  ws-opts:
-    path: /api/v1/events
-    headers:
-      Host: nl5.hap-plus.ru
+  flow: xtls-rprx-vision
+  servername: storage.yandex.net
+  reality-opts:
+    public-key: xX9ZxZRrF_EER9-8fOegxR97HV5KaMaftAD7eq10UXw
+    short-id: "75dd7e79a7876314"
 - name: 'ARISTA #2'
   type: vless
-  server: 91.107.191.188
+  server: ro-xh02.tcp-reset-club.net
   port: 8443
-  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
+  uuid: 4fb82973-a7f1-4fc2-9958-cb21f5162f06
   network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
   client-fingerprint: chrome
-  servername: host.taghvimtime.ir
+  servername: s3.netavex.com
+  reality-opts:
+    public-key: Gu_QdtOX6E8pZcYvDWgHKA5dxcit7hrpU27sizCEWXg
+    short-id: "e0"
 - name: 'ARISTA #3'
   type: vless
   server: host.taghvimtime.ir
@@ -93,19 +91,66 @@ proxies:
   servername: host.taghvimtime.ir
 - name: 'ARISTA #4'
   type: vless
-  server: 129.101.121.70
+  server: 45.91.248.127
   port: 8443
-  uuid: a96ad3ea-4820-43d2-bbf3-27c6bf19d652
-  network: tcp
+  uuid: 81a227e3-cb97-40fe-b7b6-45a60ed065cf
+  network: grpc
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: storage.yandex.net
+  client-fingerprint: chrome
+  servername: node.nodebrcsp.ru
+  grpc-opts:
+    grpc-service-name: grpc-api-v2
   reality-opts:
-    public-key: xX9ZxZRrF_EER9-8fOegxR97HV5KaMaftAD7eq10UXw
-    short-id: "75dd7e79a7876314"
+    public-key: 75SvxhvlOLct7K2eSg4-a1o6Z6N3JMTqp3wIQmLSqTA
+    short-id: "8c609726e0233f08"
 - name: 'ARISTA #5'
+  type: vless
+  server: 141.193.213.21
+  port: 8443
+  uuid: 29c3dd6b-b164-40ca-a0d5-f06aca52a8b2
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: u.srilankangrill.online
+  ws-opts:
+    path: /
+    headers:
+      Host: u.srilankangrill.online
+- name: 'ARISTA #6'
+  type: vless
+  server: nl5.hap-plus.ru
+  port: 8443
+  uuid: 05d7a479-a099-40cf-aecf-41aa934767b0
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: firefox
+  servername: nl5.hap-plus.ru
+  ws-opts:
+    path: /api/v1/events
+    headers:
+      Host: nl5.hap-plus.ru
+- name: 'ARISTA #7'
+  type: vless
+  server: host.taghvimtime.ir
+  port: 8443
+  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: host.taghvimtime.ir
+- name: 'ARISTA #8'
   type: vless
   server: 172.67.155.65
   port: 8443
@@ -119,22 +164,113 @@ proxies:
     path: /cart/docs/www/proxyip
     headers:
       Host: lucasjow.us.ci
-- name: 'ARISTA #6'
+- name: 'ARISTA #9'
   type: vless
-  server: 93.152.215.176
+  server: 2.26.225.89
   port: 8443
-  uuid: 05d7a479-a099-40cf-aecf-41aa934767b0
-  network: ws
+  uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: pl.flen-vpn.xyz
+- name: 'ARISTA #10'
+  type: vless
+  server: 129.101.121.70
+  port: 8443
+  uuid: a96ad3ea-4820-43d2-bbf3-27c6bf19d652
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: storage.yandex.net
+  reality-opts:
+    public-key: xX9ZxZRrF_EER9-8fOegxR97HV5KaMaftAD7eq10UXw
+    short-id: "75dd7e79a7876314"
+- name: 'ARISTA #11'
+  type: vless
+  server: ro-xh02.tcp-reset-club.net
+  port: 8443
+  uuid: 4fb82973-a7f1-4fc2-9958-cb21f5162f06
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: nl5.hap-plus.ru
-  ws-opts:
-    path: /api/v1/events
-    headers:
-      Host: nl5.hap-plus.ru
-- name: 'ARISTA #7'
+  servername: s3.netavex.com
+  reality-opts:
+    public-key: Gu_QdtOX6E8pZcYvDWgHKA5dxcit7hrpU27sizCEWXg
+    short-id: "e0"
+- name: 'ARISTA #12'
+  type: vless
+  server: host.taghvimtime.ir
+  port: 8443
+  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: host.taghvimtime.ir
+- name: 'ARISTA #13'
+  type: vless
+  server: 129.101.121.70
+  port: 8443
+  uuid: a96ad3ea-4820-43d2-bbf3-27c6bf19d652
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: storage.yandex.net
+  reality-opts:
+    public-key: xX9ZxZRrF_EER9-8fOegxR97HV5KaMaftAD7eq10UXw
+    short-id: "75dd7e79a7876314"
+- name: 'ARISTA #14'
+  type: vless
+  server: 129.101.121.70
+  port: 8443
+  uuid: a96ad3ea-4820-43d2-bbf3-27c6bf19d652
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: storage.yandex.net
+  reality-opts:
+    public-key: xX9ZxZRrF_EER9-8fOegxR97HV5KaMaftAD7eq10UXw
+    short-id: "75dd7e79a7876314"
+- name: 'ARISTA #15'
+  type: vless
+  server: ro-xh02.tcp-reset-club.net
+  port: 8443
+  uuid: 4fb82973-a7f1-4fc2-9958-cb21f5162f06
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: s3.netavex.com
+  reality-opts:
+    public-key: Gu_QdtOX6E8pZcYvDWgHKA5dxcit7hrpU27sizCEWXg
+    short-id: "e0"
+- name: 'ARISTA #16'
+  type: vless
+  server: host.taghvimtime.ir
+  port: 8443
+  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: host.taghvimtime.ir
+- name: 'ARISTA #17'
   type: vless
   server: 45.91.248.127
   port: 8443
@@ -150,180 +286,38 @@ proxies:
   reality-opts:
     public-key: 75SvxhvlOLct7K2eSg4-a1o6Z6N3JMTqp3wIQmLSqTA
     short-id: "8c609726e0233f08"
-- name: 'ARISTA #8'
+- name: 'ARISTA #18'
   type: vless
-  server: 150.241.101.80
+  server: 141.193.213.21
   port: 8443
-  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: yandex.net
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #9'
-  type: vless
-  server: host.taghvimtime.ir
-  port: 8443
-  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: chrome
-  servername: host.taghvimtime.ir
-- name: 'ARISTA #10'
-  type: vless
-  server: e.zennaro.ir
-  port: 8443
-  uuid: b76d56df-93a9-4820-9ce0-4e1c43e5c97b
+  uuid: 29c3dd6b-b164-40ca-a0d5-f06aca52a8b2
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: firefox
-  servername: e.zennaro.ir
+  client-fingerprint: chrome
+  servername: u.srilankangrill.online
   ws-opts:
     path: /
     headers:
-      Host: e.zennaro.ir
-- name: 'ARISTA #11'
-  type: vless
-  server: 95.181.170.27
-  port: 8443
-  uuid: c96f941e-dd8a-00aa-89d5-740b79202ed0
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: x5club.ru
-  reality-opts:
-    public-key: 7T9ZSCdUh4IUlx17R1Vbzk8kjiopA3j5mI7-inh6aQU
-    short-id: "187eea0acfb7f778"
-- name: 'ARISTA #12'
-  type: vless
-  server: nl5.hap-plus.ru
-  port: 8443
-  uuid: 05d7a479-a099-40cf-aecf-41aa934767b0
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: firefox
-  servername: nl5.hap-plus.ru
-  ws-opts:
-    path: /api/v1/events
-    headers:
-      Host: nl5.hap-plus.ru
-- name: 'ARISTA #13'
-  type: vless
-  server: 91.107.191.188
-  port: 8443
-  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: chrome
-  servername: host.taghvimtime.ir
-- name: 'ARISTA #14'
-  type: vless
-  server: host.taghvimtime.ir
-  port: 8443
-  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: chrome
-  servername: host.taghvimtime.ir
-- name: 'ARISTA #15'
-  type: vless
-  server: 129.101.121.70
-  port: 8443
-  uuid: a96ad3ea-4820-43d2-bbf3-27c6bf19d652
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: storage.yandex.net
-  reality-opts:
-    public-key: xX9ZxZRrF_EER9-8fOegxR97HV5KaMaftAD7eq10UXw
-    short-id: "75dd7e79a7876314"
-- name: 'ARISTA #16'
-  type: vless
-  server: 172.67.155.65
-  port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /cart/docs/www/proxyip
-    headers:
-      Host: lucasjow.us.ci
-- name: 'ARISTA #17'
-  type: vless
-  server: 93.152.215.176
-  port: 8443
-  uuid: 05d7a479-a099-40cf-aecf-41aa934767b0
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: nl5.hap-plus.ru
-  ws-opts:
-    path: /api/v1/events
-    headers:
-      Host: nl5.hap-plus.ru
-- name: 'ARISTA #18'
-  type: vless
-  server: nl5.hap-plus.ru
-  port: 8443
-  uuid: 05d7a479-a099-40cf-aecf-41aa934767b0
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: firefox
-  servername: nl5.hap-plus.ru
-  ws-opts:
-    path: /api/v1/events
-    headers:
-      Host: nl5.hap-plus.ru
+      Host: u.srilankangrill.online
 - name: 'ARISTA #19'
   type: vless
-  server: 91.107.191.188
+  server: nl5.hap-plus.ru
   port: 8443
-  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
-  network: xhttp
+  uuid: 05d7a479-a099-40cf-aecf-41aa934767b0
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   alpn:
-  - h2
-  client-fingerprint: chrome
-  servername: host.taghvimtime.ir
+  - http/1.1
+  client-fingerprint: firefox
+  servername: nl5.hap-plus.ru
+  ws-opts:
+    path: /api/v1/events
+    headers:
+      Host: nl5.hap-plus.ru
 - name: 'ARISTA #20'
   type: vless
   server: host.taghvimtime.ir
@@ -339,20 +333,6 @@ proxies:
   servername: host.taghvimtime.ir
 - name: 'ARISTA #21'
   type: vless
-  server: 129.101.121.70
-  port: 8443
-  uuid: a96ad3ea-4820-43d2-bbf3-27c6bf19d652
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: storage.yandex.net
-  reality-opts:
-    public-key: xX9ZxZRrF_EER9-8fOegxR97HV5KaMaftAD7eq10UXw
-    short-id: "75dd7e79a7876314"
-- name: 'ARISTA #22'
-  type: vless
   server: 172.67.155.65
   port: 8443
   uuid: e6df2095-a73c-4043-8693-8d5a03686870
@@ -365,26 +345,37 @@ proxies:
     path: /cart/docs/www/proxyip
     headers:
       Host: lucasjow.us.ci
-- name: 'ARISTA #23'
+- name: 'ARISTA #22'
   type: vless
-  server: nl5.hap-plus.ru
+  server: 129.101.121.70
   port: 8443
-  uuid: 05d7a479-a099-40cf-aecf-41aa934767b0
-  network: ws
+  uuid: a96ad3ea-4820-43d2-bbf3-27c6bf19d652
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: firefox
-  servername: nl5.hap-plus.ru
-  ws-opts:
-    path: /api/v1/events
-    headers:
-      Host: nl5.hap-plus.ru
+  flow: xtls-rprx-vision
+  servername: storage.yandex.net
+  reality-opts:
+    public-key: xX9ZxZRrF_EER9-8fOegxR97HV5KaMaftAD7eq10UXw
+    short-id: "75dd7e79a7876314"
+- name: 'ARISTA #23'
+  type: vless
+  server: ro-xh02.tcp-reset-club.net
+  port: 8443
+  uuid: 4fb82973-a7f1-4fc2-9958-cb21f5162f06
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: s3.netavex.com
+  reality-opts:
+    public-key: Gu_QdtOX6E8pZcYvDWgHKA5dxcit7hrpU27sizCEWXg
+    short-id: "e0"
 - name: 'ARISTA #24'
   type: vless
-  server: 91.107.191.188
+  server: host.taghvimtime.ir
   port: 8443
   uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
   network: xhttp
@@ -397,18 +388,36 @@ proxies:
   servername: host.taghvimtime.ir
 - name: 'ARISTA #25'
   type: vless
-  server: host.taghvimtime.ir
+  server: 45.91.248.127
   port: 8443
-  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
-  network: xhttp
+  uuid: 81a227e3-cb97-40fe-b7b6-45a60ed065cf
+  network: grpc
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
   client-fingerprint: chrome
-  servername: host.taghvimtime.ir
+  servername: node.nodebrcsp.ru
+  grpc-opts:
+    grpc-service-name: grpc-api-v2
+  reality-opts:
+    public-key: 75SvxhvlOLct7K2eSg4-a1o6Z6N3JMTqp3wIQmLSqTA
+    short-id: "8c609726e0233f08"
 - name: 'ARISTA #26'
+  type: vless
+  server: 141.193.213.21
+  port: 8443
+  uuid: 29c3dd6b-b164-40ca-a0d5-f06aca52a8b2
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: u.srilankangrill.online
+  ws-opts:
+    path: /
+    headers:
+      Host: u.srilankangrill.online
+- name: 'ARISTA #27'
   type: vless
   server: 129.101.121.70
   port: 8443
@@ -422,36 +431,34 @@ proxies:
   reality-opts:
     public-key: xX9ZxZRrF_EER9-8fOegxR97HV5KaMaftAD7eq10UXw
     short-id: "75dd7e79a7876314"
-- name: 'ARISTA #27'
-  type: vless
-  server: 172.67.155.65
-  port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /cart/docs/www/proxyip
-    headers:
-      Host: lucasjow.us.ci
 - name: 'ARISTA #28'
   type: vless
-  server: 93.152.215.176
+  server: ro-xh02.tcp-reset-club.net
   port: 8443
-  uuid: 05d7a479-a099-40cf-aecf-41aa934767b0
-  network: ws
+  uuid: 4fb82973-a7f1-4fc2-9958-cb21f5162f06
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: nl5.hap-plus.ru
-  ws-opts:
-    path: /api/v1/events
-    headers:
-      Host: nl5.hap-plus.ru
+  servername: s3.netavex.com
+  reality-opts:
+    public-key: Gu_QdtOX6E8pZcYvDWgHKA5dxcit7hrpU27sizCEWXg
+    short-id: "e0"
 - name: 'ARISTA #29'
+  type: vless
+  server: host.taghvimtime.ir
+  port: 8443
+  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: host.taghvimtime.ir
+- name: 'ARISTA #30'
   type: vless
   server: 45.91.248.127
   port: 8443
@@ -467,7 +474,76 @@ proxies:
   reality-opts:
     public-key: 75SvxhvlOLct7K2eSg4-a1o6Z6N3JMTqp3wIQmLSqTA
     short-id: "8c609726e0233f08"
-- name: 'ARISTA #30'
+- name: 'ARISTA #31'
+  type: vless
+  server: 141.193.213.21
+  port: 8443
+  uuid: 29c3dd6b-b164-40ca-a0d5-f06aca52a8b2
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: u.srilankangrill.online
+  ws-opts:
+    path: /
+    headers:
+      Host: u.srilankangrill.online
+- name: 'ARISTA #32'
+  type: vless
+  server: nl5.hap-plus.ru
+  port: 8443
+  uuid: 05d7a479-a099-40cf-aecf-41aa934767b0
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: firefox
+  servername: nl5.hap-plus.ru
+  ws-opts:
+    path: /api/v1/events
+    headers:
+      Host: nl5.hap-plus.ru
+- name: 'ARISTA #33'
+  type: vless
+  server: host.taghvimtime.ir
+  port: 8443
+  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: host.taghvimtime.ir
+- name: 'ARISTA #34'
+  type: vless
+  server: 172.67.155.65
+  port: 8443
+  uuid: e6df2095-a73c-4043-8693-8d5a03686870
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: lucasjow.us.ci
+  ws-opts:
+    path: /cart/docs/www/proxyip
+    headers:
+      Host: lucasjow.us.ci
+- name: 'ARISTA #35'
+  type: vless
+  server: 2.26.225.89
+  port: 8443
+  uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: pl.flen-vpn.xyz
+- name: 'ARISTA #36'
   type: vless
   server: 150.241.101.80
   port: 8443
@@ -481,80 +557,35 @@ proxies:
   reality-opts:
     public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
     short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #31'
+- name: 'ARISTA #37'
   type: vless
-  server: host.taghvimtime.ir
+  server: samgeez.online
   port: 8443
-  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
-  network: xhttp
+  uuid: a04c750d-3b71-493b-b2c1-6473ff1209dd
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: chrome
-  servername: host.taghvimtime.ir
-- name: 'ARISTA #32'
-  type: vless
-  server: e.zennaro.ir
-  port: 8443
-  uuid: b76d56df-93a9-4820-9ce0-4e1c43e5c97b
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
   client-fingerprint: firefox
-  servername: e.zennaro.ir
-  ws-opts:
-    path: /
-    headers:
-      Host: e.zennaro.ir
-- name: 'ARISTA #33'
+  servername: npdev.uk
+  reality-opts:
+    public-key: RcXsA7OGsbBAG_4Xs5jQ1YaLlq3oglNHEvyRphqbHko
+    short-id: "26c4e208f355"
+- name: 'ARISTA #38'
   type: vless
-  server: nl5.hap-plus.ru
+  server: 95.181.170.27
   port: 8443
-  uuid: 05d7a479-a099-40cf-aecf-41aa934767b0
-  network: ws
+  uuid: c96f941e-dd8a-00aa-89d5-740b79202ed0
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - http/1.1
   client-fingerprint: firefox
-  servername: nl5.hap-plus.ru
-  ws-opts:
-    path: /api/v1/events
-    headers:
-      Host: nl5.hap-plus.ru
-- name: 'ARISTA #34'
-  type: vless
-  server: 91.107.191.188
-  port: 8443
-  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: chrome
-  servername: host.taghvimtime.ir
-- name: 'ARISTA #35'
-  type: vless
-  server: host.taghvimtime.ir
-  port: 8443
-  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: chrome
-  servername: host.taghvimtime.ir
-- name: 'ARISTA #36'
+  servername: x5club.ru
+  reality-opts:
+    public-key: 7T9ZSCdUh4IUlx17R1Vbzk8kjiopA3j5mI7-inh6aQU
+    short-id: "187eea0acfb7f778"
+- name: 'ARISTA #39'
   type: vless
   server: 129.101.121.70
   port: 8443
@@ -568,71 +599,23 @@ proxies:
   reality-opts:
     public-key: xX9ZxZRrF_EER9-8fOegxR97HV5KaMaftAD7eq10UXw
     short-id: "75dd7e79a7876314"
-- name: 'ARISTA #37'
-  type: vless
-  server: 172.67.155.65
-  port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /cart/docs/www/proxyip
-    headers:
-      Host: lucasjow.us.ci
-- name: 'ARISTA #38'
-  type: vless
-  server: 93.152.215.176
-  port: 8443
-  uuid: 05d7a479-a099-40cf-aecf-41aa934767b0
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: nl5.hap-plus.ru
-  ws-opts:
-    path: /api/v1/events
-    headers:
-      Host: nl5.hap-plus.ru
-- name: 'ARISTA #39'
-  type: vless
-  server: 45.91.248.127
-  port: 8443
-  uuid: 81a227e3-cb97-40fe-b7b6-45a60ed065cf
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: node.nodebrcsp.ru
-  grpc-opts:
-    grpc-service-name: grpc-api-v2
-  reality-opts:
-    public-key: 75SvxhvlOLct7K2eSg4-a1o6Z6N3JMTqp3wIQmLSqTA
-    short-id: "8c609726e0233f08"
 - name: 'ARISTA #40'
   type: vless
-  server: nl5.hap-plus.ru
+  server: ro-xh02.tcp-reset-club.net
   port: 8443
-  uuid: 05d7a479-a099-40cf-aecf-41aa934767b0
-  network: ws
+  uuid: 4fb82973-a7f1-4fc2-9958-cb21f5162f06
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: firefox
-  servername: nl5.hap-plus.ru
-  ws-opts:
-    path: /api/v1/events
-    headers:
-      Host: nl5.hap-plus.ru
+  client-fingerprint: chrome
+  servername: s3.netavex.com
+  reality-opts:
+    public-key: Gu_QdtOX6E8pZcYvDWgHKA5dxcit7hrpU27sizCEWXg
+    short-id: "e0"
 - name: 'ARISTA #41'
   type: vless
-  server: 91.107.191.188
+  server: host.taghvimtime.ir
   port: 8443
   uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
   network: xhttp
@@ -645,62 +628,6 @@ proxies:
   servername: host.taghvimtime.ir
 - name: 'ARISTA #42'
   type: vless
-  server: host.taghvimtime.ir
-  port: 8443
-  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: chrome
-  servername: host.taghvimtime.ir
-- name: 'ARISTA #43'
-  type: vless
-  server: 129.101.121.70
-  port: 8443
-  uuid: a96ad3ea-4820-43d2-bbf3-27c6bf19d652
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: storage.yandex.net
-  reality-opts:
-    public-key: xX9ZxZRrF_EER9-8fOegxR97HV5KaMaftAD7eq10UXw
-    short-id: "75dd7e79a7876314"
-- name: 'ARISTA #44'
-  type: vless
-  server: 172.67.155.65
-  port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /cart/docs/www/proxyip
-    headers:
-      Host: lucasjow.us.ci
-- name: 'ARISTA #45'
-  type: vless
-  server: 93.152.215.176
-  port: 8443
-  uuid: 05d7a479-a099-40cf-aecf-41aa934767b0
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: nl5.hap-plus.ru
-  ws-opts:
-    path: /api/v1/events
-    headers:
-      Host: nl5.hap-plus.ru
-- name: 'ARISTA #46'
-  type: vless
   server: 45.91.248.127
   port: 8443
   uuid: 81a227e3-cb97-40fe-b7b6-45a60ed065cf
@@ -715,7 +642,76 @@ proxies:
   reality-opts:
     public-key: 75SvxhvlOLct7K2eSg4-a1o6Z6N3JMTqp3wIQmLSqTA
     short-id: "8c609726e0233f08"
+- name: 'ARISTA #43'
+  type: vless
+  server: 141.193.213.21
+  port: 8443
+  uuid: 29c3dd6b-b164-40ca-a0d5-f06aca52a8b2
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: u.srilankangrill.online
+  ws-opts:
+    path: /
+    headers:
+      Host: u.srilankangrill.online
+- name: 'ARISTA #44'
+  type: vless
+  server: nl5.hap-plus.ru
+  port: 8443
+  uuid: 05d7a479-a099-40cf-aecf-41aa934767b0
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: firefox
+  servername: nl5.hap-plus.ru
+  ws-opts:
+    path: /api/v1/events
+    headers:
+      Host: nl5.hap-plus.ru
+- name: 'ARISTA #45'
+  type: vless
+  server: host.taghvimtime.ir
+  port: 8443
+  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: host.taghvimtime.ir
+- name: 'ARISTA #46'
+  type: vless
+  server: 172.67.155.65
+  port: 8443
+  uuid: e6df2095-a73c-4043-8693-8d5a03686870
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: lucasjow.us.ci
+  ws-opts:
+    path: /cart/docs/www/proxyip
+    headers:
+      Host: lucasjow.us.ci
 - name: 'ARISTA #47'
+  type: vless
+  server: 2.26.225.89
+  port: 8443
+  uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: pl.flen-vpn.xyz
+- name: 'ARISTA #48'
   type: vless
   server: 150.241.101.80
   port: 8443
@@ -729,36 +725,20 @@ proxies:
   reality-opts:
     public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
     short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #48'
-  type: vless
-  server: host.taghvimtime.ir
-  port: 8443
-  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: chrome
-  servername: host.taghvimtime.ir
 - name: 'ARISTA #49'
   type: vless
-  server: e.zennaro.ir
+  server: samgeez.online
   port: 8443
-  uuid: b76d56df-93a9-4820-9ce0-4e1c43e5c97b
-  network: ws
+  uuid: a04c750d-3b71-493b-b2c1-6473ff1209dd
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
   client-fingerprint: firefox
-  servername: e.zennaro.ir
-  ws-opts:
-    path: /
-    headers:
-      Host: e.zennaro.ir
+  servername: npdev.uk
+  reality-opts:
+    public-key: RcXsA7OGsbBAG_4Xs5jQ1YaLlq3oglNHEvyRphqbHko
+    short-id: "26c4e208f355"
 - name: 'ARISTA #50'
   type: vless
   server: 95.181.170.27
@@ -775,79 +755,75 @@ proxies:
     short-id: "187eea0acfb7f778"
 - name: 'ARISTA #51'
   type: vless
-  server: 141.193.213.21
-  port: 8443
-  uuid: 29c3dd6b-b164-40ca-a0d5-f06aca52a8b2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: u.srilankangrill.online
-  ws-opts:
-    path: /
-    headers:
-      Host: u.srilankangrill.online
-- name: 'ARISTA #52'
-  type: vless
-  server: 150.241.101.80
-  port: 8443
-  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: yandex.net
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #53'
-  type: vless
-  server: 103.148.73.173
-  port: 8443
-  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: ty986gfazs.cainiaohub.xyz
-  ws-opts:
-    path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
-    headers:
-      Host: ty986gfazs.cainiaohub.xyz
-- name: 'ARISTA #54'
-  type: vless
-  server: nl5.hap-plus.ru
+  server: 93.152.215.176
   port: 8443
   uuid: 05d7a479-a099-40cf-aecf-41aa934767b0
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: firefox
+  client-fingerprint: chrome
   servername: nl5.hap-plus.ru
   ws-opts:
     path: /api/v1/events
     headers:
       Host: nl5.hap-plus.ru
+- name: 'ARISTA #52'
+  type: vless
+  server: 172.67.155.65
+  port: 8443
+  uuid: e6df2095-a73c-4043-8693-8d5a03686870
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: lucasjow.us.ci
+  ws-opts:
+    path: /cart/docs/www/proxyip=108.160.132.132fp=chrome
+    headers:
+      Host: lucasjow.us.ci
+- name: 'ARISTA #53'
+  type: vless
+  server: azsobhekhran.ticklitickli.ir
+  port: 8443
+  uuid: 4c314a01-26c9-4474-bd96-3d3f485b81f3
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: play.googleapis.com
+  reality-opts:
+    public-key: ssbuTE7tBkJ7BmwF0Fo9O3KBt3BDFG-fHRkxRxFB9XE
+    short-id: "ae4efa0ce23271"
+- name: 'ARISTA #54'
+  type: vless
+  server: 129.101.121.70
+  port: 8443
+  uuid: a96ad3ea-4820-43d2-bbf3-27c6bf19d652
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: storage.yandex.net
+  reality-opts:
+    public-key: xX9ZxZRrF_EER9-8fOegxR97HV5KaMaftAD7eq10UXw
+    short-id: "75dd7e79a7876314"
 - name: 'ARISTA #55'
   type: vless
-  server: 91.107.191.188
+  server: ro-xh02.tcp-reset-club.net
   port: 8443
-  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
+  uuid: 4fb82973-a7f1-4fc2-9958-cb21f5162f06
   network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
   client-fingerprint: chrome
-  servername: host.taghvimtime.ir
+  servername: s3.netavex.com
+  reality-opts:
+    public-key: Gu_QdtOX6E8pZcYvDWgHKA5dxcit7hrpU27sizCEWXg
+    short-id: "e0"
 - name: 'ARISTA #56'
   type: vless
   server: host.taghvimtime.ir
@@ -863,49 +839,6 @@ proxies:
   servername: host.taghvimtime.ir
 - name: 'ARISTA #57'
   type: vless
-  server: 129.101.121.70
-  port: 8443
-  uuid: a96ad3ea-4820-43d2-bbf3-27c6bf19d652
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: storage.yandex.net
-  reality-opts:
-    public-key: xX9ZxZRrF_EER9-8fOegxR97HV5KaMaftAD7eq10UXw
-    short-id: "75dd7e79a7876314"
-- name: 'ARISTA #58'
-  type: vless
-  server: 172.67.155.65
-  port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /cart/docs/www/proxyip
-    headers:
-      Host: lucasjow.us.ci
-- name: 'ARISTA #59'
-  type: vless
-  server: 93.152.215.176
-  port: 8443
-  uuid: 05d7a479-a099-40cf-aecf-41aa934767b0
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: nl5.hap-plus.ru
-  ws-opts:
-    path: /api/v1/events
-    headers:
-      Host: nl5.hap-plus.ru
-- name: 'ARISTA #60'
-  type: vless
   server: 45.91.248.127
   port: 8443
   uuid: 81a227e3-cb97-40fe-b7b6-45a60ed065cf
@@ -920,65 +853,7 @@ proxies:
   reality-opts:
     public-key: 75SvxhvlOLct7K2eSg4-a1o6Z6N3JMTqp3wIQmLSqTA
     short-id: "8c609726e0233f08"
-- name: 'ARISTA #61'
-  type: vless
-  server: 150.241.101.80
-  port: 8443
-  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: yandex.net
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #62'
-  type: vless
-  server: host.taghvimtime.ir
-  port: 8443
-  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: chrome
-  servername: host.taghvimtime.ir
-- name: 'ARISTA #63'
-  type: vless
-  server: e.zennaro.ir
-  port: 8443
-  uuid: b76d56df-93a9-4820-9ce0-4e1c43e5c97b
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: firefox
-  servername: e.zennaro.ir
-  ws-opts:
-    path: /
-    headers:
-      Host: e.zennaro.ir
-- name: 'ARISTA #64'
-  type: vless
-  server: 95.181.170.27
-  port: 8443
-  uuid: c96f941e-dd8a-00aa-89d5-740b79202ed0
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: x5club.ru
-  reality-opts:
-    public-key: 7T9ZSCdUh4IUlx17R1Vbzk8kjiopA3j5mI7-inh6aQU
-    short-id: "187eea0acfb7f778"
-- name: 'ARISTA #65'
+- name: 'ARISTA #58'
   type: vless
   server: 141.193.213.21
   port: 8443
@@ -993,75 +868,7 @@ proxies:
     path: /
     headers:
       Host: u.srilankangrill.online
-- name: 'ARISTA #66'
-  type: vless
-  server: 150.241.101.80
-  port: 8443
-  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: yandex.net
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #67'
-  type: vless
-  server: 103.148.73.173
-  port: 8443
-  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: ty986gfazs.cainiaohub.xyz
-  ws-opts:
-    path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
-    headers:
-      Host: ty986gfazs.cainiaohub.xyz
-- name: 'ARISTA #68'
-  type: vless
-  server: 2.26.225.89
-  port: 8443
-  uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: pl.flen-vpn.xyz
-- name: 'ARISTA #69'
-  type: vless
-  server: azsobhekhran.ticklitickli.ir
-  port: 8443
-  uuid: 4c314a01-26c9-4474-bd96-3d3f485b81f3
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: play.googleapis.com
-  reality-opts:
-    public-key: ssbuTE7tBkJ7BmwF0Fo9O3KBt3BDFG-fHRkxRxFB9XE
-    short-id: "ae4efa0ce23271"
-- name: 'ARISTA #70'
-  type: vless
-  server: 172.67.155.65
-  port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /cart/docs/www/proxyip=108.160.132.132fp=chrome
-    headers:
-      Host: lucasjow.us.ci
-- name: 'ARISTA #71'
+- name: 'ARISTA #59'
   type: vless
   server: nl5.hap-plus.ru
   port: 8443
@@ -1078,20 +885,7 @@ proxies:
     path: /api/v1/events
     headers:
       Host: nl5.hap-plus.ru
-- name: 'ARISTA #72'
-  type: vless
-  server: 91.107.191.188
-  port: 8443
-  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: chrome
-  servername: host.taghvimtime.ir
-- name: 'ARISTA #73'
+- name: 'ARISTA #60'
   type: vless
   server: host.taghvimtime.ir
   port: 8443
@@ -1104,93 +898,7 @@ proxies:
   - h2
   client-fingerprint: chrome
   servername: host.taghvimtime.ir
-- name: 'ARISTA #74'
-  type: vless
-  server: 129.101.121.70
-  port: 8443
-  uuid: a96ad3ea-4820-43d2-bbf3-27c6bf19d652
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: storage.yandex.net
-  reality-opts:
-    public-key: xX9ZxZRrF_EER9-8fOegxR97HV5KaMaftAD7eq10UXw
-    short-id: "75dd7e79a7876314"
-- name: 'ARISTA #75'
-  type: vless
-  server: 172.67.155.65
-  port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /cart/docs/www/proxyip
-    headers:
-      Host: lucasjow.us.ci
-- name: 'ARISTA #76'
-  type: vless
-  server: 93.152.215.176
-  port: 8443
-  uuid: 05d7a479-a099-40cf-aecf-41aa934767b0
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: nl5.hap-plus.ru
-  ws-opts:
-    path: /api/v1/events
-    headers:
-      Host: nl5.hap-plus.ru
-- name: 'ARISTA #77'
-  type: vless
-  server: 45.91.248.127
-  port: 8443
-  uuid: 81a227e3-cb97-40fe-b7b6-45a60ed065cf
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: node.nodebrcsp.ru
-  grpc-opts:
-    grpc-service-name: grpc-api-v2
-  reality-opts:
-    public-key: 75SvxhvlOLct7K2eSg4-a1o6Z6N3JMTqp3wIQmLSqTA
-    short-id: "8c609726e0233f08"
-- name: 'ARISTA #78'
-  type: vless
-  server: 150.241.101.80
-  port: 8443
-  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: yandex.net
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #79'
-  type: vless
-  server: host.taghvimtime.ir
-  port: 8443
-  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: chrome
-  servername: host.taghvimtime.ir
-- name: 'ARISTA #80'
+- name: 'ARISTA #61'
   type: hysteria2
   server: 51.15.19.206
   port: 8443
@@ -1270,25 +978,6 @@ proxy-groups:
   - 'ARISTA #59'
   - 'ARISTA #60'
   - 'ARISTA #61'
-  - 'ARISTA #62'
-  - 'ARISTA #63'
-  - 'ARISTA #64'
-  - 'ARISTA #65'
-  - 'ARISTA #66'
-  - 'ARISTA #67'
-  - 'ARISTA #68'
-  - 'ARISTA #69'
-  - 'ARISTA #70'
-  - 'ARISTA #71'
-  - 'ARISTA #72'
-  - 'ARISTA #73'
-  - 'ARISTA #74'
-  - 'ARISTA #75'
-  - 'ARISTA #76'
-  - 'ARISTA #77'
-  - 'ARISTA #78'
-  - 'ARISTA #79'
-  - 'ARISTA #80'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
