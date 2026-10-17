@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2083
-# Updated: 2026-10-17 10:34:49
-# Count: 1
+# Updated: 2026-10-17 15:27:11
+# Count: 8
 
 mixed-port: 7890
 allow-lan: false
@@ -50,19 +50,116 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 27.50.49.154
+  server: turk.karmatel.ir
   port: 2083
-  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
-  network: ws
+  uuid: cc880d02-4faf-4d22-bc87-2088256aa4e4
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: vs1.karmatel.ir
+- name: 'ARISTA #2'
+  type: vless
+  server: turk.karmatel.ir
+  port: 2083
+  uuid: cc880d02-4faf-4d22-bc87-2088256aa4e4
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: vs1.karmatel.ir
+- name: 'ARISTA #3'
+  type: vless
+  server: turk.karmatel.ir
+  port: 2083
+  uuid: cc880d02-4faf-4d22-bc87-2088256aa4e4
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: vs1.karmatel.ir
+- name: 'ARISTA #4'
+  type: vless
+  server: about.gitlab.com
+  port: 2083
+  uuid: a30934b1-f0f9-97bc-5d6a-b95d873f536d
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: proxy-34l.pages.dev
+  servername: 31nelclud2.varzeshfotsal.ir
+- name: 'ARISTA #5'
+  type: vless
+  server: fastus.panelsaaz.ir
+  port: 2083
+  uuid: 732ec777-bf4a-4fee-835a-25d6a8b58563
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: fastus.panelsaaz.ir
   ws-opts:
-    path: /
+    path: /arv
     headers:
-      Host: proxy-34l.pages.dev
+      Host: fastus.panelsaaz.ir
+- name: 'ARISTA #6'
+  type: vless
+  server: turk.karmatel.ir
+  port: 2083
+  uuid: cc880d02-4faf-4d22-bc87-2088256aa4e4
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: vs1.karmatel.ir
+- name: 'ARISTA #7'
+  type: vless
+  server: about.gitlab.com
+  port: 2083
+  uuid: a30934b1-f0f9-97bc-5d6a-b95d873f536d
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: 31nelclud2.varzeshfotsal.ir
+- name: 'ARISTA #8'
+  type: vless
+  server: fastus.panelsaaz.ir
+  port: 2083
+  uuid: 732ec777-bf4a-4fee-835a-25d6a8b58563
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: fastus.panelsaaz.ir
+  ws-opts:
+    path: /arv
+    headers:
+      Host: fastus.panelsaaz.ir
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -73,6 +170,13 @@ proxy-groups:
   timeout: 3000
   proxies: &id001
   - 'ARISTA #1'
+  - 'ARISTA #2'
+  - 'ARISTA #3'
+  - 'ARISTA #4'
+  - 'ARISTA #5'
+  - 'ARISTA #6'
+  - 'ARISTA #7'
+  - 'ARISTA #8'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
