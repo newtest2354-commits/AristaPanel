@@ -1,6 +1,6 @@
 # COMBINED - Port 2083
-# Updated: 2026-10-18 20:29:10
-# Count: 17
+# Updated: 2026-10-18 22:59:51
+# Count: 19
 
 mixed-port: 7890
 allow-lan: false
@@ -168,7 +168,22 @@ proxies:
   servername: fi.ultimatesvc.net
   ws-opts:
     path: /
-- name: 'T.ME: @aristapanel #9'
+- name: 'ARISTA #9'
+  type: vless
+  server: fastus.panelsaaz.ir
+  port: 2083
+  uuid: 732ec777-bf4a-4fee-835a-25d6a8b58563
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: fastus.panelsaaz.ir
+  ws-opts:
+    path: /arv
+    headers:
+      Host: fastus.panelsaaz.ir
+- name: 'T.ME: @aristapanel #10'
   type: vless
   server: sino.bestsellers1.site
   port: 2083
@@ -185,7 +200,7 @@ proxies:
   servername: sino.bestsellers1.site
   ws-opts:
     path: /
-- name: 'T.ME: @aristapanel #10'
+- name: 'T.ME: @aristapanel #11'
   type: vless
   server: download.yasinyones.ir
   port: 2083
@@ -202,18 +217,6 @@ proxies:
     path: /my-panel
     headers:
       Host: download.yasinyones.ir
-- name: 'ARISTA #11'
-  type: vless
-  server: fi.ultimatesvc.net
-  port: 2083
-  uuid: be6eef5f-9ca9-4dd4-867a-5b2b71c828ce
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: fi.ultimatesvc.net
-  ws-opts:
-    path: /
 - name: 'ARISTA #12'
   type: vless
   server: fi.ultimatesvc.net
@@ -227,21 +230,32 @@ proxies:
   ws-opts:
     path: /
 - name: 'ARISTA #13'
-  type: ss
-  server: 51.38.71.51
+  type: vless
+  server: fi.ultimatesvc.net
   port: 2083
-  cipher: 2022-blake3-aes-256-gcm
-  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
+  uuid: be6eef5f-9ca9-4dd4-867a-5b2b71c828ce
+  network: ws
+  tls: true
   udp: true
-  tcp-fast-open: true
+  skip-cert-verify: true
+  servername: fi.ultimatesvc.net
+  ws-opts:
+    path: /
 - name: 'ARISTA #14'
-  type: ss
-  server: 51.38.71.51
+  type: vless
+  server: fastus.panelsaaz.ir
   port: 2083
-  cipher: 2022-blake3-aes-256-gcm
-  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
+  uuid: 732ec777-bf4a-4fee-835a-25d6a8b58563
+  network: ws
+  tls: true
   udp: true
-  tcp-fast-open: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: fastus.panelsaaz.ir
+  ws-opts:
+    path: /arv
+    headers:
+      Host: fastus.panelsaaz.ir
 - name: 'ARISTA #15'
   type: ss
   server: 51.38.71.51
@@ -266,6 +280,22 @@ proxies:
   password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
   udp: true
   tcp-fast-open: true
+- name: 'ARISTA #18'
+  type: ss
+  server: 51.38.71.51
+  port: 2083
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #19'
+  type: ss
+  server: 51.38.71.51
+  port: 2083
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
+  udp: true
+  tcp-fast-open: true
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -283,15 +313,17 @@ proxy-groups:
   - 'ARISTA #6'
   - 'ARISTA #7'
   - 'ARISTA #8'
-  - 'T.ME: @aristapanel #9'
+  - 'ARISTA #9'
   - 'T.ME: @aristapanel #10'
-  - 'ARISTA #11'
+  - 'T.ME: @aristapanel #11'
   - 'ARISTA #12'
   - 'ARISTA #13'
   - 'ARISTA #14'
   - 'ARISTA #15'
   - 'ARISTA #16'
   - 'ARISTA #17'
+  - 'ARISTA #18'
+  - 'ARISTA #19'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

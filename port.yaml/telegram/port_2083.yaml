@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2083
-# Updated: 2026-10-18 20:29:18
-# Count: 8
+# Updated: 2026-10-18 22:59:55
+# Count: 9
 
 mixed-port: 7890
 allow-lan: false
@@ -116,6 +116,21 @@ proxies:
     path: /
 - name: 'ARISTA #6'
   type: vless
+  server: fastus.panelsaaz.ir
+  port: 2083
+  uuid: 732ec777-bf4a-4fee-835a-25d6a8b58563
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: fastus.panelsaaz.ir
+  ws-opts:
+    path: /arv
+    headers:
+      Host: fastus.panelsaaz.ir
+- name: 'ARISTA #7'
+  type: vless
   server: fi.ultimatesvc.net
   port: 2083
   uuid: be6eef5f-9ca9-4dd4-867a-5b2b71c828ce
@@ -126,7 +141,7 @@ proxies:
   servername: fi.ultimatesvc.net
   ws-opts:
     path: /
-- name: 'ARISTA #7'
+- name: 'ARISTA #8'
   type: ss
   server: 51.38.71.51
   port: 2083
@@ -134,7 +149,7 @@ proxies:
   password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
   udp: true
   tcp-fast-open: true
-- name: 'ARISTA #8'
+- name: 'ARISTA #9'
   type: ss
   server: 51.38.71.51
   port: 2083
@@ -159,6 +174,7 @@ proxy-groups:
   - 'ARISTA #6'
   - 'ARISTA #7'
   - 'ARISTA #8'
+  - 'ARISTA #9'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
