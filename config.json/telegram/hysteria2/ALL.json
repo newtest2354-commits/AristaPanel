@@ -1,0 +1,94 @@
+// TELEGRAM - HYSTERIA2 - Tier ALL
+// Updated: 2026-10-18 10:53:04
+// Count: 1
+
+{
+  "log": {
+    "level": "info",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "type": "udp",
+        "tag": "google",
+        "server": "8.8.8.8"
+      },
+      {
+        "type": "udp",
+        "tag": "cloudflare",
+        "server": "1.1.1.1"
+      }
+    ],
+    "rules": [],
+    "final": "google"
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "interface_name": "singbox-tun",
+      "address": [
+        "172.19.0.1/30"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "stack": "system",
+      "sniff": false
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "hysteria2",
+      "tag": "ARISTA #1",
+      "server": "162.249.125.133",
+      "server_port": 443,
+      "password": "QCgqi_I4EkV8UR-OgQ_tG4EnVTEVvIyR2GgRBzrIn2s",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "hy2-new.aspidnet.xyz",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "obfs": {
+        "type": "salamander",
+        "password": "c1b4086fea89914496c7e10967a419216566"
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    },
+    {
+      "type": "urltest",
+      "tag": "🚀 ARISTA AUTO BEST",
+      "outbounds": [
+        "ARISTA #1"
+      ],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "2m",
+      "tolerance": 30,
+      "idle_timeout": "20m",
+      "interrupt_exist_connections": true
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true,
+    "default_domain_resolver": "google",
+    "final": "🚀 ARISTA AUTO BEST",
+    "rules": [
+      {
+        "protocol": "dns",
+        "outbound": "direct"
+      }
+    ]
+  }
+}
