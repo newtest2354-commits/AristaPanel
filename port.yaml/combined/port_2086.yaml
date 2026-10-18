@@ -1,5 +1,5 @@
 # COMBINED - Port 2086
-# Updated: 2026-10-18 15:48:28
+# Updated: 2026-10-18 20:29:10
 # Count: 3
 
 mixed-port: 7890
@@ -48,7 +48,7 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'ARISTA #1'
+- name: 'T.ME: @aristapanel #1'
   type: vless
   server: html.iranpood.com
   port: 2086
@@ -58,6 +58,16 @@ proxies:
   udp: true
   skip-cert-verify: true
 - name: 'T.ME: @aristapanel #2'
+  type: vless
+  server: api2.onlinernet.ir
+  port: 2086
+  uuid: 16188ecf-2dcd-40d7-898b-60461f125978
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+- name: 'T.ME: @aristapanel #3'
   type: vless
   server: sub.skyshopnet.ir
   port: 2086
@@ -71,15 +81,6 @@ proxies:
   reality-opts:
     public-key: hWQNka_B_4CBdrU608qJ0ukLPsxVoR9pCBnmy35EGX0
     short-id: "e0d0303a"
-- name: 'ARISTA #3'
-  type: vless
-  server: html.iranpood.com
-  port: 2086
-  uuid: 3b715892-8610-4fdc-9086-647b36af5443
-  network: xhttp
-  tls: false
-  udp: true
-  skip-cert-verify: true
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -89,9 +90,9 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'ARISTA #1'
+  - 'T.ME: @aristapanel #1'
   - 'T.ME: @aristapanel #2'
-  - 'ARISTA #3'
+  - 'T.ME: @aristapanel #3'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
