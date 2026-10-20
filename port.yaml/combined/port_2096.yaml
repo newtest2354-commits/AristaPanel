@@ -1,6 +1,6 @@
 # COMBINED - Port 2096
-# Updated: 2026-10-20 00:15:11
-# Count: 27
+# Updated: 2026-10-20 08:25:47
+# Count: 9
 
 mixed-port: 7890
 allow-lan: false
@@ -50,28 +50,34 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: de.ultimatesvc.net
+  server: fastter.panelsaaz.ir
   port: 2096
-  uuid: be6eef5f-9ca9-4dd4-867a-5b2b71c828ce
+  uuid: 732ec777-bf4a-4fee-835a-25d6a8b58563
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: de.ultimatesvc.net
+  flow: xtls-rprx-vision
+  servername: fastter.panelsaaz.ir
   ws-opts:
-    path: /
+    path: /upl
+    headers:
+      Host: fastter.panelsaaz.ir
 - name: 'ARISTA #2'
   type: vless
-  server: pl.ultimatesvc.net
+  server: fastter.panelsaaz.ir
   port: 2096
-  uuid: be6eef5f-9ca9-4dd4-867a-5b2b71c828ce
+  uuid: 732ec777-bf4a-4fee-835a-25d6a8b58563
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: pl.ultimatesvc.net
+  flow: xtls-rprx-vision
+  servername: fastter.panelsaaz.ir
   ws-opts:
-    path: /
+    path: /upl
+    headers:
+      Host: fastter.panelsaaz.ir
 - name: 'ARISTA #3'
   type: vless
   server: ip1.fastt.ir
@@ -87,42 +93,34 @@ proxies:
   servername: commm.varzeshfotsal.ir
 - name: 'ARISTA #4'
   type: vless
-  server: de.ultimatesvc.net
+  server: 139.162.27.96
   port: 2096
-  uuid: be6eef5f-9ca9-4dd4-867a-5b2b71c828ce
+  uuid: 6e59d5c5-7aa3-4c36-a4c4-e3b899525ed2
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: de.ultimatesvc.net
+  servername: free-server.techsonic.dev
   ws-opts:
-    path: /
-- name: 'ARISTA #5'
+    path: /free-server.techsonic.dev
+    headers:
+      Host: free-server.techsonic.dev
+- name: 'T.ME: @aristapanel #5'
   type: vless
-  server: pl.ultimatesvc.net
+  server: 8.39.125.92
   port: 2096
-  uuid: be6eef5f-9ca9-4dd4-867a-5b2b71c828ce
+  uuid: a6ba51de-d50a-407f-a8bb-5dc8b3073ec1
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: pl.ultimatesvc.net
+  client-fingerprint: chrome
+  servername: frosty-clover-b8ea-df1f0206.pages.dev
   ws-opts:
-    path: /
+    path: /7f0776a02fac
+    headers:
+      Host: frosty-clover-b8ea-df1f0206.pages.dev
 - name: 'ARISTA #6'
-  type: vless
-  server: ip1.fastt.ir
-  port: 2096
-  uuid: 8bcdddb3-3154-49e1-ab64-1998e1131c02
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  servername: commm.varzeshfotsal.ir
-- name: 'ARISTA #7'
   type: vless
   server: fastter.panelsaaz.ir
   port: 2096
@@ -137,6 +135,19 @@ proxies:
     path: /upl
     headers:
       Host: fastter.panelsaaz.ir
+- name: 'ARISTA #7'
+  type: vless
+  server: ip1.fastt.ir
+  port: 2096
+  uuid: 8bcdddb3-3154-49e1-ab64-1998e1131c02
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  servername: commm.varzeshfotsal.ir
 - name: 'ARISTA #8'
   type: vless
   server: 139.162.27.96
@@ -153,96 +164,6 @@ proxies:
       Host: free-server.techsonic.dev
 - name: 'ARISTA #9'
   type: vless
-  server: kaveh4.gofuc7f.ir
-  port: 2096
-  uuid: 647f3600-112a-406c-9d19-6d1da58ff041
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: kaveh4.gofuc7f.ir
-- name: 'T.ME: @aristapanel #10'
-  type: vless
-  server: 8.39.125.92
-  port: 2096
-  uuid: a6ba51de-d50a-407f-a8bb-5dc8b3073ec1
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: frosty-clover-b8ea-df1f0206.pages.dev
-  ws-opts:
-    path: /7f0776a02fac
-    headers:
-      Host: frosty-clover-b8ea-df1f0206.pages.dev
-- name: 'ARISTA #11'
-  type: vless
-  server: de.ultimatesvc.net
-  port: 2096
-  uuid: be6eef5f-9ca9-4dd4-867a-5b2b71c828ce
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: de.ultimatesvc.net
-  ws-opts:
-    path: /
-- name: 'ARISTA #12'
-  type: vless
-  server: pl.ultimatesvc.net
-  port: 2096
-  uuid: be6eef5f-9ca9-4dd4-867a-5b2b71c828ce
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: pl.ultimatesvc.net
-  ws-opts:
-    path: /
-- name: 'ARISTA #13'
-  type: vless
-  server: de.ultimatesvc.net
-  port: 2096
-  uuid: be6eef5f-9ca9-4dd4-867a-5b2b71c828ce
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: de.ultimatesvc.net
-  ws-opts:
-    path: /
-- name: 'ARISTA #14'
-  type: vless
-  server: pl.ultimatesvc.net
-  port: 2096
-  uuid: be6eef5f-9ca9-4dd4-867a-5b2b71c828ce
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: pl.ultimatesvc.net
-  ws-opts:
-    path: /
-- name: 'ARISTA #15'
-  type: vless
-  server: ip1.fastt.ir
-  port: 2096
-  uuid: 8bcdddb3-3154-49e1-ab64-1998e1131c02
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  servername: commm.varzeshfotsal.ir
-- name: 'ARISTA #16'
-  type: vless
   server: fastter.panelsaaz.ir
   port: 2096
   uuid: 732ec777-bf4a-4fee-835a-25d6a8b58563
@@ -256,145 +177,6 @@ proxies:
     path: /upl
     headers:
       Host: fastter.panelsaaz.ir
-- name: 'ARISTA #17'
-  type: vless
-  server: 139.162.27.96
-  port: 2096
-  uuid: 6e59d5c5-7aa3-4c36-a4c4-e3b899525ed2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: free-server.techsonic.dev
-  ws-opts:
-    path: /free-server.techsonic.dev
-    headers:
-      Host: free-server.techsonic.dev
-- name: 'ARISTA #18'
-  type: vless
-  server: kaveh4.gofuc7f.ir
-  port: 2096
-  uuid: 647f3600-112a-406c-9d19-6d1da58ff041
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: kaveh4.gofuc7f.ir
-- name: 'ARISTA #19'
-  type: vless
-  server: de.ultimatesvc.net
-  port: 2096
-  uuid: be6eef5f-9ca9-4dd4-867a-5b2b71c828ce
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: de.ultimatesvc.net
-  ws-opts:
-    path: /
-- name: 'ARISTA #20'
-  type: vless
-  server: pl.ultimatesvc.net
-  port: 2096
-  uuid: be6eef5f-9ca9-4dd4-867a-5b2b71c828ce
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: pl.ultimatesvc.net
-  ws-opts:
-    path: /
-- name: 'ARISTA #21'
-  type: vless
-  server: ip1.fastt.ir
-  port: 2096
-  uuid: 8bcdddb3-3154-49e1-ab64-1998e1131c02
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  servername: commm.varzeshfotsal.ir
-- name: 'ARISTA #22'
-  type: vless
-  server: de.ultimatesvc.net
-  port: 2096
-  uuid: be6eef5f-9ca9-4dd4-867a-5b2b71c828ce
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: de.ultimatesvc.net
-  ws-opts:
-    path: /
-- name: 'ARISTA #23'
-  type: vless
-  server: pl.ultimatesvc.net
-  port: 2096
-  uuid: be6eef5f-9ca9-4dd4-867a-5b2b71c828ce
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: pl.ultimatesvc.net
-  ws-opts:
-    path: /
-- name: 'ARISTA #24'
-  type: vless
-  server: ip1.fastt.ir
-  port: 2096
-  uuid: 8bcdddb3-3154-49e1-ab64-1998e1131c02
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  servername: commm.varzeshfotsal.ir
-- name: 'ARISTA #25'
-  type: vless
-  server: de.ultimatesvc.net
-  port: 2096
-  uuid: be6eef5f-9ca9-4dd4-867a-5b2b71c828ce
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: de.ultimatesvc.net
-  ws-opts:
-    path: /
-- name: 'ARISTA #26'
-  type: vless
-  server: pl.ultimatesvc.net
-  port: 2096
-  uuid: be6eef5f-9ca9-4dd4-867a-5b2b71c828ce
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: pl.ultimatesvc.net
-  ws-opts:
-    path: /
-- name: 'ARISTA #27'
-  type: vless
-  server: ip1.fastt.ir
-  port: 2096
-  uuid: 8bcdddb3-3154-49e1-ab64-1998e1131c02
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  servername: commm.varzeshfotsal.ir
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -408,29 +190,11 @@ proxy-groups:
   - 'ARISTA #2'
   - 'ARISTA #3'
   - 'ARISTA #4'
-  - 'ARISTA #5'
+  - 'T.ME: @aristapanel #5'
   - 'ARISTA #6'
   - 'ARISTA #7'
   - 'ARISTA #8'
   - 'ARISTA #9'
-  - 'T.ME: @aristapanel #10'
-  - 'ARISTA #11'
-  - 'ARISTA #12'
-  - 'ARISTA #13'
-  - 'ARISTA #14'
-  - 'ARISTA #15'
-  - 'ARISTA #16'
-  - 'ARISTA #17'
-  - 'ARISTA #18'
-  - 'ARISTA #19'
-  - 'ARISTA #20'
-  - 'ARISTA #21'
-  - 'ARISTA #22'
-  - 'ARISTA #23'
-  - 'ARISTA #24'
-  - 'ARISTA #25'
-  - 'ARISTA #26'
-  - 'ARISTA #27'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
