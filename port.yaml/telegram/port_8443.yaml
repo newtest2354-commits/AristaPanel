@@ -1,6 +1,6 @@
 # TELEGRAM - Port 8443
-# Updated: 2026-10-20 19:10:38
-# Count: 98
+# Updated: 2026-10-20 23:50:27
+# Count: 91
 
 mixed-port: 7890
 allow-lan: false
@@ -49,29 +49,37 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'ARISTA #1'
-  type: vless
-  server: 2.26.225.89
+  type: vmess
+  server: 172.67.167.78
   port: 8443
-  uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: pl.flen-vpn.xyz
-- name: 'ARISTA #2'
-  type: vless
-  server: 172.67.155.65
-  port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: lucasjow.us.ci
+  tcp-fast-open: true
+  servername: v2ray1.dozapp.xyz
   ws-opts:
-    path: /DailyConfigs---DailyConfigs---DailyConfigs?ed=1024
+    path: /lMnsZUN4/
     headers:
-      Host: lucasjow.us.ci
+      Host: v2ray1.dozapp.xyz
+- name: 'ARISTA #2'
+  type: vless
+  server: swedn.firzav.ir
+  port: 8443
+  uuid: 0edb837d-e4e7-485b-a634-3052b44544e4
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: swedn.firzav.ir
 - name: 'ARISTA #3'
   type: vless
   server: 172.67.155.65
@@ -88,20 +96,48 @@ proxies:
       Host: lucasjow.us.ci
 - name: 'ARISTA #4'
   type: vless
-  server: 150.241.101.80
+  server: 104.18.13.149
   port: 8443
-  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: sni.111000.dynv6.net
+  ws-opts:
+    path: /?Telegram🇨🇳 @WangCai2
+    headers:
+      Host: sni.111000.dynv6.net
+- name: 'ARISTA #5'
+  type: vless
+  server: 45.91.248.127
+  port: 8443
+  uuid: 81a227e3-cb97-40fe-b7b6-45a60ed065cf
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: random
+  servername: node.nodebrcsp.ru
+  grpc-opts:
+    grpc-service-name: grpc-api-v2
+  reality-opts:
+    public-key: 75SvxhvlOLct7K2eSg4-a1o6Z6N3JMTqp3wIQmLSqTA
+    short-id: "8c609726e0233f08"
+- name: 'ARISTA #6'
+  type: vless
+  server: 209.182.100.216
+  port: 8443
+  uuid: 2620fca9-2d47-0082-b51a-50ff5ed307d3
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: yandex.net
+  servername: x5club.ru
   reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #5'
+    public-key: 7T9ZSCdUh4IUlx17R1Vbzk8kjiopA3j5mI7-inh6aQU
+    short-id: "187eea0acfb7f778"
+- name: 'ARISTA #7'
   type: vless
   server: 172.67.155.65
   port: 8443
@@ -115,21 +151,20 @@ proxies:
     path: /?TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=512
     headers:
       Host: lucasjow.us.ci
-- name: 'ARISTA #6'
+- name: 'ARISTA #8'
   type: vless
-  server: 172.67.155.65
+  server: host.taghvimtime.ir
   port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
+  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /cart/docs/www/proxyip?ed#Telegram---mehrosaboran
-    headers:
-      Host: lucasjow.us.ci
-- name: 'ARISTA #7'
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: host.taghvimtime.ir
+- name: 'ARISTA #9'
   type: vless
   server: 2.26.225.89
   port: 8443
@@ -139,107 +174,21 @@ proxies:
   udp: true
   skip-cert-verify: true
   servername: pl.flen-vpn.xyz
-- name: 'ARISTA #8'
-  type: vless
-  server: 172.67.155.65
-  port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /DailyConfigs---DailyConfigs---DailyConfigs?ed=1024
-    headers:
-      Host: lucasjow.us.ci
-- name: 'ARISTA #9'
-  type: vless
-  server: 172.67.155.65
-  port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /cart/docs/www/proxyip
-    headers:
-      Host: lucasjow.us.ci
 - name: 'ARISTA #10'
   type: vless
-  server: 150.241.101.80
+  server: 172.67.155.65
   port: 8443
-  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
-  network: tcp
+  uuid: e6df2095-a73c-4043-8693-8d5a03686870
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: yandex.net
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
+  servername: lucasjow.us.ci
+  ws-opts:
+    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=2560
+    headers:
+      Host: lucasjow.us.ci
 - name: 'ARISTA #11'
-  type: vless
-  server: 172.67.155.65
-  port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=512
-    headers:
-      Host: lucasjow.us.ci
-- name: 'ARISTA #12'
-  type: vless
-  server: 172.67.155.65
-  port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /cart/docs/www/proxyip?ed#Telegram---mehrosaboran
-    headers:
-      Host: lucasjow.us.ci
-- name: 'ARISTA #13'
-  type: vless
-  server: swedn.firzav.ir
-  port: 8443
-  uuid: 0edb837d-e4e7-485b-a634-3052b44544e4
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: swedn.firzav.ir
-- name: 'ARISTA #14'
-  type: vless
-  server: 172.67.155.65
-  port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /
-    headers:
-      Host: lucasjow.us.ci
-- name: 'ARISTA #15'
   type: vless
   server: 43.254.218.158
   port: 8443
@@ -254,20 +203,73 @@ proxies:
     path: /fdip#TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=512
     headers:
       Host: snip.edgeoneai.cc.cd
-- name: 'ARISTA #16'
+- name: 'ARISTA #12'
   type: vless
-  server: 2.28.42.209
+  server: 51.38.71.147
   port: 8443
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  network: ws
+  uuid: c08f0056-7a6d-4931-813b-aaa3cdd00aed
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: snip.edgeoneai.cc.cd
-  ws-opts:
-    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443fp=chrome
-    headers:
-      Host: snip.edgeoneai.cc.cd
+  client-fingerprint: firefox
+  servername: node-uk.connectsuite.org
+- name: 'ARISTA #13'
+  type: vless
+  server: 91.107.191.188
+  port: 8443
+  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: host.taghvimtime.ir
+- name: 'ARISTA #14'
+  type: vless
+  server: 150.241.101.80
+  port: 8443
+  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: yandex.net
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: "6ba85179e30d4fc2"
+- name: 'ARISTA #15'
+  type: vless
+  server: host.taghvimtime.ir
+  port: 8443
+  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: host.taghvimtime.ir
+- name: 'ARISTA #16'
+  type: vless
+  server: swedn.firzav.ir
+  port: 8443
+  uuid: 0edb837d-e4e7-485b-a634-3052b44544e4
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: swedn.firzav.ir
 - name: 'ARISTA #17'
   type: vless
   server: 172.67.155.65
@@ -279,23 +281,23 @@ proxies:
   skip-cert-verify: true
   servername: lucasjow.us.ci
   ws-opts:
-    path: /Chanel0111Net
+    path: /cart/docs/www/proxyip
     headers:
       Host: lucasjow.us.ci
 - name: 'ARISTA #18'
   type: vless
-  server: 172.67.155.65
+  server: 104.18.13.149
   port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: lucasjow.us.ci
+  servername: sni.111000.dynv6.net
   ws-opts:
-    path: /cart/docs/www/proxyip?ed#Telegram---bored_vpn
+    path: /?Telegram🇨🇳 @WangCai2
     headers:
-      Host: lucasjow.us.ci
+      Host: sni.111000.dynv6.net
 - name: 'ARISTA #19'
   type: vless
   server: 45.91.248.127
@@ -314,15 +316,19 @@ proxies:
     short-id: "8c609726e0233f08"
 - name: 'ARISTA #20'
   type: vless
-  server: 51.38.71.147
+  server: swedn.firzav.ir
   port: 8443
-  uuid: c08f0056-7a6d-4931-813b-aaa3cdd00aed
+  uuid: 0edb837d-e4e7-485b-a634-3052b44544e4
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: node-uk.connectsuite.org
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: swedn.firzav.ir
 - name: 'ARISTA #21'
   type: vless
   server: 172.67.155.65
@@ -332,12 +338,85 @@ proxies:
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: lucasjow.us.ci🏴‍☠️@FreakConfig
+  servername: lucasjow.us.ci
   ws-opts:
     path: /cart/docs/www/proxyip
     headers:
       Host: lucasjow.us.ci
 - name: 'ARISTA #22'
+  type: vless
+  server: 104.18.13.149
+  port: 8443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: sni.111000.dynv6.net
+  ws-opts:
+    path: /?Telegram🇨🇳 @WangCai2
+    headers:
+      Host: sni.111000.dynv6.net
+- name: 'ARISTA #23'
+  type: vless
+  server: swedn.firzav.ir
+  port: 8443
+  uuid: 0edb837d-e4e7-485b-a634-3052b44544e4
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: swedn.firzav.ir
+- name: 'ARISTA #24'
+  type: vless
+  server: 172.67.155.65
+  port: 8443
+  uuid: e6df2095-a73c-4043-8693-8d5a03686870
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: lucasjow.us.ci
+  ws-opts:
+    path: /cart/docs/www/proxyip
+    headers:
+      Host: lucasjow.us.ci
+- name: 'ARISTA #25'
+  type: vless
+  server: 104.18.13.149
+  port: 8443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: sni.111000.dynv6.net
+  ws-opts:
+    path: /?Telegram🇨🇳 @WangCai2
+    headers:
+      Host: sni.111000.dynv6.net
+- name: 'ARISTA #26'
+  type: vless
+  server: 45.91.248.127
+  port: 8443
+  uuid: 81a227e3-cb97-40fe-b7b6-45a60ed065cf
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: random
+  servername: node.nodebrcsp.ru
+  grpc-opts:
+    grpc-service-name: grpc-api-v2
+  reality-opts:
+    public-key: 75SvxhvlOLct7K2eSg4-a1o6Z6N3JMTqp3wIQmLSqTA
+    short-id: "8c609726e0233f08"
+- name: 'ARISTA #27'
   type: vless
   server: 209.182.100.216
   port: 8443
@@ -350,68 +429,6 @@ proxies:
   reality-opts:
     public-key: 7T9ZSCdUh4IUlx17R1Vbzk8kjiopA3j5mI7-inh6aQU
     short-id: "187eea0acfb7f778"
-- name: 'ARISTA #23'
-  type: vless
-  server: 150.241.101.80
-  port: 8443
-  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #24'
-  type: vless
-  server: 2.26.225.89
-  port: 8443
-  uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: pl.flen-vpn.xyz
-- name: 'ARISTA #25'
-  type: vless
-  server: 172.67.155.65
-  port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /DailyConfigs---DailyConfigs---DailyConfigs?ed=1024
-    headers:
-      Host: lucasjow.us.ci
-- name: 'ARISTA #26'
-  type: vless
-  server: 172.67.155.65
-  port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /cart/docs/www/proxyip
-    headers:
-      Host: lucasjow.us.ci
-- name: 'ARISTA #27'
-  type: vless
-  server: 150.241.101.80
-  port: 8443
-  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: yandex.net
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
 - name: 'ARISTA #28'
   type: vless
   server: 172.67.155.65
@@ -428,33 +445,27 @@ proxies:
       Host: lucasjow.us.ci
 - name: 'ARISTA #29'
   type: vless
-  server: 172.67.155.65
+  server: host.taghvimtime.ir
   port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
+  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /cart/docs/www/proxyip?ed#Telegram---mehrosaboran
-    headers:
-      Host: lucasjow.us.ci
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: host.taghvimtime.ir
 - name: 'ARISTA #30'
   type: vless
-  server: swedn.firzav.ir
+  server: 2.26.225.89
   port: 8443
-  uuid: 0edb837d-e4e7-485b-a634-3052b44544e4
+  uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: swedn.firzav.ir
+  servername: pl.flen-vpn.xyz
 - name: 'ARISTA #31'
   type: vless
   server: 172.67.155.65
@@ -466,7 +477,7 @@ proxies:
   skip-cert-verify: true
   servername: lucasjow.us.ci
   ws-opts:
-    path: /
+    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=2560
     headers:
       Host: lucasjow.us.ci
 - name: 'ARISTA #32'
@@ -486,33 +497,59 @@ proxies:
       Host: snip.edgeoneai.cc.cd
 - name: 'ARISTA #33'
   type: vless
-  server: 2.28.42.209
+  server: 51.38.71.147
   port: 8443
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  network: ws
+  uuid: c08f0056-7a6d-4931-813b-aaa3cdd00aed
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: snip.edgeoneai.cc.cd
-  ws-opts:
-    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443fp=chrome
-    headers:
-      Host: snip.edgeoneai.cc.cd
+  client-fingerprint: firefox
+  servername: node-uk.connectsuite.org
 - name: 'ARISTA #34'
   type: vless
-  server: 172.67.155.65
+  server: 91.107.191.188
   port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
+  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /Chanel0111Net
-    headers:
-      Host: lucasjow.us.ci
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: host.taghvimtime.ir
 - name: 'ARISTA #35'
+  type: vless
+  server: 150.241.101.80
+  port: 8443
+  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: yandex.net
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: "6ba85179e30d4fc2"
+- name: 'ARISTA #36'
+  type: vless
+  server: swedn.firzav.ir
+  port: 8443
+  uuid: 0edb837d-e4e7-485b-a634-3052b44544e4
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: swedn.firzav.ir
+- name: 'ARISTA #37'
   type: vless
   server: 172.67.155.65
   port: 8443
@@ -523,10 +560,24 @@ proxies:
   skip-cert-verify: true
   servername: lucasjow.us.ci
   ws-opts:
-    path: /cart/docs/www/proxyip?ed#Telegram---bored_vpn
+    path: /cart/docs/www/proxyip
     headers:
       Host: lucasjow.us.ci
-- name: 'ARISTA #36'
+- name: 'ARISTA #38'
+  type: vless
+  server: 104.18.13.149
+  port: 8443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: sni.111000.dynv6.net
+  ws-opts:
+    path: /?Telegram🇨🇳 @WangCai2
+    headers:
+      Host: sni.111000.dynv6.net
+- name: 'ARISTA #39'
   type: vless
   server: 45.91.248.127
   port: 8443
@@ -542,32 +593,7 @@ proxies:
   reality-opts:
     public-key: 75SvxhvlOLct7K2eSg4-a1o6Z6N3JMTqp3wIQmLSqTA
     short-id: "8c609726e0233f08"
-- name: 'ARISTA #37'
-  type: vless
-  server: 51.38.71.147
-  port: 8443
-  uuid: c08f0056-7a6d-4931-813b-aaa3cdd00aed
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: node-uk.connectsuite.org
-- name: 'ARISTA #38'
-  type: vless
-  server: 172.67.155.65
-  port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: lucasjow.us.ci🏴‍☠️@FreakConfig
-  ws-opts:
-    path: /cart/docs/www/proxyip
-    headers:
-      Host: lucasjow.us.ci
-- name: 'ARISTA #39'
+- name: 'ARISTA #40'
   type: vless
   server: 209.182.100.216
   port: 8443
@@ -580,15 +606,6 @@ proxies:
   reality-opts:
     public-key: 7T9ZSCdUh4IUlx17R1Vbzk8kjiopA3j5mI7-inh6aQU
     short-id: "187eea0acfb7f778"
-- name: 'ARISTA #40'
-  type: vless
-  server: 150.241.101.80
-  port: 8443
-  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
 - name: 'ARISTA #41'
   type: vless
   server: 172.67.155.65
@@ -600,58 +617,38 @@ proxies:
   skip-cert-verify: true
   servername: lucasjow.us.ci
   ws-opts:
-    path: /cart/docs/www/proxyip?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
+    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=512
     headers:
       Host: lucasjow.us.ci
 - name: 'ARISTA #42'
   type: vless
-  server: 2.26.225.89
+  server: host.taghvimtime.ir
   port: 8443
-  uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
-  network: tcp
+  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: pl.flen-vpn.xyz
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: host.taghvimtime.ir
 - name: 'ARISTA #43'
   type: vless
-  server: 172.67.155.65
+  server: swedn.firzav.ir
   port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /DailyConfigs---DailyConfigs---DailyConfigs?ed=1024
-    headers:
-      Host: lucasjow.us.ci
-- name: 'ARISTA #44'
-  type: vless
-  server: 2.26.225.89
-  port: 8443
-  uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
+  uuid: 0edb837d-e4e7-485b-a634-3052b44544e4
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: pl.flen-vpn.xyz
-- name: 'ARISTA #45'
-  type: vless
-  server: 172.67.155.65
-  port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /DailyConfigs---DailyConfigs---DailyConfigs?ed=1024
-    headers:
-      Host: lucasjow.us.ci
-- name: 'ARISTA #46'
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: swedn.firzav.ir
+- name: 'ARISTA #44'
   type: vless
   server: 172.67.155.65
   port: 8443
@@ -665,21 +662,49 @@ proxies:
     path: /cart/docs/www/proxyip
     headers:
       Host: lucasjow.us.ci
+- name: 'ARISTA #45'
+  type: vless
+  server: 104.18.13.149
+  port: 8443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: sni.111000.dynv6.net
+  ws-opts:
+    path: /?Telegram🇨🇳 @WangCai2
+    headers:
+      Host: sni.111000.dynv6.net
+- name: 'ARISTA #46'
+  type: vless
+  server: 45.91.248.127
+  port: 8443
+  uuid: 81a227e3-cb97-40fe-b7b6-45a60ed065cf
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: random
+  servername: node.nodebrcsp.ru
+  grpc-opts:
+    grpc-service-name: grpc-api-v2
+  reality-opts:
+    public-key: 75SvxhvlOLct7K2eSg4-a1o6Z6N3JMTqp3wIQmLSqTA
+    short-id: "8c609726e0233f08"
 - name: 'ARISTA #47'
   type: vless
-  server: 150.241.101.80
+  server: 209.182.100.216
   port: 8443
-  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
+  uuid: 2620fca9-2d47-0082-b51a-50ff5ed307d3
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: yandex.net
+  servername: x5club.ru
   reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
+    public-key: 7T9ZSCdUh4IUlx17R1Vbzk8kjiopA3j5mI7-inh6aQU
+    short-id: "187eea0acfb7f778"
 - name: 'ARISTA #48'
   type: vless
   server: 172.67.155.65
@@ -696,33 +721,27 @@ proxies:
       Host: lucasjow.us.ci
 - name: 'ARISTA #49'
   type: vless
-  server: 172.67.155.65
+  server: host.taghvimtime.ir
   port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
+  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /cart/docs/www/proxyip?ed#Telegram---mehrosaboran
-    headers:
-      Host: lucasjow.us.ci
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: host.taghvimtime.ir
 - name: 'ARISTA #50'
   type: vless
-  server: swedn.firzav.ir
+  server: 2.26.225.89
   port: 8443
-  uuid: 0edb837d-e4e7-485b-a634-3052b44544e4
+  uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: swedn.firzav.ir
+  servername: pl.flen-vpn.xyz
 - name: 'ARISTA #51'
   type: vless
   server: 172.67.155.65
@@ -734,47 +753,48 @@ proxies:
   skip-cert-verify: true
   servername: lucasjow.us.ci
   ws-opts:
-    path: /
+    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=2560
     headers:
       Host: lucasjow.us.ci
 - name: 'ARISTA #52'
   type: vless
-  server: 2.26.225.89
+  server: 43.254.218.158
   port: 8443
-  uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: snip.edgeoneai.cc.cd
+  ws-opts:
+    path: /fdip#TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=512
+    headers:
+      Host: snip.edgeoneai.cc.cd
+- name: 'ARISTA #53'
+  type: vless
+  server: 51.38.71.147
+  port: 8443
+  uuid: c08f0056-7a6d-4931-813b-aaa3cdd00aed
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: pl.flen-vpn.xyz
-- name: 'ARISTA #53'
-  type: vless
-  server: 172.67.155.65
-  port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /DailyConfigs---DailyConfigs---DailyConfigs?ed=1024
-    headers:
-      Host: lucasjow.us.ci
+  client-fingerprint: firefox
+  servername: node-uk.connectsuite.org
 - name: 'ARISTA #54'
   type: vless
-  server: 172.67.155.65
+  server: 91.107.191.188
   port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
+  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /cart/docs/www/proxyip
-    headers:
-      Host: lucasjow.us.ci
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: host.taghvimtime.ir
 - name: 'ARISTA #55'
   type: vless
   server: 150.241.101.80
@@ -792,18 +812,17 @@ proxies:
     short-id: "6ba85179e30d4fc2"
 - name: 'ARISTA #56'
   type: vless
-  server: 172.67.155.65
+  server: host.taghvimtime.ir
   port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
+  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=512
-    headers:
-      Host: lucasjow.us.ci
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: host.taghvimtime.ir
 - name: 'ARISTA #57'
   type: vless
   server: 172.67.155.65
@@ -815,10 +834,66 @@ proxies:
   skip-cert-verify: true
   servername: lucasjow.us.ci
   ws-opts:
-    path: /cart/docs/www/proxyip?ed#Telegram---mehrosaboran
+    path: /cart/docs/www/proxyip?ed#Telegram---bored_vpn
     headers:
       Host: lucasjow.us.ci
 - name: 'ARISTA #58'
+  type: vless
+  server: 172.67.155.65
+  port: 8443
+  uuid: e6df2095-a73c-4043-8693-8d5a03686870
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: lucasjow.us.ci
+  ws-opts:
+    path: /Chanel0111Net
+    headers:
+      Host: lucasjow.us.ci
+- name: 'ARISTA #59'
+  type: vless
+  server: 172.67.155.65
+  port: 8443
+  uuid: e6df2095-a73c-4043-8693-8d5a03686870
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: lucasjow.us.ci
+  ws-opts:
+    path: /DailyConfigs---DailyConfigs---DailyConfigs?ed=1024
+    headers:
+      Host: lucasjow.us.ci
+- name: 'ARISTA #60'
+  type: vless
+  server: 107.150.27.178
+  port: 8443
+  uuid: c4ec8b8d-d8b1-49f2-8eb8-5903745f6381
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: www.sme.com.au
+  reality-opts:
+    public-key: _7gRLyI2odDAG_D5YV4fbbOoCEH4BfF5XigHTPHPl3I
+    short-id: "c71dd992a5c26702"
+- name: 'ARISTA #61'
+  type: vless
+  server: 172.67.155.65
+  port: 8443
+  uuid: e6df2095-a73c-4043-8693-8d5a03686870
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: lucasjow.us.ci
+  ws-opts:
+    path: /
+    headers:
+      Host: lucasjow.us.ci
+- name: 'ARISTA #62'
   type: vless
   server: swedn.firzav.ir
   port: 8443
@@ -833,63 +908,6 @@ proxies:
   - http/1.1
   client-fingerprint: chrome
   servername: swedn.firzav.ir
-- name: 'ARISTA #59'
-  type: vless
-  server: 172.67.155.65
-  port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /
-    headers:
-      Host: lucasjow.us.ci
-- name: 'ARISTA #60'
-  type: vless
-  server: 43.254.218.158
-  port: 8443
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: snip.edgeoneai.cc.cd
-  ws-opts:
-    path: /fdip#TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=512
-    headers:
-      Host: snip.edgeoneai.cc.cd
-- name: 'ARISTA #61'
-  type: vless
-  server: 2.28.42.209
-  port: 8443
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: snip.edgeoneai.cc.cd
-  ws-opts:
-    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443fp=chrome
-    headers:
-      Host: snip.edgeoneai.cc.cd
-- name: 'ARISTA #62'
-  type: vless
-  server: 172.67.155.65
-  port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /Chanel0111Net
-    headers:
-      Host: lucasjow.us.ci
 - name: 'ARISTA #63'
   type: vless
   server: 172.67.155.65
@@ -901,10 +919,24 @@ proxies:
   skip-cert-verify: true
   servername: lucasjow.us.ci
   ws-opts:
-    path: /cart/docs/www/proxyip?ed#Telegram---bored_vpn
+    path: /cart/docs/www/proxyip
     headers:
       Host: lucasjow.us.ci
 - name: 'ARISTA #64'
+  type: vless
+  server: 104.18.13.149
+  port: 8443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: sni.111000.dynv6.net
+  ws-opts:
+    path: /?Telegram🇨🇳 @WangCai2
+    headers:
+      Host: sni.111000.dynv6.net
+- name: 'ARISTA #65'
   type: vless
   server: 45.91.248.127
   port: 8443
@@ -920,32 +952,7 @@ proxies:
   reality-opts:
     public-key: 75SvxhvlOLct7K2eSg4-a1o6Z6N3JMTqp3wIQmLSqTA
     short-id: "8c609726e0233f08"
-- name: 'ARISTA #65'
-  type: vless
-  server: 51.38.71.147
-  port: 8443
-  uuid: c08f0056-7a6d-4931-813b-aaa3cdd00aed
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: node-uk.connectsuite.org
 - name: 'ARISTA #66'
-  type: vless
-  server: 172.67.155.65
-  port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: lucasjow.us.ci🏴‍☠️@FreakConfig
-  ws-opts:
-    path: /cart/docs/www/proxyip
-    headers:
-      Host: lucasjow.us.ci
-- name: 'ARISTA #67'
   type: vless
   server: 209.182.100.216
   port: 8443
@@ -958,15 +965,33 @@ proxies:
   reality-opts:
     public-key: 7T9ZSCdUh4IUlx17R1Vbzk8kjiopA3j5mI7-inh6aQU
     short-id: "187eea0acfb7f778"
-- name: 'ARISTA #68'
+- name: 'ARISTA #67'
   type: vless
-  server: 150.241.101.80
+  server: 172.67.155.65
   port: 8443
-  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
-  network: tcp
-  tls: false
+  uuid: e6df2095-a73c-4043-8693-8d5a03686870
+  network: ws
+  tls: true
   udp: true
   skip-cert-verify: true
+  servername: lucasjow.us.ci
+  ws-opts:
+    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=512
+    headers:
+      Host: lucasjow.us.ci
+- name: 'ARISTA #68'
+  type: vless
+  server: host.taghvimtime.ir
+  port: 8443
+  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: host.taghvimtime.ir
 - name: 'ARISTA #69'
   type: vless
   server: 2.26.225.89
@@ -988,96 +1013,10 @@ proxies:
   skip-cert-verify: true
   servername: lucasjow.us.ci
   ws-opts:
-    path: /DailyConfigs---DailyConfigs---DailyConfigs?ed=1024
+    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=2560
     headers:
       Host: lucasjow.us.ci
 - name: 'ARISTA #71'
-  type: vless
-  server: 172.67.155.65
-  port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /cart/docs/www/proxyip
-    headers:
-      Host: lucasjow.us.ci
-- name: 'ARISTA #72'
-  type: vless
-  server: 150.241.101.80
-  port: 8443
-  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: yandex.net
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #73'
-  type: vless
-  server: 172.67.155.65
-  port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=512
-    headers:
-      Host: lucasjow.us.ci
-- name: 'ARISTA #74'
-  type: vless
-  server: 172.67.155.65
-  port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /cart/docs/www/proxyip?ed#Telegram---mehrosaboran
-    headers:
-      Host: lucasjow.us.ci
-- name: 'ARISTA #75'
-  type: vless
-  server: swedn.firzav.ir
-  port: 8443
-  uuid: 0edb837d-e4e7-485b-a634-3052b44544e4
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: swedn.firzav.ir
-- name: 'ARISTA #76'
-  type: vless
-  server: 172.67.155.65
-  port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /
-    headers:
-      Host: lucasjow.us.ci
-- name: 'ARISTA #77'
   type: vless
   server: 43.254.218.158
   port: 8443
@@ -1092,35 +1031,59 @@ proxies:
     path: /fdip#TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=512
     headers:
       Host: snip.edgeoneai.cc.cd
-- name: 'ARISTA #78'
+- name: 'ARISTA #72'
   type: vless
-  server: 2.28.42.209
+  server: 51.38.71.147
   port: 8443
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  network: ws
+  uuid: c08f0056-7a6d-4931-813b-aaa3cdd00aed
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: snip.edgeoneai.cc.cd
-  ws-opts:
-    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443fp=chrome
-    headers:
-      Host: snip.edgeoneai.cc.cd
-- name: 'ARISTA #79'
+  client-fingerprint: firefox
+  servername: node-uk.connectsuite.org
+- name: 'ARISTA #73'
   type: vless
-  server: 172.67.155.65
+  server: 91.107.191.188
   port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
+  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /Chanel0111Net
-    headers:
-      Host: lucasjow.us.ci
-- name: 'ARISTA #80'
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: host.taghvimtime.ir
+- name: 'ARISTA #74'
+  type: vless
+  server: 150.241.101.80
+  port: 8443
+  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: yandex.net
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: "6ba85179e30d4fc2"
+- name: 'ARISTA #75'
+  type: vless
+  server: host.taghvimtime.ir
+  port: 8443
+  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: host.taghvimtime.ir
+- name: 'ARISTA #76'
   type: vless
   server: 172.67.155.65
   port: 8443
@@ -1134,7 +1097,120 @@ proxies:
     path: /cart/docs/www/proxyip?ed#Telegram---bored_vpn
     headers:
       Host: lucasjow.us.ci
+- name: 'ARISTA #77'
+  type: vless
+  server: 172.67.155.65
+  port: 8443
+  uuid: e6df2095-a73c-4043-8693-8d5a03686870
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: lucasjow.us.ci
+  ws-opts:
+    path: /Chanel0111Net
+    headers:
+      Host: lucasjow.us.ci
+- name: 'ARISTA #78'
+  type: vless
+  server: 172.67.155.65
+  port: 8443
+  uuid: e6df2095-a73c-4043-8693-8d5a03686870
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: lucasjow.us.ci
+  ws-opts:
+    path: /DailyConfigs---DailyConfigs---DailyConfigs?ed=1024
+    headers:
+      Host: lucasjow.us.ci
+- name: 'ARISTA #79'
+  type: vless
+  server: 107.150.27.178
+  port: 8443
+  uuid: c4ec8b8d-d8b1-49f2-8eb8-5903745f6381
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: www.sme.com.au
+  reality-opts:
+    public-key: _7gRLyI2odDAG_D5YV4fbbOoCEH4BfF5XigHTPHPl3I
+    short-id: "c71dd992a5c26702"
+- name: 'ARISTA #80'
+  type: vless
+  server: 172.67.155.65
+  port: 8443
+  uuid: e6df2095-a73c-4043-8693-8d5a03686870
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: lucasjow.us.ci
+  ws-opts:
+    path: /
+    headers:
+      Host: lucasjow.us.ci
 - name: 'ARISTA #81'
+  type: vless
+  server: 172.67.155.65
+  port: 8443
+  uuid: e6df2095-a73c-4043-8693-8d5a03686870
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: lucasjow.us.ci
+  ws-opts:
+    path: /cart/docs/www/proxyip?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
+    headers:
+      Host: lucasjow.us.ci
+- name: 'ARISTA #82'
+  type: vless
+  server: swedn.firzav.ir
+  port: 8443
+  uuid: 0edb837d-e4e7-485b-a634-3052b44544e4
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: swedn.firzav.ir
+- name: 'ARISTA #83'
+  type: vless
+  server: 172.67.155.65
+  port: 8443
+  uuid: e6df2095-a73c-4043-8693-8d5a03686870
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: lucasjow.us.ci
+  ws-opts:
+    path: /cart/docs/www/proxyip
+    headers:
+      Host: lucasjow.us.ci
+- name: 'ARISTA #84'
+  type: vless
+  server: 104.18.13.149
+  port: 8443
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: sni.111000.dynv6.net
+  ws-opts:
+    path: /?Telegram🇨🇳 @WangCai2
+    headers:
+      Host: sni.111000.dynv6.net
+- name: 'ARISTA #85'
   type: vless
   server: 45.91.248.127
   port: 8443
@@ -1150,32 +1226,7 @@ proxies:
   reality-opts:
     public-key: 75SvxhvlOLct7K2eSg4-a1o6Z6N3JMTqp3wIQmLSqTA
     short-id: "8c609726e0233f08"
-- name: 'ARISTA #82'
-  type: vless
-  server: 51.38.71.147
-  port: 8443
-  uuid: c08f0056-7a6d-4931-813b-aaa3cdd00aed
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: node-uk.connectsuite.org
-- name: 'ARISTA #83'
-  type: vless
-  server: 172.67.155.65
-  port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: lucasjow.us.ci🏴‍☠️@FreakConfig
-  ws-opts:
-    path: /cart/docs/www/proxyip
-    headers:
-      Host: lucasjow.us.ci
-- name: 'ARISTA #84'
+- name: 'ARISTA #86'
   type: vless
   server: 209.182.100.216
   port: 8443
@@ -1188,60 +1239,7 @@ proxies:
   reality-opts:
     public-key: 7T9ZSCdUh4IUlx17R1Vbzk8kjiopA3j5mI7-inh6aQU
     short-id: "187eea0acfb7f778"
-- name: 'ARISTA #85'
-  type: vless
-  server: 2.26.225.89
-  port: 8443
-  uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: pl.flen-vpn.xyz
-- name: 'ARISTA #86'
-  type: vless
-  server: 172.67.155.65
-  port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /DailyConfigs---DailyConfigs---DailyConfigs?ed=1024
-    headers:
-      Host: lucasjow.us.ci
 - name: 'ARISTA #87'
-  type: vless
-  server: 172.67.155.65
-  port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /cart/docs/www/proxyip
-    headers:
-      Host: lucasjow.us.ci
-- name: 'ARISTA #88'
-  type: vless
-  server: 150.241.101.80
-  port: 8443
-  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: yandex.net
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #89'
   type: vless
   server: 172.67.155.65
   port: 8443
@@ -1255,6 +1253,29 @@ proxies:
     path: /?TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=512
     headers:
       Host: lucasjow.us.ci
+- name: 'ARISTA #88'
+  type: vless
+  server: host.taghvimtime.ir
+  port: 8443
+  uuid: 90c08c98-7ec8-4fab-da36-cf140d18c708
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: host.taghvimtime.ir
+- name: 'ARISTA #89'
+  type: vless
+  server: 2.26.225.89
+  port: 8443
+  uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: pl.flen-vpn.xyz
 - name: 'ARISTA #90'
   type: vless
   server: 172.67.155.65
@@ -1266,39 +1287,10 @@ proxies:
   skip-cert-verify: true
   servername: lucasjow.us.ci
   ws-opts:
-    path: /cart/docs/www/proxyip?ed#Telegram---mehrosaboran
+    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=2560
     headers:
       Host: lucasjow.us.ci
 - name: 'ARISTA #91'
-  type: vless
-  server: swedn.firzav.ir
-  port: 8443
-  uuid: 0edb837d-e4e7-485b-a634-3052b44544e4
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: swedn.firzav.ir
-- name: 'ARISTA #92'
-  type: vless
-  server: 172.67.155.65
-  port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /
-    headers:
-      Host: lucasjow.us.ci
-- name: 'ARISTA #93'
   type: vless
   server: 43.254.218.158
   port: 8443
@@ -1313,75 +1305,6 @@ proxies:
     path: /fdip#TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=512
     headers:
       Host: snip.edgeoneai.cc.cd
-- name: 'ARISTA #94'
-  type: vless
-  server: 2.28.42.209
-  port: 8443
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: snip.edgeoneai.cc.cd
-  ws-opts:
-    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443fp=chrome
-    headers:
-      Host: snip.edgeoneai.cc.cd
-- name: 'ARISTA #95'
-  type: vless
-  server: 172.67.155.65
-  port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /Chanel0111Net
-    headers:
-      Host: lucasjow.us.ci
-- name: 'ARISTA #96'
-  type: vless
-  server: 172.67.155.65
-  port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /cart/docs/www/proxyip?ed#Telegram---bored_vpn
-    headers:
-      Host: lucasjow.us.ci
-- name: 'ARISTA #97'
-  type: vless
-  server: 45.91.248.127
-  port: 8443
-  uuid: 81a227e3-cb97-40fe-b7b6-45a60ed065cf
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: random
-  servername: node.nodebrcsp.ru
-  grpc-opts:
-    grpc-service-name: grpc-api-v2
-  reality-opts:
-    public-key: 75SvxhvlOLct7K2eSg4-a1o6Z6N3JMTqp3wIQmLSqTA
-    short-id: "8c609726e0233f08"
-- name: 'ARISTA #98'
-  type: vless
-  server: 51.38.71.147
-  port: 8443
-  uuid: c08f0056-7a6d-4931-813b-aaa3cdd00aed
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: node-uk.connectsuite.org
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -1482,13 +1405,6 @@ proxy-groups:
   - 'ARISTA #89'
   - 'ARISTA #90'
   - 'ARISTA #91'
-  - 'ARISTA #92'
-  - 'ARISTA #93'
-  - 'ARISTA #94'
-  - 'ARISTA #95'
-  - 'ARISTA #96'
-  - 'ARISTA #97'
-  - 'ARISTA #98'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

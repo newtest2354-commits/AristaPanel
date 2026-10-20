@@ -1,6 +1,6 @@
 // COMBINED - Port 2096
-// Updated: 2026-10-20 19:10:46
-// Count: 20
+// Updated: 2026-10-20 23:50:40
+// Count: 25
 
 {
   "log": {
@@ -41,25 +41,29 @@
     {
       "type": "vless",
       "tag": "ARISTA #1",
-      "server": "sm.novexora.ir",
+      "server": "144.31.34.146",
       "server_port": 2096,
-      "uuid": "26f6aff4-6244-4c09-9c87-a5afddeb9554",
+      "uuid": "6e05822a-e9da-4135-a9db-71aa07a944af",
       "domain_resolver": "google",
       "tls": {
         "enabled": true,
-        "server_name": "www.apple.com",
+        "server_name": "fi1.merky.one",
         "insecure": true,
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
+          "fingerprint": "firefox"
         },
-        "reality": {
-          "enabled": true,
-          "public_key": "O0i8MT5R__tGAOnvqJjRk4ygGV4EF2Yq4VMKG4Cj4V0",
-          "short_id": "2d5781f528d99a29"
-        }
+        "alpn": [
+          "http/1.1"
+        ]
       },
-      "flow": "xtls-rprx-vision"
+      "transport": {
+        "type": "ws",
+        "path": "/mky-ws-4f19c8a7",
+        "headers": {
+          "Host": "fi1.merky.one"
+        }
+      }
     },
     {
       "type": "vless",
@@ -91,33 +95,6 @@
     {
       "type": "vless",
       "tag": "ARISTA #3",
-      "server": "144.31.34.146",
-      "server_port": 2096,
-      "uuid": "6e05822a-e9da-4135-a9db-71aa07a944af",
-      "domain_resolver": "google",
-      "tls": {
-        "enabled": true,
-        "server_name": "fi1.merky.one",
-        "insecure": true,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        },
-        "alpn": [
-          "http/1.1"
-        ]
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/mky-ws-4f19c8a7",
-        "headers": {
-          "Host": "fi1.merky.one"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "ARISTA #4",
       "server": "ip1.fastt.ir",
       "server_port": 2096,
       "uuid": "8bcdddb3-3154-49e1-ab64-1998e1131c02",
@@ -135,6 +112,29 @@
           "http/1.1"
         ]
       }
+    },
+    {
+      "type": "vless",
+      "tag": "ARISTA #4",
+      "server": "sm.novexora.ir",
+      "server_port": 2096,
+      "uuid": "26f6aff4-6244-4c09-9c87-a5afddeb9554",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.apple.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "O0i8MT5R__tGAOnvqJjRk4ygGV4EF2Yq4VMKG4Cj4V0",
+          "short_id": "2d5781f528d99a29"
+        }
+      },
+      "flow": "xtls-rprx-vision"
     },
     {
       "type": "vless",
