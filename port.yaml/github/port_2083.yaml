@@ -1,6 +1,6 @@
 # GITHUB - Port 2083
-# Updated: 2026-10-20 14:20:47
-# Count: 9
+# Updated: 2026-10-20 19:10:43
+# Count: 8
 
 mixed-port: 7890
 allow-lan: false
@@ -102,19 +102,6 @@ proxies:
     path: /
 - name: 'T.ME: @aristapanel #4'
   type: vless
-  server: 91.107.188.129
-  port: 2083
-  uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: site.check-looks.space
-  ws-opts:
-    path: /
-- name: 'T.ME: @aristapanel #5'
-  type: vless
   server: cf2.466688.xyz
   port: 2083
   uuid: 5baa51fd-0bd0-4d35-9a7b-94f4c8161bf7
@@ -128,6 +115,23 @@ proxies:
   - h3
   client-fingerprint: chrome
   servername: rnus1.466688.xyz
+- name: 'T.ME: @aristapanel #5'
+  type: vless
+  server: 190.93.245.189
+  port: 2083
+  uuid: 5dc9999b-9810-4704-ab10-5d1691daeab6
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: p2.mxpaystore.xyz
+  ws-opts:
+    path: /mxgrid
+    headers:
+      Host: p2.mxpaystore.xyz
 - name: 'T.ME: @aristapanel #6'
   type: vless
   server: download.yasinyones.ir
@@ -179,23 +183,6 @@ proxies:
   servername: sino.bestsellers1.site
   ws-opts:
     path: /
-- name: 'T.ME: @aristapanel #9'
-  type: vless
-  server: sino.bestsellers1.site
-  port: 2083
-  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: sino.bestsellers1.site
-  ws-opts:
-    path: /
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -213,7 +200,6 @@ proxy-groups:
   - 'T.ME: @aristapanel #6'
   - 'T.ME: @aristapanel #7'
   - 'T.ME: @aristapanel #8'
-  - 'T.ME: @aristapanel #9'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

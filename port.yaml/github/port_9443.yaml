@@ -1,6 +1,6 @@
 # GITHUB - Port 9443
-# Updated: 2026-10-20 14:20:47
-# Count: 1
+# Updated: 2026-10-20 19:10:43
+# Count: 2
 
 mixed-port: 7890
 allow-lan: false
@@ -50,6 +50,22 @@ rules:
 proxies:
 - name: 'T.ME: @aristapanel #1'
   type: vless
+  server: 2.56.175.179
+  port: 9443
+  uuid: 8179d7cc-82bc-4eae-a97f-5d30c6c2a812
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: itunes.apple.com
+  grpc-opts:
+    grpc-service-name: grpc
+  reality-opts:
+    public-key: 8bhS-nnIN67a292RpJsCPzXQy4CzpzOVLTPn5CiAFyg
+    short-id: "6ba7b810"
+- name: 'T.ME: @aristapanel #2'
+  type: vless
   server: 95.181.173.68
   port: 9443
   uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
@@ -72,6 +88,7 @@ proxy-groups:
   timeout: 3000
   proxies: &id001
   - 'T.ME: @aristapanel #1'
+  - 'T.ME: @aristapanel #2'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
