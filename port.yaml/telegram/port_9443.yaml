@@ -1,6 +1,6 @@
 # TELEGRAM - Port 9443
-# Updated: 2026-10-21 17:05:04
-# Count: 2
+# Updated: 2026-10-21 21:37:29
+# Count: 3
 
 mixed-port: 7890
 allow-lan: false
@@ -76,6 +76,20 @@ proxies:
   reality-opts:
     public-key: kyDJ_E7Oh029dmAVD2pi8CZOv95VQiO_TNLGfXoVmxU
     short-id: "4ab16c2338807462"
+- name: 'ARISTA #3'
+  type: vless
+  server: 13.143.141.104
+  port: 9443
+  uuid: 4fafb72a-4cab-4b6a-9169-b09bc0b55eab
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: www.yahoo.com
+  reality-opts:
+    public-key: kyDJ_E7Oh029dmAVD2pi8CZOv95VQiO_TNLGfXoVmxU
+    short-id: "4ab16c2338807462"
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -87,6 +101,7 @@ proxy-groups:
   proxies: &id001
   - 'ARISTA #1'
   - 'ARISTA #2'
+  - 'ARISTA #3'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
