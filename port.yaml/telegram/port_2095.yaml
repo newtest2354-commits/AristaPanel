@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2095
-# Updated: 2026-10-21 04:22:26
-# Count: 7
+# Updated: 2026-10-21 11:39:44
+# Count: 10
 
 mixed-port: 7890
 allow-lan: false
@@ -49,14 +49,22 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'ARISTA #1'
-  type: vless
-  server: tamiiiiz.aryan-sport.ir
+  type: vmess
+  server: www.asamping.ir
   port: 2095
-  uuid: a788913b-ea27-4198-8024-e69919916516
-  network: httpupgrade
+  uuid: a55cdc40-5af5-4f02-9a46-41685120fe6f
+  alterId: 0
+  cipher: auto
+  network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.asamping.ir
+  ws-opts:
+    path: /
+    headers:
+      Host: www.asamping.ir
 - name: 'ARISTA #2'
   type: vless
   server: tamiiiiz.aryan-sport.ir
@@ -68,9 +76,9 @@ proxies:
   skip-cert-verify: true
 - name: 'ARISTA #3'
   type: vless
-  server: tamiiiiz.aryan-sport.ir
+  server: 188.114.98.6
   port: 2095
-  uuid: a788913b-ea27-4198-8024-e69919916516
+  uuid: 89d784c8-0764-477d-9082-cfff0570338e
   network: httpupgrade
   tls: false
   udp: true
@@ -86,9 +94,9 @@ proxies:
   skip-cert-verify: true
 - name: 'ARISTA #5'
   type: vless
-  server: tamiiiiz.aryan-sport.ir
+  server: 188.114.98.6
   port: 2095
-  uuid: a788913b-ea27-4198-8024-e69919916516
+  uuid: 89d784c8-0764-477d-9082-cfff0570338e
   network: httpupgrade
   tls: false
   udp: true
@@ -97,12 +105,39 @@ proxies:
   type: vless
   server: tamiiiiz.aryan-sport.ir
   port: 2095
-  uuid: a788913b-ea27-4198-8024-e69919916516
+  uuid: 5db16cc8-23be-4b09-ade8-38b847a3c9cb
   network: httpupgrade
   tls: false
   udp: true
   skip-cert-verify: true
 - name: 'ARISTA #7'
+  type: vless
+  server: 188.114.98.6
+  port: 2095
+  uuid: 5db16cc8-23be-4b09-ade8-38b847a3c9cb
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #8'
+  type: vless
+  server: tamiiiiz.aryan-sport.ir
+  port: 2095
+  uuid: a788913b-ea27-4198-8024-e69919916516
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #9'
+  type: vless
+  server: tamiiiiz.aryan-sport.ir
+  port: 2095
+  uuid: a788913b-ea27-4198-8024-e69919916516
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #10'
   type: vless
   server: tamiiiiz.aryan-sport.ir
   port: 2095
@@ -127,6 +162,9 @@ proxy-groups:
   - 'ARISTA #5'
   - 'ARISTA #6'
   - 'ARISTA #7'
+  - 'ARISTA #8'
+  - 'ARISTA #9'
+  - 'ARISTA #10'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
