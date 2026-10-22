@@ -1,6 +1,6 @@
 # GITHUB - Port 2083
-# Updated: 2026-10-21 21:37:35
-# Count: 9
+# Updated: 2026-10-22 04:25:06
+# Count: 7
 
 mixed-port: 7890
 allow-lan: false
@@ -49,23 +49,22 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'T.ME: @aristapanel #1'
-  type: vmess
-  server: cdn.sfacg.uk
+  type: vless
+  server: sino.bestsellers1.site
   port: 2083
-  uuid: ac251237-576f-40c8-a543-554960c958b1
-  alterId: 0
-  cipher: auto
+  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  tcp-fast-open: true
-  servername: cdn.sfacg.uk
+  alpn:
+  - h3
+  - h2
+  - http/1.1
   client-fingerprint: chrome
+  servername: sino.bestsellers1.site
   ws-opts:
-    path: /or3
-    headers:
-      Host: or3.sfacg.uk
+    path: /
 - name: 'T.ME: @aristapanel #2'
   type: vless
   server: sino.bestsellers1.site
@@ -102,6 +101,23 @@ proxies:
     path: /
 - name: 'T.ME: @aristapanel #4'
   type: vless
+  server: sino.bestsellers1.site
+  port: 2083
+  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: sino.bestsellers1.site
+  ws-opts:
+    path: /
+- name: 'T.ME: @aristapanel #5'
+  type: vless
   server: 89.105.218.106
   port: 2083
   uuid: 58037ab8-a8e2-4927-a8b1-f909f9fdb64c
@@ -115,21 +131,6 @@ proxies:
   servername: speedtestmark.com
   ws-opts:
     path: /vless-ws
-- name: 'T.ME: @aristapanel #5'
-  type: vless
-  server: 172.67.73.163
-  port: 2083
-  uuid: d3a12e79-ef42-4268-b367-42eeb3494e60
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: random
-  servername: hagh.pages.dev
-  ws-opts:
-    path: /Telegram@V2ray_Alpha/?ed=2048
-    headers:
-      Host: hagh.pages.dev
 - name: 'T.ME: @aristapanel #6'
   type: vless
   server: download.yasinyones.ir
@@ -164,40 +165,6 @@ proxies:
   servername: sino.bestsellers1.site
   ws-opts:
     path: /
-- name: 'T.ME: @aristapanel #8'
-  type: vless
-  server: sino.bestsellers1.site
-  port: 2083
-  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: sino.bestsellers1.site
-  ws-opts:
-    path: /
-- name: 'T.ME: @aristapanel #9'
-  type: vless
-  server: sino.bestsellers1.site
-  port: 2083
-  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: sino.bestsellers1.site
-  ws-opts:
-    path: /
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -214,8 +181,6 @@ proxy-groups:
   - 'T.ME: @aristapanel #5'
   - 'T.ME: @aristapanel #6'
   - 'T.ME: @aristapanel #7'
-  - 'T.ME: @aristapanel #8'
-  - 'T.ME: @aristapanel #9'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
