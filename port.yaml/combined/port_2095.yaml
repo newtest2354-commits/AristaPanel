@@ -1,6 +1,6 @@
 # COMBINED - Port 2095
-# Updated: 2026-10-22 17:03:23
-# Count: 4
+# Updated: 2026-10-22 21:32:27
+# Count: 3
 
 mixed-port: 7890
 allow-lan: false
@@ -48,41 +48,20 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'ARISTA #1'
-  type: vmess
-  server: www.asamping.ir
+- name: 'T.ME: @aristapanel #1'
+  type: vless
+  server: 188.114.97.6
   port: 2095
-  uuid: a55cdc40-5af5-4f02-9a46-41685120fe6f
-  alterId: 0
-  cipher: auto
+  uuid: d59a47d8-f344-4a0b-81d6-9f68cb8be873
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
-  tcp-fast-open: true
-  servername: www.asamping.ir
   ws-opts:
-    path: /
+    path: /?ed=2048
     headers:
-      Host: www.asamping.ir
-- name: 'ARISTA #2'
-  type: vmess
-  server: www.asamping.ir
-  port: 2095
-  uuid: a55cdc40-5af5-4f02-9a46-41685120fe6f
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: www.asamping.ir
-  ws-opts:
-    path: /
-    headers:
-      Host: www.asamping.ir
-- name: 'T.ME: @aristapanel #3'
+      Host: iNFoRmeD-PArt0Y2KT5cRvl.SaMSunGovenS.ir.
+- name: 'T.ME: @aristapanel #2'
   type: vless
   server: 188.114.98.6
   port: 2095
@@ -91,7 +70,7 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #4'
+- name: 'T.ME: @aristapanel #3'
   type: vless
   server: tamiiiiz.aryan-sport.ir
   port: 2095
@@ -109,10 +88,9 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'ARISTA #1'
-  - 'ARISTA #2'
+  - 'T.ME: @aristapanel #1'
+  - 'T.ME: @aristapanel #2'
   - 'T.ME: @aristapanel #3'
-  - 'T.ME: @aristapanel #4'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
