@@ -1,5 +1,5 @@
 # COMBINED - TROJAN - Tier 100
-# Updated: 2026-10-22 11:40:10
+# Updated: 2026-10-22 17:03:18
 # Count: 100
 
 mixed-port: 7890
@@ -50,6 +50,39 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: trojan
+  server: 108.162.194.134
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.pleadcourt.org
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.pleadcourt.org
+- name: 'ARISTA #2'
+  type: trojan
+  server: 188.114.98.0
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.pleadcourt.org
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.pleadcourt.org
+- name: 'ARISTA #3'
+  type: trojan
   server: 45.80.111.7
   port: 443
   password: humanity
@@ -64,35 +97,56 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: 'ARISTA #2'
+- name: 'ARISTA #4'
   type: trojan
-  server: 212.183.88.136
+  server: 74.82.196.93
   port: 443
-  password: humanity
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: www.calmlunch.com
-  ws-opts:
-    path: /%2Fassignment
-    headers:
-      Host: www.calmlunch.com
-- name: 'ARISTA #3'
-  type: trojan
-  server: de7.dedushka.top
-  port: 443
-  password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
+  password: d2dINbhQ1N
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: de7.dedushka.top
-- name: 'ARISTA #4'
+  servername: www.ugly-xu.top
+- name: 'ARISTA #5'
   type: trojan
-  server: de10.dedushka.top
+  server: 188.114.97.6
+  port: 443
+  password: mitivpn
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: de.mitivpn.in.net
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/--@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
+    headers:
+      Host: de.mitivpn.in.net
+- name: 'ARISTA #6'
+  type: trojan
+  server: 188.114.97.6
+  port: 443
+  password: mitivpn
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: d-e.mitivpn.in.net
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/--@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
+    headers:
+      Host: d-e.mitivpn.in.net
+- name: 'ARISTA #7'
+  type: trojan
+  server: 188.241.241.236
   port: 443
   password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
   network: tcp
@@ -101,10 +155,9 @@ proxies:
   skip-cert-verify: true
   tcp-fast-open: true
   servername: de10.dedushka.top
-  client-fingerprint: firefox
   alpn:
   - http/1.1
-- name: 'ARISTA #5'
+- name: 'ARISTA #8'
   type: trojan
   server: 188.42.145.180
   port: 443
@@ -115,60 +168,30 @@ proxies:
   skip-cert-verify: true
   tcp-fast-open: true
   servername: www.volumeroot.com
-  alpn:
-  - http/1.1
+  client-fingerprint: android
   ws-opts:
     path: /assignment
     headers:
       Host: www.volumeroot.com
-- name: 'ARISTA #6'
-  type: trojan
-  server: 188.114.97.6
-  port: 443
-  password: humanity
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: www.calmlunch.com
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-- name: 'ARISTA #7'
-  type: trojan
-  server: www.speedtest.net
-  port: 443
-  password: humanity
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: www.calmlunch.com
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-- name: 'ARISTA #8'
-  type: trojan
-  server: 108.162.194.134
-  port: 443
-  password: humanity
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: www.pleadcourt.org
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.pleadcourt.org
 - name: 'ARISTA #9'
   type: trojan
-  server: de8.dedushka.top
+  server: 188.42.145.180
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.volumeroot.com
+  client-fingerprint: qq
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.volumeroot.com
+- name: 'ARISTA #10'
+  type: trojan
+  server: de5.dedushka.top
   port: 443
   password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
   network: tcp
@@ -176,9 +199,11 @@ proxies:
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: de8.dedushka.top
+  servername: de5.dedushka.top
   client-fingerprint: chrome
-- name: 'ARISTA #10'
+  alpn:
+  - http/1.1
+- name: 'ARISTA #11'
   type: trojan
   server: 188.114.97.6
   port: 443
@@ -196,117 +221,18 @@ proxies:
     path: /
     headers:
       Host: de.mitivpn.in.net
-- name: 'ARISTA #11'
-  type: trojan
-  server: 188.114.97.5
-  port: 443
-  password: humanity
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: www.volumeroot.com
-  client-fingerprint: unsafe
-  alpn:
-  - http/1.1
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.volumeroot.com
 - name: 'ARISTA #12'
   type: trojan
-  server: 188.114.97.2
+  server: resources.findlocaljobnetworkandbuildcommunityconnections.com
   port: 443
-  password: humanity
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: www.volumeroot.com
-  client-fingerprint: unsafe
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.volumeroot.com
-- name: 'ARISTA #13'
-  type: trojan
-  server: 31.57.190.34
-  port: 443
-  password: humanity
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: wWw.Volumeroot.cOm
-  client-fingerprint: unsafe
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.volumerOot.coM.
-- name: 'ARISTA #14'
-  type: trojan
-  server: 31.57.190.73
-  port: 443
-  password: humanity
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: www.volumeroot.com
-  client-fingerprint: unsafe
-  ws-opts:
-    path: /assignment?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
-    headers:
-      Host: www.volumeroot.com
-- name: 'ARISTA #15'
-  type: trojan
-  server: 188.114.97.6
-  port: 443
-  password: humanity
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: www.calmlunch.com
-  ws-opts:
-    path: /assignment?ed#Telegram---MTMVPN---MTMVPN---MTMVPN---MTMVPN
-    headers:
-      Host: www.calmlunch.com
-- name: 'ARISTA #16'
-  type: trojan
-  server: 104.21.37.56
-  port: 443
-  password: humanity
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: www.volumeroot.com
-  client-fingerprint: unsafe
-  alpn:
-  - http/1.1
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.volumeroot.com
-- name: 'ARISTA #17'
-  type: trojan
-  server: 45.32.52.173
-  port: 8886
-  password: e26a229d-e8f2-4ff9-8c7d-58a9d83ee437
+  password: f0eb8c92ce8946aaba856569cff1a16b
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: 45.32.52.173
-- name: 'ARISTA #18'
+  servername: resources.findlocaljobnetworkandbuildcommunityconnections.com
+- name: 'ARISTA #13'
   type: trojan
   server: de3.dedushka.top
   port: 443
@@ -320,135 +246,9 @@ proxies:
   client-fingerprint: chrome
   alpn:
   - http/1.1
-- name: 'ARISTA #19'
+- name: 'ARISTA #14'
   type: trojan
-  server: 188.114.97.6
-  port: 443
-  password: m%69tivpn
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: d-e.mitivpn.in.net
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  ws-opts:
-    path: /
-    headers:
-      Host: d-e.mitivpn.in.net
-- name: 'ARISTA #20'
-  type: trojan
-  server: 188.114.97.6
-  port: 443
-  password: m%69tivpn
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: de.mitivpn.in.net
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  ws-opts:
-    path: /
-    headers:
-      Host: de.mitivpn.in.net
-- name: 'ARISTA #21'
-  type: trojan
-  server: 188.114.98.0
-  port: 443
-  password: humanity
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: www.pleadcourt.org
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.pleadcourt.org
-- name: 'ARISTA #22'
-  type: trojan
-  server: 188.114.97.6
-  port: 443
-  password: mitivpn
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: de.mitivpn.in.net
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/--@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-    headers:
-      Host: de.mitivpn.in.net
-- name: 'ARISTA #23'
-  type: trojan
-  server: 188.114.97.6
-  port: 443
-  password: mitivpn
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: d-e.mitivpn.in.net
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/--@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-    headers:
-      Host: d-e.mitivpn.in.net
-- name: 'ARISTA #24'
-  type: trojan
-  server: 188.114.98.0
-  port: 443
-  password: humanity
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: www.calmlunch.com
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-- name: 'ARISTA #25'
-  type: trojan
-  server: 188.114.97.6
-  port: 443
-  password: humanity
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: www.pleadcourt.org
-  client-fingerprint: unsafe
-  alpn:
-  - http/1.1
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.pleadcourt.org
-- name: 'ARISTA #26'
-  type: trojan
-  server: de7.dedushka.top
+  server: de6.dedushka.top
   port: 443
   password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
   network: tcp
@@ -456,82 +256,11 @@ proxies:
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: de7.dedushka.top
-- name: 'ARISTA #27'
-  type: trojan
-  server: 2.27.109.179
-  port: 45464
-  password: XuMweB2PWs
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: 2.27.109.179.sslip.io
-- name: 'ARISTA #28'
-  type: trojan
-  server: 188.114.97.6
-  port: 443
-  password: humanity
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: www.calmlunch.com
-  ws-opts:
-    path: /assignment?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
-    headers:
-      Host: www.calmlunch.com
-- name: 'ARISTA #29'
-  type: trojan
-  server: 188.241.241.235
-  port: 443
-  password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: de9.dedushka.top
-  alpn:
-  - http/1.1
-- name: 'ARISTA #30'
-  type: trojan
-  server: 104.18.35.86
-  port: 443
-  password: humanity
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: www.volumerOot.coM
-  alpn:
-  - http/1.1
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.volumerOot.coM.
-- name: 'ARISTA #31'
-  type: trojan
-  server: 188.114.97.6
-  port: 443
-  password: mitivpn
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: d-e.mitivpn.in.net
+  servername: de6.dedushka.top
   client-fingerprint: chrome
   alpn:
   - http/1.1
-  ws-opts:
-    path: /
-    headers:
-      Host: d-e.mitivpn.in.net
-- name: 'ARISTA #32'
+- name: 'ARISTA #15'
   type: trojan
   server: 8.47.69.0
   port: 443
@@ -548,9 +277,9 @@ proxies:
     path: /assignment
     headers:
       Host: www.pleadcourt.org
-- name: 'ARISTA #33'
+- name: 'ARISTA #16'
   type: trojan
-  server: de6.dedushka.top
+  server: pl2.dedushka.top
   port: 443
   password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
   network: tcp
@@ -558,11 +287,63 @@ proxies:
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: de6.dedushka.top
-  client-fingerprint: firefox
+  servername: pl2.dedushka.top
+  client-fingerprint: chrome
+- name: 'ARISTA #17'
+  type: trojan
+  server: de7.dedushka.top
+  port: 443
+  password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: de7.dedushka.top
+- name: 'ARISTA #18'
+  type: trojan
+  server: b2n.ir
+  port: 443
+  password: mitivpn
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: de.mitivpn.in.net
+  ws-opts:
+    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/--@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
+    headers:
+      Host: de.mitivpn.in.net
+- name: 'ARISTA #19'
+  type: trojan
+  server: 57.128.179.254
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.volumeroot.com
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.volumeroot.com
+- name: 'ARISTA #20'
+  type: trojan
+  server: 188.241.241.122
+  port: 443
+  password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: de2.dedushka.top
   alpn:
   - http/1.1
-- name: 'ARISTA #34'
+- name: 'ARISTA #21'
   type: trojan
   server: 188.114.98.0
   port: 443
@@ -580,7 +361,7 @@ proxies:
     path: //assignment
     headers:
       Host: www.calmlunch.com
-- name: 'ARISTA #35'
+- name: 'ARISTA #22'
   type: trojan
   server: pl2.dedushka.top
   port: 443
@@ -591,9 +372,9 @@ proxies:
   skip-cert-verify: true
   tcp-fast-open: true
   servername: pl2.dedushka.top
-- name: 'ARISTA #36'
+- name: 'ARISTA #23'
   type: trojan
-  server: 188.241.241.122
+  server: de2.dedushka.top
   port: 443
   password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
   network: tcp
@@ -602,21 +383,60 @@ proxies:
   skip-cert-verify: true
   tcp-fast-open: true
   servername: de2.dedushka.top
+  client-fingerprint: firefox
   alpn:
   - http/1.1
-- name: 'ARISTA #37'
+- name: 'ARISTA #24'
   type: trojan
-  server: pl2.dedushka.top
+  server: 212.183.88.136
   port: 443
-  password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
-  network: tcp
+  password: humanity
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: pl2.dedushka.top
+  servername: www.calmlunch.com
+  ws-opts:
+    path: /%2Fassignment
+    headers:
+      Host: www.calmlunch.com
+- name: 'ARISTA #25'
+  type: trojan
+  server: 104.18.35.86
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.volumerOot.coM
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.volumerOot.coM.
+- name: 'ARISTA #26'
+  type: trojan
+  server: 188.114.98.0
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.calmlunch.com
   client-fingerprint: chrome
-- name: 'ARISTA #38'
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: 'ARISTA #27'
   type: trojan
   server: 188.114.97.6
   port: 443
@@ -626,15 +446,94 @@ proxies:
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: www.volumeroot.com🇳🇱@FreakConfig
-  client-fingerprint: chrome
+  servername: www.pleadcourt.org
+  client-fingerprint: unsafe
   alpn:
   - http/1.1
   ws-opts:
     path: /assignment
     headers:
-      Host: www.volumeroot.com
-- name: 'ARISTA #39'
+      Host: www.pleadcourt.org
+- name: 'ARISTA #28'
+  type: trojan
+  server: pl1.dedushka.top
+  port: 443
+  password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: pl1.dedushka.top
+  client-fingerprint: chrome
+- name: 'ARISTA #29'
+  type: trojan
+  server: de10.dedushka.top
+  port: 443
+  password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: de10.dedushka.top
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+- name: 'ARISTA #30'
+  type: trojan
+  server: 172.64.152.23
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.calmlunch.com
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: 'ARISTA #31'
+  type: trojan
+  server: de8.dedushka.top
+  port: 443
+  password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: de8.dedushka.top
+  client-fingerprint: chrome
+- name: 'ARISTA #32'
+  type: trojan
+  server: resources.findlocaljobnetworkandbuildcommunityconnections.com
+  port: 443
+  password: f0eb8c92ce8946aaba856569cff1a16b
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: resources.findlocaljobnetworkandbuildcommunityconnections.com
+- name: 'ARISTA #33'
+  type: trojan
+  server: 188.114.97.6
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.calmlunch.com
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: 'ARISTA #34'
   type: trojan
   server: www.speedtest.net
   port: 443
@@ -644,86 +543,14 @@ proxies:
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: www.calmlunch.com🇫🇷@FreakConfig
+  servername: www.calmlunch.com
   ws-opts:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: 'ARISTA #40'
+- name: 'ARISTA #35'
   type: trojan
   server: 188.114.97.6
-  port: 443
-  password: humanity
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: www.volumeroot.com🇳🇱@FreakConfig
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  ws-opts:
-    path: /assignment?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
-    headers:
-      Host: www.volumeroot.com
-- name: 'ARISTA #41'
-  type: trojan
-  server: 188.114.98.0
-  port: 443
-  password: humanity
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: www.calmlunch.com🇫🇷@FreakConfig
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  ws-opts:
-    path: //assignment
-    headers:
-      Host: www.calmlunch.com
-- name: 'ARISTA #42'
-  type: trojan
-  server: 188.114.98.0
-  port: 443
-  password: humanity
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: www.calmlunch.com🇫🇷@FreakConfig
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-- name: 'ARISTA #43'
-  type: trojan
-  server: 188.114.98.0
-  port: 443
-  password: humanity
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: www.volumeroot.com🇳🇱@FreakConfig
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.volumeroot.com
-- name: 'ARISTA #44'
-  type: trojan
-  server: b2n.ir
   port: 443
   password: mitivpn
   network: ws
@@ -732,41 +559,68 @@ proxies:
   skip-cert-verify: true
   tcp-fast-open: true
   servername: de.mitivpn.in.net
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
   ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/--@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
+    path: /
     headers:
       Host: de.mitivpn.in.net
-- name: 'ARISTA #45'
+- name: 'ARISTA #36'
   type: trojan
-  server: 57.128.179.254
+  server: 188.114.97.6
   port: 443
-  password: humanity
+  password: mitivpn
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: www.volumeroot.com
+  servername: d-e.mitivpn.in.net
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
   ws-opts:
-    path: /assignment
+    path: /
     headers:
-      Host: www.volumeroot.com
-- name: 'ARISTA #46'
+      Host: d-e.mitivpn.in.net
+- name: 'ARISTA #37'
   type: trojan
-  server: 172.64.145.133
+  server: 167.82.76.7
   port: 443
-  password: humanity
+  password: MiTiVPN
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: www.pleadcourt.org
+  servername: ssl.fastly.com
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
   ws-opts:
-    path: /assignment
+    path: '@mehrosaboran'
     headers:
-      Host: www.pleadcourt.org
-- name: 'ARISTA #47'
+      Host: mitivpn---ss--s---mitivpn-33.global.ssl.fastly.net
+- name: 'ARISTA #38'
+  type: trojan
+  server: 199.232.78.160
+  port: 443
+  password: mitivpn
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: firefox.com
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/NLSus---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
+    headers:
+      Host: mitivpn---ViP1.global.ssl.fastly.net
+- name: 'ARISTA #39'
   type: trojan
   server: 188.114.97.6
   port: 443
@@ -777,14 +631,96 @@ proxies:
   skip-cert-verify: true
   tcp-fast-open: true
   servername: www.volumeroot.com
-  client-fingerprint: chrome
   alpn:
   - http/1.1
   ws-opts:
     path: /assignment
     headers:
       Host: www.volumeroot.com
-- name: 'ARISTA #48'
+- name: 'ARISTA #40'
+  type: trojan
+  server: de4.dedushka.top
+  port: 443
+  password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: de4.dedushka.top
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+- name: 'ARISTA #41'
+  type: trojan
+  server: 188.114.97.6
+  port: 443
+  password: m%69tivpn
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: d-e.mitivpn.in.net
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /
+    headers:
+      Host: d-e.mitivpn.in.net
+- name: 'ARISTA #42'
+  type: trojan
+  server: www.speedtest.net
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.calmlunch.com
+  ws-opts:
+    path: /assignment?ed#Telegram---mehrosaboran
+    headers:
+      Host: www.calmlunch.com
+- name: 'ARISTA #43'
+  type: trojan
+  server: 188.114.97.6
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.pleadcourt.org
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /assignment?ed#Telegram---mehrosaboran
+    headers:
+      Host: www.pleadcourt.org
+- name: 'ARISTA #44'
+  type: trojan
+  server: 188.114.98.0
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.calmlunch.com
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /assignment?ed#Telegram---mehrosaboran
+    headers:
+      Host: www.calmlunch.com
+- name: 'ARISTA #45'
   type: trojan
   server: 188.114.97.6
   port: 443
@@ -802,75 +738,9 @@ proxies:
     path: /?Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
     headers:
       Host: de.mitivpn.in.net
-- name: 'ARISTA #49'
+- name: 'ARISTA #46'
   type: trojan
-  server: www.speedtest.net
-  port: 443
-  password: humanity
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: www.calmlunch.com
-  ws-opts:
-    path: /assignment?ed#Telegram---mehrosaboran
-    headers:
-      Host: www.calmlunch.com
-- name: 'ARISTA #50'
-  type: trojan
-  server: 188.114.97.6
-  port: 443
-  password: humanity
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: www.pleadcourt.org
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  ws-opts:
-    path: /assignment?ed#Telegram---mehrosaboran
-    headers:
-      Host: www.pleadcourt.org
-- name: 'ARISTA #51'
-  type: trojan
-  server: 188.114.98.0
-  port: 443
-  password: humanity
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: www.calmlunch.com
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  ws-opts:
-    path: /assignment?ed#Telegram---mehrosaboran
-    headers:
-      Host: www.calmlunch.com
-- name: 'ARISTA #52'
-  type: trojan
-  server: 172.64.152.23
-  port: 443
-  password: humanity
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: www.calmlunch.com
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-- name: 'ARISTA #53'
-  type: trojan
-  server: de4.dedushka.top
+  server: lv1.dedushka.top
   port: 443
   password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
   network: tcp
@@ -878,28 +748,11 @@ proxies:
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: de4.dedushka.top
-  client-fingerprint: chrome
+  servername: lv1.dedushka.top
+  client-fingerprint: firefox
   alpn:
   - http/1.1
-- name: 'ARISTA #54'
-  type: trojan
-  server: 141.101.115.104
-  port: 443
-  password: humanity
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: www.calmlunch.com
-  alpn:
-  - http/1.1
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-- name: 'T.ME: @aristapanel #55'
+- name: 'T.ME: @aristapanel #47'
   type: trojan
   server: 104.21.33.59
   port: 443
@@ -917,7 +770,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.pleadcourt.org
-- name: 'T.ME: @aristapanel #56'
+- name: 'T.ME: @aristapanel #48'
   type: trojan
   server: 104.18.9.83
   port: 443
@@ -932,7 +785,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: 'T.ME: @aristapanel #57'
+- name: 'T.ME: @aristapanel #49'
   type: trojan
   server: chat.openai.com
   port: 443
@@ -950,7 +803,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: 'T.ME: @aristapanel #58'
+- name: 'T.ME: @aristapanel #50'
   type: trojan
   server: 185.114.72.31
   port: 2053
@@ -965,7 +818,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: 'T.ME: @aristapanel #59'
+- name: 'T.ME: @aristapanel #51'
   type: trojan
   server: 104.19.229.21
   port: 443
@@ -980,7 +833,7 @@ proxies:
     path: //assignment
     headers:
       Host: www.calmlunch.com
-- name: 'T.ME: @aristapanel #60'
+- name: 'T.ME: @aristapanel #52'
   type: trojan
   server: 104.16.72.41
   port: 443
@@ -995,7 +848,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: 'T.ME: @aristapanel #61'
+- name: 'T.ME: @aristapanel #53'
   type: trojan
   server: 188.114.96.3
   port: 443
@@ -1010,7 +863,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: 'T.ME: @aristapanel #62'
+- name: 'T.ME: @aristapanel #54'
   type: trojan
   server: 104.19.229.21
   port: 443
@@ -1025,7 +878,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: 'T.ME: @aristapanel #63'
+- name: 'T.ME: @aristapanel #55'
   type: trojan
   server: www.calmlunch.com
   port: 443
@@ -1040,7 +893,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: 'T.ME: @aristapanel #64'
+- name: 'T.ME: @aristapanel #56'
   type: trojan
   server: 104.17.121.71
   port: 443
@@ -1055,7 +908,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: 'T.ME: @aristapanel #65'
+- name: 'T.ME: @aristapanel #57'
   type: trojan
   server: 185.220.100.168
   port: 443
@@ -1071,7 +924,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: 'T.ME: @aristapanel #66'
+- name: 'T.ME: @aristapanel #58'
   type: trojan
   server: 188.114.98.0
   port: 443
@@ -1086,7 +939,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: 'T.ME: @aristapanel #67'
+- name: 'T.ME: @aristapanel #59'
   type: trojan
   server: 185.36.141.81
   port: 443
@@ -1102,7 +955,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: 'T.ME: @aristapanel #68'
+- name: 'T.ME: @aristapanel #60'
   type: trojan
   server: 165.215.250.14
   port: 443
@@ -1117,7 +970,7 @@ proxies:
     path: //assignment
     headers:
       Host: www.calmlunch.com
-- name: 'T.ME: @aristapanel #69'
+- name: 'T.ME: @aristapanel #61'
   type: trojan
   server: 162.159.244.91
   port: 443
@@ -1132,7 +985,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: 'T.ME: @aristapanel #70'
+- name: 'T.ME: @aristapanel #62'
   type: trojan
   server: 172.67.231.254
   port: 443
@@ -1147,7 +1000,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: 'T.ME: @aristapanel #71'
+- name: 'T.ME: @aristapanel #63'
   type: trojan
   server: 212.183.88.136
   port: 443
@@ -1162,7 +1015,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: 'T.ME: @aristapanel #72'
+- name: 'T.ME: @aristapanel #64'
   type: trojan
   server: 172.67.200.219
   port: 443
@@ -1178,7 +1031,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: 'T.ME: @aristapanel #73'
+- name: 'T.ME: @aristapanel #65'
   type: trojan
   server: 188.42.145.180
   port: 443
@@ -1193,7 +1046,7 @@ proxies:
     path: /assignment?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
     headers:
       Host: www.volumeroot.com
-- name: 'T.ME: @aristapanel #74'
+- name: 'T.ME: @aristapanel #66'
   type: trojan
   server: 188.114.97.6
   port: 443
@@ -1210,7 +1063,7 @@ proxies:
     path: /assignment#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
     headers:
       Host: www.pleadcourt.org
-- name: 'T.ME: @aristapanel #75'
+- name: 'T.ME: @aristapanel #67'
   type: trojan
   server: 188.114.97.6
   port: 443
@@ -1228,7 +1081,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.volumerOot.coM.
-- name: 'T.ME: @aristapanel #76'
+- name: 'T.ME: @aristapanel #68'
   type: trojan
   server: 104.21.57.25
   port: 443
@@ -1245,7 +1098,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.volumeroot.com
-- name: 'T.ME: @aristapanel #77'
+- name: 'T.ME: @aristapanel #69'
   type: trojan
   server: 172.67.139.14
   port: 443
@@ -1262,7 +1115,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.volumeroot.com
-- name: 'T.ME: @aristapanel #78'
+- name: 'T.ME: @aristapanel #70'
   type: trojan
   server: 104.19.157.30
   port: 443
@@ -1280,7 +1133,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.volumeroot.com
-- name: 'T.ME: @aristapanel #79'
+- name: 'T.ME: @aristapanel #71'
   type: trojan
   server: 104.21.57.25
   port: 443
@@ -1297,7 +1150,7 @@ proxies:
     path: /assignment?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
     headers:
       Host: www.volumeroot.com
-- name: 'T.ME: @aristapanel #80'
+- name: 'T.ME: @aristapanel #72'
   type: trojan
   server: 172.67.139.14
   port: 443
@@ -1314,7 +1167,7 @@ proxies:
     path: /assignment?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
     headers:
       Host: www.volumeroot.com
-- name: 'T.ME: @aristapanel #81'
+- name: 'T.ME: @aristapanel #73'
   type: trojan
   server: 188.114.97.6
   port: 443
@@ -1331,7 +1184,7 @@ proxies:
     path: /assignment?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
     headers:
       Host: www.volumeroot.com
-- name: 'T.ME: @aristapanel #82'
+- name: 'T.ME: @aristapanel #74'
   type: trojan
   server: 188.42.145.180
   port: 443
@@ -1349,7 +1202,27 @@ proxies:
     path: /assignment
     headers:
       Host: www.volumerOot.coM.
-- name: 'T.ME: @aristapanel #83'
+- name: 'T.ME: @aristapanel #75'
+  type: trojan
+  server: 104.21.37.56
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.volumeroot.com
+  client-fingerprint: ios
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.volumeroot.com
+- name: 'T.ME: @aristapanel #76'
   type: trojan
   server: 141.193.213.172
   port: 443
@@ -1364,7 +1237,7 @@ proxies:
     path: /assignment?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
     headers:
       Host: www.calmlunch.com
-- name: 'T.ME: @aristapanel #84'
+- name: 'T.ME: @aristapanel #77'
   type: trojan
   server: 141.193.213.172
   port: 443
@@ -1379,7 +1252,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: 'T.ME: @aristapanel #85'
+- name: 'T.ME: @aristapanel #78'
   type: trojan
   server: 141.193.213.172
   port: 443
@@ -1394,7 +1267,7 @@ proxies:
     path: /assignment?ed#Telegram---v2ray_configs_pools
     headers:
       Host: www.calmlunch.com
-- name: 'T.ME: @aristapanel #86'
+- name: 'T.ME: @aristapanel #79'
   type: trojan
   server: www.speedtest.net
   port: 443
@@ -1409,7 +1282,7 @@ proxies:
     path: /assignment?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
     headers:
       Host: www.calmlunch.com
-- name: 'T.ME: @aristapanel #87'
+- name: 'T.ME: @aristapanel #80'
   type: trojan
   server: 185.255.179.166
   port: 443
@@ -1424,7 +1297,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: 'T.ME: @aristapanel #88'
+- name: 'T.ME: @aristapanel #81'
   type: trojan
   server: 188.114.97.6
   port: 443
@@ -1442,9 +1315,9 @@ proxies:
     path: /assignment?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
     headers:
       Host: www.pleadcourt.org
-- name: 'T.ME: @aristapanel #89'
+- name: 'T.ME: @aristapanel #82'
   type: trojan
-  server: 188.42.145.180
+  server: 188.114.97.6
   port: 443
   password: humanity
   network: ws
@@ -1452,13 +1325,28 @@ proxies:
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: www.volumeroot.com
-  client-fingerprint: chrome
+  servername: www.calmlunch.com
+  ws-opts:
+    path: /assignment?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
+    headers:
+      Host: www.calmlunch.com
+- name: 'T.ME: @aristapanel #83'
+  type: trojan
+  server: 172.64.145.133
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.pleadcourt.org
+  client-fingerprint: unsafe
   ws-opts:
     path: /assignment
     headers:
-      Host: www.volumeroot.com
-- name: 'T.ME: @aristapanel #90'
+      Host: www.pleadcourt.org
+- name: 'T.ME: @aristapanel #84'
   type: trojan
   server: 94.158.219.126
   port: 443
@@ -1473,7 +1361,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.pleadcourt.org
-- name: 'T.ME: @aristapanel #91'
+- name: 'T.ME: @aristapanel #85'
   type: trojan
   server: 148.253.212.42
   port: 443
@@ -1488,7 +1376,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.pleadcourt.org
-- name: 'T.ME: @aristapanel #92'
+- name: 'T.ME: @aristapanel #86'
   type: trojan
   server: 46.62.204.134
   port: 443
@@ -1503,7 +1391,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.pleadcourt.org
-- name: 'T.ME: @aristapanel #93'
+- name: 'T.ME: @aristapanel #87'
   type: trojan
   server: 46.62.230.149
   port: 443
@@ -1518,7 +1406,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.pleadcourt.org
-- name: 'T.ME: @aristapanel #94'
+- name: 'T.ME: @aristapanel #88'
   type: trojan
   server: 188.114.97.5
   port: 443
@@ -1533,7 +1421,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.pleadcourt.org
-- name: 'T.ME: @aristapanel #95'
+- name: 'T.ME: @aristapanel #89'
   type: trojan
   server: 192.145.30.27
   port: 443
@@ -1548,7 +1436,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.pleadcourt.org
-- name: 'T.ME: @aristapanel #96'
+- name: 'T.ME: @aristapanel #90'
   type: trojan
   server: 46.62.164.121
   port: 443
@@ -1563,7 +1451,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.pleadcourt.org
-- name: 'T.ME: @aristapanel #97'
+- name: 'T.ME: @aristapanel #91'
   type: trojan
   server: 193.23.202.65
   port: 443
@@ -1578,7 +1466,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.pleadcourt.org
-- name: 'T.ME: @aristapanel #98'
+- name: 'T.ME: @aristapanel #92'
   type: trojan
   server: 188.114.97.3
   port: 443
@@ -1593,7 +1481,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.pleadcourt.org
-- name: 'T.ME: @aristapanel #99'
+- name: 'T.ME: @aristapanel #93'
   type: trojan
   server: 46.225.77.98
   port: 443
@@ -1609,7 +1497,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.pleadcourt.org
-- name: 'T.ME: @aristapanel #100'
+- name: 'T.ME: @aristapanel #94'
   type: trojan
   server: 188.114.97.8
   port: 443
@@ -1625,6 +1513,108 @@ proxies:
     path: /assignment
     headers:
       Host: www.volumerOot.coM.
+- name: 'T.ME: @aristapanel #95'
+  type: trojan
+  server: 219.76.13.177
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: wWw.Volumeroot.cOm.
+  client-fingerprint: unsafe
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.volumerOot.coM.
+- name: 'T.ME: @aristapanel #96'
+  type: trojan
+  server: 188.114.97.6
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.calmlunch.com
+  ws-opts:
+    path: /assignment?ed#Telegram---MTMVPN---MTMVPN---MTMVPN---MTMVPN
+    headers:
+      Host: www.calmlunch.com
+- name: 'T.ME: @aristapanel #97'
+  type: trojan
+  server: 104.18.35.86
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.volumerOot.coM.
+  client-fingerprint: unsafe
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.volumerOot.coM.
+- name: 'T.ME: @aristapanel #98'
+  type: trojan
+  server: 188.226.181.61
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.pleadcourt.org
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.pleadcourt.org
+- name: 'T.ME: @aristapanel #99'
+  type: trojan
+  server: 188.114.98.0
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.volumeroot.com
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.volumeroot.com
+- name: 'T.ME: @aristapanel #100'
+  type: trojan
+  server: 139.28.240.24
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: www.pleadcourt.org
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.pleadcourt.org
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -1680,14 +1670,14 @@ proxy-groups:
   - 'ARISTA #44'
   - 'ARISTA #45'
   - 'ARISTA #46'
-  - 'ARISTA #47'
-  - 'ARISTA #48'
-  - 'ARISTA #49'
-  - 'ARISTA #50'
-  - 'ARISTA #51'
-  - 'ARISTA #52'
-  - 'ARISTA #53'
-  - 'ARISTA #54'
+  - 'T.ME: @aristapanel #47'
+  - 'T.ME: @aristapanel #48'
+  - 'T.ME: @aristapanel #49'
+  - 'T.ME: @aristapanel #50'
+  - 'T.ME: @aristapanel #51'
+  - 'T.ME: @aristapanel #52'
+  - 'T.ME: @aristapanel #53'
+  - 'T.ME: @aristapanel #54'
   - 'T.ME: @aristapanel #55'
   - 'T.ME: @aristapanel #56'
   - 'T.ME: @aristapanel #57'
