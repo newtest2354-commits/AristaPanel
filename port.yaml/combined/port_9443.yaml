@@ -1,6 +1,6 @@
 # COMBINED - Port 9443
-# Updated: 2026-10-22 21:32:27
-# Count: 1
+# Updated: 2026-10-23 04:29:38
+# Count: 4
 
 mixed-port: 7890
 allow-lan: false
@@ -48,7 +48,35 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'T.ME: @aristapanel #1'
+- name: 'ARISTA #1'
+  type: vless
+  server: 13.143.141.104
+  port: 9443
+  uuid: 4fafb72a-4cab-4b6a-9169-b09bc0b55eab
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: www.yahoo.com
+  reality-opts:
+    public-key: kyDJ_E7Oh029dmAVD2pi8CZOv95VQiO_TNLGfXoVmxU
+    short-id: "4ab16c2338807462"
+- name: 'ARISTA #2'
+  type: vless
+  server: 13.143.141.104
+  port: 9443
+  uuid: 4fafb72a-4cab-4b6a-9169-b09bc0b55eab
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: www.yahoo.com
+  reality-opts:
+    public-key: kyDJ_E7Oh029dmAVD2pi8CZOv95VQiO_TNLGfXoVmxU
+    short-id: "4ab16c2338807462"
+- name: 'T.ME: @aristapanel #3'
   type: vless
   server: 95.181.173.68
   port: 9443
@@ -62,6 +90,20 @@ proxies:
   reality-opts:
     public-key: ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g
     short-id: "649ab61e575fdbc9"
+- name: 'ARISTA #4'
+  type: vless
+  server: 13.143.141.104
+  port: 9443
+  uuid: 4fafb72a-4cab-4b6a-9169-b09bc0b55eab
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: www.yahoo.com
+  reality-opts:
+    public-key: kyDJ_E7Oh029dmAVD2pi8CZOv95VQiO_TNLGfXoVmxU
+    short-id: "4ab16c2338807462"
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -71,7 +113,10 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'T.ME: @aristapanel #1'
+  - 'ARISTA #1'
+  - 'ARISTA #2'
+  - 'T.ME: @aristapanel #3'
+  - 'ARISTA #4'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
