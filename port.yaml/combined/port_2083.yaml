@@ -1,6 +1,6 @@
 # COMBINED - Port 2083
-# Updated: 2026-10-24 20:39:37
-# Count: 12
+# Updated: 2026-10-24 23:08:37
+# Count: 11
 
 mixed-port: 7890
 allow-lan: false
@@ -49,45 +49,64 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'ARISTA #1'
-  type: vless
-  server: sino.bestsellers1.site
+  type: vmess
+  server: 162.159.135.234
   port: 2083
-  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
+  uuid: ac251237-576f-40c8-a543-554960c958b1
+  alterId: 0
+  cipher: auto
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: sino.bestsellers1.site
+  tcp-fast-open: true
+  servername: cdn.sfacg.uk
+  client-fingerprint: chrome
   ws-opts:
-    path: /
+    path: /or3
+    headers:
+      Host: or3.sfacg.uk
 - name: 'ARISTA #2'
-  type: vless
-  server: sino.bestsellers1.site
+  type: vmess
+  server: 162.159.135.234
   port: 2083
-  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
+  uuid: ac251237-576f-40c8-a543-554960c958b1
+  alterId: 0
+  cipher: auto
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: sino.bestsellers1.site
+  tcp-fast-open: true
+  servername: cdn.sfacg.uk
+  client-fingerprint: chrome
   ws-opts:
-    path: /
+    path: /or3
+    headers:
+      Host: or3.sfacg.uk
 - name: 'ARISTA #3'
   type: vless
-  server: 164.90.176.31
+  server: sino.bestsellers1.site
   port: 2083
-  uuid: a747c516-34bd-41b8-8590-a9d1edb79e95
+  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: random
-  servername: summer-hall-8b23.asddsaasan.workers.dev
+  servername: sino.bestsellers1.site
   ws-opts:
     path: /
-    headers:
-      Host: summer-hall-8b23.asddsaasan.workers.dev
 - name: 'ARISTA #4'
+  type: vless
+  server: fast1.mo-chephosting.ir
+  port: 2083
+  uuid: 66c09dd7-5bab-4044-915f-cd1fe9f6d0fe
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: sslcert.okamii1.ir
+- name: 'ARISTA #5'
   type: vless
   server: sino.bestsellers1.site
   port: 2083
@@ -99,34 +118,16 @@ proxies:
   servername: sino.bestsellers1.site
   ws-opts:
     path: /
-- name: 'ARISTA #5'
-  type: vless
-  server: 164.90.176.31
-  port: 2083
-  uuid: a747c516-34bd-41b8-8590-a9d1edb79e95
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: random
-  servername: summer-hall-8b23.asddsaasan.workers.dev
-  ws-opts:
-    path: /
-    headers:
-      Host: summer-hall-8b23.asddsaasan.workers.dev
 - name: 'ARISTA #6'
   type: vless
-  server: max.fin2.henlo.ir
+  server: fast1.mo-chephosting.ir
   port: 2083
-  uuid: 21beb4b3-6280-4368-9f1c-273754bdbd17
-  network: tcp
+  uuid: 66c09dd7-5bab-4044-915f-cd1fe9f6d0fe
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: play.google.com
-  reality-opts:
-    public-key: au5-c_82xpN0kVIw7v-Hachl-89-vqRtrUF0QToPXRc
-    short-id: "4b0499585612f099"
+  servername: sslcert.okamii1.ir
 - name: 'T.ME: @aristapanel #7'
   type: vless
   server: sino.bestsellers1.site
@@ -190,32 +191,14 @@ proxies:
     path: /
 - name: 'ARISTA #11'
   type: vless
-  server: 164.90.176.31
+  server: fast1.mo-chephosting.ir
   port: 2083
-  uuid: a747c516-34bd-41b8-8590-a9d1edb79e95
-  network: ws
+  uuid: 66c09dd7-5bab-4044-915f-cd1fe9f6d0fe
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: random
-  servername: summer-hall-8b23.asddsaasan.workers.dev
-  ws-opts:
-    path: /
-    headers:
-      Host: summer-hall-8b23.asddsaasan.workers.dev
-- name: 'ARISTA #12'
-  type: vless
-  server: max.fin2.henlo.ir
-  port: 2083
-  uuid: 21beb4b3-6280-4368-9f1c-273754bdbd17
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: play.google.com
-  reality-opts:
-    public-key: au5-c_82xpN0kVIw7v-Hachl-89-vqRtrUF0QToPXRc
-    short-id: "4b0499585612f099"
+  servername: sslcert.okamii1.ir
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -236,7 +219,6 @@ proxy-groups:
   - 'T.ME: @aristapanel #9'
   - 'ARISTA #10'
   - 'ARISTA #11'
-  - 'ARISTA #12'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
