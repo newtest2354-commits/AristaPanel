@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2052
-# Updated: 2026-10-23 16:54:25
-# Count: 3
+# Updated: 2026-10-24 04:17:07
+# Count: 8
 
 mixed-port: 7890
 allow-lan: false
@@ -59,6 +59,25 @@ proxies:
   skip-cert-verify: true
 - name: 'ARISTA #2'
   type: vless
+  server: dash.zeneco.ir
+  port: 2052
+  uuid: fdcb45a0-0994-4612-9f54-352752069241
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dash.zeneco.ir
+  ws-opts:
+    path: /
+    headers:
+      Host: dash.zeneco.ir
+- name: 'ARISTA #3'
+  type: vless
   server: edge10.cyrionflare.com
   port: 2052
   uuid: 1a8ecc41-6e62-431b-8eca-87c2fa4dc286
@@ -66,7 +85,63 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'ARISTA #3'
+- name: 'ARISTA #4'
+  type: vless
+  server: edge10.cyrionflare.com
+  port: 2052
+  uuid: 1a8ecc41-6e62-431b-8eca-87c2fa4dc286
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #5'
+  type: vless
+  server: dash.zeneco.ir
+  port: 2052
+  uuid: fdcb45a0-0994-4612-9f54-352752069241
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dash.zeneco.ir
+  ws-opts:
+    path: /
+    headers:
+      Host: dash.zeneco.ir
+- name: 'ARISTA #6'
+  type: vless
+  server: edge10.cyrionflare.com
+  port: 2052
+  uuid: 1a8ecc41-6e62-431b-8eca-87c2fa4dc286
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #7'
+  type: vless
+  server: dash.zeneco.ir
+  port: 2052
+  uuid: fdcb45a0-0994-4612-9f54-352752069241
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dash.zeneco.ir
+  ws-opts:
+    path: /
+    headers:
+      Host: dash.zeneco.ir
+- name: 'ARISTA #8'
   type: vless
   server: edge10.cyrionflare.com
   port: 2052
@@ -87,6 +162,11 @@ proxy-groups:
   - 'ARISTA #1'
   - 'ARISTA #2'
   - 'ARISTA #3'
+  - 'ARISTA #4'
+  - 'ARISTA #5'
+  - 'ARISTA #6'
+  - 'ARISTA #7'
+  - 'ARISTA #8'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
