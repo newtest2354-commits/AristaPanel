@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2083
-# Updated: 2026-10-24 10:48:49
-# Count: 4
+# Updated: 2026-10-24 15:51:54
+# Count: 3
 
 mixed-port: 7890
 allow-lan: false
@@ -49,37 +49,41 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'ARISTA #1'
-  type: ss
-  server: 89.35.119.220
+  type: vless
+  server: sino.bestsellers1.site
   port: 2083
-  cipher: chacha20-ietf-poly1305
-  password: yzO8N8XHm6ETrLtvasYI8Q
+  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
+  network: ws
+  tls: true
   udp: true
-  tcp-fast-open: true
+  skip-cert-verify: true
+  servername: sino.bestsellers1.site
+  ws-opts:
+    path: /
 - name: 'ARISTA #2'
-  type: ss
-  server: 51.195.233.74
+  type: vless
+  server: sino.bestsellers1.site
   port: 2083
-  cipher: chacha20-ietf-poly1305
-  password: yzO8N8XHm6ETrLtvasYI8Q
+  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
+  network: ws
+  tls: true
   udp: true
-  tcp-fast-open: true
+  skip-cert-verify: true
+  servername: sino.bestsellers1.site
+  ws-opts:
+    path: /
 - name: 'ARISTA #3'
-  type: ss
-  server: 89.35.119.220
+  type: vless
+  server: sino.bestsellers1.site
   port: 2083
-  cipher: chacha20-ietf-poly1305
-  password: yzO8N8XHm6ETrLtvasYI8Q
+  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
+  network: ws
+  tls: true
   udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #4'
-  type: ss
-  server: 51.195.233.74
-  port: 2083
-  cipher: chacha20-ietf-poly1305
-  password: yzO8N8XHm6ETrLtvasYI8Q
-  udp: true
-  tcp-fast-open: true
+  skip-cert-verify: true
+  servername: sino.bestsellers1.site
+  ws-opts:
+    path: /
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -92,7 +96,6 @@ proxy-groups:
   - 'ARISTA #1'
   - 'ARISTA #2'
   - 'ARISTA #3'
-  - 'ARISTA #4'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

@@ -1,6 +1,6 @@
 # COMBINED - Port 2095
-# Updated: 2026-10-24 10:48:41
-# Count: 2
+# Updated: 2026-10-24 15:51:46
+# Count: 4
 
 mixed-port: 7890
 allow-lan: false
@@ -48,7 +48,20 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'T.ME: @aristapanel #1'
+- name: 'ARISTA #1'
+  type: vless
+  server: 104.16.7.70
+  port: 2095
+  uuid: 2b5f8588-87f6-40af-a785-322c8fa1df77
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /XnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXn?ed=2560
+    headers:
+      Host: sni.111000.dynv6.azazilvpn.sbs
+- name: 'T.ME: @aristapanel #2'
   type: vless
   server: 188.114.98.6
   port: 2095
@@ -57,7 +70,7 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #2'
+- name: 'T.ME: @aristapanel #3'
   type: vless
   server: tamiiiiz.aryan-sport.ir
   port: 2095
@@ -66,6 +79,19 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
+- name: 'ARISTA #4'
+  type: vless
+  server: 104.16.7.70
+  port: 2095
+  uuid: 2b5f8588-87f6-40af-a785-322c8fa1df77
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /XnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXnXn?ed=2560
+    headers:
+      Host: sni.111000.dynv6.azazilvpn.sbs
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -75,8 +101,10 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'T.ME: @aristapanel #1'
+  - 'ARISTA #1'
   - 'T.ME: @aristapanel #2'
+  - 'T.ME: @aristapanel #3'
+  - 'ARISTA #4'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

@@ -1,6 +1,6 @@
 // TELEGRAM - Port 2083
-// Updated: 2026-10-24 10:49:02
-// Count: 4
+// Updated: 2026-10-24 15:52:06
+// Count: 3
 
 {
   "log": {
@@ -39,22 +39,28 @@
   ],
   "outbounds": [
     {
-      "type": "shadowsocks",
+      "type": "vless",
       "tag": "ARISTA #1",
-      "server": "89.35.119.220",
+      "server": "sino.bestsellers1.site",
       "server_port": 2083,
-      "method": "chacha20-ietf-poly1305",
-      "password": "yzO8N8XHm6ETrLtvasYI8Q",
-      "domain_resolver": "google"
-    },
-    {
-      "type": "shadowsocks",
-      "tag": "ARISTA #2",
-      "server": "51.195.233.74",
-      "server_port": 2083,
-      "method": "chacha20-ietf-poly1305",
-      "password": "yzO8N8XHm6ETrLtvasYI8Q",
-      "domain_resolver": "google"
+      "uuid": "7858128a-6b5e-4f86-9bff-52c1f1e6439d",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "sino.bestsellers1.site",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "sino.bestsellers1.site"
+        }
+      }
     },
     {
       "type": "direct",
@@ -68,8 +74,7 @@
       "type": "urltest",
       "tag": "🚀 ARISTA AUTO BEST",
       "outbounds": [
-        "ARISTA #1",
-        "ARISTA #2"
+        "ARISTA #1"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "2m",

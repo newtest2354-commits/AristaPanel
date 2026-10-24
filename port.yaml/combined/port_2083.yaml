@@ -1,6 +1,6 @@
 # COMBINED - Port 2083
-# Updated: 2026-10-24 10:48:41
-# Count: 13
+# Updated: 2026-10-24 15:51:46
+# Count: 7
 
 mixed-port: 7890
 allow-lan: false
@@ -48,7 +48,43 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'T.ME: @aristapanel #1'
+- name: 'ARISTA #1'
+  type: vless
+  server: sino.bestsellers1.site
+  port: 2083
+  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: sino.bestsellers1.site
+  ws-opts:
+    path: /
+- name: 'ARISTA #2'
+  type: vless
+  server: sino.bestsellers1.site
+  port: 2083
+  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: sino.bestsellers1.site
+  ws-opts:
+    path: /
+- name: 'ARISTA #3'
+  type: vless
+  server: sino.bestsellers1.site
+  port: 2083
+  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: sino.bestsellers1.site
+  ws-opts:
+    path: /
+- name: 'T.ME: @aristapanel #4'
   type: vless
   server: sino.bestsellers1.site
   port: 2083
@@ -65,7 +101,7 @@ proxies:
   servername: sino.bestsellers1.site
   ws-opts:
     path: /
-- name: 'T.ME: @aristapanel #2'
+- name: 'T.ME: @aristapanel #5'
   type: vless
   server: 89.105.218.106
   port: 2083
@@ -80,7 +116,7 @@ proxies:
   servername: speedtestmark.com
   ws-opts:
     path: /vless-ws
-- name: 'T.ME: @aristapanel #3'
+- name: 'T.ME: @aristapanel #6'
   type: vless
   server: download.yasinyones.ir
   port: 2083
@@ -97,86 +133,18 @@ proxies:
     path: /my-panel
     headers:
       Host: download.yasinyones.ir
-- name: 'ARISTA #4'
-  type: ss
-  server: 89.35.119.220
-  port: 2083
-  cipher: chacha20-ietf-poly1305
-  password: yzO8N8XHm6ETrLtvasYI8Q
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #5'
-  type: ss
-  server: 51.195.233.74
-  port: 2083
-  cipher: chacha20-ietf-poly1305
-  password: yzO8N8XHm6ETrLtvasYI8Q
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #6'
-  type: ss
-  server: 89.35.119.220
-  port: 2083
-  cipher: chacha20-ietf-poly1305
-  password: yzO8N8XHm6ETrLtvasYI8Q
-  udp: true
-  tcp-fast-open: true
 - name: 'ARISTA #7'
-  type: ss
-  server: 51.195.233.74
+  type: vless
+  server: sino.bestsellers1.site
   port: 2083
-  cipher: chacha20-ietf-poly1305
-  password: yzO8N8XHm6ETrLtvasYI8Q
+  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
+  network: ws
+  tls: true
   udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #8'
-  type: ss
-  server: 89.35.119.220
-  port: 2083
-  cipher: chacha20-ietf-poly1305
-  password: yzO8N8XHm6ETrLtvasYI8Q
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #9'
-  type: ss
-  server: 51.195.233.74
-  port: 2083
-  cipher: chacha20-ietf-poly1305
-  password: yzO8N8XHm6ETrLtvasYI8Q
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #10'
-  type: ss
-  server: 89.35.119.220
-  port: 2083
-  cipher: chacha20-ietf-poly1305
-  password: yzO8N8XHm6ETrLtvasYI8Q
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #11'
-  type: ss
-  server: 51.195.233.74
-  port: 2083
-  cipher: chacha20-ietf-poly1305
-  password: yzO8N8XHm6ETrLtvasYI8Q
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #12'
-  type: ss
-  server: 89.35.119.220
-  port: 2083
-  cipher: chacha20-ietf-poly1305
-  password: yzO8N8XHm6ETrLtvasYI8Q
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #13'
-  type: ss
-  server: 51.195.233.74
-  port: 2083
-  cipher: chacha20-ietf-poly1305
-  password: yzO8N8XHm6ETrLtvasYI8Q
-  udp: true
-  tcp-fast-open: true
+  skip-cert-verify: true
+  servername: sino.bestsellers1.site
+  ws-opts:
+    path: /
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -186,19 +154,13 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'T.ME: @aristapanel #1'
-  - 'T.ME: @aristapanel #2'
-  - 'T.ME: @aristapanel #3'
-  - 'ARISTA #4'
-  - 'ARISTA #5'
-  - 'ARISTA #6'
+  - 'ARISTA #1'
+  - 'ARISTA #2'
+  - 'ARISTA #3'
+  - 'T.ME: @aristapanel #4'
+  - 'T.ME: @aristapanel #5'
+  - 'T.ME: @aristapanel #6'
   - 'ARISTA #7'
-  - 'ARISTA #8'
-  - 'ARISTA #9'
-  - 'ARISTA #10'
-  - 'ARISTA #11'
-  - 'ARISTA #12'
-  - 'ARISTA #13'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
