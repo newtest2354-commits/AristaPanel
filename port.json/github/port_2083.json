@@ -1,6 +1,6 @@
 // GITHUB - Port 2083
-// Updated: 2026-10-25 04:19:08
-// Count: 9
+// Updated: 2026-10-25 11:14:24
+// Count: 16
 
 {
   "log": {
@@ -39,8 +39,58 @@
   ],
   "outbounds": [
     {
-      "type": "vless",
+      "type": "vmess",
       "tag": "ARISTA #1",
+      "server": "162.159.135.234",
+      "server_port": 2083,
+      "uuid": "ac251237-576f-40c8-a543-554960c958b1",
+      "security": "auto",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "cdn.sfacg.uk",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/or3",
+        "headers": {
+          "Host": "or3.sfacg.uk"
+        }
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "ARISTA #2",
+      "server": "cdn.sfacg.uk",
+      "server_port": 2083,
+      "uuid": "ac251237-576f-40c8-a543-554960c958b1",
+      "security": "auto",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "cdn.sfacg.uk",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/or3",
+        "headers": {
+          "Host": "or3.sfacg.uk"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "ARISTA #3",
       "server": "sino.bestsellers1.site",
       "server_port": 2083,
       "uuid": "7858128a-6b5e-4f86-9bff-52c1f1e6439d",
@@ -69,7 +119,31 @@
     },
     {
       "type": "vless",
-      "tag": "ARISTA #2",
+      "tag": "ARISTA #4",
+      "server": "104.19.229.57",
+      "server_port": 2083,
+      "uuid": "89b3cbba-e6ac-485a-9481-976a0415eab9",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "hAstI.freeAIrLAINEs.coM",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "hAstI.freeAIrLAINEs.coM"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "ARISTA #5",
       "server": "89.105.218.106",
       "server_port": 2083,
       "uuid": "58037ab8-a8e2-4927-a8b1-f909f9fdb64c",
@@ -97,31 +171,7 @@
     },
     {
       "type": "vless",
-      "tag": "ARISTA #3",
-      "server": "162.159.44.172",
-      "server_port": 2083,
-      "uuid": "eeb6823c-b926-4ea2-866a-5542edd26e59",
-      "domain_resolver": "google",
-      "tls": {
-        "enabled": true,
-        "server_name": "t1s1.rittbo.kdns.fr",
-        "insecure": true,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "t1s1.rittbo.kdns.fr"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "ARISTA #4",
+      "tag": "ARISTA #6",
       "server": "download.yasinyones.ir",
       "server_port": 2083,
       "uuid": "933812be-308b-4d73-8628-bc0d1da59417",
@@ -147,6 +197,35 @@
       }
     },
     {
+      "type": "trojan",
+      "tag": "ARISTA #7",
+      "server": "216.24.57.225",
+      "server_port": 2083,
+      "password": "8yup05o4lz0csoxb",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "fin.netvia.ir",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "alpn": [
+          "h2",
+          "http/1.1",
+          "h3"
+        ]
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/YaujaGsyr",
+        "headers": {
+          "Host": "fin.netvia.ir"
+        }
+      }
+    },
+    {
       "type": "direct",
       "tag": "direct"
     },
@@ -161,7 +240,10 @@
         "ARISTA #1",
         "ARISTA #2",
         "ARISTA #3",
-        "ARISTA #4"
+        "ARISTA #4",
+        "ARISTA #5",
+        "ARISTA #6",
+        "ARISTA #7"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "2m",

@@ -1,6 +1,6 @@
 # COMBINED - Port 2095
-# Updated: 2026-10-25 04:18:48
-# Count: 12
+# Updated: 2026-10-25 11:14:04
+# Count: 14
 
 mixed-port: 7890
 allow-lan: false
@@ -159,20 +159,23 @@ proxies:
     path: /de
 - name: 'ARISTA #8'
   type: vless
-  server: api.n3webhosting.com
+  server: 216.24.57.1
   port: 2095
-  uuid: 7d879237-f281-40fb-84a4-d7a474a999a2
-  network: ws
-  tls: true
+  uuid: 34cb3fdc-2f33-49e0-8df3-d5793adf2de6
+  network: httpupgrade
+  tls: false
   udp: true
   skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: api.n3webhosting.com
-  ws-opts:
-    path: /de
 - name: 'T.ME: @aristapanel #9'
+  type: vless
+  server: cdn2.portalcode.ir
+  port: 2095
+  uuid: 681314c5-b3ee-41f1-a959-fa42841f5383
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'T.ME: @aristapanel #10'
   type: vless
   server: 188.114.98.6
   port: 2095
@@ -181,7 +184,7 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #10'
+- name: 'T.ME: @aristapanel #11'
   type: vless
   server: tamiiiiz.aryan-sport.ir
   port: 2095
@@ -190,21 +193,6 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'ARISTA #11'
-  type: vless
-  server: api.n3webhosting.com
-  port: 2095
-  uuid: 7d879237-f281-40fb-84a4-d7a474a999a2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: api.n3webhosting.com
-  ws-opts:
-    path: /de
 - name: 'ARISTA #12'
   type: vless
   server: api.n3webhosting.com
@@ -220,6 +208,30 @@ proxies:
   servername: api.n3webhosting.com
   ws-opts:
     path: /de
+- name: 'ARISTA #13'
+  type: vless
+  server: api.n3webhosting.com
+  port: 2095
+  uuid: 7d879237-f281-40fb-84a4-d7a474a999a2
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: api.n3webhosting.com
+  ws-opts:
+    path: /de
+- name: 'ARISTA #14'
+  type: vless
+  server: 216.24.57.1
+  port: 2095
+  uuid: 34cb3fdc-2f33-49e0-8df3-d5793adf2de6
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -239,8 +251,10 @@ proxy-groups:
   - 'ARISTA #8'
   - 'T.ME: @aristapanel #9'
   - 'T.ME: @aristapanel #10'
-  - 'ARISTA #11'
+  - 'T.ME: @aristapanel #11'
   - 'ARISTA #12'
+  - 'ARISTA #13'
+  - 'ARISTA #14'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
