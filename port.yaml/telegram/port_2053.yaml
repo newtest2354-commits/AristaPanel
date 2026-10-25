@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2053
-# Updated: 2026-10-25 20:48:23
-# Count: 17
+# Updated: 2026-10-25 23:15:16
+# Count: 12
 
 mixed-port: 7890
 allow-lan: false
@@ -50,18 +50,19 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: randomquaint.net
+  server: 193.111.248.80
   port: 2053
-  uuid: 95a608b6-bff1-4e10-bb61-0a39f221bb7d
-  network: xhttp
+  uuid: 605dea9b-b485-45c9-af9b-cc2b0195023c
+  network: grpc
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: firefox
-  servername: randomquaint.net
+  servername: nl3.mycloud1.org
+  grpc-opts:
+    grpc-service-name: api
+  reality-opts:
+    public-key: Su5ULcRQKF-0DJIHZeTNEnXHBpyQtizmUrcNIYhZI0E
+    short-id: "afee962d"
 - name: 'ARISTA #2'
   type: vless
   server: 193.111.248.80
@@ -79,18 +80,19 @@ proxies:
     short-id: "afee962d"
 - name: 'ARISTA #3'
   type: vless
-  server: randomquaint.net
+  server: 193.111.248.80
   port: 2053
-  uuid: 95a608b6-bff1-4e10-bb61-0a39f221bb7d
-  network: xhttp
+  uuid: 605dea9b-b485-45c9-af9b-cc2b0195023c
+  network: grpc
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: firefox
-  servername: randomquaint.net
+  servername: nl3.mycloud1.org
+  grpc-opts:
+    grpc-service-name: api
+  reality-opts:
+    public-key: Su5ULcRQKF-0DJIHZeTNEnXHBpyQtizmUrcNIYhZI0E
+    short-id: "afee962d"
 - name: 'ARISTA #4'
   type: vless
   server: 193.111.248.80
@@ -108,7 +110,7 @@ proxies:
     short-id: "afee962d"
 - name: 'ARISTA #5'
   type: vless
-  server: randomquaint.net
+  server: 78.159.246.179
   port: 2053
   uuid: 95a608b6-bff1-4e10-bb61-0a39f221bb7d
   network: xhttp
@@ -122,18 +124,17 @@ proxies:
   servername: randomquaint.net
 - name: 'ARISTA #6'
   type: vless
-  server: randomquaint.net
+  server: 51.89.194.151
   port: 2053
-  uuid: 95a608b6-bff1-4e10-bb61-0a39f221bb7d
-  network: xhttp
+  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: firefox
-  servername: randomquaint.net
+  servername: www.apple.com
+  reality-opts:
+    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
+    short-id: "d051f678212f9d54"
 - name: 'ARISTA #7'
   type: vless
   server: 193.111.248.80
@@ -151,19 +152,6 @@ proxies:
     short-id: "afee962d"
 - name: 'ARISTA #8'
   type: vless
-  server: 51.89.194.151
-  port: 2053
-  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: www.apple.com
-  reality-opts:
-    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
-    short-id: "d051f678212f9d54"
-- name: 'ARISTA #9'
-  type: vless
   server: 78.159.246.179
   port: 2053
   uuid: 95a608b6-bff1-4e10-bb61-0a39f221bb7d
@@ -176,6 +164,19 @@ proxies:
   - http/1.1
   client-fingerprint: firefox
   servername: randomquaint.net
+- name: 'ARISTA #9'
+  type: vless
+  server: 51.89.194.151
+  port: 2053
+  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: www.apple.com
+  reality-opts:
+    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
+    short-id: "d051f678212f9d54"
 - name: 'ARISTA #10'
   type: vless
   server: 95.216.27.15
@@ -192,20 +193,6 @@ proxies:
     short-id: "d368b94e275ab080"
 - name: 'ARISTA #11'
   type: vless
-  server: randomquaint.net
-  port: 2053
-  uuid: 95a608b6-bff1-4e10-bb61-0a39f221bb7d
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: firefox
-  servername: randomquaint.net
-- name: 'ARISTA #12'
-  type: vless
   server: 193.111.248.80
   port: 2053
   uuid: 605dea9b-b485-45c9-af9b-cc2b0195023c
@@ -219,76 +206,21 @@ proxies:
   reality-opts:
     public-key: Su5ULcRQKF-0DJIHZeTNEnXHBpyQtizmUrcNIYhZI0E
     short-id: "afee962d"
-- name: 'ARISTA #13'
-  type: vless
-  server: 51.89.194.151
-  port: 2053
-  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: www.apple.com
-  reality-opts:
-    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
-    short-id: "d051f678212f9d54"
-- name: 'ARISTA #14'
-  type: vless
-  server: 78.159.246.179
-  port: 2053
-  uuid: 95a608b6-bff1-4e10-bb61-0a39f221bb7d
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: firefox
-  servername: randomquaint.net
-- name: 'ARISTA #15'
-  type: vless
-  server: 95.216.27.15
-  port: 2053
-  uuid: 1c81f6d3-5771-4c5d-9fdd-1655eff50634
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: www.google.com
-  reality-opts:
-    public-key: 4nfogj5mHqNowtSn_2sXS3xTX8vcH75rFEU2BWvyekM
-    short-id: "d368b94e275ab080"
-- name: 'ARISTA #16'
-  type: vless
-  server: randomquaint.net
-  port: 2053
-  uuid: 95a608b6-bff1-4e10-bb61-0a39f221bb7d
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: firefox
-  servername: randomquaint.net
-- name: 'ARISTA #17'
+- name: 'ARISTA #12'
   type: trojan
-  server: 104.25.239.113
+  server: 185.114.72.31
   port: 2053
-  password: gHQP0D7D15
+  password: humanity
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: marvdasht.phonecomparisonblog.org
+  servername: www.calmlunch.com
   ws-opts:
-    path: /
+    path: /assignment
     headers:
-      Host: marvdasht.phonecomparisonblog.org
+      Host: www.calmlunch.com
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -310,11 +242,6 @@ proxy-groups:
   - 'ARISTA #10'
   - 'ARISTA #11'
   - 'ARISTA #12'
-  - 'ARISTA #13'
-  - 'ARISTA #14'
-  - 'ARISTA #15'
-  - 'ARISTA #16'
-  - 'ARISTA #17'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
