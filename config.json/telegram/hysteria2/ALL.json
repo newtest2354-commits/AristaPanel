@@ -1,0 +1,100 @@
+// TELEGRAM - HYSTERIA2 - Tier ALL
+// Updated: 2026-10-26 12:46:28
+// Count: 2
+
+{
+  "log": {
+    "level": "info",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "type": "udp",
+        "tag": "google",
+        "server": "8.8.8.8"
+      },
+      {
+        "type": "udp",
+        "tag": "cloudflare",
+        "server": "1.1.1.1"
+      }
+    ],
+    "rules": [],
+    "final": "google"
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "interface_name": "singbox-tun",
+      "address": [
+        "172.19.0.1/30"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "stack": "system",
+      "sniff": false
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "hysteria2",
+      "tag": "ARISTA #1",
+      "server": "193.23.216.156",
+      "server_port": 443,
+      "password": "70043bfa-d6fb-4980-b27e-773e9e8b2004",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "193.23.216.156",
+        "insecure": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "ARISTA #2",
+      "server": "87.76.211.161",
+      "server_port": 443,
+      "password": "1953e43b-605c-4262-83eb-41a80646b801",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "87.76.211.161",
+        "insecure": true
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    },
+    {
+      "type": "urltest",
+      "tag": "🚀 ARISTA AUTO BEST",
+      "outbounds": [
+        "ARISTA #1",
+        "ARISTA #2"
+      ],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "2m",
+      "tolerance": 30,
+      "idle_timeout": "20m",
+      "interrupt_exist_connections": true
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true,
+    "default_domain_resolver": "google",
+    "final": "🚀 ARISTA AUTO BEST",
+    "rules": [
+      {
+        "protocol": "dns",
+        "outbound": "direct"
+      }
+    ]
+  }
+}
