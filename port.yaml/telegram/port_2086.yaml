@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2086
-# Updated: 2026-10-26 04:23:47
-# Count: 7
+# Updated: 2026-10-26 20:29:57
+# Count: 8
 
 mixed-port: 7890
 allow-lan: false
@@ -50,67 +50,90 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 108.162.194.165
+  server: paidt.itsallstillthere.com
   port: 2086
-  uuid: a0fe052d-6ca1-4a9c-b626-7ecf78f386cb
-  network: httpupgrade
+  uuid: e5cc9b33-27e4-4c58-a54c-8c0cae7cafe6
+  network: tcp
   tls: false
   udp: true
   skip-cert-verify: true
+  flow: xtls-rprx-vision
 - name: 'ARISTA #2'
   type: vless
-  server: 108.162.194.165
+  server: paidt.itsallstillthere.com
   port: 2086
-  uuid: a0fe052d-6ca1-4a9c-b626-7ecf78f386cb
-  network: httpupgrade
+  uuid: e5cc9b33-27e4-4c58-a54c-8c0cae7cafe6
+  network: tcp
   tls: false
   udp: true
   skip-cert-verify: true
+  flow: xtls-rprx-vision
 - name: 'ARISTA #3'
   type: vless
-  server: 108.162.194.165
+  server: paidt.itsallstillthere.com
   port: 2086
-  uuid: a0fe052d-6ca1-4a9c-b626-7ecf78f386cb
-  network: httpupgrade
+  uuid: e5cc9b33-27e4-4c58-a54c-8c0cae7cafe6
+  network: tcp
   tls: false
   udp: true
   skip-cert-verify: true
+  flow: xtls-rprx-vision
 - name: 'ARISTA #4'
   type: vless
-  server: 108.162.194.165
+  server: paidt.itsallstillthere.com
   port: 2086
-  uuid: a0fe052d-6ca1-4a9c-b626-7ecf78f386cb
-  network: httpupgrade
+  uuid: e5cc9b33-27e4-4c58-a54c-8c0cae7cafe6
+  network: tcp
   tls: false
   udp: true
   skip-cert-verify: true
+  flow: xtls-rprx-vision
 - name: 'ARISTA #5'
   type: vless
-  server: 108.162.194.165
+  server: 162.159.45.19
   port: 2086
-  uuid: a0fe052d-6ca1-4a9c-b626-7ecf78f386cb
-  network: httpupgrade
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  ws-opts:
+    path: /?ed=2560security=tls
+    headers:
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
 - name: 'ARISTA #6'
   type: vless
-  server: 108.162.194.165
+  server: paidt.itsallstillthere.com
   port: 2086
-  uuid: a0fe052d-6ca1-4a9c-b626-7ecf78f386cb
-  network: httpupgrade
+  uuid: e5cc9b33-27e4-4c58-a54c-8c0cae7cafe6
+  network: tcp
   tls: false
   udp: true
   skip-cert-verify: true
+  flow: xtls-rprx-vision
 - name: 'ARISTA #7'
   type: vless
-  server: 108.162.194.165
+  server: 162.159.45.19
   port: 2086
-  uuid: a0fe052d-6ca1-4a9c-b626-7ecf78f386cb
-  network: httpupgrade
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  ws-opts:
+    path: /?ed=2560security=tls
+    headers:
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
+- name: 'ARISTA #8'
+  type: vless
+  server: paidt.itsallstillthere.com
+  port: 2086
+  uuid: e5cc9b33-27e4-4c58-a54c-8c0cae7cafe6
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -127,6 +150,7 @@ proxy-groups:
   - 'ARISTA #5'
   - 'ARISTA #6'
   - 'ARISTA #7'
+  - 'ARISTA #8'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
