@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2096
-# Updated: 2026-10-27 08:55:29
-# Count: 12
+# Updated: 2026-10-27 15:19:03
+# Count: 9
 
 mixed-port: 7890
 allow-lan: false
@@ -50,13 +50,21 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 180.149.44.237
+  server: chatgpt.com
   port: 2096
-  uuid: ba8cff29-a34b-4381-a580-d349c1191e35
-  network: tcp
-  tls: false
+  uuid: 686c62d9-17a7-43c9-a40a-f6747df60a9f
+  network: ws
+  tls: true
   udp: true
   skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: ca.adobe-connect.top
+  ws-opts:
+    path: /
+    headers:
+      Host: ca.adobe-connect.top
 - name: 'ARISTA #2'
   type: vless
   server: 191.44.114.179
@@ -74,23 +82,22 @@ proxies:
       Host: st33614.rumedia-cdn.com
 - name: 'ARISTA #3'
   type: vless
-  server: 180.149.44.237
+  server: chatgpt.com
   port: 2096
-  uuid: ba8cff29-a34b-4381-a580-d349c1191e35
-  network: tcp
-  tls: false
+  uuid: 686c62d9-17a7-43c9-a40a-f6747df60a9f
+  network: ws
+  tls: true
   udp: true
   skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: ca.adobe-connect.top
+  ws-opts:
+    path: /
+    headers:
+      Host: ca.adobe-connect.top
 - name: 'ARISTA #4'
-  type: vless
-  server: 180.149.44.237
-  port: 2096
-  uuid: ba8cff29-a34b-4381-a580-d349c1191e35
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #5'
   type: vless
   server: 191.44.114.179
   port: 2096
@@ -105,24 +112,55 @@ proxies:
     path: /cdn/v3/live
     headers:
       Host: st33614.rumedia-cdn.com
+- name: 'ARISTA #5'
+  type: vless
+  server: chatgpt.com
+  port: 2096
+  uuid: 686c62d9-17a7-43c9-a40a-f6747df60a9f
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: ca.adobe-connect.top
+  ws-opts:
+    path: /
+    headers:
+      Host: ca.adobe-connect.top
 - name: 'ARISTA #6'
   type: vless
-  server: 180.149.44.237
+  server: 191.44.114.179
   port: 2096
-  uuid: ba8cff29-a34b-4381-a580-d349c1191e35
-  network: tcp
-  tls: false
+  uuid: d1641bc6-3757-43db-815a-9b3f4d9b0d7e
+  network: ws
+  tls: true
   udp: true
   skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: st33614.rumedia-cdn.com
+  ws-opts:
+    path: /cdn/v3/live
+    headers:
+      Host: st33614.rumedia-cdn.com
 - name: 'ARISTA #7'
   type: vless
-  server: 180.149.44.237
+  server: chatgpt.com
   port: 2096
-  uuid: ba8cff29-a34b-4381-a580-d349c1191e35
-  network: tcp
-  tls: false
+  uuid: 686c62d9-17a7-43c9-a40a-f6747df60a9f
+  network: ws
+  tls: true
   udp: true
   skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: ca.adobe-connect.top
+  ws-opts:
+    path: /
+    headers:
+      Host: ca.adobe-connect.top
 - name: 'ARISTA #8'
   type: vless
   server: 191.44.114.179
@@ -140,52 +178,21 @@ proxies:
       Host: st33614.rumedia-cdn.com
 - name: 'ARISTA #9'
   type: vless
-  server: 180.149.44.237
+  server: chatgpt.com
   port: 2096
-  uuid: ba8cff29-a34b-4381-a580-d349c1191e35
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #10'
-  type: vless
-  server: 191.44.114.179
-  port: 2096
-  uuid: d1641bc6-3757-43db-815a-9b3f4d9b0d7e
+  uuid: 686c62d9-17a7-43c9-a40a-f6747df60a9f
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: st33614.rumedia-cdn.com
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: ca.adobe-connect.top
   ws-opts:
-    path: /cdn/v3/live
+    path: /
     headers:
-      Host: st33614.rumedia-cdn.com
-- name: 'ARISTA #11'
-  type: vless
-  server: 180.149.44.237
-  port: 2096
-  uuid: ba8cff29-a34b-4381-a580-d349c1191e35
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #12'
-  type: vless
-  server: 191.44.114.179
-  port: 2096
-  uuid: d1641bc6-3757-43db-815a-9b3f4d9b0d7e
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: st33614.rumedia-cdn.com
-  ws-opts:
-    path: /cdn/v3/live
-    headers:
-      Host: st33614.rumedia-cdn.com
+      Host: ca.adobe-connect.top
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -204,9 +211,6 @@ proxy-groups:
   - 'ARISTA #7'
   - 'ARISTA #8'
   - 'ARISTA #9'
-  - 'ARISTA #10'
-  - 'ARISTA #11'
-  - 'ARISTA #12'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
