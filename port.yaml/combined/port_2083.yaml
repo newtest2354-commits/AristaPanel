@@ -1,6 +1,6 @@
 # COMBINED - Port 2083
-# Updated: 2026-10-26 20:29:48
-# Count: 32
+# Updated: 2026-10-27 00:24:36
+# Count: 39
 
 mixed-port: 7890
 allow-lan: false
@@ -68,7 +68,7 @@ proxies:
       Host: or3.sfacg.uk
 - name: 'T.ME: @aristapanel #2'
   type: vmess
-  server: 162.159.135.234
+  server: cdn.sfacg.uk
   port: 2083
   uuid: ac251237-576f-40c8-a543-554960c958b1
   alterId: 0
@@ -86,6 +86,24 @@ proxies:
       Host: or3.sfacg.uk
 - name: 'T.ME: @aristapanel #3'
   type: vmess
+  server: 162.159.135.234
+  port: 2083
+  uuid: ac251237-576f-40c8-a543-554960c958b1
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: cdn.sfacg.uk
+  client-fingerprint: chrome
+  ws-opts:
+    path: /or3
+    headers:
+      Host: or3.sfacg.uk
+- name: 'T.ME: @aristapanel #4'
+  type: vmess
   server: cdn.sfacg.uk
   port: 2083
   uuid: ac251237-576f-40c8-a543-554960c958b1
@@ -102,38 +120,21 @@ proxies:
     path: /or3
     headers:
       Host: or3.sfacg.uk
-- name: 'ARISTA #4'
-  type: vless
-  server: turk.karmatel.ir
-  port: 2083
-  uuid: 65479d3f-6e51-40b7-9d0a-ac3a1896f72f
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  - h3
-  client-fingerprint: chrome
-  servername: vs1.karmatel.ir
 - name: 'ARISTA #5'
   type: vless
-  server: 209.94.90.47
+  server: vpn2.floweb.club
   port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
-  network: ws
+  uuid: b0852273-160d-4a35-a365-13e5d4772201
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  - h3
+  flow: xtls-rprx-vision
   client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
-  ws-opts:
-    path: /
+  servername: yahoo.com
+  reality-opts:
+    public-key: zvRguC1cm7gKkQpNarOCaAUAvcSXUWH10-pUEfneYSI
+    short-id: "014c3d76dee82247"
 - name: 'ARISTA #6'
   type: vless
   server: turk.karmatel.ir
@@ -168,114 +169,111 @@ proxies:
     path: /
 - name: 'ARISTA #8'
   type: vless
-  server: turk.karmatel.ir
+  server: vpn2.floweb.club
   port: 2083
-  uuid: 65479d3f-6e51-40b7-9d0a-ac3a1896f72f
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  - h3
-  client-fingerprint: chrome
-  servername: vs1.karmatel.ir
-- name: 'ARISTA #9'
-  type: vless
-  server: 209.94.90.47
-  port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  - h3
-  client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
-  ws-opts:
-    path: /
-- name: 'ARISTA #10'
-  type: vless
-  server: turk.karmatel.ir
-  port: 2083
-  uuid: 65479d3f-6e51-40b7-9d0a-ac3a1896f72f
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  - h3
-  client-fingerprint: chrome
-  servername: vs1.karmatel.ir
-- name: 'ARISTA #11'
-  type: vless
-  server: 209.94.90.47
-  port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  - h3
-  client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
-  ws-opts:
-    path: /
-- name: 'ARISTA #12'
-  type: vless
-  server: turk.karmatel.ir
-  port: 2083
-  uuid: 65479d3f-6e51-40b7-9d0a-ac3a1896f72f
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  - h3
-  client-fingerprint: chrome
-  servername: vs1.karmatel.ir
-- name: 'ARISTA #13'
-  type: vless
-  server: 209.94.90.47
-  port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  - h3
-  client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
-  ws-opts:
-    path: /
-- name: 'ARISTA #14'
-  type: vless
-  server: 46.8.78.77
-  port: 2083
-  uuid: 1ff0dd9f-71e4-4333-a334-1e4197c051ba
+  uuid: b0852273-160d-4a35-a365-13e5d4772201
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
+  flow: xtls-rprx-vision
   client-fingerprint: chrome
-  servername: apps.apple.com
+  servername: yahoo.com
   reality-opts:
-    public-key: qu9yjh7bIhWf-clw9fNLM7NqenR-xTJPQKIz6E-96z0
-    short-id: "6c07cc96c42506ed"
+    public-key: zvRguC1cm7gKkQpNarOCaAUAvcSXUWH10-pUEfneYSI
+    short-id: "014c3d76dee82247"
+- name: 'ARISTA #9'
+  type: vless
+  server: turk.karmatel.ir
+  port: 2083
+  uuid: 65479d3f-6e51-40b7-9d0a-ac3a1896f72f
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: vs1.karmatel.ir
+- name: 'ARISTA #10'
+  type: vless
+  server: vpn2.floweb.club
+  port: 2083
+  uuid: b0852273-160d-4a35-a365-13e5d4772201
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: yahoo.com
+  reality-opts:
+    public-key: zvRguC1cm7gKkQpNarOCaAUAvcSXUWH10-pUEfneYSI
+    short-id: "014c3d76dee82247"
+- name: 'ARISTA #11'
+  type: vless
+  server: turk.karmatel.ir
+  port: 2083
+  uuid: 65479d3f-6e51-40b7-9d0a-ac3a1896f72f
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: vs1.karmatel.ir
+- name: 'ARISTA #12'
+  type: vless
+  server: 209.94.90.47
+  port: 2083
+  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: vipfree.dr-ping.ir
+  ws-opts:
+    path: /
+- name: 'ARISTA #13'
+  type: vless
+  server: vpn2.floweb.club
+  port: 2083
+  uuid: b0852273-160d-4a35-a365-13e5d4772201
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: yahoo.com
+  reality-opts:
+    public-key: zvRguC1cm7gKkQpNarOCaAUAvcSXUWH10-pUEfneYSI
+    short-id: "014c3d76dee82247"
+- name: 'ARISTA #14'
+  type: vless
+  server: turk.karmatel.ir
+  port: 2083
+  uuid: 65479d3f-6e51-40b7-9d0a-ac3a1896f72f
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: vs1.karmatel.ir
 - name: 'ARISTA #15'
   type: vless
   server: vpn2.floweb.club
@@ -325,20 +323,6 @@ proxies:
     path: /
 - name: 'ARISTA #18'
   type: vless
-  server: 46.8.78.77
-  port: 2083
-  uuid: 1ff0dd9f-71e4-4333-a334-1e4197c051ba
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: apps.apple.com
-  reality-opts:
-    public-key: qu9yjh7bIhWf-clw9fNLM7NqenR-xTJPQKIz6E-96z0
-    short-id: "6c07cc96c42506ed"
-- name: 'ARISTA #19'
-  type: vless
   server: vpn2.floweb.club
   port: 2083
   uuid: b0852273-160d-4a35-a365-13e5d4772201
@@ -352,7 +336,39 @@ proxies:
   reality-opts:
     public-key: zvRguC1cm7gKkQpNarOCaAUAvcSXUWH10-pUEfneYSI
     short-id: "014c3d76dee82247"
-- name: 'T.ME: @aristapanel #20'
+- name: 'ARISTA #19'
+  type: vless
+  server: turk.karmatel.ir
+  port: 2083
+  uuid: 65479d3f-6e51-40b7-9d0a-ac3a1896f72f
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: vs1.karmatel.ir
+- name: 'ARISTA #20'
+  type: vless
+  server: 209.94.90.47
+  port: 2083
+  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: vipfree.dr-ping.ir
+  ws-opts:
+    path: /
+- name: 'T.ME: @aristapanel #21'
   type: vless
   server: sino.bestsellers1.site
   port: 2083
@@ -369,7 +385,7 @@ proxies:
   servername: sino.bestsellers1.site
   ws-opts:
     path: /
-- name: 'T.ME: @aristapanel #21'
+- name: 'T.ME: @aristapanel #22'
   type: vless
   server: 91.107.188.129
   port: 2083
@@ -381,7 +397,73 @@ proxies:
   servername: site.check-looks.space
   ws-opts:
     path: /
-- name: 'T.ME: @aristapanel #22'
+- name: 'T.ME: @aristapanel #23'
+  type: vless
+  server: 209.94.90.201
+  port: 2083
+  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: vipfree.dr-ping.ir
+  ws-opts:
+    path: /
+- name: 'T.ME: @aristapanel #24'
+  type: vless
+  server: 198.202.24.142
+  port: 2083
+  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: vipfree.dr-ping.ir
+  ws-opts:
+    path: /
+- name: 'T.ME: @aristapanel #25'
+  type: vless
+  server: 206.238.239.20
+  port: 2083
+  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: vipfree.dr-ping.ir
+  ws-opts:
+    path: /
+- name: 'T.ME: @aristapanel #26'
+  type: vless
+  server: 64.188.83.188
+  port: 2083
+  uuid: 75b517db-1f97-4bda-a479-863d988c31a0
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: random
+  servername: speedtestmark.com
+  ws-opts:
+    path: /vless-ws
+- name: 'T.ME: @aristapanel #27'
   type: vless
   server: 89.105.218.106
   port: 2083
@@ -396,7 +478,22 @@ proxies:
   servername: speedtestmark.com
   ws-opts:
     path: /vless-ws
-- name: 'T.ME: @aristapanel #23'
+- name: 'T.ME: @aristapanel #28'
+  type: vless
+  server: 104.26.13.142
+  port: 2083
+  uuid: 73bcd72f-9545-4cb8-8daf-7d004501880d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: shanxp.dpdns.org
+  ws-opts:
+    path: /
+    headers:
+      Host: shanxp.dpdns.org
+- name: 'T.ME: @aristapanel #29'
   type: vless
   server: download.yasinyones.ir
   port: 2083
@@ -413,85 +510,7 @@ proxies:
     path: /my-panel
     headers:
       Host: download.yasinyones.ir
-- name: 'ARISTA #24'
-  type: vless
-  server: turk.karmatel.ir
-  port: 2083
-  uuid: 65479d3f-6e51-40b7-9d0a-ac3a1896f72f
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  - h3
-  client-fingerprint: chrome
-  servername: vs1.karmatel.ir
-- name: 'ARISTA #25'
-  type: vless
-  server: 209.94.90.47
-  port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  - h3
-  client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
-  ws-opts:
-    path: /
-- name: 'ARISTA #26'
-  type: vless
-  server: turk.karmatel.ir
-  port: 2083
-  uuid: 65479d3f-6e51-40b7-9d0a-ac3a1896f72f
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  - h3
-  client-fingerprint: chrome
-  servername: vs1.karmatel.ir
-- name: 'ARISTA #27'
-  type: vless
-  server: 209.94.90.47
-  port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  - h3
-  client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
-  ws-opts:
-    path: /
-- name: 'ARISTA #28'
-  type: vless
-  server: 46.8.78.77
-  port: 2083
-  uuid: 1ff0dd9f-71e4-4333-a334-1e4197c051ba
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: apps.apple.com
-  reality-opts:
-    public-key: qu9yjh7bIhWf-clw9fNLM7NqenR-xTJPQKIz6E-96z0
-    short-id: "6c07cc96c42506ed"
-- name: 'ARISTA #29'
+- name: 'ARISTA #30'
   type: vless
   server: vpn2.floweb.club
   port: 2083
@@ -506,7 +525,86 @@ proxies:
   reality-opts:
     public-key: zvRguC1cm7gKkQpNarOCaAUAvcSXUWH10-pUEfneYSI
     short-id: "014c3d76dee82247"
-- name: 'T.ME: @aristapanel #30'
+- name: 'ARISTA #31'
+  type: vless
+  server: turk.karmatel.ir
+  port: 2083
+  uuid: 65479d3f-6e51-40b7-9d0a-ac3a1896f72f
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: vs1.karmatel.ir
+- name: 'ARISTA #32'
+  type: vless
+  server: 209.94.90.47
+  port: 2083
+  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: vipfree.dr-ping.ir
+  ws-opts:
+    path: /
+- name: 'ARISTA #33'
+  type: vless
+  server: vpn2.floweb.club
+  port: 2083
+  uuid: b0852273-160d-4a35-a365-13e5d4772201
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: yahoo.com
+  reality-opts:
+    public-key: zvRguC1cm7gKkQpNarOCaAUAvcSXUWH10-pUEfneYSI
+    short-id: "014c3d76dee82247"
+- name: 'ARISTA #34'
+  type: vless
+  server: turk.karmatel.ir
+  port: 2083
+  uuid: 65479d3f-6e51-40b7-9d0a-ac3a1896f72f
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: vs1.karmatel.ir
+- name: 'ARISTA #35'
+  type: vless
+  server: 209.94.90.47
+  port: 2083
+  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: vipfree.dr-ping.ir
+  ws-opts:
+    path: /
+- name: 'T.ME: @aristapanel #36'
   type: trojan
   server: 216.24.57.225
   port: 2083
@@ -526,7 +624,7 @@ proxies:
     path: /YaujaGsyr
     headers:
       Host: fin.netvia.ir
-- name: 'T.ME: @aristapanel #31'
+- name: 'T.ME: @aristapanel #37'
   type: trojan
   server: 216.24.57.225
   port: 2083
@@ -546,7 +644,7 @@ proxies:
     path: /YaujaGsyr
     headers:
       Host: fin.netvia.ir
-- name: 'T.ME: @aristapanel #32'
+- name: 'T.ME: @aristapanel #38'
   type: trojan
   server: 216.24.57.225
   port: 2083
@@ -566,6 +664,14 @@ proxies:
     path: /YaujaGsyr
     headers:
       Host: fin.netvia.ir
+- name: 'T.ME: @aristapanel #39'
+  type: ss
+  server: 51.38.71.51
+  port: 2083
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
+  udp: true
+  tcp-fast-open: true
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -578,7 +684,7 @@ proxy-groups:
   - 'T.ME: @aristapanel #1'
   - 'T.ME: @aristapanel #2'
   - 'T.ME: @aristapanel #3'
-  - 'ARISTA #4'
+  - 'T.ME: @aristapanel #4'
   - 'ARISTA #5'
   - 'ARISTA #6'
   - 'ARISTA #7'
@@ -594,19 +700,26 @@ proxy-groups:
   - 'ARISTA #17'
   - 'ARISTA #18'
   - 'ARISTA #19'
-  - 'T.ME: @aristapanel #20'
+  - 'ARISTA #20'
   - 'T.ME: @aristapanel #21'
   - 'T.ME: @aristapanel #22'
   - 'T.ME: @aristapanel #23'
-  - 'ARISTA #24'
-  - 'ARISTA #25'
-  - 'ARISTA #26'
-  - 'ARISTA #27'
-  - 'ARISTA #28'
-  - 'ARISTA #29'
-  - 'T.ME: @aristapanel #30'
-  - 'T.ME: @aristapanel #31'
-  - 'T.ME: @aristapanel #32'
+  - 'T.ME: @aristapanel #24'
+  - 'T.ME: @aristapanel #25'
+  - 'T.ME: @aristapanel #26'
+  - 'T.ME: @aristapanel #27'
+  - 'T.ME: @aristapanel #28'
+  - 'T.ME: @aristapanel #29'
+  - 'ARISTA #30'
+  - 'ARISTA #31'
+  - 'ARISTA #32'
+  - 'ARISTA #33'
+  - 'ARISTA #34'
+  - 'ARISTA #35'
+  - 'T.ME: @aristapanel #36'
+  - 'T.ME: @aristapanel #37'
+  - 'T.ME: @aristapanel #38'
+  - 'T.ME: @aristapanel #39'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

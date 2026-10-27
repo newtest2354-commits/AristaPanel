@@ -1,5 +1,5 @@
 # TELEGRAM - Port 2052
-# Updated: 2026-10-26 20:29:57
+# Updated: 2026-10-27 00:24:43
 # Count: 6
 
 mixed-port: 7890
@@ -50,17 +50,13 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 2.27.206.215
+  server: edge10.cyrionflare.com
   port: 2052
-  uuid: fafc7c16-f890-45ee-a856-02df225172dd
-  network: xhttp
-  tls: true
+  uuid: 1a8ecc41-6e62-431b-8eca-87c2fa4dc286
+  network: tcp
+  tls: false
   udp: true
   skip-cert-verify: true
-  servername: yastatic.net
-  reality-opts:
-    public-key: 3ds1sPK8MuZVr6IOAwjRx0h_2IZMZ2v_RzNGl3iYwno
-    short-id: "025ee5be0c789ece"
 - name: 'ARISTA #2'
   type: vless
   server: edge10.cyrionflare.com
@@ -103,13 +99,17 @@ proxies:
   skip-cert-verify: true
 - name: 'ARISTA #6'
   type: vless
-  server: edge10.cyrionflare.com
+  server: 2.27.206.215
   port: 2052
-  uuid: 1a8ecc41-6e62-431b-8eca-87c2fa4dc286
-  network: tcp
-  tls: false
+  uuid: fafc7c16-f890-45ee-a856-02df225172dd
+  network: xhttp
+  tls: true
   udp: true
   skip-cert-verify: true
+  servername: yastatic.net
+  reality-opts:
+    public-key: 3ds1sPK8MuZVr6IOAwjRx0h_2IZMZ2v_RzNGl3iYwno
+    short-id: "025ee5be0c789ece"
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
