@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2096
-# Updated: 2026-10-27 00:24:43
-# Count: 8
+# Updated: 2026-10-27 08:55:29
+# Count: 12
 
 mixed-port: 7890
 allow-lan: false
@@ -50,19 +50,13 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 191.44.114.179
+  server: 180.149.44.237
   port: 2096
-  uuid: d1641bc6-3757-43db-815a-9b3f4d9b0d7e
-  network: ws
-  tls: true
+  uuid: ba8cff29-a34b-4381-a580-d349c1191e35
+  network: tcp
+  tls: false
   udp: true
   skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: st33614.rumedia-cdn.com
-  ws-opts:
-    path: /cdn/v3/live
-    headers:
-      Host: st33614.rumedia-cdn.com
 - name: 'ARISTA #2'
   type: vless
   server: 191.44.114.179
@@ -80,53 +74,56 @@ proxies:
       Host: st33614.rumedia-cdn.com
 - name: 'ARISTA #3'
   type: vless
-  server: 191.44.114.179
+  server: 180.149.44.237
   port: 2096
-  uuid: d1641bc6-3757-43db-815a-9b3f4d9b0d7e
-  network: ws
-  tls: true
+  uuid: ba8cff29-a34b-4381-a580-d349c1191e35
+  network: tcp
+  tls: false
   udp: true
   skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: st33614.rumedia-cdn.com
-  ws-opts:
-    path: /cdn/v3/live
-    headers:
-      Host: st33614.rumedia-cdn.com
 - name: 'ARISTA #4'
   type: vless
-  server: 191.44.114.179
+  server: 180.149.44.237
   port: 2096
-  uuid: d1641bc6-3757-43db-815a-9b3f4d9b0d7e
-  network: ws
-  tls: true
+  uuid: ba8cff29-a34b-4381-a580-d349c1191e35
+  network: tcp
+  tls: false
   udp: true
   skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: st33614.rumedia-cdn.com
-  ws-opts:
-    path: /cdn/v3/live
-    headers:
-      Host: st33614.rumedia-cdn.com
 - name: 'ARISTA #5'
   type: vless
-  server: 185.18.250.127
+  server: 191.44.114.179
   port: 2096
-  uuid: 2ee26119-94e5-40b4-ba3a-16354021b600
+  uuid: d1641bc6-3757-43db-815a-9b3f4d9b0d7e
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: 69565ce3109804e7813f98ee.mmdbay.blog
+  client-fingerprint: firefox
+  servername: st33614.rumedia-cdn.com
   ws-opts:
-    path: /graphql
+    path: /cdn/v3/live
     headers:
-      Host: 69565ce3109804e7813f98ee.mmdbay.blog
+      Host: st33614.rumedia-cdn.com
 - name: 'ARISTA #6'
+  type: vless
+  server: 180.149.44.237
+  port: 2096
+  uuid: ba8cff29-a34b-4381-a580-d349c1191e35
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #7'
+  type: vless
+  server: 180.149.44.237
+  port: 2096
+  uuid: ba8cff29-a34b-4381-a580-d349c1191e35
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #8'
   type: vless
   server: 191.44.114.179
   port: 2096
@@ -141,25 +138,40 @@ proxies:
     path: /cdn/v3/live
     headers:
       Host: st33614.rumedia-cdn.com
-- name: 'ARISTA #7'
+- name: 'ARISTA #9'
   type: vless
-  server: 185.18.250.127
+  server: 180.149.44.237
   port: 2096
-  uuid: 2ee26119-94e5-40b4-ba3a-16354021b600
+  uuid: ba8cff29-a34b-4381-a580-d349c1191e35
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #10'
+  type: vless
+  server: 191.44.114.179
+  port: 2096
+  uuid: d1641bc6-3757-43db-815a-9b3f4d9b0d7e
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: 69565ce3109804e7813f98ee.mmdbay.blog
+  client-fingerprint: firefox
+  servername: st33614.rumedia-cdn.com
   ws-opts:
-    path: /graphql
+    path: /cdn/v3/live
     headers:
-      Host: 69565ce3109804e7813f98ee.mmdbay.blog
-- name: 'ARISTA #8'
+      Host: st33614.rumedia-cdn.com
+- name: 'ARISTA #11'
+  type: vless
+  server: 180.149.44.237
+  port: 2096
+  uuid: ba8cff29-a34b-4381-a580-d349c1191e35
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #12'
   type: vless
   server: 191.44.114.179
   port: 2096
@@ -191,6 +203,10 @@ proxy-groups:
   - 'ARISTA #6'
   - 'ARISTA #7'
   - 'ARISTA #8'
+  - 'ARISTA #9'
+  - 'ARISTA #10'
+  - 'ARISTA #11'
+  - 'ARISTA #12'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
