@@ -1,6 +1,6 @@
 // TELEGRAM - Port 2083
-// Updated: 2026-10-29 00:49:46
-// Count: 20
+// Updated: 2026-10-29 09:49:15
+// Count: 16
 
 {
   "log": {
@@ -41,6 +41,30 @@
     {
       "type": "vless",
       "tag": "ARISTA #1",
+      "server": "209.94.90.47",
+      "server_port": 2083,
+      "uuid": "a6ad7987-f17e-41fa-a752-72db9a725eb2",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "vipfree.dr-ping.ir",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "209.94.90.47"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "ARISTA #2",
       "server": "216.24.57.225",
       "server_port": 2083,
       "uuid": "3bcbd7ef-e05b-4745-a1de-5ecf98dd2fb6",
@@ -64,27 +88,6 @@
     },
     {
       "type": "vless",
-      "tag": "ARISTA #2",
-      "server": "req.apptrendv.com",
-      "server_port": 2083,
-      "uuid": "7cc18adc-1ef0-42c9-8e7b-722d7622c7dd",
-      "domain_resolver": "google",
-      "tls": {
-        "enabled": true,
-        "server_name": "email.apptrendv.com",
-        "insecure": true,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "alpn": [
-          "h2",
-          "http/1.1"
-        ]
-      }
-    },
-    {
-      "type": "vless",
       "tag": "ARISTA #3",
       "server": "209.94.90.201",
       "server_port": 2083,
@@ -97,54 +100,18 @@
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
-        }
+        },
+        "alpn": [
+          "h2",
+          "http/1.1",
+          "h3"
+        ]
       },
       "transport": {
         "type": "ws",
         "path": "/",
         "headers": {
           "Host": "209.94.90.201"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "ARISTA #4",
-      "server": "fast3.mo-chephosting.ir",
-      "server_port": 2083,
-      "uuid": "9ad8b73b-4aa4-43be-87b5-166ced009cea",
-      "domain_resolver": "google",
-      "tls": {
-        "enabled": true,
-        "server_name": "sslcert.okamii1.ir",
-        "insecure": true,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "ARISTA #5",
-      "server": "209.94.90.47",
-      "server_port": 2083,
-      "uuid": "a6ad7987-f17e-41fa-a752-72db9a725eb2",
-      "domain_resolver": "google",
-      "tls": {
-        "enabled": true,
-        "server_name": "vipfree.dr-ping.ir",
-        "insecure": true,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "209.94.90.47"
         }
       }
     },
@@ -162,9 +129,7 @@
       "outbounds": [
         "ARISTA #1",
         "ARISTA #2",
-        "ARISTA #3",
-        "ARISTA #4",
-        "ARISTA #5"
+        "ARISTA #3"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "2m",

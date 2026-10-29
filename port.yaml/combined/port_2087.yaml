@@ -1,6 +1,6 @@
 # COMBINED - Port 2087
-# Updated: 2026-10-29 00:49:33
-# Count: 56
+# Updated: 2026-10-29 09:49:05
+# Count: 28
 
 mixed-port: 7890
 allow-lan: false
@@ -50,177 +50,164 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 2.26.6.1
+  server: iran2.panelsaz.com
   port: 2087
-  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
-  network: tcp
-  tls: true
+  uuid: 1b71cb74-16f8-4ea0-9acf-d03a3d66dff6
+  network: ws
+  tls: false
   udp: true
   skip-cert-verify: true
-  servername: 2.26.6.1
+  ws-opts:
+    path: /upl
+    headers:
+      Host: trnewpnltun.mamadhpbot.ir
 - name: 'ARISTA #2'
   type: vless
-  server: vpn1.aantoshin.ru
+  server: iran2.panelsaz.com
   port: 2087
-  uuid: aa0faee3-a4f1-4073-a1ec-a108c948adc5
-  network: tcp
-  tls: true
+  uuid: 1b71cb74-16f8-4ea0-9acf-d03a3d66dff6
+  network: ws
+  tls: false
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: api.vk.com
-  reality-opts:
-    public-key: REEIQ_PfKFRYuhTX1Ex-JxfTJhwCryeGlCszQOG7Mmc
-    short-id: "8ed34d466d05d404"
+  ws-opts:
+    path: /upl
+    headers:
+      Host: trnewpnltun.mamadhpbot.ir
 - name: 'ARISTA #3'
   type: vless
-  server: iran2.panelsaz.com
+  server: darsadgir.ir
   port: 2087
-  uuid: 1b71cb74-16f8-4ea0-9acf-d03a3d66dff6
-  network: ws
-  tls: false
+  uuid: c75775e9-cf53-47b6-9d1d-29c3a46633fd
+  network: tcp
+  tls: true
   udp: true
   skip-cert-verify: true
-  ws-opts:
-    path: /upl
-    headers:
-      Host: trnewpnltun.mamadhpbot.ir
+  alpn:
+  - h2
+  servername: ratatouille.rahmatokaduie.ir
 - name: 'ARISTA #4'
   type: vless
-  server: ggggoods.brand-netprime.com
+  server: 2.26.6.1
   port: 2087
-  uuid: 16571fd5-5c8a-44ae-99fa-a354565e500b
-  network: ws
+  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: b5.dl-netprime.com
-  ws-opts:
-    path: /ws-tls
-    headers:
-      Host: b5.dl-netprime.com
+  servername: 2.26.6.1
 - name: 'ARISTA #5'
   type: vless
-  server: 2.26.6.1
+  server: s9.femqera.ir
   port: 2087
-  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: 2.26.6.1
-- name: 'ARISTA #6'
-  type: vless
-  server: vpn1.aantoshin.ru
-  port: 2087
-  uuid: aa0faee3-a4f1-4073-a1ec-a108c948adc5
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: api.vk.com
-  reality-opts:
-    public-key: REEIQ_PfKFRYuhTX1Ex-JxfTJhwCryeGlCszQOG7Mmc
-    short-id: "8ed34d466d05d404"
-- name: 'ARISTA #7'
-  type: vless
-  server: iran2.panelsaz.com
-  port: 2087
-  uuid: 1b71cb74-16f8-4ea0-9acf-d03a3d66dff6
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /upl
-    headers:
-      Host: trnewpnltun.mamadhpbot.ir
-- name: 'ARISTA #8'
-  type: vless
-  server: ggggoods.brand-netprime.com
-  port: 2087
-  uuid: 16571fd5-5c8a-44ae-99fa-a354565e500b
-  network: ws
+  uuid: 0ea7341e-7c72-410c-0f63-dc2ca976a5da
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
   alpn:
+  - h2
   - http/1.1
+  - h3
   client-fingerprint: chrome
-  servername: b5.dl-netprime.com
-  ws-opts:
-    path: /ws-tls
-    headers:
-      Host: b5.dl-netprime.com
-- name: 'ARISTA #9'
+  servername: s9.femqera.ir
+- name: 'T.ME: @aristapanel #6'
   type: vless
-  server: iran2.panelsaz.com
+  server: 2.26.6.1
   port: 2087
-  uuid: 1b71cb74-16f8-4ea0-9acf-d03a3d66dff6
+  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: 2.26.6.1
+- name: 'T.ME: @aristapanel #7'
+  type: vless
+  server: 2.26.6.1
+  port: 2087
+  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: 2.26.6.1
+- name: 'T.ME: @aristapanel #8'
+  type: vless
+  server: 104.18.38.78
+  port: 2087
+  uuid: 29ca503d-e6b8-4509-b666-48133f450857
   network: ws
-  tls: false
+  tls: true
   udp: true
   skip-cert-verify: true
+  servername: learn00.evany.de5.net
   ws-opts:
-    path: /upl
+    path: /fdip
     headers:
-      Host: trnewpnltun.mamadhpbot.ir
-- name: 'ARISTA #10'
+      Host: learn00.evany.de5.net
+- name: 'T.ME: @aristapanel #9'
   type: vless
-  server: 2.26.6.1
+  server: snapp.ir
   port: 2087
-  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
-  network: tcp
+  uuid: 2402a18b-77f3-4346-db46-4284cb037bb3
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: 2.26.6.1
-- name: 'ARISTA #11'
+  client-fingerprint: chrome
+  servername: cdn.xelira.ir
+  ws-opts:
+    path: /BetForward
+    headers:
+      Host: cdn.xelira.ir
+- name: 'T.ME: @aristapanel #10'
   type: vless
-  server: vpn1.aantoshin.ru
+  server: s4.zynetrax.ir
   port: 2087
-  uuid: aa0faee3-a4f1-4073-a1ec-a108c948adc5
-  network: tcp
+  uuid: 1d4f65c7-d37a-4299-4558-ffb4d9a40e84
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: api.vk.com
-  reality-opts:
-    public-key: REEIQ_PfKFRYuhTX1Ex-JxfTJhwCryeGlCszQOG7Mmc
-    short-id: "8ed34d466d05d404"
-- name: 'ARISTA #12'
+  client-fingerprint: chrome
+  servername: s4.zynetrax.ir
+- name: 'T.ME: @aristapanel #11'
   type: vless
-  server: 2.26.6.1
+  server: s5.zynetrax.ir
   port: 2087
-  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
-  network: tcp
+  uuid: 4f2351af-b628-4f99-6c4b-71000fd32388
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: 2.26.6.1
-- name: 'ARISTA #13'
+  client-fingerprint: chrome
+  servername: s5.zynetrax.ir
+- name: 'T.ME: @aristapanel #12'
   type: vless
-  server: vpn1.aantoshin.ru
+  server: one-for-all.levikogjgfdd.ir
   port: 2087
-  uuid: aa0faee3-a4f1-4073-a1ec-a108c948adc5
-  network: tcp
+  uuid: 50414e45-4c5f-5a45-5553-6f51879c0594
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: api.vk.com
-  reality-opts:
-    public-key: REEIQ_PfKFRYuhTX1Ex-JxfTJhwCryeGlCszQOG7Mmc
-    short-id: "8ed34d466d05d404"
+  client-fingerprint: chrome
+  servername: levikoconfig.levikogjgfdd.ir
+  ws-opts:
+    path: /
+    headers:
+      Host: levikoconfig.levikogjgfdd.ir
+- name: 'T.ME: @aristapanel #13'
+  type: vless
+  server: s2.yorqino.ir
+  port: 2087
+  uuid: f6400667-bf72-4a93-0cd4-40da57850d16
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: s2.yorqino.ir
 - name: 'ARISTA #14'
   type: vless
   server: iran2.panelsaz.com
@@ -236,36 +223,18 @@ proxies:
       Host: trnewpnltun.mamadhpbot.ir
 - name: 'ARISTA #15'
   type: vless
-  server: ggggoods.brand-netprime.com
+  server: darsadgir.ir
   port: 2087
-  uuid: 16571fd5-5c8a-44ae-99fa-a354565e500b
-  network: ws
+  uuid: c75775e9-cf53-47b6-9d1d-29c3a46633fd
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
   alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: b5.dl-netprime.com
-  ws-opts:
-    path: /ws-tls
-    headers:
-      Host: b5.dl-netprime.com
+  - h2
+  servername: ratatouille.rahmatokaduie.ir
 - name: 'ARISTA #16'
   type: vless
-  server: iran2.panelsaz.com
-  port: 2087
-  uuid: 1b71cb74-16f8-4ea0-9acf-d03a3d66dff6
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /upl
-    headers:
-      Host: trnewpnltun.mamadhpbot.ir
-- name: 'T.ME: @aristapanel #17'
-  type: vless
   server: 2.26.6.1
   port: 2087
   uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
@@ -274,380 +243,144 @@ proxies:
   udp: true
   skip-cert-verify: true
   servername: 2.26.6.1
-- name: 'T.ME: @aristapanel #18'
+- name: 'ARISTA #17'
   type: vless
-  server: 2.26.6.1
+  server: s9.femqera.ir
   port: 2087
-  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: 2.26.6.1
-- name: 'T.ME: @aristapanel #19'
-  type: vless
-  server: fastgoodshop.persiansubpannel.ir
-  port: 2087
-  uuid: e17b1c07-de04-4734-a6ec-5a6ea45dc39c
+  uuid: 0ea7341e-7c72-410c-0f63-dc2ca976a5da
   network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: DTthbTBf2-1oVj9Sl3FinOeA1oI8nlHqfeCF5u0TfGo
-    short-id: "8dd90c"
-- name: 'T.ME: @aristapanel #20'
-  type: vless
-  server: 104.18.38.78
-  port: 2087
-  uuid: 29ca503d-e6b8-4509-b666-48133f450857
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: learn00.evany.de5.net
-  ws-opts:
-    path: /fdip
-    headers:
-      Host: learn00.evany.de5.net
-- name: 'T.ME: @aristapanel #21'
-  type: vless
-  server: snapp.ir
-  port: 2087
-  uuid: 2402a18b-77f3-4346-db46-4284cb037bb3
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: cdn.xelira.ir
-  ws-opts:
-    path: /BetForward
-    headers:
-      Host: cdn.xelira.ir
-- name: 'T.ME: @aristapanel #22'
-  type: vless
-  server: 172.67.188.6
-  port: 2087
-  uuid: 75900d69-789a-4aa5-afde-3b21cbb19bb5
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
   alpn:
+  - h2
+  - http/1.1
   - h3
+  client-fingerprint: chrome
+  servername: s9.femqera.ir
+- name: 'ARISTA #18'
+  type: vless
+  server: iran2.panelsaz.com
+  port: 2087
+  uuid: 1b71cb74-16f8-4ea0-9acf-d03a3d66dff6
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /upl
+    headers:
+      Host: trnewpnltun.mamadhpbot.ir
+- name: 'ARISTA #19'
+  type: vless
+  server: darsadgir.ir
+  port: 2087
+  uuid: c75775e9-cf53-47b6-9d1d-29c3a46633fd
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  servername: ratatouille.rahmatokaduie.ir
+- name: 'ARISTA #20'
+  type: vless
+  server: 2.26.6.1
+  port: 2087
+  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: 2.26.6.1
+- name: 'ARISTA #21'
+  type: vless
+  server: s9.femqera.ir
+  port: 2087
+  uuid: 0ea7341e-7c72-410c-0f63-dc2ca976a5da
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
   - h2
   - http/1.1
+  - h3
   client-fingerprint: chrome
-  servername: pen.booksh.ir
-  grpc-opts:
-    grpc-service-name: 2087vless
+  servername: s9.femqera.ir
+- name: 'T.ME: @aristapanel #22'
+  type: trojan
+  server: uwu.blueknightnet.qzz.io
+  port: 2087
+  password: w4rv08rp3tegsco6
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: uwu.dianaw.cc.cd
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  ws-opts:
+    path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
+    headers:
+      Host: uwu.dianaw.cc.cd
 - name: 'T.ME: @aristapanel #23'
-  type: vless
-  server: s4.zynetrax.ir
+  type: trojan
+  server: uwu.blueknightnet.qzz.io
   port: 2087
-  uuid: 1d4f65c7-d37a-4299-4558-ffb4d9a40e84
-  network: xhttp
+  password: 0y7hid61k3k2vuy1
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
+  tcp-fast-open: true
+  servername: uwu.dianaw.cc.cd
   client-fingerprint: chrome
-  servername: s4.zynetrax.ir
+  alpn:
+  - h2
+  ws-opts:
+    path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
+    headers:
+      Host: uwu.dianaw.cc.cd
 - name: 'T.ME: @aristapanel #24'
-  type: vless
-  server: s5.zynetrax.ir
+  type: trojan
+  server: uwu.blueknightnet.qzz.io
   port: 2087
-  uuid: 4f2351af-b628-4f99-6c4b-71000fd32388
-  network: xhttp
+  password: w4rv08rp3tegsco6
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
+  tcp-fast-open: true
+  servername: uwu.dianaw.cc.cd
   client-fingerprint: chrome
-  servername: s5.zynetrax.ir
+  alpn:
+  - h2
+  ws-opts:
+    path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
+    headers:
+      Host: uwu.dianaw.cc.cd
 - name: 'T.ME: @aristapanel #25'
-  type: vless
-  server: one-for-all.levikogjgfdd.ir
+  type: trojan
+  server: uwu.blueknightnet.qzz.io
   port: 2087
-  uuid: 50414e45-4c5f-5a45-5553-6f51879c0594
+  password: 0y7hid61k3k2vuy1
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
+  tcp-fast-open: true
+  servername: uwu.dianaw.cc.cd
   client-fingerprint: chrome
-  servername: levikoconfig.levikogjgfdd.ir
+  alpn:
+  - h2
   ws-opts:
-    path: /
+    path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
     headers:
-      Host: levikoconfig.levikogjgfdd.ir
+      Host: uwu.dianaw.cc.cd
 - name: 'T.ME: @aristapanel #26'
-  type: vless
-  server: s2.yorqino.ir
-  port: 2087
-  uuid: f6400667-bf72-4a93-0cd4-40da57850d16
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: s2.yorqino.ir
-- name: 'ARISTA #27'
-  type: vless
-  server: 2.26.6.1
-  port: 2087
-  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: 2.26.6.1
-- name: 'ARISTA #28'
-  type: vless
-  server: vpn1.aantoshin.ru
-  port: 2087
-  uuid: aa0faee3-a4f1-4073-a1ec-a108c948adc5
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: api.vk.com
-  reality-opts:
-    public-key: REEIQ_PfKFRYuhTX1Ex-JxfTJhwCryeGlCszQOG7Mmc
-    short-id: "8ed34d466d05d404"
-- name: 'ARISTA #29'
-  type: vless
-  server: iran2.panelsaz.com
-  port: 2087
-  uuid: 1b71cb74-16f8-4ea0-9acf-d03a3d66dff6
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /upl
-    headers:
-      Host: trnewpnltun.mamadhpbot.ir
-- name: 'ARISTA #30'
-  type: vless
-  server: ggggoods.brand-netprime.com
-  port: 2087
-  uuid: 16571fd5-5c8a-44ae-99fa-a354565e500b
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: b5.dl-netprime.com
-  ws-opts:
-    path: /ws-tls
-    headers:
-      Host: b5.dl-netprime.com
-- name: 'ARISTA #31'
-  type: vless
-  server: iran2.panelsaz.com
-  port: 2087
-  uuid: 1b71cb74-16f8-4ea0-9acf-d03a3d66dff6
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /upl
-    headers:
-      Host: trnewpnltun.mamadhpbot.ir
-- name: 'ARISTA #32'
-  type: vless
-  server: 2.26.6.1
-  port: 2087
-  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: 2.26.6.1
-- name: 'ARISTA #33'
-  type: vless
-  server: vpn1.aantoshin.ru
-  port: 2087
-  uuid: aa0faee3-a4f1-4073-a1ec-a108c948adc5
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: api.vk.com
-  reality-opts:
-    public-key: REEIQ_PfKFRYuhTX1Ex-JxfTJhwCryeGlCszQOG7Mmc
-    short-id: "8ed34d466d05d404"
-- name: 'ARISTA #34'
-  type: vless
-  server: 2.26.6.1
-  port: 2087
-  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: 2.26.6.1
-- name: 'ARISTA #35'
-  type: vless
-  server: vpn1.aantoshin.ru
-  port: 2087
-  uuid: aa0faee3-a4f1-4073-a1ec-a108c948adc5
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: api.vk.com
-  reality-opts:
-    public-key: REEIQ_PfKFRYuhTX1Ex-JxfTJhwCryeGlCszQOG7Mmc
-    short-id: "8ed34d466d05d404"
-- name: 'ARISTA #36'
-  type: vless
-  server: iran2.panelsaz.com
-  port: 2087
-  uuid: 1b71cb74-16f8-4ea0-9acf-d03a3d66dff6
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /upl
-    headers:
-      Host: trnewpnltun.mamadhpbot.ir
-- name: 'ARISTA #37'
-  type: vless
-  server: ggggoods.brand-netprime.com
-  port: 2087
-  uuid: 16571fd5-5c8a-44ae-99fa-a354565e500b
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: b5.dl-netprime.com
-  ws-opts:
-    path: /ws-tls
-    headers:
-      Host: b5.dl-netprime.com
-- name: 'ARISTA #38'
-  type: vless
-  server: 2.26.6.1
-  port: 2087
-  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: 2.26.6.1
-- name: 'ARISTA #39'
-  type: vless
-  server: vpn1.aantoshin.ru
-  port: 2087
-  uuid: aa0faee3-a4f1-4073-a1ec-a108c948adc5
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: api.vk.com
-  reality-opts:
-    public-key: REEIQ_PfKFRYuhTX1Ex-JxfTJhwCryeGlCszQOG7Mmc
-    short-id: "8ed34d466d05d404"
-- name: 'ARISTA #40'
-  type: vless
-  server: iran2.panelsaz.com
-  port: 2087
-  uuid: 1b71cb74-16f8-4ea0-9acf-d03a3d66dff6
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /upl
-    headers:
-      Host: trnewpnltun.mamadhpbot.ir
-- name: 'ARISTA #41'
-  type: vless
-  server: 2.26.6.1
-  port: 2087
-  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: 2.26.6.1
-- name: 'ARISTA #42'
-  type: vless
-  server: vpn1.aantoshin.ru
-  port: 2087
-  uuid: aa0faee3-a4f1-4073-a1ec-a108c948adc5
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: api.vk.com
-  reality-opts:
-    public-key: REEIQ_PfKFRYuhTX1Ex-JxfTJhwCryeGlCszQOG7Mmc
-    short-id: "8ed34d466d05d404"
-- name: 'ARISTA #43'
-  type: vless
-  server: iran2.panelsaz.com
-  port: 2087
-  uuid: 1b71cb74-16f8-4ea0-9acf-d03a3d66dff6
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /upl
-    headers:
-      Host: trnewpnltun.mamadhpbot.ir
-- name: 'ARISTA #44'
-  type: vless
-  server: ggggoods.brand-netprime.com
-  port: 2087
-  uuid: 16571fd5-5c8a-44ae-99fa-a354565e500b
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: b5.dl-netprime.com
-  ws-opts:
-    path: /ws-tls
-    headers:
-      Host: b5.dl-netprime.com
-- name: 'ARISTA #45'
-  type: vless
-  server: iran2.panelsaz.com
-  port: 2087
-  uuid: 1b71cb74-16f8-4ea0-9acf-d03a3d66dff6
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /upl
-    headers:
-      Host: trnewpnltun.mamadhpbot.ir
-- name: 'T.ME: @aristapanel #46'
   type: trojan
   server: uwu.blueknightnet.qzz.io
   port: 2087
@@ -665,7 +398,7 @@ proxies:
     path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
     headers:
       Host: uwu.dianaw.cc.cd
-- name: 'T.ME: @aristapanel #47'
+- name: 'T.ME: @aristapanel #27'
   type: trojan
   server: uwu.blueknightnet.qzz.io
   port: 2087
@@ -683,7 +416,7 @@ proxies:
     path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
     headers:
       Host: uwu.dianaw.cc.cd
-- name: 'T.ME: @aristapanel #48'
+- name: 'T.ME: @aristapanel #28'
   type: trojan
   server: uwu.blueknightnet.qzz.io
   port: 2087
@@ -701,100 +434,6 @@ proxies:
     path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
     headers:
       Host: uwu.dianaw.cc.cd
-- name: 'T.ME: @aristapanel #49'
-  type: trojan
-  server: uwu.blueknightnet.qzz.io
-  port: 2087
-  password: 0y7hid61k3k2vuy1
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: uwu.dianaw.cc.cd
-  client-fingerprint: chrome
-  alpn:
-  - h2
-  ws-opts:
-    path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
-    headers:
-      Host: uwu.dianaw.cc.cd
-- name: 'T.ME: @aristapanel #50'
-  type: trojan
-  server: uwu.blueknightnet.qzz.io
-  port: 2087
-  password: w4rv08rp3tegsco6
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: uwu.dianaw.cc.cd
-  client-fingerprint: chrome
-  alpn:
-  - h2
-  ws-opts:
-    path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
-    headers:
-      Host: uwu.dianaw.cc.cd
-- name: 'T.ME: @aristapanel #51'
-  type: trojan
-  server: uwu.blueknightnet.qzz.io
-  port: 2087
-  password: 0y7hid61k3k2vuy1
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: uwu.dianaw.cc.cd
-  client-fingerprint: chrome
-  alpn:
-  - h2
-  ws-opts:
-    path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
-    headers:
-      Host: uwu.dianaw.cc.cd
-- name: 'ARISTA #52'
-  type: ss
-  server: edge-fl.davzura.ir
-  port: 2087
-  cipher: chacha20-ietf-poly1305
-  password: izU-U_tQupkWepUXvEnbbtU-kI_GQ7hT
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #53'
-  type: ss
-  server: edge-fl.davzura.ir
-  port: 2087
-  cipher: chacha20-ietf-poly1305
-  password: izU-U_tQupkWepUXvEnbbtU-kI_GQ7hT
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #54'
-  type: ss
-  server: edge-fl.davzura.ir
-  port: 2087
-  cipher: chacha20-ietf-poly1305
-  password: izU-U_tQupkWepUXvEnbbtU-kI_GQ7hT
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #55'
-  type: ss
-  server: edge-fl.davzura.ir
-  port: 2087
-  cipher: chacha20-ietf-poly1305
-  password: izU-U_tQupkWepUXvEnbbtU-kI_GQ7hT
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #56'
-  type: ss
-  server: edge-fl.davzura.ir
-  port: 2087
-  cipher: chacha20-ietf-poly1305
-  password: izU-U_tQupkWepUXvEnbbtU-kI_GQ7hT
-  udp: true
-  tcp-fast-open: true
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -809,57 +448,29 @@ proxy-groups:
   - 'ARISTA #3'
   - 'ARISTA #4'
   - 'ARISTA #5'
-  - 'ARISTA #6'
-  - 'ARISTA #7'
-  - 'ARISTA #8'
-  - 'ARISTA #9'
-  - 'ARISTA #10'
-  - 'ARISTA #11'
-  - 'ARISTA #12'
-  - 'ARISTA #13'
+  - 'T.ME: @aristapanel #6'
+  - 'T.ME: @aristapanel #7'
+  - 'T.ME: @aristapanel #8'
+  - 'T.ME: @aristapanel #9'
+  - 'T.ME: @aristapanel #10'
+  - 'T.ME: @aristapanel #11'
+  - 'T.ME: @aristapanel #12'
+  - 'T.ME: @aristapanel #13'
   - 'ARISTA #14'
   - 'ARISTA #15'
   - 'ARISTA #16'
-  - 'T.ME: @aristapanel #17'
-  - 'T.ME: @aristapanel #18'
-  - 'T.ME: @aristapanel #19'
-  - 'T.ME: @aristapanel #20'
-  - 'T.ME: @aristapanel #21'
+  - 'ARISTA #17'
+  - 'ARISTA #18'
+  - 'ARISTA #19'
+  - 'ARISTA #20'
+  - 'ARISTA #21'
   - 'T.ME: @aristapanel #22'
   - 'T.ME: @aristapanel #23'
   - 'T.ME: @aristapanel #24'
   - 'T.ME: @aristapanel #25'
   - 'T.ME: @aristapanel #26'
-  - 'ARISTA #27'
-  - 'ARISTA #28'
-  - 'ARISTA #29'
-  - 'ARISTA #30'
-  - 'ARISTA #31'
-  - 'ARISTA #32'
-  - 'ARISTA #33'
-  - 'ARISTA #34'
-  - 'ARISTA #35'
-  - 'ARISTA #36'
-  - 'ARISTA #37'
-  - 'ARISTA #38'
-  - 'ARISTA #39'
-  - 'ARISTA #40'
-  - 'ARISTA #41'
-  - 'ARISTA #42'
-  - 'ARISTA #43'
-  - 'ARISTA #44'
-  - 'ARISTA #45'
-  - 'T.ME: @aristapanel #46'
-  - 'T.ME: @aristapanel #47'
-  - 'T.ME: @aristapanel #48'
-  - 'T.ME: @aristapanel #49'
-  - 'T.ME: @aristapanel #50'
-  - 'T.ME: @aristapanel #51'
-  - 'ARISTA #52'
-  - 'ARISTA #53'
-  - 'ARISTA #54'
-  - 'ARISTA #55'
-  - 'ARISTA #56'
+  - 'T.ME: @aristapanel #27'
+  - 'T.ME: @aristapanel #28'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
