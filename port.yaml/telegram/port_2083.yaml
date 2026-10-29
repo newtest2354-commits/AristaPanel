@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2083
-# Updated: 2026-10-29 09:49:09
-# Count: 16
+# Updated: 2026-10-29 18:27:54
+# Count: 22
 
 mixed-port: 7890
 allow-lan: false
@@ -49,18 +49,20 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'ARISTA #1'
-  type: vless
-  server: 209.94.90.47
+  type: vmess
+  server: or.521166.xyz
   port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
+  uuid: ac251237-576f-40c8-a543-554960c958b1
+  alterId: 0
+  cipher: auto
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
+  tcp-fast-open: true
+  servername: or.521166.xyz
   ws-opts:
-    path: /
+    path: /or3
 - name: 'ARISTA #2'
   type: vless
   server: 216.24.57.225
@@ -77,35 +79,20 @@ proxies:
       Host: pol.netvia.ir
 - name: 'ARISTA #3'
   type: vless
-  server: 209.94.90.201
+  server: 46.101.253.244
   port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
+  uuid: bba95b1f-f48c-454b-897b-a6c6bc307df1
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  - h3
   client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
+  servername: edge.yzkvm.top
   ws-opts:
     path: /
+    headers:
+      Host: edge.yzkvm.top
 - name: 'ARISTA #4'
-  type: vless
-  server: 209.94.90.47
-  port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
-  ws-opts:
-    path: /
-- name: 'ARISTA #5'
   type: vless
   server: 216.24.57.225
   port: 2083
@@ -119,36 +106,47 @@ proxies:
     path: /wss
     headers:
       Host: pol.netvia.ir
-- name: 'ARISTA #6'
+- name: 'ARISTA #5'
   type: vless
-  server: 209.94.90.201
+  server: 46.101.253.244
   port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
+  uuid: bba95b1f-f48c-454b-897b-a6c6bc307df1
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  - h3
   client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
+  servername: edge.yzkvm.top
+  ws-opts:
+    path: /
+    headers:
+      Host: edge.yzkvm.top
+- name: 'ARISTA #6'
+  type: vless
+  server: 91.107.188.129
+  port: 2083
+  uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: site.check-looks.space
   ws-opts:
     path: /
 - name: 'ARISTA #7'
   type: vless
-  server: 209.94.90.47
+  server: 216.24.57.225
   port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
+  uuid: 3bcbd7ef-e05b-4745-a1de-5ecf98dd2fb6
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
+  servername: pol.netvia.ir
   ws-opts:
-    path: /
+    path: /wss
+    headers:
+      Host: pol.netvia.ir
 - name: 'ARISTA #8'
   type: vless
   server: 216.24.57.225
@@ -165,35 +163,46 @@ proxies:
       Host: pol.netvia.ir
 - name: 'ARISTA #9'
   type: vless
-  server: 209.94.90.201
+  server: 216.24.57.225
   port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
+  uuid: 3bcbd7ef-e05b-4745-a1de-5ecf98dd2fb6
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  - h3
-  client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
+  servername: pol.netvia.ir
   ws-opts:
-    path: /
+    path: /wss
+    headers:
+      Host: pol.netvia.ir
 - name: 'ARISTA #10'
   type: vless
-  server: 209.94.90.47
+  server: 46.101.253.244
   port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
+  uuid: bba95b1f-f48c-454b-897b-a6c6bc307df1
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
+  servername: edge.yzkvm.top
   ws-opts:
     path: /
+    headers:
+      Host: edge.yzkvm.top
 - name: 'ARISTA #11'
+  type: vless
+  server: 91.107.188.129
+  port: 2083
+  uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: site.check-looks.space
+  ws-opts:
+    path: /
+- name: 'ARISTA #12'
   type: vless
   server: 216.24.57.225
   port: 2083
@@ -207,23 +216,6 @@ proxies:
     path: /wss
     headers:
       Host: pol.netvia.ir
-- name: 'ARISTA #12'
-  type: vless
-  server: 209.94.90.201
-  port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  - h3
-  client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
-  ws-opts:
-    path: /
 - name: 'ARISTA #13'
   type: vless
   server: 209.94.90.47
@@ -239,17 +231,18 @@ proxies:
     path: /
 - name: 'ARISTA #14'
   type: vless
-  server: 209.94.90.47
+  server: 216.24.57.225
   port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
+  uuid: 3bcbd7ef-e05b-4745-a1de-5ecf98dd2fb6
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
+  servername: pol.netvia.ir
   ws-opts:
-    path: /
+    path: /wss
+    headers:
+      Host: pol.netvia.ir
 - name: 'ARISTA #15'
   type: vless
   server: 216.24.57.225
@@ -266,21 +259,88 @@ proxies:
       Host: pol.netvia.ir
 - name: 'ARISTA #16'
   type: vless
-  server: 209.94.90.201
+  server: 216.24.57.225
+  port: 2083
+  uuid: 3bcbd7ef-e05b-4745-a1de-5ecf98dd2fb6
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: pol.netvia.ir
+  ws-opts:
+    path: /wss
+    headers:
+      Host: pol.netvia.ir
+- name: 'ARISTA #17'
+  type: vless
+  server: 46.101.253.244
+  port: 2083
+  uuid: bba95b1f-f48c-454b-897b-a6c6bc307df1
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: edge.yzkvm.top
+  ws-opts:
+    path: /
+    headers:
+      Host: edge.yzkvm.top
+- name: 'ARISTA #18'
+  type: vless
+  server: 91.107.188.129
+  port: 2083
+  uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: site.check-looks.space
+  ws-opts:
+    path: /
+- name: 'ARISTA #19'
+  type: vless
+  server: 216.24.57.225
+  port: 2083
+  uuid: 3bcbd7ef-e05b-4745-a1de-5ecf98dd2fb6
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: pol.netvia.ir
+  ws-opts:
+    path: /wss
+    headers:
+      Host: pol.netvia.ir
+- name: 'ARISTA #20'
+  type: vless
+  server: 209.94.90.47
   port: 2083
   uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  - h3
   client-fingerprint: chrome
   servername: vipfree.dr-ping.ir
   ws-opts:
     path: /
+- name: 'ARISTA #21'
+  type: ss
+  server: 51.38.71.51
+  port: 2083
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #22'
+  type: ss
+  server: 51.38.71.51
+  port: 2083
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
+  udp: true
+  tcp-fast-open: true
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -306,6 +366,12 @@ proxy-groups:
   - 'ARISTA #14'
   - 'ARISTA #15'
   - 'ARISTA #16'
+  - 'ARISTA #17'
+  - 'ARISTA #18'
+  - 'ARISTA #19'
+  - 'ARISTA #20'
+  - 'ARISTA #21'
+  - 'ARISTA #22'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
