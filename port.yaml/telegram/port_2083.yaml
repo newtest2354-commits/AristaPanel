@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2083
-# Updated: 2026-10-28 20:16:23
-# Count: 27
+# Updated: 2026-10-29 00:49:38
+# Count: 20
 
 mixed-port: 7890
 allow-lan: false
@@ -50,43 +50,46 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 209.94.90.47
+  server: 216.24.57.225
   port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
+  uuid: 3bcbd7ef-e05b-4745-a1de-5ecf98dd2fb6
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
+  servername: pol.netvia.ir
   ws-opts:
-    path: /
+    path: /wss
+    headers:
+      Host: pol.netvia.ir
 - name: 'ARISTA #2'
   type: vless
-  server: 209.206.51.236
+  server: req.apptrendv.com
   port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
-  network: ws
+  uuid: 7cc18adc-1ef0-42c9-8e7b-722d7622c7dd
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
   client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
-  ws-opts:
-    path: /
+  servername: email.apptrendv.com
 - name: 'ARISTA #3'
   type: vless
-  server: 209.94.90.201
+  server: 216.24.57.225
   port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
+  uuid: 3bcbd7ef-e05b-4745-a1de-5ecf98dd2fb6
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
+  servername: pol.netvia.ir
   ws-opts:
-    path: /
+    path: /wss
+    headers:
+      Host: pol.netvia.ir
 - name: 'ARISTA #4'
   type: vless
   server: req.apptrendv.com
@@ -103,6 +106,19 @@ proxies:
   servername: email.apptrendv.com
 - name: 'ARISTA #5'
   type: vless
+  server: 209.94.90.201
+  port: 2083
+  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: vipfree.dr-ping.ir
+  ws-opts:
+    path: /
+- name: 'ARISTA #6'
+  type: vless
   server: 216.24.57.225
   port: 2083
   uuid: 3bcbd7ef-e05b-4745-a1de-5ecf98dd2fb6
@@ -115,45 +131,34 @@ proxies:
     path: /wss
     headers:
       Host: pol.netvia.ir
-- name: 'ARISTA #6'
-  type: vless
-  server: 209.94.90.47
-  port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
-  ws-opts:
-    path: /
 - name: 'ARISTA #7'
   type: vless
-  server: 209.206.51.236
+  server: req.apptrendv.com
   port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
-  network: ws
+  uuid: 7cc18adc-1ef0-42c9-8e7b-722d7622c7dd
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
   client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
-  ws-opts:
-    path: /
+  servername: email.apptrendv.com
 - name: 'ARISTA #8'
   type: vless
-  server: 209.94.90.201
+  server: 216.24.57.225
   port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
+  uuid: 3bcbd7ef-e05b-4745-a1de-5ecf98dd2fb6
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
+  servername: pol.netvia.ir
   ws-opts:
-    path: /
+    path: /wss
+    headers:
+      Host: pol.netvia.ir
 - name: 'ARISTA #9'
   type: vless
   server: req.apptrendv.com
@@ -170,21 +175,7 @@ proxies:
   servername: email.apptrendv.com
 - name: 'ARISTA #10'
   type: vless
-  server: 216.24.57.225
-  port: 2083
-  uuid: 3bcbd7ef-e05b-4745-a1de-5ecf98dd2fb6
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: pol.netvia.ir
-  ws-opts:
-    path: /wss
-    headers:
-      Host: pol.netvia.ir
-- name: 'ARISTA #11'
-  type: vless
-  server: 209.94.90.47
+  server: 209.94.90.201
   port: 2083
   uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
   network: ws
@@ -195,6 +186,16 @@ proxies:
   servername: vipfree.dr-ping.ir
   ws-opts:
     path: /
+- name: 'ARISTA #11'
+  type: vless
+  server: fast3.mo-chephosting.ir
+  port: 2083
+  uuid: 9ad8b73b-4aa4-43be-87b5-166ced009cea
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: sslcert.okamii1.ir
 - name: 'ARISTA #12'
   type: vless
   server: 209.94.90.47
@@ -210,31 +211,19 @@ proxies:
     path: /
 - name: 'ARISTA #13'
   type: vless
-  server: 209.206.51.236
+  server: 216.24.57.225
   port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
+  uuid: 3bcbd7ef-e05b-4745-a1de-5ecf98dd2fb6
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
+  servername: pol.netvia.ir
   ws-opts:
-    path: /
+    path: /wss
+    headers:
+      Host: pol.netvia.ir
 - name: 'ARISTA #14'
-  type: vless
-  server: 209.94.90.201
-  port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
-  ws-opts:
-    path: /
-- name: 'ARISTA #15'
   type: vless
   server: req.apptrendv.com
   port: 2083
@@ -248,7 +237,7 @@ proxies:
   - http/1.1
   client-fingerprint: chrome
   servername: email.apptrendv.com
-- name: 'ARISTA #16'
+- name: 'ARISTA #15'
   type: vless
   server: 216.24.57.225
   port: 2083
@@ -262,32 +251,48 @@ proxies:
     path: /wss
     headers:
       Host: pol.netvia.ir
+- name: 'ARISTA #16'
+  type: vless
+  server: req.apptrendv.com
+  port: 2083
+  uuid: 7cc18adc-1ef0-42c9-8e7b-722d7622c7dd
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: email.apptrendv.com
 - name: 'ARISTA #17'
   type: vless
-  server: 209.94.90.47
+  server: 216.24.57.225
   port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
+  uuid: 3bcbd7ef-e05b-4745-a1de-5ecf98dd2fb6
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
+  servername: pol.netvia.ir
   ws-opts:
-    path: /
+    path: /wss
+    headers:
+      Host: pol.netvia.ir
 - name: 'ARISTA #18'
   type: vless
-  server: 209.206.51.236
+  server: req.apptrendv.com
   port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
-  network: ws
+  uuid: 7cc18adc-1ef0-42c9-8e7b-722d7622c7dd
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
   client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
-  ws-opts:
-    path: /
+  servername: email.apptrendv.com
 - name: 'ARISTA #19'
   type: vless
   server: 209.94.90.201
@@ -303,110 +308,14 @@ proxies:
     path: /
 - name: 'ARISTA #20'
   type: vless
-  server: 209.94.90.47
+  server: fast3.mo-chephosting.ir
   port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
-  network: ws
+  uuid: 9ad8b73b-4aa4-43be-87b5-166ced009cea
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
-  ws-opts:
-    path: /
-- name: 'ARISTA #21'
-  type: vless
-  server: 209.206.51.236
-  port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
-  ws-opts:
-    path: /
-- name: 'ARISTA #22'
-  type: vless
-  server: 209.94.90.201
-  port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
-  ws-opts:
-    path: /
-- name: 'ARISTA #23'
-  type: vless
-  server: 209.94.90.47
-  port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
-  ws-opts:
-    path: /
-- name: 'ARISTA #24'
-  type: vless
-  server: 209.206.51.236
-  port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
-  ws-opts:
-    path: /
-- name: 'ARISTA #25'
-  type: vless
-  server: 209.94.90.201
-  port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
-  ws-opts:
-    path: /
-- name: 'ARISTA #26'
-  type: vless
-  server: req.apptrendv.com
-  port: 2083
-  uuid: 7cc18adc-1ef0-42c9-8e7b-722d7622c7dd
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: email.apptrendv.com
-- name: 'ARISTA #27'
-  type: vless
-  server: 216.24.57.225
-  port: 2083
-  uuid: 3bcbd7ef-e05b-4745-a1de-5ecf98dd2fb6
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: pol.netvia.ir
-  ws-opts:
-    path: /wss
-    headers:
-      Host: pol.netvia.ir
+  servername: sslcert.okamii1.ir
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -436,13 +345,6 @@ proxy-groups:
   - 'ARISTA #18'
   - 'ARISTA #19'
   - 'ARISTA #20'
-  - 'ARISTA #21'
-  - 'ARISTA #22'
-  - 'ARISTA #23'
-  - 'ARISTA #24'
-  - 'ARISTA #25'
-  - 'ARISTA #26'
-  - 'ARISTA #27'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
