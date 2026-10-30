@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2083
-# Updated: 2026-10-30 09:54:41
-# Count: 23
+# Updated: 2026-10-30 18:00:55
+# Count: 13
 
 mixed-port: 7890
 allow-lan: false
@@ -63,18 +63,17 @@ proxies:
     path: /
 - name: 'ARISTA #2'
   type: vless
-  server: 216.24.57.225
+  server: 91.107.247.173
   port: 2083
-  uuid: 3bcbd7ef-e05b-4745-a1de-5ecf98dd2fb6
+  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: pol.netvia.ir
+  client-fingerprint: firefox
+  servername: sino.bestsellers1.site
   ws-opts:
-    path: /wss
-    headers:
-      Host: pol.netvia.ir
+    path: /
 - name: 'ARISTA #3'
   type: vless
   server: 91.107.247.173
@@ -84,11 +83,14 @@ proxies:
   tls: true
   udp: true
   skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
   servername: sino.bestsellers1.site
   ws-opts:
     path: /
-    headers:
-      Host: sino.bestsellers1.site
 - name: 'ARISTA #4'
   type: vless
   server: 91.107.247.173
@@ -104,6 +106,36 @@ proxies:
     path: /
 - name: 'ARISTA #5'
   type: vless
+  server: 91.107.247.173
+  port: 2083
+  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: sino.bestsellers1.site
+  ws-opts:
+    path: /
+- name: 'ARISTA #6'
+  type: vless
+  server: 91.107.247.173
+  port: 2083
+  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: sino.bestsellers1.site
+  ws-opts:
+    path: /
+- name: 'ARISTA #7'
+  type: vless
   server: 216.24.57.225
   port: 2083
   uuid: 3bcbd7ef-e05b-4745-a1de-5ecf98dd2fb6
@@ -116,21 +148,7 @@ proxies:
     path: /wss
     headers:
       Host: pol.netvia.ir
-- name: 'ARISTA #6'
-  type: vless
-  server: 91.107.247.173
-  port: 2083
-  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: sino.bestsellers1.site
-  ws-opts:
-    path: /
-    headers:
-      Host: sino.bestsellers1.site
-- name: 'ARISTA #7'
+- name: 'ARISTA #8'
   type: vless
   server: 91.107.247.173
   port: 2083
@@ -143,20 +161,6 @@ proxies:
   servername: sino.bestsellers1.site
   ws-opts:
     path: /
-- name: 'ARISTA #8'
-  type: vless
-  server: 216.24.57.225
-  port: 2083
-  uuid: 3bcbd7ef-e05b-4745-a1de-5ecf98dd2fb6
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: pol.netvia.ir
-  ws-opts:
-    path: /wss
-    headers:
-      Host: pol.netvia.ir
 - name: 'ARISTA #9'
   type: vless
   server: 91.107.247.173
@@ -172,18 +176,17 @@ proxies:
     path: /
 - name: 'ARISTA #10'
   type: vless
-  server: 216.24.57.225
+  server: 91.107.247.173
   port: 2083
-  uuid: 3bcbd7ef-e05b-4745-a1de-5ecf98dd2fb6
+  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: pol.netvia.ir
+  client-fingerprint: firefox
+  servername: sino.bestsellers1.site
   ws-opts:
-    path: /wss
-    headers:
-      Host: pol.netvia.ir
+    path: /
 - name: 'ARISTA #11'
   type: vless
   server: 91.107.247.173
@@ -193,150 +196,23 @@ proxies:
   tls: true
   udp: true
   skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
   servername: sino.bestsellers1.site
   ws-opts:
     path: /
-    headers:
-      Host: sino.bestsellers1.site
 - name: 'ARISTA #12'
-  type: vless
-  server: 91.107.247.173
+  type: ss
+  server: 51.38.71.51
   port: 2083
-  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
-  network: ws
-  tls: true
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
   udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: sino.bestsellers1.site
-  ws-opts:
-    path: /
+  tcp-fast-open: true
 - name: 'ARISTA #13'
-  type: vless
-  server: 91.107.247.173
-  port: 2083
-  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: sino.bestsellers1.site
-  ws-opts:
-    path: /
-- name: 'ARISTA #14'
-  type: vless
-  server: 216.24.57.225
-  port: 2083
-  uuid: 3bcbd7ef-e05b-4745-a1de-5ecf98dd2fb6
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: pol.netvia.ir
-  ws-opts:
-    path: /wss
-    headers:
-      Host: pol.netvia.ir
-- name: 'ARISTA #15'
-  type: vless
-  server: 91.107.247.173
-  port: 2083
-  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: sino.bestsellers1.site
-  ws-opts:
-    path: /
-    headers:
-      Host: sino.bestsellers1.site
-- name: 'ARISTA #16'
-  type: vless
-  server: 91.107.247.173
-  port: 2083
-  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: sino.bestsellers1.site
-  ws-opts:
-    path: /
-- name: 'ARISTA #17'
-  type: vless
-  server: 216.24.57.225
-  port: 2083
-  uuid: 3bcbd7ef-e05b-4745-a1de-5ecf98dd2fb6
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: pol.netvia.ir
-  ws-opts:
-    path: /wss
-    headers:
-      Host: pol.netvia.ir
-- name: 'ARISTA #18'
-  type: vless
-  server: 91.107.247.173
-  port: 2083
-  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: sino.bestsellers1.site
-  ws-opts:
-    path: /
-- name: 'ARISTA #19'
-  type: vless
-  server: 216.24.57.225
-  port: 2083
-  uuid: 3bcbd7ef-e05b-4745-a1de-5ecf98dd2fb6
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: pol.netvia.ir
-  ws-opts:
-    path: /wss
-    headers:
-      Host: pol.netvia.ir
-- name: 'ARISTA #20'
-  type: vless
-  server: 91.107.247.173
-  port: 2083
-  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: sino.bestsellers1.site
-  ws-opts:
-    path: /
-    headers:
-      Host: sino.bestsellers1.site
-- name: 'ARISTA #21'
-  type: ss
-  server: 51.38.71.51
-  port: 2083
-  cipher: 2022-blake3-aes-256-gcm
-  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #22'
-  type: ss
-  server: 51.38.71.51
-  port: 2083
-  cipher: 2022-blake3-aes-256-gcm
-  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
-  udp: true
-  tcp-fast-open: true
-- name: 'ARISTA #23'
   type: ss
   server: 51.38.71.51
   port: 2083
@@ -366,16 +242,6 @@ proxy-groups:
   - 'ARISTA #11'
   - 'ARISTA #12'
   - 'ARISTA #13'
-  - 'ARISTA #14'
-  - 'ARISTA #15'
-  - 'ARISTA #16'
-  - 'ARISTA #17'
-  - 'ARISTA #18'
-  - 'ARISTA #19'
-  - 'ARISTA #20'
-  - 'ARISTA #21'
-  - 'ARISTA #22'
-  - 'ARISTA #23'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
