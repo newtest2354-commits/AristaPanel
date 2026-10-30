@@ -1,6 +1,6 @@
 # GITHUB - Port 2083
-# Updated: 2026-10-30 18:00:58
-# Count: 28
+# Updated: 2026-10-30 22:16:45
+# Count: 27
 
 mixed-port: 7890
 allow-lan: false
@@ -345,20 +345,21 @@ proxies:
     short-id: "0ad9fd399087e404"
 - name: 'T.ME: @aristapanel #20'
   type: vless
-  server: de.poncheki.xyz
+  server: sino.bestsellers1.site
   port: 2083
-  uuid: 13bf9403-22d1-4221-939b-f6606c423139
-  network: grpc
+  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: vk.com
-  grpc-opts:
-    grpc-service-name: tjwvrf1q9d0n
-  reality-opts:
-    public-key: NWNI1krUm5rhcIRnP3KVvatf9hNKu_H-93bPUdw4cxw
-    short-id: "0ad9fd399087e404"
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: sino.bestsellers1.site
+  ws-opts:
+    path: /
 - name: 'T.ME: @aristapanel #21'
   type: vless
   server: sino.bestsellers1.site
@@ -378,23 +379,6 @@ proxies:
     path: /
 - name: 'T.ME: @aristapanel #22'
   type: vless
-  server: sino.bestsellers1.site
-  port: 2083
-  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: sino.bestsellers1.site
-  ws-opts:
-    path: /
-- name: 'T.ME: @aristapanel #23'
-  type: vless
   server: 91.107.188.129
   port: 2083
   uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
@@ -405,7 +389,7 @@ proxies:
   servername: site.check-looks.space
   ws-opts:
     path: /
-- name: 'T.ME: @aristapanel #24'
+- name: 'T.ME: @aristapanel #23'
   type: vless
   server: 91.107.247.173
   port: 2083
@@ -419,6 +403,26 @@ proxies:
     path: /
     headers:
       Host: sino.bestsellers1.site
+- name: 'T.ME: @aristapanel #24'
+  type: trojan
+  server: 216.24.57.225
+  port: 2083
+  password: 8yup05o4lz0csoxb
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: fin.netvia.ir
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  ws-opts:
+    path: /YaujaGsyr
+    headers:
+      Host: fin.netvia.ir
 - name: 'T.ME: @aristapanel #25'
   type: trojan
   server: 216.24.57.225
@@ -479,26 +483,6 @@ proxies:
     path: /YaujaGsyr
     headers:
       Host: fin.netvia.ir
-- name: 'T.ME: @aristapanel #28'
-  type: trojan
-  server: 216.24.57.225
-  port: 2083
-  password: 8yup05o4lz0csoxb
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: fin.netvia.ir
-  client-fingerprint: chrome
-  alpn:
-  - h2
-  - http/1.1
-  - h3
-  ws-opts:
-    path: /YaujaGsyr
-    headers:
-      Host: fin.netvia.ir
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -535,7 +519,6 @@ proxy-groups:
   - 'T.ME: @aristapanel #25'
   - 'T.ME: @aristapanel #26'
   - 'T.ME: @aristapanel #27'
-  - 'T.ME: @aristapanel #28'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
