@@ -1,6 +1,6 @@
 # COMBINED - Port 9443
-# Updated: 2026-10-31 05:14:24
-# Count: 1
+# Updated: 2026-10-31 12:08:18
+# Count: 2
 
 mixed-port: 7890
 allow-lan: false
@@ -50,6 +50,22 @@ rules:
 proxies:
 - name: 'T.ME: @aristapanel #1'
   type: vless
+  server: 87.242.95.164
+  port: 9443
+  uuid: ad916ac3-28bb-40b2-9996-7a726d1f4deb
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: qq
+  servername: passport.yandex.ru
+  grpc-opts:
+    grpc-service-name: grpc
+  reality-opts:
+    public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+    short-id: "8375b32501373f41"
+- name: 'T.ME: @aristapanel #2'
+  type: vless
   server: 95.181.173.68
   port: 9443
   uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
@@ -72,6 +88,7 @@ proxy-groups:
   timeout: 3000
   proxies: &id001
   - 'T.ME: @aristapanel #1'
+  - 'T.ME: @aristapanel #2'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
