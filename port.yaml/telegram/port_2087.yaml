@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2087
-# Updated: 2026-10-30 22:16:40
-# Count: 7
+# Updated: 2026-10-31 05:14:29
+# Count: 9
 
 mixed-port: 7890
 allow-lan: false
@@ -80,6 +80,16 @@ proxies:
   servername: 2.26.6.1
 - name: 'ARISTA #4'
   type: vless
+  server: 2.26.6.1
+  port: 2087
+  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: 2.26.6.1
+- name: 'ARISTA #5'
+  type: vless
   server: 104.21.67.187
   port: 2087
   uuid: d8506e85-4631-4513-9651-5914b8b33e5d
@@ -92,16 +102,6 @@ proxies:
   - http/1.1
   client-fingerprint: firefox
   servername: unitedkingdom.iranfastspeed.net
-- name: 'ARISTA #5'
-  type: vless
-  server: 2.26.6.1
-  port: 2087
-  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: 2.26.6.1
 - name: 'ARISTA #6'
   type: vless
   server: 2.26.6.1
@@ -114,18 +114,34 @@ proxies:
   servername: 2.26.6.1
 - name: 'ARISTA #7'
   type: vless
-  server: 104.21.67.187
+  server: 2.26.6.1
   port: 2087
-  uuid: d8506e85-4631-4513-9651-5914b8b33e5d
-  network: httpupgrade
+  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: firefox
-  servername: unitedkingdom.iranfastspeed.net
+  servername: 2.26.6.1
+- name: 'ARISTA #8'
+  type: vless
+  server: 2.26.6.1
+  port: 2087
+  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: 2.26.6.1
+- name: 'ARISTA #9'
+  type: vless
+  server: 2.26.6.1
+  port: 2087
+  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: 2.26.6.1
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -142,6 +158,8 @@ proxy-groups:
   - 'ARISTA #5'
   - 'ARISTA #6'
   - 'ARISTA #7'
+  - 'ARISTA #8'
+  - 'ARISTA #9'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
