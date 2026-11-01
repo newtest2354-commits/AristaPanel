@@ -1,6 +1,6 @@
 # COMBINED - Port 2087
-# Updated: 2026-11-01 13:09:12
-# Count: 18
+# Updated: 2026-11-01 19:33:37
+# Count: 22
 
 mixed-port: 7890
 allow-lan: false
@@ -50,18 +50,18 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 206.1.103.253
+  server: 104.21.67.187
   port: 2087
-  uuid: 5571badc-9a61-4899-80f2-559242aba079
-  network: tcp
+  uuid: d8506e85-4631-4513-9651-5914b8b33e5d
+  network: httpupgrade
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.google.com
-  reality-opts:
-    public-key: _WRPtP31nSHz3D0IxG4jLU7u5VYelFysm6Sg5RxAPBg
-    short-id: "adf21dd71e88"
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: firefox
+  servername: unitedkingdom.iranfastspeed.net
 - name: 'ARISTA #2'
   type: vless
   server: 104.21.67.187
@@ -76,7 +76,50 @@ proxies:
   - http/1.1
   client-fingerprint: firefox
   servername: unitedkingdom.iranfastspeed.net
-- name: 'T.ME: @aristapanel #3'
+- name: 'ARISTA #3'
+  type: vless
+  server: 104.21.67.187
+  port: 2087
+  uuid: d8506e85-4631-4513-9651-5914b8b33e5d
+  network: httpupgrade
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: firefox
+  servername: unitedkingdom.iranfastspeed.net
+- name: 'ARISTA #4'
+  type: vless
+  server: 104.21.67.187
+  port: 2087
+  uuid: d8506e85-4631-4513-9651-5914b8b33e5d
+  network: httpupgrade
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: firefox
+  servername: unitedkingdom.iranfastspeed.net
+- name: 'ARISTA #5'
+  type: vless
+  server: saas.sin.fan
+  port: 2087
+  uuid: 5d7b401c-78fa-4254-872e-6d42bf7e75ec
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: vp2.1145678.xyz
+  ws-opts:
+    path: /out
+    headers:
+      Host: vp2.1145678.xyz
+- name: 'T.ME: @aristapanel #6'
   type: vless
   server: 2.26.6.1
   port: 2087
@@ -86,7 +129,7 @@ proxies:
   udp: true
   skip-cert-verify: true
   servername: 2.26.6.1
-- name: 'T.ME: @aristapanel #4'
+- name: 'T.ME: @aristapanel #7'
   type: vless
   server: 2.26.6.1
   port: 2087
@@ -96,7 +139,7 @@ proxies:
   udp: true
   skip-cert-verify: true
   servername: 2.26.6.1
-- name: 'T.ME: @aristapanel #5'
+- name: 'T.ME: @aristapanel #8'
   type: vless
   server: 104.18.38.78
   port: 2087
@@ -110,46 +153,6 @@ proxies:
     path: /fdip
     headers:
       Host: learn00.evany.de5.net
-- name: 'T.ME: @aristapanel #6'
-  type: vless
-  server: fr.vfzq.ir
-  port: 2087
-  uuid: 55d7adf5-4121-43de-9331-7550413e257a
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'T.ME: @aristapanel #7'
-  type: vless
-  server: 31.76.91.138
-  port: 2087
-  uuid: 309b0ce3-09a8-4883-bfe4-bd56e215be44
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: ads.x5.ru
-  grpc-opts:
-    grpc-service-name: grpc
-  reality-opts:
-    public-key: JfuItzJ81sJehx1PbxyliWSJvuBMKoa9ahNgPO3R7R4
-    short-id: "c226283c4de5b1ad"
-- name: 'T.ME: @aristapanel #8'
-  type: vless
-  server: 103.116.7.100
-  port: 2087
-  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: proxy-1cu.pages.dev
-  ws-opts:
-    path: /
-    headers:
-      Host: proxy-1cu.pages.dev
 - name: 'T.ME: @aristapanel #9'
   type: vless
   server: 188.114.97.0
@@ -165,6 +168,15 @@ proxies:
   servername: smart-hetzner-ed5b25.airpressoini31.com
 - name: 'T.ME: @aristapanel #10'
   type: vless
+  server: fr.vfzq.ir
+  port: 2087
+  uuid: 55d7adf5-4121-43de-9331-7550413e257a
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'T.ME: @aristapanel #11'
+  type: vless
   server: snapp.ir
   port: 2087
   uuid: 2402a18b-77f3-4346-db46-4284cb037bb3
@@ -178,7 +190,7 @@ proxies:
     path: /BetForward
     headers:
       Host: cdn.xelira.ir
-- name: 'T.ME: @aristapanel #11'
+- name: 'T.ME: @aristapanel #12'
   type: vless
   server: s4.zynetrax.ir
   port: 2087
@@ -189,7 +201,7 @@ proxies:
   skip-cert-verify: true
   client-fingerprint: chrome
   servername: s4.zynetrax.ir
-- name: 'T.ME: @aristapanel #12'
+- name: 'T.ME: @aristapanel #13'
   type: vless
   server: s5.zynetrax.ir
   port: 2087
@@ -200,7 +212,7 @@ proxies:
   skip-cert-verify: true
   client-fingerprint: chrome
   servername: s5.zynetrax.ir
-- name: 'T.ME: @aristapanel #13'
+- name: 'T.ME: @aristapanel #14'
   type: vless
   server: one-for-all.levikogjgfdd.ir
   port: 2087
@@ -215,7 +227,7 @@ proxies:
     path: /
     headers:
       Host: levikoconfig.levikogjgfdd.ir
-- name: 'T.ME: @aristapanel #14'
+- name: 'T.ME: @aristapanel #15'
   type: vless
   server: s2.yorqino.ir
   port: 2087
@@ -226,20 +238,6 @@ proxies:
   skip-cert-verify: true
   client-fingerprint: chrome
   servername: s2.yorqino.ir
-- name: 'ARISTA #15'
-  type: vless
-  server: 206.1.103.253
-  port: 2087
-  uuid: 5571badc-9a61-4899-80f2-559242aba079
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.google.com
-  reality-opts:
-    public-key: _WRPtP31nSHz3D0IxG4jLU7u5VYelFysm6Sg5RxAPBg
-    short-id: "adf21dd71e88"
 - name: 'ARISTA #16'
   type: vless
   server: 104.21.67.187
@@ -256,18 +254,19 @@ proxies:
   servername: unitedkingdom.iranfastspeed.net
 - name: 'ARISTA #17'
   type: vless
-  server: 206.1.103.253
+  server: saas.sin.fan
   port: 2087
-  uuid: 5571badc-9a61-4899-80f2-559242aba079
-  network: tcp
+  uuid: 5d7b401c-78fa-4254-872e-6d42bf7e75ec
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: www.google.com
-  reality-opts:
-    public-key: _WRPtP31nSHz3D0IxG4jLU7u5VYelFysm6Sg5RxAPBg
-    short-id: "adf21dd71e88"
+  servername: vp2.1145678.xyz
+  ws-opts:
+    path: /out
+    headers:
+      Host: vp2.1145678.xyz
 - name: 'ARISTA #18'
   type: vless
   server: 104.21.67.187
@@ -282,6 +281,63 @@ proxies:
   - http/1.1
   client-fingerprint: firefox
   servername: unitedkingdom.iranfastspeed.net
+- name: 'ARISTA #19'
+  type: vless
+  server: 104.21.67.187
+  port: 2087
+  uuid: d8506e85-4631-4513-9651-5914b8b33e5d
+  network: httpupgrade
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: firefox
+  servername: unitedkingdom.iranfastspeed.net
+- name: 'ARISTA #20'
+  type: vless
+  server: 104.21.67.187
+  port: 2087
+  uuid: d8506e85-4631-4513-9651-5914b8b33e5d
+  network: httpupgrade
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: firefox
+  servername: unitedkingdom.iranfastspeed.net
+- name: 'ARISTA #21'
+  type: vless
+  server: 104.21.67.187
+  port: 2087
+  uuid: d8506e85-4631-4513-9651-5914b8b33e5d
+  network: httpupgrade
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: firefox
+  servername: unitedkingdom.iranfastspeed.net
+- name: 'ARISTA #22'
+  type: vless
+  server: saas.sin.fan
+  port: 2087
+  uuid: 5d7b401c-78fa-4254-872e-6d42bf7e75ec
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: vp2.1145678.xyz
+  ws-opts:
+    path: /out
+    headers:
+      Host: vp2.1145678.xyz
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -293,9 +349,9 @@ proxy-groups:
   proxies: &id001
   - 'ARISTA #1'
   - 'ARISTA #2'
-  - 'T.ME: @aristapanel #3'
-  - 'T.ME: @aristapanel #4'
-  - 'T.ME: @aristapanel #5'
+  - 'ARISTA #3'
+  - 'ARISTA #4'
+  - 'ARISTA #5'
   - 'T.ME: @aristapanel #6'
   - 'T.ME: @aristapanel #7'
   - 'T.ME: @aristapanel #8'
@@ -305,10 +361,14 @@ proxy-groups:
   - 'T.ME: @aristapanel #12'
   - 'T.ME: @aristapanel #13'
   - 'T.ME: @aristapanel #14'
-  - 'ARISTA #15'
+  - 'T.ME: @aristapanel #15'
   - 'ARISTA #16'
   - 'ARISTA #17'
   - 'ARISTA #18'
+  - 'ARISTA #19'
+  - 'ARISTA #20'
+  - 'ARISTA #21'
+  - 'ARISTA #22'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2052
-# Updated: 2026-11-01 13:09:17
-# Count: 9
+# Updated: 2026-11-01 19:33:46
+# Count: 11
 
 mixed-port: 7890
 allow-lan: false
@@ -86,20 +86,16 @@ proxies:
   skip-cert-verify: true
 - name: 'ARISTA #5'
   type: vless
-  server: 162.159.38.127
+  server: 178.83.45.226
   port: 2052
-  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
-  network: ws
+  uuid: 1a8ecc41-6e62-431b-8eca-87c2fa4dc286
+  network: tcp
   tls: false
   udp: true
   skip-cert-verify: true
-  ws-opts:
-    path: /?ed=2560security=tls
-    headers:
-      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
 - name: 'ARISTA #6'
   type: vless
-  server: 178.83.45.226
+  server: 155.117.5.208
   port: 2052
   uuid: 1a8ecc41-6e62-431b-8eca-87c2fa4dc286
   network: tcp
@@ -126,17 +122,31 @@ proxies:
   skip-cert-verify: true
 - name: 'ARISTA #9'
   type: vless
-  server: 162.159.38.127
+  server: 178.83.45.226
   port: 2052
-  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
-  network: ws
+  uuid: 1a8ecc41-6e62-431b-8eca-87c2fa4dc286
+  network: tcp
   tls: false
   udp: true
   skip-cert-verify: true
-  ws-opts:
-    path: /?ed=2560security=tls
-    headers:
-      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
+- name: 'ARISTA #10'
+  type: vless
+  server: 178.83.45.226
+  port: 2052
+  uuid: 1a8ecc41-6e62-431b-8eca-87c2fa4dc286
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #11'
+  type: vless
+  server: 155.117.5.208
+  port: 2052
+  uuid: 1a8ecc41-6e62-431b-8eca-87c2fa4dc286
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -155,6 +165,8 @@ proxy-groups:
   - 'ARISTA #7'
   - 'ARISTA #8'
   - 'ARISTA #9'
+  - 'ARISTA #10'
+  - 'ARISTA #11'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
