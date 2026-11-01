@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2087
-# Updated: 2026-11-01 05:54:03
-# Count: 3
+# Updated: 2026-11-01 13:09:17
+# Count: 4
 
 mixed-port: 7890
 allow-lan: false
@@ -50,27 +50,47 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: bs.cexora.ir
+  server: 206.1.103.253
   port: 2087
-  uuid: 17a6d68f-76ef-4d98-5f5b-0cce58fd96b1
-  network: xhttp
+  uuid: 5571badc-9a61-4899-80f2-559242aba079
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: bs.cexora.ir
+  servername: www.google.com
+  reality-opts:
+    public-key: _WRPtP31nSHz3D0IxG4jLU7u5VYelFysm6Sg5RxAPBg
+    short-id: "adf21dd71e88"
 - name: 'ARISTA #2'
   type: vless
-  server: bs.cexora.ir
+  server: 104.21.67.187
   port: 2087
-  uuid: 17a6d68f-76ef-4d98-5f5b-0cce58fd96b1
-  network: xhttp
+  uuid: d8506e85-4631-4513-9651-5914b8b33e5d
+  network: httpupgrade
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: firefox
+  servername: unitedkingdom.iranfastspeed.net
+- name: 'ARISTA #3'
+  type: vless
+  server: 206.1.103.253
+  port: 2087
+  uuid: 5571badc-9a61-4899-80f2-559242aba079
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: bs.cexora.ir
-- name: 'ARISTA #3'
+  servername: www.google.com
+  reality-opts:
+    public-key: _WRPtP31nSHz3D0IxG4jLU7u5VYelFysm6Sg5RxAPBg
+    short-id: "adf21dd71e88"
+- name: 'ARISTA #4'
   type: vless
   server: 104.21.67.187
   port: 2087
@@ -96,6 +116,7 @@ proxy-groups:
   - 'ARISTA #1'
   - 'ARISTA #2'
   - 'ARISTA #3'
+  - 'ARISTA #4'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
