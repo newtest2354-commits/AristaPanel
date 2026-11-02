@@ -1,6 +1,6 @@
 # COMBINED - Port 2083
-# Updated: 2026-11-01 19:33:37
-# Count: 40
+# Updated: 2026-11-02 00:36:42
+# Count: 60
 
 mixed-port: 7890
 allow-lan: false
@@ -48,9 +48,9 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'T.ME: @aristapanel #1'
+- name: 'ARISTA #1'
   type: vmess
-  server: 162.159.130.234
+  server: or.521166.xyz
   port: 2083
   uuid: ac251237-576f-40c8-a543-554960c958b1
   alterId: 0
@@ -60,11 +60,9 @@ proxies:
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: or3.sfacg.uk
+  servername: or.521166.xyz
   ws-opts:
     path: /or3
-    headers:
-      Host: or3.sfacg.uk
 - name: 'T.ME: @aristapanel #2'
   type: vmess
   server: 162.159.130.234
@@ -83,51 +81,81 @@ proxies:
     headers:
       Host: or3.sfacg.uk
 - name: 'ARISTA #3'
-  type: vless
-  server: 178.17.52.236
+  type: vmess
+  server: or.521166.xyz
   port: 2083
-  uuid: 6da2c981-8c77-4340-bda3-93399b7aea26
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: edge
-  servername: maps.blog-forme.ru
-  reality-opts:
-    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
-    short-id: "3258252d44113e23"
-- name: 'ARISTA #4'
-  type: vless
-  server: 91.107.247.173
-  port: 2083
-  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
+  uuid: ac251237-576f-40c8-a543-554960c958b1
+  alterId: 0
+  cipher: auto
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: sino.bestsellers1.site
+  tcp-fast-open: true
+  servername: or.521166.xyz
   ws-opts:
-    path: /
+    path: /or3
+- name: 'T.ME: @aristapanel #4'
+  type: vmess
+  server: 162.159.130.234
+  port: 2083
+  uuid: ac251237-576f-40c8-a543-554960c958b1
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: or3.sfacg.uk
+  ws-opts:
+    path: /or3
     headers:
-      Host: sino.bestsellers1.site
+      Host: or3.sfacg.uk
 - name: 'ARISTA #5'
-  type: vless
-  server: 141.193.213.21
+  type: vmess
+  server: or.521166.xyz
   port: 2083
-  uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
+  uuid: ac251237-576f-40c8-a543-554960c958b1
+  alterId: 0
+  cipher: auto
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: site.check-looks.space
+  tcp-fast-open: true
+  servername: or.521166.xyz
   ws-opts:
-    path: /
-    headers:
-      Host: site.check-looks.space
+    path: /or3
 - name: 'ARISTA #6'
   type: vless
-  server: news.zoom.us
+  server: 178.17.52.236
+  port: 2083
+  uuid: 6da2c981-8c77-4340-bda3-93399b7aea26
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: 178.17.52.236
+  reality-opts:
+    public-key: mbi4BZAuiq_L6pfhG2xxWmtos…
+- name: 'ARISTA #7'
+  type: vless
+  server: 154.218.15.250
+  port: 2083
+  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: proxy-1cu.pages.dev
+  ws-opts:
+    path: /
+    headers:
+      Host: proxy-1cu.pages.dev
+- name: 'ARISTA #8'
+  type: vless
+  server: 141.193.213.21
   port: 2083
   uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
   network: ws
@@ -139,38 +167,9 @@ proxies:
     path: /
     headers:
       Host: site.check-looks.space
-- name: 'ARISTA #7'
-  type: vless
-  server: 178.17.52.236
-  port: 2083
-  uuid: 6da2c981-8c77-4340-bda3-93399b7aea26
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: edge
-  servername: maps.blog-forme.ru
-  reality-opts:
-    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
-    short-id: "3258252d44113e23"
-- name: 'ARISTA #8'
-  type: vless
-  server: 91.107.247.173
-  port: 2083
-  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: sino.bestsellers1.site
-  ws-opts:
-    path: /
-    headers:
-      Host: sino.bestsellers1.site
 - name: 'ARISTA #9'
   type: vless
-  server: 141.193.213.21
+  server: news.zoom.us
   port: 2083
   uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
   network: ws
@@ -184,77 +183,60 @@ proxies:
       Host: site.check-looks.space
 - name: 'ARISTA #10'
   type: vless
-  server: news.zoom.us
+  server: 178.17.52.236
   port: 2083
-  uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
-  network: ws
+  uuid: 6da2c981-8c77-4340-bda3-93399b7aea26
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: site.check-looks.space
-  ws-opts:
-    path: /
-    headers:
-      Host: site.check-looks.space
+  client-fingerprint: edge
+  servername: maps.blog-forme.ru
+  reality-opts:
+    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
+    short-id: "3258252d44113e23"
 - name: 'ARISTA #11'
   type: vless
-  server: 178.17.52.236
+  server: 91.107.247.173
   port: 2083
-  uuid: 6da2c981-8c77-4340-bda3-93399b7aea26
-  network: xhttp
+  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: edge
-  servername: maps.blog-forme.ru
-  reality-opts:
-    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
-    short-id: "3258252d44113e23"
+  client-fingerprint: chrome
+  servername: sino.bestsellers1.site
+  ws-opts:
+    path: /
+    headers:
+      Host: sino.bestsellers1.site
 - name: 'ARISTA #12'
   type: vless
-  server: 91.107.247.173
-  port: 2083
-  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: sino.bestsellers1.site
-  ws-opts:
-    path: /
-    headers:
-      Host: sino.bestsellers1.site
-- name: 'ARISTA #13'
-  type: vless
   server: 178.17.52.236
   port: 2083
   uuid: 6da2c981-8c77-4340-bda3-93399b7aea26
-  network: xhttp
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: edge
-  servername: maps.blog-forme.ru
+  servername: 178.17.52.236
   reality-opts:
-    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
-    short-id: "3258252d44113e23"
-- name: 'ARISTA #14'
+    public-key: mbi4BZAuiq_L6pfhG2xxWmtos…
+- name: 'ARISTA #13'
   type: vless
-  server: 91.107.247.173
+  server: 154.218.15.250
   port: 2083
-  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
+  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: sino.bestsellers1.site
+  servername: proxy-1cu.pages.dev
   ws-opts:
     path: /
     headers:
-      Host: sino.bestsellers1.site
-- name: 'ARISTA #15'
+      Host: proxy-1cu.pages.dev
+- name: 'ARISTA #14'
   type: vless
   server: 141.193.213.21
   port: 2083
@@ -268,7 +250,7 @@ proxies:
     path: /
     headers:
       Host: site.check-looks.space
-- name: 'ARISTA #16'
+- name: 'ARISTA #15'
   type: vless
   server: news.zoom.us
   port: 2083
@@ -282,8 +264,132 @@ proxies:
     path: /
     headers:
       Host: site.check-looks.space
+- name: 'ARISTA #16'
+  type: vless
+  server: 178.17.52.236
+  port: 2083
+  uuid: 6da2c981-8c77-4340-bda3-93399b7aea26
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: edge
+  servername: maps.blog-forme.ru
+  reality-opts:
+    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
+    short-id: "3258252d44113e23"
 - name: 'ARISTA #17'
   type: vless
+  server: 91.107.247.173
+  port: 2083
+  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: sino.bestsellers1.site
+  ws-opts:
+    path: /
+    headers:
+      Host: sino.bestsellers1.site
+- name: 'ARISTA #18'
+  type: vless
+  server: 178.17.52.236
+  port: 2083
+  uuid: 6da2c981-8c77-4340-bda3-93399b7aea26
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: 178.17.52.236
+  reality-opts:
+    public-key: mbi4BZAuiq_L6pfhG2xxWmtos…
+- name: 'ARISTA #19'
+  type: vless
+  server: 178.17.52.236
+  port: 2083
+  uuid: 6da2c981-8c77-4340-bda3-93399b7aea26
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: 178.17.52.236
+  reality-opts:
+    public-key: mbi4BZAuiq_L6pfhG2xxWmtos…
+- name: 'ARISTA #20'
+  type: vless
+  server: 154.218.15.250
+  port: 2083
+  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: proxy-1cu.pages.dev
+  ws-opts:
+    path: /
+    headers:
+      Host: proxy-1cu.pages.dev
+- name: 'ARISTA #21'
+  type: vless
+  server: 141.193.213.21
+  port: 2083
+  uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: site.check-looks.space
+  ws-opts:
+    path: /
+    headers:
+      Host: site.check-looks.space
+- name: 'ARISTA #22'
+  type: vless
+  server: news.zoom.us
+  port: 2083
+  uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: site.check-looks.space
+  ws-opts:
+    path: /
+    headers:
+      Host: site.check-looks.space
+- name: 'ARISTA #23'
+  type: vless
+  server: 178.17.52.236
+  port: 2083
+  uuid: 6da2c981-8c77-4340-bda3-93399b7aea26
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: edge
+  servername: maps.blog-forme.ru
+  reality-opts:
+    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
+    short-id: "3258252d44113e23"
+- name: 'ARISTA #24'
+  type: vless
+  server: 91.107.247.173
+  port: 2083
+  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: sino.bestsellers1.site
+  ws-opts:
+    path: /
+    headers:
+      Host: sino.bestsellers1.site
+- name: 'ARISTA #25'
+  type: vless
   server: 185.186.78.170
   port: 2083
   uuid: 69158986-cfae-4567-8391-0f96d9d985bd
@@ -292,10 +398,10 @@ proxies:
   udp: true
   skip-cert-verify: true
   client-fingerprint: firefox
-  servername: sw.neuroniko.com
+  servername: sw.neuroniko.com🇸🇪@FreakConfig
   reality-opts:
     public-key: ud15DX-emDBS7QsLMabJ7CjgIteK61jxwSp1v0Fewxc
-- name: 'ARISTA #18'
+- name: 'ARISTA #26'
   type: vless
   server: 185.186.78.170
   port: 2083
@@ -308,7 +414,7 @@ proxies:
   servername: sw.neuroniko.com
   reality-opts:
     public-key: ud15DX-emDBS7QsLMabJ7CjgIteK61jxwSp1v0Fewxc
-- name: 'T.ME: @aristapanel #19'
+- name: 'T.ME: @aristapanel #27'
   type: vless
   server: sino.bestsellers1.site
   port: 2083
@@ -325,7 +431,7 @@ proxies:
   servername: sino.bestsellers1.site
   ws-opts:
     path: /
-- name: 'T.ME: @aristapanel #20'
+- name: 'T.ME: @aristapanel #28'
   type: vless
   server: 91.107.247.173
   port: 2083
@@ -338,35 +444,47 @@ proxies:
   servername: sino.bestsellers1.site
   ws-opts:
     path: /
-- name: 'T.ME: @aristapanel #21'
+- name: 'T.ME: @aristapanel #29'
   type: vless
-  server: 89.105.218.106
+  server: 185.186.78.170
   port: 2083
-  uuid: 58037ab8-a8e2-4927-a8b1-f909f9fdb64c
+  uuid: 69158986-cfae-4567-8391-0f96d9d985bd
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: sw.neuroniko.com
+  reality-opts:
+    public-key: ud15DX-emDBS7QsLMabJ7CjgIteK61jxwSp1v0Fewxc
+- name: 'T.ME: @aristapanel #30'
+  type: vless
+  server: 91.107.247.173
+  port: 2083
+  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: ios
-  servername: speedtestmark.com
-  ws-opts:
-    path: /vless-ws
-- name: 'T.ME: @aristapanel #22'
-  type: vless
-  server: 104.19.151.7
-  port: 2083
-  uuid: c35db02d-c978-4d50-add3-d546f5a0c5dd
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: ez-0b9f28.ezaccess1c317f6.workers.dev
+  servername: sino.bestsellers1.site
   ws-opts:
     path: /
-    headers:
-      Host: ez-0b9f28.ezaccess1c317f6.workers.dev
-- name: 'T.ME: @aristapanel #23'
+- name: 'T.ME: @aristapanel #31'
+  type: vless
+  server: 201.58.181.231
+  port: 2083
+  uuid: fafc7c16-f890-45ee-a856-02df225172dd
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: ya.ru
+  reality-opts:
+    public-key: uKk4cvAJii_YbhzUm9IeMKLHR851E_1sfiMP-ncyeyM
+    short-id: "e69c662141e37e7b"
+- name: 'T.ME: @aristapanel #32'
   type: vless
   server: download.yasinyones.ir
   port: 2083
@@ -383,191 +501,33 @@ proxies:
     path: /my-panel
     headers:
       Host: download.yasinyones.ir
-- name: 'ARISTA #24'
-  type: vless
-  server: 178.17.52.236
-  port: 2083
-  uuid: 6da2c981-8c77-4340-bda3-93399b7aea26
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: edge
-  servername: maps.blog-forme.ru
-  reality-opts:
-    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
-    short-id: "3258252d44113e23"
-- name: 'ARISTA #25'
-  type: vless
-  server: 91.107.247.173
-  port: 2083
-  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: sino.bestsellers1.site
-  ws-opts:
-    path: /
-    headers:
-      Host: sino.bestsellers1.site
-- name: 'ARISTA #26'
-  type: vless
-  server: 141.193.213.21
-  port: 2083
-  uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: site.check-looks.space
-  ws-opts:
-    path: /
-    headers:
-      Host: site.check-looks.space
-- name: 'ARISTA #27'
-  type: vless
-  server: news.zoom.us
-  port: 2083
-  uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: site.check-looks.space
-  ws-opts:
-    path: /
-    headers:
-      Host: site.check-looks.space
-- name: 'ARISTA #28'
-  type: vless
-  server: 185.186.78.170
-  port: 2083
-  uuid: 69158986-cfae-4567-8391-0f96d9d985bd
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: sw.neuroniko.com
-  reality-opts:
-    public-key: ud15DX-emDBS7QsLMabJ7CjgIteK61jxwSp1v0Fewxc
-- name: 'ARISTA #29'
-  type: vless
-  server: 185.186.78.170
-  port: 2083
-  uuid: 69158986-cfae-4567-8391-0f96d9d985bd
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: sw.neuroniko.com
-  reality-opts:
-    public-key: ud15DX-emDBS7QsLMabJ7CjgIteK61jxwSp1v0Fewxc
-- name: 'ARISTA #30'
-  type: vless
-  server: 178.17.52.236
-  port: 2083
-  uuid: 6da2c981-8c77-4340-bda3-93399b7aea26
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: edge
-  servername: maps.blog-forme.ru
-  reality-opts:
-    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
-    short-id: "3258252d44113e23"
-- name: 'ARISTA #31'
-  type: vless
-  server: 178.17.52.236
-  port: 2083
-  uuid: 6da2c981-8c77-4340-bda3-93399b7aea26
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: edge
-  servername: maps.blog-forme.ru
-  reality-opts:
-    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
-    short-id: "3258252d44113e23"
-- name: 'ARISTA #32'
-  type: vless
-  server: 91.107.247.173
-  port: 2083
-  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: sino.bestsellers1.site
-  ws-opts:
-    path: /
-    headers:
-      Host: sino.bestsellers1.site
 - name: 'ARISTA #33'
   type: vless
   server: 178.17.52.236
   port: 2083
   uuid: 6da2c981-8c77-4340-bda3-93399b7aea26
-  network: xhttp
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: edge
-  servername: maps.blog-forme.ru
+  servername: 178.17.52.236
   reality-opts:
-    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
-    short-id: "3258252d44113e23"
+    public-key: mbi4BZAuiq_L6pfhG2xxWmtos…
 - name: 'ARISTA #34'
   type: vless
-  server: 91.107.247.173
+  server: 154.218.15.250
   port: 2083
-  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
+  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: sino.bestsellers1.site
+  servername: proxy-1cu.pages.dev
   ws-opts:
     path: /
     headers:
-      Host: sino.bestsellers1.site
+      Host: proxy-1cu.pages.dev
 - name: 'ARISTA #35'
-  type: vless
-  server: 178.17.52.236
-  port: 2083
-  uuid: 6da2c981-8c77-4340-bda3-93399b7aea26
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: edge
-  servername: maps.blog-forme.ru
-  reality-opts:
-    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
-    short-id: "3258252d44113e23"
-- name: 'ARISTA #36'
-  type: vless
-  server: 91.107.247.173
-  port: 2083
-  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: sino.bestsellers1.site
-  ws-opts:
-    path: /
-    headers:
-      Host: sino.bestsellers1.site
-- name: 'ARISTA #37'
   type: vless
   server: 141.193.213.21
   port: 2083
@@ -581,7 +541,7 @@ proxies:
     path: /
     headers:
       Host: site.check-looks.space
-- name: 'ARISTA #38'
+- name: 'ARISTA #36'
   type: vless
   server: news.zoom.us
   port: 2083
@@ -595,6 +555,35 @@ proxies:
     path: /
     headers:
       Host: site.check-looks.space
+- name: 'ARISTA #37'
+  type: vless
+  server: 178.17.52.236
+  port: 2083
+  uuid: 6da2c981-8c77-4340-bda3-93399b7aea26
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: edge
+  servername: maps.blog-forme.ru
+  reality-opts:
+    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
+    short-id: "3258252d44113e23"
+- name: 'ARISTA #38'
+  type: vless
+  server: 91.107.247.173
+  port: 2083
+  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: sino.bestsellers1.site
+  ws-opts:
+    path: /
+    headers:
+      Host: sino.bestsellers1.site
 - name: 'ARISTA #39'
   type: vless
   server: 185.186.78.170
@@ -605,7 +594,7 @@ proxies:
   udp: true
   skip-cert-verify: true
   client-fingerprint: firefox
-  servername: sw.neuroniko.com
+  servername: sw.neuroniko.com🇸🇪@FreakConfig
   reality-opts:
     public-key: ud15DX-emDBS7QsLMabJ7CjgIteK61jxwSp1v0Fewxc
 - name: 'ARISTA #40'
@@ -621,6 +610,255 @@ proxies:
   servername: sw.neuroniko.com
   reality-opts:
     public-key: ud15DX-emDBS7QsLMabJ7CjgIteK61jxwSp1v0Fewxc
+- name: 'ARISTA #41'
+  type: vless
+  server: 178.17.52.236
+  port: 2083
+  uuid: 6da2c981-8c77-4340-bda3-93399b7aea26
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: 178.17.52.236
+  reality-opts:
+    public-key: mbi4BZAuiq_L6pfhG2xxWmtos…
+- name: 'ARISTA #42'
+  type: vless
+  server: 178.17.52.236
+  port: 2083
+  uuid: 6da2c981-8c77-4340-bda3-93399b7aea26
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: 178.17.52.236
+  reality-opts:
+    public-key: mbi4BZAuiq_L6pfhG2xxWmtos…
+- name: 'ARISTA #43'
+  type: vless
+  server: 154.218.15.250
+  port: 2083
+  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: proxy-1cu.pages.dev
+  ws-opts:
+    path: /
+    headers:
+      Host: proxy-1cu.pages.dev
+- name: 'ARISTA #44'
+  type: vless
+  server: 141.193.213.21
+  port: 2083
+  uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: site.check-looks.space
+  ws-opts:
+    path: /
+    headers:
+      Host: site.check-looks.space
+- name: 'ARISTA #45'
+  type: vless
+  server: news.zoom.us
+  port: 2083
+  uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: site.check-looks.space
+  ws-opts:
+    path: /
+    headers:
+      Host: site.check-looks.space
+- name: 'ARISTA #46'
+  type: vless
+  server: 178.17.52.236
+  port: 2083
+  uuid: 6da2c981-8c77-4340-bda3-93399b7aea26
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: edge
+  servername: maps.blog-forme.ru
+  reality-opts:
+    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
+    short-id: "3258252d44113e23"
+- name: 'ARISTA #47'
+  type: vless
+  server: 91.107.247.173
+  port: 2083
+  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: sino.bestsellers1.site
+  ws-opts:
+    path: /
+    headers:
+      Host: sino.bestsellers1.site
+- name: 'ARISTA #48'
+  type: vless
+  server: 178.17.52.236
+  port: 2083
+  uuid: 6da2c981-8c77-4340-bda3-93399b7aea26
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: 178.17.52.236
+  reality-opts:
+    public-key: mbi4BZAuiq_L6pfhG2xxWmtos…
+- name: 'ARISTA #49'
+  type: vless
+  server: 154.218.15.250
+  port: 2083
+  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: proxy-1cu.pages.dev
+  ws-opts:
+    path: /
+    headers:
+      Host: proxy-1cu.pages.dev
+- name: 'ARISTA #50'
+  type: vless
+  server: 178.17.52.236
+  port: 2083
+  uuid: 6da2c981-8c77-4340-bda3-93399b7aea26
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: 178.17.52.236
+  reality-opts:
+    public-key: mbi4BZAuiq_L6pfhG2xxWmtos…
+- name: 'ARISTA #51'
+  type: vless
+  server: 154.218.15.250
+  port: 2083
+  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: proxy-1cu.pages.dev
+  ws-opts:
+    path: /
+    headers:
+      Host: proxy-1cu.pages.dev
+- name: 'ARISTA #52'
+  type: vless
+  server: 141.193.213.21
+  port: 2083
+  uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: site.check-looks.space
+  ws-opts:
+    path: /
+    headers:
+      Host: site.check-looks.space
+- name: 'ARISTA #53'
+  type: vless
+  server: news.zoom.us
+  port: 2083
+  uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: site.check-looks.space
+  ws-opts:
+    path: /
+    headers:
+      Host: site.check-looks.space
+- name: 'ARISTA #54'
+  type: vless
+  server: 178.17.52.236
+  port: 2083
+  uuid: 6da2c981-8c77-4340-bda3-93399b7aea26
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: edge
+  servername: maps.blog-forme.ru
+  reality-opts:
+    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
+    short-id: "3258252d44113e23"
+- name: 'ARISTA #55'
+  type: vless
+  server: 91.107.247.173
+  port: 2083
+  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: sino.bestsellers1.site
+  ws-opts:
+    path: /
+    headers:
+      Host: sino.bestsellers1.site
+- name: 'ARISTA #56'
+  type: vless
+  server: 185.186.78.170
+  port: 2083
+  uuid: 69158986-cfae-4567-8391-0f96d9d985bd
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: sw.neuroniko.com🇸🇪@FreakConfig
+  reality-opts:
+    public-key: ud15DX-emDBS7QsLMabJ7CjgIteK61jxwSp1v0Fewxc
+- name: 'ARISTA #57'
+  type: ss
+  server: 51.38.71.51
+  port: 2083
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #58'
+  type: ss
+  server: 51.38.71.51
+  port: 2083
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #59'
+  type: ss
+  server: 51.38.71.51
+  port: 2083
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
+  udp: true
+  tcp-fast-open: true
+- name: 'ARISTA #60'
+  type: ss
+  server: 51.38.71.51
+  port: 2083
+  cipher: 2022-blake3-aes-256-gcm
+  password: cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:2tFqykGqZ101XW11f6iRiERnPycFAjjYq0y2zUYhKho=
+  udp: true
+  tcp-fast-open: true
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -630,10 +868,10 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'T.ME: @aristapanel #1'
+  - 'ARISTA #1'
   - 'T.ME: @aristapanel #2'
   - 'ARISTA #3'
-  - 'ARISTA #4'
+  - 'T.ME: @aristapanel #4'
   - 'ARISTA #5'
   - 'ARISTA #6'
   - 'ARISTA #7'
@@ -648,20 +886,20 @@ proxy-groups:
   - 'ARISTA #16'
   - 'ARISTA #17'
   - 'ARISTA #18'
-  - 'T.ME: @aristapanel #19'
-  - 'T.ME: @aristapanel #20'
-  - 'T.ME: @aristapanel #21'
-  - 'T.ME: @aristapanel #22'
-  - 'T.ME: @aristapanel #23'
+  - 'ARISTA #19'
+  - 'ARISTA #20'
+  - 'ARISTA #21'
+  - 'ARISTA #22'
+  - 'ARISTA #23'
   - 'ARISTA #24'
   - 'ARISTA #25'
   - 'ARISTA #26'
-  - 'ARISTA #27'
-  - 'ARISTA #28'
-  - 'ARISTA #29'
-  - 'ARISTA #30'
-  - 'ARISTA #31'
-  - 'ARISTA #32'
+  - 'T.ME: @aristapanel #27'
+  - 'T.ME: @aristapanel #28'
+  - 'T.ME: @aristapanel #29'
+  - 'T.ME: @aristapanel #30'
+  - 'T.ME: @aristapanel #31'
+  - 'T.ME: @aristapanel #32'
   - 'ARISTA #33'
   - 'ARISTA #34'
   - 'ARISTA #35'
@@ -670,6 +908,26 @@ proxy-groups:
   - 'ARISTA #38'
   - 'ARISTA #39'
   - 'ARISTA #40'
+  - 'ARISTA #41'
+  - 'ARISTA #42'
+  - 'ARISTA #43'
+  - 'ARISTA #44'
+  - 'ARISTA #45'
+  - 'ARISTA #46'
+  - 'ARISTA #47'
+  - 'ARISTA #48'
+  - 'ARISTA #49'
+  - 'ARISTA #50'
+  - 'ARISTA #51'
+  - 'ARISTA #52'
+  - 'ARISTA #53'
+  - 'ARISTA #54'
+  - 'ARISTA #55'
+  - 'ARISTA #56'
+  - 'ARISTA #57'
+  - 'ARISTA #58'
+  - 'ARISTA #59'
+  - 'ARISTA #60'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
