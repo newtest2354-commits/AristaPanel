@@ -1,6 +1,6 @@
 # TELEGRAM - HYSTERIA2 - Tier ALL
-# Updated: 2026-11-03 17:02:35
-# Count: 2
+# Updated: 2026-11-03 23:14:34
+# Count: 3
 
 mixed-port: 7890
 allow-lan: false
@@ -50,6 +50,24 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: hysteria2
+  server: 67.216.207.144
+  port: 443
+  password: 740f1a75659256a8c0e2a5686d573496b2a2
+  sni: www.bing.com
+  skip-cert-verify: true
+  fast-open: true
+  obfs: salamander
+  obfs-password: 5eec7c480dc2af8a7cfdd7beb90ee911da11
+- name: 'ARISTA #2'
+  type: hysteria2
+  server: 141.0.187.15
+  port: 443
+  password: 70043bfa-d6fb-4980-b27e-773e9e8b2004
+  sni: crt.onecloudstream.com
+  skip-cert-verify: true
+  fast-open: true
+- name: 'ARISTA #3'
+  type: hysteria2
   server: 31.76.80.69
   port: 443
   password: 6aab8efdf13945829ae3699c342be406
@@ -58,14 +76,6 @@ proxies:
   fast-open: true
   obfs: salamander
   obfs-password: uw9b2qq5rx
-- name: 'ARISTA #2'
-  type: hysteria2
-  server: 88.216.195.188
-  port: 443
-  password: 63e1b9462d708b56d5d5a0267cffecdc
-  sni: promo3.goonars.com
-  skip-cert-verify: true
-  fast-open: true
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -77,6 +87,7 @@ proxy-groups:
   proxies: &id001
   - 'ARISTA #1'
   - 'ARISTA #2'
+  - 'ARISTA #3'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
