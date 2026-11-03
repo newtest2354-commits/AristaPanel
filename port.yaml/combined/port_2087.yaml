@@ -1,6 +1,6 @@
 # COMBINED - Port 2087
-# Updated: 2026-11-02 21:41:00
-# Count: 32
+# Updated: 2026-11-03 06:21:59
+# Count: 20
 
 mixed-port: 7890
 allow-lan: false
@@ -50,24 +50,38 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 2.26.6.1
+  server: cdn1.mobilenovin12.ir
   port: 2087
-  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
-  network: tcp
+  uuid: 8077b2a0-8230-46d1-941d-b709f8f1c764
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
+  alpn:
+  - http/1.1
   client-fingerprint: chrome
-  servername: 2.26.6.1
+  servername: cdn1.mobilenovin12.ir
+  ws-opts:
+    path: /ymdkuscpx
+    headers:
+      Host: cdn1.mobilenovin12.ir
 - name: 'ARISTA #2'
   type: vless
-  server: 178.104.118.247
+  server: cdn1.mobilenovin12.ir
   port: 2087
-  uuid: a34a5f3e-e9fa-40a6-f3af-2984adbd701b
-  network: tcp
-  tls: false
+  uuid: 8077b2a0-8230-46d1-941d-b709f8f1c764
+  network: ws
+  tls: true
   udp: true
   skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: cdn1.mobilenovin12.ir
+  ws-opts:
+    path: /ymdkuscpx
+    headers:
+      Host: cdn1.mobilenovin12.ir
 - name: 'ARISTA #3'
   type: vless
   server: cdn1.mobilenovin12.ir
@@ -87,26 +101,6 @@ proxies:
       Host: cdn1.mobilenovin12.ir
 - name: 'ARISTA #4'
   type: vless
-  server: 194.5.207.209
-  port: 2087
-  uuid: cae3b009-a7c9-4c1b-ab0e-252c67439871
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #5'
-  type: vless
-  server: 2.26.6.1
-  port: 2087
-  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: 2.26.6.1
-- name: 'ARISTA #6'
-  type: vless
   server: 178.104.118.247
   port: 2087
   uuid: a34a5f3e-e9fa-40a6-f3af-2984adbd701b
@@ -114,6 +108,32 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
+- name: 'ARISTA #5'
+  type: vless
+  server: 194.5.207.209
+  port: 2087
+  uuid: cae3b009-a7c9-4c1b-ab0e-252c67439871
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #6'
+  type: vless
+  server: cdn1.mobilenovin12.ir
+  port: 2087
+  uuid: 8077b2a0-8230-46d1-941d-b709f8f1c764
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: cdn1.mobilenovin12.ir
+  ws-opts:
+    path: /ymdkuscpx
+    headers:
+      Host: cdn1.mobilenovin12.ir
 - name: 'ARISTA #7'
   type: vless
   server: cdn1.mobilenovin12.ir
@@ -133,89 +153,15 @@ proxies:
       Host: cdn1.mobilenovin12.ir
 - name: 'ARISTA #8'
   type: vless
-  server: 194.5.207.209
+  server: 178.104.118.247
   port: 2087
-  uuid: cae3b009-a7c9-4c1b-ab0e-252c67439871
+  uuid: a34a5f3e-e9fa-40a6-f3af-2984adbd701b
   network: tcp
   tls: false
   udp: true
   skip-cert-verify: true
 - name: 'ARISTA #9'
   type: vless
-  server: 2.26.6.1
-  port: 2087
-  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: 2.26.6.1
-- name: 'ARISTA #10'
-  type: vless
-  server: 178.104.118.247
-  port: 2087
-  uuid: a34a5f3e-e9fa-40a6-f3af-2984adbd701b
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #11'
-  type: vless
-  server: cdn1.mobilenovin12.ir
-  port: 2087
-  uuid: 8077b2a0-8230-46d1-941d-b709f8f1c764
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: cdn1.mobilenovin12.ir
-  ws-opts:
-    path: /ymdkuscpx
-    headers:
-      Host: cdn1.mobilenovin12.ir
-- name: 'ARISTA #12'
-  type: vless
-  server: 2.26.6.1
-  port: 2087
-  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: 2.26.6.1
-- name: 'ARISTA #13'
-  type: vless
-  server: 178.104.118.247
-  port: 2087
-  uuid: a34a5f3e-e9fa-40a6-f3af-2984adbd701b
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #14'
-  type: vless
-  server: cdn1.mobilenovin12.ir
-  port: 2087
-  uuid: 8077b2a0-8230-46d1-941d-b709f8f1c764
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: cdn1.mobilenovin12.ir
-  ws-opts:
-    path: /ymdkuscpx
-    headers:
-      Host: cdn1.mobilenovin12.ir
-- name: 'ARISTA #15'
-  type: vless
   server: 194.5.207.209
   port: 2087
   uuid: cae3b009-a7c9-4c1b-ab0e-252c67439871
@@ -223,17 +169,7 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #16'
-  type: vless
-  server: 2.26.6.1
-  port: 2087
-  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: 2.26.6.1
-- name: 'T.ME: @aristapanel #17'
+- name: 'T.ME: @aristapanel #10'
   type: vless
   server: 104.18.38.78
   port: 2087
@@ -247,7 +183,21 @@ proxies:
     path: /fdip
     headers:
       Host: learn00.evany.de5.net
-- name: 'T.ME: @aristapanel #18'
+- name: 'T.ME: @aristapanel #11'
+  type: vless
+  server: 162.159.129.67
+  port: 2087
+  uuid: 8953f5bd-6ac8-4a67-b23e-ad01770ae331
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: vless.sub.amclubs.us.kg
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: vless.sub.amclubs.us.kg
+- name: 'T.ME: @aristapanel #12'
   type: vless
   server: snapp.ir
   port: 2087
@@ -262,53 +212,7 @@ proxies:
     path: /BetForward
     headers:
       Host: cdn.xelira.ir
-- name: 'T.ME: @aristapanel #19'
-  type: vless
-  server: 31.76.91.138
-  port: 2087
-  uuid: 309b0ce3-09a8-4883-bfe4-bd56e215be44
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: ads.x5.ru
-  grpc-opts:
-    grpc-service-name: grpc
-  reality-opts:
-    public-key: JfuItzJ81sJehx1PbxyliWSJvuBMKoa9ahNgPO3R7R4
-    short-id: "c226283c4de5b1ad"
-- name: 'T.ME: @aristapanel #20'
-  type: vless
-  server: 188.114.97.0
-  port: 2087
-  uuid: 0075be7a-1f52-407b-81c1-7a0cb109e814
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  client-fingerprint: chrome
-  servername: smart-hetzner-ed5b25.airpressoini31.com
-- name: 'T.ME: @aristapanel #21'
-  type: vless
-  server: ggggoods.brand-netprime.com
-  port: 2087
-  uuid: 16571fd5-5c8a-44ae-99fa-a354565e500b
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: b5.dl-netprime.com
-  ws-opts:
-    path: /ws-tls
-    headers:
-      Host: b5.dl-netprime.com
-- name: 'T.ME: @aristapanel #22'
+- name: 'T.ME: @aristapanel #13'
   type: vless
   server: s4.zynetrax.ir
   port: 2087
@@ -319,7 +223,7 @@ proxies:
   skip-cert-verify: true
   client-fingerprint: chrome
   servername: s4.zynetrax.ir
-- name: 'T.ME: @aristapanel #23'
+- name: 'T.ME: @aristapanel #14'
   type: vless
   server: s5.zynetrax.ir
   port: 2087
@@ -330,7 +234,7 @@ proxies:
   skip-cert-verify: true
   client-fingerprint: chrome
   servername: s5.zynetrax.ir
-- name: 'T.ME: @aristapanel #24'
+- name: 'T.ME: @aristapanel #15'
   type: vless
   server: one-for-all.levikogjgfdd.ir
   port: 2087
@@ -345,7 +249,7 @@ proxies:
     path: /
     headers:
       Host: levikoconfig.levikogjgfdd.ir
-- name: 'T.ME: @aristapanel #25'
+- name: 'T.ME: @aristapanel #16'
   type: vless
   server: s2.yorqino.ir
   port: 2087
@@ -356,27 +260,7 @@ proxies:
   skip-cert-verify: true
   client-fingerprint: chrome
   servername: s2.yorqino.ir
-- name: 'ARISTA #26'
-  type: vless
-  server: 2.26.6.1
-  port: 2087
-  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: 2.26.6.1
-- name: 'ARISTA #27'
-  type: vless
-  server: 178.104.118.247
-  port: 2087
-  uuid: a34a5f3e-e9fa-40a6-f3af-2984adbd701b
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #28'
+- name: 'ARISTA #17'
   type: vless
   server: cdn1.mobilenovin12.ir
   port: 2087
@@ -393,27 +277,7 @@ proxies:
     path: /ymdkuscpx
     headers:
       Host: cdn1.mobilenovin12.ir
-- name: 'ARISTA #29'
-  type: vless
-  server: 194.5.207.209
-  port: 2087
-  uuid: cae3b009-a7c9-4c1b-ab0e-252c67439871
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #30'
-  type: vless
-  server: 2.26.6.1
-  port: 2087
-  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: 2.26.6.1
-- name: 'ARISTA #31'
+- name: 'ARISTA #18'
   type: vless
   server: 178.104.118.247
   port: 2087
@@ -422,7 +286,16 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'ARISTA #32'
+- name: 'ARISTA #19'
+  type: vless
+  server: 194.5.207.209
+  port: 2087
+  uuid: cae3b009-a7c9-4c1b-ab0e-252c67439871
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #20'
   type: vless
   server: cdn1.mobilenovin12.ir
   port: 2087
@@ -457,29 +330,17 @@ proxy-groups:
   - 'ARISTA #7'
   - 'ARISTA #8'
   - 'ARISTA #9'
-  - 'ARISTA #10'
-  - 'ARISTA #11'
-  - 'ARISTA #12'
-  - 'ARISTA #13'
-  - 'ARISTA #14'
-  - 'ARISTA #15'
+  - 'T.ME: @aristapanel #10'
+  - 'T.ME: @aristapanel #11'
+  - 'T.ME: @aristapanel #12'
+  - 'T.ME: @aristapanel #13'
+  - 'T.ME: @aristapanel #14'
+  - 'T.ME: @aristapanel #15'
   - 'T.ME: @aristapanel #16'
-  - 'T.ME: @aristapanel #17'
-  - 'T.ME: @aristapanel #18'
-  - 'T.ME: @aristapanel #19'
-  - 'T.ME: @aristapanel #20'
-  - 'T.ME: @aristapanel #21'
-  - 'T.ME: @aristapanel #22'
-  - 'T.ME: @aristapanel #23'
-  - 'T.ME: @aristapanel #24'
-  - 'T.ME: @aristapanel #25'
-  - 'ARISTA #26'
-  - 'ARISTA #27'
-  - 'ARISTA #28'
-  - 'ARISTA #29'
-  - 'ARISTA #30'
-  - 'ARISTA #31'
-  - 'ARISTA #32'
+  - 'ARISTA #17'
+  - 'ARISTA #18'
+  - 'ARISTA #19'
+  - 'ARISTA #20'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

@@ -1,6 +1,6 @@
 # COMBINED - Port 2052
-# Updated: 2026-11-02 21:41:00
-# Count: 5
+# Updated: 2026-11-03 06:21:59
+# Count: 8
 
 mixed-port: 7890
 allow-lan: false
@@ -74,7 +74,33 @@ proxies:
   skip-cert-verify: true
   tcp-fast-open: true
   servername: 92.42.203.240
-- name: 'T.ME: @aristapanel #3'
+- name: 'ARISTA #3'
+  type: vless
+  server: 162.159.38.127
+  port: 2052
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /?ed=2560security=tls
+    headers:
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
+- name: 'ARISTA #4'
+  type: vless
+  server: 162.159.38.127
+  port: 2052
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /?ed=2560security=tls
+    headers:
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
+- name: 'T.ME: @aristapanel #5'
   type: vless
   server: 193.227.99.54
   port: 2052
@@ -83,7 +109,7 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #4'
+- name: 'T.ME: @aristapanel #6'
   type: vless
   server: 104.17.121.110
   port: 2052
@@ -92,7 +118,7 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #5'
+- name: 'T.ME: @aristapanel #7'
   type: vless
   server: dash.mobiza.ir
   port: 2052
@@ -105,6 +131,19 @@ proxies:
     path: /
     headers:
       Host: dash.mobiza.ir
+- name: 'ARISTA #8'
+  type: vless
+  server: 162.159.38.127
+  port: 2052
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /?ed=2560security=tls
+    headers:
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -116,9 +155,12 @@ proxy-groups:
   proxies: &id001
   - 'T.ME: @aristapanel #1'
   - 'T.ME: @aristapanel #2'
-  - 'T.ME: @aristapanel #3'
-  - 'T.ME: @aristapanel #4'
+  - 'ARISTA #3'
+  - 'ARISTA #4'
   - 'T.ME: @aristapanel #5'
+  - 'T.ME: @aristapanel #6'
+  - 'T.ME: @aristapanel #7'
+  - 'ARISTA #8'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
