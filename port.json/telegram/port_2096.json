@@ -1,6 +1,6 @@
 // TELEGRAM - Port 2096
-// Updated: 2026-11-03 23:14:49
-// Count: 17
+// Updated: 2026-11-04 05:58:38
+// Count: 8
 
 {
   "log": {
@@ -41,25 +41,30 @@
     {
       "type": "vless",
       "tag": "ARISTA #1",
-      "server": "194.32.214.94",
+      "server": "185.18.250.127",
       "server_port": 2096,
-      "uuid": "ae5c34f0-98d1-41bf-99f4-012cf865154e",
+      "uuid": "2ee26119-94e5-40b4-ba3a-16354021b600",
       "domain_resolver": "google",
       "tls": {
         "enabled": true,
-        "server_name": "www.apple.com",
+        "server_name": "69565ce3109804e7813f98ee.mmdbay.blog",
         "insecure": true,
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
         },
-        "reality": {
-          "enabled": true,
-          "public_key": "O0i8MT5R__tGAOnvqJjRk4ygGV4EF2Yq4VMKG4Cj4V0",
-          "short_id": "2d5781f528d99a29"
-        }
+        "alpn": [
+          "h2",
+          "http/1.1"
+        ]
       },
-      "flow": "xtls-rprx-vision"
+      "transport": {
+        "type": "ws",
+        "path": "/graphql",
+        "headers": {
+          "Host": "69565ce3109804e7813f98ee.mmdbay.blog"
+        }
+      }
     },
     {
       "type": "vless",
@@ -74,12 +79,36 @@
         "insecure": true,
         "utls": {
           "enabled": true,
-          "fingerprint": "firefox"
+          "fingerprint": "chrome"
         },
         "reality": {
           "enabled": true,
           "public_key": "2riaCWjnC6m96hid0WcL9BG4vwzh8NoW_ps8CrVo1mo",
           "short_id": "3649e084544949f1"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "ARISTA #3",
+      "server": "45.81.58.159",
+      "server_port": 2096,
+      "uuid": "359b9ad3-0009-4655-8872-d0ab566751d3",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "e832b8629fff3263.hozheen.ir",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/ws?ed=2560",
+        "headers": {
+          "Host": "newgen14.hozheen.ir"
         }
       }
     },
@@ -96,7 +125,8 @@
       "tag": "🚀 ARISTA AUTO BEST",
       "outbounds": [
         "ARISTA #1",
-        "ARISTA #2"
+        "ARISTA #2",
+        "ARISTA #3"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "2m",
