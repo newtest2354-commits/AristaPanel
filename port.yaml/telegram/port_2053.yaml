@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2053
-# Updated: 2026-11-04 21:19:40
-# Count: 92
+# Updated: 2026-11-05 06:19:39
+# Count: 62
 
 mixed-port: 7890
 allow-lan: false
@@ -76,6 +76,19 @@ proxies:
   servername: m50.vipsarbazi.info
 - name: 'ARISTA #3'
   type: vmess
+  server: 178.63.237.148
+  port: 2053
+  uuid: c69fd960-c455-4a05-88d1-d83e9431bc76
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 178.63.237.148
+- name: 'ARISTA #4'
+  type: vmess
   server: m50.vipsarbazi.info
   port: 2053
   uuid: aee884ab-73dc-4dba-b06c-dba5135bda24
@@ -87,7 +100,7 @@ proxies:
   skip-cert-verify: true
   tcp-fast-open: true
   servername: m50.vipsarbazi.info
-- name: 'ARISTA #4'
+- name: 'ARISTA #5'
   type: vmess
   server: m50.vipsarbazi.info
   port: 2053
@@ -100,57 +113,31 @@ proxies:
   skip-cert-verify: true
   tcp-fast-open: true
   servername: m50.vipsarbazi.info
-- name: 'ARISTA #5'
-  type: vless
-  server: rm3.rmastore.ir
-  port: 2053
-  uuid: 116e7d57-afcf-4558-be0a-01e80fe6cd31
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /nlrma
 - name: 'ARISTA #6'
-  type: vless
-  server: rm4.rmastore.ir
+  type: vmess
+  server: 178.63.237.148
   port: 2053
-  uuid: 116e7d57-afcf-4558-be0a-01e80fe6cd31
-  network: ws
+  uuid: c69fd960-c455-4a05-88d1-d83e9431bc76
+  alterId: 0
+  cipher: auto
+  network: tcp
   tls: false
   udp: true
   skip-cert-verify: true
-  ws-opts:
-    path: /nlrma
+  tcp-fast-open: true
+  servername: 178.63.237.148
 - name: 'ARISTA #7'
   type: vless
-  server: 95.216.27.15
+  server: uk.zarqivo.ir
   port: 2053
-  uuid: b79d736d-0f10-4169-b626-362059d18204
-  network: tcp
+  uuid: c25c2329-3038-4193-9b0c-2e115630c723
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: aiHdxKOzcFZDILKj3MIPrMsyT0XxMy_O6xoxnz6MIWs
-    short-id: "10351b07c712d2a2"
+  servername: Filano.zarqivo.ir
 - name: 'ARISTA #8'
-  type: vless
-  server: 57.131.38.163
-  port: 2053
-  uuid: d4b08cd6-0903-411a-9dac-45dbdf5c9712
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc
-    short-id: "5b8a942318178e7b"
-- name: 'ARISTA #9'
   type: vless
   server: w.geogame.ir
   port: 2053
@@ -164,20 +151,7 @@ proxies:
   - http/1.1
   client-fingerprint: chrome
   servername: w.geogame.ir
-- name: 'ARISTA #10'
-  type: vless
-  server: 54.37.136.194
-  port: 2053
-  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
-    short-id: "50ba05992b05c1c3"
-- name: 'ARISTA #11'
+- name: 'ARISTA #9'
   type: vless
   server: 66.70.179.198
   port: 2053
@@ -191,7 +165,7 @@ proxies:
   reality-opts:
     public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
     short-id: "83f8317a948bb769"
-- name: 'ARISTA #12'
+- name: 'ARISTA #10'
   type: vless
   server: 51.89.194.151
   port: 2053
@@ -205,18 +179,48 @@ proxies:
   reality-opts:
     public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
     short-id: "d051f678212f9d54"
-- name: 'ARISTA #13'
+- name: 'ARISTA #11'
   type: vless
-  server: 31.77.149.194
+  server: fast.145779.xyz
   port: 2053
-  uuid: d986e608-a5ad-4d8a-b658-ae7da5f3b170
+  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
+- name: 'ARISTA #12'
+  type: vless
+  server: 54.37.136.194
+  port: 2053
+  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: nl-ams.dontblockmepls.com
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
+    short-id: "50ba05992b05c1c3"
+- name: 'ARISTA #13'
+  type: vless
+  server: 57.131.38.163
+  port: 2053
+  uuid: d4b08cd6-0903-411a-9dac-45dbdf5c9712
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: www.apple.com
+  reality-opts:
+    public-key: Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc
+    short-id: "5b8a942318178e7b"
 - name: 'ARISTA #14'
   type: vless
   server: 57.131.38.163
@@ -244,188 +248,112 @@ proxies:
     path: /nlrma
 - name: 'ARISTA #16'
   type: vless
-  server: 66.70.179.198
+  server: uk.zarqivo.ir
   port: 2053
-  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
-  network: tcp
+  uuid: c25c2329-3038-4193-9b0c-2e115630c723
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: random
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
-    short-id: "83f8317a948bb769"
+  client-fingerprint: chrome
+  servername: Filano.zarqivo.ir
 - name: 'ARISTA #17'
   type: vless
-  server: rm3.rmastore.ir
+  server: w.geogame.ir
   port: 2053
-  uuid: 116e7d57-afcf-4558-be0a-01e80fe6cd31
-  network: ws
-  tls: false
+  uuid: fbda2834-b1e7-4148-afb9-deda31036a30
+  network: tcp
+  tls: true
   udp: true
   skip-cert-verify: true
-  ws-opts:
-    path: /nlrma
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: w.geogame.ir
 - name: 'ARISTA #18'
   type: vless
-  server: rm4.rmastore.ir
+  server: 66.70.179.198
   port: 2053
-  uuid: 116e7d57-afcf-4558-be0a-01e80fe6cd31
-  network: ws
-  tls: false
+  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
+  network: tcp
+  tls: true
   udp: true
   skip-cert-verify: true
-  ws-opts:
-    path: /nlrma
+  client-fingerprint: random
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
+    short-id: "83f8317a948bb769"
 - name: 'ARISTA #19'
   type: vless
-  server: 95.216.27.15
+  server: uk.zarqivo.ir
   port: 2053
-  uuid: b79d736d-0f10-4169-b626-362059d18204
-  network: tcp
+  uuid: c25c2329-3038-4193-9b0c-2e115630c723
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: aiHdxKOzcFZDILKj3MIPrMsyT0XxMy_O6xoxnz6MIWs
-    short-id: "10351b07c712d2a2"
+  servername: Filano.zarqivo.ir
 - name: 'ARISTA #20'
   type: vless
-  server: 57.131.38.163
+  server: w.geogame.ir
   port: 2053
-  uuid: d4b08cd6-0903-411a-9dac-45dbdf5c9712
+  uuid: fbda2834-b1e7-4148-afb9-deda31036a30
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
   client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc
-    short-id: "5b8a942318178e7b"
+  servername: w.geogame.ir
 - name: 'ARISTA #21'
   type: vless
-  server: w.geogame.ir
+  server: 66.70.179.198
   port: 2053
-  uuid: fbda2834-b1e7-4148-afb9-deda31036a30
+  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: w.geogame.ir
+  client-fingerprint: random
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
+    short-id: "83f8317a948bb769"
 - name: 'ARISTA #22'
   type: vless
-  server: 54.37.136.194
+  server: 51.89.194.151
   port: 2053
-  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
+  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  servername: www.apple.com
   reality-opts:
-    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
-    short-id: "50ba05992b05c1c3"
+    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
+    short-id: "d051f678212f9d54"
 - name: 'ARISTA #23'
   type: vless
-  server: 66.70.179.198
+  server: fast.145779.xyz
   port: 2053
-  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
-  network: tcp
+  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: random
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
-    short-id: "83f8317a948bb769"
+  client-fingerprint: chrome
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
 - name: 'ARISTA #24'
-  type: vless
-  server: 51.89.194.151
-  port: 2053
-  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
-    short-id: "d051f678212f9d54"
-- name: 'ARISTA #25'
-  type: vless
-  server: rm3.rmastore.ir
-  port: 2053
-  uuid: 116e7d57-afcf-4558-be0a-01e80fe6cd31
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /nlrma
-- name: 'ARISTA #26'
-  type: vless
-  server: rm4.rmastore.ir
-  port: 2053
-  uuid: 116e7d57-afcf-4558-be0a-01e80fe6cd31
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /nlrma
-- name: 'ARISTA #27'
-  type: vless
-  server: 95.216.27.15
-  port: 2053
-  uuid: b79d736d-0f10-4169-b626-362059d18204
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: aiHdxKOzcFZDILKj3MIPrMsyT0XxMy_O6xoxnz6MIWs
-    short-id: "10351b07c712d2a2"
-- name: 'ARISTA #28'
-  type: vless
-  server: 57.131.38.163
-  port: 2053
-  uuid: d4b08cd6-0903-411a-9dac-45dbdf5c9712
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc
-    short-id: "5b8a942318178e7b"
-- name: 'ARISTA #29'
-  type: vless
-  server: w.geogame.ir
-  port: 2053
-  uuid: fbda2834-b1e7-4148-afb9-deda31036a30
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: w.geogame.ir
-- name: 'ARISTA #30'
   type: vless
   server: 54.37.136.194
   port: 2053
@@ -438,136 +366,29 @@ proxies:
   reality-opts:
     public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
     short-id: "50ba05992b05c1c3"
-- name: 'ARISTA #31'
+- name: 'ARISTA #25'
   type: vless
-  server: 66.70.179.198
+  server: uk.zarqivo.ir
   port: 2053
-  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: random
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
-    short-id: "83f8317a948bb769"
-- name: 'ARISTA #32'
-  type: vless
-  server: 51.89.194.151
-  port: 2053
-  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
-  network: tcp
+  uuid: c25c2329-3038-4193-9b0c-2e115630c723
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
-    short-id: "d051f678212f9d54"
-- name: 'ARISTA #33'
+  servername: Filano.zarqivo.ir
+- name: 'ARISTA #26'
   type: vless
-  server: 31.77.149.194
+  server: uk.zarqivo.ir
   port: 2053
-  uuid: d986e608-a5ad-4d8a-b658-ae7da5f3b170
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: nl-ams.dontblockmepls.com
-- name: 'ARISTA #34'
-  type: vless
-  server: 57.131.38.163
-  port: 2053
-  uuid: d4b08cd6-0903-411a-9dac-45dbdf5c9712
-  network: tcp
+  uuid: c25c2329-3038-4193-9b0c-2e115630c723
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc
-    short-id: "5b8a942318178e7b"
-- name: 'ARISTA #35'
-  type: vless
-  server: rm3.rmastore.ir
-  port: 2053
-  uuid: 116e7d57-afcf-4558-be0a-01e80fe6cd31
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /nlrma
-- name: 'ARISTA #36'
-  type: vless
-  server: 66.70.179.198
-  port: 2053
-  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: random
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
-    short-id: "83f8317a948bb769"
-- name: 'ARISTA #37'
-  type: vless
-  server: rm3.rmastore.ir
-  port: 2053
-  uuid: 116e7d57-afcf-4558-be0a-01e80fe6cd31
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /nlrma
-- name: 'ARISTA #38'
-  type: vless
-  server: rm4.rmastore.ir
-  port: 2053
-  uuid: 116e7d57-afcf-4558-be0a-01e80fe6cd31
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /nlrma
-- name: 'ARISTA #39'
-  type: vless
-  server: 95.216.27.15
-  port: 2053
-  uuid: b79d736d-0f10-4169-b626-362059d18204
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: aiHdxKOzcFZDILKj3MIPrMsyT0XxMy_O6xoxnz6MIWs
-    short-id: "10351b07c712d2a2"
-- name: 'ARISTA #40'
-  type: vless
-  server: 57.131.38.163
-  port: 2053
-  uuid: d4b08cd6-0903-411a-9dac-45dbdf5c9712
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc
-    short-id: "5b8a942318178e7b"
-- name: 'ARISTA #41'
+  servername: Filano.zarqivo.ir
+- name: 'ARISTA #27'
   type: vless
   server: w.geogame.ir
   port: 2053
@@ -581,6 +402,200 @@ proxies:
   - http/1.1
   client-fingerprint: chrome
   servername: w.geogame.ir
+- name: 'ARISTA #28'
+  type: vless
+  server: 66.70.179.198
+  port: 2053
+  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: random
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
+    short-id: "83f8317a948bb769"
+- name: 'ARISTA #29'
+  type: vless
+  server: 51.89.194.151
+  port: 2053
+  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
+    short-id: "d051f678212f9d54"
+- name: 'ARISTA #30'
+  type: vless
+  server: fast.145779.xyz
+  port: 2053
+  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
+- name: 'ARISTA #31'
+  type: vless
+  server: 54.37.136.194
+  port: 2053
+  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
+    short-id: "50ba05992b05c1c3"
+- name: 'ARISTA #32'
+  type: vless
+  server: 57.131.38.163
+  port: 2053
+  uuid: d4b08cd6-0903-411a-9dac-45dbdf5c9712
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: www.apple.com
+  reality-opts:
+    public-key: Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc
+    short-id: "5b8a942318178e7b"
+- name: 'ARISTA #33'
+  type: vless
+  server: 57.131.38.163
+  port: 2053
+  uuid: d4b08cd6-0903-411a-9dac-45dbdf5c9712
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc
+    short-id: "5b8a942318178e7b"
+- name: 'ARISTA #34'
+  type: vless
+  server: rm3.rmastore.ir
+  port: 2053
+  uuid: 116e7d57-afcf-4558-be0a-01e80fe6cd31
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /nlrma
+- name: 'ARISTA #35'
+  type: vless
+  server: cdn1.mobilenovin12.ir
+  port: 2053
+  uuid: 8077b2a0-8230-46d1-941d-b709f8f1c764
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: cdn1.mobilenovin12.ir
+  ws-opts:
+    path: /8vzlv76dg
+    headers:
+      Host: cdn1.mobilenovin12.ir
+- name: 'ARISTA #36'
+  type: vless
+  server: 95.216.27.15
+  port: 2053
+  uuid: b79d736d-0f10-4169-b626-362059d18204
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: aiHdxKOzcFZDILKj3MIPrMsyT0XxMy_O6xoxnz6MIWs
+    short-id: "10351b07c712d2a2"
+- name: 'ARISTA #37'
+  type: vless
+  server: uk.zarqivo.ir
+  port: 2053
+  uuid: c25c2329-3038-4193-9b0c-2e115630c723
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: Filano.zarqivo.ir
+- name: 'ARISTA #38'
+  type: vless
+  server: w.geogame.ir
+  port: 2053
+  uuid: fbda2834-b1e7-4148-afb9-deda31036a30
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: w.geogame.ir
+- name: 'ARISTA #39'
+  type: vless
+  server: 66.70.179.198
+  port: 2053
+  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: random
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
+    short-id: "83f8317a948bb769"
+- name: 'ARISTA #40'
+  type: vless
+  server: 51.89.194.151
+  port: 2053
+  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
+    short-id: "d051f678212f9d54"
+- name: 'ARISTA #41'
+  type: vless
+  server: fast.145779.xyz
+  port: 2053
+  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
 - name: 'ARISTA #42'
   type: vless
   server: 54.37.136.194
@@ -596,23 +611,23 @@ proxies:
     short-id: "50ba05992b05c1c3"
 - name: 'ARISTA #43'
   type: vless
-  server: 66.70.179.198
+  server: 57.131.38.163
   port: 2053
-  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
+  uuid: d4b08cd6-0903-411a-9dac-45dbdf5c9712
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: random
-  servername: www.cloudflare.com
+  client-fingerprint: firefox
+  servername: www.apple.com
   reality-opts:
-    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
-    short-id: "83f8317a948bb769"
+    public-key: Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc
+    short-id: "5b8a942318178e7b"
 - name: 'ARISTA #44'
   type: vless
-  server: 51.89.194.151
+  server: 57.131.38.163
   port: 2053
-  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
+  uuid: d4b08cd6-0903-411a-9dac-45dbdf5c9712
   network: tcp
   tls: true
   udp: true
@@ -620,8 +635,8 @@ proxies:
   client-fingerprint: chrome
   servername: www.apple.com
   reality-opts:
-    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
-    short-id: "d051f678212f9d54"
+    public-key: Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc
+    short-id: "5b8a942318178e7b"
 - name: 'ARISTA #45'
   type: vless
   server: rm3.rmastore.ir
@@ -635,487 +650,84 @@ proxies:
     path: /nlrma
 - name: 'ARISTA #46'
   type: vless
-  server: rm4.rmastore.ir
+  server: uk.zarqivo.ir
   port: 2053
-  uuid: 116e7d57-afcf-4558-be0a-01e80fe6cd31
-  network: ws
-  tls: false
+  uuid: c25c2329-3038-4193-9b0c-2e115630c723
+  network: xhttp
+  tls: true
   udp: true
   skip-cert-verify: true
-  ws-opts:
-    path: /nlrma
+  client-fingerprint: chrome
+  servername: Filano.zarqivo.ir
 - name: 'ARISTA #47'
   type: vless
-  server: 95.216.27.15
+  server: w.geogame.ir
   port: 2053
-  uuid: b79d736d-0f10-4169-b626-362059d18204
+  uuid: fbda2834-b1e7-4148-afb9-deda31036a30
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
   client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: aiHdxKOzcFZDILKj3MIPrMsyT0XxMy_O6xoxnz6MIWs
-    short-id: "10351b07c712d2a2"
+  servername: w.geogame.ir
 - name: 'ARISTA #48'
   type: vless
-  server: 57.131.38.163
+  server: 66.70.179.198
   port: 2053
-  uuid: d4b08cd6-0903-411a-9dac-45dbdf5c9712
+  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.apple.com
+  client-fingerprint: random
+  servername: www.cloudflare.com
   reality-opts:
-    public-key: Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc
-    short-id: "5b8a942318178e7b"
+    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
+    short-id: "83f8317a948bb769"
 - name: 'ARISTA #49'
   type: vless
-  server: w.geogame.ir
+  server: 51.89.194.151
   port: 2053
-  uuid: fbda2834-b1e7-4148-afb9-deda31036a30
+  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
   client-fingerprint: chrome
-  servername: w.geogame.ir
+  servername: www.apple.com
+  reality-opts:
+    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
+    short-id: "d051f678212f9d54"
 - name: 'ARISTA #50'
   type: vless
-  server: 54.37.136.194
+  server: uk.zarqivo.ir
   port: 2053
-  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
-  network: tcp
+  uuid: c25c2329-3038-4193-9b0c-2e115630c723
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
-    short-id: "50ba05992b05c1c3"
+  client-fingerprint: chrome
+  servername: Filano.zarqivo.ir
 - name: 'ARISTA #51'
-  type: vless
-  server: 66.70.179.198
+  type: trojan
+  server: 104.25.239.113
   port: 2053
-  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
-  network: tcp
+  password: gHQP0D7D15
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: random
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
-    short-id: "83f8317a948bb769"
+  tcp-fast-open: true
+  servername: marvdasht.phonecomparisonblog.org
+  ws-opts:
+    path: /
+    headers:
+      Host: marvdasht.phonecomparisonblog.org
 - name: 'ARISTA #52'
-  type: vless
-  server: 51.89.194.151
-  port: 2053
-  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
-    short-id: "d051f678212f9d54"
-- name: 'ARISTA #53'
-  type: vless
-  server: 31.77.149.194
-  port: 2053
-  uuid: d986e608-a5ad-4d8a-b658-ae7da5f3b170
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: nl-ams.dontblockmepls.com
-- name: 'ARISTA #54'
-  type: vless
-  server: 57.131.38.163
-  port: 2053
-  uuid: d4b08cd6-0903-411a-9dac-45dbdf5c9712
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc
-    short-id: "5b8a942318178e7b"
-- name: 'ARISTA #55'
-  type: vless
-  server: rm3.rmastore.ir
-  port: 2053
-  uuid: 116e7d57-afcf-4558-be0a-01e80fe6cd31
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /nlrma
-- name: 'ARISTA #56'
-  type: vless
-  server: 66.70.179.198
-  port: 2053
-  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: random
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
-    short-id: "83f8317a948bb769"
-- name: 'ARISTA #57'
-  type: vless
-  server: 45.132.75.213
-  port: 2053
-  uuid: f46182d1-e13b-47d3-97e2-fa5426a93e7c
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: TpWeZocgNOygOhMo0l7oJawPu7STkn9D-SOa0UppcyY
-    short-id: "cd7e85995ae2afc9"
-- name: 'ARISTA #58'
-  type: vless
-  server: rm3.rmastore.ir
-  port: 2053
-  uuid: 116e7d57-afcf-4558-be0a-01e80fe6cd31
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /nlrma
-- name: 'ARISTA #59'
-  type: vless
-  server: rm4.rmastore.ir
-  port: 2053
-  uuid: 116e7d57-afcf-4558-be0a-01e80fe6cd31
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /nlrma
-- name: 'ARISTA #60'
-  type: vless
-  server: 95.216.27.15
-  port: 2053
-  uuid: b79d736d-0f10-4169-b626-362059d18204
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: aiHdxKOzcFZDILKj3MIPrMsyT0XxMy_O6xoxnz6MIWs
-    short-id: "10351b07c712d2a2"
-- name: 'ARISTA #61'
-  type: vless
-  server: 57.131.38.163
-  port: 2053
-  uuid: d4b08cd6-0903-411a-9dac-45dbdf5c9712
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc
-    short-id: "5b8a942318178e7b"
-- name: 'ARISTA #62'
-  type: vless
-  server: w.geogame.ir
-  port: 2053
-  uuid: fbda2834-b1e7-4148-afb9-deda31036a30
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: w.geogame.ir
-- name: 'ARISTA #63'
-  type: vless
-  server: 54.37.136.194
-  port: 2053
-  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
-    short-id: "50ba05992b05c1c3"
-- name: 'ARISTA #64'
-  type: vless
-  server: 66.70.179.198
-  port: 2053
-  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: random
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
-    short-id: "83f8317a948bb769"
-- name: 'ARISTA #65'
-  type: vless
-  server: 51.89.194.151
-  port: 2053
-  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
-    short-id: "d051f678212f9d54"
-- name: 'ARISTA #66'
-  type: vless
-  server: 31.77.149.194
-  port: 2053
-  uuid: d986e608-a5ad-4d8a-b658-ae7da5f3b170
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: nl-ams.dontblockmepls.com
-- name: 'ARISTA #67'
-  type: vless
-  server: 57.131.38.163
-  port: 2053
-  uuid: d4b08cd6-0903-411a-9dac-45dbdf5c9712
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc
-    short-id: "5b8a942318178e7b"
-- name: 'ARISTA #68'
-  type: vless
-  server: rm3.rmastore.ir
-  port: 2053
-  uuid: 116e7d57-afcf-4558-be0a-01e80fe6cd31
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /nlrma
-- name: 'ARISTA #69'
-  type: vless
-  server: 66.70.179.198
-  port: 2053
-  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: random
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
-    short-id: "83f8317a948bb769"
-- name: 'ARISTA #70'
-  type: vless
-  server: rm3.rmastore.ir
-  port: 2053
-  uuid: 116e7d57-afcf-4558-be0a-01e80fe6cd31
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /nlrma
-- name: 'ARISTA #71'
-  type: vless
-  server: rm4.rmastore.ir
-  port: 2053
-  uuid: 116e7d57-afcf-4558-be0a-01e80fe6cd31
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /nlrma
-- name: 'ARISTA #72'
-  type: vless
-  server: 95.216.27.15
-  port: 2053
-  uuid: b79d736d-0f10-4169-b626-362059d18204
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: aiHdxKOzcFZDILKj3MIPrMsyT0XxMy_O6xoxnz6MIWs
-    short-id: "10351b07c712d2a2"
-- name: 'ARISTA #73'
-  type: vless
-  server: 57.131.38.163
-  port: 2053
-  uuid: d4b08cd6-0903-411a-9dac-45dbdf5c9712
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc
-    short-id: "5b8a942318178e7b"
-- name: 'ARISTA #74'
-  type: vless
-  server: w.geogame.ir
-  port: 2053
-  uuid: fbda2834-b1e7-4148-afb9-deda31036a30
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: w.geogame.ir
-- name: 'ARISTA #75'
-  type: vless
-  server: 54.37.136.194
-  port: 2053
-  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
-    short-id: "50ba05992b05c1c3"
-- name: 'ARISTA #76'
-  type: vless
-  server: 66.70.179.198
-  port: 2053
-  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: random
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
-    short-id: "83f8317a948bb769"
-- name: 'ARISTA #77'
-  type: vless
-  server: 51.89.194.151
-  port: 2053
-  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
-    short-id: "d051f678212f9d54"
-- name: 'ARISTA #78'
-  type: vless
-  server: 31.77.149.194
-  port: 2053
-  uuid: d986e608-a5ad-4d8a-b658-ae7da5f3b170
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: nl-ams.dontblockmepls.com
-- name: 'ARISTA #79'
-  type: vless
-  server: rm3.rmastore.ir
-  port: 2053
-  uuid: 116e7d57-afcf-4558-be0a-01e80fe6cd31
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /nlrma
-- name: 'ARISTA #80'
-  type: vless
-  server: rm4.rmastore.ir
-  port: 2053
-  uuid: 116e7d57-afcf-4558-be0a-01e80fe6cd31
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /nlrma
-- name: 'ARISTA #81'
-  type: vless
-  server: 95.216.27.15
-  port: 2053
-  uuid: b79d736d-0f10-4169-b626-362059d18204
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: aiHdxKOzcFZDILKj3MIPrMsyT0XxMy_O6xoxnz6MIWs
-    short-id: "10351b07c712d2a2"
-- name: 'ARISTA #82'
-  type: vless
-  server: 57.131.38.163
-  port: 2053
-  uuid: d4b08cd6-0903-411a-9dac-45dbdf5c9712
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc
-    short-id: "5b8a942318178e7b"
-- name: 'ARISTA #83'
   type: trojan
   server: 172.67.118.45
   port: 2053
@@ -1130,22 +742,7 @@ proxies:
     path: /
     headers:
       Host: marvdasht.phonecomparisonblog.org
-- name: 'ARISTA #84'
-  type: trojan
-  server: 104.25.239.113
-  port: 2053
-  password: gHQP0D7D15
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: marvdasht.phonecomparisonblog.org
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: 'ARISTA #85'
+- name: 'ARISTA #53'
   type: trojan
   server: 104.25.239.113
   port: 2053
@@ -1160,7 +757,18 @@ proxies:
     path: '%2F'
     headers:
       Host: marvdasht.phonecomparisonblog.org
-- name: 'ARISTA #86'
+- name: 'ARISTA #54'
+  type: trojan
+  server: 104.16.186.130
+  port: 2053
+  password: gHQP0D7D15
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 104.16.186.130
+- name: 'ARISTA #55'
   type: trojan
   server: 172.66.0.1
   port: 2053
@@ -1178,7 +786,7 @@ proxies:
     path: /
     headers:
       Host: marvdasht.phonecomparisonblog.org
-- name: 'ARISTA #87'
+- name: 'ARISTA #56'
   type: trojan
   server: 104.27.0.1
   port: 2053
@@ -1196,7 +804,22 @@ proxies:
     path: /
     headers:
       Host: marvdasht.phonecomparisonblog.org
-- name: 'ARISTA #88'
+- name: 'ARISTA #57'
+  type: trojan
+  server: 104.25.239.113
+  port: 2053
+  password: gHQP0D7D15
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: marvdasht.phonecomparisonblog.org
+  ws-opts:
+    path: /
+    headers:
+      Host: marvdasht.phonecomparisonblog.org
+- name: 'ARISTA #58'
   type: trojan
   server: 172.67.118.45
   port: 2053
@@ -1211,22 +834,7 @@ proxies:
     path: /
     headers:
       Host: marvdasht.phonecomparisonblog.org
-- name: 'ARISTA #89'
-  type: trojan
-  server: 104.25.239.113
-  port: 2053
-  password: gHQP0D7D15
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: marvdasht.phonecomparisonblog.org
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: 'ARISTA #90'
+- name: 'ARISTA #59'
   type: trojan
   server: 104.25.239.113
   port: 2053
@@ -1241,7 +849,18 @@ proxies:
     path: '%2F'
     headers:
       Host: marvdasht.phonecomparisonblog.org
-- name: 'ARISTA #91'
+- name: 'ARISTA #60'
+  type: trojan
+  server: 104.16.186.130
+  port: 2053
+  password: gHQP0D7D15
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 104.16.186.130
+- name: 'ARISTA #61'
   type: trojan
   server: 172.66.0.1
   port: 2053
@@ -1259,7 +878,7 @@ proxies:
     path: /
     headers:
       Host: marvdasht.phonecomparisonblog.org
-- name: 'ARISTA #92'
+- name: 'ARISTA #62'
   type: trojan
   server: 104.27.0.1
   port: 2053
@@ -1348,36 +967,6 @@ proxy-groups:
   - 'ARISTA #60'
   - 'ARISTA #61'
   - 'ARISTA #62'
-  - 'ARISTA #63'
-  - 'ARISTA #64'
-  - 'ARISTA #65'
-  - 'ARISTA #66'
-  - 'ARISTA #67'
-  - 'ARISTA #68'
-  - 'ARISTA #69'
-  - 'ARISTA #70'
-  - 'ARISTA #71'
-  - 'ARISTA #72'
-  - 'ARISTA #73'
-  - 'ARISTA #74'
-  - 'ARISTA #75'
-  - 'ARISTA #76'
-  - 'ARISTA #77'
-  - 'ARISTA #78'
-  - 'ARISTA #79'
-  - 'ARISTA #80'
-  - 'ARISTA #81'
-  - 'ARISTA #82'
-  - 'ARISTA #83'
-  - 'ARISTA #84'
-  - 'ARISTA #85'
-  - 'ARISTA #86'
-  - 'ARISTA #87'
-  - 'ARISTA #88'
-  - 'ARISTA #89'
-  - 'ARISTA #90'
-  - 'ARISTA #91'
-  - 'ARISTA #92'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

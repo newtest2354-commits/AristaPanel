@@ -1,6 +1,6 @@
 # COMBINED - Port 2052
-# Updated: 2026-11-04 21:19:36
-# Count: 7
+# Updated: 2026-11-05 06:19:32
+# Count: 3
 
 mixed-port: 7890
 allow-lan: false
@@ -48,33 +48,7 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'ARISTA #1'
-  type: vless
-  server: 172.64.154.8
-  port: 2052
-  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /?ed=2560security=tls
-    headers:
-      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
-- name: 'ARISTA #2'
-  type: vless
-  server: 172.64.154.8
-  port: 2052
-  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /?ed=2560security=tls
-    headers:
-      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
-- name: 'T.ME: @aristapanel #3'
+- name: 'T.ME: @aristapanel #1'
   type: vless
   server: 193.227.99.54
   port: 2052
@@ -83,7 +57,7 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #4'
+- name: 'T.ME: @aristapanel #2'
   type: vless
   server: 104.17.121.110
   port: 2052
@@ -92,16 +66,7 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #5'
-  type: vless
-  server: 172.67.166.175
-  port: 2052
-  uuid: tel%25252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525253A%252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252540mahanvpn
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'T.ME: @aristapanel #6'
+- name: 'T.ME: @aristapanel #3'
   type: vless
   server: dash.mobiza.ir
   port: 2052
@@ -114,19 +79,6 @@ proxies:
     path: /
     headers:
       Host: dash.mobiza.ir
-- name: 'ARISTA #7'
-  type: vless
-  server: 172.64.154.8
-  port: 2052
-  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /?ed=2560security=tls
-    headers:
-      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -136,13 +88,9 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'ARISTA #1'
-  - 'ARISTA #2'
+  - 'T.ME: @aristapanel #1'
+  - 'T.ME: @aristapanel #2'
   - 'T.ME: @aristapanel #3'
-  - 'T.ME: @aristapanel #4'
-  - 'T.ME: @aristapanel #5'
-  - 'T.ME: @aristapanel #6'
-  - 'ARISTA #7'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
