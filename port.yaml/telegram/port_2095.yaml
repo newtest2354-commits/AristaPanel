@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2095
-# Updated: 2026-11-05 17:22:45
-# Count: 7
+# Updated: 2026-11-05 23:33:57
+# Count: 2
 
 mixed-port: 7890
 allow-lan: false
@@ -49,68 +49,29 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'ARISTA #1'
-  type: vless
-  server: 216.24.57.1
+  type: trojan
+  server: melli-shecan.tr
   port: 2095
-  uuid: 5ed1a622-a3d4-47e5-b135-11e2dc909bff
-  network: httpupgrade
-  tls: false
+  password: zFOLEe09hogIoevLZ0VJslJepLsPSIBV
+  network: tcp
+  tls: true
   udp: true
   skip-cert-verify: true
+  tcp-fast-open: true
+  servername: mellishecan.com.tr
+  client-fingerprint: chrome
 - name: 'ARISTA #2'
-  type: vless
-  server: 216.24.57.1
+  type: trojan
+  server: melli-shecan.tr
   port: 2095
-  uuid: 5ed1a622-a3d4-47e5-b135-11e2dc909bff
-  network: httpupgrade
-  tls: false
+  password: zFOLEe09hogIoevLZ0VJslJepLsPSIBV
+  network: tcp
+  tls: true
   udp: true
   skip-cert-verify: true
-- name: 'ARISTA #3'
-  type: vless
-  server: 188.114.98.6
-  port: 2095
-  uuid: c5b9de21-da72-447f-ab72-a216cfb98370
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #4'
-  type: vless
-  server: 216.24.57.1
-  port: 2095
-  uuid: 5ed1a622-a3d4-47e5-b135-11e2dc909bff
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #5'
-  type: vless
-  server: 188.114.98.6
-  port: 2095
-  uuid: c5b9de21-da72-447f-ab72-a216cfb98370
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #6'
-  type: vless
-  server: 216.24.57.1
-  port: 2095
-  uuid: 5ed1a622-a3d4-47e5-b135-11e2dc909bff
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #7'
-  type: vless
-  server: 216.24.57.1
-  port: 2095
-  uuid: 5ed1a622-a3d4-47e5-b135-11e2dc909bff
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: mellishecan.com.tr
+  client-fingerprint: chrome
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -122,11 +83,6 @@ proxy-groups:
   proxies: &id001
   - 'ARISTA #1'
   - 'ARISTA #2'
-  - 'ARISTA #3'
-  - 'ARISTA #4'
-  - 'ARISTA #5'
-  - 'ARISTA #6'
-  - 'ARISTA #7'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

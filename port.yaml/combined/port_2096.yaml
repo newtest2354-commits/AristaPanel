@@ -1,6 +1,6 @@
 # COMBINED - Port 2096
-# Updated: 2026-11-05 17:22:38
-# Count: 9
+# Updated: 2026-11-05 23:33:53
+# Count: 3
 
 mixed-port: 7890
 allow-lan: false
@@ -48,75 +48,7 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'ARISTA #1'
-  type: vless
-  server: 46.101.196.101
-  port: 2096
-  uuid: 8525fe74-67e6-4a55-8a26-95f227bd1384
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: lucky-sky-0104.alvlirm444.workers.dev
-  ws-opts:
-    path: /
-    headers:
-      Host: lucky-sky-0104.alvlirm444.workers.dev
-- name: 'ARISTA #2'
-  type: vless
-  server: 46.101.196.101
-  port: 2096
-  uuid: 8525fe74-67e6-4a55-8a26-95f227bd1384
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: lucky-sky-0104.alvlirm444.workers.dev
-  ws-opts:
-    path: /
-    headers:
-      Host: lucky-sky-0104.alvlirm444.workers.dev
-- name: 'ARISTA #3'
-  type: vless
-  server: 46.101.196.101
-  port: 2096
-  uuid: 8525fe74-67e6-4a55-8a26-95f227bd1384
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: lucky-sky-0104.alvlirm444.workers.dev
-  ws-opts:
-    path: /
-    headers:
-      Host: lucky-sky-0104.alvlirm444.workers.dev
-- name: 'ARISTA #4'
-  type: vless
-  server: 46.101.196.101
-  port: 2096
-  uuid: 8525fe74-67e6-4a55-8a26-95f227bd1384
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: lucky-sky-0104.alvlirm444.workers.dev
-  ws-opts:
-    path: /
-    headers:
-      Host: lucky-sky-0104.alvlirm444.workers.dev
-- name: 'T.ME: @aristapanel #5'
+- name: 'T.ME: @aristapanel #1'
   type: vless
   server: saas.sin.fan
   port: 2096
@@ -131,21 +63,22 @@ proxies:
     path: /thread/list
     headers:
       Host: vp9.1145678.xyz
-- name: 'T.ME: @aristapanel #6'
+- name: 'T.ME: @aristapanel #2'
   type: vless
-  server: 172.67.130.159
+  server: 104.18.40.127
   port: 2096
-  uuid: 550d6eb0-1775-44a4-a464-9176e3d74b50
+  uuid: 51a0af77-a60c-4d9b-81a4-f50e1b38d90b
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: cdn-us.skyvora.app
+  client-fingerprint: chrome
+  servername: hdradfjhtgfdjsrt.pages.dev
   ws-opts:
-    path: /0i027askufp=chrome
+    path: /
     headers:
-      Host: cdn-us.skyvora.app
-- name: 'T.ME: @aristapanel #7'
+      Host: hdradfjhtgfdjsrt.pages.dev
+- name: 'T.ME: @aristapanel #3'
   type: vless
   server: 8.39.125.92
   port: 2096
@@ -160,40 +93,6 @@ proxies:
     path: /7f0776a02fac
     headers:
       Host: frosty-clover-b8ea-df1f0206.pages.dev
-- name: 'ARISTA #8'
-  type: vless
-  server: 46.101.196.101
-  port: 2096
-  uuid: 8525fe74-67e6-4a55-8a26-95f227bd1384
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: lucky-sky-0104.alvlirm444.workers.dev
-  ws-opts:
-    path: /
-    headers:
-      Host: lucky-sky-0104.alvlirm444.workers.dev
-- name: 'ARISTA #9'
-  type: vless
-  server: 46.101.196.101
-  port: 2096
-  uuid: 8525fe74-67e6-4a55-8a26-95f227bd1384
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  servername: lucky-sky-0104.alvlirm444.workers.dev
-  ws-opts:
-    path: /
-    headers:
-      Host: lucky-sky-0104.alvlirm444.workers.dev
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -203,15 +102,9 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'ARISTA #1'
-  - 'ARISTA #2'
-  - 'ARISTA #3'
-  - 'ARISTA #4'
-  - 'T.ME: @aristapanel #5'
-  - 'T.ME: @aristapanel #6'
-  - 'T.ME: @aristapanel #7'
-  - 'ARISTA #8'
-  - 'ARISTA #9'
+  - 'T.ME: @aristapanel #1'
+  - 'T.ME: @aristapanel #2'
+  - 'T.ME: @aristapanel #3'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

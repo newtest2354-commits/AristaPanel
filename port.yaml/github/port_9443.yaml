@@ -1,6 +1,6 @@
 # GITHUB - Port 9443
-# Updated: 2026-11-05 17:22:51
-# Count: 1
+# Updated: 2026-11-05 23:34:00
+# Count: 4
 
 mixed-port: 7890
 allow-lan: false
@@ -50,6 +50,50 @@ rules:
 proxies:
 - name: 'T.ME: @aristapanel #1'
   type: vless
+  server: 91.185.83.105
+  port: 9443
+  uuid: db44bb4d-dde4-4e59-89f3-e4abd1f7a9bf
+  network: raw
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: passport.yandex.ru
+  reality-opts:
+    public-key: Te3ZcFFTilb6_j4hdotSvXaRYBzGuNiRxuBh8n1NezU
+    short-id: "91d2d3db690f4b59"
+- name: 'T.ME: @aristapanel #2'
+  type: vless
+  server: freetg.ghost-service.cc
+  port: 9443
+  uuid: 36a1c787-fb9e-4fea-ba54-5cb33255d4de
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: freetg.ghost-service.cc
+  ws-opts:
+    path: /live.stream.v1.Broadcast/
+    headers:
+      Host: freetg.ghost-service.cc
+- name: 'T.ME: @aristapanel #3'
+  type: vless
+  server: 91.185.83.105
+  port: 9443
+  uuid: db44bb4d-dde4-4e59-89f3-e4abd1f7a9bf
+  network: raw
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: passport.yandex.ru
+  reality-opts:
+    public-key: Te3ZcFFTilb6_j4hdotSvXaRYBzGuNiRxuBh8n1NezU
+    short-id: "91d2d3db690f4b59"
+- name: 'T.ME: @aristapanel #4'
+  type: vless
   server: freetg.ghost-service.cc
   port: 9443
   uuid: 36a1c787-fb9e-4fea-ba54-5cb33255d4de
@@ -72,6 +116,9 @@ proxy-groups:
   timeout: 3000
   proxies: &id001
   - 'T.ME: @aristapanel #1'
+  - 'T.ME: @aristapanel #2'
+  - 'T.ME: @aristapanel #3'
+  - 'T.ME: @aristapanel #4'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
