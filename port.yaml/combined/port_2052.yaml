@@ -1,6 +1,6 @@
 # COMBINED - Port 2052
-# Updated: 2026-11-05 23:33:53
-# Count: 3
+# Updated: 2026-11-06 06:11:32
+# Count: 6
 
 mixed-port: 7890
 allow-lan: false
@@ -48,7 +48,46 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'T.ME: @aristapanel #1'
+- name: 'ARISTA #1'
+  type: vless
+  server: hikvision-plus.com
+  port: 2052
+  uuid: 1f61ccc1-cd38-49cd-97aa-a71771433976
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: api-v1
+    headers:
+      Host: uwu.blueknightnet.qzz.io
+- name: 'ARISTA #2'
+  type: vless
+  server: hikvision-plus.com
+  port: 2052
+  uuid: 1f61ccc1-cd38-49cd-97aa-a71771433976
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: api-v1
+    headers:
+      Host: uwu.blueknightnet.qzz.io
+- name: 'ARISTA #3'
+  type: vless
+  server: hikvision-plus.com
+  port: 2052
+  uuid: 1f61ccc1-cd38-49cd-97aa-a71771433976
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: api-v1
+    headers:
+      Host: uwu.blueknightnet.qzz.io
+- name: 'T.ME: @aristapanel #4'
   type: vless
   server: 193.227.99.54
   port: 2052
@@ -57,7 +96,7 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #2'
+- name: 'T.ME: @aristapanel #5'
   type: vless
   server: 104.17.121.110
   port: 2052
@@ -66,7 +105,7 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #3'
+- name: 'T.ME: @aristapanel #6'
   type: vless
   server: dash.mobiza.ir
   port: 2052
@@ -88,9 +127,12 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'T.ME: @aristapanel #1'
-  - 'T.ME: @aristapanel #2'
-  - 'T.ME: @aristapanel #3'
+  - 'ARISTA #1'
+  - 'ARISTA #2'
+  - 'ARISTA #3'
+  - 'T.ME: @aristapanel #4'
+  - 'T.ME: @aristapanel #5'
+  - 'T.ME: @aristapanel #6'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
