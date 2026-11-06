@@ -1,6 +1,6 @@
 # COMBINED - Port 2086
-# Updated: 2026-11-06 16:46:17
-# Count: 1
+# Updated: 2026-11-06 23:04:12
+# Count: 3
 
 mixed-port: 7890
 allow-lan: false
@@ -48,20 +48,45 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'T.ME: @aristapanel #1'
+- name: 'ARISTA #1'
   type: vless
-  server: 104.21.46.101
+  server: de22.fastplus7.site
   port: 2086
-  uuid: 4a956dfd-b65a-4846-b6da-c85fc79918a5
+  uuid: 0d1c3cee-2952-4a3e-a03e-fbe99d32dc72
   network: ws
-  tls: true
+  tls: false
   udp: true
   skip-cert-verify: true
-  servername: green-scene-32df.atalastchance.workers.dev
   ws-opts:
-    path: /eyJqdW5rIjoibW81VDZwNXg5S2IiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByZWZpeCIsInBhbmVsSVBzIjpbIlsyNjAyOmZjNTk6YjA6NjQ6Ol0iXX0
+    path: /
     headers:
-      Host: green-scene-32df.atalastchance.workers.dev
+      Host: de21.fastplus11.ir
+- name: 'ARISTA #2'
+  type: vless
+  server: de22.fastplus7.site
+  port: 2086
+  uuid: 0d1c3cee-2952-4a3e-a03e-fbe99d32dc72
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: de21.fastplus11.ir
+- name: 'ARISTA #3'
+  type: vless
+  server: de22.fastplus7.site
+  port: 2086
+  uuid: 0d1c3cee-2952-4a3e-a03e-fbe99d32dc72
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: de21.fastplus11.ir
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -71,7 +96,9 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'T.ME: @aristapanel #1'
+  - 'ARISTA #1'
+  - 'ARISTA #2'
+  - 'ARISTA #3'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

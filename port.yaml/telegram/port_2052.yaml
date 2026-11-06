@@ -1,5 +1,5 @@
 # TELEGRAM - Port 2052
-# Updated: 2026-11-06 06:11:39
+# Updated: 2026-11-06 23:04:20
 # Count: 2
 
 mixed-port: 7890
@@ -49,31 +49,39 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'ARISTA #1'
-  type: vless
-  server: hikvision-plus.com
+  type: vmess
+  server: kish.ir
   port: 2052
-  uuid: 1f61ccc1-cd38-49cd-97aa-a71771433976
+  uuid: 8972fac2-8ffe-4c35-9fc8-4584a6278980
+  alterId: 0
+  cipher: auto
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  tcp-fast-open: true
+  servername: kish.ir
   ws-opts:
-    path: api-v1
+    path: /
     headers:
-      Host: uwu.blueknightnet.qzz.io
+      Host: rt.orvexa.ir
 - name: 'ARISTA #2'
-  type: vless
-  server: hikvision-plus.com
+  type: vmess
+  server: kish.ir
   port: 2052
-  uuid: 1f61ccc1-cd38-49cd-97aa-a71771433976
+  uuid: 8972fac2-8ffe-4c35-9fc8-4584a6278980
+  alterId: 0
+  cipher: auto
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  tcp-fast-open: true
+  servername: kish.ir
   ws-opts:
-    path: api-v1
+    path: /
     headers:
-      Host: uwu.blueknightnet.qzz.io
+      Host: rt.orvexa.ir
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
