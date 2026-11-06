@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2087
-# Updated: 2026-11-06 06:11:39
-# Count: 5
+# Updated: 2026-11-06 16:46:21
+# Count: 1
 
 mixed-port: 7890
 allow-lan: false
@@ -50,57 +50,17 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 2.26.6.1
+  server: 188.114.97.0
   port: 2087
-  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
-  network: tcp
+  uuid: 0075be7a-1f52-407b-81c1-7a0cb109e814
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
+  alpn:
+  - h2
   client-fingerprint: chrome
-  servername: 2.26.6.1
-- name: 'ARISTA #2'
-  type: vless
-  server: 2.26.6.1
-  port: 2087
-  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: 2.26.6.1
-- name: 'ARISTA #3'
-  type: vless
-  server: 2.26.6.1
-  port: 2087
-  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: 2.26.6.1
-- name: 'ARISTA #4'
-  type: vless
-  server: 2.26.6.1
-  port: 2087
-  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: 2.26.6.1
-- name: 'ARISTA #5'
-  type: vless
-  server: 2.26.6.1
-  port: 2087
-  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: 2.26.6.1
+  servername: smart-hetzner-ed5b25.airpressoini31.com
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -111,10 +71,6 @@ proxy-groups:
   timeout: 3000
   proxies: &id001
   - 'ARISTA #1'
-  - 'ARISTA #2'
-  - 'ARISTA #3'
-  - 'ARISTA #4'
-  - 'ARISTA #5'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

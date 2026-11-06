@@ -1,6 +1,6 @@
 # COMBINED - Port 9443
-# Updated: 2026-11-06 06:11:32
-# Count: 2
+# Updated: 2026-11-06 16:46:17
+# Count: 3
 
 mixed-port: 7890
 allow-lan: false
@@ -52,7 +52,7 @@ proxies:
   type: vless
   server: 91.185.83.105
   port: 9443
-  uuid: 7be2a388-f5ac-4695-816e-f1a62740b978
+  uuid: 479b3f04-61db-4cbf-a24b-f34132982cac
   network: raw
   tls: true
   udp: true
@@ -65,18 +65,34 @@ proxies:
     short-id: "91d2d3db690f4b59"
 - name: 'T.ME: @aristapanel #2'
   type: vless
-  server: freetg.ghost-service.cc
+  server: 91.185.83.105
   port: 9443
-  uuid: 36a1c787-fb9e-4fea-ba54-5cb33255d4de
-  network: ws
+  uuid: 140241a7-c768-40db-8870-fd08c8fdef80
+  network: raw
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: freetg.ghost-service.cc
-  ws-opts:
-    path: /live.stream.v1.Broadcast/
-    headers:
-      Host: freetg.ghost-service.cc
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: passport.yandex.ru
+  reality-opts:
+    public-key: Te3ZcFFTilb6_j4hdotSvXaRYBzGuNiRxuBh8n1NezU
+    short-id: "91d2d3db690f4b59"
+- name: 'T.ME: @aristapanel #3'
+  type: vless
+  server: 91.185.83.105
+  port: 9443
+  uuid: 56097179-7997-4343-9f6b-e6b17c196fac
+  network: raw
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: passport.yandex.ru
+  reality-opts:
+    public-key: Te3ZcFFTilb6_j4hdotSvXaRYBzGuNiRxuBh8n1NezU
+    short-id: "91d2d3db690f4b59"
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -88,6 +104,7 @@ proxy-groups:
   proxies: &id001
   - 'T.ME: @aristapanel #1'
   - 'T.ME: @aristapanel #2'
+  - 'T.ME: @aristapanel #3'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

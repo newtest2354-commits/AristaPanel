@@ -1,6 +1,6 @@
 # TELEGRAM - HYSTERIA2 - Tier ALL
-# Updated: 2026-11-06 06:11:37
-# Count: 2
+# Updated: 2026-11-06 16:46:20
+# Count: 3
 
 mixed-port: 7890
 allow-lan: false
@@ -50,18 +50,28 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: hysteria2
-  server: 88.216.195.188
-  port: 443
-  password: 63e1b9462d708b56d5d5a0267cffecdc
-  sni: promo3.goonars.com
-  skip-cert-verify: true
-  fast-open: true
-- name: 'ARISTA #2'
-  type: hysteria2
   server: 95.143.196.97
   port: 443
   password: 769f34f0-1500-488f-b414-03bc90666502
   sni: se.mimowhat.online
+  skip-cert-verify: true
+  fast-open: true
+- name: 'ARISTA #2'
+  type: hysteria2
+  server: oh.sbbz.tech
+  port: 443
+  password: 41d4f8b3-2a45-4531-a33b-938e2eebb939
+  sni: oh.sbbz.tech
+  skip-cert-verify: true
+  fast-open: true
+  obfs: salamander
+  obfs-password: sbxbz19890604
+- name: 'ARISTA #3'
+  type: hysteria2
+  server: 88.216.195.188
+  port: 443
+  password: 63e1b9462d708b56d5d5a0267cffecdc
+  sni: promo3.goonars.com
   skip-cert-verify: true
   fast-open: true
 proxy-groups:
@@ -75,6 +85,7 @@ proxy-groups:
   proxies: &id001
   - 'ARISTA #1'
   - 'ARISTA #2'
+  - 'ARISTA #3'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

@@ -1,6 +1,6 @@
 # COMBINED - Port 2053
-# Updated: 2026-11-06 06:11:32
-# Count: 86
+# Updated: 2026-11-06 16:46:17
+# Count: 97
 
 mixed-port: 7890
 allow-lan: false
@@ -50,6 +50,19 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vmess
+  server: 178.63.237.148
+  port: 2053
+  uuid: c69fd960-c455-4a05-88d1-d83e9431bc76
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 178.63.237.148
+- name: 'ARISTA #2'
+  type: vmess
   server: m50.vipsarbazi.info
   port: 2053
   uuid: ba562f63-2445-4368-8100-6f66d7f4b749
@@ -61,7 +74,7 @@ proxies:
   skip-cert-verify: true
   tcp-fast-open: true
   servername: m50.vipsarbazi.info
-- name: 'ARISTA #2'
+- name: 'ARISTA #3'
   type: vmess
   server: 178.63.237.148
   port: 2053
@@ -74,19 +87,6 @@ proxies:
   skip-cert-verify: true
   tcp-fast-open: true
   servername: 178.63.237.148
-- name: 'ARISTA #3'
-  type: vmess
-  server: m50.vipsarbazi.info
-  port: 2053
-  uuid: ba562f63-2445-4368-8100-6f66d7f4b749
-  alterId: 0
-  cipher: auto
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: m50.vipsarbazi.info
 - name: 'ARISTA #4'
   type: vmess
   server: 178.63.237.148
@@ -140,33 +140,20 @@ proxies:
   tcp-fast-open: true
   servername: m50.vipsarbazi.info
 - name: 'ARISTA #8'
-  type: vmess
-  server: 178.63.237.148
-  port: 2053
-  uuid: c69fd960-c455-4a05-88d1-d83e9431bc76
-  alterId: 0
-  cipher: auto
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: 178.63.237.148
-- name: 'ARISTA #9'
   type: vless
-  server: 104.18.151.231
+  server: w.geogame.ir
   port: 2053
-  uuid: eaf76557-2219-4799-8171-d7020adfefd0
-  network: ws
+  uuid: fbda2834-b1e7-4148-afb9-deda31036a30
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: twilight-frost-15b0.yigom67484.workers.dev
-  ws-opts:
-    path: /ws
-    headers:
-      Host: twilight-frost-15b0.yigom67484.workers.dev
-- name: 'ARISTA #10'
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: w.geogame.ir
+- name: 'ARISTA #9'
   type: vless
   server: 66.70.179.198
   port: 2053
@@ -180,6 +167,21 @@ proxies:
   reality-opts:
     public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
     short-id: "83f8317a948bb769"
+- name: 'ARISTA #10'
+  type: vless
+  server: 23.95.115.116
+  port: 2053
+  uuid: 2739258b-a278-4bed-bc5d-f88830824dce
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: plwyjJZIVDt1OtwDAxfcLjDsR7dseVCe9Ia3HceIKEg
+    short-id: "a1b2c3d4"
 - name: 'ARISTA #11'
   type: vless
   server: 51.89.194.151
@@ -196,18 +198,18 @@ proxies:
     short-id: "d051f678212f9d54"
 - name: 'ARISTA #12'
   type: vless
-  server: 104.18.151.231
+  server: w.geogame.ir
   port: 2053
-  uuid: eaf76557-2219-4799-8171-d7020adfefd0
-  network: ws
+  uuid: fbda2834-b1e7-4148-afb9-deda31036a30
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: twilight-frost-15b0.yigom67484.workers.dev
-  ws-opts:
-    path: /ws
-    headers:
-      Host: twilight-frost-15b0.yigom67484.workers.dev
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: w.geogame.ir
 - name: 'ARISTA #13'
   type: vless
   server: 66.70.179.198
@@ -224,47 +226,20 @@ proxies:
     short-id: "83f8317a948bb769"
 - name: 'ARISTA #14'
   type: vless
-  server: 104.18.151.231
+  server: 23.95.115.116
   port: 2053
-  uuid: eaf76557-2219-4799-8171-d7020adfefd0
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: twilight-frost-15b0.yigom67484.workers.dev
-  ws-opts:
-    path: /ws
-    headers:
-      Host: twilight-frost-15b0.yigom67484.workers.dev
-- name: 'ARISTA #15'
-  type: vless
-  server: 66.70.179.198
-  port: 2053
-  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
+  uuid: 2739258b-a278-4bed-bc5d-f88830824dce
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: random
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
   servername: www.cloudflare.com
   reality-opts:
-    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
-    short-id: "83f8317a948bb769"
-- name: 'ARISTA #16'
-  type: vless
-  server: 51.89.194.151
-  port: 2053
-  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
-    short-id: "d051f678212f9d54"
-- name: 'ARISTA #17'
+    public-key: plwyjJZIVDt1OtwDAxfcLjDsR7dseVCe9Ia3HceIKEg
+    short-id: "a1b2c3d4"
+- name: 'ARISTA #15'
   type: vless
   server: w.geogame.ir
   port: 2053
@@ -278,64 +253,36 @@ proxies:
   - http/1.1
   client-fingerprint: chrome
   servername: w.geogame.ir
-- name: 'ARISTA #18'
+- name: 'ARISTA #16'
   type: vless
-  server: fast.145779.xyz
+  server: 66.70.179.198
   port: 2053
-  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
-    headers:
-      Host: fast.145779.xyz
-- name: 'ARISTA #19'
-  type: vless
-  server: 95.216.27.15
-  port: 2053
-  uuid: b79d736d-0f10-4169-b626-362059d18204
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: aiHdxKOzcFZDILKj3MIPrMsyT0XxMy_O6xoxnz6MIWs
-    short-id: "10351b07c712d2a2"
-- name: 'ARISTA #20'
-  type: vless
-  server: 212.227.235.66
-  port: 2053
-  uuid: ead0dd61-d398-40ad-80d6-a0e1e516d7d3
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: www.apple.com
-  reality-opts:
-    public-key: 7Y6Xb5Ql_03K25x8yKUSOKI2JTOMyv2nyCcFza90uxk
-    short-id: "29e8dcd2b37aaa7f"
-- name: 'T.ME: @aristapanel #21'
-  type: vless
-  server: 208.69.78.217
-  port: 2053
-  uuid: c0dd6d59-1573-43af-8b70-1470b2632a6d
+  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: random
-  servername: www.apple.com
+  servername: www.cloudflare.com
   reality-opts:
-    public-key: A49ue7zXSusJZdErPAewg3jqGdUFIO1a9xOunEKJfC0
-    short-id: "ad86e2d52ff40ebd"
-- name: 'T.ME: @aristapanel #22'
+    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
+    short-id: "83f8317a948bb769"
+- name: 'ARISTA #17'
+  type: vless
+  server: 23.95.115.116
+  port: 2053
+  uuid: 2739258b-a278-4bed-bc5d-f88830824dce
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: plwyjJZIVDt1OtwDAxfcLjDsR7dseVCe9Ia3HceIKEg
+    short-id: "a1b2c3d4"
+- name: 'ARISTA #18'
   type: vless
   server: 51.89.194.151
   port: 2053
@@ -349,34 +296,90 @@ proxies:
   reality-opts:
     public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
     short-id: "d051f678212f9d54"
-- name: 'ARISTA #23'
+- name: 'T.ME: @aristapanel #19'
   type: vless
-  server: 104.18.151.231
+  server: 212.227.235.66
   port: 2053
-  uuid: eaf76557-2219-4799-8171-d7020adfefd0
-  network: ws
+  uuid: ead0dd61-d398-40ad-80d6-a0e1e516d7d3
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: twilight-frost-15b0.yigom67484.workers.dev
-  ws-opts:
-    path: /ws
-    headers:
-      Host: twilight-frost-15b0.yigom67484.workers.dev
+  client-fingerprint: firefox
+  servername: www.apple.com
+  reality-opts:
+    public-key: 7Y6Xb5Ql_03K25x8yKUSOKI2JTOMyv2nyCcFza90uxk
+    short-id: "29e8dcd2b37aaa7f"
+- name: 'T.ME: @aristapanel #20'
+  type: vless
+  server: 208.69.78.217
+  port: 2053
+  uuid: c0dd6d59-1573-43af-8b70-1470b2632a6d
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: random
+  servername: www.apple.com
+  reality-opts:
+    public-key: A49ue7zXSusJZdErPAewg3jqGdUFIO1a9xOunEKJfC0
+    short-id: "ad86e2d52ff40ebd"
+- name: 'T.ME: @aristapanel #21'
+  type: vless
+  server: 51.89.194.151
+  port: 2053
+  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
+    short-id: "d051f678212f9d54"
+- name: 'T.ME: @aristapanel #22'
+  type: vless
+  server: 66.70.179.198
+  port: 2053
+  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
+    short-id: "83f8317a948bb769"
+- name: 'T.ME: @aristapanel #23'
+  type: vless
+  server: 212.227.235.66
+  port: 2053
+  uuid: ead0dd61-d398-40ad-80d6-a0e1e516d7d3
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: www.apple.com
+  reality-opts:
+    public-key: 7Y6Xb5Ql_03K25x8yKUSOKI2JTOMyv2nyCcFza90uxk
+    short-id: "29e8dcd2b37aaa7f"
 - name: 'ARISTA #24'
   type: vless
-  server: 104.18.151.231
+  server: w.geogame.ir
   port: 2053
-  uuid: eaf76557-2219-4799-8171-d7020adfefd0
-  network: ws
+  uuid: fbda2834-b1e7-4148-afb9-deda31036a30
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: twilight-frost-15b0.yigom67484.workers.dev
-  ws-opts:
-    path: /ws
-    headers:
-      Host: twilight-frost-15b0.yigom67484.workers.dev
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: w.geogame.ir
 - name: 'ARISTA #25'
   type: vless
   server: 66.70.179.198
@@ -393,6 +396,21 @@ proxies:
     short-id: "83f8317a948bb769"
 - name: 'ARISTA #26'
   type: vless
+  server: 23.95.115.116
+  port: 2053
+  uuid: 2739258b-a278-4bed-bc5d-f88830824dce
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: plwyjJZIVDt1OtwDAxfcLjDsR7dseVCe9Ia3HceIKEg
+    short-id: "a1b2c3d4"
+- name: 'ARISTA #27'
+  type: vless
   server: 51.89.194.151
   port: 2053
   uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
@@ -405,7 +423,21 @@ proxies:
   reality-opts:
     public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
     short-id: "d051f678212f9d54"
-- name: 'ARISTA #27'
+- name: 'T.ME: @aristapanel #28'
+  type: vless
+  server: 212.227.235.66
+  port: 2053
+  uuid: ead0dd61-d398-40ad-80d6-a0e1e516d7d3
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: www.apple.com
+  reality-opts:
+    public-key: 7Y6Xb5Ql_03K25x8yKUSOKI2JTOMyv2nyCcFza90uxk
+    short-id: "29e8dcd2b37aaa7f"
+- name: 'ARISTA #29'
   type: vless
   server: w.geogame.ir
   port: 2053
@@ -419,50 +451,7 @@ proxies:
   - http/1.1
   client-fingerprint: chrome
   servername: w.geogame.ir
-- name: 'ARISTA #28'
-  type: vless
-  server: fast.145779.xyz
-  port: 2053
-  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
-    headers:
-      Host: fast.145779.xyz
-- name: 'ARISTA #29'
-  type: vless
-  server: 95.216.27.15
-  port: 2053
-  uuid: b79d736d-0f10-4169-b626-362059d18204
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: aiHdxKOzcFZDILKj3MIPrMsyT0XxMy_O6xoxnz6MIWs
-    short-id: "10351b07c712d2a2"
 - name: 'ARISTA #30'
-  type: vless
-  server: 104.18.151.231
-  port: 2053
-  uuid: eaf76557-2219-4799-8171-d7020adfefd0
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: twilight-frost-15b0.yigom67484.workers.dev
-  ws-opts:
-    path: /ws
-    headers:
-      Host: twilight-frost-15b0.yigom67484.workers.dev
-- name: 'ARISTA #31'
   type: vless
   server: 66.70.179.198
   port: 2053
@@ -476,6 +465,21 @@ proxies:
   reality-opts:
     public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
     short-id: "83f8317a948bb769"
+- name: 'ARISTA #31'
+  type: vless
+  server: 23.95.115.116
+  port: 2053
+  uuid: 2739258b-a278-4bed-bc5d-f88830824dce
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: plwyjJZIVDt1OtwDAxfcLjDsR7dseVCe9Ia3HceIKEg
+    short-id: "a1b2c3d4"
 - name: 'ARISTA #32'
   type: vless
   server: 51.89.194.151
@@ -490,50 +494,7 @@ proxies:
   reality-opts:
     public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
     short-id: "d051f678212f9d54"
-- name: 'ARISTA #33'
-  type: vless
-  server: w.geogame.ir
-  port: 2053
-  uuid: fbda2834-b1e7-4148-afb9-deda31036a30
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: w.geogame.ir
-- name: 'ARISTA #34'
-  type: vless
-  server: fast.145779.xyz
-  port: 2053
-  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
-    headers:
-      Host: fast.145779.xyz
-- name: 'ARISTA #35'
-  type: vless
-  server: 95.216.27.15
-  port: 2053
-  uuid: b79d736d-0f10-4169-b626-362059d18204
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: aiHdxKOzcFZDILKj3MIPrMsyT0XxMy_O6xoxnz6MIWs
-    short-id: "10351b07c712d2a2"
-- name: 'ARISTA #36'
+- name: 'T.ME: @aristapanel #33'
   type: vless
   server: 212.227.235.66
   port: 2053
@@ -547,7 +508,7 @@ proxies:
   reality-opts:
     public-key: 7Y6Xb5Ql_03K25x8yKUSOKI2JTOMyv2nyCcFza90uxk
     short-id: "29e8dcd2b37aaa7f"
-- name: 'T.ME: @aristapanel #37'
+- name: 'T.ME: @aristapanel #34'
   type: vless
   server: 208.69.78.217
   port: 2053
@@ -561,7 +522,7 @@ proxies:
   reality-opts:
     public-key: A49ue7zXSusJZdErPAewg3jqGdUFIO1a9xOunEKJfC0
     short-id: "ad86e2d52ff40ebd"
-- name: 'T.ME: @aristapanel #38'
+- name: 'T.ME: @aristapanel #35'
   type: vless
   server: 51.89.194.151
   port: 2053
@@ -575,7 +536,7 @@ proxies:
   reality-opts:
     public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
     short-id: "d051f678212f9d54"
-- name: 'T.ME: @aristapanel #39'
+- name: 'T.ME: @aristapanel #36'
   type: vless
   server: 66.70.179.198
   port: 2053
@@ -589,7 +550,7 @@ proxies:
   reality-opts:
     public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
     short-id: "83f8317a948bb769"
-- name: 'T.ME: @aristapanel #40'
+- name: 'T.ME: @aristapanel #37'
   type: vless
   server: 212.227.235.66
   port: 2053
@@ -603,7 +564,98 @@ proxies:
   reality-opts:
     public-key: 7Y6Xb5Ql_03K25x8yKUSOKI2JTOMyv2nyCcFza90uxk
     short-id: "29e8dcd2b37aaa7f"
+- name: 'T.ME: @aristapanel #38'
+  type: vless
+  server: 104.18.151.231
+  port: 2053
+  uuid: eaf76557-2219-4799-8171-d7020adfefd0
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: twilight-frost-15b0.yigom67484.workers.dev
+  ws-opts:
+    path: /ws
+    headers:
+      Host: twilight-frost-15b0.yigom67484.workers.dev
+- name: 'T.ME: @aristapanel #39'
+  type: vless
+  server: 201.58.181.231
+  port: 2053
+  uuid: fafc7c16-f890-45ee-a856-02df225172dd
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: ya.ru
+  reality-opts:
+    public-key: MNiFXYg5jUmPSGK799ApRlrPR1CV8QflX85dDakOzRg
+    short-id: "cc91595f8222fda2"
+- name: 'T.ME: @aristapanel #40'
+  type: vless
+  server: 104.26.6.109
+  port: 2053
+  uuid: 51a0af77-a60c-4d9b-81a4-f50e1b38d90b
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: pilot4f8f.pages.dev
+  ws-opts:
+    path: /
+    headers:
+      Host: pilot4f8f.pages.dev
 - name: 'T.ME: @aristapanel #41'
+  type: vless
+  server: fast.145779.xyz
+  port: 2053
+  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+- name: 'T.ME: @aristapanel #42'
+  type: vless
+  server: 172.67.199.126
+  port: 2053
+  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
+- name: 'T.ME: @aristapanel #43'
+  type: vless
+  server: 141.193.213.30
+  port: 2053
+  uuid: 64a28ed6-2238-42d9-8452-b83674f741e5
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: edge
+  servername: sunny-comet-55.curiocar.com
+  ws-opts:
+    path: /?ed=2053
+    headers:
+      Host: sunny-comet-55.curiocar.com
+- name: 'T.ME: @aristapanel #44'
   type: vless
   server: one-for-all.levikogjgfdd.ir
   port: 2053
@@ -618,105 +670,7 @@ proxies:
     path: /
     headers:
       Host: levikoconfig.levikogjgfdd.ir
-- name: 'ARISTA #42'
-  type: vless
-  server: 104.18.151.231
-  port: 2053
-  uuid: eaf76557-2219-4799-8171-d7020adfefd0
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: twilight-frost-15b0.yigom67484.workers.dev
-  ws-opts:
-    path: /ws
-    headers:
-      Host: twilight-frost-15b0.yigom67484.workers.dev
-- name: 'ARISTA #43'
-  type: vless
-  server: 104.18.151.231
-  port: 2053
-  uuid: eaf76557-2219-4799-8171-d7020adfefd0
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: twilight-frost-15b0.yigom67484.workers.dev
-  ws-opts:
-    path: /ws
-    headers:
-      Host: twilight-frost-15b0.yigom67484.workers.dev
-- name: 'ARISTA #44'
-  type: vless
-  server: 66.70.179.198
-  port: 2053
-  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: random
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
-    short-id: "83f8317a948bb769"
 - name: 'ARISTA #45'
-  type: vless
-  server: 51.89.194.151
-  port: 2053
-  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
-    short-id: "d051f678212f9d54"
-- name: 'ARISTA #46'
-  type: vless
-  server: 104.18.151.231
-  port: 2053
-  uuid: eaf76557-2219-4799-8171-d7020adfefd0
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: twilight-frost-15b0.yigom67484.workers.dev
-  ws-opts:
-    path: /ws
-    headers:
-      Host: twilight-frost-15b0.yigom67484.workers.dev
-- name: 'ARISTA #47'
-  type: vless
-  server: 66.70.179.198
-  port: 2053
-  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: random
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
-    short-id: "83f8317a948bb769"
-- name: 'ARISTA #48'
-  type: vless
-  server: 51.89.194.151
-  port: 2053
-  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
-    short-id: "d051f678212f9d54"
-- name: 'ARISTA #49'
   type: vless
   server: w.geogame.ir
   port: 2053
@@ -730,87 +684,152 @@ proxies:
   - http/1.1
   client-fingerprint: chrome
   servername: w.geogame.ir
+- name: 'ARISTA #46'
+  type: vless
+  server: 66.70.179.198
+  port: 2053
+  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: random
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
+    short-id: "83f8317a948bb769"
+- name: 'ARISTA #47'
+  type: vless
+  server: w.geogame.ir
+  port: 2053
+  uuid: fbda2834-b1e7-4148-afb9-deda31036a30
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: w.geogame.ir
+- name: 'ARISTA #48'
+  type: vless
+  server: 66.70.179.198
+  port: 2053
+  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: random
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
+    short-id: "83f8317a948bb769"
+- name: 'ARISTA #49'
+  type: vless
+  server: 23.95.115.116
+  port: 2053
+  uuid: 2739258b-a278-4bed-bc5d-f88830824dce
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: plwyjJZIVDt1OtwDAxfcLjDsR7dseVCe9Ia3HceIKEg
+    short-id: "a1b2c3d4"
 - name: 'ARISTA #50'
   type: vless
-  server: fast.145779.xyz
+  server: 51.89.194.151
   port: 2053
-  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
-  network: ws
+  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
-    headers:
-      Host: fast.145779.xyz
+  servername: www.apple.com
+  reality-opts:
+    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
+    short-id: "d051f678212f9d54"
 - name: 'ARISTA #51'
-  type: trojan
-  server: 104.25.239.113
+  type: vless
+  server: w.geogame.ir
   port: 2053
-  password: gHQP0D7D15
-  network: ws
+  uuid: fbda2834-b1e7-4148-afb9-deda31036a30
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  tcp-fast-open: true
-  servername: marvdasht.phonecomparisonblog.org
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: 'ARISTA #52'
-  type: trojan
-  server: 172.66.0.1
-  port: 2053
-  password: gHQP0D7D15
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: marvdasht.phonecomparisonblog.org
-  client-fingerprint: firefox
   alpn:
+  - h2
   - http/1.1
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
+  client-fingerprint: chrome
+  servername: w.geogame.ir
+- name: 'ARISTA #52'
+  type: vless
+  server: 66.70.179.198
+  port: 2053
+  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: random
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
+    short-id: "83f8317a948bb769"
 - name: 'ARISTA #53'
-  type: trojan
-  server: 172.67.118.45
+  type: vless
+  server: 23.95.115.116
   port: 2053
-  password: gHQP0D7D15
-  network: ws
+  uuid: 2739258b-a278-4bed-bc5d-f88830824dce
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  tcp-fast-open: true
-  servername: marvdasht.phonecomparisonblog.org
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: plwyjJZIVDt1OtwDAxfcLjDsR7dseVCe9Ia3HceIKEg
+    short-id: "a1b2c3d4"
 - name: 'ARISTA #54'
-  type: trojan
-  server: 104.25.239.113
+  type: vless
+  server: 51.89.194.151
   port: 2053
-  password: gHQP0D7D15
-  network: ws
+  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  tcp-fast-open: true
-  servername: marvdasht.phonecomparisonblog.org
-  ws-opts:
-    path: '%2F'
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
+    short-id: "d051f678212f9d54"
 - name: 'ARISTA #55'
   type: trojan
-  server: 104.24.0.1
+  server: 172.67.118.45
+  port: 2053
+  password: gHQP0D7D15
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: marvdasht.phonecomparisonblog.org🇨🇦@FreakConfig
+  ws-opts:
+    path: /
+    headers:
+      Host: marvdasht.phonecomparisonblog.org🇨🇦@FreakConfig
+- name: 'ARISTA #56'
+  type: trojan
+  server: 104.25.239.113
   port: 2053
   password: gHQP0D7D15
   network: ws
@@ -819,14 +838,11 @@ proxies:
   skip-cert-verify: true
   tcp-fast-open: true
   servername: marvdasht.phonecomparisonblog.org
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
   ws-opts:
     path: /
     headers:
       Host: marvdasht.phonecomparisonblog.org
-- name: 'ARISTA #56'
+- name: 'ARISTA #57'
   type: trojan
   server: 172.67.118.45
   port: 2053
@@ -841,22 +857,7 @@ proxies:
     path: /
     headers:
       Host: marvdasht.phonecomparisonblog.org
-- name: 'T.ME: @aristapanel #57'
-  type: trojan
-  server: 104.18.0.1
-  port: 2053
-  password: gHQP0D7D15
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: marvdasht.phonecomparisonblog.org
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: 'T.ME: @aristapanel #58'
+- name: 'ARISTA #58'
   type: trojan
   server: 104.25.239.113
   port: 2053
@@ -873,21 +874,6 @@ proxies:
       Host: marvdasht.phonecomparisonblog.org
 - name: 'ARISTA #59'
   type: trojan
-  server: 104.25.239.113
-  port: 2053
-  password: gHQP0D7D15
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: marvdasht.phonecomparisonblog.org
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: 'ARISTA #60'
-  type: trojan
   server: 172.66.0.1
   port: 2053
   password: gHQP0D7D15
@@ -897,9 +883,24 @@ proxies:
   skip-cert-verify: true
   tcp-fast-open: true
   servername: marvdasht.phonecomparisonblog.org
-  client-fingerprint: firefox
+  client-fingerprint: chrome
   alpn:
   - http/1.1
+  ws-opts:
+    path: /
+    headers:
+      Host: marvdasht.phonecomparisonblog.org
+- name: 'ARISTA #60'
+  type: trojan
+  server: 172.67.118.45
+  port: 2053
+  password: gHQP0D7D15
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: marvdasht.phonecomparisonblog.org
   ws-opts:
     path: /
     headers:
@@ -919,55 +920,7 @@ proxies:
     path: /
     headers:
       Host: marvdasht.phonecomparisonblog.org
-- name: 'ARISTA #62'
-  type: trojan
-  server: 104.25.239.113
-  port: 2053
-  password: gHQP0D7D15
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: marvdasht.phonecomparisonblog.org
-  ws-opts:
-    path: '%2F'
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: 'ARISTA #63'
-  type: trojan
-  server: 104.24.0.1
-  port: 2053
-  password: gHQP0D7D15
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: marvdasht.phonecomparisonblog.org
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: 'ARISTA #64'
-  type: trojan
-  server: 172.67.118.45
-  port: 2053
-  password: gHQP0D7D15
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: marvdasht.phonecomparisonblog.org
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: 'T.ME: @aristapanel #65'
+- name: 'T.ME: @aristapanel #62'
   type: trojan
   server: 104.18.0.1
   port: 2053
@@ -982,7 +935,52 @@ proxies:
     path: /
     headers:
       Host: marvdasht.phonecomparisonblog.org
-- name: 'T.ME: @aristapanel #66'
+- name: 'T.ME: @aristapanel #63'
+  type: trojan
+  server: 104.25.239.113
+  port: 2053
+  password: gHQP0D7D15
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: marvdasht.phonecomparisonblog.org
+  ws-opts:
+    path: /
+    headers:
+      Host: marvdasht.phonecomparisonblog.org
+- name: 'T.ME: @aristapanel #64'
+  type: trojan
+  server: 104.24.0.1
+  port: 2053
+  password: gHQP0D7D15
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: marvdasht.phonecomparisonblog.org
+  ws-opts:
+    path: /
+    headers:
+      Host: marvdasht.phonecomparisonblog.org
+- name: 'ARISTA #65'
+  type: trojan
+  server: 172.67.118.45
+  port: 2053
+  password: gHQP0D7D15
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: marvdasht.phonecomparisonblog.org🇨🇦@FreakConfig
+  ws-opts:
+    path: /
+    headers:
+      Host: marvdasht.phonecomparisonblog.org🇨🇦@FreakConfig
+- name: 'ARISTA #66'
   type: trojan
   server: 104.25.239.113
   port: 2053
@@ -999,7 +997,7 @@ proxies:
       Host: marvdasht.phonecomparisonblog.org
 - name: 'ARISTA #67'
   type: trojan
-  server: 104.25.239.113
+  server: 172.67.118.45
   port: 2053
   password: gHQP0D7D15
   network: ws
@@ -1014,7 +1012,7 @@ proxies:
       Host: marvdasht.phonecomparisonblog.org
 - name: 'ARISTA #68'
   type: trojan
-  server: 172.66.0.1
+  server: 104.25.239.113
   port: 2053
   password: gHQP0D7D15
   network: ws
@@ -1023,93 +1021,12 @@ proxies:
   skip-cert-verify: true
   tcp-fast-open: true
   servername: marvdasht.phonecomparisonblog.org
-  client-fingerprint: firefox
-  alpn:
-  - http/1.1
   ws-opts:
     path: /
     headers:
       Host: marvdasht.phonecomparisonblog.org
 - name: 'ARISTA #69'
   type: trojan
-  server: 172.67.118.45
-  port: 2053
-  password: gHQP0D7D15
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: marvdasht.phonecomparisonblog.org
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: 'ARISTA #70'
-  type: trojan
-  server: 104.25.239.113
-  port: 2053
-  password: gHQP0D7D15
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: marvdasht.phonecomparisonblog.org
-  ws-opts:
-    path: '%2F'
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: 'ARISTA #71'
-  type: trojan
-  server: 104.24.0.1
-  port: 2053
-  password: gHQP0D7D15
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: marvdasht.phonecomparisonblog.org
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: 'ARISTA #72'
-  type: trojan
-  server: 172.67.118.45
-  port: 2053
-  password: gHQP0D7D15
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: marvdasht.phonecomparisonblog.org
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: 'ARISTA #73'
-  type: trojan
-  server: 104.25.239.113
-  port: 2053
-  password: gHQP0D7D15
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: marvdasht.phonecomparisonblog.org
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: 'ARISTA #74'
-  type: trojan
   server: 172.66.0.1
   port: 2053
   password: gHQP0D7D15
@@ -1119,54 +1036,6 @@ proxies:
   skip-cert-verify: true
   tcp-fast-open: true
   servername: marvdasht.phonecomparisonblog.org
-  client-fingerprint: firefox
-  alpn:
-  - http/1.1
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: 'ARISTA #75'
-  type: trojan
-  server: 172.67.118.45
-  port: 2053
-  password: gHQP0D7D15
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: marvdasht.phonecomparisonblog.org
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: 'ARISTA #76'
-  type: trojan
-  server: 104.25.239.113
-  port: 2053
-  password: gHQP0D7D15
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: marvdasht.phonecomparisonblog.org
-  ws-opts:
-    path: '%2F'
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: 'ARISTA #77'
-  type: trojan
-  server: 104.24.0.1
-  port: 2053
-  password: gHQP0D7D15
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: marvdasht.phonecomparisonblog.org
   client-fingerprint: chrome
   alpn:
   - http/1.1
@@ -1174,7 +1043,7 @@ proxies:
     path: /
     headers:
       Host: marvdasht.phonecomparisonblog.org
-- name: 'ARISTA #78'
+- name: 'ARISTA #70'
   type: trojan
   server: 172.67.118.45
   port: 2053
@@ -1189,7 +1058,22 @@ proxies:
     path: /
     headers:
       Host: marvdasht.phonecomparisonblog.org
-- name: 'T.ME: @aristapanel #79'
+- name: 'ARISTA #71'
+  type: trojan
+  server: 172.67.118.45
+  port: 2053
+  password: gHQP0D7D15
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: marvdasht.phonecomparisonblog.org
+  ws-opts:
+    path: /
+    headers:
+      Host: marvdasht.phonecomparisonblog.org
+- name: 'T.ME: @aristapanel #72'
   type: trojan
   server: 104.18.0.1
   port: 2053
@@ -1204,9 +1088,117 @@ proxies:
     path: /
     headers:
       Host: marvdasht.phonecomparisonblog.org
-- name: 'T.ME: @aristapanel #80'
+- name: 'T.ME: @aristapanel #73'
   type: trojan
   server: 104.25.239.113
+  port: 2053
+  password: gHQP0D7D15
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: marvdasht.phonecomparisonblog.org
+  ws-opts:
+    path: /
+    headers:
+      Host: marvdasht.phonecomparisonblog.org
+- name: 'T.ME: @aristapanel #74'
+  type: trojan
+  server: 104.24.0.1
+  port: 2053
+  password: gHQP0D7D15
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: marvdasht.phonecomparisonblog.org
+  ws-opts:
+    path: /
+    headers:
+      Host: marvdasht.phonecomparisonblog.org
+- name: 'ARISTA #75'
+  type: trojan
+  server: 172.67.118.45
+  port: 2053
+  password: gHQP0D7D15
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: marvdasht.phonecomparisonblog.org🇨🇦@FreakConfig
+  ws-opts:
+    path: /
+    headers:
+      Host: marvdasht.phonecomparisonblog.org🇨🇦@FreakConfig
+- name: 'ARISTA #76'
+  type: trojan
+  server: 104.25.239.113
+  port: 2053
+  password: gHQP0D7D15
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: marvdasht.phonecomparisonblog.org
+  ws-opts:
+    path: /
+    headers:
+      Host: marvdasht.phonecomparisonblog.org
+- name: 'ARISTA #77'
+  type: trojan
+  server: 172.67.118.45
+  port: 2053
+  password: gHQP0D7D15
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: marvdasht.phonecomparisonblog.org
+  ws-opts:
+    path: /
+    headers:
+      Host: marvdasht.phonecomparisonblog.org
+- name: 'ARISTA #78'
+  type: trojan
+  server: 104.25.239.113
+  port: 2053
+  password: gHQP0D7D15
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: marvdasht.phonecomparisonblog.org
+  ws-opts:
+    path: /
+    headers:
+      Host: marvdasht.phonecomparisonblog.org
+- name: 'ARISTA #79'
+  type: trojan
+  server: 172.66.0.1
+  port: 2053
+  password: gHQP0D7D15
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: marvdasht.phonecomparisonblog.org
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /
+    headers:
+      Host: marvdasht.phonecomparisonblog.org
+- name: 'ARISTA #80'
+  type: trojan
+  server: 172.67.118.45
   port: 2053
   password: gHQP0D7D15
   network: ws
@@ -1221,6 +1213,21 @@ proxies:
       Host: marvdasht.phonecomparisonblog.org
 - name: 'ARISTA #81'
   type: trojan
+  server: 172.67.118.45
+  port: 2053
+  password: gHQP0D7D15
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: marvdasht.phonecomparisonblog.org🇨🇦@FreakConfig
+  ws-opts:
+    path: /
+    headers:
+      Host: marvdasht.phonecomparisonblog.org🇨🇦@FreakConfig
+- name: 'ARISTA #82'
+  type: trojan
   server: 104.25.239.113
   port: 2053
   password: gHQP0D7D15
@@ -1230,24 +1237,6 @@ proxies:
   skip-cert-verify: true
   tcp-fast-open: true
   servername: marvdasht.phonecomparisonblog.org
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: 'ARISTA #82'
-  type: trojan
-  server: 172.66.0.1
-  port: 2053
-  password: gHQP0D7D15
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: marvdasht.phonecomparisonblog.org
-  client-fingerprint: firefox
-  alpn:
-  - http/1.1
   ws-opts:
     path: /
     headers:
@@ -1279,12 +1268,12 @@ proxies:
   tcp-fast-open: true
   servername: marvdasht.phonecomparisonblog.org
   ws-opts:
-    path: '%2F'
+    path: /
     headers:
       Host: marvdasht.phonecomparisonblog.org
 - name: 'ARISTA #85'
   type: trojan
-  server: 104.24.0.1
+  server: 172.66.0.1
   port: 2053
   password: gHQP0D7D15
   network: ws
@@ -1301,6 +1290,174 @@ proxies:
     headers:
       Host: marvdasht.phonecomparisonblog.org
 - name: 'ARISTA #86'
+  type: trojan
+  server: 172.67.118.45
+  port: 2053
+  password: gHQP0D7D15
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: marvdasht.phonecomparisonblog.org
+  ws-opts:
+    path: /
+    headers:
+      Host: marvdasht.phonecomparisonblog.org
+- name: 'ARISTA #87'
+  type: trojan
+  server: 172.67.118.45
+  port: 2053
+  password: gHQP0D7D15
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: marvdasht.phonecomparisonblog.org
+  ws-opts:
+    path: /
+    headers:
+      Host: marvdasht.phonecomparisonblog.org
+- name: 'T.ME: @aristapanel #88'
+  type: trojan
+  server: 104.18.0.1
+  port: 2053
+  password: gHQP0D7D15
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: marvdasht.phonecomparisonblog.org
+  ws-opts:
+    path: /
+    headers:
+      Host: marvdasht.phonecomparisonblog.org
+- name: 'T.ME: @aristapanel #89'
+  type: trojan
+  server: 104.25.239.113
+  port: 2053
+  password: gHQP0D7D15
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: marvdasht.phonecomparisonblog.org
+  ws-opts:
+    path: /
+    headers:
+      Host: marvdasht.phonecomparisonblog.org
+- name: 'T.ME: @aristapanel #90'
+  type: trojan
+  server: 104.24.0.1
+  port: 2053
+  password: gHQP0D7D15
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: marvdasht.phonecomparisonblog.org
+  ws-opts:
+    path: /
+    headers:
+      Host: marvdasht.phonecomparisonblog.org
+- name: 'ARISTA #91'
+  type: trojan
+  server: 172.67.118.45
+  port: 2053
+  password: gHQP0D7D15
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: marvdasht.phonecomparisonblog.org🇨🇦@FreakConfig
+  ws-opts:
+    path: /
+    headers:
+      Host: marvdasht.phonecomparisonblog.org🇨🇦@FreakConfig
+- name: 'ARISTA #92'
+  type: trojan
+  server: 104.25.239.113
+  port: 2053
+  password: gHQP0D7D15
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: marvdasht.phonecomparisonblog.org
+  ws-opts:
+    path: /
+    headers:
+      Host: marvdasht.phonecomparisonblog.org
+- name: 'ARISTA #93'
+  type: trojan
+  server: 172.67.118.45
+  port: 2053
+  password: gHQP0D7D15
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: marvdasht.phonecomparisonblog.org
+  ws-opts:
+    path: /
+    headers:
+      Host: marvdasht.phonecomparisonblog.org
+- name: 'ARISTA #94'
+  type: trojan
+  server: 104.25.239.113
+  port: 2053
+  password: gHQP0D7D15
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: marvdasht.phonecomparisonblog.org
+  ws-opts:
+    path: /
+    headers:
+      Host: marvdasht.phonecomparisonblog.org
+- name: 'ARISTA #95'
+  type: trojan
+  server: 172.66.0.1
+  port: 2053
+  password: gHQP0D7D15
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: marvdasht.phonecomparisonblog.org
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /
+    headers:
+      Host: marvdasht.phonecomparisonblog.org
+- name: 'ARISTA #96'
+  type: trojan
+  server: 172.67.118.45
+  port: 2053
+  password: gHQP0D7D15
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: marvdasht.phonecomparisonblog.org
+  ws-opts:
+    path: /
+    headers:
+      Host: marvdasht.phonecomparisonblog.org
+- name: 'ARISTA #97'
   type: trojan
   server: 172.67.118.45
   port: 2053
@@ -1342,32 +1499,32 @@ proxy-groups:
   - 'ARISTA #16'
   - 'ARISTA #17'
   - 'ARISTA #18'
-  - 'ARISTA #19'
-  - 'ARISTA #20'
+  - 'T.ME: @aristapanel #19'
+  - 'T.ME: @aristapanel #20'
   - 'T.ME: @aristapanel #21'
   - 'T.ME: @aristapanel #22'
-  - 'ARISTA #23'
+  - 'T.ME: @aristapanel #23'
   - 'ARISTA #24'
   - 'ARISTA #25'
   - 'ARISTA #26'
   - 'ARISTA #27'
-  - 'ARISTA #28'
+  - 'T.ME: @aristapanel #28'
   - 'ARISTA #29'
   - 'ARISTA #30'
   - 'ARISTA #31'
   - 'ARISTA #32'
-  - 'ARISTA #33'
-  - 'ARISTA #34'
-  - 'ARISTA #35'
-  - 'ARISTA #36'
+  - 'T.ME: @aristapanel #33'
+  - 'T.ME: @aristapanel #34'
+  - 'T.ME: @aristapanel #35'
+  - 'T.ME: @aristapanel #36'
   - 'T.ME: @aristapanel #37'
   - 'T.ME: @aristapanel #38'
   - 'T.ME: @aristapanel #39'
   - 'T.ME: @aristapanel #40'
   - 'T.ME: @aristapanel #41'
-  - 'ARISTA #42'
-  - 'ARISTA #43'
-  - 'ARISTA #44'
+  - 'T.ME: @aristapanel #42'
+  - 'T.ME: @aristapanel #43'
+  - 'T.ME: @aristapanel #44'
   - 'ARISTA #45'
   - 'ARISTA #46'
   - 'ARISTA #47'
@@ -1380,36 +1537,47 @@ proxy-groups:
   - 'ARISTA #54'
   - 'ARISTA #55'
   - 'ARISTA #56'
-  - 'T.ME: @aristapanel #57'
-  - 'T.ME: @aristapanel #58'
+  - 'ARISTA #57'
+  - 'ARISTA #58'
   - 'ARISTA #59'
   - 'ARISTA #60'
   - 'ARISTA #61'
-  - 'ARISTA #62'
-  - 'ARISTA #63'
-  - 'ARISTA #64'
-  - 'T.ME: @aristapanel #65'
-  - 'T.ME: @aristapanel #66'
+  - 'T.ME: @aristapanel #62'
+  - 'T.ME: @aristapanel #63'
+  - 'T.ME: @aristapanel #64'
+  - 'ARISTA #65'
+  - 'ARISTA #66'
   - 'ARISTA #67'
   - 'ARISTA #68'
   - 'ARISTA #69'
   - 'ARISTA #70'
   - 'ARISTA #71'
-  - 'ARISTA #72'
-  - 'ARISTA #73'
-  - 'ARISTA #74'
+  - 'T.ME: @aristapanel #72'
+  - 'T.ME: @aristapanel #73'
+  - 'T.ME: @aristapanel #74'
   - 'ARISTA #75'
   - 'ARISTA #76'
   - 'ARISTA #77'
   - 'ARISTA #78'
-  - 'T.ME: @aristapanel #79'
-  - 'T.ME: @aristapanel #80'
+  - 'ARISTA #79'
+  - 'ARISTA #80'
   - 'ARISTA #81'
   - 'ARISTA #82'
   - 'ARISTA #83'
   - 'ARISTA #84'
   - 'ARISTA #85'
   - 'ARISTA #86'
+  - 'ARISTA #87'
+  - 'T.ME: @aristapanel #88'
+  - 'T.ME: @aristapanel #89'
+  - 'T.ME: @aristapanel #90'
+  - 'ARISTA #91'
+  - 'ARISTA #92'
+  - 'ARISTA #93'
+  - 'ARISTA #94'
+  - 'ARISTA #95'
+  - 'ARISTA #96'
+  - 'ARISTA #97'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
