@@ -1,6 +1,6 @@
 # COMBINED - Port 9443
-# Updated: 2026-11-07 12:54:37
-# Count: 4
+# Updated: 2026-11-07 19:17:44
+# Count: 1
 
 mixed-port: 7890
 allow-lan: false
@@ -48,56 +48,11 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'ARISTA #1'
+- name: 'T.ME: @aristapanel #1'
   type: vless
   server: 91.185.83.105
   port: 9443
-  uuid: 18c83152-8420-4865-889d-ff47a300a451
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: passport.yandex.ru
-  reality-opts:
-    public-key: Te3ZcFFTilb6_j4hdotSvXaRYBzGuNiRxuBh8n1NezU
-    short-id: "91d2d3db690f4b59"
-- name: 'ARISTA #2'
-  type: vless
-  server: 91.185.83.105
-  port: 9443
-  uuid: 18c83152-8420-4865-889d-ff47a300a451
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: passport.yandex.ru
-  reality-opts:
-    public-key: Te3ZcFFTilb6_j4hdotSvXaRYBzGuNiRxuBh8n1NezU
-    short-id: "91d2d3db690f4b59"
-- name: 'ARISTA #3'
-  type: vless
-  server: 91.185.83.105
-  port: 9443
-  uuid: 18c83152-8420-4865-889d-ff47a300a451
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: passport.yandex.ru
-  reality-opts:
-    public-key: Te3ZcFFTilb6_j4hdotSvXaRYBzGuNiRxuBh8n1NezU
-    short-id: "91d2d3db690f4b59"
-- name: 'T.ME: @aristapanel #4'
-  type: vless
-  server: 91.185.83.105
-  port: 9443
-  uuid: 3f1e5bc9-f68c-4dbe-8f4b-e5b5cfdcb9d6
+  uuid: 24ada6e7-ad2a-4cef-a8b8-91028e4f5f24
   network: raw
   tls: true
   udp: true
@@ -117,10 +72,7 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'ARISTA #1'
-  - 'ARISTA #2'
-  - 'ARISTA #3'
-  - 'T.ME: @aristapanel #4'
+  - 'T.ME: @aristapanel #1'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

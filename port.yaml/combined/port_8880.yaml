@@ -1,5 +1,5 @@
 # COMBINED - Port 8880
-# Updated: 2026-11-07 12:54:37
+# Updated: 2026-11-07 19:17:44
 # Count: 15
 
 mixed-port: 7890
@@ -59,13 +59,17 @@ proxies:
   skip-cert-verify: true
 - name: 'ARISTA #2'
   type: vless
-  server: 104.21.7.147
+  server: 8.34.70.30
   port: 8880
-  uuid: b54fbd00-dc57-46d0-8bc0-d5546b977012
-  network: httpupgrade
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime09.workers.dev
 - name: 'ARISTA #3'
   type: vless
   server: 104.21.7.147
@@ -77,6 +81,19 @@ proxies:
   skip-cert-verify: true
 - name: 'ARISTA #4'
   type: vless
+  server: 8.34.70.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime09.workers.dev
+- name: 'ARISTA #5'
+  type: vless
   server: 104.21.7.147
   port: 8880
   uuid: b54fbd00-dc57-46d0-8bc0-d5546b977012
@@ -84,7 +101,20 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #5'
+- name: 'ARISTA #6'
+  type: vless
+  server: 8.34.70.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime09.workers.dev
+- name: 'T.ME: @aristapanel #7'
   type: vless
   server: forallpanel.srtongston.ir
   port: 8880
@@ -93,47 +123,7 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #6'
-  type: vless
-  server: 104.16.72.41
-  port: 8880
-  uuid: 1bc8fb2a-3bee-4ae0-aa12-957885e63e18
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: super-mud-8b38.114-a90.workers.dev
-  ws-opts:
-    path: /pyip
-    headers:
-      Host: super-mud-8b38.114-a90.workers.dev
-- name: 'T.ME: @aristapanel #7'
-  type: vless
-  server: 172.66.140.62
-  port: 8880
-  uuid: 160ca353-676d-4b7f-a041-0289e388b865
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: proud-cloud-7bdd.208-a52.workers.dev
 - name: 'T.ME: @aristapanel #8'
-  type: vless
-  server: 162.159.156.214
-  port: 8880
-  uuid: 565326ee-c588-4843-9472-a051578ab1ae
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /pyip=ProxyIP.KR.CMLiussss.net
-    headers:
-      Host: lucky-cell-e8c5.490-f12.workers.dev
-- name: 'T.ME: @aristapanel #9'
   type: vless
   server: 172.67.209.127
   port: 8880
@@ -146,6 +136,19 @@ proxies:
     path: /
     headers:
       Host: calm-silence-d4a1.217.workers.dev
+- name: 'T.ME: @aristapanel #9'
+  type: vless
+  server: 172.66.140.62
+  port: 8880
+  uuid: 160ca353-676d-4b7f-a041-0289e388b865
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: proud-cloud-7bdd.208-a52.workers.dev
 - name: 'T.ME: @aristapanel #10'
   type: vless
   server: 104.21.56.202
@@ -174,6 +177,33 @@ proxies:
       Host: steep-thunder-97fa.108-d10.workers.dev
 - name: 'T.ME: @aristapanel #12'
   type: vless
+  server: 104.16.72.41
+  port: 8880
+  uuid: 1bc8fb2a-3bee-4ae0-aa12-957885e63e18
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: super-mud-8b38.114-a90.workers.dev
+  ws-opts:
+    path: /pyip
+    headers:
+      Host: super-mud-8b38.114-a90.workers.dev
+- name: 'T.ME: @aristapanel #13'
+  type: vless
+  server: 162.159.156.214
+  port: 8880
+  uuid: 565326ee-c588-4843-9472-a051578ab1ae
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /pyip=ProxyIP.KR.CMLiussss.net
+    headers:
+      Host: lucky-cell-e8c5.490-f12.workers.dev
+- name: 'T.ME: @aristapanel #14'
+  type: vless
   server: 104.16.107.139
   port: 8880
   uuid: 24c2a873-4584-4c53-8679-61029682d0bb
@@ -185,7 +215,7 @@ proxies:
     path: /pyip
     headers:
       Host: soft-thunder-bc22.111-f59.workers.dev
-- name: 'T.ME: @aristapanel #13'
+- name: 'T.ME: @aristapanel #15'
   type: vless
   server: tr.rajastore.ir
   port: 8880
@@ -199,24 +229,6 @@ proxies:
   reality-opts:
     public-key: x3JR_UUs9Fc1tiTHJZSsk-fAEfNPYKw0Trx2pO0Td3E
     short-id: "1901"
-- name: 'ARISTA #14'
-  type: vless
-  server: 104.21.7.147
-  port: 8880
-  uuid: b54fbd00-dc57-46d0-8bc0-d5546b977012
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #15'
-  type: vless
-  server: 104.21.7.147
-  port: 8880
-  uuid: b54fbd00-dc57-46d0-8bc0-d5546b977012
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -230,8 +242,8 @@ proxy-groups:
   - 'ARISTA #2'
   - 'ARISTA #3'
   - 'ARISTA #4'
-  - 'T.ME: @aristapanel #5'
-  - 'T.ME: @aristapanel #6'
+  - 'ARISTA #5'
+  - 'ARISTA #6'
   - 'T.ME: @aristapanel #7'
   - 'T.ME: @aristapanel #8'
   - 'T.ME: @aristapanel #9'
@@ -239,8 +251,8 @@ proxy-groups:
   - 'T.ME: @aristapanel #11'
   - 'T.ME: @aristapanel #12'
   - 'T.ME: @aristapanel #13'
-  - 'ARISTA #14'
-  - 'ARISTA #15'
+  - 'T.ME: @aristapanel #14'
+  - 'T.ME: @aristapanel #15'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

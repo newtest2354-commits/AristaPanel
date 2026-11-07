@@ -1,6 +1,6 @@
 # TELEGRAM - Port 8880
-# Updated: 2026-11-07 12:54:44
-# Count: 5
+# Updated: 2026-11-07 19:17:49
+# Count: 4
 
 mixed-port: 7890
 allow-lan: false
@@ -59,13 +59,17 @@ proxies:
   skip-cert-verify: true
 - name: 'ARISTA #2'
   type: vless
-  server: 104.21.7.147
+  server: 8.34.70.30
   port: 8880
-  uuid: b54fbd00-dc57-46d0-8bc0-d5546b977012
-  network: httpupgrade
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime09.workers.dev
 - name: 'ARISTA #3'
   type: vless
   server: 104.21.7.147
@@ -77,22 +81,17 @@ proxies:
   skip-cert-verify: true
 - name: 'ARISTA #4'
   type: vless
-  server: 104.21.7.147
+  server: 8.34.70.30
   port: 8880
-  uuid: b54fbd00-dc57-46d0-8bc0-d5546b977012
-  network: httpupgrade
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'ARISTA #5'
-  type: vless
-  server: 104.21.7.147
-  port: 8880
-  uuid: b54fbd00-dc57-46d0-8bc0-d5546b977012
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime09.workers.dev
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -106,7 +105,6 @@ proxy-groups:
   - 'ARISTA #2'
   - 'ARISTA #3'
   - 'ARISTA #4'
-  - 'ARISTA #5'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2083
-# Updated: 2026-11-07 12:54:44
-# Count: 1
+# Updated: 2026-11-07 19:17:49
+# Count: 6
 
 mixed-port: 7890
 allow-lan: false
@@ -50,18 +50,95 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: n1.fllow.ir
+  server: vip.trapxan.ir
   port: 2083
-  uuid: 71985fc8-74ab-44af-a476-ff21cc8617b2
-  network: tcp
+  uuid: be66e811-f281-4adb-93f3-faec7b8d88a3
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: vip.trapxan.ir
+- name: 'ARISTA #2'
+  type: vless
+  server: vip.trapxan.ir
+  port: 2083
+  uuid: be66e811-f281-4adb-93f3-faec7b8d88a3
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: vip.trapxan.ir
+- name: 'ARISTA #3'
+  type: vless
+  server: vip.trapxan.ir
+  port: 2083
+  uuid: be66e811-f281-4adb-93f3-faec7b8d88a3
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: vip.trapxan.ir
+- name: 'ARISTA #4'
+  type: vless
+  server: 84.38.184.126
+  port: 2083
+  uuid: a628c583-24a8-4ce5-98ad-c6458abf1cc4
+  network: grpc
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: blog.api.www.cloudflare.com
+  servername: s3.storage.selcloud.ru
+  grpc-opts:
+    grpc-service-name: cas-nl
   reality-opts:
-    public-key: 7rDVNkpWxUhi7o6Wp7YzX3VUhGUfnA47yGTTh0nTbxM
-    short-id: "a8131121b2"
+    public-key: q_s-QCaQ8J1al83f19-d3P7hc0PlyDe90AsPktbkrig
+    short-id: "0ef5fedf"
+- name: 'ARISTA #5'
+  type: vless
+  server: vip.trapxan.ir
+  port: 2083
+  uuid: be66e811-f281-4adb-93f3-faec7b8d88a3
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: vip.trapxan.ir
+- name: 'ARISTA #6'
+  type: vless
+  server: vip.trapxan.ir
+  port: 2083
+  uuid: be66e811-f281-4adb-93f3-faec7b8d88a3
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: vip.trapxan.ir
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -72,6 +149,11 @@ proxy-groups:
   timeout: 3000
   proxies: &id001
   - 'ARISTA #1'
+  - 'ARISTA #2'
+  - 'ARISTA #3'
+  - 'ARISTA #4'
+  - 'ARISTA #5'
+  - 'ARISTA #6'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

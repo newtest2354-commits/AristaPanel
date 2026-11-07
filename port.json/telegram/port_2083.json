@@ -1,6 +1,6 @@
 // TELEGRAM - Port 2083
-// Updated: 2026-11-07 12:54:55
-// Count: 1
+// Updated: 2026-11-07 19:17:57
+// Count: 6
 
 {
   "log": {
@@ -41,13 +41,35 @@
     {
       "type": "vless",
       "tag": "ARISTA #1",
-      "server": "n1.fllow.ir",
+      "server": "vip.trapxan.ir",
       "server_port": 2083,
-      "uuid": "71985fc8-74ab-44af-a476-ff21cc8617b2",
+      "uuid": "be66e811-f281-4adb-93f3-faec7b8d88a3",
       "domain_resolver": "google",
       "tls": {
         "enabled": true,
-        "server_name": "blog.api.www.cloudflare.com",
+        "server_name": "vip.trapxan.ir",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "alpn": [
+          "h2",
+          "http/1.1",
+          "h3"
+        ]
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "ARISTA #2",
+      "server": "84.38.184.126",
+      "server_port": 2083,
+      "uuid": "a628c583-24a8-4ce5-98ad-c6458abf1cc4",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "s3.storage.selcloud.ru",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -55,9 +77,13 @@
         },
         "reality": {
           "enabled": true,
-          "public_key": "7rDVNkpWxUhi7o6Wp7YzX3VUhGUfnA47yGTTh0nTbxM",
-          "short_id": "a8131121b2"
+          "public_key": "q_s-QCaQ8J1al83f19-d3P7hc0PlyDe90AsPktbkrig",
+          "short_id": "0ef5fedf"
         }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "cas-nl"
       }
     },
     {
@@ -72,7 +98,8 @@
       "type": "urltest",
       "tag": "🚀 ARISTA AUTO BEST",
       "outbounds": [
-        "ARISTA #1"
+        "ARISTA #1",
+        "ARISTA #2"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "2m",
