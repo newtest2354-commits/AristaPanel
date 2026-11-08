@@ -1,6 +1,6 @@
 # TELEGRAM - Port 8880
-# Updated: 2026-11-08 00:22:22
-# Count: 3
+# Updated: 2026-11-08 10:11:19
+# Count: 1
 
 mixed-port: 7890
 allow-lan: false
@@ -61,32 +61,6 @@ proxies:
     path: /?ed=2560
     headers:
       Host: vms.lifetime11.workers.dev
-- name: 'ARISTA #2'
-  type: vless
-  server: 89.117.112.40
-  port: 8880
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: vms.lifetime11.workers.dev
-- name: 'ARISTA #3'
-  type: vless
-  server: 89.117.112.40
-  port: 8880
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: vms.lifetime11.workers.dev
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -97,8 +71,6 @@ proxy-groups:
   timeout: 3000
   proxies: &id001
   - 'ARISTA #1'
-  - 'ARISTA #2'
-  - 'ARISTA #3'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
