@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2083
-# Updated: 2026-11-08 10:11:19
-# Count: 5
+# Updated: 2026-11-08 17:56:51
+# Count: 13
 
 mixed-port: 7890
 allow-lan: false
@@ -49,45 +49,79 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'ARISTA #1'
-  type: vless
-  server: 153.76.190.31
+  type: vmess
+  server: or.521166.xyz
   port: 2083
-  uuid: d6eb8a46-e6a4-4891-b22e-dfaa609c6afd
+  uuid: ac251237-576f-40c8-a543-554960c958b1
+  alterId: 0
+  cipher: auto
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: ios
-  servername: speedtestmark.com
+  tcp-fast-open: true
+  servername: or.521166.xyz
   ws-opts:
-    path: /vless-ws
+    path: /or3
 - name: 'ARISTA #2'
   type: vless
-  server: 216.24.57.1
+  server: 109.70.74.213
   port: 2083
-  uuid: 3374d2ed-0dc3-404d-adfd-414b55b3dc9b
+  uuid: fc1aae3b-e361-416c-aebf-cebdcceedae9
   network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
   alpn:
   - h2
+  - http/1.1
+  - h3
   client-fingerprint: chrome
-  servername: nllc.mitivpn--mitivpn.lifestyle
+  servername: 109.70.74.213
 - name: 'ARISTA #3'
   type: vless
-  server: 153.76.190.31
+  server: 216.24.57.1
   port: 2083
-  uuid: d6eb8a46-e6a4-4891-b22e-dfaa609c6afd
-  network: ws
+  uuid: 3374d2ed-0dc3-404d-adfd-414b55b3dc9b
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: ios
-  servername: speedtestmark.com
-  ws-opts:
-    path: /vless-ws
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: nllc.mitivpn--mitivpn.lifestyle
 - name: 'ARISTA #4'
+  type: vless
+  server: 109.70.74.213
+  port: 2083
+  uuid: fc1aae3b-e361-416c-aebf-cebdcceedae9
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: 109.70.74.213
+- name: 'ARISTA #5'
+  type: vless
+  server: 109.70.74.213
+  port: 2083
+  uuid: fc1aae3b-e361-416c-aebf-cebdcceedae9
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: 109.70.74.213
+- name: 'ARISTA #6'
   type: vless
   server: 216.24.57.1
   port: 2083
@@ -100,19 +134,105 @@ proxies:
   - h2
   client-fingerprint: chrome
   servername: nllc.mitivpn--mitivpn.lifestyle
-- name: 'ARISTA #5'
+- name: 'ARISTA #7'
   type: vless
-  server: 153.76.190.31
+  server: 109.70.74.213
   port: 2083
-  uuid: d6eb8a46-e6a4-4891-b22e-dfaa609c6afd
-  network: ws
+  uuid: fc1aae3b-e361-416c-aebf-cebdcceedae9
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: ios
-  servername: speedtestmark.com
-  ws-opts:
-    path: /vless-ws
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: 109.70.74.213
+- name: 'ARISTA #8'
+  type: vless
+  server: 216.24.57.1
+  port: 2083
+  uuid: 3374d2ed-0dc3-404d-adfd-414b55b3dc9b
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: nllc.mitivpn--mitivpn.lifestyle
+- name: 'ARISTA #9'
+  type: vless
+  server: 109.70.74.213
+  port: 2083
+  uuid: fc1aae3b-e361-416c-aebf-cebdcceedae9
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: 109.70.74.213
+- name: 'ARISTA #10'
+  type: vless
+  server: 109.70.74.213
+  port: 2083
+  uuid: fc1aae3b-e361-416c-aebf-cebdcceedae9
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: 109.70.74.213
+- name: 'ARISTA #11'
+  type: vless
+  server: 216.24.57.1
+  port: 2083
+  uuid: 3374d2ed-0dc3-404d-adfd-414b55b3dc9b
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: nllc.mitivpn--mitivpn.lifestyle
+- name: 'ARISTA #12'
+  type: vless
+  server: 109.70.74.213
+  port: 2083
+  uuid: fc1aae3b-e361-416c-aebf-cebdcceedae9
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: 109.70.74.213
+- name: 'ARISTA #13'
+  type: vless
+  server: 216.24.57.1
+  port: 2083
+  uuid: 3374d2ed-0dc3-404d-adfd-414b55b3dc9b
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: nllc.mitivpn--mitivpn.lifestyle
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -127,6 +247,14 @@ proxy-groups:
   - 'ARISTA #3'
   - 'ARISTA #4'
   - 'ARISTA #5'
+  - 'ARISTA #6'
+  - 'ARISTA #7'
+  - 'ARISTA #8'
+  - 'ARISTA #9'
+  - 'ARISTA #10'
+  - 'ARISTA #11'
+  - 'ARISTA #12'
+  - 'ARISTA #13'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

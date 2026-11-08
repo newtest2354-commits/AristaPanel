@@ -1,5 +1,5 @@
 # TELEGRAM - Port 2087
-# Updated: 2026-11-08 10:11:19
+# Updated: 2026-11-08 17:56:51
 # Count: 2
 
 mixed-port: 7890
@@ -49,45 +49,27 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'ARISTA #1'
-  type: trojan
-  server: 66.81.247.8
+  type: vless
+  server: 2.26.6.1
   port: 2087
-  password: em6lOI9zhk
-  network: ws
+  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  tcp-fast-open: true
-  servername: t0f.tupn.org
-  client-fingerprint: firefox
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  ws-opts:
-    path: /2087
-    headers:
-      Host: t0f.tupn.org
+  client-fingerprint: chrome
+  servername: 2.26.6.1
 - name: 'ARISTA #2'
-  type: trojan
-  server: 66.81.247.8
+  type: vless
+  server: 2.26.6.1
   port: 2087
-  password: em6lOI9zhk
-  network: ws
+  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  tcp-fast-open: true
-  servername: t0f.tupn.org
-  client-fingerprint: firefox
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  ws-opts:
-    path: /2087
-    headers:
-      Host: t0f.tupn.org
+  client-fingerprint: chrome
+  servername: 2.26.6.1
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test

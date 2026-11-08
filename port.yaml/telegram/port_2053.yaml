@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2053
-# Updated: 2026-11-08 10:11:19
-# Count: 23
+# Updated: 2026-11-08 17:56:51
+# Count: 33
 
 mixed-port: 7890
 allow-lan: false
@@ -52,7 +52,7 @@ proxies:
   type: vmess
   server: 178.63.237.148
   port: 2053
-  uuid: de3fae7b-a2c4-4517-8198-6b18ac8e6d09
+  uuid: 2f3d6fc3-f4ba-4c5e-8a9e-39ab50cd564a
   alterId: 0
   cipher: auto
   network: tcp
@@ -65,7 +65,7 @@ proxies:
   type: vmess
   server: 178.63.237.148
   port: 2053
-  uuid: 2f3d6fc3-f4ba-4c5e-8a9e-39ab50cd564a
+  uuid: a3ec7a80-044a-41fd-8e0a-1b61c1381702
   alterId: 0
   cipher: auto
   network: tcp
@@ -78,7 +78,7 @@ proxies:
   type: vmess
   server: 178.63.237.148
   port: 2053
-  uuid: a3ec7a80-044a-41fd-8e0a-1b61c1381702
+  uuid: 83f70028-2897-4ca9-9bf9-fd506062cf4e
   alterId: 0
   cipher: auto
   network: tcp
@@ -88,20 +88,6 @@ proxies:
   tcp-fast-open: true
   servername: 178.63.237.148
 - name: 'ARISTA #4'
-  type: vless
-  server: 194.61.31.126
-  port: 2053
-  uuid: 1d4e18bd-1f26-4915-b35a-7ace4826e76a
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: PuAGLfJy6cu1TNoHuKIKSxPetCbZI41fc8hQDjWPIAU
-    short-id: "9980e0609b0d3891"
-- name: 'ARISTA #5'
   type: vless
   server: 51.89.194.151
   port: 2053
@@ -115,20 +101,34 @@ proxies:
   reality-opts:
     public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
     short-id: "d051f678212f9d54"
-- name: 'ARISTA #6'
+- name: 'ARISTA #5'
   type: vless
-  server: 194.61.31.126
+  server: 109.70.74.213
   port: 2053
-  uuid: 1d4e18bd-1f26-4915-b35a-7ace4826e76a
-  network: tcp
+  uuid: fc1aae3b-e361-416c-aebf-cebdcceedae9
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
   client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: PuAGLfJy6cu1TNoHuKIKSxPetCbZI41fc8hQDjWPIAU
-    short-id: "9980e0609b0d3891"
+  servername: 109.70.74.213
+  ws-opts:
+    path: /q7z2x1
+    headers:
+      Host: 109.70.74.213
+- name: 'ARISTA #6'
+  type: vless
+  server: shh-hja-bbw.speedbluepanel.sbs
+  port: 2053
+  uuid: b86451af-4c98-4b7d-96e5-16f2e9df1d46
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
 - name: 'ARISTA #7'
   type: vless
   server: 51.89.194.151
@@ -145,23 +145,37 @@ proxies:
     short-id: "d051f678212f9d54"
 - name: 'ARISTA #8'
   type: vless
-  server: 194.61.31.126
+  server: 109.70.74.213
   port: 2053
-  uuid: 1d4e18bd-1f26-4915-b35a-7ace4826e76a
-  network: tcp
+  uuid: fc1aae3b-e361-416c-aebf-cebdcceedae9
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
   client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: PuAGLfJy6cu1TNoHuKIKSxPetCbZI41fc8hQDjWPIAU
-    short-id: "9980e0609b0d3891"
+  servername: 109.70.74.213
+  ws-opts:
+    path: /q7z2x1
+    headers:
+      Host: 109.70.74.213
 - name: 'ARISTA #9'
   type: vless
-  server: 194.61.31.126
+  server: shh-hja-bbw.speedbluepanel.sbs
   port: 2053
-  uuid: 1d4e18bd-1f26-4915-b35a-7ace4826e76a
+  uuid: b86451af-4c98-4b7d-96e5-16f2e9df1d46
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #10'
+  type: vless
+  server: 51.89.194.151
+  port: 2053
+  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
   network: tcp
   tls: true
   udp: true
@@ -169,99 +183,205 @@ proxies:
   client-fingerprint: chrome
   servername: www.apple.com
   reality-opts:
-    public-key: PuAGLfJy6cu1TNoHuKIKSxPetCbZI41fc8hQDjWPIAU
-    short-id: "9980e0609b0d3891"
-- name: 'ARISTA #10'
-  type: trojan
-  server: 104.25.239.113
-  port: 2053
-  password: gHQP0D7D15
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: marvdasht.phonecomparisonblog.org🏴‍☠️@FreakConfig
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org🏴‍☠️@FreakConfig
+    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
+    short-id: "d051f678212f9d54"
 - name: 'ARISTA #11'
-  type: trojan
-  server: 104.25.239.113
+  type: vless
+  server: 109.70.74.213
   port: 2053
-  password: gHQP0D7D15
+  uuid: fc1aae3b-e361-416c-aebf-cebdcceedae9
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  tcp-fast-open: true
-  servername: marvdasht.phonecomparisonblog.org
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: 109.70.74.213
   ws-opts:
-    path: /
+    path: /q7z2x1
     headers:
-      Host: marvdasht.phonecomparisonblog.org
+      Host: 109.70.74.213
 - name: 'ARISTA #12'
-  type: trojan
-  server: 172.67.118.45
+  type: vless
+  server: shh-hja-bbw.speedbluepanel.sbs
   port: 2053
-  password: gHQP0D7D15
-  network: ws
-  tls: true
+  uuid: b86451af-4c98-4b7d-96e5-16f2e9df1d46
+  network: tcp
+  tls: false
   udp: true
   skip-cert-verify: true
-  tcp-fast-open: true
-  servername: marvdasht.phonecomparisonblog.org
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
 - name: 'ARISTA #13'
-  type: trojan
-  server: 104.25.239.113
+  type: vless
+  server: 51.89.194.151
   port: 2053
-  password: tashakoriamin86%40gmail.com
-  network: ws
+  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  tcp-fast-open: true
-  servername: tashakoriamin86@gmail.com
-  ws-opts:
-    path: tashakoriamin86@gmail.com
-    headers:
-      Host: tashakoriamin86@gmail.com
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
+    short-id: "d051f678212f9d54"
 - name: 'ARISTA #14'
-  type: trojan
-  server: 104.25.239.113
+  type: vless
+  server: 109.70.74.213
   port: 2053
-  password: gHQP0D7D15
+  uuid: fc1aae3b-e361-416c-aebf-cebdcceedae9
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  tcp-fast-open: true
-  servername: marvdasht.phonecomparisonblog.org🏴‍☠️@FreakConfig
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: 109.70.74.213
   ws-opts:
-    path: /
+    path: /q7z2x1
     headers:
-      Host: marvdasht.phonecomparisonblog.org🏴‍☠️@FreakConfig
+      Host: 109.70.74.213
 - name: 'ARISTA #15'
-  type: trojan
-  server: 104.25.239.113
+  type: vless
+  server: shh-hja-bbw.speedbluepanel.sbs
   port: 2053
-  password: gHQP0D7D15
+  uuid: b86451af-4c98-4b7d-96e5-16f2e9df1d46
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #16'
+  type: vless
+  server: 51.89.194.151
+  port: 2053
+  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
+    short-id: "d051f678212f9d54"
+- name: 'ARISTA #17'
+  type: vless
+  server: 109.70.74.213
+  port: 2053
+  uuid: fc1aae3b-e361-416c-aebf-cebdcceedae9
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  tcp-fast-open: true
-  servername: marvdasht.phonecomparisonblog.org
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: 109.70.74.213
   ws-opts:
-    path: /
+    path: /q7z2x1
     headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: 'ARISTA #16'
+      Host: 109.70.74.213
+- name: 'ARISTA #18'
+  type: vless
+  server: shh-hja-bbw.speedbluepanel.sbs
+  port: 2053
+  uuid: b86451af-4c98-4b7d-96e5-16f2e9df1d46
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #19'
+  type: vless
+  server: 51.89.194.151
+  port: 2053
+  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
+    short-id: "d051f678212f9d54"
+- name: 'ARISTA #20'
+  type: vless
+  server: 109.70.74.213
+  port: 2053
+  uuid: fc1aae3b-e361-416c-aebf-cebdcceedae9
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: 109.70.74.213
+  ws-opts:
+    path: /q7z2x1
+    headers:
+      Host: 109.70.74.213
+- name: 'ARISTA #21'
+  type: vless
+  server: shh-hja-bbw.speedbluepanel.sbs
+  port: 2053
+  uuid: b86451af-4c98-4b7d-96e5-16f2e9df1d46
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #22'
+  type: vless
+  server: 51.89.194.151
+  port: 2053
+  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
+    short-id: "d051f678212f9d54"
+- name: 'ARISTA #23'
+  type: vless
+  server: 109.70.74.213
+  port: 2053
+  uuid: fc1aae3b-e361-416c-aebf-cebdcceedae9
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: 109.70.74.213
+  ws-opts:
+    path: /q7z2x1
+    headers:
+      Host: 109.70.74.213
+- name: 'ARISTA #24'
+  type: vless
+  server: shh-hja-bbw.speedbluepanel.sbs
+  port: 2053
+  uuid: b86451af-4c98-4b7d-96e5-16f2e9df1d46
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #25'
   type: trojan
   server: 172.67.118.45
   port: 2053
@@ -276,7 +396,7 @@ proxies:
     path: /
     headers:
       Host: marvdasht.phonecomparisonblog.org
-- name: 'ARISTA #17'
+- name: 'ARISTA #26'
   type: trojan
   server: 104.25.239.113
   port: 2053
@@ -291,7 +411,7 @@ proxies:
     path: tashakoriamin86@gmail.com
     headers:
       Host: tashakoriamin86@gmail.com
-- name: 'ARISTA #18'
+- name: 'ARISTA #27'
   type: trojan
   server: 172.67.118.45
   port: 2053
@@ -302,12 +422,86 @@ proxies:
   skip-cert-verify: true
   tcp-fast-open: true
   servername: marvdasht.phonecomparisonblog.org
-  client-fingerprint: ios
   ws-opts:
     path: /?Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
     headers:
       Host: marvdasht.phonecomparisonblog.org
-- name: 'ARISTA #19'
+- name: 'ARISTA #28'
+  type: trojan
+  server: 104.25.239.113
+  port: 2053
+  password: gHQP0D7D15
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: marvdasht.phonecomparisonblog.org
+  ws-opts:
+    path: /
+    headers:
+      Host: marvdasht.phonecomparisonblog.org
+- name: 'ARISTA #29'
+  type: trojan
+  server: 172.67.118.45
+  port: 2053
+  password: gHQP0D7D15
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: marvdasht.phonecomparisonblog.org
+  ws-opts:
+    path: /
+    headers:
+      Host: marvdasht.phonecomparisonblog.org
+- name: 'ARISTA #30'
+  type: trojan
+  server: 104.25.239.113
+  port: 2053
+  password: tashakoriamin86%40gmail.com
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: tashakoriamin86@gmail.com
+  ws-opts:
+    path: tashakoriamin86@gmail.com
+    headers:
+      Host: tashakoriamin86@gmail.com
+- name: 'ARISTA #31'
+  type: trojan
+  server: 172.67.118.45
+  port: 2053
+  password: gHQP0D7D15
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: marvdasht.phonecomparisonblog.org
+  ws-opts:
+    path: /?Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
+    headers:
+      Host: marvdasht.phonecomparisonblog.org
+- name: 'ARISTA #32'
+  type: trojan
+  server: 104.25.239.113
+  port: 2053
+  password: gHQP0D7D15
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: marvdasht.phonecomparisonblog.org
+  ws-opts:
+    path: /
+    headers:
+      Host: marvdasht.phonecomparisonblog.org
+- name: 'ARISTA #33'
   type: trojan
   server: 104.25.239.113
   port: 2053
@@ -322,67 +516,6 @@ proxies:
     path: /
     headers:
       Host: marvdasht.phonecomparisonblog.org🏴‍☠️@FreakConfig
-- name: 'ARISTA #20'
-  type: trojan
-  server: 104.25.239.113
-  port: 2053
-  password: gHQP0D7D15
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: marvdasht.phonecomparisonblog.org
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: 'ARISTA #21'
-  type: trojan
-  server: 172.67.118.45
-  port: 2053
-  password: gHQP0D7D15
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: marvdasht.phonecomparisonblog.org
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: 'ARISTA #22'
-  type: trojan
-  server: 104.25.239.113
-  port: 2053
-  password: tashakoriamin86%40gmail.com
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: tashakoriamin86@gmail.com
-  ws-opts:
-    path: tashakoriamin86@gmail.com
-    headers:
-      Host: tashakoriamin86@gmail.com
-- name: 'ARISTA #23'
-  type: trojan
-  server: 172.67.118.45
-  port: 2053
-  password: gHQP0D7D15
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: marvdasht.phonecomparisonblog.org
-  client-fingerprint: ios
-  ws-opts:
-    path: /?Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -415,6 +548,16 @@ proxy-groups:
   - 'ARISTA #21'
   - 'ARISTA #22'
   - 'ARISTA #23'
+  - 'ARISTA #24'
+  - 'ARISTA #25'
+  - 'ARISTA #26'
+  - 'ARISTA #27'
+  - 'ARISTA #28'
+  - 'ARISTA #29'
+  - 'ARISTA #30'
+  - 'ARISTA #31'
+  - 'ARISTA #32'
+  - 'ARISTA #33'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
