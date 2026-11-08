@@ -1,6 +1,6 @@
 # TELEGRAM - Port 8880
-# Updated: 2026-11-07 19:22:12
-# Count: 9
+# Updated: 2026-11-08 00:22:22
+# Count: 3
 
 mixed-port: 7890
 allow-lan: false
@@ -50,52 +50,7 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 104.21.7.147
-  port: 8880
-  uuid: b54fbd00-dc57-46d0-8bc0-d5546b977012
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #2'
-  type: vless
-  server: 104.21.7.147
-  port: 8880
-  uuid: b54fbd00-dc57-46d0-8bc0-d5546b977012
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #3'
-  type: vless
-  server: 104.21.7.147
-  port: 8880
-  uuid: b54fbd00-dc57-46d0-8bc0-d5546b977012
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #4'
-  type: vless
-  server: 104.21.7.147
-  port: 8880
-  uuid: b54fbd00-dc57-46d0-8bc0-d5546b977012
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #5'
-  type: vless
-  server: 104.21.7.147
-  port: 8880
-  uuid: b54fbd00-dc57-46d0-8bc0-d5546b977012
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #6'
-  type: vless
-  server: 8.34.70.30
+  server: 89.117.112.40
   port: 8880
   uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   network: ws
@@ -103,36 +58,35 @@ proxies:
   udp: true
   skip-cert-verify: true
   ws-opts:
-    path: /
+    path: /?ed=2560
     headers:
-      Host: vms.lifetime09.workers.dev
-- name: 'ARISTA #7'
+      Host: vms.lifetime11.workers.dev
+- name: 'ARISTA #2'
   type: vless
-  server: 104.21.7.147
+  server: 89.117.112.40
   port: 8880
-  uuid: b54fbd00-dc57-46d0-8bc0-d5546b977012
-  network: httpupgrade
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'ARISTA #8'
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: vms.lifetime11.workers.dev
+- name: 'ARISTA #3'
   type: vless
-  server: 104.21.7.147
+  server: 89.117.112.40
   port: 8880
-  uuid: b54fbd00-dc57-46d0-8bc0-d5546b977012
-  network: httpupgrade
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'ARISTA #9'
-  type: vless
-  server: 104.21.7.147
-  port: 8880
-  uuid: b54fbd00-dc57-46d0-8bc0-d5546b977012
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: vms.lifetime11.workers.dev
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -145,12 +99,6 @@ proxy-groups:
   - 'ARISTA #1'
   - 'ARISTA #2'
   - 'ARISTA #3'
-  - 'ARISTA #4'
-  - 'ARISTA #5'
-  - 'ARISTA #6'
-  - 'ARISTA #7'
-  - 'ARISTA #8'
-  - 'ARISTA #9'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
