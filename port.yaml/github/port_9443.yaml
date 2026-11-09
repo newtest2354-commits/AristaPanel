@@ -1,6 +1,6 @@
 # GITHUB - Port 9443
-# Updated: 2026-11-08 10:11:25
-# Count: 1
+# Updated: 2026-11-09 05:56:16
+# Count: 2
 
 mixed-port: 7890
 allow-lan: false
@@ -50,19 +50,34 @@ rules:
 proxies:
 - name: 'T.ME: @aristapanel #1'
   type: vless
-  server: 91.185.83.105
+  server: xui-oh.sahebkarami.ir
   port: 9443
-  uuid: 574a510b-5d5d-4f6f-8675-3320e130cad4
-  network: raw
+  uuid: 46f8712b-5289-45d1-858d-1f01f97b8ffe
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
   flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: passport.yandex.ru
-  reality-opts:
-    public-key: Te3ZcFFTilb6_j4hdotSvXaRYBzGuNiRxuBh8n1NezU
-    short-id: "91d2d3db690f4b59"
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: xui-oh.sahebkarami.ir
+- name: 'T.ME: @aristapanel #2'
+  type: vless
+  server: xui-oh.sahebkarami.ir
+  port: 9443
+  uuid: 46f8712b-5289-45d1-858d-1f01f97b8ffe
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: xui-oh.sahebkarami.ir
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -73,6 +88,7 @@ proxy-groups:
   timeout: 3000
   proxies: &id001
   - 'T.ME: @aristapanel #1'
+  - 'T.ME: @aristapanel #2'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
