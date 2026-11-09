@@ -1,6 +1,6 @@
 // TELEGRAM - Port 2083
-// Updated: 2026-11-09 05:56:24
-// Count: 31
+// Updated: 2026-11-09 15:59:15
+// Count: 24
 
 {
   "log": {
@@ -64,25 +64,27 @@
     {
       "type": "vless",
       "tag": "ARISTA #2",
-      "server": "91.107.247.173",
+      "server": "201.58.189.105",
       "server_port": 2083,
-      "uuid": "7858128a-6b5e-4f86-9bff-52c1f1e6439d",
+      "uuid": "d7ddade6-b7a0-4cab-a910-d5d5c378d98a",
       "domain_resolver": "google",
       "tls": {
         "enabled": true,
-        "server_name": "sino.bestsellers1.site",
+        "server_name": "dl.google.com",
         "insecure": true,
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "B7x5bYp-YhtLeH31zYcilpKFCkGTMe3jtSECSw-bMC4",
+          "short_id": "8bd80253"
         }
       },
       "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "91.107.247.173"
-        }
+        "type": "grpc",
+        "service_name": "google.storage.v2.Storage"
       }
     },
     {
@@ -106,6 +108,30 @@
       }
     },
     {
+      "type": "vless",
+      "tag": "ARISTA #4",
+      "server": "91.107.247.173",
+      "server_port": 2083,
+      "uuid": "7858128a-6b5e-4f86-9bff-52c1f1e6439d",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "sino.bestsellers1.site",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "91.107.247.173"
+        }
+      }
+    },
+    {
       "type": "direct",
       "tag": "direct"
     },
@@ -119,7 +145,8 @@
       "outbounds": [
         "ARISTA #1",
         "ARISTA #2",
-        "ARISTA #3"
+        "ARISTA #3",
+        "ARISTA #4"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "2m",
