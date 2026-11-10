@@ -1,5 +1,5 @@
 # TELEGRAM - Port 2096
-# Updated: 2026-11-10 11:02:56
+# Updated: 2026-11-10 19:42:18
 # Count: 10
 
 mixed-port: 7890
@@ -125,6 +125,21 @@ proxies:
       Host: pcloud.z-tas.com
 - name: 'ARISTA #6'
   type: vless
+  server: free.sahanwickramasinghe.com
+  port: 2096
+  uuid: d3532059-294f-4ecf-873d-acf296dc0bad
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: microsoft.com
+  ws-opts:
+    path: /
+- name: 'ARISTA #7'
+  type: vless
   server: 170.114.46.6
   port: 2096
   uuid: efd11a89-7506-44ce-95b6-6654859f155b
@@ -138,7 +153,7 @@ proxies:
     path: /
     headers:
       Host: pcloud.z-tas.com
-- name: 'ARISTA #7'
+- name: 'ARISTA #8'
   type: vless
   server: free.sahanwickramasinghe.com
   port: 2096
@@ -153,21 +168,6 @@ proxies:
   servername: microsoft.com
   ws-opts:
     path: /
-- name: 'ARISTA #8'
-  type: vless
-  server: 170.114.46.6
-  port: 2096
-  uuid: efd11a89-7506-44ce-95b6-6654859f155b
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: pcloud.z-tas.com
-  ws-opts:
-    path: /
-    headers:
-      Host: pcloud.z-tas.com
 - name: 'ARISTA #9'
   type: vless
   server: 170.114.46.6
@@ -185,19 +185,19 @@ proxies:
       Host: pcloud.z-tas.com
 - name: 'ARISTA #10'
   type: vless
-  server: 170.114.46.6
+  server: free.sahanwickramasinghe.com
   port: 2096
-  uuid: efd11a89-7506-44ce-95b6-6654859f155b
+  uuid: d3532059-294f-4ecf-873d-acf296dc0bad
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: pcloud.z-tas.com
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: microsoft.com
   ws-opts:
     path: /
-    headers:
-      Host: pcloud.z-tas.com
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
