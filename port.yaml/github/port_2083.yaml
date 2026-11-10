@@ -1,6 +1,6 @@
 # GITHUB - Port 2083
-# Updated: 2026-11-09 15:59:07
-# Count: 25
+# Updated: 2026-11-10 01:28:23
+# Count: 36
 
 mixed-port: 7890
 allow-lan: false
@@ -50,23 +50,6 @@ rules:
 proxies:
 - name: 'T.ME: @aristapanel #1'
   type: vmess
-  server: or3.sfacg.uk
-  port: 2083
-  uuid: ac251237-576f-40c8-a543-554960c958b1
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: or3.sfacg.uk
-  ws-opts:
-    path: /or3
-    headers:
-      Host: or3.sfacg.uk
-- name: 'T.ME: @aristapanel #2'
-  type: vmess
   server: 162.159.130.234
   port: 2083
   uuid: ac251237-576f-40c8-a543-554960c958b1
@@ -82,9 +65,26 @@ proxies:
     path: /or3
     headers:
       Host: or3.sfacg.uk
-- name: 'T.ME: @aristapanel #3'
+- name: 'T.ME: @aristapanel #2'
   type: vmess
   server: cdn.sfacg.uk
+  port: 2083
+  uuid: ac251237-576f-40c8-a543-554960c958b1
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: or3.sfacg.uk
+  ws-opts:
+    path: /or3
+    headers:
+      Host: or3.sfacg.uk
+- name: 'T.ME: @aristapanel #3'
+  type: vmess
+  server: or3.sfacg.uk
   port: 2083
   uuid: ac251237-576f-40c8-a543-554960c958b1
   alterId: 0
@@ -135,7 +135,7 @@ proxies:
       Host: or3.sfacg.uk
 - name: 'T.ME: @aristapanel #6'
   type: vmess
-  server: or3.sfacg.uk
+  server: 162.159.130.234
   port: 2083
   uuid: ac251237-576f-40c8-a543-554960c958b1
   alterId: 0
@@ -145,7 +145,7 @@ proxies:
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: or3.sfacg.uk
+  servername: cdn.sfacg.uk
   ws-opts:
     path: /or3
     headers:
@@ -186,7 +186,7 @@ proxies:
       Host: or3.sfacg.uk
 - name: 'T.ME: @aristapanel #9'
   type: vmess
-  server: 104.21.0.1
+  server: or3.sfacg.uk
   port: 2083
   uuid: ac251237-576f-40c8-a543-554960c958b1
   alterId: 0
@@ -203,7 +203,7 @@ proxies:
       Host: or3.sfacg.uk
 - name: 'T.ME: @aristapanel #10'
   type: vmess
-  server: 104.17.0.1
+  server: 104.21.0.1
   port: 2083
   uuid: ac251237-576f-40c8-a543-554960c958b1
   alterId: 0
@@ -230,14 +230,14 @@ proxies:
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: 104.17.0.1
+  servername: or3.sfacg.uk
   ws-opts:
     path: /or3
     headers:
       Host: or3.sfacg.uk
 - name: 'T.ME: @aristapanel #12'
   type: vmess
-  server: 162.159.130.234
+  server: 104.17.0.1
   port: 2083
   uuid: ac251237-576f-40c8-a543-554960c958b1
   alterId: 0
@@ -247,14 +247,14 @@ proxies:
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: or3.sfacg.uk
+  servername: 104.17.0.1
   ws-opts:
     path: /or3
     headers:
       Host: or3.sfacg.uk
 - name: 'T.ME: @aristapanel #13'
   type: vmess
-  server: 162.159.135.234
+  server: 162.159.130.234
   port: 2083
   uuid: ac251237-576f-40c8-a543-554960c958b1
   alterId: 0
@@ -281,13 +281,30 @@ proxies:
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
+  servername: or3.sfacg.uk
+  ws-opts:
+    path: /or3
+    headers:
+      Host: or3.sfacg.uk
+- name: 'T.ME: @aristapanel #15'
+  type: vmess
+  server: 162.159.135.234
+  port: 2083
+  uuid: ac251237-576f-40c8-a543-554960c958b1
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
   servername: cdn.sfacg.uk
   client-fingerprint: chrome
   ws-opts:
     path: /or3
     headers:
       Host: or3.sfacg.uk
-- name: 'T.ME: @aristapanel #15'
+- name: 'T.ME: @aristapanel #16'
   type: vmess
   server: cdn.sfacg.uk
   port: 2083
@@ -305,75 +322,179 @@ proxies:
     path: /or3
     headers:
       Host: or3.sfacg.uk
-- name: 'T.ME: @aristapanel #16'
-  type: vless
-  server: sino.bestsellers1.site
-  port: 2083
-  uuid: 0386df1b-7abd-4676-f3c6-d65d691023b9
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: sino.bestsellers1.site
-  ws-opts:
-    path: /
 - name: 'T.ME: @aristapanel #17'
-  type: vless
-  server: sino.bestsellers1.site
+  type: vmess
+  server: 162.159.130.234
   port: 2083
-  uuid: 0386df1b-7abd-4676-f3c6-d65d691023b9
+  uuid: ac251237-576f-40c8-a543-554960c958b1
+  alterId: 0
+  cipher: auto
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: sino.bestsellers1.site
+  tcp-fast-open: true
+  servername: cdn.sfacg.uk
   ws-opts:
-    path: /
+    path: /or3
+    headers:
+      Host: or3.sfacg.uk
 - name: 'T.ME: @aristapanel #18'
-  type: vless
-  server: sino.bestsellers1.site
+  type: vmess
+  server: cdn.sfacg.uk
   port: 2083
-  uuid: 0386df1b-7abd-4676-f3c6-d65d691023b9
+  uuid: ac251237-576f-40c8-a543-554960c958b1
+  alterId: 0
+  cipher: auto
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: sino.bestsellers1.site
+  tcp-fast-open: true
+  servername: or3.sfacg.uk
   ws-opts:
-    path: /
+    path: /or3
+    headers:
+      Host: or3.sfacg.uk
 - name: 'T.ME: @aristapanel #19'
-  type: vless
-  server: sino.bestsellers1.site
+  type: vmess
+  server: or3.sfacg.uk
   port: 2083
-  uuid: 0386df1b-7abd-4676-f3c6-d65d691023b9
+  uuid: ac251237-576f-40c8-a543-554960c958b1
+  alterId: 0
+  cipher: auto
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: sino.bestsellers1.site
+  tcp-fast-open: true
+  servername: or3.sfacg.uk
   ws-opts:
-    path: /
+    path: /or3
+    headers:
+      Host: or3.sfacg.uk
 - name: 'T.ME: @aristapanel #20'
+  type: vmess
+  server: 104.21.0.1
+  port: 2083
+  uuid: ac251237-576f-40c8-a543-554960c958b1
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: or3.sfacg.uk
+  ws-opts:
+    path: /or3
+    headers:
+      Host: or3.sfacg.uk
+- name: 'T.ME: @aristapanel #21'
+  type: vmess
+  server: 104.17.0.1
+  port: 2083
+  uuid: ac251237-576f-40c8-a543-554960c958b1
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: or3.sfacg.uk
+  ws-opts:
+    path: /or3
+    headers:
+      Host: or3.sfacg.uk
+- name: 'T.ME: @aristapanel #22'
+  type: vmess
+  server: 104.17.0.1
+  port: 2083
+  uuid: ac251237-576f-40c8-a543-554960c958b1
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 104.17.0.1
+  ws-opts:
+    path: /or3
+    headers:
+      Host: or3.sfacg.uk
+- name: 'T.ME: @aristapanel #23'
+  type: vmess
+  server: 162.159.130.234
+  port: 2083
+  uuid: ac251237-576f-40c8-a543-554960c958b1
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: or3.sfacg.uk
+  ws-opts:
+    path: /or3
+    headers:
+      Host: or3.sfacg.uk
+- name: 'T.ME: @aristapanel #24'
+  type: vmess
+  server: 162.159.135.234
+  port: 2083
+  uuid: ac251237-576f-40c8-a543-554960c958b1
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: or3.sfacg.uk
+  ws-opts:
+    path: /or3
+    headers:
+      Host: or3.sfacg.uk
+- name: 'T.ME: @aristapanel #25'
+  type: vmess
+  server: 162.159.135.234
+  port: 2083
+  uuid: ac251237-576f-40c8-a543-554960c958b1
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: cdn.sfacg.uk
+  client-fingerprint: chrome
+  ws-opts:
+    path: /or3
+    headers:
+      Host: or3.sfacg.uk
+- name: 'T.ME: @aristapanel #26'
+  type: vmess
+  server: cdn.sfacg.uk
+  port: 2083
+  uuid: ac251237-576f-40c8-a543-554960c958b1
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: cdn.sfacg.uk
+  client-fingerprint: chrome
+  ws-opts:
+    path: /or3
+    headers:
+      Host: or3.sfacg.uk
+- name: 'T.ME: @aristapanel #27'
   type: vless
   server: sino.bestsellers1.site
   port: 2083
@@ -390,7 +511,75 @@ proxies:
   servername: sino.bestsellers1.site
   ws-opts:
     path: /
-- name: 'T.ME: @aristapanel #21'
+- name: 'T.ME: @aristapanel #28'
+  type: vless
+  server: sino.bestsellers1.site
+  port: 2083
+  uuid: 0386df1b-7abd-4676-f3c6-d65d691023b9
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: sino.bestsellers1.site
+  ws-opts:
+    path: /
+- name: 'T.ME: @aristapanel #29'
+  type: vless
+  server: sino.bestsellers1.site
+  port: 2083
+  uuid: 0386df1b-7abd-4676-f3c6-d65d691023b9
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: sino.bestsellers1.site
+  ws-opts:
+    path: /
+- name: 'T.ME: @aristapanel #30'
+  type: vless
+  server: sino.bestsellers1.site
+  port: 2083
+  uuid: 0386df1b-7abd-4676-f3c6-d65d691023b9
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: sino.bestsellers1.site
+  ws-opts:
+    path: /
+- name: 'T.ME: @aristapanel #31'
+  type: vless
+  server: sino.bestsellers1.site
+  port: 2083
+  uuid: 0386df1b-7abd-4676-f3c6-d65d691023b9
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: sino.bestsellers1.site
+  ws-opts:
+    path: /
+- name: 'T.ME: @aristapanel #32'
   type: vless
   server: www.speedtest.net
   port: 2083
@@ -407,7 +596,22 @@ proxies:
     path: /iqj07b4v4x?ed=2048
     headers:
       Host: www.dideman.com
-- name: 'T.ME: @aristapanel #22'
+- name: 'T.ME: @aristapanel #33'
+  type: vless
+  server: 81.94.148.67
+  port: 2083
+  uuid: 295ab2f8-7d29-4f71-a907-d8d2e74b2a26
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: qq
+  servername: bm6.hat.onl
+  reality-opts:
+    public-key: Zy-GGHQ4J0M5RtpGPF7MUabmQo8nNr9iohVfyrmSGEY
+    short-id: "7e704e370213f498"
+- name: 'T.ME: @aristapanel #34'
   type: vless
   server: 172.66.0.172
   port: 2083
@@ -422,22 +626,7 @@ proxies:
     path: /
     headers:
       Host: wk1.f1w.de5.net
-- name: 'T.ME: @aristapanel #23'
-  type: vless
-  server: 185.147.27.23
-  port: 2083
-  uuid: 7592ca5c-b352-4562-8856-a9c936a3331b
-  network: raw
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: edge
-  servername: frb1.hat.onl
-  reality-opts:
-    public-key: LSatvkYtdgq5oND_moM9NRW-ZDbdlTvyX9gzeF9r3W8
-    short-id: "1cfdb63f3b860379"
-- name: 'T.ME: @aristapanel #24'
+- name: 'T.ME: @aristapanel #35'
   type: vless
   server: sino.bestsellers1.site
   port: 2083
@@ -454,7 +643,7 @@ proxies:
   servername: sino.bestsellers1.site
   ws-opts:
     path: /
-- name: 'T.ME: @aristapanel #25'
+- name: 'T.ME: @aristapanel #36'
   type: vless
   server: sino.bestsellers1.site
   port: 2083
@@ -505,6 +694,17 @@ proxy-groups:
   - 'T.ME: @aristapanel #23'
   - 'T.ME: @aristapanel #24'
   - 'T.ME: @aristapanel #25'
+  - 'T.ME: @aristapanel #26'
+  - 'T.ME: @aristapanel #27'
+  - 'T.ME: @aristapanel #28'
+  - 'T.ME: @aristapanel #29'
+  - 'T.ME: @aristapanel #30'
+  - 'T.ME: @aristapanel #31'
+  - 'T.ME: @aristapanel #32'
+  - 'T.ME: @aristapanel #33'
+  - 'T.ME: @aristapanel #34'
+  - 'T.ME: @aristapanel #35'
+  - 'T.ME: @aristapanel #36'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
