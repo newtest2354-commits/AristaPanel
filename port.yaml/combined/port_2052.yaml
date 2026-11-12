@@ -1,6 +1,6 @@
 # COMBINED - Port 2052
-# Updated: 2026-11-11 21:08:00
-# Count: 2
+# Updated: 2026-11-12 02:17:54
+# Count: 6
 
 mixed-port: 7890
 allow-lan: false
@@ -48,7 +48,60 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'T.ME: @aristapanel #1'
+- name: 'ARISTA #1'
+  type: vless
+  server: 188.114.97.6
+  port: 2052
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: zb1zi.s3nx.dyz.hh.vavava.kdns.fr
+- name: 'ARISTA #2'
+  type: vless
+  server: 188.114.97.6
+  port: 2052
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: zb1zi.s3nx.dyz.hh.vavava.kdns.fr
+- name: 'ARISTA #3'
+  type: vless
+  server: 188.114.97.6
+  port: 2052
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: zb1zi.s3nx.dyz.hh.vavava.kdns.fr
+- name: 'T.ME: @aristapanel #4'
+  type: vless
+  server: subpannelgood.subpannelfast.site
+  port: 2052
+  uuid: d048cd04-604a-4615-bc6b-0c268bf94db5
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: ai.android
+  reality-opts:
+    public-key: I5Ev2HFWg8unXMhcgpCdIveAQlK1q_unBQ45ql4Bxn4
+    short-id: "8854d2"
+- name: 'T.ME: @aristapanel #5'
   type: vless
   server: 193.227.99.54
   port: 2052
@@ -57,7 +110,7 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #2'
+- name: 'T.ME: @aristapanel #6'
   type: vless
   server: 104.17.121.110
   port: 2052
@@ -75,8 +128,12 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'T.ME: @aristapanel #1'
-  - 'T.ME: @aristapanel #2'
+  - 'ARISTA #1'
+  - 'ARISTA #2'
+  - 'ARISTA #3'
+  - 'T.ME: @aristapanel #4'
+  - 'T.ME: @aristapanel #5'
+  - 'T.ME: @aristapanel #6'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
