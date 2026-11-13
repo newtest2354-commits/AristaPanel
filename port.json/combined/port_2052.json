@@ -1,6 +1,6 @@
 // COMBINED - Port 2052
-// Updated: 2026-11-13 10:50:37
-// Count: 2
+// Updated: 2026-11-13 19:34:58
+// Count: 10
 
 {
   "log": {
@@ -55,6 +55,30 @@
       "domain_resolver": "google"
     },
     {
+      "type": "vless",
+      "tag": "ARISTA #3",
+      "server": "cdn-waw.edgeptr.org",
+      "server_port": 2052,
+      "uuid": "8419bd29-8bd4-4a38-a739-d5d7adeb5c3c",
+      "domain_resolver": "google",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "cdn-waw.edgeptr.org"
+        }
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "ARISTA #4",
+      "server": "rl.ourtune.cc.cd",
+      "server_port": 2052,
+      "method": "2022-blake3-aes-256-gcm",
+      "password": "OOXiul2ziEdZH+DFpoqTWy4LVJff6F2KebG3gsgf25M=:4iBnEUUZqnuY1J4ZE1e2njdDoZPMuIzU3+Ar9rt5FNk=",
+      "domain_resolver": "google"
+    },
+    {
       "type": "direct",
       "tag": "direct"
     },
@@ -67,7 +91,9 @@
       "tag": "🚀 ARISTA AUTO BEST",
       "outbounds": [
         "ARISTA #1",
-        "ARISTA #2"
+        "ARISTA #2",
+        "ARISTA #3",
+        "ARISTA #4"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "2m",
