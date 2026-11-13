@@ -1,6 +1,6 @@
 # TELEGRAM - Port 8880
-# Updated: 2026-11-12 19:53:58
-# Count: 1
+# Updated: 2026-11-13 01:47:42
+# Count: 3
 
 mixed-port: 7890
 allow-lan: false
@@ -61,6 +61,32 @@ proxies:
   skip-cert-verify: true
   tcp-fast-open: true
   servername: mahdipoktstm.iranfilm.space
+- name: 'ARISTA #2'
+  type: vless
+  server: 172.64.158.146
+  port: 8880
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /?ed=2560security=tls
+    headers:
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
+- name: 'ARISTA #3'
+  type: vless
+  server: 172.64.158.146
+  port: 8880
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /?ed=2560security=tls
+    headers:
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -71,6 +97,8 @@ proxy-groups:
   timeout: 3000
   proxies: &id001
   - 'ARISTA #1'
+  - 'ARISTA #2'
+  - 'ARISTA #3'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
