@@ -1,6 +1,6 @@
 # COMBINED - Port 2053
-# Updated: 2026-11-15 06:03:53
-# Count: 88
+# Updated: 2026-11-15 13:55:48
+# Count: 87
 
 mixed-port: 7890
 allow-lan: false
@@ -50,33 +50,52 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 194.61.31.126
+  server: 104.18.1.1
   port: 2053
-  uuid: 1d4e18bd-1f26-4915-b35a-7ace4826e76a
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: www.apple.com
-  reality-opts:
-    public-key: PuAGLfJy6cu1TNoHuKIKSxPetCbZI41fc8hQDjWPIAU
-    short-id: "9980e0609b0d3891"
-- name: 'ARISTA #2'
-  type: vless
-  server: 172.67.199.126
-  port: 2053
-  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
+  uuid: da4747a6-be0d-4c1b-90f4-d82ec3012be2
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: fast.145779.xyz
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: ios
+  servername: music1000.melobitmusic1.ir
   ws-opts:
-    path: /ws-tesla
+    path: /
     headers:
-      Host: fast.145779.xyz
+      Host: music1000.melobitmusic1.ir
+- name: 'ARISTA #2'
+  type: vless
+  server: 66.70.179.198
+  port: 2053
+  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
+    short-id: "83f8317a948bb769"
 - name: 'ARISTA #3'
+  type: vless
+  server: 66.70.179.198
+  port: 2053
+  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
+    short-id: "83f8317a948bb769"
+- name: 'ARISTA #4'
   type: vless
   server: fast.145779.xyz
   port: 2053
@@ -89,17 +108,6 @@ proxies:
   servername: fast.145779.xyz
   ws-opts:
     path: /ws-tesla
-- name: 'ARISTA #4'
-  type: vless
-  server: irbl.netbazshop.ir
-  port: 2053
-  uuid: 3cc7832d-b833-457b-a3a6-25f6eed6a21d
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: sslcert.okamii1.ir
 - name: 'T.ME: @aristapanel #5'
   type: vless
   server: 51.15.16.68
@@ -116,85 +124,52 @@ proxies:
     short-id: "3c99c85cbb6b3b44"
 - name: 'ARISTA #6'
   type: vless
-  server: 194.61.31.126
+  server: 104.18.1.1
   port: 2053
-  uuid: 1d4e18bd-1f26-4915-b35a-7ace4826e76a
-  network: tcp
+  uuid: da4747a6-be0d-4c1b-90f4-d82ec3012be2
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: www.apple.com
-  reality-opts:
-    public-key: PuAGLfJy6cu1TNoHuKIKSxPetCbZI41fc8hQDjWPIAU
-    short-id: "9980e0609b0d3891"
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: ios
+  servername: music1000.melobitmusic1.ir
+  ws-opts:
+    path: /
+    headers:
+      Host: music1000.melobitmusic1.ir
 - name: 'ARISTA #7'
   type: vless
-  server: 172.67.199.126
+  server: 66.70.179.198
   port: 2053
-  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
-    headers:
-      Host: fast.145779.xyz
-- name: 'ARISTA #8'
-  type: vless
-  server: fast.145779.xyz
-  port: 2053
-  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: ios
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
-- name: 'ARISTA #9'
-  type: vless
-  server: irbl.netbazshop.ir
-  port: 2053
-  uuid: 3cc7832d-b833-457b-a3a6-25f6eed6a21d
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: sslcert.okamii1.ir
-- name: 'ARISTA #10'
-  type: vless
-  server: 194.61.31.126
-  port: 2053
-  uuid: 1d4e18bd-1f26-4915-b35a-7ace4826e76a
+  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: www.apple.com
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
   reality-opts:
-    public-key: PuAGLfJy6cu1TNoHuKIKSxPetCbZI41fc8hQDjWPIAU
-    short-id: "9980e0609b0d3891"
-- name: 'ARISTA #11'
+    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
+    short-id: "83f8317a948bb769"
+- name: 'ARISTA #8'
   type: vless
-  server: 172.67.199.126
+  server: 66.70.179.198
   port: 2053
-  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
-  network: ws
+  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
-    headers:
-      Host: fast.145779.xyz
-- name: 'ARISTA #12'
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
+    short-id: "83f8317a948bb769"
+- name: 'ARISTA #9'
   type: vless
   server: fast.145779.xyz
   port: 2053
@@ -207,17 +182,66 @@ proxies:
   servername: fast.145779.xyz
   ws-opts:
     path: /ws-tesla
-- name: 'ARISTA #13'
+- name: 'ARISTA #10'
   type: vless
-  server: irbl.netbazshop.ir
+  server: 104.18.1.1
   port: 2053
-  uuid: 3cc7832d-b833-457b-a3a6-25f6eed6a21d
-  network: xhttp
+  uuid: da4747a6-be0d-4c1b-90f4-d82ec3012be2
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: ios
+  servername: music1000.melobitmusic1.ir
+  ws-opts:
+    path: /
+    headers:
+      Host: music1000.melobitmusic1.ir
+- name: 'ARISTA #11'
+  type: vless
+  server: 66.70.179.198
+  port: 2053
+  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: sslcert.okamii1.ir
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
+    short-id: "83f8317a948bb769"
+- name: 'ARISTA #12'
+  type: vless
+  server: 66.70.179.198
+  port: 2053
+  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
+    short-id: "83f8317a948bb769"
+- name: 'ARISTA #13'
+  type: vless
+  server: fast.145779.xyz
+  port: 2053
+  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: ios
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
 - name: 'T.ME: @aristapanel #14'
   type: vless
   server: 51.15.16.68
@@ -647,24 +671,25 @@ proxies:
   tls: true
   udp: true
   skip-cert-verify: true
+  client-fingerprint: random
   servername: www.cloudflare.com
   reality-opts:
     public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
     short-id: "83f8317a948bb769"
 - name: 'T.ME: @aristapanel #45'
   type: vless
-  server: 66.70.179.198
+  server: 194.61.31.126
   port: 2053
-  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
+  uuid: 1d4e18bd-1f26-4915-b35a-7ace4826e76a
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: random
-  servername: www.cloudflare.com
+  servername: www.apple.com
   reality-opts:
-    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
-    short-id: "83f8317a948bb769"
+    public-key: PuAGLfJy6cu1TNoHuKIKSxPetCbZI41fc8hQDjWPIAU
+    short-id: "9980e0609b0d3891"
 - name: 'T.ME: @aristapanel #46'
   type: vless
   server: 194.61.31.126
@@ -1075,6 +1100,20 @@ proxies:
       Host: twilight-frost-15b0.yigom67484.workers.dev
 - name: 'T.ME: @aristapanel #75'
   type: vless
+  server: 81.90.24.156
+  port: 2053
+  uuid: 6392cd80-967f-45fc-a4b2-41502f5c68b6
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: edge
+  servername: vh4x9pq2nd7msk3e.quillmesh.cyou
+  reality-opts:
+    public-key: cf7j5G-01AQB0n1WWdVnviRnG32BCLdCMdEe9-s3BA0
+    short-id: "966eadda42000d7c"
+- name: 'T.ME: @aristapanel #76'
+  type: vless
   server: 104.21.74.214
   port: 2053
   uuid: d133dd1c-3084-46c3-ba6e-aa3597c43cc1
@@ -1087,36 +1126,35 @@ proxies:
   - http/1.1
   client-fingerprint: chrome
   servername: n8.hyby.ir
-- name: 'T.ME: @aristapanel #76'
+- name: 'T.ME: @aristapanel #77'
   type: vless
-  server: 46.243.234.17
+  server: 31.76.34.142
   port: 2053
-  uuid: 37af0181-5598-4aad-a040-d926bcb65757
+  uuid: 6392cd80-967f-000f-a4b2-41502f5c68b6
   network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
   client-fingerprint: edge
-  servername: windytrout.net
-- name: 'T.ME: @aristapanel #77'
+  servername: 30916121.client.sushihost.su
+  reality-opts:
+    public-key: Zobd5crq6DzOZQjWiR0nGzyX0QU5zLNqL4VtSqwiyUo
+    short-id: "966eadda72000d7c"
+- name: 'T.ME: @aristapanel #78'
   type: vless
-  server: 172.67.130.187
+  server: 138.124.254.116
   port: 2053
-  uuid: 2b8738de-1af5-4267-b101-c05707769ed4
-  network: ws
+  uuid: 6392cd80-967f-000a-a4b2-41502f5c68b6
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: fans.liverpool.qzz.io
-  ws-opts:
-    path: /eyJqdW5rIjoiZXlpMnFWRURmWkp5ZCIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=
-    headers:
-      Host: fans.liverpool.qzz.io
-- name: 'T.ME: @aristapanel #78'
+  client-fingerprint: edge
+  servername: i9opm01r3dlmnajh.customer.velacdn.com
+  reality-opts:
+    public-key: iKYXOJoOvOk71UnjIzyEj502_nBalSNLJRWjKTf1fQc
+    short-id: "8096b8ec0b504d8f"
+- name: 'T.ME: @aristapanel #79'
   type: vless
   server: one-for-all.levikogjgfdd.ir
   port: 2053
@@ -1131,65 +1169,62 @@ proxies:
     path: /
     headers:
       Host: levikoconfig.levikogjgfdd.ir
-- name: 'ARISTA #79'
-  type: vless
-  server: 194.61.31.126
-  port: 2053
-  uuid: 1d4e18bd-1f26-4915-b35a-7ace4826e76a
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: www.apple.com
-  reality-opts:
-    public-key: PuAGLfJy6cu1TNoHuKIKSxPetCbZI41fc8hQDjWPIAU
-    short-id: "9980e0609b0d3891"
 - name: 'ARISTA #80'
   type: vless
-  server: 172.67.199.126
+  server: 104.18.1.1
   port: 2053
-  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
+  uuid: da4747a6-be0d-4c1b-90f4-d82ec3012be2
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: fast.145779.xyz
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: ios
+  servername: music1000.melobitmusic1.ir
   ws-opts:
-    path: /ws-tesla
+    path: /
     headers:
-      Host: fast.145779.xyz
+      Host: music1000.melobitmusic1.ir
 - name: 'ARISTA #81'
   type: vless
-  server: 194.61.31.126
+  server: 104.18.1.1
   port: 2053
-  uuid: 1d4e18bd-1f26-4915-b35a-7ace4826e76a
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: www.apple.com
-  reality-opts:
-    public-key: PuAGLfJy6cu1TNoHuKIKSxPetCbZI41fc8hQDjWPIAU
-    short-id: "9980e0609b0d3891"
-- name: 'ARISTA #82'
-  type: vless
-  server: 172.67.199.126
-  port: 2053
-  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
+  uuid: da4747a6-be0d-4c1b-90f4-d82ec3012be2
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: fast.145779.xyz
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: ios
+  servername: music1000.melobitmusic1.ir
   ws-opts:
-    path: /ws-tesla
+    path: /
     headers:
-      Host: fast.145779.xyz
-- name: 'T.ME: @aristapanel #83'
+      Host: music1000.melobitmusic1.ir
+- name: 'T.ME: @aristapanel #82'
   type: trojan
   server: 104.18.0.1
+  port: 2053
+  password: gHQP0D7D15
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: marvdasht.phonecomparisonblog.org
+  ws-opts:
+    path: /
+    headers:
+      Host: marvdasht.phonecomparisonblog.org
+- name: 'T.ME: @aristapanel #83'
+  type: trojan
+  server: 104.25.239.113
   port: 2053
   password: gHQP0D7D15
   network: ws
@@ -1204,7 +1239,7 @@ proxies:
       Host: marvdasht.phonecomparisonblog.org
 - name: 'T.ME: @aristapanel #84'
   type: trojan
-  server: 104.25.239.113
+  server: 104.24.0.1
   port: 2053
   password: gHQP0D7D15
   network: ws
@@ -1219,7 +1254,7 @@ proxies:
       Host: marvdasht.phonecomparisonblog.org
 - name: 'T.ME: @aristapanel #85'
   type: trojan
-  server: 104.24.0.1
+  server: 104.18.0.1
   port: 2053
   password: gHQP0D7D15
   network: ws
@@ -1234,21 +1269,6 @@ proxies:
       Host: marvdasht.phonecomparisonblog.org
 - name: 'T.ME: @aristapanel #86'
   type: trojan
-  server: 104.18.0.1
-  port: 2053
-  password: gHQP0D7D15
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: marvdasht.phonecomparisonblog.org
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: 'T.ME: @aristapanel #87'
-  type: trojan
   server: 104.25.239.113
   port: 2053
   password: gHQP0D7D15
@@ -1262,7 +1282,7 @@ proxies:
     path: /
     headers:
       Host: marvdasht.phonecomparisonblog.org
-- name: 'T.ME: @aristapanel #88'
+- name: 'T.ME: @aristapanel #87'
   type: trojan
   server: 104.24.0.1
   port: 2053
@@ -1364,16 +1384,15 @@ proxy-groups:
   - 'T.ME: @aristapanel #76'
   - 'T.ME: @aristapanel #77'
   - 'T.ME: @aristapanel #78'
-  - 'ARISTA #79'
+  - 'T.ME: @aristapanel #79'
   - 'ARISTA #80'
   - 'ARISTA #81'
-  - 'ARISTA #82'
+  - 'T.ME: @aristapanel #82'
   - 'T.ME: @aristapanel #83'
   - 'T.ME: @aristapanel #84'
   - 'T.ME: @aristapanel #85'
   - 'T.ME: @aristapanel #86'
   - 'T.ME: @aristapanel #87'
-  - 'T.ME: @aristapanel #88'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

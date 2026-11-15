@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2053
-# Updated: 2026-11-15 06:04:09
-# Count: 8
+# Updated: 2026-11-15 13:55:55
+# Count: 6
 
 mixed-port: 7890
 allow-lan: false
@@ -50,33 +50,52 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 194.61.31.126
+  server: 104.18.1.1
   port: 2053
-  uuid: 1d4e18bd-1f26-4915-b35a-7ace4826e76a
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: www.apple.com
-  reality-opts:
-    public-key: PuAGLfJy6cu1TNoHuKIKSxPetCbZI41fc8hQDjWPIAU
-    short-id: "9980e0609b0d3891"
-- name: 'ARISTA #2'
-  type: vless
-  server: 172.67.199.126
-  port: 2053
-  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
+  uuid: da4747a6-be0d-4c1b-90f4-d82ec3012be2
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: fast.145779.xyz
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: ios
+  servername: music1000.melobitmusic1.ir
   ws-opts:
-    path: /ws-tesla
+    path: /
     headers:
-      Host: fast.145779.xyz
+      Host: music1000.melobitmusic1.ir
+- name: 'ARISTA #2'
+  type: vless
+  server: 66.70.179.198
+  port: 2053
+  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
+    short-id: "83f8317a948bb769"
 - name: 'ARISTA #3'
+  type: vless
+  server: 66.70.179.198
+  port: 2053
+  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
+    short-id: "83f8317a948bb769"
+- name: 'ARISTA #4'
   type: vless
   server: fast.145779.xyz
   port: 2053
@@ -89,73 +108,44 @@ proxies:
   servername: fast.145779.xyz
   ws-opts:
     path: /ws-tesla
-- name: 'ARISTA #4'
-  type: vless
-  server: irbl.netbazshop.ir
-  port: 2053
-  uuid: 3cc7832d-b833-457b-a3a6-25f6eed6a21d
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: sslcert.okamii1.ir
 - name: 'ARISTA #5'
   type: vless
-  server: 194.61.31.126
+  server: 104.18.1.1
   port: 2053
-  uuid: 1d4e18bd-1f26-4915-b35a-7ace4826e76a
-  network: tcp
+  uuid: da4747a6-be0d-4c1b-90f4-d82ec3012be2
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: www.apple.com
-  reality-opts:
-    public-key: PuAGLfJy6cu1TNoHuKIKSxPetCbZI41fc8hQDjWPIAU
-    short-id: "9980e0609b0d3891"
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: ios
+  servername: music1000.melobitmusic1.ir
+  ws-opts:
+    path: /
+    headers:
+      Host: music1000.melobitmusic1.ir
 - name: 'ARISTA #6'
   type: vless
-  server: 172.67.199.126
+  server: 104.18.1.1
   port: 2053
-  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
+  uuid: da4747a6-be0d-4c1b-90f4-d82ec3012be2
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: fast.145779.xyz
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: ios
+  servername: music1000.melobitmusic1.ir
   ws-opts:
-    path: /ws-tesla
+    path: /
     headers:
-      Host: fast.145779.xyz
-- name: 'ARISTA #7'
-  type: vless
-  server: 194.61.31.126
-  port: 2053
-  uuid: 1d4e18bd-1f26-4915-b35a-7ace4826e76a
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: www.apple.com
-  reality-opts:
-    public-key: PuAGLfJy6cu1TNoHuKIKSxPetCbZI41fc8hQDjWPIAU
-    short-id: "9980e0609b0d3891"
-- name: 'ARISTA #8'
-  type: vless
-  server: 172.67.199.126
-  port: 2053
-  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
-    headers:
-      Host: fast.145779.xyz
+      Host: music1000.melobitmusic1.ir
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -171,8 +161,6 @@ proxy-groups:
   - 'ARISTA #4'
   - 'ARISTA #5'
   - 'ARISTA #6'
-  - 'ARISTA #7'
-  - 'ARISTA #8'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

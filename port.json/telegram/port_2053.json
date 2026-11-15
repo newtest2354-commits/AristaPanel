@@ -1,6 +1,6 @@
 // TELEGRAM - Port 2053
-// Updated: 2026-11-15 06:04:21
-// Count: 8
+// Updated: 2026-11-15 13:56:06
+// Count: 6
 
 {
   "log": {
@@ -41,13 +41,42 @@
     {
       "type": "vless",
       "tag": "ARISTA #1",
-      "server": "194.61.31.126",
+      "server": "104.18.1.1",
       "server_port": 2053,
-      "uuid": "1d4e18bd-1f26-4915-b35a-7ace4826e76a",
+      "uuid": "da4747a6-be0d-4c1b-90f4-d82ec3012be2",
       "domain_resolver": "google",
       "tls": {
         "enabled": true,
-        "server_name": "www.apple.com",
+        "server_name": "music1000.melobitmusic1.ir",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "alpn": [
+          "h3",
+          "h2",
+          "http/1.1"
+        ]
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "music1000.melobitmusic1.ir"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "ARISTA #2",
+      "server": "66.70.179.198",
+      "server_port": 2053,
+      "uuid": "dc620cd6-a9d8-4a0f-8f18-006b895db77e",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.cloudflare.com",
         "insecure": true,
         "utls": {
           "enabled": true,
@@ -55,32 +84,8 @@
         },
         "reality": {
           "enabled": true,
-          "public_key": "PuAGLfJy6cu1TNoHuKIKSxPetCbZI41fc8hQDjWPIAU",
-          "short_id": "9980e0609b0d3891"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "ARISTA #2",
-      "server": "172.67.199.126",
-      "server_port": 2053,
-      "uuid": "c83f15bf-1817-4ec8-a19f-6393d226434c",
-      "domain_resolver": "google",
-      "tls": {
-        "enabled": true,
-        "server_name": "fast.145779.xyz",
-        "insecure": true,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/ws-tesla",
-        "headers": {
-          "Host": "fast.145779.xyz"
+          "public_key": "k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU",
+          "short_id": "83f8317a948bb769"
         }
       }
     },
@@ -109,23 +114,6 @@
       }
     },
     {
-      "type": "vless",
-      "tag": "ARISTA #4",
-      "server": "irbl.netbazshop.ir",
-      "server_port": 2053,
-      "uuid": "3cc7832d-b833-457b-a3a6-25f6eed6a21d",
-      "domain_resolver": "google",
-      "tls": {
-        "enabled": true,
-        "server_name": "sslcert.okamii1.ir",
-        "insecure": true,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      }
-    },
-    {
       "type": "direct",
       "tag": "direct"
     },
@@ -139,8 +127,7 @@
       "outbounds": [
         "ARISTA #1",
         "ARISTA #2",
-        "ARISTA #3",
-        "ARISTA #4"
+        "ARISTA #3"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "2m",
