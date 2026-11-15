@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2086
-# Updated: 2026-11-14 17:55:48
-# Count: 2
+# Updated: 2026-11-15 06:04:09
+# Count: 3
 
 mixed-port: 7890
 allow-lan: false
@@ -50,30 +50,31 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 162.159.43.187
+  server: html.iranpood.com
   port: 2086
-  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
-  network: ws
+  uuid: 3b715892-8610-4fdc-9086-647b36af5443
+  network: xhttp
   tls: false
   udp: true
   skip-cert-verify: true
-  ws-opts:
-    path: /?ed=2560security=tls
-    headers:
-      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
 - name: 'ARISTA #2'
   type: vless
-  server: 162.159.43.187
+  server: html.iranpood.com
   port: 2086
-  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
-  network: ws
+  uuid: 3b715892-8610-4fdc-9086-647b36af5443
+  network: xhttp
   tls: false
   udp: true
   skip-cert-verify: true
-  ws-opts:
-    path: /?ed=2560security=tls
-    headers:
-      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
+- name: 'ARISTA #3'
+  type: vless
+  server: html.iranpood.com
+  port: 2086
+  uuid: 3b715892-8610-4fdc-9086-647b36af5443
+  network: xhttp
+  tls: false
+  udp: true
+  skip-cert-verify: true
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -85,6 +86,7 @@ proxy-groups:
   proxies: &id001
   - 'ARISTA #1'
   - 'ARISTA #2'
+  - 'ARISTA #3'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

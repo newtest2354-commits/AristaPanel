@@ -1,6 +1,6 @@
 # COMBINED - Port 2086
-# Updated: 2026-11-14 22:15:59
-# Count: 2
+# Updated: 2026-11-15 06:03:53
+# Count: 7
 
 mixed-port: 7890
 allow-lan: false
@@ -48,25 +48,66 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'T.ME: @aristapanel #1'
+- name: 'ARISTA #1'
   type: vless
-  server: 172.67.141.40
+  server: html.iranpood.com
   port: 2086
-  uuid: 86883d84-162c-42c4-af65-11dd80eb2ffa
-  network: ws
+  uuid: 3b715892-8610-4fdc-9086-647b36af5443
+  network: xhttp
   tls: false
   udp: true
   skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: tg20.dnopxqcx.workers.dev
-- name: 'T.ME: @aristapanel #2'
+- name: 'ARISTA #2'
+  type: vless
+  server: html.iranpood.com
+  port: 2086
+  uuid: 3b715892-8610-4fdc-9086-647b36af5443
+  network: xhttp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #3'
+  type: vless
+  server: html.iranpood.com
+  port: 2086
+  uuid: 3b715892-8610-4fdc-9086-647b36af5443
+  network: xhttp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'T.ME: @aristapanel #4'
+  type: vless
+  server: digitalocean.com
+  port: 2086
+  uuid: b08f7f87-fda7-4674-8e40-82fdcc09672a
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'T.ME: @aristapanel #5'
   type: vless
   server: 150.95.109.109
   port: 2086
   uuid: b83faafc-cbb7-4655-99d4-2c4c39a49d1b
   network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #6'
+  type: vless
+  server: html.iranpood.com
+  port: 2086
+  uuid: 3b715892-8610-4fdc-9086-647b36af5443
+  network: xhttp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #7'
+  type: vless
+  server: html.iranpood.com
+  port: 2086
+  uuid: 3b715892-8610-4fdc-9086-647b36af5443
+  network: xhttp
   tls: false
   udp: true
   skip-cert-verify: true
@@ -79,8 +120,13 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'T.ME: @aristapanel #1'
-  - 'T.ME: @aristapanel #2'
+  - 'ARISTA #1'
+  - 'ARISTA #2'
+  - 'ARISTA #3'
+  - 'T.ME: @aristapanel #4'
+  - 'T.ME: @aristapanel #5'
+  - 'ARISTA #6'
+  - 'ARISTA #7'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
