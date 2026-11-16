@@ -1,6 +1,6 @@
 // TELEGRAM - Port 2083
-// Updated: 2026-11-15 20:19:35
-// Count: 23
+// Updated: 2026-11-16 00:59:54
+// Count: 15
 
 {
   "log": {
@@ -39,8 +39,33 @@
   ],
   "outbounds": [
     {
-      "type": "vless",
+      "type": "vmess",
       "tag": "ARISTA #1",
+      "server": "or.521166.xyz",
+      "server_port": 2083,
+      "uuid": "ac251237-576f-40c8-a543-554960c958b1",
+      "security": "auto",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "or.521166.xyz",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/or3",
+        "headers": {
+          "Host": "or.521166.xyz"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "ARISTA #2",
       "server": "20.215.66.17",
       "server_port": 2083,
       "uuid": "52a5a29f-c162-411a-8a37-a3f11b0dc537",
@@ -63,24 +88,33 @@
     },
     {
       "type": "vless",
-      "tag": "ARISTA #2",
-      "server": "85.9.114.245",
+      "tag": "ARISTA #3",
+      "server": "201.58.189.105",
       "server_port": 2083,
-      "uuid": "f415ebc0-2061-4688-b3e8-f1959668a5dd",
+      "uuid": "d7ddade6-b7a0-4cab-a910-d5d5c378d98a",
       "domain_resolver": "google",
       "tls": {
         "enabled": true,
-        "server_name": "3d6325228e1fd1a7.ironos.ir",
+        "server_name": "dl.google.com",
         "insecure": true,
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "B7x5bYp-YhtLeH31zYcilpKFCkGTMe3jtSECSw-bMC4",
+          "short_id": "8bd80253"
         }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "google.storage.v2.Storage"
       }
     },
     {
       "type": "vless",
-      "tag": "ARISTA #3",
+      "tag": "ARISTA #4",
       "server": "9.163.235.73",
       "server_port": 2083,
       "uuid": "52a5a29f-c162-411a-8a37-a3f11b0dc537",
@@ -103,7 +137,7 @@
     },
     {
       "type": "vless",
-      "tag": "ARISTA #4",
+      "tag": "ARISTA #5",
       "server": "74.161.152.237",
       "server_port": 2083,
       "uuid": "52a5a29f-c162-411a-8a37-a3f11b0dc537",
@@ -123,23 +157,6 @@
         }
       },
       "flow": "xtls-rprx-vision"
-    },
-    {
-      "type": "trojan",
-      "tag": "ARISTA #5",
-      "server": "p1.alonex.cc.cd",
-      "server_port": 2083,
-      "password": "rj6m0AYbF7qH2myCfcL4z_58E98bkAnK",
-      "domain_resolver": "google",
-      "tls": {
-        "enabled": true,
-        "server_name": "p1.alonex.cc.cd",
-        "insecure": true,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      }
     },
     {
       "type": "direct",
