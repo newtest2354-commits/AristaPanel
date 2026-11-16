@@ -1,6 +1,6 @@
 # COMBINED - Port 9443
-# Updated: 2026-11-16 00:59:40
-# Count: 1
+# Updated: 2026-11-16 10:59:24
+# Count: 2
 
 mixed-port: 7890
 allow-lan: false
@@ -62,6 +62,19 @@ proxies:
   reality-opts:
     public-key: k3pBY4I--4_G7JFoHEte0PomSOS-I5iS8mgqFVdDZhM
     short-id: "57d614"
+- name: 'T.ME: @aristapanel #2'
+  type: vless
+  server: vpn.asdfghjuyt.ru
+  port: 9443
+  uuid: 5d5f84aa-d65f-4843-bfad-383bb9ca9989
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  client-fingerprint: chrome
+  servername: xh.asdfghjuyt.ru
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -72,6 +85,7 @@ proxy-groups:
   timeout: 3000
   proxies: &id001
   - 'T.ME: @aristapanel #1'
+  - 'T.ME: @aristapanel #2'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
