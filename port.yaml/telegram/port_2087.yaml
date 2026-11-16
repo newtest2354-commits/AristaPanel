@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2087
-# Updated: 2026-11-16 10:59:30
-# Count: 20
+# Updated: 2026-11-16 21:57:41
+# Count: 46
 
 mixed-port: 7890
 allow-lan: false
@@ -50,18 +50,19 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: guide.blog-forme.ru
+  server: 56.228.115.67
   port: 2087
-  uuid: 549766c3-fa5f-471e-8031-ffc1f8d5064f
-  network: xhttp
+  uuid: f39ff3a5-cf86-4514-88ee-006aa4b6f883
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: edge
-  servername: guide.blog-forme.ru
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: dl.google.com
   reality-opts:
-    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
-    short-id: "3258252d44113e23"
+    public-key: HjBtew1EYyAA5EnDBuZu4GR2u0OvitC5xp2fvqiYOwQ
+    short-id: "4c36b466"
 - name: 'ARISTA #2'
   type: vless
   server: 95.85.232.83
@@ -85,27 +86,55 @@ proxies:
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: edge
   servername: guide.blog-forme.ru
   reality-opts:
     public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
     short-id: "3258252d44113e23"
 - name: 'ARISTA #4'
   type: vless
-  server: guide.blog-forme.ru
+  server: 95.85.231.3
   port: 2087
   uuid: 549766c3-fa5f-471e-8031-ffc1f8d5064f
   network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: edge
-  servername: guide.blog-forme.ru
+  servername: summit.blog-forme.ru
   reality-opts:
     public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
     short-id: "3258252d44113e23"
 - name: 'ARISTA #5'
   type: vless
+  server: adgof.mgodping12.xyz
+  port: 2087
+  uuid: 39e3455f-f411-4f29-b506-40539ae8aaec
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: adgof.mgodping12.xyz
+- name: 'ARISTA #6'
+  type: vless
+  server: 56.228.115.67
+  port: 2087
+  uuid: f39ff3a5-cf86-4514-88ee-006aa4b6f883
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: dl.google.com
+  reality-opts:
+    public-key: HjBtew1EYyAA5EnDBuZu4GR2u0OvitC5xp2fvqiYOwQ
+    short-id: "4c36b466"
+- name: 'ARISTA #7'
+  type: vless
   server: 95.85.232.83
   port: 2087
   uuid: 549766c3-fa5f-471e-8031-ffc1f8d5064f
@@ -118,45 +147,7 @@ proxies:
   reality-opts:
     public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
     short-id: "3258252d44113e23"
-- name: 'ARISTA #6'
-  type: vless
-  server: 95.85.231.3
-  port: 2087
-  uuid: 549766c3-fa5f-471e-8031-ffc1f8d5064f
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: edge
-  servername: guide.blog-forme.ru
-  reality-opts:
-    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
-    short-id: "3258252d44113e23"
-- name: 'ARISTA #7'
-  type: vless
-  server: 85.9.114.39
-  port: 2087
-  uuid: f415ebc0-2061-4688-b3e8-f1959668a5dd
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: f5a202bbb5cac561.ironos.ir
 - name: 'ARISTA #8'
-  type: vless
-  server: 95.85.231.3
-  port: 2087
-  uuid: 549766c3-fa5f-471e-8031-ffc1f8d5064f
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: summit.blog-forme.ru
-  reality-opts:
-    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
-    short-id: "3258252d44113e23"
-- name: 'ARISTA #9'
   type: vless
   server: guide.blog-forme.ru
   port: 2087
@@ -165,12 +156,69 @@ proxies:
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: edge
   servername: guide.blog-forme.ru
   reality-opts:
     public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
     short-id: "3258252d44113e23"
+- name: 'ARISTA #9'
+  type: vless
+  server: 95.85.231.3
+  port: 2087
+  uuid: 549766c3-fa5f-471e-8031-ffc1f8d5064f
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: summit.blog-forme.ru
+  reality-opts:
+    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
+    short-id: "3258252d44113e23"
 - name: 'ARISTA #10'
+  type: vless
+  server: adgof.mgodping12.xyz
+  port: 2087
+  uuid: 39e3455f-f411-4f29-b506-40539ae8aaec
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: adgof.mgodping12.xyz
+- name: 'ARISTA #11'
+  type: vless
+  server: 56.228.115.67
+  port: 2087
+  uuid: f39ff3a5-cf86-4514-88ee-006aa4b6f883
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: dl.google.com
+  reality-opts:
+    public-key: HjBtew1EYyAA5EnDBuZu4GR2u0OvitC5xp2fvqiYOwQ
+    short-id: "4c36b466"
+- name: 'ARISTA #12'
+  type: vless
+  server: 56.228.115.67
+  port: 2087
+  uuid: f39ff3a5-cf86-4514-88ee-006aa4b6f883
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: dl.google.com
+  reality-opts:
+    public-key: HjBtew1EYyAA5EnDBuZu4GR2u0OvitC5xp2fvqiYOwQ
+    short-id: "4c36b466"
+- name: 'ARISTA #13'
   type: vless
   server: 95.85.232.83
   port: 2087
@@ -181,44 +229,6 @@ proxies:
   skip-cert-verify: true
   client-fingerprint: edge
   servername: trips.blog-forme.ru
-  reality-opts:
-    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
-    short-id: "3258252d44113e23"
-- name: 'ARISTA #11'
-  type: vless
-  server: 95.85.231.3
-  port: 2087
-  uuid: 549766c3-fa5f-471e-8031-ffc1f8d5064f
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: edge
-  servername: guide.blog-forme.ru
-  reality-opts:
-    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
-    short-id: "3258252d44113e23"
-- name: 'ARISTA #12'
-  type: vless
-  server: 85.9.114.39
-  port: 2087
-  uuid: f415ebc0-2061-4688-b3e8-f1959668a5dd
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: f5a202bbb5cac561.ironos.ir
-- name: 'ARISTA #13'
-  type: vless
-  server: 95.85.231.3
-  port: 2087
-  uuid: 549766c3-fa5f-471e-8031-ffc1f8d5064f
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: summit.blog-forme.ru
   reality-opts:
     public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
     short-id: "3258252d44113e23"
@@ -231,40 +241,66 @@ proxies:
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: edge
   servername: guide.blog-forme.ru
   reality-opts:
     public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
     short-id: "3258252d44113e23"
 - name: 'ARISTA #15'
   type: vless
-  server: guide.blog-forme.ru
+  server: 95.85.231.3
   port: 2087
   uuid: 549766c3-fa5f-471e-8031-ffc1f8d5064f
   network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: edge
-  servername: guide.blog-forme.ru
+  servername: summit.blog-forme.ru
   reality-opts:
     public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
     short-id: "3258252d44113e23"
 - name: 'ARISTA #16'
   type: vless
-  server: 95.85.232.83
+  server: adgof.mgodping12.xyz
+  port: 2087
+  uuid: 39e3455f-f411-4f29-b506-40539ae8aaec
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: adgof.mgodping12.xyz
+- name: 'ARISTA #17'
+  type: vless
+  server: game.celvixo.ir
+  port: 2087
+  uuid: 9bbaee21-e5b9-4527-fba4-d543b3c79c8c
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: cp.xelzano.ir
+- name: 'ARISTA #18'
+  type: vless
+  server: 87.120.92.186
   port: 2087
   uuid: 549766c3-fa5f-471e-8031-ffc1f8d5064f
   network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: edge
-  servername: trips.blog-forme.ru
+  client-fingerprint: firefox
+  servername: maps.blog-forme.ru
   reality-opts:
     public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
     short-id: "3258252d44113e23"
-- name: 'ARISTA #17'
+- name: 'ARISTA #19'
   type: vless
   server: 95.85.231.3
   port: 2087
@@ -278,7 +314,36 @@ proxies:
   reality-opts:
     public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
     short-id: "3258252d44113e23"
-- name: 'ARISTA #18'
+- name: 'ARISTA #20'
+  type: vless
+  server: 56.228.115.67
+  port: 2087
+  uuid: f39ff3a5-cf86-4514-88ee-006aa4b6f883
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: dl.google.com
+  reality-opts:
+    public-key: HjBtew1EYyAA5EnDBuZu4GR2u0OvitC5xp2fvqiYOwQ
+    short-id: "4c36b466"
+- name: 'ARISTA #21'
+  type: vless
+  server: 95.85.232.83
+  port: 2087
+  uuid: 549766c3-fa5f-471e-8031-ffc1f8d5064f
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: edge
+  servername: trips.blog-forme.ru
+  reality-opts:
+    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
+    short-id: "3258252d44113e23"
+- name: 'ARISTA #22'
   type: vless
   server: guide.blog-forme.ru
   port: 2087
@@ -287,12 +352,120 @@ proxies:
   tls: true
   udp: true
   skip-cert-verify: true
+  servername: guide.blog-forme.ru
+  reality-opts:
+    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
+    short-id: "3258252d44113e23"
+- name: 'ARISTA #23'
+  type: vless
+  server: 95.85.231.3
+  port: 2087
+  uuid: 549766c3-fa5f-471e-8031-ffc1f8d5064f
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: summit.blog-forme.ru
+  reality-opts:
+    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
+    short-id: "3258252d44113e23"
+- name: 'ARISTA #24'
+  type: vless
+  server: adgof.mgodping12.xyz
+  port: 2087
+  uuid: 39e3455f-f411-4f29-b506-40539ae8aaec
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: adgof.mgodping12.xyz
+- name: 'ARISTA #25'
+  type: vless
+  server: game.celvixo.ir
+  port: 2087
+  uuid: 9bbaee21-e5b9-4527-fba4-d543b3c79c8c
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: cp.xelzano.ir
+- name: 'ARISTA #26'
+  type: vless
+  server: 87.120.92.186
+  port: 2087
+  uuid: 549766c3-fa5f-471e-8031-ffc1f8d5064f
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: maps.blog-forme.ru
+  reality-opts:
+    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
+    short-id: "3258252d44113e23"
+- name: 'ARISTA #27'
+  type: vless
+  server: 95.85.231.3
+  port: 2087
+  uuid: 549766c3-fa5f-471e-8031-ffc1f8d5064f
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
   client-fingerprint: edge
   servername: guide.blog-forme.ru
   reality-opts:
     public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
     short-id: "3258252d44113e23"
-- name: 'ARISTA #19'
+- name: 'ARISTA #28'
+  type: vless
+  server: 85.9.114.39
+  port: 2087
+  uuid: f415ebc0-2061-4688-b3e8-f1959668a5dd
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: f5a202bbb5cac561.ironos.ir
+- name: 'ARISTA #29'
+  type: vless
+  server: 31.43.179.111
+  port: 2087
+  uuid: 50414e45-4c5f-5a45-5553-8b680ff0aff9
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: l5zgnlesutjs.foxvpn551144.workers.dev
+  ws-opts:
+    path: /stream/PANEL_ZEUS/8b680ff0aff9
+    headers:
+      Host: l5zgnlesutjs.foxvpn551144.workers.dev
+- name: 'ARISTA #30'
+  type: vless
+  server: 56.228.115.67
+  port: 2087
+  uuid: f39ff3a5-cf86-4514-88ee-006aa4b6f883
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: dl.google.com
+  reality-opts:
+    public-key: HjBtew1EYyAA5EnDBuZu4GR2u0OvitC5xp2fvqiYOwQ
+    short-id: "4c36b466"
+- name: 'ARISTA #31'
   type: vless
   server: 95.85.232.83
   port: 2087
@@ -306,7 +479,20 @@ proxies:
   reality-opts:
     public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
     short-id: "3258252d44113e23"
-- name: 'ARISTA #20'
+- name: 'ARISTA #32'
+  type: vless
+  server: guide.blog-forme.ru
+  port: 2087
+  uuid: 549766c3-fa5f-471e-8031-ffc1f8d5064f
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: guide.blog-forme.ru
+  reality-opts:
+    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
+    short-id: "3258252d44113e23"
+- name: 'ARISTA #33'
   type: vless
   server: 95.85.231.3
   port: 2087
@@ -315,8 +501,187 @@ proxies:
   tls: true
   udp: true
   skip-cert-verify: true
+  servername: summit.blog-forme.ru
+  reality-opts:
+    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
+    short-id: "3258252d44113e23"
+- name: 'ARISTA #34'
+  type: vless
+  server: 56.228.115.67
+  port: 2087
+  uuid: f39ff3a5-cf86-4514-88ee-006aa4b6f883
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: dl.google.com
+  reality-opts:
+    public-key: HjBtew1EYyAA5EnDBuZu4GR2u0OvitC5xp2fvqiYOwQ
+    short-id: "4c36b466"
+- name: 'ARISTA #35'
+  type: vless
+  server: 95.85.232.83
+  port: 2087
+  uuid: 549766c3-fa5f-471e-8031-ffc1f8d5064f
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
   client-fingerprint: edge
+  servername: trips.blog-forme.ru
+  reality-opts:
+    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
+    short-id: "3258252d44113e23"
+- name: 'ARISTA #36'
+  type: vless
+  server: guide.blog-forme.ru
+  port: 2087
+  uuid: 549766c3-fa5f-471e-8031-ffc1f8d5064f
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
   servername: guide.blog-forme.ru
+  reality-opts:
+    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
+    short-id: "3258252d44113e23"
+- name: 'ARISTA #37'
+  type: vless
+  server: 95.85.231.3
+  port: 2087
+  uuid: 549766c3-fa5f-471e-8031-ffc1f8d5064f
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: summit.blog-forme.ru
+  reality-opts:
+    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
+    short-id: "3258252d44113e23"
+- name: 'ARISTA #38'
+  type: vless
+  server: adgof.mgodping12.xyz
+  port: 2087
+  uuid: 39e3455f-f411-4f29-b506-40539ae8aaec
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: adgof.mgodping12.xyz
+- name: 'ARISTA #39'
+  type: vless
+  server: game.celvixo.ir
+  port: 2087
+  uuid: 9bbaee21-e5b9-4527-fba4-d543b3c79c8c
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: cp.xelzano.ir
+- name: 'ARISTA #40'
+  type: vless
+  server: 56.228.115.67
+  port: 2087
+  uuid: f39ff3a5-cf86-4514-88ee-006aa4b6f883
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: dl.google.com
+  reality-opts:
+    public-key: HjBtew1EYyAA5EnDBuZu4GR2u0OvitC5xp2fvqiYOwQ
+    short-id: "4c36b466"
+- name: 'ARISTA #41'
+  type: vless
+  server: 95.85.232.83
+  port: 2087
+  uuid: 549766c3-fa5f-471e-8031-ffc1f8d5064f
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: edge
+  servername: trips.blog-forme.ru
+  reality-opts:
+    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
+    short-id: "3258252d44113e23"
+- name: 'ARISTA #42'
+  type: vless
+  server: guide.blog-forme.ru
+  port: 2087
+  uuid: 549766c3-fa5f-471e-8031-ffc1f8d5064f
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: guide.blog-forme.ru
+  reality-opts:
+    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
+    short-id: "3258252d44113e23"
+- name: 'ARISTA #43'
+  type: vless
+  server: 95.85.231.3
+  port: 2087
+  uuid: 549766c3-fa5f-471e-8031-ffc1f8d5064f
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: summit.blog-forme.ru
+  reality-opts:
+    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
+    short-id: "3258252d44113e23"
+- name: 'ARISTA #44'
+  type: vless
+  server: adgof.mgodping12.xyz
+  port: 2087
+  uuid: 39e3455f-f411-4f29-b506-40539ae8aaec
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: adgof.mgodping12.xyz
+- name: 'ARISTA #45'
+  type: vless
+  server: game.celvixo.ir
+  port: 2087
+  uuid: 9bbaee21-e5b9-4527-fba4-d543b3c79c8c
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: cp.xelzano.ir
+- name: 'ARISTA #46'
+  type: vless
+  server: 87.120.92.186
+  port: 2087
+  uuid: 549766c3-fa5f-471e-8031-ffc1f8d5064f
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: maps.blog-forme.ru
   reality-opts:
     public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
     short-id: "3258252d44113e23"
@@ -349,6 +714,32 @@ proxy-groups:
   - 'ARISTA #18'
   - 'ARISTA #19'
   - 'ARISTA #20'
+  - 'ARISTA #21'
+  - 'ARISTA #22'
+  - 'ARISTA #23'
+  - 'ARISTA #24'
+  - 'ARISTA #25'
+  - 'ARISTA #26'
+  - 'ARISTA #27'
+  - 'ARISTA #28'
+  - 'ARISTA #29'
+  - 'ARISTA #30'
+  - 'ARISTA #31'
+  - 'ARISTA #32'
+  - 'ARISTA #33'
+  - 'ARISTA #34'
+  - 'ARISTA #35'
+  - 'ARISTA #36'
+  - 'ARISTA #37'
+  - 'ARISTA #38'
+  - 'ARISTA #39'
+  - 'ARISTA #40'
+  - 'ARISTA #41'
+  - 'ARISTA #42'
+  - 'ARISTA #43'
+  - 'ARISTA #44'
+  - 'ARISTA #45'
+  - 'ARISTA #46'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
