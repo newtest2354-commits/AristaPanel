@@ -1,6 +1,6 @@
 # COMBINED - Port 2052
-# Updated: 2026-11-17 15:21:49
-# Count: 10
+# Updated: 2026-11-17 18:04:51
+# Count: 7
 
 mixed-port: 7890
 allow-lan: false
@@ -48,24 +48,7 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'ARISTA #1'
-  type: vless
-  server: usa.vipvirtualnet.eu
-  port: 2052
-  uuid: 89573ddc-bc74-49d3-a1bf-96c293d07cea
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  - h3
-  client-fingerprint: chrome
-  servername: us.vipvirtualnet.eu
-  grpc-opts:
-    grpc-service-name: aparat-stream
-- name: 'T.ME: @aristapanel #2'
+- name: 'T.ME: @aristapanel #1'
   type: vless
   server: 172.64.229.129
   port: 2052
@@ -78,7 +61,7 @@ proxies:
     path: /rain1226
     headers:
       Host: eu02.123450908.xyz
-- name: 'T.ME: @aristapanel #3'
+- name: 'T.ME: @aristapanel #2'
   type: vless
   server: eu02.123450908.xyz
   port: 2052
@@ -91,7 +74,7 @@ proxies:
     path: /rain1226
     headers:
       Host: eu02.123450908.xyz
-- name: 'T.ME: @aristapanel #4'
+- name: 'T.ME: @aristapanel #3'
   type: vless
   server: 172.64.229.129
   port: 2052
@@ -105,7 +88,7 @@ proxies:
     path: /rain1226
     headers:
       Host: eu02.123450908.xyz
-- name: 'T.ME: @aristapanel #5'
+- name: 'T.ME: @aristapanel #4'
   type: vless
   server: 104.16.0.1
   port: 2052
@@ -118,7 +101,7 @@ proxies:
     path: /rain1226
     headers:
       Host: eu02.123450908.xyz
-- name: 'T.ME: @aristapanel #6'
+- name: 'T.ME: @aristapanel #5'
   type: vless
   server: 193.227.99.54
   port: 2052
@@ -127,7 +110,7 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #7'
+- name: 'T.ME: @aristapanel #6'
   type: vless
   server: 104.17.121.110
   port: 2052
@@ -136,7 +119,7 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #8'
+- name: 'T.ME: @aristapanel #7'
   type: vless
   server: 172.67.221.237
   port: 2052
@@ -149,40 +132,6 @@ proxies:
     path: /wss
     headers:
       Host: nexomob.netvia.ir
-- name: 'ARISTA #9'
-  type: vless
-  server: usa.vipvirtualnet.eu
-  port: 2052
-  uuid: 89573ddc-bc74-49d3-a1bf-96c293d07cea
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  - h3
-  client-fingerprint: chrome
-  servername: us.vipvirtualnet.eu
-  grpc-opts:
-    grpc-service-name: aparat-stream
-- name: 'ARISTA #10'
-  type: vless
-  server: usa.vipvirtualnet.eu
-  port: 2052
-  uuid: 89573ddc-bc74-49d3-a1bf-96c293d07cea
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  - h3
-  client-fingerprint: chrome
-  servername: us.vipvirtualnet.eu
-  grpc-opts:
-    grpc-service-name: aparat-stream
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -192,16 +141,13 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'ARISTA #1'
+  - 'T.ME: @aristapanel #1'
   - 'T.ME: @aristapanel #2'
   - 'T.ME: @aristapanel #3'
   - 'T.ME: @aristapanel #4'
   - 'T.ME: @aristapanel #5'
   - 'T.ME: @aristapanel #6'
   - 'T.ME: @aristapanel #7'
-  - 'T.ME: @aristapanel #8'
-  - 'ARISTA #9'
-  - 'ARISTA #10'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
