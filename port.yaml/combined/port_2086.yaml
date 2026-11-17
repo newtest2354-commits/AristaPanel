@@ -1,6 +1,6 @@
 # COMBINED - Port 2086
-# Updated: 2026-11-17 18:04:51
-# Count: 4
+# Updated: 2026-11-17 21:07:32
+# Count: 5
 
 mixed-port: 7890
 allow-lan: false
@@ -57,16 +57,7 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'ARISTA #2'
-  type: vless
-  server: 104.27.39.172
-  port: 2086
-  uuid: d6ff470b-51b3-4fe3-b4db-419f101adc85
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'T.ME: @aristapanel #3'
+- name: 'T.ME: @aristapanel #2'
   type: vless
   server: 150.95.109.109
   port: 2086
@@ -75,7 +66,7 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #4'
+- name: 'T.ME: @aristapanel #3'
   type: vless
   server: 185.143.233.238
   port: 2086
@@ -88,6 +79,24 @@ proxies:
     path: /
     headers:
       Host: parsi.parsi.sbs
+- name: 'ARISTA #4'
+  type: vless
+  server: 104.27.39.172
+  port: 2086
+  uuid: d6ff470b-51b3-4fe3-b4db-419f101adc85
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #5'
+  type: vless
+  server: 104.27.39.172
+  port: 2086
+  uuid: d6ff470b-51b3-4fe3-b4db-419f101adc85
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -98,9 +107,10 @@ proxy-groups:
   timeout: 3000
   proxies: &id001
   - 'ARISTA #1'
-  - 'ARISTA #2'
+  - 'T.ME: @aristapanel #2'
   - 'T.ME: @aristapanel #3'
-  - 'T.ME: @aristapanel #4'
+  - 'ARISTA #4'
+  - 'ARISTA #5'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
