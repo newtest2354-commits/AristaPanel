@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2052
-# Updated: 2026-11-16 00:59:45
-# Count: 1
+# Updated: 2026-11-17 15:21:54
+# Count: 2
 
 mixed-port: 7890
 allow-lan: false
@@ -50,15 +50,38 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: cdn-waw.edgeptr.org
+  server: usa.vipvirtualnet.eu
   port: 2052
-  uuid: 42de1611-1d8d-4191-b66d-5e2ab125044e
-  network: ws
-  tls: false
+  uuid: 89573ddc-bc74-49d3-a1bf-96c293d07cea
+  network: grpc
+  tls: true
   udp: true
   skip-cert-verify: true
-  ws-opts:
-    path: /
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: us.vipvirtualnet.eu
+  grpc-opts:
+    grpc-service-name: aparat-stream
+- name: 'ARISTA #2'
+  type: vless
+  server: usa.vipvirtualnet.eu
+  port: 2052
+  uuid: 89573ddc-bc74-49d3-a1bf-96c293d07cea
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: us.vipvirtualnet.eu
+  grpc-opts:
+    grpc-service-name: aparat-stream
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -69,6 +92,7 @@ proxy-groups:
   timeout: 3000
   proxies: &id001
   - 'ARISTA #1'
+  - 'ARISTA #2'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

@@ -1,6 +1,6 @@
 # COMBINED - Port 8880
-# Updated: 2026-11-17 14:48:15
-# Count: 6
+# Updated: 2026-11-17 15:21:49
+# Count: 10
 
 mixed-port: 7890
 allow-lan: false
@@ -48,7 +48,20 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'T.ME: @aristapanel #1'
+- name: 'ARISTA #1'
+  type: vless
+  server: 155.46.167.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime50.workers.dev
+- name: 'T.ME: @aristapanel #2'
   type: vless
   server: forallpanel.srtongston.ir
   port: 8880
@@ -57,7 +70,7 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #2'
+- name: 'T.ME: @aristapanel #3'
   type: vless
   server: 104.16.107.139
   port: 8880
@@ -70,7 +83,7 @@ proxies:
     path: /pyip
     headers:
       Host: soft-thunder-bc22.111-f59.workers.dev
-- name: 'T.ME: @aristapanel #3'
+- name: 'T.ME: @aristapanel #4'
   type: vless
   server: 172.67.209.127
   port: 8880
@@ -83,7 +96,7 @@ proxies:
     path: /
     headers:
       Host: calm-silence-d4a1.217.workers.dev
-- name: 'T.ME: @aristapanel #4'
+- name: 'T.ME: @aristapanel #5'
   type: vless
   server: 172.66.140.62
   port: 8880
@@ -96,7 +109,7 @@ proxies:
     path: /
     headers:
       Host: proud-cloud-7bdd.208-a52.workers.dev
-- name: 'T.ME: @aristapanel #5'
+- name: 'T.ME: @aristapanel #6'
   type: vless
   server: 104.16.98.215
   port: 8880
@@ -109,7 +122,7 @@ proxies:
     path: /
     headers:
       Host: steep-thunder-97fa.108-d10.workers.dev
-- name: 'T.ME: @aristapanel #6'
+- name: 'T.ME: @aristapanel #7'
   type: vless
   server: 104.16.3.35
   port: 8880
@@ -122,6 +135,45 @@ proxies:
     path: /
     headers:
       Host: sinaazizpor.wapgiz.workers.dev
+- name: 'ARISTA #8'
+  type: vless
+  server: 155.46.167.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime50.workers.dev
+- name: 'ARISTA #9'
+  type: vless
+  server: 155.46.167.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime50.workers.dev
+- name: 'ARISTA #10'
+  type: vless
+  server: 155.46.167.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime50.workers.dev
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -131,12 +183,16 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'T.ME: @aristapanel #1'
+  - 'ARISTA #1'
   - 'T.ME: @aristapanel #2'
   - 'T.ME: @aristapanel #3'
   - 'T.ME: @aristapanel #4'
   - 'T.ME: @aristapanel #5'
   - 'T.ME: @aristapanel #6'
+  - 'T.ME: @aristapanel #7'
+  - 'ARISTA #8'
+  - 'ARISTA #9'
+  - 'ARISTA #10'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

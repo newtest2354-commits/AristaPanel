@@ -1,6 +1,6 @@
 // TELEGRAM - Port 2052
-// Updated: 2026-11-16 00:59:54
-// Count: 1
+// Updated: 2026-11-17 15:22:03
+// Count: 2
 
 {
   "log": {
@@ -41,16 +41,27 @@
     {
       "type": "vless",
       "tag": "ARISTA #1",
-      "server": "cdn-waw.edgeptr.org",
+      "server": "usa.vipvirtualnet.eu",
       "server_port": 2052,
-      "uuid": "42de1611-1d8d-4191-b66d-5e2ab125044e",
+      "uuid": "89573ddc-bc74-49d3-a1bf-96c293d07cea",
       "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "us.vipvirtualnet.eu",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "alpn": [
+          "h2",
+          "http/1.1",
+          "h3"
+        ]
+      },
       "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "cdn-waw.edgeptr.org"
-        }
+        "type": "grpc",
+        "service_name": "aparat-stream"
       }
     },
     {
