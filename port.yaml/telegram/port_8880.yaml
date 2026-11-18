@@ -1,6 +1,6 @@
 # TELEGRAM - Port 8880
-# Updated: 2026-11-18 00:08:50
-# Count: 5
+# Updated: 2026-11-18 03:03:48
+# Count: 7
 
 mixed-port: 7890
 allow-lan: false
@@ -91,6 +91,19 @@ proxies:
       Host: arvancloud.ir
 - name: 'ARISTA #4'
   type: vless
+  server: 155.46.167.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime50.workers.dev
+- name: 'ARISTA #5'
+  type: vless
   server: 103.241.67.83
   port: 8880
   uuid: 442fe579-4acf-4f3d-9771-49b2a85a2cb2
@@ -103,7 +116,7 @@ proxies:
     path: /
     headers:
       Host: arvancloud.ir
-- name: 'ARISTA #5'
+- name: 'ARISTA #6'
   type: vless
   server: tunrp2.carshops4.ir
   port: 8880
@@ -117,6 +130,19 @@ proxies:
     path: /
     headers:
       Host: arvancloud.ir
+- name: 'ARISTA #7'
+  type: vless
+  server: 155.46.167.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime50.workers.dev
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -131,6 +157,8 @@ proxy-groups:
   - 'ARISTA #3'
   - 'ARISTA #4'
   - 'ARISTA #5'
+  - 'ARISTA #6'
+  - 'ARISTA #7'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
