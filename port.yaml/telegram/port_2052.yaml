@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2052
-# Updated: 2026-11-19 09:06:23
-# Count: 7
+# Updated: 2026-11-19 15:04:38
+# Count: 8
 
 mixed-port: 7890
 allow-lan: false
@@ -50,81 +50,132 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: cdn-waw.edgeptr.org
+  server: 104.16.0.1
   port: 2052
-  uuid: 7ee311c8-f56e-4065-a75d-89336cdb409b
+  uuid: 5744e593-1cc8-48fa-b8ca-57cd494fe35b
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
   ws-opts:
-    path: /
+    path: /rain1226
+    headers:
+      Host: eu02.123450908.xyz
 - name: 'ARISTA #2'
   type: vless
-  server: cdn-waw.edgeptr.org
+  server: 104.26.0.1
   port: 2052
-  uuid: 7ee311c8-f56e-4065-a75d-89336cdb409b
+  uuid: 5744e593-1cc8-48fa-b8ca-57cd494fe35b
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
   ws-opts:
-    path: /
+    path: /rain1226
+    headers:
+      Host: eu02.123450908.xyz
 - name: 'ARISTA #3'
   type: vless
-  server: cdn-waw.edgeptr.org
+  server: 104.16.0.1
   port: 2052
-  uuid: 7ee311c8-f56e-4065-a75d-89336cdb409b
+  uuid: 5744e593-1cc8-48fa-b8ca-57cd494fe35b
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
   ws-opts:
-    path: /
+    path: /rain1226
+    headers:
+      Host: eu02.123450908.xyz
 - name: 'ARISTA #4'
   type: vless
-  server: cdn-waw.edgeptr.org
+  server: 104.26.0.1
   port: 2052
-  uuid: 7ee311c8-f56e-4065-a75d-89336cdb409b
+  uuid: 5744e593-1cc8-48fa-b8ca-57cd494fe35b
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
   ws-opts:
-    path: /
+    path: /rain1226
+    headers:
+      Host: eu02.123450908.xyz
 - name: 'ARISTA #5'
   type: vless
-  server: cdn-waw.edgeptr.org
+  server: 104.16.0.1
   port: 2052
-  uuid: 7ee311c8-f56e-4065-a75d-89336cdb409b
+  uuid: 5744e593-1cc8-48fa-b8ca-57cd494fe35b
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
   ws-opts:
-    path: /
+    path: /rain1226
+    headers:
+      Host: eu02.123450908.xyz
 - name: 'ARISTA #6'
   type: vless
-  server: cdn-waw.edgeptr.org
+  server: 104.26.0.1
   port: 2052
-  uuid: 7ee311c8-f56e-4065-a75d-89336cdb409b
+  uuid: 5744e593-1cc8-48fa-b8ca-57cd494fe35b
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
   ws-opts:
-    path: /
+    path: /rain1226
+    headers:
+      Host: eu02.123450908.xyz
 - name: 'ARISTA #7'
   type: vless
-  server: cdn-waw.edgeptr.org
+  server: 104.16.0.1
   port: 2052
-  uuid: 7ee311c8-f56e-4065-a75d-89336cdb409b
+  uuid: 5744e593-1cc8-48fa-b8ca-57cd494fe35b
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
   ws-opts:
-    path: /
+    path: /rain1226
+    headers:
+      Host: eu02.123450908.xyz
+- name: 'ARISTA #8'
+  type: vless
+  server: 104.26.0.1
+  port: 2052
+  uuid: 5744e593-1cc8-48fa-b8ca-57cd494fe35b
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  ws-opts:
+    path: /rain1226
+    headers:
+      Host: eu02.123450908.xyz
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -141,6 +192,7 @@ proxy-groups:
   - 'ARISTA #5'
   - 'ARISTA #6'
   - 'ARISTA #7'
+  - 'ARISTA #8'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
