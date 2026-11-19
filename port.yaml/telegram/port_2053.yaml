@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2053
-# Updated: 2026-11-19 09:06:23
-# Count: 6
+# Updated: 2026-11-19 12:08:57
+# Count: 3
 
 mixed-port: 7890
 allow-lan: false
@@ -93,55 +93,6 @@ proxies:
   reality-opts:
     public-key: f3Ooz7Yxw4QqQNxddxYG0zOewK8zullgKVTBZxR1a0Y
     short-id: "cc981b746a300649"
-- name: 'ARISTA #4'
-  type: vless
-  server: 104.18.1.1
-  port: 2053
-  uuid: da4747a6-be0d-4c1b-90f4-d82ec3012be2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: ios
-  servername: music1000.melobitmusic1.ir
-  ws-opts:
-    path: /
-    headers:
-      Host: music1000.melobitmusic1.ir
-- name: 'ARISTA #5'
-  type: vless
-  server: 144.31.179.156
-  port: 2053
-  uuid: 0001f119-4d6d-42ae-b2f0-d07ed4694381
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: www.samsung.com
-  reality-opts:
-    public-key: f3Ooz7Yxw4QqQNxddxYG0zOewK8zullgKVTBZxR1a0Y
-    short-id: "cc981b746a300649"
-- name: 'ARISTA #6'
-  type: vless
-  server: 144.31.179.156
-  port: 2053
-  uuid: 0001f119-4d6d-42ae-b2f0-d07ed4694381
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: www.samsung.com
-  reality-opts:
-    public-key: f3Ooz7Yxw4QqQNxddxYG0zOewK8zullgKVTBZxR1a0Y
-    short-id: "cc981b746a300649"
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -154,9 +105,6 @@ proxy-groups:
   - 'ARISTA #1'
   - 'ARISTA #2'
   - 'ARISTA #3'
-  - 'ARISTA #4'
-  - 'ARISTA #5'
-  - 'ARISTA #6'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
