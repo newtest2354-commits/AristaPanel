@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2083
-# Updated: 2026-11-19 06:08:44
-# Count: 30
+# Updated: 2026-11-19 09:06:23
+# Count: 10
 
 mixed-port: 7890
 allow-lan: false
@@ -50,21 +50,24 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 198.202.24.142
+  server: 209.94.90.201
   port: 2083
   uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
   servername: vipfree.dr-ping.ir
   ws-opts:
     path: /
-    headers:
-      Host: vipfree.dr-ping.ir
 - name: 'ARISTA #2'
   type: vless
-  server: 206.238.239.20
+  server: 209.94.90.201
   port: 2083
   uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
   network: ws
@@ -81,36 +84,18 @@ proxies:
     path: /
 - name: 'ARISTA #3'
   type: vless
-  server: 68.221.177.135
+  server: 189.30.65.203
   port: 2083
-  uuid: 52a5a29f-c162-411a-8a37-a3f11b0dc537
-  network: tcp
-  tls: true
+  uuid: 490dc3b4-8d1d-49fd-840e-bd5277b41557
+  network: grpc
+  tls: false
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: WbgtxLlo2gmTzB4Wzxgh_U7G97d4ENTS10fYIoujET4
-    short-id: "0123456789abcdef"
+  grpc-opts:
+    grpc-service-name: service-41f6a2a01377
 - name: 'ARISTA #4'
   type: vless
-  server: 198.202.24.142
-  port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: vipfree.dr-ping.ir
-  ws-opts:
-    path: /
-    headers:
-      Host: vipfree.dr-ping.ir
-- name: 'ARISTA #5'
-  type: vless
-  server: 206.238.239.20
+  server: 209.94.90.201
   port: 2083
   uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
   network: ws
@@ -125,38 +110,48 @@ proxies:
   servername: vipfree.dr-ping.ir
   ws-opts:
     path: /
-- name: 'ARISTA #6'
+- name: 'ARISTA #5'
   type: vless
-  server: 68.221.177.135
+  server: 189.30.65.203
   port: 2083
-  uuid: 52a5a29f-c162-411a-8a37-a3f11b0dc537
-  network: tcp
-  tls: true
+  uuid: 490dc3b4-8d1d-49fd-840e-bd5277b41557
+  network: grpc
+  tls: false
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: WbgtxLlo2gmTzB4Wzxgh_U7G97d4ENTS10fYIoujET4
-    short-id: "0123456789abcdef"
-- name: 'ARISTA #7'
+  grpc-opts:
+    grpc-service-name: service-41f6a2a01377
+- name: 'ARISTA #6'
   type: vless
-  server: 198.202.24.142
+  server: 209.94.90.201
   port: 2083
   uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
   servername: vipfree.dr-ping.ir
   ws-opts:
     path: /
-    headers:
-      Host: vipfree.dr-ping.ir
+- name: 'ARISTA #7'
+  type: vless
+  server: 189.30.65.203
+  port: 2083
+  uuid: 490dc3b4-8d1d-49fd-840e-bd5277b41557
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: service-41f6a2a01377
 - name: 'ARISTA #8'
   type: vless
-  server: 206.238.239.20
+  server: 209.94.90.201
   port: 2083
   uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
   network: ws
@@ -173,323 +168,32 @@ proxies:
     path: /
 - name: 'ARISTA #9'
   type: vless
-  server: 68.221.177.135
+  server: 209.94.90.201
   port: 2083
-  uuid: 52a5a29f-c162-411a-8a37-a3f11b0dc537
-  network: tcp
+  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  - h3
   client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: WbgtxLlo2gmTzB4Wzxgh_U7G97d4ENTS10fYIoujET4
-    short-id: "0123456789abcdef"
+  servername: vipfree.dr-ping.ir
+  ws-opts:
+    path: /
 - name: 'ARISTA #10'
   type: vless
-  server: 209.94.90.201
+  server: 189.30.65.203
   port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
-  network: ws
-  tls: true
+  uuid: 490dc3b4-8d1d-49fd-840e-bd5277b41557
+  network: grpc
+  tls: false
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  - h3
-  client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
-  ws-opts:
-    path: /
-- name: 'ARISTA #11'
-  type: vless
-  server: render.com
-  port: 2083
-  uuid: 6feb5039-ecb3-462e-aa1e-c9663bc3f398
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: nlehuehh-dijdur-djwuu72-dj39.pufzax.ir
-- name: 'ARISTA #12'
-  type: vless
-  server: 91.107.247.173
-  port: 2083
-  uuid: 0386df1b-7abd-4676-f3c6-d65d691023b9
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: sino.bestsellers1.site
-  ws-opts:
-    path: /
-    headers:
-      Host: sino.bestsellers1.site
-- name: 'ARISTA #13'
-  type: vless
-  server: sino.bestsellers1.site
-  port: 2083
-  uuid: 0386df1b-7abd-4676-f3c6-d65d691023b9
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: sino.bestsellers1.site
-  ws-opts:
-    path: /
-- name: 'ARISTA #14'
-  type: vless
-  server: sino.bestsellers1.site
-  port: 2083
-  uuid: 0386df1b-7abd-4676-f3c6-d65d691023b9
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: sino.bestsellers1.site
-  ws-opts:
-    path: /
-    headers:
-      Host: sino.bestsellers1.site
-- name: 'ARISTA #15'
-  type: vless
-  server: 198.202.24.142
-  port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: vipfree.dr-ping.ir
-  ws-opts:
-    path: /
-    headers:
-      Host: vipfree.dr-ping.ir
-- name: 'ARISTA #16'
-  type: vless
-  server: 206.238.239.20
-  port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  - h3
-  client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
-  ws-opts:
-    path: /
-- name: 'ARISTA #17'
-  type: vless
-  server: 68.221.177.135
-  port: 2083
-  uuid: 52a5a29f-c162-411a-8a37-a3f11b0dc537
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: WbgtxLlo2gmTzB4Wzxgh_U7G97d4ENTS10fYIoujET4
-    short-id: "0123456789abcdef"
-- name: 'ARISTA #18'
-  type: vless
-  server: 198.202.24.142
-  port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: vipfree.dr-ping.ir
-  ws-opts:
-    path: /
-    headers:
-      Host: vipfree.dr-ping.ir
-- name: 'ARISTA #19'
-  type: vless
-  server: 206.238.239.20
-  port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  - h3
-  client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
-  ws-opts:
-    path: /
-- name: 'ARISTA #20'
-  type: vless
-  server: 68.221.177.135
-  port: 2083
-  uuid: 52a5a29f-c162-411a-8a37-a3f11b0dc537
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: WbgtxLlo2gmTzB4Wzxgh_U7G97d4ENTS10fYIoujET4
-    short-id: "0123456789abcdef"
-- name: 'ARISTA #21'
-  type: vless
-  server: 209.94.90.201
-  port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  - h3
-  client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
-  ws-opts:
-    path: /
-- name: 'ARISTA #22'
-  type: vless
-  server: render.com
-  port: 2083
-  uuid: 6feb5039-ecb3-462e-aa1e-c9663bc3f398
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: nlehuehh-dijdur-djwuu72-dj39.pufzax.ir
-- name: 'ARISTA #23'
-  type: vless
-  server: 198.202.24.142
-  port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: vipfree.dr-ping.ir
-  ws-opts:
-    path: /
-    headers:
-      Host: vipfree.dr-ping.ir
-- name: 'ARISTA #24'
-  type: vless
-  server: 206.238.239.20
-  port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  - h3
-  client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
-  ws-opts:
-    path: /
-- name: 'ARISTA #25'
-  type: vless
-  server: 68.221.177.135
-  port: 2083
-  uuid: 52a5a29f-c162-411a-8a37-a3f11b0dc537
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: WbgtxLlo2gmTzB4Wzxgh_U7G97d4ENTS10fYIoujET4
-    short-id: "0123456789abcdef"
-- name: 'ARISTA #26'
-  type: vless
-  server: 209.94.90.201
-  port: 2083
-  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  - h3
-  client-fingerprint: chrome
-  servername: vipfree.dr-ping.ir
-  ws-opts:
-    path: /
-- name: 'ARISTA #27'
-  type: vless
-  server: render.com
-  port: 2083
-  uuid: 6feb5039-ecb3-462e-aa1e-c9663bc3f398
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: nlehuehh-dijdur-djwuu72-dj39.pufzax.ir
-- name: 'ARISTA #28'
-  type: vless
-  server: 91.107.247.173
-  port: 2083
-  uuid: 0386df1b-7abd-4676-f3c6-d65d691023b9
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: sino.bestsellers1.site
-  ws-opts:
-    path: /
-    headers:
-      Host: sino.bestsellers1.site
-- name: 'ARISTA #29'
-  type: vless
-  server: sino.bestsellers1.site
-  port: 2083
-  uuid: 0386df1b-7abd-4676-f3c6-d65d691023b9
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: sino.bestsellers1.site
-  ws-opts:
-    path: /
-- name: 'ARISTA #30'
-  type: vless
-  server: sino.bestsellers1.site
-  port: 2083
-  uuid: 0386df1b-7abd-4676-f3c6-d65d691023b9
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: sino.bestsellers1.site
-  ws-opts:
-    path: /
-    headers:
-      Host: sino.bestsellers1.site
+  grpc-opts:
+    grpc-service-name: service-41f6a2a01377
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -509,26 +213,6 @@ proxy-groups:
   - 'ARISTA #8'
   - 'ARISTA #9'
   - 'ARISTA #10'
-  - 'ARISTA #11'
-  - 'ARISTA #12'
-  - 'ARISTA #13'
-  - 'ARISTA #14'
-  - 'ARISTA #15'
-  - 'ARISTA #16'
-  - 'ARISTA #17'
-  - 'ARISTA #18'
-  - 'ARISTA #19'
-  - 'ARISTA #20'
-  - 'ARISTA #21'
-  - 'ARISTA #22'
-  - 'ARISTA #23'
-  - 'ARISTA #24'
-  - 'ARISTA #25'
-  - 'ARISTA #26'
-  - 'ARISTA #27'
-  - 'ARISTA #28'
-  - 'ARISTA #29'
-  - 'ARISTA #30'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
