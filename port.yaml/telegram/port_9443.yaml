@@ -1,5 +1,5 @@
 # TELEGRAM - Port 9443
-# Updated: 2026-11-20 00:07:33
+# Updated: 2026-11-20 03:06:48
 # Count: 1
 
 mixed-port: 7890
@@ -49,18 +49,20 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'ARISTA #1'
-  type: vmess
-  server: sefr.ishizaki.ir
+  type: vless
+  server: tunir.helpower.ir
   port: 9443
-  uuid: 1e8aa5e5-78e1-41d0-9f33-cd04286b8a5c
-  alterId: 0
-  cipher: auto
+  uuid: 78135704-67f9-4586-8ffd-d1fe541b3c6d
   network: tcp
-  tls: false
+  tls: true
   udp: true
   skip-cert-verify: true
-  tcp-fast-open: true
-  servername: sefr.ishizaki.ir
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: tunir.helpower.ir
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test

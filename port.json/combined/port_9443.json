@@ -1,6 +1,6 @@
 // COMBINED - Port 9443
-// Updated: 2026-11-20 00:07:51
-// Count: 9
+// Updated: 2026-11-20 03:06:59
+// Count: 3
 
 {
   "log": {
@@ -39,13 +39,26 @@
   ],
   "outbounds": [
     {
-      "type": "vmess",
+      "type": "vless",
       "tag": "ARISTA #1",
-      "server": "sefr.ishizaki.ir",
+      "server": "tunir.helpower.ir",
       "server_port": 9443,
-      "uuid": "1e8aa5e5-78e1-41d0-9f33-cd04286b8a5c",
-      "security": "auto",
-      "domain_resolver": "google"
+      "uuid": "78135704-67f9-4586-8ffd-d1fe541b3c6d",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "tunir.helpower.ir",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "alpn": [
+          "h2",
+          "http/1.1"
+        ]
+      },
+      "flow": "xtls-rprx-vision"
     },
     {
       "type": "direct",
