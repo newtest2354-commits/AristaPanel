@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2087
-# Updated: 2026-11-20 12:08:19
-# Count: 6
+# Updated: 2026-11-20 15:04:20
+# Count: 3
 
 mixed-port: 7890
 allow-lan: false
@@ -49,53 +49,6 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'ARISTA #1'
-  type: vmess
-  server: 104.27.1.129
-  port: 2087
-  uuid: 93ea486a-bada-42a4-ac38-d088b320fa1e
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: xmivideo.cfd
-  ws-opts:
-    path: /linkws
-    headers:
-      Host: xmivideo.cfd
-- name: 'ARISTA #2'
-  type: vless
-  server: render.com
-  port: 2087
-  uuid: 316acccc-720d-499e-a92d-9caa7a26c495
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: n5r.droonix.ir
-- name: 'ARISTA #3'
-  type: vless
-  server: render.com
-  port: 2087
-  uuid: 316acccc-720d-499e-a92d-9caa7a26c495
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: n5r.droonix.ir
-- name: 'ARISTA #4'
   type: vless
   server: 87.120.92.186
   port: 2087
@@ -109,22 +62,21 @@ proxies:
   reality-opts:
     public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
     short-id: "3258252d44113e23"
-- name: 'ARISTA #5'
+- name: 'ARISTA #2'
   type: vless
-  server: render.com
+  server: 87.120.92.186
   port: 2087
-  uuid: 316acccc-720d-499e-a92d-9caa7a26c495
+  uuid: 549766c3-fa5f-471e-8031-ffc1f8d5064f
   network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: n5r.droonix.ir
-- name: 'ARISTA #6'
+  client-fingerprint: firefox
+  servername: maps.blog-forme.ru
+  reality-opts:
+    public-key: mbi4BZAuiq_L6pfhG2xxWmtosq0Z1Pzf18fvNSWKMxY
+    short-id: "3258252d44113e23"
+- name: 'ARISTA #3'
   type: vless
   server: render.com
   port: 2087
@@ -151,9 +103,6 @@ proxy-groups:
   - 'ARISTA #1'
   - 'ARISTA #2'
   - 'ARISTA #3'
-  - 'ARISTA #4'
-  - 'ARISTA #5'
-  - 'ARISTA #6'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

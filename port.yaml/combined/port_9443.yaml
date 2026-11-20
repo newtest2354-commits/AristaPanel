@@ -1,6 +1,6 @@
 # COMBINED - Port 9443
-# Updated: 2026-11-20 12:08:13
-# Count: 3
+# Updated: 2026-11-20 15:04:15
+# Count: 4
 
 mixed-port: 7890
 allow-lan: false
@@ -50,49 +50,56 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: tunir.helpower.ir
+  server: 2.27.14.122
   port: 9443
-  uuid: 78135704-67f9-4586-8ffd-d1fe541b3c6d
-  network: tcp
+  uuid: 67864856-8730-40cc-9e1a-a0df697d912b
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: tunir.helpower.ir
+  servername: fin.krabvpn.pro
+  reality-opts:
+    public-key: zd4L59ejBo94N8N9GQtZMox2eBBF9TQf2TLyIgpwlCg
+    short-id: "fd7624659f1e7d66"
 - name: 'ARISTA #2'
   type: vless
-  server: tunir.helpower.ir
+  server: 2.27.14.122
   port: 9443
-  uuid: 78135704-67f9-4586-8ffd-d1fe541b3c6d
-  network: tcp
+  uuid: 67864856-8730-40cc-9e1a-a0df697d912b
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: tunir.helpower.ir
+  servername: fin.krabvpn.pro
+  reality-opts:
+    public-key: zd4L59ejBo94N8N9GQtZMox2eBBF9TQf2TLyIgpwlCg
+    short-id: "fd7624659f1e7d66"
 - name: 'ARISTA #3'
   type: vless
-  server: tunir.helpower.ir
+  server: 2.27.14.122
   port: 9443
-  uuid: 78135704-67f9-4586-8ffd-d1fe541b3c6d
-  network: tcp
+  uuid: 67864856-8730-40cc-9e1a-a0df697d912b
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: tunir.helpower.ir
+  servername: fin.krabvpn.pro
+  reality-opts:
+    public-key: zd4L59ejBo94N8N9GQtZMox2eBBF9TQf2TLyIgpwlCg
+    short-id: "fd7624659f1e7d66"
+- name: 'ARISTA #4'
+  type: vless
+  server: 2.27.14.122
+  port: 9443
+  uuid: 67864856-8730-40cc-9e1a-a0df697d912b
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: fin.krabvpn.pro
+  reality-opts:
+    public-key: zd4L59ejBo94N8N9GQtZMox2eBBF9TQf2TLyIgpwlCg
+    short-id: "fd7624659f1e7d66"
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -105,6 +112,7 @@ proxy-groups:
   - 'ARISTA #1'
   - 'ARISTA #2'
   - 'ARISTA #3'
+  - 'ARISTA #4'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
