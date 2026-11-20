@@ -1,6 +1,6 @@
 // TELEGRAM - Port 2087
-// Updated: 2026-11-20 09:06:38
-// Count: 10
+// Updated: 2026-11-20 12:08:28
+// Count: 6
 
 {
   "log": {
@@ -39,8 +39,33 @@
   ],
   "outbounds": [
     {
-      "type": "vless",
+      "type": "vmess",
       "tag": "ARISTA #1",
+      "server": "104.27.1.129",
+      "server_port": 2087,
+      "uuid": "93ea486a-bada-42a4-ac38-d088b320fa1e",
+      "security": "auto",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "xmivideo.cfd",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "xmivideo.cfd"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "ARISTA #2",
       "server": "render.com",
       "server_port": 2087,
       "uuid": "316acccc-720d-499e-a92d-9caa7a26c495",
@@ -62,7 +87,7 @@
     },
     {
       "type": "vless",
-      "tag": "ARISTA #2",
+      "tag": "ARISTA #3",
       "server": "87.120.92.186",
       "server_port": 2087,
       "uuid": "549766c3-fa5f-471e-8031-ffc1f8d5064f",
@@ -83,44 +108,6 @@
       }
     },
     {
-      "type": "vless",
-      "tag": "ARISTA #3",
-      "server": "render.com",
-      "server_port": 2087,
-      "uuid": "49fe1f7b-e6f6-43dc-a67d-caade85128ba",
-      "domain_resolver": "google",
-      "tls": {
-        "enabled": true,
-        "server_name": "org-grm-soeiwhal-bssutudhdhese-beqhjdwter.maniyadg7shard.ir",
-        "insecure": true,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "ARISTA #4",
-      "server": "adgof.mgodping12.xyz",
-      "server_port": 2087,
-      "uuid": "4019d31e-fa7d-42ce-8c6e-88810af0807c",
-      "domain_resolver": "google",
-      "tls": {
-        "enabled": true,
-        "server_name": "adgof.mgodping12.xyz",
-        "insecure": true,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "GunService"
-      }
-    },
-    {
       "type": "direct",
       "tag": "direct"
     },
@@ -134,8 +121,7 @@
       "outbounds": [
         "ARISTA #1",
         "ARISTA #2",
-        "ARISTA #3",
-        "ARISTA #4"
+        "ARISTA #3"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "2m",
