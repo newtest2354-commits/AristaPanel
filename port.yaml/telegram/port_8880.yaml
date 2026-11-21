@@ -1,6 +1,6 @@
 # TELEGRAM - Port 8880
-# Updated: 2026-11-21 12:03:47
-# Count: 2
+# Updated: 2026-11-21 15:08:08
+# Count: 4
 
 mixed-port: 7890
 allow-lan: false
@@ -49,19 +49,33 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'ARISTA #1'
-  type: vmess
-  server: free3.familysharing.ir
+  type: vless
+  server: dl2.datgame.ir
   port: 8880
-  uuid: c68906da-4a53-dc85-f6b7-8bc3dd321a08
-  alterId: 0
-  cipher: auto
+  uuid: c681a2d6-54ad-4ac7-959d-86d82bfa2027
   network: tcp
   tls: false
   udp: true
   skip-cert-verify: true
-  tcp-fast-open: true
-  servername: free3.familysharing.ir
 - name: 'ARISTA #2'
+  type: vless
+  server: dl2.datgame.ir
+  port: 8880
+  uuid: c681a2d6-54ad-4ac7-959d-86d82bfa2027
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #3'
+  type: vless
+  server: dl2.datgame.ir
+  port: 8880
+  uuid: c681a2d6-54ad-4ac7-959d-86d82bfa2027
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #4'
   type: vless
   server: dl2.datgame.ir
   port: 8880
@@ -81,6 +95,8 @@ proxy-groups:
   proxies: &id001
   - 'ARISTA #1'
   - 'ARISTA #2'
+  - 'ARISTA #3'
+  - 'ARISTA #4'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
