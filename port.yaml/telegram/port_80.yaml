@@ -1,6 +1,6 @@
 # TELEGRAM - Port 80
-# Updated: 2026-11-20 21:06:43
-# Count: 51
+# Updated: 2026-11-21 00:04:53
+# Count: 56
 
 mixed-port: 7890
 allow-lan: false
@@ -50,6 +50,23 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vmess
+  server: 38.107.234.57
+  port: 80
+  uuid: 567f4be5-12ab-42e1-b8d9-db6fd1fdd31c
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 38.107.234.57
+  ws-opts:
+    path: /vmess/
+    headers:
+      Host: viber.com
+- name: 'ARISTA #2'
+  type: vmess
   server: 57.129.132.223
   port: 80
   uuid: a25cbf11-2908-4a1b-a3a8-9a571777dca3
@@ -65,11 +82,11 @@ proxies:
     path: /vmess/
     headers:
       Host: google.com
-- name: 'ARISTA #2'
+- name: 'ARISTA #3'
   type: vmess
-  server: 145.239.55.210
+  server: 57.129.132.223
   port: 80
-  uuid: 2bc80e77-9590-4ded-a48b-0eda493f611b
+  uuid: a25cbf11-2908-4a1b-a3a8-9a571777dca3
   alterId: 0
   cipher: auto
   network: ws
@@ -77,12 +94,12 @@ proxies:
   udp: true
   skip-cert-verify: true
   tcp-fast-open: true
-  servername: 145.239.55.210
+  servername: 57.129.132.223
   ws-opts:
-    path: /
+    path: /vmess/?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
     headers:
-      Host: google.whatsapp.snapp.torob.basalam.fortresshost.ir.
-- name: 'ARISTA #3'
+      Host: google.com
+- name: 'ARISTA #4'
   type: vmess
   server: 57.129.132.223
   port: 80
@@ -99,67 +116,42 @@ proxies:
     path: /vmess/
     headers:
       Host: 57.129.132.223
-- name: 'ARISTA #4'
-  type: vless
-  server: ov-france1.09vpn.com
-  port: 80
-  uuid: f5c47e9c-914a-4a91-a81e-a5a77bc10fc1
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /vless/
 - name: 'ARISTA #5'
-  type: vless
-  server: ov-france1.09vpn.com
+  type: vmess
+  server: 145.239.55.210
   port: 80
-  uuid: f5c47e9c-914a-4a91-a81e-a5a77bc10fc1
+  uuid: 2bc80e77-9590-4ded-a48b-0eda493f611b
+  alterId: 0
+  cipher: auto
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  tcp-fast-open: true
+  servername: 145.239.55.210
   ws-opts:
-    path: /vless/
+    path: /
     headers:
-      Host: ov-france1.09vpn.com
+      Host: google.whatsapp.snapp.torob.basalam.fortresshost.ir.
 - name: 'ARISTA #6'
   type: vless
-  server: ov-france1.09vpn.com
+  server: moon.gmax12.ir
   port: 80
-  uuid: f5c47e9c-914a-4a91-a81e-a5a77bc10fc1
-  network: ws
+  uuid: b1ea01b5-2902-4ff6-a64d-fafd20aea9f1
+  network: tcp
   tls: false
   udp: true
   skip-cert-verify: true
-  ws-opts:
-    path: /vless/
 - name: 'ARISTA #7'
   type: vless
-  server: ov-france1.09vpn.com
+  server: opa.gmax12.ir
   port: 80
-  uuid: f5c47e9c-914a-4a91-a81e-a5a77bc10fc1
-  network: ws
+  uuid: b1ea01b5-2902-4ff6-a64d-fafd20aea9f1
+  network: tcp
   tls: false
   udp: true
   skip-cert-verify: true
-  ws-opts:
-    path: /vless/
-    headers:
-      Host: ov-france1.09vpn.com
 - name: 'ARISTA #8'
-  type: vless
-  server: 152.228.162.19
-  port: 80
-  uuid: f5c47e9c-914a-4a91-a81e-a5a77bc10fc1
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /vless/
-- name: 'ARISTA #9'
   type: vless
   server: 57.129.41.216
   port: 80
@@ -172,16 +164,7 @@ proxies:
     path: /vless/
     headers:
       Host: OV-Germany1.09vpn.com
-- name: 'ARISTA #10'
-  type: vless
-  server: moon.gmax12.ir
-  port: 80
-  uuid: b1ea01b5-2902-4ff6-a64d-fafd20aea9f1
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #11'
+- name: 'ARISTA #9'
   type: vless
   server: support.zoom.us
   port: 80
@@ -194,47 +177,7 @@ proxies:
     path: /
     headers:
       Host: free.sahanwickramasinghe.com
-- name: 'ARISTA #12'
-  type: vless
-  server: 46.31.76.3
-  port: 80
-  uuid: ffc13868-bc71-490e-84db-5722873cf0f5
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: journalofbigdata.springeropen.com
-  reality-opts:
-    public-key: oTX6mQJYxkmmdF7Rq_stAKX_hYoOMXGaWmoblFl2zgo
-    short-id: "5942e2"
-- name: 'ARISTA #13'
-  type: vless
-  server: 151.101.3.8
-  port: 80
-  uuid: addbd8bc-dcf1-4a24-9eef-25639a32b47b
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /containers/fi
-    headers:
-      Host: tsvCY5W4AP61qVbo.net
-- name: 'ARISTA #14'
-  type: vless
-  server: 104.17.147.22
-  port: 80
-  uuid: 53fa8faf-ba4b-4322-9c69-a3e5b1555049
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: redfree8mahsang6.redfree8.ir
-- name: 'ARISTA #15'
+- name: 'ARISTA #10'
   type: vless
   server: 57.129.41.216
   port: 80
@@ -246,23 +189,74 @@ proxies:
   ws-opts:
     path: /vless/
     headers:
-      Host: ov-germany1.09vpn.com�%�Limburg
+      Host: ov-germany1.09vpn.com
+- name: 'ARISTA #11'
+  type: vless
+  server: sc-thenetherlands1.09vpn.com
+  port: 80
+  uuid: 40cc9b52-25b8-4cd5-8b45-715ae26e6baf
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /vless/
+    headers:
+      Host: sc-thenetherlands1.09vpn.com
+- name: 'ARISTA #12'
+  type: vless
+  server: moon.gmax12.ir
+  port: 80
+  uuid: b1ea01b5-2902-4ff6-a64d-fafd20aea9f1
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #13'
+  type: vless
+  server: opa.gmax12.ir
+  port: 80
+  uuid: b1ea01b5-2902-4ff6-a64d-fafd20aea9f1
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #14'
+  type: vless
+  server: 57.129.41.216
+  port: 80
+  uuid: 3cfa0d9b-6279-4b73-8533-09ad84e49c80
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /vless/
+    headers:
+      Host: OV-Germany1.09vpn.com
+- name: 'ARISTA #15'
+  type: vless
+  server: moon.gmax12.ir
+  port: 80
+  uuid: b1ea01b5-2902-4ff6-a64d-fafd20aea9f1
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
 - name: 'ARISTA #16'
   type: vless
-  server: ov-france1.09vpn.com
+  server: opa.gmax12.ir
   port: 80
-  uuid: f5c47e9c-914a-4a91-a81e-a5a77bc10fc1
-  network: ws
+  uuid: b1ea01b5-2902-4ff6-a64d-fafd20aea9f1
+  network: tcp
   tls: false
   udp: true
   skip-cert-verify: true
-  ws-opts:
-    path: /vless/
 - name: 'ARISTA #17'
   type: vless
-  server: ov-france1.09vpn.com
+  server: 57.129.41.216
   port: 80
-  uuid: f5c47e9c-914a-4a91-a81e-a5a77bc10fc1
+  uuid: 3cfa0d9b-6279-4b73-8533-09ad84e49c80
   network: ws
   tls: false
   udp: true
@@ -270,79 +264,27 @@ proxies:
   ws-opts:
     path: /vless/
     headers:
-      Host: ov-france1.09vpn.com
+      Host: OV-Germany1.09vpn.com
 - name: 'ARISTA #18'
   type: vless
-  server: 152.228.162.19
+  server: moon.gmax12.ir
   port: 80
-  uuid: f5c47e9c-914a-4a91-a81e-a5a77bc10fc1
-  network: ws
+  uuid: b1ea01b5-2902-4ff6-a64d-fafd20aea9f1
+  network: tcp
   tls: false
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /vless/
 - name: 'ARISTA #19'
   type: vless
-  server: 57.129.41.216
+  server: opa.gmax12.ir
   port: 80
-  uuid: 3cfa0d9b-6279-4b73-8533-09ad84e49c80
-  network: ws
+  uuid: b1ea01b5-2902-4ff6-a64d-fafd20aea9f1
+  network: tcp
   tls: false
   udp: true
   skip-cert-verify: true
-  ws-opts:
-    path: /vless/
-    headers:
-      Host: OV-Germany1.09vpn.com
 - name: 'ARISTA #20'
   type: vless
-  server: moon.gmax12.ir
-  port: 80
-  uuid: b1ea01b5-2902-4ff6-a64d-fafd20aea9f1
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #21'
-  type: vless
-  server: ov-france1.09vpn.com
-  port: 80
-  uuid: f5c47e9c-914a-4a91-a81e-a5a77bc10fc1
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /vless/
-- name: 'ARISTA #22'
-  type: vless
-  server: ov-france1.09vpn.com
-  port: 80
-  uuid: f5c47e9c-914a-4a91-a81e-a5a77bc10fc1
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /vless/
-    headers:
-      Host: ov-france1.09vpn.com
-- name: 'ARISTA #23'
-  type: vless
-  server: 152.228.162.19
-  port: 80
-  uuid: f5c47e9c-914a-4a91-a81e-a5a77bc10fc1
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /vless/
-- name: 'ARISTA #24'
-  type: vless
   server: 57.129.41.216
   port: 80
   uuid: 3cfa0d9b-6279-4b73-8533-09ad84e49c80
@@ -354,16 +296,7 @@ proxies:
     path: /vless/
     headers:
       Host: OV-Germany1.09vpn.com
-- name: 'ARISTA #25'
-  type: vless
-  server: moon.gmax12.ir
-  port: 80
-  uuid: b1ea01b5-2902-4ff6-a64d-fafd20aea9f1
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #26'
+- name: 'ARISTA #21'
   type: vless
   server: support.zoom.us
   port: 80
@@ -376,7 +309,33 @@ proxies:
     path: /
     headers:
       Host: free.sahanwickramasinghe.com
-- name: 'ARISTA #27'
+- name: 'ARISTA #22'
+  type: vless
+  server: 57.129.41.216
+  port: 80
+  uuid: 18535741-e8b3-4b43-9348-785b55936751
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /vless/
+    headers:
+      Host: ov-germany1.09vpn.com
+- name: 'ARISTA #23'
+  type: vless
+  server: sc-thenetherlands1.09vpn.com
+  port: 80
+  uuid: 40cc9b52-25b8-4cd5-8b45-715ae26e6baf
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /vless/
+    headers:
+      Host: sc-thenetherlands1.09vpn.com
+- name: 'ARISTA #24'
   type: vless
   server: 46.31.76.3
   port: 80
@@ -390,7 +349,7 @@ proxies:
   reality-opts:
     public-key: oTX6mQJYxkmmdF7Rq_stAKX_hYoOMXGaWmoblFl2zgo
     short-id: "5942e2"
-- name: 'ARISTA #28'
+- name: 'ARISTA #25'
   type: vless
   server: 151.101.3.8
   port: 80
@@ -403,7 +362,7 @@ proxies:
     path: /containers/fi
     headers:
       Host: tsvCY5W4AP61qVbo.net
-- name: 'ARISTA #29'
+- name: 'ARISTA #26'
   type: vless
   server: 104.17.147.22
   port: 80
@@ -416,6 +375,45 @@ proxies:
     path: /?ed=2560
     headers:
       Host: redfree8mahsang6.redfree8.ir
+- name: 'ARISTA #27'
+  type: vless
+  server: ov-germany1.09vpn.com
+  port: 80
+  uuid: 3cfa0d9b-6279-4b73-8533-09ad84e49c80
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /vless/
+    headers:
+      Host: /?Telegram---@pirozi_ArGaP---@pirozi_ArGaP---@pirozi_ArGaP---@pirozi_ArGaP
+- name: 'ARISTA #28'
+  type: vless
+  server: 57.129.41.216
+  port: 80
+  uuid: 7d90f043-ed7f-40c9-ac2f-352987904958
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /vless/
+    headers:
+      Host: ov-germany1.09vpn.com
+- name: 'ARISTA #29'
+  type: vless
+  server: 57.129.132.223
+  port: 80
+  uuid: 9e20b04d-5a81-4e16-b421-01e502f0aac6
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /vless/
+    headers:
+      Host: google.com
 - name: 'ARISTA #30'
   type: vless
   server: 57.129.41.216
@@ -431,41 +429,23 @@ proxies:
       Host: ov-germany1.09vpn.com�%�Limburg
 - name: 'ARISTA #31'
   type: vless
-  server: ov-france1.09vpn.com
+  server: moon.gmax12.ir
   port: 80
-  uuid: f5c47e9c-914a-4a91-a81e-a5a77bc10fc1
-  network: ws
+  uuid: b1ea01b5-2902-4ff6-a64d-fafd20aea9f1
+  network: tcp
   tls: false
   udp: true
   skip-cert-verify: true
-  ws-opts:
-    path: /vless/
 - name: 'ARISTA #32'
   type: vless
-  server: ov-france1.09vpn.com
+  server: opa.gmax12.ir
   port: 80
-  uuid: f5c47e9c-914a-4a91-a81e-a5a77bc10fc1
-  network: ws
+  uuid: b1ea01b5-2902-4ff6-a64d-fafd20aea9f1
+  network: tcp
   tls: false
   udp: true
   skip-cert-verify: true
-  ws-opts:
-    path: /vless/
-    headers:
-      Host: ov-france1.09vpn.com
 - name: 'ARISTA #33'
-  type: vless
-  server: 152.228.162.19
-  port: 80
-  uuid: f5c47e9c-914a-4a91-a81e-a5a77bc10fc1
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /vless/
-- name: 'ARISTA #34'
   type: vless
   server: 57.129.41.216
   port: 80
@@ -478,9 +458,18 @@ proxies:
     path: /vless/
     headers:
       Host: OV-Germany1.09vpn.com
-- name: 'ARISTA #35'
+- name: 'ARISTA #34'
   type: vless
   server: moon.gmax12.ir
+  port: 80
+  uuid: b1ea01b5-2902-4ff6-a64d-fafd20aea9f1
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #35'
+  type: vless
+  server: opa.gmax12.ir
   port: 80
   uuid: b1ea01b5-2902-4ff6-a64d-fafd20aea9f1
   network: tcp
@@ -489,77 +478,19 @@ proxies:
   skip-cert-verify: true
 - name: 'ARISTA #36'
   type: vless
-  server: support.zoom.us
+  server: 57.129.41.216
   port: 80
-  uuid: f028d829-249a-4692-b45f-1b4cde8ef0c7
+  uuid: 3cfa0d9b-6279-4b73-8533-09ad84e49c80
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
   ws-opts:
-    path: /
+    path: /vless/
     headers:
-      Host: free.sahanwickramasinghe.com
+      Host: OV-Germany1.09vpn.com
 - name: 'ARISTA #37'
   type: vless
-  server: ov-france1.09vpn.com
-  port: 80
-  uuid: f5c47e9c-914a-4a91-a81e-a5a77bc10fc1
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /vless/
-- name: 'ARISTA #38'
-  type: vless
-  server: ov-france1.09vpn.com
-  port: 80
-  uuid: f5c47e9c-914a-4a91-a81e-a5a77bc10fc1
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /vless/
-    headers:
-      Host: ov-france1.09vpn.com
-- name: 'ARISTA #39'
-  type: vless
-  server: 152.228.162.19
-  port: 80
-  uuid: f5c47e9c-914a-4a91-a81e-a5a77bc10fc1
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /vless/
-- name: 'ARISTA #40'
-  type: vless
-  server: 57.129.41.216
-  port: 80
-  uuid: 3cfa0d9b-6279-4b73-8533-09ad84e49c80
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /vless/
-    headers:
-      Host: OV-Germany1.09vpn.com
-- name: 'ARISTA #41'
-  type: vless
-  server: moon.gmax12.ir
-  port: 80
-  uuid: b1ea01b5-2902-4ff6-a64d-fafd20aea9f1
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #42'
-  type: vless
   server: support.zoom.us
   port: 80
   uuid: f028d829-249a-4692-b45f-1b4cde8ef0c7
@@ -571,22 +502,11 @@ proxies:
     path: /
     headers:
       Host: free.sahanwickramasinghe.com
-- name: 'ARISTA #43'
+- name: 'ARISTA #38'
   type: vless
-  server: ov-france1.09vpn.com
+  server: 57.129.41.216
   port: 80
-  uuid: f5c47e9c-914a-4a91-a81e-a5a77bc10fc1
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /vless/
-- name: 'ARISTA #44'
-  type: vless
-  server: ov-france1.09vpn.com
-  port: 80
-  uuid: f5c47e9c-914a-4a91-a81e-a5a77bc10fc1
+  uuid: 18535741-e8b3-4b43-9348-785b55936751
   network: ws
   tls: false
   udp: true
@@ -594,20 +514,105 @@ proxies:
   ws-opts:
     path: /vless/
     headers:
-      Host: ov-france1.09vpn.com
-- name: 'ARISTA #45'
+      Host: ov-germany1.09vpn.com
+- name: 'ARISTA #39'
   type: vless
-  server: 152.228.162.19
+  server: sc-thenetherlands1.09vpn.com
   port: 80
-  uuid: f5c47e9c-914a-4a91-a81e-a5a77bc10fc1
+  uuid: 40cc9b52-25b8-4cd5-8b45-715ae26e6baf
   network: ws
   tls: false
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
   ws-opts:
     path: /vless/
+    headers:
+      Host: sc-thenetherlands1.09vpn.com
+- name: 'ARISTA #40'
+  type: vless
+  server: 46.31.76.3
+  port: 80
+  uuid: ffc13868-bc71-490e-84db-5722873cf0f5
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: journalofbigdata.springeropen.com
+  reality-opts:
+    public-key: oTX6mQJYxkmmdF7Rq_stAKX_hYoOMXGaWmoblFl2zgo
+    short-id: "5942e2"
+- name: 'ARISTA #41'
+  type: vless
+  server: 151.101.3.8
+  port: 80
+  uuid: addbd8bc-dcf1-4a24-9eef-25639a32b47b
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /containers/fi
+    headers:
+      Host: tsvCY5W4AP61qVbo.net
+- name: 'ARISTA #42'
+  type: vless
+  server: 104.17.147.22
+  port: 80
+  uuid: 53fa8faf-ba4b-4322-9c69-a3e5b1555049
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: redfree8mahsang6.redfree8.ir
+- name: 'ARISTA #43'
+  type: vless
+  server: ov-germany1.09vpn.com
+  port: 80
+  uuid: 3cfa0d9b-6279-4b73-8533-09ad84e49c80
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /vless/
+    headers:
+      Host: /?Telegram---@pirozi_ArGaP---@pirozi_ArGaP---@pirozi_ArGaP---@pirozi_ArGaP
+- name: 'ARISTA #44'
+  type: vless
+  server: 57.129.41.216
+  port: 80
+  uuid: 7d90f043-ed7f-40c9-ac2f-352987904958
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /vless/
+    headers:
+      Host: ov-germany1.09vpn.com
+- name: 'ARISTA #45'
+  type: vless
+  server: moon.gmax12.ir
+  port: 80
+  uuid: b1ea01b5-2902-4ff6-a64d-fafd20aea9f1
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
 - name: 'ARISTA #46'
+  type: vless
+  server: opa.gmax12.ir
+  port: 80
+  uuid: b1ea01b5-2902-4ff6-a64d-fafd20aea9f1
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #47'
   type: vless
   server: 57.129.41.216
   port: 80
@@ -620,15 +625,6 @@ proxies:
     path: /vless/
     headers:
       Host: OV-Germany1.09vpn.com
-- name: 'ARISTA #47'
-  type: vless
-  server: moon.gmax12.ir
-  port: 80
-  uuid: b1ea01b5-2902-4ff6-a64d-fafd20aea9f1
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
 - name: 'ARISTA #48'
   type: vless
   server: support.zoom.us
@@ -644,6 +640,32 @@ proxies:
       Host: free.sahanwickramasinghe.com
 - name: 'ARISTA #49'
   type: vless
+  server: 57.129.41.216
+  port: 80
+  uuid: 18535741-e8b3-4b43-9348-785b55936751
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /vless/
+    headers:
+      Host: ov-germany1.09vpn.com
+- name: 'ARISTA #50'
+  type: vless
+  server: sc-thenetherlands1.09vpn.com
+  port: 80
+  uuid: 40cc9b52-25b8-4cd5-8b45-715ae26e6baf
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /vless/
+    headers:
+      Host: sc-thenetherlands1.09vpn.com
+- name: 'ARISTA #51'
+  type: vless
   server: 46.31.76.3
   port: 80
   uuid: ffc13868-bc71-490e-84db-5722873cf0f5
@@ -656,7 +678,7 @@ proxies:
   reality-opts:
     public-key: oTX6mQJYxkmmdF7Rq_stAKX_hYoOMXGaWmoblFl2zgo
     short-id: "5942e2"
-- name: 'ARISTA #50'
+- name: 'ARISTA #52'
   type: vless
   server: 151.101.3.8
   port: 80
@@ -669,7 +691,7 @@ proxies:
     path: /containers/fi
     headers:
       Host: tsvCY5W4AP61qVbo.net
-- name: 'ARISTA #51'
+- name: 'ARISTA #53'
   type: vless
   server: 104.17.147.22
   port: 80
@@ -682,6 +704,45 @@ proxies:
     path: /?ed=2560
     headers:
       Host: redfree8mahsang6.redfree8.ir
+- name: 'ARISTA #54'
+  type: vless
+  server: ov-germany1.09vpn.com
+  port: 80
+  uuid: 3cfa0d9b-6279-4b73-8533-09ad84e49c80
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /vless/
+    headers:
+      Host: /?Telegram---@pirozi_ArGaP---@pirozi_ArGaP---@pirozi_ArGaP---@pirozi_ArGaP
+- name: 'ARISTA #55'
+  type: vless
+  server: 57.129.41.216
+  port: 80
+  uuid: 7d90f043-ed7f-40c9-ac2f-352987904958
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /vless/
+    headers:
+      Host: ov-germany1.09vpn.com
+- name: 'ARISTA #56'
+  type: vless
+  server: 57.129.132.223
+  port: 80
+  uuid: 9e20b04d-5a81-4e16-b421-01e502f0aac6
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /vless/
+    headers:
+      Host: google.com
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -742,6 +803,11 @@ proxy-groups:
   - 'ARISTA #49'
   - 'ARISTA #50'
   - 'ARISTA #51'
+  - 'ARISTA #52'
+  - 'ARISTA #53'
+  - 'ARISTA #54'
+  - 'ARISTA #55'
+  - 'ARISTA #56'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
