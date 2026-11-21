@@ -1,6 +1,6 @@
 # TELEGRAM - Port 8880
-# Updated: 2026-11-21 03:07:54
-# Count: 8
+# Updated: 2026-11-21 06:06:12
+# Count: 12
 
 mixed-port: 7890
 allow-lan: false
@@ -62,18 +62,14 @@ proxies:
   tcp-fast-open: true
   servername: free3.familysharing.ir
 - name: 'ARISTA #2'
-  type: vmess
-  server: free3.familysharing.ir
+  type: vless
+  server: dl2.datgame.ir
   port: 8880
-  uuid: c68906da-4a53-dc85-f6b7-8bc3dd321a08
-  alterId: 0
-  cipher: auto
+  uuid: c681a2d6-54ad-4ac7-959d-86d82bfa2027
   network: tcp
   tls: false
   udp: true
   skip-cert-verify: true
-  tcp-fast-open: true
-  servername: free3.familysharing.ir
 - name: 'ARISTA #3'
   type: vless
   server: dl2.datgame.ir
@@ -85,13 +81,17 @@ proxies:
   skip-cert-verify: true
 - name: 'ARISTA #4'
   type: vless
-  server: dl2.datgame.ir
+  server: 155.46.167.30
   port: 8880
-  uuid: c681a2d6-54ad-4ac7-959d-86d82bfa2027
-  network: tcp
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime50.workers.dev
 - name: 'ARISTA #5'
   type: vless
   server: dl2.datgame.ir
@@ -112,13 +112,17 @@ proxies:
   skip-cert-verify: true
 - name: 'ARISTA #7'
   type: vless
-  server: dl2.datgame.ir
+  server: 155.46.167.30
   port: 8880
-  uuid: c681a2d6-54ad-4ac7-959d-86d82bfa2027
-  network: tcp
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
   tls: false
   udp: true
   skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime50.workers.dev
 - name: 'ARISTA #8'
   type: vless
   server: dl2.datgame.ir
@@ -128,6 +132,50 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
+- name: 'ARISTA #9'
+  type: vless
+  server: dl2.datgame.ir
+  port: 8880
+  uuid: c681a2d6-54ad-4ac7-959d-86d82bfa2027
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #10'
+  type: vless
+  server: 155.46.167.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime50.workers.dev
+- name: 'ARISTA #11'
+  type: vless
+  server: dl2.datgame.ir
+  port: 8880
+  uuid: c681a2d6-54ad-4ac7-959d-86d82bfa2027
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #12'
+  type: vless
+  server: 155.46.167.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime50.workers.dev
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -145,6 +193,10 @@ proxy-groups:
   - 'ARISTA #6'
   - 'ARISTA #7'
   - 'ARISTA #8'
+  - 'ARISTA #9'
+  - 'ARISTA #10'
+  - 'ARISTA #11'
+  - 'ARISTA #12'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
