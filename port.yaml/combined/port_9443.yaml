@@ -1,6 +1,6 @@
 # COMBINED - Port 9443
-# Updated: 2026-11-21 21:07:45
-# Count: 1
+# Updated: 2026-11-22 00:05:24
+# Count: 3
 
 mixed-port: 7890
 allow-lan: false
@@ -48,12 +48,42 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'T.ME: @aristapanel #1'
+- name: 'ARISTA #1'
   type: vless
   server: 48.102.206.180
   port: 9443
   uuid: 623e66a7-25ee-4624-a63c-9513d620a287
-  network: raw
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: po2.hys.braidx.tech
+  reality-opts:
+    public-key: V-cWjK_GZ0PTJ3wnUHgwey_dNWI6_QNXsC9CdmA0mVI
+    short-id: "408c85938839e89f"
+- name: 'ARISTA #2'
+  type: vless
+  server: 48.102.206.180
+  port: 9443
+  uuid: 623e66a7-25ee-4624-a63c-9513d620a287
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: po2.hys.braidx.tech
+  reality-opts:
+    public-key: V-cWjK_GZ0PTJ3wnUHgwey_dNWI6_QNXsC9CdmA0mVI
+    short-id: "408c85938839e89f"
+- name: 'ARISTA #3'
+  type: vless
+  server: 48.102.206.180
+  port: 9443
+  uuid: 623e66a7-25ee-4624-a63c-9513d620a287
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
@@ -72,7 +102,9 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'T.ME: @aristapanel #1'
+  - 'ARISTA #1'
+  - 'ARISTA #2'
+  - 'ARISTA #3'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
