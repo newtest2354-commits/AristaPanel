@@ -1,6 +1,6 @@
 // TELEGRAM - Port 8880
-// Updated: 2026-11-22 18:07:00
-// Count: 1
+// Updated: 2026-11-22 21:04:42
+// Count: 13
 
 {
   "log": {
@@ -39,19 +39,48 @@
   ],
   "outbounds": [
     {
-      "type": "vless",
+      "type": "vmess",
       "tag": "ARISTA #1",
-      "server": "155.46.167.30",
+      "server": "161.33.20.255",
       "server_port": 8880,
-      "uuid": "6202b230-417c-4d8e-b624-0f71afa9c75d",
+      "uuid": "e0856508-d693-450a-a099-455091dc4f25",
+      "security": "auto",
       "domain_resolver": "google",
       "transport": {
         "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "vms.lifetime50.workers.dev"
+        "path": "/e0856508-d693-450a-a099-455091dc4f25-vm",
+        "headers": {}
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "ARISTA #2",
+      "server": "31.56.179.171",
+      "server_port": 8880,
+      "uuid": "4e73a85c-21fb-4caf-97aa-af9f835d439c",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.speedtest.net",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "wRQ8HyClUOReuiB84oE2r-jPYkiiiJALU3ks2gCvsG0",
+          "short_id": "180f4c72"
         }
       }
+    },
+    {
+      "type": "vless",
+      "tag": "ARISTA #3",
+      "server": "dl2.datgame.ir",
+      "server_port": 8880,
+      "uuid": "c681a2d6-54ad-4ac7-959d-86d82bfa2027",
+      "domain_resolver": "google"
     },
     {
       "type": "direct",
@@ -65,7 +94,9 @@
       "type": "urltest",
       "tag": "🚀 ARISTA AUTO BEST",
       "outbounds": [
-        "ARISTA #1"
+        "ARISTA #1",
+        "ARISTA #2",
+        "ARISTA #3"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "2m",
