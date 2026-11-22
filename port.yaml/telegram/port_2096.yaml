@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2096
-# Updated: 2026-11-22 00:05:31
-# Count: 2
+# Updated: 2026-11-22 03:04:05
+# Count: 4
 
 mixed-port: 7890
 allow-lan: false
@@ -82,6 +82,40 @@ proxies:
     path: /assets/ws
     headers:
       Host: dl2.mbndadwsdf132131.torkey.ir
+- name: 'ARISTA #3'
+  type: vless
+  server: dl2.mbndadwsdf132131.torkey.ir
+  port: 2096
+  uuid: b856294d-5767-4878-8cf5-c1d5ffbfb284
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dl2.mbndadwsdf132131.torkey.ir
+  ws-opts:
+    path: /assets/ws
+    headers:
+      Host: dl2.mbndadwsdf132131.torkey.ir
+- name: 'ARISTA #4'
+  type: vless
+  server: dl2.mbndadwsdf132131.torkey.ir
+  port: 2096
+  uuid: b856294d-5767-4878-8cf5-c1d5ffbfb284
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dl2.mbndadwsdf132131.torkey.ir
+  ws-opts:
+    path: /assets/ws
+    headers:
+      Host: dl2.mbndadwsdf132131.torkey.ir
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -93,6 +127,8 @@ proxy-groups:
   proxies: &id001
   - 'ARISTA #1'
   - 'ARISTA #2'
+  - 'ARISTA #3'
+  - 'ARISTA #4'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
