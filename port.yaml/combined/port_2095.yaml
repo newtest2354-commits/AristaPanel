@@ -1,6 +1,6 @@
 # COMBINED - Port 2095
-# Updated: 2026-11-22 12:07:42
-# Count: 4
+# Updated: 2026-11-22 15:06:35
+# Count: 7
 
 mixed-port: 7890
 allow-lan: false
@@ -48,7 +48,22 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'T.ME: @aristapanel #1'
+- name: 'ARISTA #1'
+  type: vless
+  server: nldirect.mehchannel.ir
+  port: 2095
+  uuid: 40597883-f773-4a6b-b305-3a6bebfee563
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: play.google.com
+  reality-opts:
+    public-key: Jm58PVXROqNIP6cVW-QchyzIjvxvDMxTaA3uLyl3Bgc
+    short-id: "5a84a6fcc2f484a6"
+- name: 'T.ME: @aristapanel #2'
   type: vless
   server: 216.24.57.1
   port: 2095
@@ -57,7 +72,7 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #2'
+- name: 'T.ME: @aristapanel #3'
   type: vless
   server: render.com
   port: 2095
@@ -66,7 +81,7 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #3'
+- name: 'T.ME: @aristapanel #4'
   type: vless
   server: 188.114.98.6
   port: 2095
@@ -75,7 +90,7 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #4'
+- name: 'T.ME: @aristapanel #5'
   type: vless
   server: tamiiiiz.aryan-sport.ir
   port: 2095
@@ -84,6 +99,36 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
+- name: 'ARISTA #6'
+  type: vless
+  server: nldirect.mehchannel.ir
+  port: 2095
+  uuid: 40597883-f773-4a6b-b305-3a6bebfee563
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: play.google.com
+  reality-opts:
+    public-key: Jm58PVXROqNIP6cVW-QchyzIjvxvDMxTaA3uLyl3Bgc
+    short-id: "5a84a6fcc2f484a6"
+- name: 'ARISTA #7'
+  type: vless
+  server: nldirect.mehchannel.ir
+  port: 2095
+  uuid: 40597883-f773-4a6b-b305-3a6bebfee563
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: play.google.com
+  reality-opts:
+    public-key: Jm58PVXROqNIP6cVW-QchyzIjvxvDMxTaA3uLyl3Bgc
+    short-id: "5a84a6fcc2f484a6"
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -93,10 +138,13 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'T.ME: @aristapanel #1'
+  - 'ARISTA #1'
   - 'T.ME: @aristapanel #2'
   - 'T.ME: @aristapanel #3'
   - 'T.ME: @aristapanel #4'
+  - 'T.ME: @aristapanel #5'
+  - 'ARISTA #6'
+  - 'ARISTA #7'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

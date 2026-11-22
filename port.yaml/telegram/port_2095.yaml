@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2095
-# Updated: 2026-11-21 18:06:45
-# Count: 4
+# Updated: 2026-11-22 15:06:42
+# Count: 1
 
 mixed-port: 7890
 allow-lan: false
@@ -50,40 +50,19 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 216.24.57.1
+  server: nldirect.mehchannel.ir
   port: 2095
-  uuid: 01451834-cbc3-4891-b34c-9c35aae6ea99
-  network: httpupgrade
-  tls: false
+  uuid: 40597883-f773-4a6b-b305-3a6bebfee563
+  network: tcp
+  tls: true
   udp: true
   skip-cert-verify: true
-- name: 'ARISTA #2'
-  type: vless
-  server: 216.24.57.1
-  port: 2095
-  uuid: 01451834-cbc3-4891-b34c-9c35aae6ea99
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #3'
-  type: vless
-  server: 216.24.57.1
-  port: 2095
-  uuid: 01451834-cbc3-4891-b34c-9c35aae6ea99
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #4'
-  type: vless
-  server: 216.24.57.1
-  port: 2095
-  uuid: 01451834-cbc3-4891-b34c-9c35aae6ea99
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: play.google.com
+  reality-opts:
+    public-key: Jm58PVXROqNIP6cVW-QchyzIjvxvDMxTaA3uLyl3Bgc
+    short-id: "5a84a6fcc2f484a6"
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -94,9 +73,6 @@ proxy-groups:
   timeout: 3000
   proxies: &id001
   - 'ARISTA #1'
-  - 'ARISTA #2'
-  - 'ARISTA #3'
-  - 'ARISTA #4'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
