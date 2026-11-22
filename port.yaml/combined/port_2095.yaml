@@ -1,6 +1,6 @@
 # COMBINED - Port 2095
-# Updated: 2026-11-22 15:06:35
-# Count: 7
+# Updated: 2026-11-22 18:06:32
+# Count: 11
 
 mixed-port: 7890
 allow-lan: false
@@ -50,20 +50,23 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: nldirect.mehchannel.ir
+  server: 216.24.57.1
   port: 2095
-  uuid: 40597883-f773-4a6b-b305-3a6bebfee563
-  network: tcp
-  tls: true
+  uuid: c348f38e-0963-4469-9fe6-db26a8c261ca
+  network: httpupgrade
+  tls: false
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: play.google.com
-  reality-opts:
-    public-key: Jm58PVXROqNIP6cVW-QchyzIjvxvDMxTaA3uLyl3Bgc
-    short-id: "5a84a6fcc2f484a6"
-- name: 'T.ME: @aristapanel #2'
+- name: 'ARISTA #2'
+  type: vless
+  server: 216.24.57.1
+  port: 2095
+  uuid: c348f38e-0963-4469-9fe6-db26a8c261ca
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'T.ME: @aristapanel #3'
   type: vless
   server: 216.24.57.1
   port: 2095
@@ -72,7 +75,7 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #3'
+- name: 'T.ME: @aristapanel #4'
   type: vless
   server: render.com
   port: 2095
@@ -81,7 +84,21 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #4'
+- name: 'T.ME: @aristapanel #5'
+  type: vless
+  server: 104.17.173.184
+  port: 2095
+  uuid: 01c1c687-3bb8-4e71-bf4b-ade0570b00e7
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: willow-lark-d2f1.sunny-ridge-a3a1.workers.dev
+  ws-opts:
+    path: /0fc8f4846fed?ed=2560
+    headers:
+      Host: willow-lark-d2f1.sunny-ridge-a3a1.workers.dev
+- name: 'T.ME: @aristapanel #6'
   type: vless
   server: 188.114.98.6
   port: 2095
@@ -90,7 +107,7 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'T.ME: @aristapanel #5'
+- name: 'T.ME: @aristapanel #7'
   type: vless
   server: tamiiiiz.aryan-sport.ir
   port: 2095
@@ -99,36 +116,42 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
-- name: 'ARISTA #6'
+- name: 'ARISTA #8'
   type: vless
-  server: nldirect.mehchannel.ir
+  server: 216.24.57.1
   port: 2095
-  uuid: 40597883-f773-4a6b-b305-3a6bebfee563
-  network: tcp
-  tls: true
+  uuid: c348f38e-0963-4469-9fe6-db26a8c261ca
+  network: httpupgrade
+  tls: false
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: play.google.com
-  reality-opts:
-    public-key: Jm58PVXROqNIP6cVW-QchyzIjvxvDMxTaA3uLyl3Bgc
-    short-id: "5a84a6fcc2f484a6"
-- name: 'ARISTA #7'
+- name: 'ARISTA #9'
   type: vless
-  server: nldirect.mehchannel.ir
+  server: 216.24.57.1
   port: 2095
-  uuid: 40597883-f773-4a6b-b305-3a6bebfee563
-  network: tcp
-  tls: true
+  uuid: c348f38e-0963-4469-9fe6-db26a8c261ca
+  network: httpupgrade
+  tls: false
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: play.google.com
-  reality-opts:
-    public-key: Jm58PVXROqNIP6cVW-QchyzIjvxvDMxTaA3uLyl3Bgc
-    short-id: "5a84a6fcc2f484a6"
+- name: 'ARISTA #10'
+  type: vless
+  server: 216.24.57.1
+  port: 2095
+  uuid: c348f38e-0963-4469-9fe6-db26a8c261ca
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #11'
+  type: vless
+  server: 216.24.57.1
+  port: 2095
+  uuid: c348f38e-0963-4469-9fe6-db26a8c261ca
+  network: httpupgrade
+  tls: false
+  udp: true
+  skip-cert-verify: true
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -139,12 +162,16 @@ proxy-groups:
   timeout: 3000
   proxies: &id001
   - 'ARISTA #1'
-  - 'T.ME: @aristapanel #2'
+  - 'ARISTA #2'
   - 'T.ME: @aristapanel #3'
   - 'T.ME: @aristapanel #4'
   - 'T.ME: @aristapanel #5'
-  - 'ARISTA #6'
-  - 'ARISTA #7'
+  - 'T.ME: @aristapanel #6'
+  - 'T.ME: @aristapanel #7'
+  - 'ARISTA #8'
+  - 'ARISTA #9'
+  - 'ARISTA #10'
+  - 'ARISTA #11'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

@@ -1,6 +1,6 @@
 # TELEGRAM - Port 8443
-# Updated: 2026-11-22 15:06:42
-# Count: 84
+# Updated: 2026-11-22 18:06:43
+# Count: 128
 
 mixed-port: 7890
 allow-lan: false
@@ -49,70 +49,43 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'ARISTA #1'
-  type: vmess
-  server: 104.21.57.84
+  type: vless
+  server: 37.235.247.81
   port: 8443
-  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
-  alterId: 0
-  cipher: auto
-  network: ws
+  uuid: 2ae0670d-0bdf-409e-9a55-4e970252d378
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  tcp-fast-open: true
-  servername: v2ray1.dozapp.xyz
-  ws-opts:
-    path: /lMnsZUN4/
-    headers:
-      Host: v2ray1.dozapp.xyz
+  flow: xtls-rprx-vision
+  servername: apple.com
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: "6ba85179e30d4fc2"
 - name: 'ARISTA #2'
-  type: vmess
-  server: 188.114.96.3
+  type: vless
+  server: 185.117.88.9
   port: 8443
-  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
-  alterId: 0
-  cipher: auto
-  network: ws
+  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  tcp-fast-open: true
-  servername: v2ray1.dozapp.xyz
-  ws-opts:
-    path: /lMnsZUN4/
+  flow: xtls-rprx-vision
+  servername: www.apple.com
+  reality-opts:
+    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
+    short-id: "f8d0271b4b5f9efc"
 - name: 'ARISTA #3'
-  type: vmess
-  server: 104.21.57.84
+  type: vless
+  server: 51.38.71.147
   port: 8443
-  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
+  uuid: c08f0056-7a6d-4931-813b-aaa3cdd00aed
+  network: tcp
+  tls: false
   udp: true
   skip-cert-verify: true
-  tcp-fast-open: true
-  servername: v2ray1.dozapp.xyz
-  ws-opts:
-    path: /lMnsZUN4/
-    headers:
-      Host: v2ray1.dozapp.xyz
 - name: 'ARISTA #4'
-  type: vmess
-  server: 188.114.96.3
-  port: 8443
-  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: v2ray1.dozapp.xyz
-  ws-opts:
-    path: /lMnsZUN4/
-- name: 'ARISTA #5'
   type: vless
   server: 48.103.133.47
   port: 8443
@@ -123,25 +96,48 @@ proxies:
   skip-cert-verify: true
   flow: xtls-rprx-vision
   client-fingerprint: firefox
+  servername: apple.com
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: "6ba85179e30d4fc2"
+- name: 'ARISTA #5'
+  type: vless
+  server: 37.235.247.81
+  port: 8443
+  uuid: 2ae0670d-0bdf-409e-9a55-4e970252d378
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
   servername: apple.com
   reality-opts:
     public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
     short-id: "6ba85179e30d4fc2"
 - name: 'ARISTA #6'
   type: vless
-  server: 37.235.247.81
+  server: 185.117.88.9
   port: 8443
-  uuid: 2ae0670d-0bdf-409e-9a55-4e970252d378
+  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
   flow: xtls-rprx-vision
-  servername: apple.com
+  servername: www.apple.com
   reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
+    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
+    short-id: "f8d0271b4b5f9efc"
 - name: 'ARISTA #7'
+  type: vless
+  server: 51.38.71.147
+  port: 8443
+  uuid: c08f0056-7a6d-4931-813b-aaa3cdd00aed
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #8'
   type: vless
   server: 48.103.133.47
   port: 8443
@@ -152,471 +148,26 @@ proxies:
   skip-cert-verify: true
   flow: xtls-rprx-vision
   client-fingerprint: firefox
-  servername: apple.com
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #8'
-  type: vless
-  server: 37.235.247.81
-  port: 8443
-  uuid: 2ae0670d-0bdf-409e-9a55-4e970252d378
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
   servername: apple.com
   reality-opts:
     public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
     short-id: "6ba85179e30d4fc2"
 - name: 'ARISTA #9'
   type: vless
-  server: 178.20.28.5
+  server: 194.54.80.37
   port: 8443
-  uuid: 4fabeed0-790e-9724-8f12-138ed31ac60e
-  network: grpc
+  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: res.cdn.office.net
-  grpc-opts:
-    grpc-service-name: TunService
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.apple.com
   reality-opts:
-    public-key: 4g8R0-Acc1LjppgvUopldH0Wg3JA2tPXvYB96aJnigo
+    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
+    short-id: "f8d0271b4b5f9efc"
 - name: 'ARISTA #10'
-  type: vless
-  server: 195.123.209.159
-  port: 8443
-  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: www.apple.com
-  reality-opts:
-    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
-    short-id: "f8d0271b4b5f9efc"
-- name: 'ARISTA #11'
-  type: vless
-  server: 27.50.49.242
-  port: 8443
-  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: qq
-  servername: proxy-1cu.pages.dev
-  ws-opts:
-    path: /
-    headers:
-      Host: proxy-1cu.pages.dev
-- name: 'ARISTA #12'
-  type: vless
-  server: 147.45.47.101
-  port: 8443
-  uuid: 27f26dee-9cf1-4cca-93f8-9ac23d311408
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: apple.com
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #13'
-  type: vless
-  server: 48.103.140.3
-  port: 8443
-  uuid: 8cdfe05b-4701-424d-9b15-8a201c79c77f
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: ya.zanet.baby
-  reality-opts:
-    public-key: mXXjb3UdDGtSjsIWunJ7QV8nMZHz8KUni1IGML3o9ic
-    short-id: "d6bb2cdd"
-- name: 'ARISTA #14'
-  type: vless
-  server: ofjz337a.coreping.ir
-  port: 8443
-  uuid: ccb4f3c0-3ac6-0001-9bf9-a12e86e0cc07
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: 48dbe9596b336828.freeino.ir
-- name: 'ARISTA #15'
-  type: vless
-  server: 146.19.254.171
-  port: 8443
-  uuid: 24fb9b5b-43b7-4058-a7e5-a0499ada1fda
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: 146.19.254.171
-- name: 'ARISTA #16'
-  type: vless
-  server: 135.136.33.134
-  port: 8443
-  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
-    short-id: "f8d0271b4b5f9efc"
-- name: 'ARISTA #17'
-  type: vless
-  server: 48.103.133.47
-  port: 8443
-  uuid: 2ed34e7c-45c5-4e0e-bcab-42fe99a7bd25
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: apple.com
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #18'
-  type: vless
-  server: 51.38.71.147
-  port: 8443
-  uuid: c08f0056-7a6d-4931-813b-aaa3cdd00aed
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #19'
-  type: vless
-  server: 5.104.74.48
-  port: 8443
-  uuid: 2dbd26f0-f419-4026-b553-0a3e08cca1ee
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: forum-nl-p1.ovchinkasp.ru
-  reality-opts:
-    public-key: kJsnrk06lPN3juIX5zXm1Sc_LUQcM5ueZ0l2HC6HEjI
-    short-id: "9ae55c76092c774a"
-- name: 'ARISTA #20'
-  type: vless
-  server: 185.117.88.9
-  port: 8443
-  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: www.apple.com
-  reality-opts:
-    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
-    short-id: "f8d0271b4b5f9efc"
-- name: 'ARISTA #21'
-  type: vless
-  server: dl3.mbndadwsdf132131.torkey.ir
-  port: 8443
-  uuid: b856294d-5767-4878-8cf5-c1d5ffbfb284
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - ' http/1.1'
-  client-fingerprint: chrome
-  servername: dl3.mbndadwsdf132131.torkey.ir
-- name: 'ARISTA #22'
-  type: vless
-  server: 48.103.133.47
-  port: 8443
-  uuid: 2ed34e7c-45c5-4e0e-bcab-42fe99a7bd25
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: apple.com
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #23'
-  type: vless
-  server: 37.235.247.81
-  port: 8443
-  uuid: 2ae0670d-0bdf-409e-9a55-4e970252d378
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: apple.com
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #24'
-  type: vless
-  server: 178.20.28.5
-  port: 8443
-  uuid: 4fabeed0-790e-9724-8f12-138ed31ac60e
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: res.cdn.office.net
-  grpc-opts:
-    grpc-service-name: TunService
-  reality-opts:
-    public-key: 4g8R0-Acc1LjppgvUopldH0Wg3JA2tPXvYB96aJnigo
-- name: 'ARISTA #25'
-  type: vless
-  server: 195.123.209.159
-  port: 8443
-  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: www.apple.com
-  reality-opts:
-    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
-    short-id: "f8d0271b4b5f9efc"
-- name: 'ARISTA #26'
-  type: vless
-  server: 48.103.133.47
-  port: 8443
-  uuid: 2ed34e7c-45c5-4e0e-bcab-42fe99a7bd25
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: apple.com
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #27'
-  type: vless
-  server: 37.235.247.81
-  port: 8443
-  uuid: 2ae0670d-0bdf-409e-9a55-4e970252d378
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: apple.com
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #28'
-  type: vless
-  server: 178.20.28.5
-  port: 8443
-  uuid: 4fabeed0-790e-9724-8f12-138ed31ac60e
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: res.cdn.office.net
-  grpc-opts:
-    grpc-service-name: TunService
-  reality-opts:
-    public-key: 4g8R0-Acc1LjppgvUopldH0Wg3JA2tPXvYB96aJnigo
-- name: 'ARISTA #29'
-  type: vless
-  server: 195.123.209.159
-  port: 8443
-  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: www.apple.com
-  reality-opts:
-    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
-    short-id: "f8d0271b4b5f9efc"
-- name: 'ARISTA #30'
-  type: vless
-  server: 27.50.49.242
-  port: 8443
-  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: qq
-  servername: proxy-1cu.pages.dev
-  ws-opts:
-    path: /
-    headers:
-      Host: proxy-1cu.pages.dev
-- name: 'ARISTA #31'
-  type: vless
-  server: 147.45.47.101
-  port: 8443
-  uuid: 27f26dee-9cf1-4cca-93f8-9ac23d311408
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: apple.com
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #32'
-  type: vless
-  server: 48.103.140.3
-  port: 8443
-  uuid: 8cdfe05b-4701-424d-9b15-8a201c79c77f
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: ya.zanet.baby
-  reality-opts:
-    public-key: mXXjb3UdDGtSjsIWunJ7QV8nMZHz8KUni1IGML3o9ic
-    short-id: "d6bb2cdd"
-- name: 'ARISTA #33'
-  type: vless
-  server: ofjz337a.coreping.ir
-  port: 8443
-  uuid: ccb4f3c0-3ac6-0001-9bf9-a12e86e0cc07
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: 48dbe9596b336828.freeino.ir
-- name: 'ARISTA #34'
-  type: vless
-  server: 146.19.254.171
-  port: 8443
-  uuid: 24fb9b5b-43b7-4058-a7e5-a0499ada1fda
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: 146.19.254.171
-- name: 'ARISTA #35'
-  type: vless
-  server: 135.136.33.134
-  port: 8443
-  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
-    short-id: "f8d0271b4b5f9efc"
-- name: 'ARISTA #36'
-  type: vless
-  server: 48.103.133.47
-  port: 8443
-  uuid: 2ed34e7c-45c5-4e0e-bcab-42fe99a7bd25
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: apple.com
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #37'
-  type: vless
-  server: 51.38.71.147
-  port: 8443
-  uuid: c08f0056-7a6d-4931-813b-aaa3cdd00aed
-  network: tcp
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #38'
-  type: vless
-  server: 5.104.74.48
-  port: 8443
-  uuid: 2dbd26f0-f419-4026-b553-0a3e08cca1ee
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: forum-nl-p1.ovchinkasp.ru
-  reality-opts:
-    public-key: kJsnrk06lPN3juIX5zXm1Sc_LUQcM5ueZ0l2HC6HEjI
-    short-id: "9ae55c76092c774a"
-- name: 'ARISTA #39'
-  type: vless
-  server: 185.117.88.9
-  port: 8443
-  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: www.apple.com
-  reality-opts:
-    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
-    short-id: "f8d0271b4b5f9efc"
-- name: 'ARISTA #40'
-  type: vless
-  server: dl3.mbndadwsdf132131.torkey.ir
-  port: 8443
-  uuid: b856294d-5767-4878-8cf5-c1d5ffbfb284
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - ' http/1.1'
-  client-fingerprint: chrome
-  servername: dl3.mbndadwsdf132131.torkey.ir
-- name: 'ARISTA #41'
   type: vless
   server: static.69.71.203.116.clients.your-server.de
   port: 8443
@@ -631,7 +182,7 @@ proxies:
   - http/1.1
   client-fingerprint: chrome
   servername: static.229.163.46.78.clients.your-server.de
-- name: 'ARISTA #42'
+- name: 'ARISTA #11'
   type: vless
   server: static.167.125.29.2.clients.your-server.de
   port: 8443
@@ -646,7 +197,7 @@ proxies:
   - http/1.1
   client-fingerprint: chrome
   servername: static.162.97.119.168.clients.your-server.de
-- name: 'ARISTA #43'
+- name: 'ARISTA #12'
   type: vless
   server: static.216.7.245.188.clients.your-server.de
   port: 8443
@@ -661,7 +212,7 @@ proxies:
   - http/1.1
   client-fingerprint: chrome
   servername: static.216.7.245.188.clients.your-server.de
-- name: 'ARISTA #44'
+- name: 'ARISTA #13'
   type: vless
   server: static.122.183.105.178.clients.your-server.de
   port: 8443
@@ -676,20 +227,9 @@ proxies:
   - http/1.1
   client-fingerprint: chrome
   servername: static.54.132.13.49.clients.your-server.de
-- name: 'ARISTA #45'
+- name: 'ARISTA #14'
   type: vless
-  server: render.com
-  port: 8443
-  uuid: 0acaa484-60d2-43fc-9c25-13b9c3949f1a
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: germany.netpluse.ir
-- name: 'ARISTA #46'
-  type: vless
-  server: 156.146.40.84
+  server: 195.123.209.159
   port: 8443
   uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
   network: tcp
@@ -697,27 +237,11 @@ proxies:
   udp: true
   skip-cert-verify: true
   flow: xtls-rprx-vision
-  client-fingerprint: chrome
   servername: www.apple.com
   reality-opts:
     public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
     short-id: "f8d0271b4b5f9efc"
-- name: 'ARISTA #47'
-  type: vless
-  server: 77.83.198.104
-  port: 8443
-  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: www.apple.com
-  reality-opts:
-    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
-    short-id: "f8d0271b4b5f9efc"
-- name: 'ARISTA #48'
+- name: 'ARISTA #15'
   type: vless
   server: chatgpt.com
   port: 8443
@@ -732,7 +256,7 @@ proxies:
   - h3
   client-fingerprint: chrome
   servername: sinavm2.soft10.ir
-- name: 'ARISTA #49'
+- name: 'ARISTA #16'
   type: vless
   server: sinavm3.soft10.ir
   port: 8443
@@ -747,7 +271,7 @@ proxies:
   - h3
   client-fingerprint: chrome
   servername: sinavm3.soft10.ir
-- name: 'ARISTA #50'
+- name: 'ARISTA #17'
   type: vless
   server: chatgpt.com
   port: 8443
@@ -762,7 +286,7 @@ proxies:
   - h3
   client-fingerprint: chrome
   servername: sinavm3.soft10.ir
-- name: 'ARISTA #51'
+- name: 'ARISTA #18'
   type: vless
   server: 172.64.155.209
   port: 8443
@@ -777,358 +301,7 @@ proxies:
   - h3
   client-fingerprint: chrome
   servername: sinavm2.soft10.ir
-- name: 'ARISTA #52'
-  type: vless
-  server: 122.8.93.4
-  port: 8443
-  uuid: 4fabeed0-790e-9724-8f12-138ed31ac60e
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.epson.com
-  grpc-opts:
-    grpc-service-name: TunService
-  reality-opts:
-    public-key: -GbQJg3bnEGEVFjVaRRu01cgF1f0K_maI4d5MWtMb28
-- name: 'ARISTA #53'
-  type: vless
-  server: 48.103.133.47
-  port: 8443
-  uuid: 2ed34e7c-45c5-4e0e-bcab-42fe99a7bd25
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: apple.com
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #54'
-  type: vless
-  server: 37.235.247.81
-  port: 8443
-  uuid: 2ae0670d-0bdf-409e-9a55-4e970252d378
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: apple.com
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #55'
-  type: vless
-  server: 178.20.28.5
-  port: 8443
-  uuid: 4fabeed0-790e-9724-8f12-138ed31ac60e
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: res.cdn.office.net
-  grpc-opts:
-    grpc-service-name: TunService
-  reality-opts:
-    public-key: 4g8R0-Acc1LjppgvUopldH0Wg3JA2tPXvYB96aJnigo
-- name: 'ARISTA #56'
-  type: vless
-  server: 195.123.209.159
-  port: 8443
-  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: www.apple.com
-  reality-opts:
-    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
-    short-id: "f8d0271b4b5f9efc"
-- name: 'ARISTA #57'
-  type: vless
-  server: 27.50.49.242
-  port: 8443
-  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: qq
-  servername: proxy-1cu.pages.dev
-  ws-opts:
-    path: /
-    headers:
-      Host: proxy-1cu.pages.dev
-- name: 'ARISTA #58'
-  type: vless
-  server: 147.45.47.101
-  port: 8443
-  uuid: 27f26dee-9cf1-4cca-93f8-9ac23d311408
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: apple.com
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #59'
-  type: vless
-  server: 48.103.140.3
-  port: 8443
-  uuid: 8cdfe05b-4701-424d-9b15-8a201c79c77f
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: ya.zanet.baby
-  reality-opts:
-    public-key: mXXjb3UdDGtSjsIWunJ7QV8nMZHz8KUni1IGML3o9ic
-    short-id: "d6bb2cdd"
-- name: 'ARISTA #60'
-  type: vless
-  server: 48.103.133.47
-  port: 8443
-  uuid: 2ed34e7c-45c5-4e0e-bcab-42fe99a7bd25
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: apple.com
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #61'
-  type: vless
-  server: 37.235.247.81
-  port: 8443
-  uuid: 2ae0670d-0bdf-409e-9a55-4e970252d378
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: apple.com
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #62'
-  type: vless
-  server: 178.20.28.5
-  port: 8443
-  uuid: 4fabeed0-790e-9724-8f12-138ed31ac60e
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: res.cdn.office.net
-  grpc-opts:
-    grpc-service-name: TunService
-  reality-opts:
-    public-key: 4g8R0-Acc1LjppgvUopldH0Wg3JA2tPXvYB96aJnigo
-- name: 'ARISTA #63'
-  type: vless
-  server: 195.123.209.159
-  port: 8443
-  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: www.apple.com
-  reality-opts:
-    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
-    short-id: "f8d0271b4b5f9efc"
-- name: 'ARISTA #64'
-  type: vless
-  server: 27.50.49.242
-  port: 8443
-  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: qq
-  servername: proxy-1cu.pages.dev
-  ws-opts:
-    path: /
-    headers:
-      Host: proxy-1cu.pages.dev
-- name: 'ARISTA #65'
-  type: vless
-  server: 147.45.47.101
-  port: 8443
-  uuid: 27f26dee-9cf1-4cca-93f8-9ac23d311408
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: apple.com
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #66'
-  type: vless
-  server: 48.103.140.3
-  port: 8443
-  uuid: 8cdfe05b-4701-424d-9b15-8a201c79c77f
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: ya.zanet.baby
-  reality-opts:
-    public-key: mXXjb3UdDGtSjsIWunJ7QV8nMZHz8KUni1IGML3o9ic
-    short-id: "d6bb2cdd"
-- name: 'ARISTA #67'
-  type: vless
-  server: ofjz337a.coreping.ir
-  port: 8443
-  uuid: ccb4f3c0-3ac6-0001-9bf9-a12e86e0cc07
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: 48dbe9596b336828.freeino.ir
-- name: 'ARISTA #68'
-  type: vless
-  server: 48.103.133.47
-  port: 8443
-  uuid: 2ed34e7c-45c5-4e0e-bcab-42fe99a7bd25
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: apple.com
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #69'
-  type: vless
-  server: 37.235.247.81
-  port: 8443
-  uuid: 2ae0670d-0bdf-409e-9a55-4e970252d378
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: apple.com
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #70'
-  type: vless
-  server: 178.20.28.5
-  port: 8443
-  uuid: 4fabeed0-790e-9724-8f12-138ed31ac60e
-  network: grpc
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: res.cdn.office.net
-  grpc-opts:
-    grpc-service-name: TunService
-  reality-opts:
-    public-key: 4g8R0-Acc1LjppgvUopldH0Wg3JA2tPXvYB96aJnigo
-- name: 'ARISTA #71'
-  type: vless
-  server: 195.123.209.159
-  port: 8443
-  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  servername: www.apple.com
-  reality-opts:
-    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
-    short-id: "f8d0271b4b5f9efc"
-- name: 'ARISTA #72'
-  type: vless
-  server: 27.50.49.242
-  port: 8443
-  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: qq
-  servername: proxy-1cu.pages.dev
-  ws-opts:
-    path: /
-    headers:
-      Host: proxy-1cu.pages.dev
-- name: 'ARISTA #73'
-  type: vless
-  server: 147.45.47.101
-  port: 8443
-  uuid: 27f26dee-9cf1-4cca-93f8-9ac23d311408
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: apple.com
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #74'
-  type: vless
-  server: 48.103.140.3
-  port: 8443
-  uuid: 8cdfe05b-4701-424d-9b15-8a201c79c77f
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: ya.zanet.baby
-  reality-opts:
-    public-key: mXXjb3UdDGtSjsIWunJ7QV8nMZHz8KUni1IGML3o9ic
-    short-id: "d6bb2cdd"
-- name: 'ARISTA #75'
-  type: vless
-  server: ofjz337a.coreping.ir
-  port: 8443
-  uuid: ccb4f3c0-3ac6-0001-9bf9-a12e86e0cc07
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: 48dbe9596b336828.freeino.ir
-- name: 'ARISTA #76'
+- name: 'ARISTA #19'
   type: vless
   server: 146.19.254.171
   port: 8443
@@ -1139,7 +312,51 @@ proxies:
   skip-cert-verify: true
   flow: xtls-rprx-vision
   servername: 146.19.254.171
-- name: 'ARISTA #77'
+- name: 'ARISTA #20'
+  type: vless
+  server: 48.103.133.47
+  port: 8443
+  uuid: 2ed34e7c-45c5-4e0e-bcab-42fe99a7bd25
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: apple.com
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: "6ba85179e30d4fc2"
+- name: 'ARISTA #21'
+  type: vless
+  server: 146.0.73.104
+  port: 8443
+  uuid: af194c0e-95c3-417b-85bf-9ac3027f903e
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: qq
+  servername: ads.5ka.ru
+  reality-opts:
+    public-key: xSnNFylG-eUpKDPa2a-R3rdSB1HDrmenM-jU19n-xXA
+    short-id: "612d8fa72c"
+- name: 'ARISTA #22'
+  type: vless
+  server: 77.83.198.104
+  port: 8443
+  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
+    short-id: "f8d0271b4b5f9efc"
+- name: 'ARISTA #23'
   type: vless
   server: 135.136.33.134
   port: 8443
@@ -1154,7 +371,435 @@ proxies:
   reality-opts:
     public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
     short-id: "f8d0271b4b5f9efc"
-- name: 'ARISTA #78'
+- name: 'ARISTA #24'
+  type: vless
+  server: 135.136.33.134
+  port: 8443
+  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
+    short-id: "f8d0271b4b5f9efc"
+- name: 'ARISTA #25'
+  type: vless
+  server: 156.146.40.84
+  port: 8443
+  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
+    short-id: "f8d0271b4b5f9efc"
+- name: 'ARISTA #26'
+  type: vless
+  server: 45.112.192.165
+  port: 8443
+  uuid: 12de3048-e455-11f1-9e1b-f328d1ed3475
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: cloudflare.com
+  reality-opts:
+    public-key: vCVpybJCiMGBpMlocJ4wKUllrZNAAth25itR4DQ7-UE
+    short-id: "e1422a768cddb8c4"
+- name: 'ARISTA #27'
+  type: vless
+  server: 147.45.47.101
+  port: 8443
+  uuid: 27f26dee-9cf1-4cca-93f8-9ac23d311408
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: apple.com
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: "6ba85179e30d4fc2"
+- name: 'ARISTA #28'
+  type: vless
+  server: 122.8.93.4
+  port: 8443
+  uuid: 4fabeed0-790e-9724-8f12-138ed31ac60e
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.epson.com
+  grpc-opts:
+    grpc-service-name: TunService
+  reality-opts:
+    public-key: -GbQJg3bnEGEVFjVaRRu01cgF1f0K_maI4d5MWtMb28
+- name: 'ARISTA #29'
+  type: vless
+  server: 135.136.33.134
+  port: 8443
+  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
+    short-id: "f8d0271b4b5f9efc"
+- name: 'ARISTA #30'
+  type: vless
+  server: 37.235.247.81
+  port: 8443
+  uuid: 2ae0670d-0bdf-409e-9a55-4e970252d378
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: apple.com
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: "6ba85179e30d4fc2"
+- name: 'ARISTA #31'
+  type: vless
+  server: 185.117.88.9
+  port: 8443
+  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: www.apple.com
+  reality-opts:
+    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
+    short-id: "f8d0271b4b5f9efc"
+- name: 'ARISTA #32'
+  type: vless
+  server: 51.38.71.147
+  port: 8443
+  uuid: c08f0056-7a6d-4931-813b-aaa3cdd00aed
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #33'
+  type: vless
+  server: 48.103.133.47
+  port: 8443
+  uuid: 2ed34e7c-45c5-4e0e-bcab-42fe99a7bd25
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: apple.com
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: "6ba85179e30d4fc2"
+- name: 'ARISTA #34'
+  type: vless
+  server: 194.54.80.37
+  port: 8443
+  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
+    short-id: "f8d0271b4b5f9efc"
+- name: 'ARISTA #35'
+  type: vless
+  server: static.69.71.203.116.clients.your-server.de
+  port: 8443
+  uuid: b2505fa2-f7c4-40d2-8c4a-1f6336bd37f1
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: static.229.163.46.78.clients.your-server.de
+- name: 'ARISTA #36'
+  type: vless
+  server: static.167.125.29.2.clients.your-server.de
+  port: 8443
+  uuid: b2505fa2-f7c4-40d2-8c4a-1f6336bd37f1
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: static.162.97.119.168.clients.your-server.de
+- name: 'ARISTA #37'
+  type: vless
+  server: static.216.7.245.188.clients.your-server.de
+  port: 8443
+  uuid: b2505fa2-f7c4-40d2-8c4a-1f6336bd37f1
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: static.216.7.245.188.clients.your-server.de
+- name: 'ARISTA #38'
+  type: vless
+  server: static.122.183.105.178.clients.your-server.de
+  port: 8443
+  uuid: b2505fa2-f7c4-40d2-8c4a-1f6336bd37f1
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: static.54.132.13.49.clients.your-server.de
+- name: 'ARISTA #39'
+  type: vless
+  server: 37.235.247.81
+  port: 8443
+  uuid: 2ae0670d-0bdf-409e-9a55-4e970252d378
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: apple.com
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: "6ba85179e30d4fc2"
+- name: 'ARISTA #40'
+  type: vless
+  server: 185.117.88.9
+  port: 8443
+  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: www.apple.com
+  reality-opts:
+    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
+    short-id: "f8d0271b4b5f9efc"
+- name: 'ARISTA #41'
+  type: vless
+  server: 51.38.71.147
+  port: 8443
+  uuid: c08f0056-7a6d-4931-813b-aaa3cdd00aed
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #42'
+  type: vless
+  server: 48.103.133.47
+  port: 8443
+  uuid: 2ed34e7c-45c5-4e0e-bcab-42fe99a7bd25
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: apple.com
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: "6ba85179e30d4fc2"
+- name: 'ARISTA #43'
+  type: vless
+  server: 194.54.80.37
+  port: 8443
+  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
+    short-id: "f8d0271b4b5f9efc"
+- name: 'ARISTA #44'
+  type: vless
+  server: static.69.71.203.116.clients.your-server.de
+  port: 8443
+  uuid: b2505fa2-f7c4-40d2-8c4a-1f6336bd37f1
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: static.229.163.46.78.clients.your-server.de
+- name: 'ARISTA #45'
+  type: vless
+  server: static.167.125.29.2.clients.your-server.de
+  port: 8443
+  uuid: b2505fa2-f7c4-40d2-8c4a-1f6336bd37f1
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: static.162.97.119.168.clients.your-server.de
+- name: 'ARISTA #46'
+  type: vless
+  server: static.216.7.245.188.clients.your-server.de
+  port: 8443
+  uuid: b2505fa2-f7c4-40d2-8c4a-1f6336bd37f1
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: static.216.7.245.188.clients.your-server.de
+- name: 'ARISTA #47'
+  type: vless
+  server: static.122.183.105.178.clients.your-server.de
+  port: 8443
+  uuid: b2505fa2-f7c4-40d2-8c4a-1f6336bd37f1
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: static.54.132.13.49.clients.your-server.de
+- name: 'ARISTA #48'
+  type: vless
+  server: 195.123.209.159
+  port: 8443
+  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: www.apple.com
+  reality-opts:
+    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
+    short-id: "f8d0271b4b5f9efc"
+- name: 'ARISTA #49'
+  type: vless
+  server: chatgpt.com
+  port: 8443
+  uuid: a20ea704-ec9d-4c5d-9b12-fa760cdf2290
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  - h2
+  - h3
+  client-fingerprint: chrome
+  servername: sinavm2.soft10.ir
+- name: 'ARISTA #50'
+  type: vless
+  server: sinavm3.soft10.ir
+  port: 8443
+  uuid: c2425034-91ef-44bf-9fd4-f2be9c1e989a
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  - h2
+  - h3
+  client-fingerprint: chrome
+  servername: sinavm3.soft10.ir
+- name: 'ARISTA #51'
+  type: vless
+  server: chatgpt.com
+  port: 8443
+  uuid: c2425034-91ef-44bf-9fd4-f2be9c1e989a
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  - h2
+  - h3
+  client-fingerprint: chrome
+  servername: sinavm3.soft10.ir
+- name: 'ARISTA #52'
+  type: vless
+  server: 172.64.155.209
+  port: 8443
+  uuid: a20ea704-ec9d-4c5d-9b12-fa760cdf2290
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  - h2
+  - h3
+  client-fingerprint: chrome
+  servername: sinavm2.soft10.ir
+- name: 'ARISTA #53'
+  type: vless
+  server: 146.19.254.171
+  port: 8443
+  uuid: 24fb9b5b-43b7-4058-a7e5-a0499ada1fda
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: 146.19.254.171
+- name: 'ARISTA #54'
   type: vless
   server: 48.103.133.47
   port: 8443
@@ -1168,7 +813,281 @@ proxies:
   reality-opts:
     public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
     short-id: "6ba85179e30d4fc2"
-- name: 'ARISTA #79'
+- name: 'ARISTA #55'
+  type: vless
+  server: 146.0.73.104
+  port: 8443
+  uuid: af194c0e-95c3-417b-85bf-9ac3027f903e
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: qq
+  servername: ads.5ka.ru
+  reality-opts:
+    public-key: xSnNFylG-eUpKDPa2a-R3rdSB1HDrmenM-jU19n-xXA
+    short-id: "612d8fa72c"
+- name: 'ARISTA #56'
+  type: vless
+  server: 77.83.198.104
+  port: 8443
+  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
+    short-id: "f8d0271b4b5f9efc"
+- name: 'ARISTA #57'
+  type: vless
+  server: 135.136.33.134
+  port: 8443
+  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
+    short-id: "f8d0271b4b5f9efc"
+- name: 'ARISTA #58'
+  type: vless
+  server: 135.136.33.134
+  port: 8443
+  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
+    short-id: "f8d0271b4b5f9efc"
+- name: 'ARISTA #59'
+  type: vless
+  server: 156.146.40.84
+  port: 8443
+  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
+    short-id: "f8d0271b4b5f9efc"
+- name: 'ARISTA #60'
+  type: vless
+  server: 45.112.192.165
+  port: 8443
+  uuid: 12de3048-e455-11f1-9e1b-f328d1ed3475
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: cloudflare.com
+  reality-opts:
+    public-key: vCVpybJCiMGBpMlocJ4wKUllrZNAAth25itR4DQ7-UE
+    short-id: "e1422a768cddb8c4"
+- name: 'ARISTA #61'
+  type: vless
+  server: 147.45.47.101
+  port: 8443
+  uuid: 27f26dee-9cf1-4cca-93f8-9ac23d311408
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: apple.com
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: "6ba85179e30d4fc2"
+- name: 'ARISTA #62'
+  type: vless
+  server: 122.8.93.4
+  port: 8443
+  uuid: 4fabeed0-790e-9724-8f12-138ed31ac60e
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.epson.com
+  grpc-opts:
+    grpc-service-name: TunService
+  reality-opts:
+    public-key: -GbQJg3bnEGEVFjVaRRu01cgF1f0K_maI4d5MWtMb28
+- name: 'ARISTA #63'
+  type: vless
+  server: 135.136.33.134
+  port: 8443
+  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
+    short-id: "f8d0271b4b5f9efc"
+- name: 'ARISTA #64'
+  type: vless
+  server: render.com
+  port: 8443
+  uuid: 0acaa484-60d2-43fc-9c25-13b9c3949f1a
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: germany.netpluse.ir
+- name: 'ARISTA #65'
+  type: vless
+  server: 172.64.229.88
+  port: 8443
+  uuid: a8d9c86f-cddb-4fa5-96f7-f68eb48b3cb3
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: sg01.cdn00.top
+  ws-opts:
+    path: /shanhai/sg01
+    headers:
+      Host: sg01.cdn00.top
+- name: 'ARISTA #66'
+  type: vless
+  server: 178.20.28.5
+  port: 8443
+  uuid: 4fabeed0-790e-9724-8f12-138ed31ac60e
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: res.cdn.office.net
+  grpc-opts:
+    grpc-service-name: TunService
+  reality-opts:
+    public-key: 4g8R0-Acc1LjppgvUopldH0Wg3JA2tPXvYB96aJnigo
+- name: 'ARISTA #67'
+  type: vless
+  server: gr1.vpnjantit.com
+  port: 8443
+  uuid: a688bbe2-e455-11f1-a2d1-0f56c102b673
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: cloudflare.com
+  reality-opts:
+    public-key: GbzSIW3yd11r22Twahtyz4CMDxUj_QQe5RKvZukxDUw
+    short-id: "992f9f92ddfa5056"
+- name: 'ARISTA #68'
+  type: vless
+  server: dl3.mbndadwsdf132131.torkey.ir
+  port: 8443
+  uuid: b856294d-5767-4878-8cf5-c1d5ffbfb284
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - ' http/1.1'
+  client-fingerprint: chrome
+  servername: dl3.mbndadwsdf132131.torkey.ir
+- name: 'ARISTA #69'
+  type: vless
+  server: dl3.mbndadwsdf132131.torkey.ir
+  port: 8443
+  uuid: c8abc13e-b40a-4a68-893a-756d3684a7fe
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - ' http/1.1'
+  client-fingerprint: chrome
+  servername: dl3.mbndadwsdf132131.torkey.ir
+- name: 'ARISTA #70'
+  type: vless
+  server: 48.103.140.3
+  port: 8443
+  uuid: 8cdfe05b-4701-424d-9b15-8a201c79c77f
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: ya.zanet.baby
+  reality-opts:
+    public-key: mXXjb3UdDGtSjsIWunJ7QV8nMZHz8KUni1IGML3o9ic
+    short-id: "d6bb2cdd"
+- name: 'ARISTA #71'
+  type: vless
+  server: 5.104.74.48
+  port: 8443
+  uuid: 2dbd26f0-f419-4026-b553-0a3e08cca1ee
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: forum-nl-p1.ovchinkasp.ru
+  reality-opts:
+    public-key: kJsnrk06lPN3juIX5zXm1Sc_LUQcM5ueZ0l2HC6HEjI
+    short-id: "9ae55c76092c774a"
+- name: 'ARISTA #72'
+  type: vless
+  server: 37.235.247.81
+  port: 8443
+  uuid: 2ae0670d-0bdf-409e-9a55-4e970252d378
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: apple.com
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: "6ba85179e30d4fc2"
+- name: 'ARISTA #73'
+  type: vless
+  server: 185.117.88.9
+  port: 8443
+  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: www.apple.com
+  reality-opts:
+    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
+    short-id: "f8d0271b4b5f9efc"
+- name: 'ARISTA #74'
   type: vless
   server: 51.38.71.147
   port: 8443
@@ -1177,19 +1096,713 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
+- name: 'ARISTA #75'
+  type: vless
+  server: 48.103.133.47
+  port: 8443
+  uuid: 2ed34e7c-45c5-4e0e-bcab-42fe99a7bd25
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: apple.com
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: "6ba85179e30d4fc2"
+- name: 'ARISTA #76'
+  type: vless
+  server: 194.54.80.37
+  port: 8443
+  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
+    short-id: "f8d0271b4b5f9efc"
+- name: 'ARISTA #77'
+  type: vless
+  server: static.69.71.203.116.clients.your-server.de
+  port: 8443
+  uuid: b2505fa2-f7c4-40d2-8c4a-1f6336bd37f1
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: static.229.163.46.78.clients.your-server.de
+- name: 'ARISTA #78'
+  type: vless
+  server: static.167.125.29.2.clients.your-server.de
+  port: 8443
+  uuid: b2505fa2-f7c4-40d2-8c4a-1f6336bd37f1
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: static.162.97.119.168.clients.your-server.de
+- name: 'ARISTA #79'
+  type: vless
+  server: static.216.7.245.188.clients.your-server.de
+  port: 8443
+  uuid: b2505fa2-f7c4-40d2-8c4a-1f6336bd37f1
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: static.216.7.245.188.clients.your-server.de
 - name: 'ARISTA #80'
-  type: trojan
-  server: 85.209.231.48
+  type: vless
+  server: static.122.183.105.178.clients.your-server.de
   port: 8443
-  password: 6e_p3ycSd8R-XZ510xdChaLm6EMrW7BN
+  uuid: b2505fa2-f7c4-40d2-8c4a-1f6336bd37f1
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  tcp-fast-open: true
-  servername: lt.hy2.saturnix.fun
-  client-fingerprint: firefox
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: static.54.132.13.49.clients.your-server.de
 - name: 'ARISTA #81'
+  type: vless
+  server: 195.123.209.159
+  port: 8443
+  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: www.apple.com
+  reality-opts:
+    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
+    short-id: "f8d0271b4b5f9efc"
+- name: 'ARISTA #82'
+  type: vless
+  server: chatgpt.com
+  port: 8443
+  uuid: a20ea704-ec9d-4c5d-9b12-fa760cdf2290
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  - h2
+  - h3
+  client-fingerprint: chrome
+  servername: sinavm2.soft10.ir
+- name: 'ARISTA #83'
+  type: vless
+  server: sinavm3.soft10.ir
+  port: 8443
+  uuid: c2425034-91ef-44bf-9fd4-f2be9c1e989a
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  - h2
+  - h3
+  client-fingerprint: chrome
+  servername: sinavm3.soft10.ir
+- name: 'ARISTA #84'
+  type: vless
+  server: chatgpt.com
+  port: 8443
+  uuid: c2425034-91ef-44bf-9fd4-f2be9c1e989a
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  - h2
+  - h3
+  client-fingerprint: chrome
+  servername: sinavm3.soft10.ir
+- name: 'ARISTA #85'
+  type: vless
+  server: 172.64.155.209
+  port: 8443
+  uuid: a20ea704-ec9d-4c5d-9b12-fa760cdf2290
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  - h2
+  - h3
+  client-fingerprint: chrome
+  servername: sinavm2.soft10.ir
+- name: 'ARISTA #86'
+  type: vless
+  server: 37.235.247.81
+  port: 8443
+  uuid: 2ae0670d-0bdf-409e-9a55-4e970252d378
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: apple.com
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: "6ba85179e30d4fc2"
+- name: 'ARISTA #87'
+  type: vless
+  server: 185.117.88.9
+  port: 8443
+  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: www.apple.com
+  reality-opts:
+    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
+    short-id: "f8d0271b4b5f9efc"
+- name: 'ARISTA #88'
+  type: vless
+  server: 51.38.71.147
+  port: 8443
+  uuid: c08f0056-7a6d-4931-813b-aaa3cdd00aed
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #89'
+  type: vless
+  server: 48.103.133.47
+  port: 8443
+  uuid: 2ed34e7c-45c5-4e0e-bcab-42fe99a7bd25
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: apple.com
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: "6ba85179e30d4fc2"
+- name: 'ARISTA #90'
+  type: vless
+  server: 194.54.80.37
+  port: 8443
+  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
+    short-id: "f8d0271b4b5f9efc"
+- name: 'ARISTA #91'
+  type: vless
+  server: static.69.71.203.116.clients.your-server.de
+  port: 8443
+  uuid: b2505fa2-f7c4-40d2-8c4a-1f6336bd37f1
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: static.229.163.46.78.clients.your-server.de
+- name: 'ARISTA #92'
+  type: vless
+  server: static.167.125.29.2.clients.your-server.de
+  port: 8443
+  uuid: b2505fa2-f7c4-40d2-8c4a-1f6336bd37f1
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: static.162.97.119.168.clients.your-server.de
+- name: 'ARISTA #93'
+  type: vless
+  server: static.216.7.245.188.clients.your-server.de
+  port: 8443
+  uuid: b2505fa2-f7c4-40d2-8c4a-1f6336bd37f1
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: static.216.7.245.188.clients.your-server.de
+- name: 'ARISTA #94'
+  type: vless
+  server: static.122.183.105.178.clients.your-server.de
+  port: 8443
+  uuid: b2505fa2-f7c4-40d2-8c4a-1f6336bd37f1
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: static.54.132.13.49.clients.your-server.de
+- name: 'ARISTA #95'
+  type: vless
+  server: 195.123.209.159
+  port: 8443
+  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: www.apple.com
+  reality-opts:
+    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
+    short-id: "f8d0271b4b5f9efc"
+- name: 'ARISTA #96'
+  type: vless
+  server: chatgpt.com
+  port: 8443
+  uuid: a20ea704-ec9d-4c5d-9b12-fa760cdf2290
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  - h2
+  - h3
+  client-fingerprint: chrome
+  servername: sinavm2.soft10.ir
+- name: 'ARISTA #97'
+  type: vless
+  server: sinavm3.soft10.ir
+  port: 8443
+  uuid: c2425034-91ef-44bf-9fd4-f2be9c1e989a
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  - h2
+  - h3
+  client-fingerprint: chrome
+  servername: sinavm3.soft10.ir
+- name: 'ARISTA #98'
+  type: vless
+  server: chatgpt.com
+  port: 8443
+  uuid: c2425034-91ef-44bf-9fd4-f2be9c1e989a
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  - h2
+  - h3
+  client-fingerprint: chrome
+  servername: sinavm3.soft10.ir
+- name: 'ARISTA #99'
+  type: vless
+  server: 172.64.155.209
+  port: 8443
+  uuid: a20ea704-ec9d-4c5d-9b12-fa760cdf2290
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  - h2
+  - h3
+  client-fingerprint: chrome
+  servername: sinavm2.soft10.ir
+- name: 'ARISTA #100'
+  type: vless
+  server: 146.19.254.171
+  port: 8443
+  uuid: 24fb9b5b-43b7-4058-a7e5-a0499ada1fda
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: 146.19.254.171
+- name: 'ARISTA #101'
+  type: vless
+  server: 48.103.133.47
+  port: 8443
+  uuid: 2ed34e7c-45c5-4e0e-bcab-42fe99a7bd25
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: apple.com
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: "6ba85179e30d4fc2"
+- name: 'ARISTA #102'
+  type: vless
+  server: 146.0.73.104
+  port: 8443
+  uuid: af194c0e-95c3-417b-85bf-9ac3027f903e
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: qq
+  servername: ads.5ka.ru
+  reality-opts:
+    public-key: xSnNFylG-eUpKDPa2a-R3rdSB1HDrmenM-jU19n-xXA
+    short-id: "612d8fa72c"
+- name: 'ARISTA #103'
+  type: vless
+  server: 37.235.247.81
+  port: 8443
+  uuid: 2ae0670d-0bdf-409e-9a55-4e970252d378
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: apple.com
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: "6ba85179e30d4fc2"
+- name: 'ARISTA #104'
+  type: vless
+  server: 185.117.88.9
+  port: 8443
+  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: www.apple.com
+  reality-opts:
+    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
+    short-id: "f8d0271b4b5f9efc"
+- name: 'ARISTA #105'
+  type: vless
+  server: 51.38.71.147
+  port: 8443
+  uuid: c08f0056-7a6d-4931-813b-aaa3cdd00aed
+  network: tcp
+  tls: false
+  udp: true
+  skip-cert-verify: true
+- name: 'ARISTA #106'
+  type: vless
+  server: 48.103.133.47
+  port: 8443
+  uuid: 2ed34e7c-45c5-4e0e-bcab-42fe99a7bd25
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: apple.com
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: "6ba85179e30d4fc2"
+- name: 'ARISTA #107'
+  type: vless
+  server: 194.54.80.37
+  port: 8443
+  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
+    short-id: "f8d0271b4b5f9efc"
+- name: 'ARISTA #108'
+  type: vless
+  server: static.69.71.203.116.clients.your-server.de
+  port: 8443
+  uuid: b2505fa2-f7c4-40d2-8c4a-1f6336bd37f1
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: static.229.163.46.78.clients.your-server.de
+- name: 'ARISTA #109'
+  type: vless
+  server: static.167.125.29.2.clients.your-server.de
+  port: 8443
+  uuid: b2505fa2-f7c4-40d2-8c4a-1f6336bd37f1
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: static.162.97.119.168.clients.your-server.de
+- name: 'ARISTA #110'
+  type: vless
+  server: static.216.7.245.188.clients.your-server.de
+  port: 8443
+  uuid: b2505fa2-f7c4-40d2-8c4a-1f6336bd37f1
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: static.216.7.245.188.clients.your-server.de
+- name: 'ARISTA #111'
+  type: vless
+  server: static.122.183.105.178.clients.your-server.de
+  port: 8443
+  uuid: b2505fa2-f7c4-40d2-8c4a-1f6336bd37f1
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: static.54.132.13.49.clients.your-server.de
+- name: 'ARISTA #112'
+  type: vless
+  server: 195.123.209.159
+  port: 8443
+  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: www.apple.com
+  reality-opts:
+    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
+    short-id: "f8d0271b4b5f9efc"
+- name: 'ARISTA #113'
+  type: vless
+  server: chatgpt.com
+  port: 8443
+  uuid: a20ea704-ec9d-4c5d-9b12-fa760cdf2290
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  - h2
+  - h3
+  client-fingerprint: chrome
+  servername: sinavm2.soft10.ir
+- name: 'ARISTA #114'
+  type: vless
+  server: sinavm3.soft10.ir
+  port: 8443
+  uuid: c2425034-91ef-44bf-9fd4-f2be9c1e989a
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  - h2
+  - h3
+  client-fingerprint: chrome
+  servername: sinavm3.soft10.ir
+- name: 'ARISTA #115'
+  type: vless
+  server: chatgpt.com
+  port: 8443
+  uuid: c2425034-91ef-44bf-9fd4-f2be9c1e989a
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  - h2
+  - h3
+  client-fingerprint: chrome
+  servername: sinavm3.soft10.ir
+- name: 'ARISTA #116'
+  type: vless
+  server: 172.64.155.209
+  port: 8443
+  uuid: a20ea704-ec9d-4c5d-9b12-fa760cdf2290
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  - h2
+  - h3
+  client-fingerprint: chrome
+  servername: sinavm2.soft10.ir
+- name: 'ARISTA #117'
+  type: vless
+  server: 146.19.254.171
+  port: 8443
+  uuid: 24fb9b5b-43b7-4058-a7e5-a0499ada1fda
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: 146.19.254.171
+- name: 'ARISTA #118'
+  type: vless
+  server: 48.103.133.47
+  port: 8443
+  uuid: 2ed34e7c-45c5-4e0e-bcab-42fe99a7bd25
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  servername: apple.com
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: "6ba85179e30d4fc2"
+- name: 'ARISTA #119'
+  type: vless
+  server: 146.0.73.104
+  port: 8443
+  uuid: af194c0e-95c3-417b-85bf-9ac3027f903e
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: qq
+  servername: ads.5ka.ru
+  reality-opts:
+    public-key: xSnNFylG-eUpKDPa2a-R3rdSB1HDrmenM-jU19n-xXA
+    short-id: "612d8fa72c"
+- name: 'ARISTA #120'
+  type: vless
+  server: 77.83.198.104
+  port: 8443
+  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
+    short-id: "f8d0271b4b5f9efc"
+- name: 'ARISTA #121'
+  type: vless
+  server: 135.136.33.134
+  port: 8443
+  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
+    short-id: "f8d0271b4b5f9efc"
+- name: 'ARISTA #122'
+  type: vless
+  server: 135.136.33.134
+  port: 8443
+  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
+    short-id: "f8d0271b4b5f9efc"
+- name: 'ARISTA #123'
+  type: vless
+  server: 156.146.40.84
+  port: 8443
+  uuid: 9a597d68-6688-4046-bf24-a5a541e115e0
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: www.apple.com
+  reality-opts:
+    public-key: 6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU
+    short-id: "f8d0271b4b5f9efc"
+- name: 'ARISTA #124'
   type: trojan
   server: 85.209.231.48
   port: 8443
@@ -1201,7 +1814,19 @@ proxies:
   tcp-fast-open: true
   servername: lt.hy2.saturnix.fun
   client-fingerprint: firefox
-- name: 'ARISTA #82'
+- name: 'ARISTA #125'
+  type: trojan
+  server: 85.209.231.48
+  port: 8443
+  password: 6e_p3ycSd8R-XZ510xdChaLm6EMrW7BN
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: lt.hy2.saturnix.fun
+  client-fingerprint: firefox
+- name: 'ARISTA #126'
   type: ss
   server: 204.194.49.67
   port: 8443
@@ -1209,7 +1834,7 @@ proxies:
   password: X376XQLW94Jug7Z0
   udp: true
   tcp-fast-open: true
-- name: 'ARISTA #83'
+- name: 'ARISTA #127'
   type: ss
   server: 204.194.49.67
   port: 8443
@@ -1217,7 +1842,7 @@ proxies:
   password: X376XQLW94Jug7Z0
   udp: true
   tcp-fast-open: true
-- name: 'ARISTA #84'
+- name: 'ARISTA #128'
   type: ss
   server: 204.194.49.67
   port: 8443
@@ -1318,6 +1943,50 @@ proxy-groups:
   - 'ARISTA #82'
   - 'ARISTA #83'
   - 'ARISTA #84'
+  - 'ARISTA #85'
+  - 'ARISTA #86'
+  - 'ARISTA #87'
+  - 'ARISTA #88'
+  - 'ARISTA #89'
+  - 'ARISTA #90'
+  - 'ARISTA #91'
+  - 'ARISTA #92'
+  - 'ARISTA #93'
+  - 'ARISTA #94'
+  - 'ARISTA #95'
+  - 'ARISTA #96'
+  - 'ARISTA #97'
+  - 'ARISTA #98'
+  - 'ARISTA #99'
+  - 'ARISTA #100'
+  - 'ARISTA #101'
+  - 'ARISTA #102'
+  - 'ARISTA #103'
+  - 'ARISTA #104'
+  - 'ARISTA #105'
+  - 'ARISTA #106'
+  - 'ARISTA #107'
+  - 'ARISTA #108'
+  - 'ARISTA #109'
+  - 'ARISTA #110'
+  - 'ARISTA #111'
+  - 'ARISTA #112'
+  - 'ARISTA #113'
+  - 'ARISTA #114'
+  - 'ARISTA #115'
+  - 'ARISTA #116'
+  - 'ARISTA #117'
+  - 'ARISTA #118'
+  - 'ARISTA #119'
+  - 'ARISTA #120'
+  - 'ARISTA #121'
+  - 'ARISTA #122'
+  - 'ARISTA #123'
+  - 'ARISTA #124'
+  - 'ARISTA #125'
+  - 'ARISTA #126'
+  - 'ARISTA #127'
+  - 'ARISTA #128'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
