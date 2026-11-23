@@ -1,6 +1,6 @@
 # TELEGRAM - Port 8880
-# Updated: 2026-11-23 18:04:46
-# Count: 3
+# Updated: 2026-11-23 21:07:20
+# Count: 1
 
 mixed-port: 7890
 allow-lan: false
@@ -50,43 +50,18 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: v1.nimbaha13.ir
+  server: 31.56.179.171
   port: 8880
-  uuid: 1c942ed7-fef9-45c6-9873-91f93075185d
-  network: ws
-  tls: false
+  uuid: 4e73a85c-21fb-4caf-97aa-af9f835d439c
+  network: tcp
+  tls: true
   udp: true
   skip-cert-verify: true
-  ws-opts:
-    path: /dcfrtt
-    headers:
-      Host: v1.nimbaha13.ir
-- name: 'ARISTA #2'
-  type: vless
-  server: v1.nimbaha13.ir
-  port: 8880
-  uuid: 1c942ed7-fef9-45c6-9873-91f93075185d
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /dcfrtt
-    headers:
-      Host: v1.nimbaha13.ir
-- name: 'ARISTA #3'
-  type: vless
-  server: v1.nimbaha13.ir
-  port: 8880
-  uuid: 1c942ed7-fef9-45c6-9873-91f93075185d
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /dcfrtt
-    headers:
-      Host: v1.nimbaha13.ir
+  client-fingerprint: chrome
+  servername: www.speedtest.net
+  reality-opts:
+    public-key: wRQ8HyClUOReuiB84oE2r-jPYkiiiJALU3ks2gCvsG0
+    short-id: "180f4c72"
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -97,8 +72,6 @@ proxy-groups:
   timeout: 3000
   proxies: &id001
   - 'ARISTA #1'
-  - 'ARISTA #2'
-  - 'ARISTA #3'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
