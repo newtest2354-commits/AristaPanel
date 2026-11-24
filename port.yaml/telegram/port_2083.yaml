@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2083
-# Updated: 2026-11-24 15:04:50
-# Count: 29
+# Updated: 2026-11-24 18:04:35
+# Count: 43
 
 mixed-port: 7890
 allow-lan: false
@@ -64,19 +64,30 @@ proxies:
     short-id: "b5870ad75616c0da"
 - name: 'ARISTA #2'
   type: vless
-  server: 5.161.231.8
+  server: 189.30.65.203
   port: 2083
-  uuid: 28b059c0-062f-43c6-8c21-b0a32018afed
+  uuid: 490dc3b4-8d1d-49fd-840e-bd5277b41557
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: service-41f6a2a01377
+- name: 'ARISTA #3'
+  type: vless
+  server: slot4.ipoxxo.online
+  port: 2083
+  uuid: 7e2f4de7-4ba9-4944-8791-809ff49d03dd
   network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: firefox
+  client-fingerprint: chrome
   servername: github.com
   reality-opts:
-    public-key: YkTUb7KQOf2ELpRn7aWygbbj6RDAaKBAP8IUsTcP3zs
-    short-id: "f150baf0f97c7aed"
-- name: 'ARISTA #3'
+    public-key: nsygKb893m_SuA1BfH55efjT0sQlJQDCwIWGM8krawQ
+    short-id: "b5870ad75616c0da"
+- name: 'ARISTA #4'
   type: vless
   server: 189.30.65.203
   port: 2083
@@ -87,21 +98,6 @@ proxies:
   skip-cert-verify: true
   grpc-opts:
     grpc-service-name: service-41f6a2a01377
-- name: 'ARISTA #4'
-  type: vless
-  server: 216.24.57.1
-  port: 2083
-  uuid: ace5abce-b3a5-4116-9e53-4eadd6c21bd7
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: cbnklod.admni.ir
 - name: 'ARISTA #5'
   type: vless
   server: 54.36.102.152
@@ -132,32 +128,34 @@ proxies:
     path: /
 - name: 'ARISTA #7'
   type: vless
-  server: slot4.ipoxxo.online
+  server: static.229.189.233.167.clients.your-server.de
   port: 2083
-  uuid: 7e2f4de7-4ba9-4944-8791-809ff49d03dd
-  network: xhttp
+  uuid: 13bda8f2-02af-475f-a9b6-2dbc7f023ab5
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
   client-fingerprint: chrome
-  servername: github.com
-  reality-opts:
-    public-key: nsygKb893m_SuA1BfH55efjT0sQlJQDCwIWGM8krawQ
-    short-id: "b5870ad75616c0da"
+  servername: static.229.189.233.167.clients.your-server.de
 - name: 'ARISTA #8'
   type: vless
-  server: slot4.ipoxxo.online
+  server: 104.18.35.86
   port: 2083
-  uuid: 7e2f4de7-4ba9-4944-8791-809ff49d03dd
-  network: xhttp
+  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: github.com
-  reality-opts:
-    public-key: nsygKb893m_SuA1BfH55efjT0sQlJQDCwIWGM8krawQ
-    short-id: "b5870ad75616c0da"
+  servername: vlsovip.1d.mom
+  ws-opts:
+    path: /fp=unsafe
+    headers:
+      Host: vlsovip.1d.mom
 - name: 'ARISTA #9'
   type: vless
   server: 5.161.231.8
@@ -174,6 +172,37 @@ proxies:
     short-id: "f150baf0f97c7aed"
 - name: 'ARISTA #10'
   type: vless
+  server: www.speedtest.net
+  port: 2083
+  uuid: 715777c7-708c-4eee-b5c3-84abf9b52d9a
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dash.dideman.com
+  ws-opts:
+    path: /80lgur7kgm?ed=2048
+    headers:
+      Host: dash.dideman.com
+- name: 'ARISTA #11'
+  type: vless
+  server: slot4.ipoxxo.online
+  port: 2083
+  uuid: 7e2f4de7-4ba9-4944-8791-809ff49d03dd
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: github.com
+  reality-opts:
+    public-key: nsygKb893m_SuA1BfH55efjT0sQlJQDCwIWGM8krawQ
+    short-id: "b5870ad75616c0da"
+- name: 'ARISTA #12'
+  type: vless
   server: 189.30.65.203
   port: 2083
   uuid: 490dc3b4-8d1d-49fd-840e-bd5277b41557
@@ -183,22 +212,7 @@ proxies:
   skip-cert-verify: true
   grpc-opts:
     grpc-service-name: service-41f6a2a01377
-- name: 'ARISTA #11'
-  type: vless
-  server: 216.24.57.1
-  port: 2083
-  uuid: ace5abce-b3a5-4116-9e53-4eadd6c21bd7
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: cbnklod.admni.ir
-- name: 'ARISTA #12'
+- name: 'ARISTA #13'
   type: vless
   server: 54.36.102.152
   port: 2083
@@ -209,7 +223,7 @@ proxies:
   skip-cert-verify: true
   ws-opts:
     path: /vless-kulo
-- name: 'ARISTA #13'
+- name: 'ARISTA #14'
   type: vless
   server: 206.238.239.20
   port: 2083
@@ -226,37 +240,104 @@ proxies:
   servername: vipfree.dr-ping.ir
   ws-opts:
     path: /
-- name: 'ARISTA #14'
-  type: vless
-  server: 162.159.130.234
-  port: 2083
-  uuid: 5d7b401c-78fa-4254-872e-6d42bf7e75ec
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: vp14.1145678.xyz
-  ws-opts:
-    path: /community/redirect.html
-    headers:
-      Host: vp14.1145678.xyz
 - name: 'ARISTA #15'
   type: vless
-  server: saas.sin.fan
+  server: slot4.ipoxxo.online
   port: 2083
-  uuid: 5d7b401c-78fa-4254-872e-6d42bf7e75ec
+  uuid: 7e2f4de7-4ba9-4944-8791-809ff49d03dd
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: github.com
+  reality-opts:
+    public-key: nsygKb893m_SuA1BfH55efjT0sQlJQDCwIWGM8krawQ
+    short-id: "b5870ad75616c0da"
+- name: 'ARISTA #16'
+  type: vless
+  server: 189.30.65.203
+  port: 2083
+  uuid: 490dc3b4-8d1d-49fd-840e-bd5277b41557
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: service-41f6a2a01377
+- name: 'ARISTA #17'
+  type: vless
+  server: 54.36.102.152
+  port: 2083
+  uuid: 51a6ab93-e805-4b8b-89d1-d3ab85a118ce
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /vless-kulo
+- name: 'ARISTA #18'
+  type: vless
+  server: 206.238.239.20
+  port: 2083
+  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: vipfree.dr-ping.ir
+  ws-opts:
+    path: /
+- name: 'ARISTA #19'
+  type: vless
+  server: static.229.189.233.167.clients.your-server.de
+  port: 2083
+  uuid: 13bda8f2-02af-475f-a9b6-2dbc7f023ab5
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: static.229.189.233.167.clients.your-server.de
+- name: 'ARISTA #20'
+  type: vless
+  server: 104.18.35.86
+  port: 2083
+  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   client-fingerprint: chrome
-  servername: vp25.1145678.xyz
+  servername: vlsovip.1d.mom
   ws-opts:
-    path: /comics/ads/thread
+    path: /fp=unsafe
     headers:
-      Host: vp25.1145678.xyz
-- name: 'ARISTA #16'
+      Host: vlsovip.1d.mom
+- name: 'ARISTA #21'
+  type: vless
+  server: 5.161.231.8
+  port: 2083
+  uuid: 28b059c0-062f-43c6-8c21-b0a32018afed
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: github.com
+  reality-opts:
+    public-key: YkTUb7KQOf2ELpRn7aWygbbj6RDAaKBAP8IUsTcP3zs
+    short-id: "f150baf0f97c7aed"
+- name: 'ARISTA #22'
   type: vless
   server: www.speedtest.net
   port: 2083
@@ -273,114 +354,27 @@ proxies:
     path: /80lgur7kgm?ed=2048
     headers:
       Host: dash.dideman.com
-- name: 'ARISTA #17'
-  type: vless
-  server: slot4.ipoxxo.online
-  port: 2083
-  uuid: 7e2f4de7-4ba9-4944-8791-809ff49d03dd
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: github.com
-  reality-opts:
-    public-key: nsygKb893m_SuA1BfH55efjT0sQlJQDCwIWGM8krawQ
-    short-id: "b5870ad75616c0da"
-- name: 'ARISTA #18'
-  type: vless
-  server: 5.161.231.8
-  port: 2083
-  uuid: 28b059c0-062f-43c6-8c21-b0a32018afed
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: github.com
-  reality-opts:
-    public-key: YkTUb7KQOf2ELpRn7aWygbbj6RDAaKBAP8IUsTcP3zs
-    short-id: "f150baf0f97c7aed"
-- name: 'ARISTA #19'
-  type: vless
-  server: 189.30.65.203
-  port: 2083
-  uuid: 490dc3b4-8d1d-49fd-840e-bd5277b41557
-  network: grpc
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: service-41f6a2a01377
-- name: 'ARISTA #20'
-  type: vless
-  server: 216.24.57.1
-  port: 2083
-  uuid: ace5abce-b3a5-4116-9e53-4eadd6c21bd7
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: cbnklod.admni.ir
-- name: 'ARISTA #21'
-  type: vless
-  server: slot4.ipoxxo.online
-  port: 2083
-  uuid: 7e2f4de7-4ba9-4944-8791-809ff49d03dd
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: github.com
-  reality-opts:
-    public-key: nsygKb893m_SuA1BfH55efjT0sQlJQDCwIWGM8krawQ
-    short-id: "b5870ad75616c0da"
-- name: 'ARISTA #22'
-  type: vless
-  server: 5.161.231.8
-  port: 2083
-  uuid: 28b059c0-062f-43c6-8c21-b0a32018afed
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: github.com
-  reality-opts:
-    public-key: YkTUb7KQOf2ELpRn7aWygbbj6RDAaKBAP8IUsTcP3zs
-    short-id: "f150baf0f97c7aed"
 - name: 'ARISTA #23'
   type: vless
-  server: 189.30.65.203
+  server: slot4.ipoxxo.online
   port: 2083
-  uuid: 490dc3b4-8d1d-49fd-840e-bd5277b41557
-  network: grpc
+  uuid: 7e2f4de7-4ba9-4944-8791-809ff49d03dd
+  network: tcp
   tls: false
   udp: true
   skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: service-41f6a2a01377
 - name: 'ARISTA #24'
   type: vless
-  server: 216.24.57.1
+  server: 91.107.188.129
   port: 2083
-  uuid: ace5abce-b3a5-4116-9e53-4eadd6c21bd7
-  network: xhttp
+  uuid: bd6c11e0-0233-4fb1-ba97-8d5f16d7155f
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: cbnklod.admni.ir
+  servername: site.check-looks.space
+  ws-opts:
+    path: /
 - name: 'ARISTA #25'
   type: vless
   server: slot4.ipoxxo.online
@@ -397,6 +391,226 @@ proxies:
     short-id: "b5870ad75616c0da"
 - name: 'ARISTA #26'
   type: vless
+  server: 189.30.65.203
+  port: 2083
+  uuid: 490dc3b4-8d1d-49fd-840e-bd5277b41557
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: service-41f6a2a01377
+- name: 'ARISTA #27'
+  type: vless
+  server: 54.36.102.152
+  port: 2083
+  uuid: 51a6ab93-e805-4b8b-89d1-d3ab85a118ce
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /vless-kulo
+- name: 'ARISTA #28'
+  type: vless
+  server: 206.238.239.20
+  port: 2083
+  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: vipfree.dr-ping.ir
+  ws-opts:
+    path: /
+- name: 'ARISTA #29'
+  type: vless
+  server: static.229.189.233.167.clients.your-server.de
+  port: 2083
+  uuid: 13bda8f2-02af-475f-a9b6-2dbc7f023ab5
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: static.229.189.233.167.clients.your-server.de
+- name: 'ARISTA #30'
+  type: vless
+  server: slot4.ipoxxo.online
+  port: 2083
+  uuid: 7e2f4de7-4ba9-4944-8791-809ff49d03dd
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: github.com
+  reality-opts:
+    public-key: nsygKb893m_SuA1BfH55efjT0sQlJQDCwIWGM8krawQ
+    short-id: "b5870ad75616c0da"
+- name: 'ARISTA #31'
+  type: vless
+  server: 189.30.65.203
+  port: 2083
+  uuid: 490dc3b4-8d1d-49fd-840e-bd5277b41557
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: service-41f6a2a01377
+- name: 'ARISTA #32'
+  type: vless
+  server: 54.36.102.152
+  port: 2083
+  uuid: 51a6ab93-e805-4b8b-89d1-d3ab85a118ce
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /vless-kulo
+- name: 'ARISTA #33'
+  type: vless
+  server: 206.238.239.20
+  port: 2083
+  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: vipfree.dr-ping.ir
+  ws-opts:
+    path: /
+- name: 'ARISTA #34'
+  type: vless
+  server: static.229.189.233.167.clients.your-server.de
+  port: 2083
+  uuid: 13bda8f2-02af-475f-a9b6-2dbc7f023ab5
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: static.229.189.233.167.clients.your-server.de
+- name: 'ARISTA #35'
+  type: vless
+  server: 104.18.35.86
+  port: 2083
+  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: vlsovip.1d.mom
+  ws-opts:
+    path: /fp=unsafe
+    headers:
+      Host: vlsovip.1d.mom
+- name: 'ARISTA #36'
+  type: vless
+  server: slot4.ipoxxo.online
+  port: 2083
+  uuid: 7e2f4de7-4ba9-4944-8791-809ff49d03dd
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: github.com
+  reality-opts:
+    public-key: nsygKb893m_SuA1BfH55efjT0sQlJQDCwIWGM8krawQ
+    short-id: "b5870ad75616c0da"
+- name: 'ARISTA #37'
+  type: vless
+  server: 189.30.65.203
+  port: 2083
+  uuid: 490dc3b4-8d1d-49fd-840e-bd5277b41557
+  network: grpc
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: service-41f6a2a01377
+- name: 'ARISTA #38'
+  type: vless
+  server: 54.36.102.152
+  port: 2083
+  uuid: 51a6ab93-e805-4b8b-89d1-d3ab85a118ce
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /vless-kulo
+- name: 'ARISTA #39'
+  type: vless
+  server: 206.238.239.20
+  port: 2083
+  uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  - h3
+  client-fingerprint: chrome
+  servername: vipfree.dr-ping.ir
+  ws-opts:
+    path: /
+- name: 'ARISTA #40'
+  type: vless
+  server: static.229.189.233.167.clients.your-server.de
+  port: 2083
+  uuid: 13bda8f2-02af-475f-a9b6-2dbc7f023ab5
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: static.229.189.233.167.clients.your-server.de
+- name: 'ARISTA #41'
+  type: vless
+  server: 104.18.35.86
+  port: 2083
+  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: vlsovip.1d.mom
+  ws-opts:
+    path: /fp=unsafe
+    headers:
+      Host: vlsovip.1d.mom
+- name: 'ARISTA #42'
+  type: vless
   server: 5.161.231.8
   port: 2083
   uuid: 28b059c0-062f-43c6-8c21-b0a32018afed
@@ -409,43 +623,23 @@ proxies:
   reality-opts:
     public-key: YkTUb7KQOf2ELpRn7aWygbbj6RDAaKBAP8IUsTcP3zs
     short-id: "f150baf0f97c7aed"
-- name: 'ARISTA #27'
+- name: 'ARISTA #43'
   type: vless
-  server: 189.30.65.203
+  server: www.speedtest.net
   port: 2083
-  uuid: 490dc3b4-8d1d-49fd-840e-bd5277b41557
-  network: grpc
-  tls: false
-  udp: true
-  skip-cert-verify: true
-  grpc-opts:
-    grpc-service-name: service-41f6a2a01377
-- name: 'ARISTA #28'
-  type: vless
-  server: 216.24.57.1
-  port: 2083
-  uuid: ace5abce-b3a5-4116-9e53-4eadd6c21bd7
-  network: xhttp
+  uuid: 715777c7-708c-4eee-b5c3-84abf9b52d9a
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
   alpn:
-  - h3
-  - h2
   - http/1.1
   client-fingerprint: chrome
-  servername: cbnklod.admni.ir
-- name: 'ARISTA #29'
-  type: vless
-  server: 54.36.102.152
-  port: 2083
-  uuid: 51a6ab93-e805-4b8b-89d1-d3ab85a118ce
-  network: ws
-  tls: false
-  udp: true
-  skip-cert-verify: true
+  servername: dash.dideman.com
   ws-opts:
-    path: /vless-kulo
+    path: /80lgur7kgm?ed=2048
+    headers:
+      Host: dash.dideman.com
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -484,6 +678,20 @@ proxy-groups:
   - 'ARISTA #27'
   - 'ARISTA #28'
   - 'ARISTA #29'
+  - 'ARISTA #30'
+  - 'ARISTA #31'
+  - 'ARISTA #32'
+  - 'ARISTA #33'
+  - 'ARISTA #34'
+  - 'ARISTA #35'
+  - 'ARISTA #36'
+  - 'ARISTA #37'
+  - 'ARISTA #38'
+  - 'ARISTA #39'
+  - 'ARISTA #40'
+  - 'ARISTA #41'
+  - 'ARISTA #42'
+  - 'ARISTA #43'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

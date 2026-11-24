@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2053
-# Updated: 2026-11-24 15:04:50
-# Count: 11
+# Updated: 2026-11-24 18:04:35
+# Count: 15
 
 mixed-port: 7890
 allow-lan: false
@@ -50,30 +50,26 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: render.com
+  server: 85.198.10.216
   port: 2053
-  uuid: ca74ad0f-c384-4362-96bb-0123b852b346
-  network: xhttp
-  tls: true
+  uuid: e08b14af-835a-4c7b-8f05-4936e3e72c2e
+  network: ws
+  tls: false
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: n9.ritmexo.ir
+  ws-opts:
+    path: /
 - name: 'ARISTA #2'
   type: vless
-  server: 94.159.98.82
+  server: 85.198.10.216
   port: 2053
-  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
-  network: tcp
-  tls: true
+  uuid: e08b14af-835a-4c7b-8f05-4936e3e72c2e
+  network: ws
+  tls: false
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: 94.159.98.82
+  ws-opts:
+    path: /
 - name: 'ARISTA #3'
   type: vless
   server: render.com
@@ -90,30 +86,29 @@ proxies:
   servername: n9.ritmexo.ir
 - name: 'ARISTA #4'
   type: vless
-  server: render.com
+  server: 147.224.54.25
   port: 2053
-  uuid: ca74ad0f-c384-4362-96bb-0123b852b346
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: n9.ritmexo.ir
-- name: 'ARISTA #5'
-  type: vless
-  server: 94.159.98.82
-  port: 2053
-  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
+  uuid: cdb7fa1d-6e7a-467c-da9c-da363c7bf779
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: 94.159.98.82
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: DEFJSLdILrvauMpwtpvFZddadpt3rNtv03Dui2EkmRk
+    short-id: "68"
+- name: 'ARISTA #5'
+  type: vless
+  server: 85.198.10.216
+  port: 2053
+  uuid: e08b14af-835a-4c7b-8f05-4936e3e72c2e
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
 - name: 'ARISTA #6'
   type: vless
   server: 85.198.10.216
@@ -127,6 +122,20 @@ proxies:
     path: /
 - name: 'ARISTA #7'
   type: vless
+  server: render.com
+  port: 2053
+  uuid: ca74ad0f-c384-4362-96bb-0123b852b346
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: n9.ritmexo.ir
+- name: 'ARISTA #8'
+  type: vless
   server: 147.224.54.25
   port: 2053
   uuid: cdb7fa1d-6e7a-467c-da9c-da363c7bf779
@@ -139,47 +148,28 @@ proxies:
   reality-opts:
     public-key: DEFJSLdILrvauMpwtpvFZddadpt3rNtv03Dui2EkmRk
     short-id: "68"
-- name: 'ARISTA #8'
-  type: vless
-  server: fast.145779.xyz
-  port: 2053
-  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
 - name: 'ARISTA #9'
   type: vless
-  server: render.com
+  server: 85.198.10.216
   port: 2053
-  uuid: ca74ad0f-c384-4362-96bb-0123b852b346
-  network: xhttp
-  tls: true
+  uuid: e08b14af-835a-4c7b-8f05-4936e3e72c2e
+  network: ws
+  tls: false
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: n9.ritmexo.ir
+  ws-opts:
+    path: /
 - name: 'ARISTA #10'
   type: vless
-  server: render.com
+  server: 85.198.10.216
   port: 2053
-  uuid: ca74ad0f-c384-4362-96bb-0123b852b346
-  network: xhttp
-  tls: true
+  uuid: e08b14af-835a-4c7b-8f05-4936e3e72c2e
+  network: ws
+  tls: false
   udp: true
   skip-cert-verify: true
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  servername: n9.ritmexo.ir
+  ws-opts:
+    path: /
 - name: 'ARISTA #11'
   type: vless
   server: render.com
@@ -194,6 +184,66 @@ proxies:
   - http/1.1
   client-fingerprint: chrome
   servername: n9.ritmexo.ir
+- name: 'ARISTA #12'
+  type: vless
+  server: 85.198.10.216
+  port: 2053
+  uuid: e08b14af-835a-4c7b-8f05-4936e3e72c2e
+  network: ws
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+- name: 'ARISTA #13'
+  type: vless
+  server: render.com
+  port: 2053
+  uuid: ca74ad0f-c384-4362-96bb-0123b852b346
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: n9.ritmexo.ir
+- name: 'ARISTA #14'
+  type: trojan
+  server: 78.17.171.140
+  port: 2053
+  password: t5ZTZ0bYgRLNmJKv-Wg2wmsMx21s6RhX
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: ra-p1.victorycloud.ru
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /2fc2ec03a65d451dffa4592d68c43a29
+    headers:
+      Host: ra-p1.victorycloud.ru
+- name: 'ARISTA #15'
+  type: trojan
+  server: 78.17.171.140
+  port: 2053
+  password: t5ZTZ0bYgRLNmJKv-Wg2wmsMx21s6RhX
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: ra-p1.victorycloud.ru
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /2fc2ec03a65d451dffa4592d68c43a29?TELEGRAM--B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub--TELEGRAM
+    headers:
+      Host: ra-p1.victorycloud.ru
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -214,6 +264,10 @@ proxy-groups:
   - 'ARISTA #9'
   - 'ARISTA #10'
   - 'ARISTA #11'
+  - 'ARISTA #12'
+  - 'ARISTA #13'
+  - 'ARISTA #14'
+  - 'ARISTA #15'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
