@@ -1,6 +1,6 @@
 // GITHUB - Port 2096
-// Updated: 2026-11-25 15:08:28
-// Count: 3
+// Updated: 2026-11-25 18:06:55
+// Count: 6
 
 {
   "log": {
@@ -41,25 +41,26 @@
     {
       "type": "vless",
       "tag": "ARISTA #1",
-      "server": "8.39.125.92",
+      "server": "ss.u2.1kub1.click",
       "server_port": 2096,
-      "uuid": "a6ba51de-d50a-407f-a8bb-5dc8b3073ec1",
+      "uuid": "c28bd116-61d1-44bf-a3e2-589978d247f2",
       "domain_resolver": "google",
       "tls": {
         "enabled": true,
-        "server_name": "frosty-clover-b8ea-df1f0206.pages.dev",
+        "server_name": "id.vk.com",
         "insecure": true,
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
+          "fingerprint": "safari"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
         }
       },
       "transport": {
-        "type": "ws",
-        "path": "/7f0776a02fac",
-        "headers": {
-          "Host": "frosty-clover-b8ea-df1f0206.pages.dev"
-        }
+        "type": "grpc",
+        "service_name": "vless-grpc-reality"
       }
     },
     {
@@ -87,6 +88,30 @@
       }
     },
     {
+      "type": "vless",
+      "tag": "ARISTA #3",
+      "server": "8.39.125.92",
+      "server_port": 2096,
+      "uuid": "a6ba51de-d50a-407f-a8bb-5dc8b3073ec1",
+      "domain_resolver": "google",
+      "tls": {
+        "enabled": true,
+        "server_name": "frosty-clover-b8ea-df1f0206.pages.dev",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/7f0776a02fac",
+        "headers": {
+          "Host": "frosty-clover-b8ea-df1f0206.pages.dev"
+        }
+      }
+    },
+    {
       "type": "direct",
       "tag": "direct"
     },
@@ -99,7 +124,8 @@
       "tag": "🚀 ARISTA AUTO BEST",
       "outbounds": [
         "ARISTA #1",
-        "ARISTA #2"
+        "ARISTA #2",
+        "ARISTA #3"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "2m",
