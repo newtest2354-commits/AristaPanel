@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2086
-# Updated: 2026-11-24 21:05:49
-# Count: 1
+# Updated: 2026-11-25 03:04:10
+# Count: 2
 
 mixed-port: 7890
 allow-lan: false
@@ -49,20 +49,23 @@ rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
 - name: 'ARISTA #1'
-  type: vmess
-  server: 104.18.15.19
+  type: vless
+  server: html.iranpood.com
   port: 2086
-  uuid: e9e3cc13-db48-4cc1-8c24-7626439a5339
-  alterId: 0
-  cipher: auto
-  network: ws
+  uuid: 3b715892-8610-4fdc-9086-647b36af5443
+  network: xhttp
   tls: false
   udp: true
   skip-cert-verify: true
-  tcp-fast-open: true
-  servername: 104.18.15.19
-  ws-opts:
-    path: /
+- name: 'ARISTA #2'
+  type: vless
+  server: html.iranpood.com
+  port: 2086
+  uuid: 3b715892-8610-4fdc-9086-647b36af5443
+  network: xhttp
+  tls: false
+  udp: true
+  skip-cert-verify: true
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -73,6 +76,7 @@ proxy-groups:
   timeout: 3000
   proxies: &id001
   - 'ARISTA #1'
+  - 'ARISTA #2'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
