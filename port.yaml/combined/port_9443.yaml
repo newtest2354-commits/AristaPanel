@@ -1,6 +1,6 @@
 # COMBINED - Port 9443
-# Updated: 2026-11-24 21:05:38
-# Count: 4
+# Updated: 2026-11-25 21:03:59
+# Count: 5
 
 mixed-port: 7890
 allow-lan: false
@@ -48,66 +48,76 @@ sniffer:
 rules:
 - MATCH,🎯 ARISTA CORE
 proxies:
-- name: 'T.ME: @aristapanel #1'
+- name: 'ARISTA #1'
   type: vless
-  server: 195.226.93.224
+  server: 31.56.179.171
   port: 9443
-  uuid: ad295072-0049-4981-a9aa-6314c43e87e5
+  uuid: 4e73a85c-21fb-4caf-97aa-af9f835d439c
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: n2.fernstatic.com
+  client-fingerprint: chrome
+  servername: www.cisco.com
   reality-opts:
-    public-key: xRIN4AZSp2c_yaCurN9DNoh0q8zSj-AlMCflpb1pwBA
-    short-id: "00a9d4acc75cf31c"
-- name: 'T.ME: @aristapanel #2'
+    public-key: cAYy-9bTtGHv9D-xisweGDETtvOzWJtZqKEtWAFUYW0
+    short-id: "c0448fb2"
+- name: 'ARISTA #2'
   type: vless
-  server: 94.183.221.207
+  server: 31.56.179.171
   port: 9443
-  uuid: ad295072-0049-4981-a9aa-6314c43e87e5
+  uuid: 4e73a85c-21fb-4caf-97aa-af9f835d439c
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: n3.fernstatic.com
+  client-fingerprint: chrome
+  servername: www.cisco.com
   reality-opts:
-    public-key: LGj0rJ5R28CbD24VRc5nCpNg-2EMU85fmUZNdrZ6CWI
-    short-id: "bc7b676b8ed7b300"
-- name: 'T.ME: @aristapanel #3'
+    public-key: cAYy-9bTtGHv9D-xisweGDETtvOzWJtZqKEtWAFUYW0
+    short-id: "c0448fb2"
+- name: 'ARISTA #3'
   type: vless
-  server: n3.fernstatic.com
+  server: 31.56.179.171
   port: 9443
-  uuid: ad295072-0049-4981-a9aa-6314c43e87e5
+  uuid: 4e73a85c-21fb-4caf-97aa-af9f835d439c
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: n3.fernstatic.com
+  client-fingerprint: chrome
+  servername: www.cisco.com
   reality-opts:
-    public-key: LGj0rJ5R28CbD24VRc5nCpNg-2EMU85fmUZNdrZ6CWI
-    short-id: "bc7b676b8ed7b300"
-- name: 'T.ME: @aristapanel #4'
+    public-key: cAYy-9bTtGHv9D-xisweGDETtvOzWJtZqKEtWAFUYW0
+    short-id: "c0448fb2"
+- name: 'ARISTA #4'
   type: vless
-  server: 195.226.93.224
+  server: 31.56.179.171
   port: 9443
-  uuid: ad295072-0049-4981-a9aa-6314c43e87e5
+  uuid: 4e73a85c-21fb-4caf-97aa-af9f835d439c
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: n2.fernstatic.com
+  client-fingerprint: chrome
+  servername: www.cisco.com
   reality-opts:
-    public-key: xRIN4AZSp2c_yaCurN9DNoh0q8zSj-AlMCflpb1pwBA
-    short-id: "00a9d4acc75cf31c"
+    public-key: cAYy-9bTtGHv9D-xisweGDETtvOzWJtZqKEtWAFUYW0
+    short-id: "c0448fb2"
+- name: 'ARISTA #5'
+  type: vless
+  server: 31.56.179.171
+  port: 9443
+  uuid: 4e73a85c-21fb-4caf-97aa-af9f835d439c
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.cisco.com
+  reality-opts:
+    public-key: cAYy-9bTtGHv9D-xisweGDETtvOzWJtZqKEtWAFUYW0
+    short-id: "c0448fb2"
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -117,10 +127,11 @@ proxy-groups:
   lazy: true
   timeout: 3000
   proxies: &id001
-  - 'T.ME: @aristapanel #1'
-  - 'T.ME: @aristapanel #2'
-  - 'T.ME: @aristapanel #3'
-  - 'T.ME: @aristapanel #4'
+  - 'ARISTA #1'
+  - 'ARISTA #2'
+  - 'ARISTA #3'
+  - 'ARISTA #4'
+  - 'ARISTA #5'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
