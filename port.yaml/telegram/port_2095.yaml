@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2095
-# Updated: 2026-11-25 21:04:03
-# Count: 12
+# Updated: 2026-11-26 00:08:46
+# Count: 13
 
 mixed-port: 7890
 allow-lan: false
@@ -77,16 +77,21 @@ proxies:
   skip-cert-verify: true
 - name: 'ARISTA #4'
   type: vless
-  server: 216.24.57.1
+  server: 185.179.154.10
   port: 2095
-  uuid: ed809ef1-338d-4355-b9e8-2de0e522202f
-  network: httpupgrade
-  tls: false
+  uuid: b5b563ad-e4ef-4873-9d35-66cc08202aec
+  network: tcp
+  tls: true
   udp: true
   skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.samsung.com
+  reality-opts:
+    public-key: HLzZwMW0Pla_QGurI4ejP6kwOUMhbLZmP353QEAxdAw
+    short-id: "14f77592"
 - name: 'ARISTA #5'
   type: vless
-  server: render.com
+  server: 216.24.57.1
   port: 2095
   uuid: ed809ef1-338d-4355-b9e8-2de0e522202f
   network: httpupgrade
@@ -113,13 +118,18 @@ proxies:
   skip-cert-verify: true
 - name: 'ARISTA #8'
   type: vless
-  server: 216.24.57.1
+  server: 185.179.154.10
   port: 2095
-  uuid: ed809ef1-338d-4355-b9e8-2de0e522202f
-  network: httpupgrade
-  tls: false
+  uuid: b5b563ad-e4ef-4873-9d35-66cc08202aec
+  network: tcp
+  tls: true
   udp: true
   skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.samsung.com
+  reality-opts:
+    public-key: HLzZwMW0Pla_QGurI4ejP6kwOUMhbLZmP353QEAxdAw
+    short-id: "14f77592"
 - name: 'ARISTA #9'
   type: vless
   server: 216.24.57.1
@@ -131,7 +141,7 @@ proxies:
   skip-cert-verify: true
 - name: 'ARISTA #10'
   type: vless
-  server: render.com
+  server: 216.24.57.1
   port: 2095
   uuid: ed809ef1-338d-4355-b9e8-2de0e522202f
   network: httpupgrade
@@ -156,6 +166,20 @@ proxies:
   tls: false
   udp: true
   skip-cert-verify: true
+- name: 'ARISTA #13'
+  type: vless
+  server: 185.179.154.10
+  port: 2095
+  uuid: b5b563ad-e4ef-4873-9d35-66cc08202aec
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.samsung.com
+  reality-opts:
+    public-key: HLzZwMW0Pla_QGurI4ejP6kwOUMhbLZmP353QEAxdAw
+    short-id: "14f77592"
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -177,6 +201,7 @@ proxy-groups:
   - 'ARISTA #10'
   - 'ARISTA #11'
   - 'ARISTA #12'
+  - 'ARISTA #13'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2052
-# Updated: 2026-11-25 21:04:03
-# Count: 7
+# Updated: 2026-11-26 00:08:46
+# Count: 8
 
 mixed-port: 7890
 allow-lan: false
@@ -110,19 +110,17 @@ proxies:
     short-id: "24"
 - name: 'ARISTA #5'
   type: vless
-  server: 31.77.56.68
+  server: 104.18.109.147
   port: 2052
-  uuid: 8f154051-5b60-4e04-8880-a416c133a61b
-  network: grpc
-  tls: true
+  uuid: c29d39bd-92a4-45db-bb61-56013998617c
+  network: ws
+  tls: false
   udp: true
   skip-cert-verify: true
-  servername: cdn.ozon.ru
-  grpc-opts:
-    grpc-service-name: plogrpc
-  reality-opts:
-    public-key: 4UA4nr9RIIEOC6ZDK5AHkj5v0Q-e3_jNeVI5cIgPSg4
-    short-id: "24"
+  ws-opts:
+    path: /Telegram-XV2ry2?ed=2048
+    headers:
+      Host: www.speedtest.net.www.1google.com.bing.com.visa.com.tls.xv98.ip-ddns.com
 - name: 'ARISTA #6'
   type: vless
   server: 31.77.56.68
@@ -153,6 +151,21 @@ proxies:
   reality-opts:
     public-key: 4UA4nr9RIIEOC6ZDK5AHkj5v0Q-e3_jNeVI5cIgPSg4
     short-id: "24"
+- name: 'ARISTA #8'
+  type: vless
+  server: 31.77.56.68
+  port: 2052
+  uuid: 8f154051-5b60-4e04-8880-a416c133a61b
+  network: grpc
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: cdn.ozon.ru
+  grpc-opts:
+    grpc-service-name: plogrpc
+  reality-opts:
+    public-key: 4UA4nr9RIIEOC6ZDK5AHkj5v0Q-e3_jNeVI5cIgPSg4
+    short-id: "24"
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -169,6 +182,7 @@ proxy-groups:
   - 'ARISTA #5'
   - 'ARISTA #6'
   - 'ARISTA #7'
+  - 'ARISTA #8'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
