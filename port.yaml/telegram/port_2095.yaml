@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2095
-# Updated: 2026-11-26 18:07:58
-# Count: 5
+# Updated: 2026-11-26 21:04:07
+# Count: 3
 
 mixed-port: 7890
 allow-lan: false
@@ -50,59 +50,46 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: render.com
+  server: 185.179.154.10
   port: 2095
-  uuid: ed809ef1-338d-4355-b9e8-2de0e522202f
-  network: httpupgrade
-  tls: false
+  uuid: b5b563ad-e4ef-4873-9d35-66cc08202aec
+  network: tcp
+  tls: true
   udp: true
   skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: www.samsung.com
+  reality-opts:
+    public-key: HLzZwMW0Pla_QGurI4ejP6kwOUMhbLZmP353QEAxdAw
+    short-id: "14f77592"
 - name: 'ARISTA #2'
-  type: vless
-  server: 185.179.154.10
+  type: trojan
+  server: ru-1.krugvpn.me
   port: 2095
-  uuid: b5b563ad-e4ef-4873-9d35-66cc08202aec
+  password: cWM5aWtWR9
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.samsung.com
-  reality-opts:
-    public-key: HLzZwMW0Pla_QGurI4ejP6kwOUMhbLZmP353QEAxdAw
-    short-id: "14f77592"
+  tcp-fast-open: true
+  servername: ru-1.krugvpn.me
+  client-fingerprint: safari
+  alpn:
+  - h2
 - name: 'ARISTA #3'
-  type: vless
-  server: render.com
+  type: trojan
+  server: ru-1.krugvpn.me
   port: 2095
-  uuid: ed809ef1-338d-4355-b9e8-2de0e522202f
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
-- name: 'ARISTA #4'
-  type: vless
-  server: 185.179.154.10
-  port: 2095
-  uuid: b5b563ad-e4ef-4873-9d35-66cc08202aec
+  password: cWM5aWtWR9
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.samsung.com
-  reality-opts:
-    public-key: HLzZwMW0Pla_QGurI4ejP6kwOUMhbLZmP353QEAxdAw
-    short-id: "14f77592"
-- name: 'ARISTA #5'
-  type: vless
-  server: render.com
-  port: 2095
-  uuid: ed809ef1-338d-4355-b9e8-2de0e522202f
-  network: httpupgrade
-  tls: false
-  udp: true
-  skip-cert-verify: true
+  tcp-fast-open: true
+  servername: ru-1.krugvpn.me
+  client-fingerprint: safari
+  alpn:
+  - h2
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -115,8 +102,6 @@ proxy-groups:
   - 'ARISTA #1'
   - 'ARISTA #2'
   - 'ARISTA #3'
-  - 'ARISTA #4'
-  - 'ARISTA #5'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204

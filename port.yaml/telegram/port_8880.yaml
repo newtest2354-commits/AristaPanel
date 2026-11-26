@@ -1,6 +1,6 @@
 # TELEGRAM - Port 8880
-# Updated: 2026-11-26 18:07:58
-# Count: 2
+# Updated: 2026-11-26 21:04:07
+# Count: 5
 
 mixed-port: 7890
 allow-lan: false
@@ -50,19 +50,44 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 185.179.154.10
+  server: 89.116.72.217
   port: 8880
-  uuid: b5b563ad-e4ef-4873-9d35-66cc08202aec
+  uuid: 19841976-1b67-49e4-9f21-804d10b2fd00
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: www.speedtest.net
+  servername: www.microsoft.com
   reality-opts:
-    public-key: 3bzTjjj-4U-cjmt1bb4ZMVWrgT7wxs0a-iogJwUMJyM
-    short-id: "b73585d5"
+    public-key: OjDDQkw-g0y3OGcZUgsT_k4N_QtBDjgcjYF9it6Nyz4
+    short-id: "cb4a2e4c"
 - name: 'ARISTA #2'
+  type: vless
+  server: 89.116.72.217
+  port: 8880
+  uuid: 19841976-1b67-49e4-9f21-804d10b2fd00
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: www.microsoft.com
+  reality-opts:
+    public-key: OjDDQkw-g0y3OGcZUgsT_k4N_QtBDjgcjYF9it6Nyz4
+    short-id: "cb4a2e4c"
+- name: 'ARISTA #3'
+  type: vless
+  server: 89.116.72.217
+  port: 8880
+  uuid: 19841976-1b67-49e4-9f21-804d10b2fd00
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: www.microsoft.com
+  reality-opts:
+    public-key: OjDDQkw-g0y3OGcZUgsT_k4N_QtBDjgcjYF9it6Nyz4
+    short-id: "cb4a2e4c"
+- name: 'ARISTA #4'
   type: vless
   server: 185.179.154.10
   port: 8880
@@ -76,6 +101,19 @@ proxies:
   reality-opts:
     public-key: 3bzTjjj-4U-cjmt1bb4ZMVWrgT7wxs0a-iogJwUMJyM
     short-id: "b73585d5"
+- name: 'ARISTA #5'
+  type: vless
+  server: 89.116.72.217
+  port: 8880
+  uuid: 19841976-1b67-49e4-9f21-804d10b2fd00
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  servername: www.microsoft.com
+  reality-opts:
+    public-key: OjDDQkw-g0y3OGcZUgsT_k4N_QtBDjgcjYF9it6Nyz4
+    short-id: "cb4a2e4c"
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -87,6 +125,9 @@ proxy-groups:
   proxies: &id001
   - 'ARISTA #1'
   - 'ARISTA #2'
+  - 'ARISTA #3'
+  - 'ARISTA #4'
+  - 'ARISTA #5'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
