@@ -1,6 +1,6 @@
 # COMBINED - Port 2096
-# Updated: 2026-11-26 00:08:38
-# Count: 25
+# Updated: 2026-11-26 03:08:42
+# Count: 19
 
 mixed-port: 7890
 allow-lan: false
@@ -50,18 +50,19 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 191.217.215.228
+  server: uqrxjbu.arvono.ir
   port: 2096
-  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
-  network: ws
+  uuid: 13bda8f2-02af-0001-a9b6-2dbc7f023ab5
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: st3b6e5.rumedia-cdn.com
-  ws-opts:
-    path: /cdn/v3/live
-    headers:
-      Host: st3b6e5.rumedia-cdn.com
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: 0a8551bd56690416.rahat-bash.ir
 - name: 'ARISTA #2'
   type: vless
   server: 191.217.215.228
@@ -91,46 +92,20 @@ proxies:
     path: /cdn/v3/live
 - name: 'ARISTA #4'
   type: vless
-  server: 191.217.215.228
+  server: uqrxjbu.arvono.ir
   port: 2096
-  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
-  network: ws
+  uuid: 13bda8f2-02af-0001-a9b6-2dbc7f023ab5
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: st3b6e5.rumedia-cdn.com
-  ws-opts:
-    path: /cdn/v3/live
-    headers:
-      Host: st3b6e5.rumedia-cdn.com
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: 0a8551bd56690416.rahat-bash.ir
 - name: 'ARISTA #5'
-  type: vless
-  server: 191.217.215.228
-  port: 2096
-  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: st3b6e5.rumedia-cdn.com
-  ws-opts:
-    path: /cdn/v3/live
-    headers:
-      Host: st3b6e5.rumedia-cdn.com
-- name: 'ARISTA #6'
-  type: vless
-  server: 191.217.215.228
-  port: 2096
-  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: st3b6e5.rumedia-cdn.com
-  ws-opts:
-    path: /cdn/v3/live
-- name: 'ARISTA #7'
   type: vless
   server: uqrxjbu.arvono.ir
   port: 2096
@@ -145,22 +120,34 @@ proxies:
   - http/1.1
   client-fingerprint: chrome
   servername: 0a8551bd56690416.rahat-bash.ir
-- name: 'T.ME: @aristapanel #8'
+- name: 'ARISTA #6'
   type: vless
-  server: 139.162.27.96
+  server: 191.217.215.228
   port: 2096
-  uuid: 6e59d5c5-7aa3-4c36-a4c4-e3b899525ed2
+  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: free-server.techsonic.dev
+  servername: st3b6e5.rumedia-cdn.com
   ws-opts:
-    path: /free-server.techsonic.dev
+    path: /cdn/v3/live
     headers:
-      Host: free-server.techsonic.dev
-- name: 'T.ME: @aristapanel #9'
+      Host: st3b6e5.rumedia-cdn.com
+- name: 'ARISTA #7'
+  type: vless
+  server: 191.217.215.228
+  port: 2096
+  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  servername: st3b6e5.rumedia-cdn.com
+  ws-opts:
+    path: /cdn/v3/live
+- name: 'T.ME: @aristapanel #8'
   type: vless
   server: 8.39.125.92
   port: 2096
@@ -175,34 +162,22 @@ proxies:
     path: /7f0776a02fac
     headers:
       Host: frosty-clover-b8ea-df1f0206.pages.dev
-- name: 'ARISTA #10'
+- name: 'T.ME: @aristapanel #9'
   type: vless
-  server: 191.217.215.228
+  server: 139.162.27.96
   port: 2096
-  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
+  uuid: 6e59d5c5-7aa3-4c36-a4c4-e3b899525ed2
   network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: st3b6e5.rumedia-cdn.com
+  client-fingerprint: chrome
+  servername: free-server.techsonic.dev
   ws-opts:
-    path: /cdn/v3/live
+    path: /free-server.techsonic.dev
     headers:
-      Host: st3b6e5.rumedia-cdn.com
-- name: 'ARISTA #11'
-  type: vless
-  server: 191.217.215.228
-  port: 2096
-  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: st3b6e5.rumedia-cdn.com
-  ws-opts:
-    path: /cdn/v3/live
-- name: 'ARISTA #12'
+      Host: free-server.techsonic.dev
+- name: 'ARISTA #10'
   type: vless
   server: uqrxjbu.arvono.ir
   port: 2096
@@ -217,7 +192,7 @@ proxies:
   - http/1.1
   client-fingerprint: chrome
   servername: 0a8551bd56690416.rahat-bash.ir
-- name: 'ARISTA #13'
+- name: 'ARISTA #11'
   type: vless
   server: 191.217.215.228
   port: 2096
@@ -231,7 +206,7 @@ proxies:
     path: /cdn/v3/live
     headers:
       Host: st3b6e5.rumedia-cdn.com
-- name: 'ARISTA #14'
+- name: 'ARISTA #12'
   type: vless
   server: 191.217.215.228
   port: 2096
@@ -244,6 +219,36 @@ proxies:
   servername: st3b6e5.rumedia-cdn.com
   ws-opts:
     path: /cdn/v3/live
+- name: 'ARISTA #13'
+  type: vless
+  server: uqrxjbu.arvono.ir
+  port: 2096
+  uuid: 13bda8f2-02af-0001-a9b6-2dbc7f023ab5
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: 0a8551bd56690416.rahat-bash.ir
+- name: 'ARISTA #14'
+  type: vless
+  server: uqrxjbu.arvono.ir
+  port: 2096
+  uuid: 13bda8f2-02af-0001-a9b6-2dbc7f023ab5
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: 0a8551bd56690416.rahat-bash.ir
 - name: 'ARISTA #15'
   type: vless
   server: 191.217.215.228
@@ -288,18 +293,19 @@ proxies:
   servername: 0a8551bd56690416.rahat-bash.ir
 - name: 'ARISTA #18'
   type: vless
-  server: 191.217.215.228
+  server: uqrxjbu.arvono.ir
   port: 2096
-  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
-  network: ws
+  uuid: 13bda8f2-02af-0001-a9b6-2dbc7f023ab5
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  servername: st3b6e5.rumedia-cdn.com
-  ws-opts:
-    path: /cdn/v3/live
-    headers:
-      Host: st3b6e5.rumedia-cdn.com
+  flow: xtls-rprx-vision
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: 0a8551bd56690416.rahat-bash.ir
 - name: 'ARISTA #19'
   type: vless
   server: 191.217.215.228
@@ -309,81 +315,11 @@ proxies:
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: st3b6e5.rumedia-cdn.com
-  ws-opts:
-    path: /cdn/v3/live
-- name: 'ARISTA #20'
-  type: vless
-  server: 191.217.215.228
-  port: 2096
-  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
   servername: st3b6e5.rumedia-cdn.com
   ws-opts:
     path: /cdn/v3/live
     headers:
       Host: st3b6e5.rumedia-cdn.com
-- name: 'ARISTA #21'
-  type: vless
-  server: 191.217.215.228
-  port: 2096
-  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: st3b6e5.rumedia-cdn.com
-  ws-opts:
-    path: /cdn/v3/live
-- name: 'ARISTA #22'
-  type: trojan
-  server: vpnstan.ahbpanel.ir
-  port: 2096
-  password: wyOG4PjqWN9Amkd7y_8uBztBDE9glXzn
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: vpnstan.ahbpanel.ir
-- name: 'ARISTA #23'
-  type: trojan
-  server: vpnstan.ahbpanel.ir
-  port: 2096
-  password: wyOG4PjqWN9Amkd7y_8uBztBDE9glXzn
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: vpnstan.ahbpanel.ir
-- name: 'ARISTA #24'
-  type: trojan
-  server: vpnstan.ahbpanel.ir
-  port: 2096
-  password: wyOG4PjqWN9Amkd7y_8uBztBDE9glXzn
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: vpnstan.ahbpanel.ir
-- name: 'ARISTA #25'
-  type: trojan
-  server: vpnstan.ahbpanel.ir
-  port: 2096
-  password: wyOG4PjqWN9Amkd7y_8uBztBDE9glXzn
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  tcp-fast-open: true
-  servername: vpnstan.ahbpanel.ir
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -412,12 +348,6 @@ proxy-groups:
   - 'ARISTA #17'
   - 'ARISTA #18'
   - 'ARISTA #19'
-  - 'ARISTA #20'
-  - 'ARISTA #21'
-  - 'ARISTA #22'
-  - 'ARISTA #23'
-  - 'ARISTA #24'
-  - 'ARISTA #25'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
