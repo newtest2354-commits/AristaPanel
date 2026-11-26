@@ -1,6 +1,6 @@
 # TELEGRAM - Port 2053
-# Updated: 2026-11-26 15:08:03
-# Count: 21
+# Updated: 2026-11-26 18:07:58
+# Count: 13
 
 mixed-port: 7890
 allow-lan: false
@@ -50,18 +50,23 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 194.233.67.103
+  server: dl.digilcala.shop
   port: 2053
-  uuid: 100cfbe2-afd5-40cf-84df-063b010ee759
-  network: tcp
+  uuid: 2e0693b3-cae9-4efe-b907-4de7a22f585f
+  network: ws
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: www.apple.com
-  reality-opts:
-    public-key: un_9X4oh5ODWIcXl_jiuUaox4XOJE7oZpSPWGb46tRI
-    short-id: "07a66150eac3db28"
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dl.digilcala.shop
+  ws-opts:
+    path: /
+    headers:
+      Host: dl.digilcala.shop
 - name: 'ARISTA #2'
   type: vless
   server: 194.233.67.103
@@ -86,22 +91,9 @@ proxies:
   udp: true
   skip-cert-verify: true
   flow: xtls-rprx-vision
-  client-fingerprint: firefox
+  client-fingerprint: chrome
   servername: 94.159.98.82
 - name: 'ARISTA #4'
-  type: vless
-  server: 89.163.239.238
-  port: 2053
-  uuid: 02974d2b-518f-4f95-91cc-b145b6e4805e
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: www.apple.com
-  reality-opts:
-    public-key: vZmTxEoOhD-VAACucx2KmzWaKlYyXdkkUUv0RzlDsgo
-    short-id: "2fa414c6dd1189db"
-- name: 'ARISTA #5'
   type: vless
   server: 78.159.240.62
   port: 2053
@@ -112,6 +104,25 @@ proxies:
   skip-cert-verify: true
   client-fingerprint: chrome
   servername: polarladder.com
+- name: 'ARISTA #5'
+  type: vless
+  server: dl.digilcala.shop
+  port: 2053
+  uuid: 2e0693b3-cae9-4efe-b907-4de7a22f585f
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dl.digilcala.shop
+  ws-opts:
+    path: /
+    headers:
+      Host: dl.digilcala.shop
 - name: 'ARISTA #6'
   type: vless
   server: 194.233.67.103
@@ -136,48 +147,9 @@ proxies:
   udp: true
   skip-cert-verify: true
   flow: xtls-rprx-vision
-  client-fingerprint: firefox
+  client-fingerprint: chrome
   servername: 94.159.98.82
 - name: 'ARISTA #8'
-  type: vless
-  server: 194.233.67.103
-  port: 2053
-  uuid: 100cfbe2-afd5-40cf-84df-063b010ee759
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: www.apple.com
-  reality-opts:
-    public-key: un_9X4oh5ODWIcXl_jiuUaox4XOJE7oZpSPWGb46tRI
-    short-id: "07a66150eac3db28"
-- name: 'ARISTA #9'
-  type: vless
-  server: 94.159.98.82
-  port: 2053
-  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: 94.159.98.82
-- name: 'ARISTA #10'
-  type: vless
-  server: 89.163.239.238
-  port: 2053
-  uuid: 02974d2b-518f-4f95-91cc-b145b6e4805e
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: www.apple.com
-  reality-opts:
-    public-key: vZmTxEoOhD-VAACucx2KmzWaKlYyXdkkUUv0RzlDsgo
-    short-id: "2fa414c6dd1189db"
-- name: 'ARISTA #11'
   type: vless
   server: 78.159.240.62
   port: 2053
@@ -188,18 +160,73 @@ proxies:
   skip-cert-verify: true
   client-fingerprint: chrome
   servername: polarladder.com
-- name: 'ARISTA #12'
+- name: 'ARISTA #9'
   type: vless
-  server: 94.159.98.82
+  server: 185.179.154.10
   port: 2053
-  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
+  uuid: b5b563ad-e4ef-4873-9d35-66cc08202aec
   network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
   client-fingerprint: chrome
-  servername: 94.159.98.82
+  servername: addons.mozilla.org
+  reality-opts:
+    public-key: i6QemXVnjBTtI8X-iHkCjpHFK5o1GKkodcOfqgEl12E
+    short-id: "4c82e769"
+- name: 'ARISTA #10'
+  type: vless
+  server: ws.dhafhdtjdti.site
+  port: 2053
+  uuid: 9f749472-c636-4c5a-af51-7f8feefaac81
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: ws.dhafhdtjdti.site
+  ws-opts:
+    path: /
+    headers:
+      Host: ws.dhafhdtjdti.site
+- name: 'ARISTA #11'
+  type: vless
+  server: dl.digilcala.shop
+  port: 2053
+  uuid: 2e0693b3-cae9-4efe-b907-4de7a22f585f
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dl.digilcala.shop
+  ws-opts:
+    path: /
+    headers:
+      Host: dl.digilcala.shop
+- name: 'ARISTA #12'
+  type: vless
+  server: dl.digilcala.shop
+  port: 2053
+  uuid: 2e0693b3-cae9-4efe-b907-4de7a22f585f
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  servername: dl.digilcala.shop
+  ws-opts:
+    path: /
+    headers:
+      Host: dl.digilcala.shop
 - name: 'ARISTA #13'
   type: vless
   server: 194.233.67.103
@@ -214,107 +241,6 @@ proxies:
   reality-opts:
     public-key: un_9X4oh5ODWIcXl_jiuUaox4XOJE7oZpSPWGb46tRI
     short-id: "07a66150eac3db28"
-- name: 'ARISTA #14'
-  type: vless
-  server: 94.159.98.82
-  port: 2053
-  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: 94.159.98.82
-- name: 'ARISTA #15'
-  type: vless
-  server: 194.233.67.103
-  port: 2053
-  uuid: 100cfbe2-afd5-40cf-84df-063b010ee759
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: www.apple.com
-  reality-opts:
-    public-key: un_9X4oh5ODWIcXl_jiuUaox4XOJE7oZpSPWGb46tRI
-    short-id: "07a66150eac3db28"
-- name: 'ARISTA #16'
-  type: vless
-  server: 94.159.98.82
-  port: 2053
-  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: 94.159.98.82
-- name: 'ARISTA #17'
-  type: vless
-  server: 89.163.239.238
-  port: 2053
-  uuid: 02974d2b-518f-4f95-91cc-b145b6e4805e
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: www.apple.com
-  reality-opts:
-    public-key: vZmTxEoOhD-VAACucx2KmzWaKlYyXdkkUUv0RzlDsgo
-    short-id: "2fa414c6dd1189db"
-- name: 'ARISTA #18'
-  type: vless
-  server: 194.233.67.103
-  port: 2053
-  uuid: 100cfbe2-afd5-40cf-84df-063b010ee759
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  servername: www.apple.com
-  reality-opts:
-    public-key: un_9X4oh5ODWIcXl_jiuUaox4XOJE7oZpSPWGb46tRI
-    short-id: "07a66150eac3db28"
-- name: 'ARISTA #19'
-  type: vless
-  server: 94.159.98.82
-  port: 2053
-  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: 94.159.98.82
-- name: 'ARISTA #20'
-  type: vless
-  server: 89.163.239.238
-  port: 2053
-  uuid: 02974d2b-518f-4f95-91cc-b145b6e4805e
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  servername: www.apple.com
-  reality-opts:
-    public-key: vZmTxEoOhD-VAACucx2KmzWaKlYyXdkkUUv0RzlDsgo
-    short-id: "2fa414c6dd1189db"
-- name: 'ARISTA #21'
-  type: vless
-  server: 78.159.240.62
-  port: 2053
-  uuid: 37af0181-5598-4aad-a040-d926bcb65757
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: polarladder.com
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -337,14 +263,6 @@ proxy-groups:
   - 'ARISTA #11'
   - 'ARISTA #12'
   - 'ARISTA #13'
-  - 'ARISTA #14'
-  - 'ARISTA #15'
-  - 'ARISTA #16'
-  - 'ARISTA #17'
-  - 'ARISTA #18'
-  - 'ARISTA #19'
-  - 'ARISTA #20'
-  - 'ARISTA #21'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
