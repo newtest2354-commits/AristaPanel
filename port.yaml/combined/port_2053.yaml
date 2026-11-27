@@ -1,6 +1,6 @@
 # COMBINED - Port 2053
-# Updated: 2026-11-27 09:05:46
-# Count: 29
+# Updated: 2026-11-27 12:07:43
+# Count: 39
 
 mixed-port: 7890
 allow-lan: false
@@ -50,26 +50,28 @@ rules:
 proxies:
 - name: 'ARISTA #1'
   type: vless
-  server: 78.159.240.62
+  server: 191.217.215.228
   port: 2053
-  uuid: 37af0181-5598-4aad-a040-d926bcb65757
-  network: xhttp
+  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
+  flow: xtls-rprx-vision-udp443
   client-fingerprint: chrome
-  servername: polarladder.com
+  servername: 191.217.215.228
 - name: 'ARISTA #2'
   type: vless
-  server: 78.159.240.62
+  server: 191.217.215.228
   port: 2053
-  uuid: 37af0181-5598-4aad-a040-d926bcb65757
-  network: xhttp
+  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: polarladder.com
+  flow: xtls-rprx-vision-udp443
+  client-fingerprint: firefox
+  servername: 191.217.215.228
 - name: 'ARISTA #3'
   type: vless
   server: 191.217.215.228
@@ -84,6 +86,19 @@ proxies:
   servername: 191.217.215.228
 - name: 'ARISTA #4'
   type: vless
+  server: ws.dhafhdtjdti.site
+  port: 2053
+  uuid: 9f749472-c636-4c5a-af51-7f8feefaac81
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: ws.dhafhdtjdti.site
+  ws-opts:
+    path: /
+- name: 'ARISTA #5'
+  type: vless
   server: 78.159.240.62
   port: 2053
   uuid: 37af0181-5598-4aad-a040-d926bcb65757
@@ -93,7 +108,7 @@ proxies:
   skip-cert-verify: true
   client-fingerprint: chrome
   servername: polarladder.com
-- name: 'ARISTA #5'
+- name: 'ARISTA #6'
   type: vless
   server: 191.217.215.228
   port: 2053
@@ -102,20 +117,9 @@ proxies:
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: 191.217.215.228
-- name: 'ARISTA #6'
-  type: vless
-  server: 78.159.240.62
-  port: 2053
-  uuid: 37af0181-5598-4aad-a040-d926bcb65757
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
+  flow: xtls-rprx-vision-udp443
   client-fingerprint: chrome
-  servername: polarladder.com
+  servername: 191.217.215.228
 - name: 'ARISTA #7'
   type: vless
   server: 191.217.215.228
@@ -125,10 +129,22 @@ proxies:
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
+  flow: xtls-rprx-vision-udp443
   client-fingerprint: firefox
   servername: 191.217.215.228
 - name: 'ARISTA #8'
+  type: vless
+  server: 191.217.215.228
+  port: 2053
+  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: 191.217.215.228
+- name: 'ARISTA #9'
   type: vless
   server: ws.dhafhdtjdti.site
   port: 2053
@@ -141,31 +157,33 @@ proxies:
   servername: ws.dhafhdtjdti.site
   ws-opts:
     path: /
-- name: 'ARISTA #9'
-  type: vless
-  server: 191.217.215.228
-  port: 2053
-  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision-udp443
-  client-fingerprint: chrome
-  servername: 191.217.215.228
 - name: 'ARISTA #10'
   type: vless
-  server: 191.217.215.228
+  server: 78.159.240.62
   port: 2053
-  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
-  network: tcp
+  uuid: 37af0181-5598-4aad-a040-d926bcb65757
+  network: xhttp
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision-udp443
-  client-fingerprint: firefox
-  servername: 191.217.215.228
-- name: 'T.ME: @aristapanel #11'
+  client-fingerprint: chrome
+  servername: polarladder.com
+- name: 'ARISTA #11'
+  type: vless
+  server: 104.16.244.34
+  port: 2053
+  uuid: 97514cec-cf70-42b1-9743-3f89122adc8e
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: cffq.pages.dev
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: cffq.pages.dev
+- name: 'T.ME: @aristapanel #12'
   type: vless
   server: 51.15.16.68
   port: 2053
@@ -178,7 +196,7 @@ proxies:
   reality-opts:
     public-key: nyBUWOwOLHOrVSomGfHaPjt-lgbSGk-XSv89voR6T3o
     short-id: "e9272cf492b43a48"
-- name: 'T.ME: @aristapanel #12'
+- name: 'T.ME: @aristapanel #13'
   type: vless
   server: 89.163.239.238
   port: 2053
@@ -191,7 +209,19 @@ proxies:
   reality-opts:
     public-key: vZmTxEoOhD-VAACucx2KmzWaKlYyXdkkUUv0RzlDsgo
     short-id: "2fa414c6dd1189db"
-- name: 'T.ME: @aristapanel #13'
+- name: 'T.ME: @aristapanel #14'
+  type: vless
+  server: 191.217.215.228
+  port: 2053
+  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: 191.217.215.228
+- name: 'T.ME: @aristapanel #15'
   type: vless
   server: one-for-all.levikogjgfdd.ir
   port: 2053
@@ -206,18 +236,7 @@ proxies:
     path: /
     headers:
       Host: levikoconfig.levikogjgfdd.ir
-- name: 'ARISTA #14'
-  type: vless
-  server: 78.159.240.62
-  port: 2053
-  uuid: 37af0181-5598-4aad-a040-d926bcb65757
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: polarladder.com
-- name: 'ARISTA #15'
+- name: 'ARISTA #16'
   type: vless
   server: 191.217.215.228
   port: 2053
@@ -226,22 +245,9 @@ proxies:
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: 191.217.215.228
-- name: 'ARISTA #16'
-  type: vless
-  server: ws.dhafhdtjdti.site
-  port: 2053
-  uuid: 9f749472-c636-4c5a-af51-7f8feefaac81
-  network: ws
-  tls: true
-  udp: true
-  skip-cert-verify: true
+  flow: xtls-rprx-vision-udp443
   client-fingerprint: chrome
-  servername: ws.dhafhdtjdti.site
-  ws-opts:
-    path: /
+  servername: 191.217.215.228
 - name: 'ARISTA #17'
   type: vless
   server: 191.217.215.228
@@ -252,7 +258,7 @@ proxies:
   udp: true
   skip-cert-verify: true
   flow: xtls-rprx-vision-udp443
-  client-fingerprint: chrome
+  client-fingerprint: firefox
   servername: 191.217.215.228
 - name: 'ARISTA #18'
   type: vless
@@ -263,56 +269,10 @@ proxies:
   tls: true
   udp: true
   skip-cert-verify: true
-  flow: xtls-rprx-vision-udp443
+  flow: xtls-rprx-vision
   client-fingerprint: firefox
   servername: 191.217.215.228
 - name: 'ARISTA #19'
-  type: vless
-  server: 78.159.240.62
-  port: 2053
-  uuid: 37af0181-5598-4aad-a040-d926bcb65757
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: polarladder.com
-- name: 'ARISTA #20'
-  type: vless
-  server: 191.217.215.228
-  port: 2053
-  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: 191.217.215.228
-- name: 'ARISTA #21'
-  type: vless
-  server: 78.159.240.62
-  port: 2053
-  uuid: 37af0181-5598-4aad-a040-d926bcb65757
-  network: xhttp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: polarladder.com
-- name: 'ARISTA #22'
-  type: vless
-  server: 191.217.215.228
-  port: 2053
-  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
-  network: tcp
-  tls: true
-  udp: true
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  servername: 191.217.215.228
-- name: 'ARISTA #23'
   type: vless
   server: ws.dhafhdtjdti.site
   port: 2053
@@ -325,7 +285,33 @@ proxies:
   servername: ws.dhafhdtjdti.site
   ws-opts:
     path: /
-- name: 'ARISTA #24'
+- name: 'ARISTA #20'
+  type: vless
+  server: 78.159.240.62
+  port: 2053
+  uuid: 37af0181-5598-4aad-a040-d926bcb65757
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: polarladder.com
+- name: 'ARISTA #21'
+  type: vless
+  server: 104.16.244.34
+  port: 2053
+  uuid: 97514cec-cf70-42b1-9743-3f89122adc8e
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: cffq.pages.dev
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: cffq.pages.dev
+- name: 'ARISTA #22'
   type: vless
   server: 191.217.215.228
   port: 2053
@@ -336,6 +322,30 @@ proxies:
   skip-cert-verify: true
   flow: xtls-rprx-vision-udp443
   client-fingerprint: chrome
+  servername: 191.217.215.228
+- name: 'ARISTA #23'
+  type: vless
+  server: 191.217.215.228
+  port: 2053
+  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision-udp443
+  client-fingerprint: firefox
+  servername: 191.217.215.228
+- name: 'ARISTA #24'
+  type: vless
+  server: 191.217.215.228
+  port: 2053
+  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
   servername: 191.217.215.228
 - name: 'ARISTA #25'
   type: vless
@@ -347,19 +357,20 @@ proxies:
   udp: true
   skip-cert-verify: true
   flow: xtls-rprx-vision-udp443
-  client-fingerprint: firefox
+  client-fingerprint: chrome
   servername: 191.217.215.228
 - name: 'ARISTA #26'
   type: vless
-  server: 78.159.240.62
+  server: 191.217.215.228
   port: 2053
-  uuid: 37af0181-5598-4aad-a040-d926bcb65757
-  network: xhttp
+  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
+  network: tcp
   tls: true
   udp: true
   skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: polarladder.com
+  flow: xtls-rprx-vision-udp443
+  client-fingerprint: firefox
+  servername: 191.217.215.228
 - name: 'ARISTA #27'
   type: vless
   server: 191.217.215.228
@@ -374,6 +385,19 @@ proxies:
   servername: 191.217.215.228
 - name: 'ARISTA #28'
   type: vless
+  server: ws.dhafhdtjdti.site
+  port: 2053
+  uuid: 9f749472-c636-4c5a-af51-7f8feefaac81
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: ws.dhafhdtjdti.site
+  ws-opts:
+    path: /
+- name: 'ARISTA #29'
+  type: vless
   server: 78.159.240.62
   port: 2053
   uuid: 37af0181-5598-4aad-a040-d926bcb65757
@@ -383,7 +407,46 @@ proxies:
   skip-cert-verify: true
   client-fingerprint: chrome
   servername: polarladder.com
-- name: 'ARISTA #29'
+- name: 'ARISTA #30'
+  type: vless
+  server: 104.16.244.34
+  port: 2053
+  uuid: 97514cec-cf70-42b1-9743-3f89122adc8e
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: cffq.pages.dev
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: cffq.pages.dev
+- name: 'ARISTA #31'
+  type: vless
+  server: 191.217.215.228
+  port: 2053
+  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision-udp443
+  client-fingerprint: chrome
+  servername: 191.217.215.228
+- name: 'ARISTA #32'
+  type: vless
+  server: 191.217.215.228
+  port: 2053
+  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision-udp443
+  client-fingerprint: firefox
+  servername: 191.217.215.228
+- name: 'ARISTA #33'
   type: vless
   server: 191.217.215.228
   port: 2053
@@ -395,6 +458,79 @@ proxies:
   flow: xtls-rprx-vision
   client-fingerprint: firefox
   servername: 191.217.215.228
+- name: 'ARISTA #34'
+  type: vless
+  server: ws.dhafhdtjdti.site
+  port: 2053
+  uuid: 9f749472-c636-4c5a-af51-7f8feefaac81
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: ws.dhafhdtjdti.site
+  ws-opts:
+    path: /
+- name: 'ARISTA #35'
+  type: vless
+  server: 191.217.215.228
+  port: 2053
+  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision-udp443
+  client-fingerprint: chrome
+  servername: 191.217.215.228
+- name: 'ARISTA #36'
+  type: vless
+  server: 191.217.215.228
+  port: 2053
+  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision-udp443
+  client-fingerprint: firefox
+  servername: 191.217.215.228
+- name: 'ARISTA #37'
+  type: vless
+  server: 191.217.215.228
+  port: 2053
+  uuid: fbe22815-0718-4eae-816f-e91c67d15b54
+  network: tcp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  servername: 191.217.215.228
+- name: 'ARISTA #38'
+  type: vless
+  server: ws.dhafhdtjdti.site
+  port: 2053
+  uuid: 9f749472-c636-4c5a-af51-7f8feefaac81
+  network: ws
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: ws.dhafhdtjdti.site
+  ws-opts:
+    path: /
+- name: 'ARISTA #39'
+  type: vless
+  server: 78.159.240.62
+  port: 2053
+  uuid: 37af0181-5598-4aad-a040-d926bcb65757
+  network: xhttp
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: polarladder.com
 proxy-groups:
 - name: 🚀 ARISTA LOW LATENCY
   type: url-test
@@ -414,11 +550,11 @@ proxy-groups:
   - 'ARISTA #8'
   - 'ARISTA #9'
   - 'ARISTA #10'
-  - 'T.ME: @aristapanel #11'
+  - 'ARISTA #11'
   - 'T.ME: @aristapanel #12'
   - 'T.ME: @aristapanel #13'
-  - 'ARISTA #14'
-  - 'ARISTA #15'
+  - 'T.ME: @aristapanel #14'
+  - 'T.ME: @aristapanel #15'
   - 'ARISTA #16'
   - 'ARISTA #17'
   - 'ARISTA #18'
@@ -433,6 +569,16 @@ proxy-groups:
   - 'ARISTA #27'
   - 'ARISTA #28'
   - 'ARISTA #29'
+  - 'ARISTA #30'
+  - 'ARISTA #31'
+  - 'ARISTA #32'
+  - 'ARISTA #33'
+  - 'ARISTA #34'
+  - 'ARISTA #35'
+  - 'ARISTA #36'
+  - 'ARISTA #37'
+  - 'ARISTA #38'
+  - 'ARISTA #39'
 - name: 🎬 ARISTA STREAM
   type: fallback
   url: http://www.gstatic.com/generate_204
